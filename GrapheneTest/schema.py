@@ -6,7 +6,7 @@ class Query(app1.schema.Query, graphene.ObjectType):
     pass
 
 class Mutation(app1.schema.Mutation, graphene.ObjectType):
-    create_category = graphene.Field(Mutation)
+    pass
 
 schema = graphene.Schema(query=Query, mutation=Mutation)
 

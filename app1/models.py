@@ -13,7 +13,7 @@ class Post(models.Model):
 
 class Category(models.Model):
     name = models.TextField(max_length=30)
-    created_on = models.DateTimeField()
+    created_on = models.DateTimeField(auto_now_add=True)
 
     def __str__(self) -> str:
         return self.name
