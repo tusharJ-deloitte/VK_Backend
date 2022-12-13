@@ -28,7 +28,7 @@ class UpdateCategory(graphene.Mutation):
         category_instance = Category.objects.get(id = id)
 
         category_instance.name = name
-        category_instance.created_on = datetime.datetime.utcnow
+        category_instance.created_on = datetime.datetime.utcnow()
 
         print("-------------", category_instance.created_on)
 
