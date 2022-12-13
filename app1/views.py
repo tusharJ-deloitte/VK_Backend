@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from .models import Post
-from .serializers import PostSerializer
+from app1.models import Post
+from app1.serializers import PostSerializer
 from rest_framework.renderers import JSONRenderer
 from django.http import HttpResponse, JsonResponse
 
