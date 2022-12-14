@@ -30,7 +30,7 @@ class Activity(models.Model):
 class Team(models.Model):
     activity = models.ManyToManyField(Activity)
     name = models.TextField(max_length=20)
-    created_on = models.DateTimeField()
+    created_on = models.DateTimeField(auto_now_add=True)
 
     def __str__(self) -> str:
         return self.name
