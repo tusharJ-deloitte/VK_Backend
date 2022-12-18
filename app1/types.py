@@ -5,6 +5,7 @@ from .models import Category, Activity, Team, Player
 class UserType(DjangoObjectType):
     class Meta:
         model = User
+        # fields = ('id','name')
     exclude = ('password')
 
 class CategoryType(DjangoObjectType):
@@ -20,7 +21,7 @@ class ActivityType(DjangoObjectType):
 class TeamType(DjangoObjectType):
     class Meta:
         model = Team
-        fields = ('id', 'name', 'created_on')
+        fields = ('id', 'name', 'created_on','activity_id')
 
 class PlayerType(DjangoObjectType):
     class Meta:
