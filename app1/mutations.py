@@ -38,7 +38,7 @@ class UpdateCategory(graphene.Mutation):
 
 class DeleteCategory(graphene.Mutation):
     class Arguments:
-        id=graphene.ID()
+        id=graphene.ID(required=True)
     
     category = graphene.Field(CategoryType)
     def mutate(self,info,id):

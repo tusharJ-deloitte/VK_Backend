@@ -5,6 +5,8 @@ from rest_framework.renderers import JSONRenderer
 from django.http import HttpResponse, JsonResponse
 import io
 from rest_framework.parsers import JSONParser
+from .schema import schema
+import json
 
 def home(request):
     return render(request, 'app1/home.html')
@@ -28,23 +30,100 @@ def get_posts(request, pk):
     # equivalent of JSONRenderer and HTTPResponse combined
     # return JsonResponse(ser.data)
     
+def get_category(request, pk):
+    if request.method == 'GET':
+        result = schema.execute(
+            '''
+            query getCategory ($id : ID!){
+                category (id : $id) {
+                    name
+                    createdOn
+                }
+            }
+            '''
+            , variables = {'id': pk}
+        )
+
+        json_post = json.dumps(result.data)
+
+    return HttpResponse(json_post, content_type='application/json')
+
+
 def create_category(request):
     if request.method == 'POST':
         json_data = request.body
         stream = io.BytesIO(json_data)
         python_data = JSONParser().parse(stream)
-        print(python_data)
+        print(python_data["name"])
         
-        return render(request, 'app1/home.html')
-    return render(request, 'app1/home.html')
+        result = schema.execute(
+            '''
+            mutation firstMutation ($name : String!){
+	            createCategory(name : $name){
+                    category {
+                        id
+                        name
+                    }
+                }
+            }
+            '''
+            , variables = {'name': python_data["name"]}
+        )
+
+        print("------------------------")
+        print("final result : ",  result)
+
+        return HttpResponse(status=200)
+    return HttpResponse(status=200)
+
+def update_category(request, pk):
+    if request.method == 'POST':
+        json_data = request.body
+        stream = io.BytesIO(json_data)
+        python_data = JSONParser().parse(stream)
+        print(python_data["name"])
+        
+        result = schema.execute(
+            '''
+            mutation updateMutation ($id : ID!, $name : String!){
+	            updateCategory(id : $id, name : $name){
+                    category {
+                        id
+                        name
+                        createdOn
+                    }
+                }
+            }
+            '''
+            , variables = {'id' : pk, 'name': python_data["name"]}
+        )
+
+        print("------------------------")
+        print("final result : ",  result)
+
+        return HttpResponse(status=200)
+    return HttpResponse(status=200)
 
 
+def delete_category(request, pk):
+    if request.method == 'DELETE':
+        result = schema.execute(
+            '''
+            mutation deleteCategory ($id : ID!){
+                deleteCategory (id : $id) {
+                    category {
+                        name
+                    }
+                }
+            }
+            '''
+            , variables = {'id' : pk}
+        )
 
-#     mutation firstMutation {
-# 	createCategory(name:"HBCL"){
-#     category {
-#       id
-#       name
-#     }
-#   }
-# }
+        print("------------------------")
+        print("final result : ",  result)
+
+        return HttpResponse(status=200)
+    return HttpResponse(status=200)
+
+
