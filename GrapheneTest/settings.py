@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'app1',
     'rest_framework',
     'graphene_django',
+    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -47,6 +48,7 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     # 'django.middleware.csrf.CsrfViewMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -127,3 +129,14 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# ALLOWED_HOSTS = [
+#     'localhost',
+#     'http://127.0.0.1:8000'
+# ]
+
+# CORS_ORIGIN_ALLOW_ALL = False
+
+# CORS_ORIGIN_WHITELIST = (
+#     'http://127.0.0.1:8000',
+# )
