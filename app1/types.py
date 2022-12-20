@@ -1,6 +1,6 @@
 from graphene_django.types import DjangoObjectType
 from django.contrib.auth.models import User
-from .models import Category, Activity, Team, Player
+from app1.models import Category, Activity, Team, Player
 
 class UserType(DjangoObjectType):
     class Meta:

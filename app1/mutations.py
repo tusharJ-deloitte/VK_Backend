@@ -1,6 +1,11 @@
 import graphene
+<<<<<<< HEAD
 from app1.types import CategoryType,ActivityType
 from .models import Category,Activity
+=======
+from app1.types import CategoryType, TeamType, ActivityType, PlayerType
+from .models import Category, Activity, Team, Player
+>>>>>>> Balaji
 import datetime
 
 class CreateCategory(graphene.Mutation):
@@ -38,7 +43,11 @@ class UpdateCategory(graphene.Mutation):
 
 class DeleteCategory(graphene.Mutation):
     class Arguments:
+<<<<<<< HEAD
         id=graphene.ID(required=True)
+=======
+        id=graphene.ID()
+>>>>>>> Balaji
     
     category = graphene.Field(CategoryType)
     def mutate(self,info,id):
@@ -95,5 +104,40 @@ class DeleteActivity(graphene.Mutation):
         activity_instance = Activity.objects.get(id=id)
         activity_instance.delete()
         return DeleteActivity(activity_instance)
+<<<<<<< HEAD
         
  
+=======
+
+class CreateTeam(graphene.Mutation):
+    class Arguments:
+        name = graphene.String(required=True)
+    team = graphene.Field(TeamType)
+    def mutate(self, info, name, id):
+        team_instance = Team(
+            name=name,
+            id = graphene.ID()
+        )
+        team_instance.save()
+        return CreateTeam(team=team_instance)
+
+
+class UpdateTeam(graphene.Mutation):
+    class Arguments:
+        id = graphene.ID()
+        name = graphene.String()
+
+    team = graphene.Field(TeamType)
+
+    def mutate(self, info, id, name, ):
+        team_instance = Team.objects.get(id=id)
+
+        team_instance.name = name
+        team_instance.created_on = datetime.datetime.utcnow
+
+        print("-------------", team_instance.created_on)
+
+        team_instance.save()
+
+        return UpdateTeam(team=team_instance)
+>>>>>>> Balaji

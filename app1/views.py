@@ -1,6 +1,11 @@
 from django.shortcuts import render
+<<<<<<< HEAD
 from .models import Post
 from .serializers import PostSerializer, CategorySerializer
+=======
+from app1.models import Post
+from app1.serializers import PostSerializer
+>>>>>>> Balaji
 from rest_framework.renderers import JSONRenderer
 from django.http import HttpResponse, JsonResponse
 import io
