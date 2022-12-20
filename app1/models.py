@@ -36,9 +36,10 @@ class Team(models.Model):
         return self.name
 
 class Player(models.Model):
-    team = models.ForeignKey(Team, on_delete = models.CASCADE)
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    team = models.ManyToManyField(Team)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     score = models.IntegerField(default=0)
+    activity = models.OneToOneField(Activity,on_delete=models.CASCADE,blank=True,null=True)
 
     def __str__(self):
         return self.user.first_name

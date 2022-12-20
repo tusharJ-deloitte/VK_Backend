@@ -69,17 +69,19 @@ class UpdateActivity(graphene.Mutation):
     class Arguments:
         id=graphene.ID(required=True)
         name=graphene.String()
-        category_id = graphene.String()
-        # team_size = graphene.Int()
+        category_id = graphene.Int()
+        team_size = graphene.Int()
 
     activity = graphene.Field(ActivityType)    
 
-    def mutate(self, info, id, name,category_id):
+    def mutate(self, info, id, name,category_id,team_size):
+        print("inside mutate")
         activity_instance = Activity.objects.get(id= id)
         activity_instance.name = name
-        activity_instance.category = Category.objects.filter(name=category_id)[0]
-        print(Category.objects.filter(name=category_id)[0])
-        # activity_instance.team_size = team_size
+        activity_instance.category = Category.objects.get(id=category_id)#filter(name=category_id)[0]
+        # print(Category.objects.filter(name=category_id)[0])
+        
+        activity_instance.team_size = team_size
         activity_instance.created_on = datetime.datetime.utcnow()
         activity_instance.save()
 
@@ -107,10 +109,13 @@ class CreateTeam(graphene.Mutation):
     def mutate(self, info, name,activity):
         print("inside mutate")
         team_instance = Team(
-            name=name,
+            name=name)
             # id = graphene.ID(),
-            activity = Activity.objects.get(id=activity)[0]
-        )
+            # activity = Activity.objects.get(id=activity)[0]
+        team_instance.save()
+        print("--------------------",team_instance)
+        activity = Activity.objects.get(id=activity)
+        team_instance.activity.add(activity)
         team_instance.save()
         print("--------------------",team_instance)
         # team_instance.activity = Activity.objects.get(id=activity)[0]
@@ -140,16 +145,34 @@ class CreatePlayer(graphene.Mutation):
     class Arguments:
         team_id = graphene.Int(required=True)
         username = graphene.String(required=True)
-        score = graphene.Int(required=True)
-
+        score = graphene.Int()
+        
     player = graphene.Field(PlayerType)
-    def mutate(self,info,team_id,username,score):
+    def mutate(self,info,team_id,username,score=0):
+        print("inside")
         player_instance = Player(
-            team = Team.objects.get(id=team_id),
+            
             user = User.objects.get(username=username),
-            score = score
+            score = score 
         )
         player_instance.save()
+        # print("!!!!",player_instance)
+        team = Team.objects.get(id=team_id)
+        
+        
+        print(team)
+        # player_instance.activity.add(team.activity)
+        # print("1")
+        # player_instance.save()
+        # print("2")
+        # print(player_instance.activity)
+        # player_instance.team.add(team)
+        # player_instance.save()
+        # print(player_instance.team)
+        # player_instance.activity = team_instance.activity
+        # player_instance.save()
+        # print("!!!!",player_instance)
+
         return CreatePlayer(player_instance)
 
 class UpdatePlayer(graphene.Mutation):
