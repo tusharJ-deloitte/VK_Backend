@@ -28,17 +28,21 @@ class Activity(models.Model):
         return self.name
 
 class Team(models.Model):
-    activity = models.ManyToManyField(Activity)
+    activity = models.ManyToManyField(Activity,null=True)
     name = models.TextField(max_length=20)
-    created_on = models.DateTimeField()
+    current_size = models.IntegerField(default = 0)
+    team_logo = models.ImageField(null=True)
+    team_lead = models.TextField(max_length=20,null=True)
+    created_on = models.DateTimeField(auto_now_add=True)
 
     def __str__(self) -> str:
         return self.name
 
 class Player(models.Model):
-    team = models.ForeignKey(Team, on_delete = models.CASCADE)
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    team = models.ManyToManyField(Team)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     score = models.IntegerField(default=0)
+    activity = models.ManyToManyField(Activity)
 
     def __str__(self):
         return self.user.first_name
