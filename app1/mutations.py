@@ -102,53 +102,69 @@ class DeleteActivity(graphene.Mutation):
 class CreateTeam(graphene.Mutation):
     class Arguments:
         name = graphene.String(required=True)
-        activity = graphene.Int(required=True)
+        activity = graphene.String()
+        currentSize = graphene.Int()
+        teamLead = graphene.String()
+
         # print(name,activity)
     team = graphene.Field(TeamType)
     print("!!!!!!!!!!!!",team)
-    def mutate(self, info, name,activity):
+    def mutate(self, info, name,currentSize,teamLead,activity):
         print("inside mutate")
+        # print(Activity.objects.filter(name=activity))
         team_instance = Team(
-            name=name)
+            name=name,
+            current_size = currentSize,
+            team_lead = teamLead
+
+            )
+
+        # print("0")
             # id = graphene.ID(),
             # activity = Activity.objects.get(id=activity)[0]
         team_instance.save()
-        print("--------------------",team_instance)
-        activity = Activity.objects.get(id=activity)
+        activity = Activity.objects.filter(name=activity)[0]
         team_instance.activity.add(activity)
         team_instance.save()
+        # print("1")
         print("--------------------",team_instance)
+
+        
+        # print("--------------------",team_instance)
         # team_instance.activity = Activity.objects.get(id=activity)[0]
         # print("==========",Activity.objects.get(id=activity))
-        print("--------------------",team_instance.activity)
+        # print("--------------------",team_instance.activity)
 
         
         return CreateTeam(team=team_instance)
 
 
-class UpdateTeam(graphene.Mutation):
-    class Arguments:
-        id = graphene.ID(required=True)
-        name = graphene.String()
+# class UpdateTeam(graphene.Mutation):
+#     class Arguments:
+#         id = graphene.ID(required=True)
+#         name = graphene.String()
 
-    team = graphene.Field(TeamType)
+#     team = graphene.Field(TeamType)
 
-    def mutate(self, info, id, name, ):
-        team_instance = Team.objects.get(id=id)
+#     def mutate(self, info, id, name, ):
+#         team_instance = Team.objects.get(id=id)
 
-        team_instance.name = name
-        team_instance.created_on = datetime.datetime.utcnow()
-        team_instance.save()
-        return UpdateTeam(team=team_instance)
+#         team_instance.name = name
+#         team_instance.created_on = datetime.datetime.utcnow()
+#         team_instance.save()
+#         return UpdateTeam(teamactivity = Activity.objects.get(id=activity)
+#         # team_instance.activity.add(activity)
+#         # team_instance.save()=team_instance)
 
 class CreatePlayer(graphene.Mutation):
     class Arguments:
-        team_id = graphene.Int(required=True)
+        team_name = graphene.String(required=True)
         username = graphene.String(required=True)
         score = graphene.Int()
+        activity = graphene.String()
         
     player = graphene.Field(PlayerType)
-    def mutate(self,info,team_id,username,score=0):
+    def mutate(self,info,team_name,username,score,activity):
         print("inside")
         player_instance = Player(
             
@@ -156,23 +172,16 @@ class CreatePlayer(graphene.Mutation):
             score = score 
         )
         player_instance.save()
-        # print("!!!!",player_instance)
-        team = Team.objects.get(id=team_id)
+        activity_instance = Activity.objects.filter(name=activity)[0]
+        print(activity_instance)
+        player_instance.activity.add(activity_instance)
+        player_instance.save()
+        print("000")
+        team_instance = Team.objects.filter(name=team_name)[0]
+        print(team_instance)
+        player_instance.team.add(team_instance)
+        print(team_instance)
         
-        
-        print(team)
-        # player_instance.activity.add(team.activity)
-        # print("1")
-        # player_instance.save()
-        # print("2")
-        # print(player_instance.activity)
-        # player_instance.team.add(team)
-        # player_instance.save()
-        # print(player_instance.team)
-        # player_instance.activity = team_instance.activity
-        # player_instance.save()
-        # print("!!!!",player_instance)
-
         return CreatePlayer(player_instance)
 
 class UpdatePlayer(graphene.Mutation):

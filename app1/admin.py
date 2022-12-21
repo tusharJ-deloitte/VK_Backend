@@ -21,4 +21,4 @@ class TeamAdmin(admin.ModelAdmin):
 
 @admin.register(Player)
 class PlayerAdmin(admin.ModelAdmin):
-    list_display = ['id', 'score', 'activity_id','user_id']
+    list_display = ['id', 'score','user_id']

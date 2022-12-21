@@ -21,7 +21,7 @@ class ActivityType(DjangoObjectType):
 class TeamType(DjangoObjectType):
     class Meta:
         model = Team
-        fields = ('id', 'name', 'created_on','activity_id')
+        fields = ('id', 'name', 'created_on','activity_id','current_size','team_logo','team_lead')
 
 class PlayerType(DjangoObjectType):
     class Meta:

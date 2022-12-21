@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Post
+from .models import Activity
 from .serializers import PostSerializer
 from rest_framework.renderers import JSONRenderer
 from django.http import HttpResponse, JsonResponse
@@ -215,7 +215,47 @@ def delete_activity(request, pk):
         return HttpResponse(status=200)
     return HttpResponse(status=200)
 
+def create_teams(request):
+    if request.method == 'POST':
+        json_data = request.body
+        stream = io.BytesIO(json_data)
+        python_data = JSONParser().parse(stream)
+        print(python_data)
+        
+        result = schema.execute(
+            '''
+            mutation createTeams($name : String!,$activity: String!,$currentSize:Int!,$teamLead:String!){
+               createTeam(name:$name,activity:$activity,teamLead:$teamLead,currentSize:$currentSize){
+                    team{
+                        id
+                    }
+                }     
+  
+            }
 
+            '''
+            , variables = {'name': python_data["name"],'activity':python_data["activity"],'currentSize':python_data["currentSize"],'teamLead':python_data["teamLead"]}
+        )
+        
+        for item in range(0,python_data["currentSize"]):
+                username = python_data['members'][item]
+                result1 = schema.execute(
+                        '''
+                        mutation createPlayer($teamName:String!,$userName:String!,$score:Int!,$activity:String!){
+                            createPlayer(teamName:$teamName,username:$userName,score:$score,activity:$activity){
+                                player{
+                                    id
+                                    score
+                                }
+                            }
+                        }
+                        '''
+                        , variables = {'teamName': python_data["name"],'activity':python_data["activity"],'userName':username,'score':0}
+                    )
+
+        json_post = json.dumps(result.data)
+
+    return HttpResponse(json_post, content_type='application/json')
 
 def get_posts(request, pk):
     post = Post.objects.get(id=pk)

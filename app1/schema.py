@@ -1,7 +1,7 @@
 import graphene
 from .models import Category, Activity, Team, Player
 from app1.types import CategoryType, ActivityType, TeamType, PlayerType
-from .mutations import CreateCategory, UpdateCategory,DeleteCategory,CreateActivity,UpdateActivity,DeleteActivity,CreateTeam,UpdateTeam,CreatePlayer,UpdatePlayer,DeletePlayer
+from .mutations import CreateCategory, UpdateCategory,DeleteCategory,CreateActivity,UpdateActivity,DeleteActivity,CreateTeam,CreatePlayer,UpdatePlayer,DeletePlayer
 
 class Query(graphene.ObjectType):
     category = graphene.Field(CategoryType, id=graphene.ID(required=True))
@@ -46,7 +46,7 @@ class Mutation(graphene.ObjectType):
     update_activity = UpdateActivity.Field()
     delete_activity = DeleteActivity.Field()
     create_team = CreateTeam.Field()
-    update_team = UpdateTeam.Field()
+    # update_team = UpdateTeam.Field()
     create_player = CreatePlayer.Field()
     update_player = UpdatePlayer.Field()
     delete_player = DeletePlayer.Field()
