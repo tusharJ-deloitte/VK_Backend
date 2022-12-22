@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Activity, Player
+from .models import Activity, Player,Team
 from .serializers import PostSerializer
 from rest_framework.renderers import JSONRenderer
 from django.http import HttpResponse, JsonResponse
@@ -265,6 +265,20 @@ def update_teams(request, team_id):
         python_data = JSONParser().parse(stream)
         print(python_data)
 
+        team_instance = Team.objects.get(id = team_id)
+        team_instance.name = python_data['name']
+        team_instance.team_lead = python_data['teamLead']
+        team_instance.current_size = python_data['currentSize']
+        team_instance.save()
+
+        activity_instance = Activity.objects.filter(name = python_data['activity'])[0]
+        print(activity_instance)
+        team_instance.activity.add(activity_instance)
+        team_instance.save()
+
+
+
+
         players = Player.team.through.objects.filter(team_id = team_id)
 
         # print("------- : ", players)
@@ -292,6 +306,7 @@ def update_teams(request, team_id):
         for key, value in d.items():
             username = User.objects.get(email = key).first_name
             id = User.objects.get(email = key).pk
+            print(username,id)
 
             if value == 1:
                 result1 = schema.execute(
@@ -309,10 +324,32 @@ def update_teams(request, team_id):
                     )
 
             elif value == -1 :
-                p = Player.team.through.objects.get(player_id = Player.objects.get(user_id = id)[0].pk)[0].filter(team_id = team_id)[0]
-                print("inside dict ********:", p)
-                # p.delete()
+                l=[]
+                p_id = Player.objects.filter(user_id = id)
+                for item in p_id :
+                    l.append(item.pk)
+                
+                t_id = Player.team.through.objects.filter(team_id=team_id)
+                for item in t_id:
+                    if item.player_id in l :
+                        Player.objects.get(id = item.player_id).delete()
+               
 
         return HttpResponse({"msg":"successful"}, content_type='application/json')
 
     return HttpResponse({"msg":"successful"}, content_type='application/json')
+
+def get_teams(request,user_email):
+    if request.method == 'GET':
+        user_id = User.objects.get(email = user_email).pk
+        l=[]
+        p_id = Player.objects.filter(user_id = user_id)
+        for item in p_id :
+            l.append(item.pk)
+        print("##########################################",l)
+        team=[]
+        for item in l :
+            pt = Player.team.through.objects.filter(player_id = item)
+            team.append(pt[0].team_id)
+        print(team)
+
