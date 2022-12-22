@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Activity
+from .models import Activity, Player
 from .serializers import PostSerializer
 from rest_framework.renderers import JSONRenderer
 from django.http import HttpResponse, JsonResponse
@@ -7,6 +7,7 @@ import io
 from rest_framework.parsers import JSONParser
 from .schema import schema
 import json
+from django.contrib.auth.models import User
 
 
 def home(request):
@@ -257,22 +258,61 @@ def create_teams(request):
 
     return HttpResponse(json_post, content_type='application/json')
 
-def get_posts(request, pk):
-    post = Post.objects.get(id=pk)
-    print("----------------------------------")
+def update_teams(request, team_id):
+    if request.method == 'PUT':
+        json_data = request.body
+        stream = io.BytesIO(json_data)
+        python_data = JSONParser().parse(stream)
+        print(python_data)
 
-    print("post : ",post)
-    ser = PostSerializer(post)
-    print("----------------------------------")
+        players = Player.team.through.objects.filter(team_id = team_id)
 
-    print("ser : ",ser)
-    json_post = JSONRenderer().render(ser.data)
-    print("----------------------------------")
-     
-    print("json_post : ",json_post)
+        # print("------- : ", players)
+        existing_players = []
 
-    return HttpResponse(json_post, content_type='application/json')
+        for player in players:
+            existing_players.append(Player.objects.get(id = player.player_id).user.email) 
 
-    # equivalent of JSONRenderer and HTTPResponse combined
-    # return JsonResponse(ser.data)
+        print("--------\n", existing_players)
 
+        d = {}
+
+        for player in existing_players:
+                d[player] = -1
+        
+        for player in python_data["players"]:
+            if player in d.keys():
+                d[player] = d[player] + 1
+            else :
+                d[player] = 1
+
+        
+        print("********", d)
+
+        for key, value in d.items():
+            username = User.objects.get(email = key).first_name
+            id = User.objects.get(email = key).pk
+
+            if value == 1:
+                result1 = schema.execute(
+                        '''
+                        mutation createPlayer($teamName:String!,$userName:String!,$score:Int!,$activity:String!){
+                            createPlayer(teamName:$teamName,username:$userName,score:$score,activity:$activity){
+                                player{
+                                    id
+                                    score
+                                }
+                            }
+                        }
+                        '''
+                        , variables = {'teamName': python_data["name"],'activity':python_data["activity"],'userName':username,'score':0}
+                    )
+
+            elif value == -1 :
+                p = Player.team.through.objects.get(player_id = Player.objects.get(user_id = id)[0].pk)[0].filter(team_id = team_id)[0]
+                print("inside dict ********:", p)
+                # p.delete()
+
+        return HttpResponse({"msg":"successful"}, content_type='application/json')
+
+    return HttpResponse({"msg":"successful"}, content_type='application/json')
