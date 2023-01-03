@@ -14,4 +14,5 @@ urlpatterns = [
     path('create_teams',views.create_teams,name="create_teams"),
     path('update_teams/<int:team_id>',views.update_teams,name="update_teams"),
     path('get_teams/<str:user_email>',views.get_teams,name="get_teams"),
+    path('delete_teams/<int:team_id>',views.delete_teams,name="delete_teams")
 ]
