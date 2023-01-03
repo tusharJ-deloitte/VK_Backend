@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Activity, Player,Team
+from .models import Activity, Player,Team, Category
 from .serializers import PostSerializer
 from rest_framework.renderers import JSONRenderer
 from django.http import HttpResponse, JsonResponse
@@ -353,3 +353,55 @@ def get_teams(request,user_email):
             team.append(pt[0].team_id)
         print(team)
 
+def manage_teams(request, user_id):
+    if request.method == 'POST':
+        players = Player.objects.filter(user_id = user_id)
+        teams = []
+
+        for player in players:
+            teams.append(Player.team.through.objects.get(player_id = player.id).team_id) 
+
+        print("teams : ", teams)
+        
+        response = []
+
+        for team in teams:
+            team_id = team
+            team_object = Team.objects.get(id = team_id)
+            team_name = team_object.name
+            team_size = team_object.current_size
+            team_mem_ids = Player.team.through.objects.filter(team_id = team_id)
+            print("team_mem_ids", team_mem_ids)
+            team_mem = []
+            for id in team_mem_ids:
+                user_id = Player.objects.get(id = id.player_id).user_id
+                print("inside for id : ", user_id)
+                user_object = User.objects.get(id = user_id)
+                first_name = user_object.first_name
+                user_email = user_object.email
+                p = {
+                    "first_name" : first_name,
+                    "user_email" : user_email
+                }
+                team_mem.append(p)
+
+            activity_object = Team.activity.through.objects.filter(team_id = team_id)
+            activity_name = Activity.objects.get(id = activity_object[0].activity_id).name
+            activity_size = Activity.objects.get(id = activity_object[0].activity_id).team_size
+            category_id = Activity.objects.get(id = activity_object[0].activity_id).category_id
+            category_name = Category.objects.get(id = category_id).name
+            temp_response = {
+                "team_id" : team_id,
+                "team_name" : team_name,
+                "team_size" : team_size,
+                "team_mem" : team_mem,
+                "activity_name" : activity_name,
+                "actvity_size" : activity_size,
+                "category_name" : category_name
+            }
+            print("team_id", temp_response)
+            response.append(temp_response)
+
+        json_post = json.dumps(response)
+
+    return HttpResponse(json_post, content_type='application/json')
