@@ -342,14 +342,15 @@ def update_teams(request, team_id):
 def get_teams(request,user_email):
     if request.method == 'GET':
         user_id = User.objects.get(email = user_email).pk
-        l=[]
-        p_id = Player.objects.filter(user_id = user_id)
-        for item in p_id :
-            l.append(item.pk)
-        print("##########################################",l)
-        team=[]
-        for item in l :
-            pt = Player.team.through.objects.filter(player_id = item)
-            team.append(pt[0].team_id)
-        print(team)
+        l=[item.pk for item in Player.objects.filter(user_id = user_id)]
+        team_id =[Player.team.through.objects.filter(player_id = item)[0].team_id for item in l]
 
+    return HttpResponse(200)
+
+def delete_teams(request,team_id):
+    if request.method == 'DELETE':
+        pt = Player.team.through.objects.filter(team_id=team_id)
+        for item in pt:
+            Player.objects.get(id = item.player_id).delete()
+        Team.objects.get(id = team_id).delete()
+    return HttpResponse(200)
