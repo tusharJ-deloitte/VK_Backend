@@ -31,10 +31,10 @@ class Team(models.Model):
     activity = models.ManyToManyField(Activity,null=True)
     name = models.TextField(max_length=20)
     current_size = models.IntegerField(default = 0)
-    team_logo = models.ImageField(null=True)
     team_lead = models.TextField(max_length=20,null=True)
     created_on = models.DateTimeField(auto_now_add=True)
-
+    team_logo = models.TextField(blank=True, null=True)
+    
     def __str__(self) -> str:
         return self.name
 
@@ -42,7 +42,13 @@ class Player(models.Model):
     team = models.ManyToManyField(Team)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     score = models.IntegerField(default=0)
-    activity = models.ManyToManyField(Activity)
+    # activity = models.ManyToManyField(Activity)
 
     def __str__(self):
         return self.user.first_name
+
+# class Logo(models.Model):
+#     title = models.CharField(
+#         max_length=80, blank=False, null=False)
+#     #image_url = S3DirectField(dest='mediafiles/', blank=True)
+#     picture = models.FileField(upload_to='media/', blank=True, null=False)
