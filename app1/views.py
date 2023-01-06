@@ -360,7 +360,7 @@ def delete_teams(request,team_id):
     return HttpResponse(200)
 
 def manage_teams(request, user_id):
-    if request.method == 'POST':
+    if request.method == 'GET':
         players = Player.objects.filter(user_id = user_id)
         teams = []
 
