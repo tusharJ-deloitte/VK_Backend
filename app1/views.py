@@ -397,6 +397,7 @@ def manage_teams(request, user_id):
             activity_name = Activity.objects.get(id = activity_object[0].activity_id).name
             activity_size = Activity.objects.get(id = activity_object[0].activity_id).team_size
             category_id = Activity.objects.get(id = activity_object[0].activity_id).category_id
+            activity_logo = Activity.objects.get(id = activity_object[0].activity_id).activity_logo
             category_name = Category.objects.get(id = category_id).name
             temp_response = {
                 "team_id" : team_id,
@@ -407,6 +408,7 @@ def manage_teams(request, user_id):
                 "team_mem" : team_mem,
                 "activity_name" : activity_name,
                 "actvity_size" : activity_size,
+                "activity_logo" : activity_logo,
                 "category_name" : category_name
             }
             print("team_id", temp_response)

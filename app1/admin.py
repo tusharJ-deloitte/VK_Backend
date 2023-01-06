@@ -12,7 +12,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Activity)
 class ActivityAdmin(admin.ModelAdmin):
-    list_display = ['id', 'name', 'team_size', 'created_on', 'category_id']
+    list_display = ['id', 'name', 'team_size', 'created_on', 'category_id', 'activity_logo']
 
 
 @admin.register(Team)
