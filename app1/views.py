@@ -386,9 +386,11 @@ def manage_teams(request, user_id):
                 print("inside for id : ", user_id)
                 user_object = User.objects.get(id = user_id)
                 first_name = user_object.first_name
+                last_name = user_object.last_name
                 user_email = user_object.email
                 p = {
                     "first_name" : first_name,
+                    "last_name" : last_name,
                     "user_email" : user_email
                 }
                 team_mem.append(p)
