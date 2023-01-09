@@ -4,6 +4,7 @@ from .models import Category,Activity,Team,Player
 import datetime
 from django.contrib.auth.models import User
 
+
 class CreateCategory(graphene.Mutation):
     class Arguments:
         name = graphene.String(required=True)
@@ -105,18 +106,19 @@ class CreateTeam(graphene.Mutation):
         activity = graphene.String()
         currentSize = graphene.Int()
         teamLead = graphene.String()
+        team_logo = graphene.String()
 
         # print(name,activity)
     team = graphene.Field(TeamType)
     print("!!!!!!!!!!!!",team)
-    def mutate(self, info, name,currentSize,teamLead,activity):
+    def mutate(self, info, name,currentSize,teamLead,activity, team_logo):
         print("inside mutate")
         # print(Activity.objects.filter(name=activity))
         team_instance = Team(
             name=name,
             current_size = currentSize,
-            team_lead = teamLead
-
+            team_lead = teamLead,
+            team_logo = team_logo
             )
 
         # print("0")
@@ -159,23 +161,22 @@ class CreateTeam(graphene.Mutation):
 class CreatePlayer(graphene.Mutation):
     class Arguments:
         team_name = graphene.String(required=True)
-        username = graphene.String(required=True)
+        user_email = graphene.String(required=True)
         score = graphene.Int()
-        activity = graphene.String()
         
     player = graphene.Field(PlayerType)
-    def mutate(self,info,team_name,username,score,activity):
+    def mutate(self,info,team_name,user_email,score):
         print("inside")
         player_instance = Player(
             
-            user = User.objects.get(username=username),
+            user = User.objects.get(email=user_email),
             score = score 
         )
         player_instance.save()
-        activity_instance = Activity.objects.filter(name=activity)[0]
-        print(activity_instance)
-        player_instance.activity.add(activity_instance)
-        player_instance.save()
+        # activity_instance = Activity.objects.filter(name=activity)[0]
+        # print(activity_instance)
+        # player_instance.activity.add(activity_instance)
+        # player_instance.save()
         print("000")
         team_instance = Team.objects.filter(name=team_name)[0]
         print(team_instance)
