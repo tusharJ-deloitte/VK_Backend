@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Activity, Player,Team, Category
+from .models import Activity, Player, Team, Category
 from .serializers import PostSerializer
 from rest_framework.renderers import JSONRenderer
 from django.http import HttpResponse, JsonResponse
@@ -17,6 +17,7 @@ from django.core.files.base import ContentFile
 def home(request):
     return render(request, 'app1/home.html')
 
+
 def get_category(request, pk):
     if request.method == 'GET':
         result = schema.execute(
@@ -27,8 +28,7 @@ def get_category(request, pk):
                     createdOn
                 }
             }
-            '''
-            , variables = {'id': pk}
+            ''', variables={'id': pk}
         )
 
         json_post = json.dumps(result.data)
@@ -42,7 +42,7 @@ def create_category(request):
         stream = io.BytesIO(json_data)
         python_data = JSONParser().parse(stream)
         print(python_data["name"])
-        
+
         result = schema.execute(
             '''
             mutation firstMutation ($name : String!){
@@ -53,8 +53,7 @@ def create_category(request):
                     }
                 }
             }
-            '''
-            , variables = {'name': python_data["name"]}
+            ''', variables={'name': python_data["name"]}
         )
 
         print("------------------------")
@@ -64,15 +63,13 @@ def create_category(request):
     return HttpResponse(status=200)
 
 
-
-
 def update_category(request, pk):
     if request.method == 'POST':
         json_data = request.body
         stream = io.BytesIO(json_data)
         python_data = JSONParser().parse(stream)
         print(python_data["name"])
-        
+
         result = schema.execute(
             '''
             mutation updateMutation ($id : ID!, $name : String!){
@@ -84,8 +81,7 @@ def update_category(request, pk):
                     }
                 }
             }
-            '''
-            , variables = {'id' : pk, 'name': python_data["name"]}
+            ''', variables={'id': pk, 'name': python_data["name"]}
         )
 
         print("------------------------")
@@ -106,8 +102,7 @@ def delete_category(request, pk):
                     }
                 }
             }
-            '''
-            , variables = {'id' : pk}
+            ''', variables={'id': pk}
         )
 
         print("------------------------")
@@ -116,13 +111,14 @@ def delete_category(request, pk):
         return HttpResponse(status=200)
     return HttpResponse(status=200)
 
+
 def create_activity(request):
     if request.method == 'POST':
         json_data = request.body
         stream = io.BytesIO(json_data)
         python_data = JSONParser().parse(stream)
         print(python_data["name"])
-        
+
         result = schema.execute(
             '''
             mutation createActivity($name : String!,$category: Int!,$teamSize:Int!){
@@ -134,8 +130,7 @@ def create_activity(request):
                    }
                }
            }
-            '''
-            , variables = {'name': python_data["name"],'category':python_data["category"],'teamSize':python_data["teamSize"]}
+            ''', variables={'name': python_data["name"], 'category': python_data["category"], 'teamSize': python_data["teamSize"]}
         )
 
         print("------------------------")
@@ -145,12 +140,12 @@ def create_activity(request):
 
     return HttpResponse(json_post, content_type='application/json')
 
+
 def update_activity(request, pk):
     if request.method == 'POST':
         json_data = request.body
         stream = io.BytesIO(json_data)
         python_data = JSONParser().parse(stream)
-              
 
         result = schema.execute(
             '''
@@ -168,8 +163,7 @@ def update_activity(request, pk):
                     }
                 }
             }
-            '''
-            , variables = {'id' : pk, 'name': python_data["name"],'categoryId':python_data['categoryId'],'teamSize':python_data['teamSize']}
+            ''', variables={'id': pk, 'name': python_data["name"], 'categoryId': python_data['categoryId'], 'teamSize': python_data['teamSize']}
         )
 
         print("------------------------")
@@ -179,7 +173,8 @@ def update_activity(request, pk):
 
     return HttpResponse(json_post, content_type='application/json')
 
-def get_activity(request,pk):
+
+def get_activity(request, pk):
     if request.method == "GET":
         result = schema.execute(
             '''
@@ -191,13 +186,13 @@ def get_activity(request,pk):
                     teamSize
                 }
             }
-            '''
-            , variables = {'id': pk}
+            ''', variables={'id': pk}
         )
 
         json_post = json.dumps(result.data)
 
     return HttpResponse(json_post, content_type='application/json')
+
 
 def delete_activity(request, pk):
     if request.method == 'DELETE':
@@ -210,8 +205,7 @@ def delete_activity(request, pk):
                     }
                 }
             }
-            '''
-            , variables = {'id' : pk}
+            ''', variables={'id': pk}
         )
 
         print("------------------------")
@@ -219,6 +213,7 @@ def delete_activity(request, pk):
 
         return HttpResponse(status=200)
     return HttpResponse(status=200)
+
 
 def create_teams(request):
     if request.method == 'POST':
@@ -238,6 +233,7 @@ def create_teams(request):
   
             }
 
+
             '''
             , variables = {'name': python_data["name"],'activity':python_data["activity"],'currentSize':python_data["currentSize"],'teamLead':python_data["teamLead"], 'teamLogo' : python_data["team_logo"]}
         )
@@ -250,19 +246,23 @@ def create_teams(request):
                         '''
                         mutation createPlayer($teamName:String!,$userEmail:String!,$score:Int!){
                             createPlayer(teamName:$teamName,userEmail:$userEmail,score:$score){
+
                                 player{
                                     id
                                     score
                                 }
                             }
                         }
+
                         '''
                         , variables = {'teamName': python_data["name"],'userEmail':user_email,'score':0}
                     )
 
+
         json_post = json.dumps(result.data)
 
     return HttpResponse(json_post, content_type='application/json')
+
 
 def update_teams(request, team_id):
     if request.method == 'PUT':
@@ -271,53 +271,51 @@ def update_teams(request, team_id):
         python_data = JSONParser().parse(stream)
         print(python_data)
 
-        team_instance = Team.objects.get(id = team_id)
+        team_instance = Team.objects.get(id=team_id)
         team_instance.name = python_data['name']
         team_instance.team_lead = python_data['teamLead']
         team_instance.current_size = python_data['currentSize']
         team_instance.team_logo = python_data["team_logo"]
         team_instance.save()
 
-        activity_instance = Activity.objects.filter(name = python_data['activity'])[0]
+        activity_instance = Activity.objects.filter(
+            name=python_data['activity'])[0]
         print(activity_instance)
         team_instance.activity.add(activity_instance)
         team_instance.save()
 
-
-
-
-        players = Player.team.through.objects.filter(team_id = team_id)
+        players = Player.team.through.objects.filter(team_id=team_id)
 
         # print("------- : ", players)
         existing_players = []
 
         for player in players:
-            existing_players.append(Player.objects.get(id = player.player_id).user.email) 
+            existing_players.append(Player.objects.get(
+                id=player.player_id).user.email)
 
         print("--------\n", existing_players)
 
         d = {}
 
         for player in existing_players:
-                d[player] = -1
-        
+            d[player] = -1
+
         for player in python_data["players"]:
             if player in d.keys():
                 d[player] = d[player] + 1
-            else :
+            else:
                 d[player] = 1
 
-        
         print("********", d)
 
         for key, value in d.items():
-            username = User.objects.get(email = key).first_name
-            id = User.objects.get(email = key).pk
-            print(username,id)
+            username = User.objects.get(email=key).first_name
+            id = User.objects.get(email=key).pk
+            print(username, id)
 
             if value == 1:
                 result1 = schema.execute(
-                        '''
+                    '''
                         mutation createPlayer($teamName:String!,$userName:String!,$score:Int!,$activity:String!){
                             createPlayer(teamName:$teamName,username:$userName,score:$score,activity:$activity){
                                 player{
@@ -326,25 +324,24 @@ def update_teams(request, team_id):
                                 }
                             }
                         }
-                        '''
-                        , variables = {'teamName': python_data["name"],'activity':python_data["activity"],'userName':username,'score':0}
-                    )
+                        ''', variables={'teamName': python_data["name"], 'activity': python_data["activity"], 'userName': username, 'score': 0}
+                )
 
-            elif value == -1 :
-                l=[]
-                p_id = Player.objects.filter(user_id = id)
-                for item in p_id :
+            elif value == -1:
+                l = []
+                p_id = Player.objects.filter(user_id=id)
+                for item in p_id:
                     l.append(item.pk)
-                
+
                 t_id = Player.team.through.objects.filter(team_id=team_id)
                 for item in t_id:
-                    if item.player_id in l :
-                        Player.objects.get(id = item.player_id).delete()
-               
+                    if item.player_id in l:
+                        Player.objects.get(id=item.player_id).delete()
 
-        return HttpResponse({"msg":"successful"}, content_type='application/json')
+        return HttpResponse({"msg": "successful"}, content_type='application/json')
 
-    return HttpResponse({"msg":"successful"}, content_type='application/json')
+    return HttpResponse({"msg": "successful"}, content_type='application/json')
+
 
 def delete_teams(request,team_id):
     if request.method == 'DELETE':
@@ -359,36 +356,45 @@ def delete_teams(request,team_id):
 
     return HttpResponse(200)
 
+
+
 def manage_teams(request, user_id):
     if request.method == 'GET':
+
         players = Player.objects.filter(user_id = user_id)
+
         teams = []
 
         for player in players:
-            teams.append(Player.team.through.objects.get(player_id = player.id).team_id) 
+            teams.append(Player.team.through.objects.get(
+                player_id=player.id).team_id)
 
         print("teams : ", teams)
-        
+
         response = []
 
         for team in teams:
             team_id = team
-            team_object = Team.objects.get(id = team_id)
+            team_object = Team.objects.get(id=team_id)
             team_name = team_object.name
+            team_lead = team_object.team_lead
             team_size = team_object.current_size
+
             team_lead = team_object.team_lead
             team_logo = team_object.team_logo
             team_mem_ids = Player.team.through.objects.filter(team_id = team_id)
+
             print("team_mem_ids", team_mem_ids)
             team_mem = []
             for id in team_mem_ids:
-                user_id = Player.objects.get(id = id.player_id).user_id
+                user_id = Player.objects.get(id=id.player_id).user_id
                 print("inside for id : ", user_id)
-                user_object = User.objects.get(id = user_id)
+                user_object = User.objects.get(id=user_id)
                 first_name = user_object.first_name
                 last_name = user_object.last_name
                 user_email = user_object.email
                 p = {
+
                     "first_name" : first_name,
                     "last_name" : last_name,
                     "user_email" : user_email
@@ -412,6 +418,7 @@ def manage_teams(request, user_id):
                 "actvity_size" : activity_size,
                 "activity_logo" : activity_logo,
                 "category_name" : category_name
+
             }
             print("team_id", temp_response)
             response.append(temp_response)
