@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User
 
 # Create your models here.
+
+
 class Post(models.Model):
     title = models.CharField(max_length=50)
     content = models.TextField(max_length=200)
@@ -18,8 +20,9 @@ class Category(models.Model):
     def __str__(self) -> str:
         return self.name
 
+
 class Activity(models.Model):
-    category = models.ForeignKey(Category, on_delete = models.CASCADE)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
     name = models.TextField(max_length=20)
     team_size = models.IntegerField(default=1)
     created_on = models.DateTimeField(auto_now_add=True)
@@ -28,16 +31,36 @@ class Activity(models.Model):
     def __str__(self) -> str:
         return self.name
 
+
 class Team(models.Model):
-    activity = models.ManyToManyField(Activity,null=True)
+    activity = models.ManyToManyField(Activity, null=True)
     name = models.TextField(max_length=20)
-    current_size = models.IntegerField(default = 0)
-    team_lead = models.TextField(max_length=20,null=True)
+    current_size = models.IntegerField(default=0)
+    team_lead = models.TextField(max_length=20, null=True)
     created_on = models.DateTimeField(auto_now_add=True)
     team_logo = models.TextField(blank=True, null=True)
-    
+
     def __str__(self) -> str:
         return self.name
+
+
+class Event(models.Model):
+    activity = models.ForeignKey(Activity, on_delete=models.CASCADE)
+    activity_mode = models.TextField(max_length=20)
+    name = models.TextField(max_length=20)
+    start_date = models.DateField()
+    end_date = models.DateField()
+    start_time = models.TimeField()
+    end_time = models.TimeField()
+    max_teams = models.IntegerField(default=5)
+    max_members = models.IntegerField(default=5)
+    first_prize = models.IntegerField(default=100)
+    second_prize = models.IntegerField(default=75)
+    third_prize = models.IntegerField(default=50)
+
+    def __str__(self) -> str:
+        return self.name
+
 
 class Player(models.Model):
     team = models.ManyToManyField(Team)
