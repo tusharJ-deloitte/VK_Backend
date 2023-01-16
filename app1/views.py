@@ -557,6 +557,35 @@ def register(request):
     return HttpResponse(json_post, content_type='application/json')
 
 
+# get all registrations for a event
+def get_all_registrations(request, event_id):
+    if request.method == 'GET':
+        result = schema.execute(
+            '''
+            query{
+                allRegistrations{
+                    event{
+                        id
+                    },
+                    team{
+                        id,
+                        name
+                    }
+                }
+            }
+            ''',
+        )
+
+        all_teams=[]
+        for regs in result.data["allRegistrations"]:
+            e_id = int(regs["event"]["id"])
+            if e_id == event_id:
+                all_teams.append(regs["team"])
+
+        json_response = json.dumps(all_teams)
+        return HttpResponse(json_response, content_type='application/json')
+
+
 # def converter(data):
 #     # data = base64.b64decode(data.encode('UTF-8'))
 #     # buf = io.BytesIO(data)
