@@ -1,6 +1,6 @@
 from graphene_django.types import DjangoObjectType
 from django.contrib.auth.models import User
-from .models import Category, Activity, Team, Player, Event
+from .models import Category, Activity, Team, Player, Event, Registration
 
 
 class UserType(DjangoObjectType):
@@ -40,3 +40,9 @@ class EventType(DjangoObjectType):
         model = Event
         fields = ('id', 'name', 'activity', 'activity_mode', 'start_date', 'end_date', 'start_time', 'end_time',
                   'max_teams', 'max_members', 'first_prize', 'second_prize', 'third_prize',)
+
+
+class RegistrationType(DjangoObjectType):
+    class Meta:
+        model = Registration
+        fields = ('id', 'event', 'team')

@@ -63,7 +63,7 @@ class Event(models.Model):
 
 
 class Registration(models.Model):
-    activity = models.ForeignKey(Activity, on_delete=models.CASCADE)
+    team = models.ForeignKey(Team, on_delete=models.CASCADE)
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
 
     def __str__(self) -> str:

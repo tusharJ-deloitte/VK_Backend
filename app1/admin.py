@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Category, Activity, Team, Player, Event
+from .models import Post, Category, Activity, Team, Player, Event, Registration
 
 # Register your models here.
 
@@ -29,6 +29,11 @@ class TeamAdmin(admin.ModelAdmin):
 @admin.register(Player)
 class PlayerAdmin(admin.ModelAdmin):
     list_display = ['id', 'score', 'user_id']
+
+
+@admin.register(Registration)
+class PlayerAdmin(admin.ModelAdmin):
+    list_display = ['id', 'event_id', 'team_id']
 
 
 @admin.register(Event)
