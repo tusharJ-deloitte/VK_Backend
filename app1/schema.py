@@ -11,9 +11,12 @@ class Query(graphene.ObjectType):
     all_activities = graphene.List(ActivityType)
     team = graphene.Field(TeamType, id=graphene.ID(required=True))
     all_teams = graphene.List(TeamType)
-    player = graphene.Field(PlayerType, id=graphene.ID(required=True))
+    player = graphene.Field(PlayerType,
+                            id=graphene.ID(required=True))
     all_players = graphene.List(PlayerType)
-    event = graphene.Field(EventType, id=graphene.ID(required=True))
+
+    event = graphene.Field(EventType,
+                           id=graphene.ID(required=True))
     all_events = graphene.List(EventType)
 
     def resolve_all_categories(self, info, **kwargs):

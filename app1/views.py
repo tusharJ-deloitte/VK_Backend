@@ -22,9 +22,14 @@ def home(request):
 def get_category(request, pk):
     if request.method == 'GET':
         result = schema.execute(
+
+
+
+
             '''
             query getCategory ($id : ID!){
                 category (id : $id) {
+
                     name
                     createdOn
                 }
@@ -230,8 +235,8 @@ def create_teams(request):
                     team{
                         id
                     }
-                }     
-  
+                }
+
             }
 
 
@@ -446,8 +451,8 @@ def create_event(request):
                     event{
                         name
                     }
-                }     
-  
+                }
+
             }
 
 
@@ -481,7 +486,7 @@ def get_all_events(request):
                     }
                         }
             }
-           
+
             ''',
         )
 
@@ -516,6 +521,14 @@ def update_event(request, event_id):
         event_instance.save()
 
     return HttpResponse({"msg": "successful"}, content_type='application/json')
+
+
+def delete_event(request, event_id):
+    if request.method == 'DELETE':
+
+        ev = Event.objects.get(id=event_id)
+        ev.delete()
+    return HttpResponse(200)
 
 
 # def converter(data):
