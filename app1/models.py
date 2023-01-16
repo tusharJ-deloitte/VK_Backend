@@ -62,6 +62,14 @@ class Event(models.Model):
         return self.name
 
 
+class Registration(models.Model):
+    activity = models.ForeignKey(Activity, on_delete=models.CASCADE)
+    event = models.ForeignKey(Event, on_delete=models.CASCADE)
+
+    def __str__(self) -> str:
+        return self.event.name
+
+
 class Player(models.Model):
     team = models.ManyToManyField(Team)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -70,6 +78,7 @@ class Player(models.Model):
 
     def __str__(self):
         return self.user.first_name
+
 
 # class Logo(models.Model):
 #     title = models.CharField(
