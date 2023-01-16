@@ -61,18 +61,29 @@ class Query(graphene.ObjectType):
 
 
 class Mutation(graphene.ObjectType):
+    #category mutations
     create_category = CreateCategory.Field()
     update_category = UpdateCategory.Field()
     delete_category = DeleteCategory.Field()
+
+    #activity mutations
     create_activity = CreateActivity.Field()
     update_activity = UpdateActivity.Field()
     delete_activity = DeleteActivity.Field()
+
+    #team mutations
     create_team = CreateTeam.Field()
     # update_team = UpdateTeam.Field()
+
+    #player mutations
     create_player = CreatePlayer.Field()
     update_player = UpdatePlayer.Field()
     delete_player = DeletePlayer.Field()
+
+    #event mutations
     create_event = CreateEvent.Field()
+
+    #registrations mutations
     create_registration = CreateRegistration.Field()
 
 
