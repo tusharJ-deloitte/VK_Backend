@@ -468,31 +468,38 @@ def get_all_events(request):
     if request.method == 'GET':
         result = schema.execute(
             '''query{
-                 allEvents{
-                    id,
-                    name,
-                    activityMode,
-                    maxTeams,
-                    maxMembers,
-                    startDate,
-                    endDate,
-                    startTime,
-                    endTime,
-                    firstPrize,
-                    secondPrize,
-                    thirdPrize,
-                    activity{
-                        name
-                    }
-                        }
-            }
+                    allEvents{
+                        id,
+                        name,
+                        activityMode,
+                        maxTeams,
+                        maxMembers,
+                        curParticipation,
+                        startDate,
+                        endDate,
+                        startTime,
+                        endTime,
+                        firstPrize,
+                        secondPrize,
+                        thirdPrize,
+                        activity{
+                            name,
+                            activityLogo
+                        
+                            
 
-            ''',
+                        }
+                            }
+                }
+
+                ''',
         )
 
         json_post = json.dumps(result.data)
 
-    return HttpResponse(json_post, content_type='application/json')
+        return HttpResponse(json_post, content_type='application/json')
+    # print(result.data['allEvents'])
+    # return result.data['allEvents']
 
 
 def update_event(request, event_id):
@@ -502,22 +509,23 @@ def update_event(request, event_id):
         python_data = JSONParser().parse(stream)
         print(python_data)
 
-        result = schema.execute(
-            '''
-            mutation createEvent($name : String!,$activityName: String!,$activityMode: String!,$maxTeams:Int!,$maxMembers:Int!,$firstPrize:Int!,$secondPrize:Int!,$thirdPrize:Int!,$startDate:Date!,$endDate:Date!,$startTime:Time!,$endTime:Time!){
-               createEvent(name:$name,activityName:$activityName,activityMode:$activityMode,maxTeams:$maxTeams,maxMembers:$maxMembers, firstPrize:$firstPrize,secondPrize:$secondPrize,thirdPrize:$thirdPrize,startTime:$startTime,endTime:$endTime,startDate:$startDate,endDate:$endDate){
-                    event{
-                        name
-                    }
-                }
+        event_instance = Event.objects.get(id=event_id)
+        event_instance.name = python_data["name"]
+        event_instance.activity_mode = python_data["activityMode"]
+        event_instance.start_date = python_data["startDate"]
+        event_instance.end_date = python_data["endDate"]
+        event_instance.start_time = python_data["startTime"]
+        event_instance.end_time = python_data["endTime"]
+        event_instance.max_teams = python_data["maxTeams"]
+        event_instance.max_members = python_data["maxMembers"]
+        event_instance.first_prize = python_data["firstPrize"]
+        event_instance.second_prize = python_data["secondPrize"]
+        event_instance.third_prize = python_data["thirdPrize"]
 
-            }
-
-
-            ''', variables={'name': python_data["name"], 'activityName': python_data["activityName"], 'activityMode': python_data['activityMode'], 'maxTeams': python_data["maxTeams"], 'maxMembers': python_data["maxMembers"], 'firstPrize': python_data["firstPrize"], 'secondPrize': python_data["secondPrize"], 'thirdPrize': python_data["thirdPrize"], 'startDate': python_data['startDate'], 'endDate': python_data['endDate'], 'startTime': python_data['startTime'], 'endTime': python_data['endTime']}
-        )
-
-        json_post = json.dumps(result.data)
+        activity_instance = Activity.objects.get(
+            name=python_data["activityName"])
+        event_instance.activity = activity_instance
+        event_instance.save()
 
     return HttpResponse({"msg": "successful"}, content_type='application/json')
 
@@ -539,9 +547,9 @@ def register(request):
 
         result = schema.execute(
             '''
-            mutation createRegistration($event_id : ID!,$team_id: ID!){
-               createRegistration(event_id:$event_id,team_id:$team_id){
-                    registration{
+            mutation createRegistration($eventId : ID!,$teamId: ID!){
+               createRegistration(eventId:$eventId,teamId:$teamId){
+                    reg{
                         id
                     }
                 }
@@ -549,10 +557,15 @@ def register(request):
             }
 
 
-            ''', variables={'event_id': python_data["event_id"], 'team_id': python_data["team_id"]}
+            ''', variables={'eventId': python_data["event_id"], 'teamId': python_data["team_id"]}
         )
 
         json_post = json.dumps(result.data)
+        size = Team.objects.get(id=python_data["team_id"]).current_size
+        event = Event.objects.get(id=python_data["event_id"])
+        event.cur_participation = event.cur_participation+size
+        event.save()
+        print(event.cur_participation)
 
     return HttpResponse(json_post, content_type='application/json')
 

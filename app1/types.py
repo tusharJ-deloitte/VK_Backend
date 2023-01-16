@@ -19,7 +19,8 @@ class CategoryType(DjangoObjectType):
 class ActivityType(DjangoObjectType):
     class Meta:
         model = Activity
-        fields = ('id', 'name', 'team_size', 'created_on', 'category_id')
+        fields = ('id', 'name', 'team_size', 'created_on',
+                  'category_id', 'activity_logo')
 
 
 class TeamType(DjangoObjectType):
@@ -39,7 +40,7 @@ class EventType(DjangoObjectType):
     class Meta:
         model = Event
         fields = ('id', 'name', 'activity', 'activity_mode', 'start_date', 'end_date', 'start_time', 'end_time',
-                  'max_teams', 'max_members', 'first_prize', 'second_prize', 'third_prize',)
+                  'max_teams', 'max_members', 'first_prize', 'second_prize', 'third_prize', 'cur_participation')
 
 
 class RegistrationType(DjangoObjectType):

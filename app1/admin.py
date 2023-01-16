@@ -39,4 +39,4 @@ class PlayerAdmin(admin.ModelAdmin):
 @admin.register(Event)
 class PlayerAdmin(admin.ModelAdmin):
     list_display = ['id', 'name', 'activity_id', 'activity_mode', 'start_date', 'end_date', 'start_time', 'end_time',
-                    'max_teams', 'max_members', 'first_prize', 'second_prize', 'third_prize']
+                    'max_teams', 'max_members', 'first_prize', 'second_prize', 'third_prize', 'cur_participation']
