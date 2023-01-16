@@ -1,6 +1,6 @@
 import graphene
-from app1.types import CategoryType, ActivityType, TeamType, PlayerType, EventType
-from .models import Category, Activity, Team, Player, Event
+from app1.types import CategoryType, ActivityType, TeamType, PlayerType, EventType, RegistrationType
+from .models import Category, Activity, Team, Player, Event, Registration
 import datetime
 from django.contrib.auth.models import User
 
@@ -271,3 +271,22 @@ class DeletePlayer(graphene.Mutation):
         player_instance = Player.objects.get(id=player_id)
         player_instance.delete()
         return DeletePlayer(player_instance)
+
+
+class CreateRegistration(graphene.Mutation):
+    class Arguments:
+        event_id = graphene.ID()
+        team_id = graphene.ID()
+
+    reg = graphene.Field(RegistrationType)
+
+    def mutate(self, info, event_id, team_id):
+        print("inside")
+        reg_instance = Registration(
+            team=Team.objects.get(id=team_id),
+            event=Event.objects.get(id=event_id)
+        )
+        reg_instance.save()
+        print("outside")
+
+        return CreateRegistration(reg=reg_instance)

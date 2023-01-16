@@ -57,13 +57,14 @@ class Event(models.Model):
     first_prize = models.IntegerField(default=100)
     second_prize = models.IntegerField(default=75)
     third_prize = models.IntegerField(default=50)
+    cur_participation = models.IntegerField(default=0)
 
     def __str__(self) -> str:
         return self.name
 
 
 class Registration(models.Model):
-    activity = models.ForeignKey(Activity, on_delete=models.CASCADE)
+    team = models.ForeignKey(Team, on_delete=models.CASCADE)
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
 
     def __str__(self) -> str:

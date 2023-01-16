@@ -468,31 +468,38 @@ def get_all_events(request):
     if request.method == 'GET':
         result = schema.execute(
             '''query{
-                 allEvents{
-                    id,
-                    name,
-                    activityMode,
-                    maxTeams,
-                    maxMembers,
-                    startDate,
-                    endDate,
-                    startTime,
-                    endTime,
-                    firstPrize,
-                    secondPrize,
-                    thirdPrize,
-                    activity{
-                        name
-                    }
-                        }
-            }
+                    allEvents{
+                        id,
+                        name,
+                        activityMode,
+                        maxTeams,
+                        maxMembers,
+                        curParticipation,
+                        startDate,
+                        endDate,
+                        startTime,
+                        endTime,
+                        firstPrize,
+                        secondPrize,
+                        thirdPrize,
+                        activity{
+                            name,
+                            activityLogo
+                        
+                            
 
-            ''',
+                        }
+                            }
+                }
+
+                ''',
         )
 
         json_post = json.dumps(result.data)
 
-    return HttpResponse(json_post, content_type='application/json')
+        return HttpResponse(json_post, content_type='application/json')
+    # print(result.data['allEvents'])
+    # return result.data['allEvents']
 
 
 def update_event(request, event_id):
@@ -529,6 +536,67 @@ def delete_event(request, event_id):
         ev = Event.objects.get(id=event_id)
         ev.delete()
     return HttpResponse(200)
+
+
+def register(request):
+    if request.method == 'POST':
+        json_data = request.body
+        stream = io.BytesIO(json_data)
+        python_data = JSONParser().parse(stream)
+        print(python_data)
+
+        result = schema.execute(
+            '''
+            mutation createRegistration($eventId : ID!,$teamId: ID!){
+               createRegistration(eventId:$eventId,teamId:$teamId){
+                    reg{
+                        id
+                    }
+                }
+
+            }
+
+
+            ''', variables={'eventId': python_data["event_id"], 'teamId': python_data["team_id"]}
+        )
+
+        json_post = json.dumps(result.data)
+        size = Team.objects.get(id=python_data["team_id"]).current_size
+        event = Event.objects.get(id=python_data["event_id"])
+        event.cur_participation = event.cur_participation+size
+        event.save()
+        print(event.cur_participation)
+
+    return HttpResponse(json_post, content_type='application/json')
+
+
+# get all registrations for a event
+def get_all_registrations(request, event_id):
+    if request.method == 'GET':
+        result = schema.execute(
+            '''
+            query{
+                allRegistrations{
+                    event{
+                        id
+                    },
+                    team{
+                        id,
+                        name
+                    }
+                }
+            }
+            ''',
+        )
+
+        all_teams=[]
+        for regs in result.data["allRegistrations"]:
+            e_id = int(regs["event"]["id"])
+            if e_id == event_id:
+                all_teams.append(regs["team"])
+
+        json_response = json.dumps(all_teams)
+        return HttpResponse(json_response, content_type='application/json')
 
 
 # def converter(data):
