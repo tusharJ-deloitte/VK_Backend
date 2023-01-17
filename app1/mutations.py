@@ -1,6 +1,6 @@
 import graphene
-from app1.types import CategoryType,ActivityType,TeamType,PlayerType
-from .models import Category,Activity,Team,Player
+from app1.types import CategoryType,ActivityType,TeamType,PlayerType,UploadType
+from .models import Category,Activity,Team,Player,Upload
 import datetime
 from django.contrib.auth.models import User
 
@@ -46,21 +46,22 @@ class DeleteCategory(graphene.Mutation):
         category_instance = Category.objects.get(id = id)
         category_instance.delete()
         return DeleteCategory(category = category_instance)
-
 class CreateActivity(graphene.Mutation):
     class Arguments:
         name = graphene.String(required=True)
-        category = graphene.Int(required=True)
+        category = graphene.String(required=True)
         # category = graphene.Field(CategoryType,required=True)
         team_size = graphene.Int(required=True)
+        activity_logo = graphene.String()
     
     activity = graphene.Field(ActivityType)
 
-    def mutate(self, info, name, category, team_size):
+    def mutate(self, info, name, category, team_size,activity_logo):
         activity_instance = Activity(
             name = name,
-            category = Category.objects.get(id=category),
-            team_size = team_size            
+            category = Category.objects.get(name=category),
+            team_size = team_size,
+            activity_logo = activity_logo         
         )
         activity_instance.save()
         return CreateActivity(activity = activity_instance)
@@ -69,18 +70,19 @@ class UpdateActivity(graphene.Mutation):
     class Arguments:
         id=graphene.ID(required=True)
         name=graphene.String()
-        category_id = graphene.Int()
+        category = graphene.String()
         team_size = graphene.Int()
+        activity_logo = graphene.String()
 
     activity = graphene.Field(ActivityType)    
 
-    def mutate(self, info, id, name,category_id,team_size):
+    def mutate(self, info, id, name,category,team_size,activity_logo):
         print("inside mutate")
         activity_instance = Activity.objects.get(id= id)
         activity_instance.name = name
-        activity_instance.category = Category.objects.get(id=category_id)#filter(name=category_id)[0]
+        activity_instance.category = Category.objects.get(name=category)#filter(name=category_id)[0]
         # print(Category.objects.filter(name=category_id)[0])
-        
+        activity_instance.activity_logo=activity_logo
         activity_instance.team_size = team_size
         activity_instance.created_on = datetime.datetime.utcnow()
         activity_instance.save()
@@ -105,18 +107,19 @@ class CreateTeam(graphene.Mutation):
         activity = graphene.String()
         currentSize = graphene.Int()
         teamLead = graphene.String()
+        team_logo = graphene.String()
 
         # print(name,activity)
     team = graphene.Field(TeamType)
     print("!!!!!!!!!!!!",team)
-    def mutate(self, info, name,currentSize,teamLead,activity):
+    def mutate(self, info, name,currentSize,teamLead,activity, team_logo):
         print("inside mutate")
         # print(Activity.objects.filter(name=activity))
         team_instance = Team(
             name=name,
             current_size = currentSize,
-            team_lead = teamLead
-
+            team_lead = teamLead,
+            team_logo = team_logo
             )
 
         # print("0")
@@ -159,30 +162,43 @@ class CreateTeam(graphene.Mutation):
 class CreatePlayer(graphene.Mutation):
     class Arguments:
         team_name = graphene.String(required=True)
-        username = graphene.String(required=True)
+        user_email = graphene.String(required=True)
         score = graphene.Int()
-        activity = graphene.String()
         
     player = graphene.Field(PlayerType)
-    def mutate(self,info,team_name,username,score,activity):
+    def mutate(self,info,team_name,user_email,score):
         print("inside")
         player_instance = Player(
             
-            user = User.objects.get(username=username),
+            user = User.objects.get(email=user_email),
             score = score 
         )
         player_instance.save()
-        activity_instance = Activity.objects.filter(name=activity)[0]
-        print(activity_instance)
-        player_instance.activity.add(activity_instance)
-        player_instance.save()
+        # activity_instance = Activity.objects.filter(name=activity)[0]
+        # print(activity_instance)
+        # player_instance.activity.add(activity_instance)
+        # player_instance.save()
         print("000")
         team_instance = Team.objects.filter(name=team_name)[0]
         print(team_instance)
         player_instance.team.add(team_instance)
         print(team_instance)
-        
+
         return CreatePlayer(player_instance)
+        
+class CreateUpload(graphene.Mutation):
+    class Arguments:
+        user_email = graphene.String(required=True)
+
+    upload = graphene.Field(UploadType)
+    def mutate(self,info,user_email):
+        upload_instance = Upload(
+            user = User.objects.get(email=user_email)
+        )
+        upload_instance.save()
+        return CreateUpload(upload_instance)
+
+
 
 class UpdatePlayer(graphene.Mutation):
     class Arguments:
@@ -212,4 +228,3 @@ class DeletePlayer(graphene.Mutation):
         player_instance = Player.objects.get(id=player_id)
         player_instance.delete()
         return DeletePlayer(player_instance)
-        

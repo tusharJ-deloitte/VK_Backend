@@ -1,7 +1,7 @@
 import graphene
-from .models import Category, Activity, Team, Player
-from app1.types import CategoryType, ActivityType, TeamType, PlayerType
-from .mutations import CreateCategory, UpdateCategory,DeleteCategory,CreateActivity,UpdateActivity,DeleteActivity,CreateTeam,CreatePlayer,UpdatePlayer,DeletePlayer
+from .models import Category, Activity, Team, Player,Upload
+from app1.types import CategoryType, ActivityType, TeamType, PlayerType,UploadType
+from .mutations import CreateCategory, UpdateCategory,DeleteCategory,CreateActivity,UpdateActivity,DeleteActivity,CreateTeam,CreatePlayer,UpdatePlayer,DeletePlayer,CreateUpload
 
 class Query(graphene.ObjectType):
     category = graphene.Field(CategoryType, id=graphene.ID(required=True))
@@ -12,7 +12,9 @@ class Query(graphene.ObjectType):
     all_teams = graphene.List(TeamType)
     player = graphene.Field(PlayerType,id=graphene.ID(required=True))
     all_players = graphene.List(PlayerType)
-
+    upload = graphene.Field(UploadType,id=graphene.ID(required=True))
+    all_uploads = graphene.List(UploadType)
+    
     def resolve_all_categories(self, info, **kwargs):
         return Category.objects.all()
     
@@ -36,7 +38,13 @@ class Query(graphene.ObjectType):
     
     def resolve_all_players(self,info,**kwargs):
         return Player.objects.all()
-        
+
+    def resolve_upload(self,info,id):
+        return Upload.objects.get(id=id)
+
+    def resolve_all_uploads(self,info,**kwargs):
+        return Upload.objects.all()
+      
 
 class Mutation(graphene.ObjectType):
     create_category = CreateCategory.Field()
@@ -50,6 +58,7 @@ class Mutation(graphene.ObjectType):
     create_player = CreatePlayer.Field()
     update_player = UpdatePlayer.Field()
     delete_player = DeletePlayer.Field()
+    create_upload = CreateUpload.Field()
 
 schema = graphene.Schema(query=Query, mutation=Mutation) 
 

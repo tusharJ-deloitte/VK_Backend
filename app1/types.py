@@ -1,6 +1,6 @@
 from graphene_django.types import DjangoObjectType
 from django.contrib.auth.models import User
-from .models import Category, Activity, Team, Player
+from .models import Category, Activity, Team, Player, Upload
 
 class UserType(DjangoObjectType):
     class Meta:
@@ -16,7 +16,7 @@ class CategoryType(DjangoObjectType):
 class ActivityType(DjangoObjectType):
     class Meta:
         model = Activity
-        fields = ('id', 'name', 'team_size', 'created_on', 'category_id')
+        fields = ('id', 'name', 'team_size', 'created_on', 'category_id','activity_logo')
 
 class TeamType(DjangoObjectType):
     class Meta:
@@ -27,3 +27,8 @@ class PlayerType(DjangoObjectType):
     class Meta:
         model = Player
         fields = ('id', 'score', 'team_id','activity_id','user_id')
+
+class UploadType(DjangoObjectType):
+    class Meta:
+        model = Upload
+        fields=('id','user_id','uploaded_file')

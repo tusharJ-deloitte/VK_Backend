@@ -1,17 +1,23 @@
 from django.shortcuts import render
-from .models import Activity, Player,Team
-from .serializers import PostSerializer
-from rest_framework.renderers import JSONRenderer
-from django.http import HttpResponse, JsonResponse
+from .models import Activity, Player,Team, Category,Upload
+from django.http import HttpResponse,HttpResponseBadRequest
 import io
 from rest_framework.parsers import JSONParser
 from .schema import schema
 import json
 from django.contrib.auth.models import User
-
-
+from rest_framework import viewsets
+import base64
+from PIL import Image
+from django.core.files.uploadedfile import InMemoryUploadedFile
+from django.core.files.base import ContentFile
+import boto
+from boto.s3.key import Key
+from GrapheneTest import settings
+import os
 def home(request):
     return render(request, 'app1/home.html')
+
 
 def get_category(request, pk):
     if request.method == 'GET':
@@ -23,8 +29,7 @@ def get_category(request, pk):
                     createdOn
                 }
             }
-            '''
-            , variables = {'id': pk}
+            ''', variables={'id': pk}
         )
 
         json_post = json.dumps(result.data)
@@ -38,7 +43,7 @@ def create_category(request):
         stream = io.BytesIO(json_data)
         python_data = JSONParser().parse(stream)
         print(python_data["name"])
-        
+
         result = schema.execute(
             '''
             mutation firstMutation ($name : String!){
@@ -49,8 +54,7 @@ def create_category(request):
                     }
                 }
             }
-            '''
-            , variables = {'name': python_data["name"]}
+            ''', variables={'name': python_data["name"]}
         )
 
         print("------------------------")
@@ -60,15 +64,13 @@ def create_category(request):
     return HttpResponse(status=200)
 
 
-
-
 def update_category(request, pk):
     if request.method == 'POST':
         json_data = request.body
         stream = io.BytesIO(json_data)
         python_data = JSONParser().parse(stream)
         print(python_data["name"])
-        
+
         result = schema.execute(
             '''
             mutation updateMutation ($id : ID!, $name : String!){
@@ -80,8 +82,7 @@ def update_category(request, pk):
                     }
                 }
             }
-            '''
-            , variables = {'id' : pk, 'name': python_data["name"]}
+            ''', variables={'id': pk, 'name': python_data["name"]}
         )
 
         print("------------------------")
@@ -102,8 +103,7 @@ def delete_category(request, pk):
                     }
                 }
             }
-            '''
-            , variables = {'id' : pk}
+            ''', variables={'id': pk}
         )
 
         print("------------------------")
@@ -112,26 +112,25 @@ def delete_category(request, pk):
         return HttpResponse(status=200)
     return HttpResponse(status=200)
 
+
 def create_activity(request):
     if request.method == 'POST':
         json_data = request.body
         stream = io.BytesIO(json_data)
         python_data = JSONParser().parse(stream)
         print(python_data["name"])
-        
+
         result = schema.execute(
             '''
-            mutation createActivity($name : String!,$category: Int!,$teamSize:Int!){
-               createActivity(name:$name,category:$category,teamSize:$teamSize){
+            mutation createActivity($name : String!,$category: String!,$teamSize:Int!,$activityLogo:String!){
+               createActivity(name:$name,category:$category,teamSize:$teamSize,activityLogo:$activityLogo){
                    activity{
                        name
                        id
-                       teamSize
                    }
                }
            }
-            '''
-            , variables = {'name': python_data["name"],'category':python_data["category"],'teamSize':python_data["teamSize"]}
+            ''', variables={'name': python_data["name"], 'category': python_data["category"], 'teamSize': python_data["teamSize"],'activityLogo':python_data["activityLogo"]}
         )
 
         print("------------------------")
@@ -141,31 +140,27 @@ def create_activity(request):
 
     return HttpResponse(json_post, content_type='application/json')
 
-def update_activity(request, pk):
+
+def update_activity(request, activity_id):
     if request.method == 'POST':
         json_data = request.body
         stream = io.BytesIO(json_data)
         python_data = JSONParser().parse(stream)
-              
 
         result = schema.execute(
             '''
-            mutation updateActivity($id:ID!,$name : String!,$categoryId:Int!,$teamSize:Int!){
-	            updateActivity(id:$id,name : $name,categoryId:$categoryId,teamSize:$teamSize){
+            mutation updateActivity($id:ID!,$name : String!,$category:String!,$teamSize:Int!,$activityLogo:String!){
+	            updateActivity(id:$id,name : $name,category:$category,teamSize:$teamSize,activityLogo:$activityLogo){
                     activity{
                         id
                         name
                         createdOn
                         teamSize
-                        category{
-                            id
-                            name
-                        }
+                        activityLogo
                     }
                 }
             }
-            '''
-            , variables = {'id' : pk, 'name': python_data["name"],'categoryId':python_data['categoryId'],'teamSize':python_data['teamSize']}
+            ''', variables={'id': activity_id, 'name': python_data["name"], 'category': python_data['category'], 'teamSize': python_data['teamSize'],'activityLogo':python_data['activityLogo']}
         )
 
         print("------------------------")
@@ -175,7 +170,8 @@ def update_activity(request, pk):
 
     return HttpResponse(json_post, content_type='application/json')
 
-def get_activity(request,pk):
+
+def get_activity(request, activity_id):
     if request.method == "GET":
         result = schema.execute(
             '''
@@ -187,13 +183,13 @@ def get_activity(request,pk):
                     teamSize
                 }
             }
-            '''
-            , variables = {'id': pk}
+            ''', variables={'id': activity_id}
         )
 
         json_post = json.dumps(result.data)
 
     return HttpResponse(json_post, content_type='application/json')
+
 
 def delete_activity(request, pk):
     if request.method == 'DELETE':
@@ -206,8 +202,7 @@ def delete_activity(request, pk):
                     }
                 }
             }
-            '''
-            , variables = {'id' : pk}
+            ''', variables={'id': pk}
         )
 
         print("------------------------")
@@ -216,17 +211,18 @@ def delete_activity(request, pk):
         return HttpResponse(status=200)
     return HttpResponse(status=200)
 
+
 def create_teams(request):
     if request.method == 'POST':
         json_data = request.body
         stream = io.BytesIO(json_data)
         python_data = JSONParser().parse(stream)
         print(python_data)
-        
+
         result = schema.execute(
             '''
-            mutation createTeams($name : String!,$activity: String!,$currentSize:Int!,$teamLead:String!){
-               createTeam(name:$name,activity:$activity,teamLead:$teamLead,currentSize:$currentSize){
+            mutation createTeams($name : String!,$activity: String!,$currentSize:Int!,$teamLead:String!,$teamLogo:String!){
+               createTeam(name:$name,activity:$activity,teamLead:$teamLead,currentSize:$currentSize, teamLogo:$teamLogo){
                     team{
                         id
                     }
@@ -234,29 +230,35 @@ def create_teams(request):
   
             }
 
+
             '''
-            , variables = {'name': python_data["name"],'activity':python_data["activity"],'currentSize':python_data["currentSize"],'teamLead':python_data["teamLead"]}
+            , variables = {'name': python_data["name"],'activity':python_data["activity"],'currentSize':python_data["currentSize"],'teamLead':python_data["teamLead"], 'teamLogo' : python_data["team_logo"]}
         )
-        
+
+        # team = Team.objects.get(name = python_data["name"])
+        # team.team_logo = Te
         for item in range(0,python_data["currentSize"]):
-                username = python_data['members'][item]
+                user_email = python_data['players'][item]
                 result1 = schema.execute(
                         '''
-                        mutation createPlayer($teamName:String!,$userName:String!,$score:Int!,$activity:String!){
-                            createPlayer(teamName:$teamName,username:$userName,score:$score,activity:$activity){
+                        mutation createPlayer($teamName:String!,$userEmail:String!,$score:Int!){
+                            createPlayer(teamName:$teamName,userEmail:$userEmail,score:$score){
                                 player{
                                     id
                                     score
                                 }
                             }
                         }
+
                         '''
-                        , variables = {'teamName': python_data["name"],'activity':python_data["activity"],'userName':username,'score':0}
+                        , variables = {'teamName': python_data["name"],'userEmail':user_email,'score':0}
                     )
+
 
         json_post = json.dumps(result.data)
 
     return HttpResponse(json_post, content_type='application/json')
+
 
 def update_teams(request, team_id):
     if request.method == 'PUT':
@@ -265,52 +267,52 @@ def update_teams(request, team_id):
         python_data = JSONParser().parse(stream)
         print(python_data)
 
-        team_instance = Team.objects.get(id = team_id)
+        team_instance = Team.objects.get(id=team_id)
         team_instance.name = python_data['name']
         team_instance.team_lead = python_data['teamLead']
         team_instance.current_size = python_data['currentSize']
+        team_instance.team_logo = python_data["team_logo"]
         team_instance.save()
 
-        activity_instance = Activity.objects.filter(name = python_data['activity'])[0]
+        Team.activity.through.objects.filter(team_id=team_id)[0].delete()
+        
+        activity_instance = Activity.objects.filter(name=python_data['activity'])[0]
         print(activity_instance)
         team_instance.activity.add(activity_instance)
+        
         team_instance.save()
 
-
-
-
-        players = Player.team.through.objects.filter(team_id = team_id)
+        players = Player.team.through.objects.filter(team_id=team_id)
 
         # print("------- : ", players)
         existing_players = []
 
         for player in players:
-            existing_players.append(Player.objects.get(id = player.player_id).user.email) 
+            existing_players.append(Player.objects.get(id=player.player_id).user.email)
 
         print("--------\n", existing_players)
 
         d = {}
 
         for player in existing_players:
-                d[player] = -1
-        
+            d[player] = -1
+
         for player in python_data["players"]:
             if player in d.keys():
                 d[player] = d[player] + 1
-            else :
+            else:
                 d[player] = 1
 
-        
         print("********", d)
 
         for key, value in d.items():
-            username = User.objects.get(email = key).first_name
-            id = User.objects.get(email = key).pk
-            print(username,id)
+            username = User.objects.get(email=key).first_name
+            id = User.objects.get(email=key).pk
+            print(username, id)
 
             if value == 1:
                 result1 = schema.execute(
-                        '''
+                    '''
                         mutation createPlayer($teamName:String!,$userName:String!,$score:Int!,$activity:String!){
                             createPlayer(teamName:$teamName,username:$userName,score:$score,activity:$activity){
                                 player{
@@ -319,38 +321,157 @@ def update_teams(request, team_id):
                                 }
                             }
                         }
-                        '''
-                        , variables = {'teamName': python_data["name"],'activity':python_data["activity"],'userName':username,'score':0}
-                    )
+                        ''', variables={'teamName': python_data["name"], 'activity': python_data["activity"], 'userName': username, 'score': 0}
+                )
 
-            elif value == -1 :
-                l=[]
-                p_id = Player.objects.filter(user_id = id)
-                for item in p_id :
+            elif value == -1:
+                l = []
+                p_id = Player.objects.filter(user_id=id)
+                for item in p_id:
                     l.append(item.pk)
-                
+
                 t_id = Player.team.through.objects.filter(team_id=team_id)
                 for item in t_id:
-                    if item.player_id in l :
-                        Player.objects.get(id = item.player_id).delete()
-               
+                    if item.player_id in l:
+                        Player.objects.get(id=item.player_id).delete()
 
-        return HttpResponse({"msg":"successful"}, content_type='application/json')
+        return HttpResponse({"msg": "successful"}, content_type='application/json')
 
-    return HttpResponse({"msg":"successful"}, content_type='application/json')
+    return HttpResponse({"msg": "successful"}, content_type='application/json')
 
-def get_teams(request,user_email):
-    if request.method == 'GET':
-        user_id = User.objects.get(email = user_email).pk
-        l=[item.pk for item in Player.objects.filter(user_id = user_id)]
-        team_id =[Player.team.through.objects.filter(player_id = item)[0].team_id for item in l]
-
-    return HttpResponse(200)
 
 def delete_teams(request,team_id):
     if request.method == 'DELETE':
+
         pt = Player.team.through.objects.filter(team_id=team_id)
+
         for item in pt:
+
             Player.objects.get(id = item.player_id).delete()
+
         Team.objects.get(id = team_id).delete()
+
     return HttpResponse(200)
+
+def manage_teams(request, user_id):
+
+    if request.method == 'GET':
+
+        players = Player.objects.filter(user_id = user_id)
+
+        teams = []
+        print(players)
+        for player in players:
+            print("inside")
+            print(player)
+            teams.append(Player.team.through.objects.get(player_id=player.id).team_id)
+
+        print("teams : ", teams)
+
+        response = []
+
+        for team in teams:
+            team_id = team
+            team_object = Team.objects.get(id=team_id)
+            team_name = team_object.name
+            team_lead = team_object.team_lead
+            team_size = team_object.current_size
+
+            team_lead = team_object.team_lead
+            team_logo = team_object.team_logo
+            team_mem_ids = Player.team.through.objects.filter(team_id = team_id)
+
+            print("team_mem_ids", team_mem_ids)
+            team_mem = []
+            for id in team_mem_ids:
+                user_id = Player.objects.get(id=id.player_id).user_id
+                print("inside for id : ", user_id)
+                user_object = User.objects.get(id=user_id)
+                first_name = user_object.first_name
+                last_name = user_object.last_name
+                user_email = user_object.email
+                p = {
+
+                    "first_name" : first_name,
+                    "last_name" : last_name,
+                    "user_email" : user_email
+                }
+                team_mem.append(p)
+
+            activity_object = Team.activity.through.objects.filter(team_id = team_id)
+            print(activity_object)
+            activity_name = Activity.objects.get(id = activity_object[0].activity_id).name
+            activity_size = Activity.objects.get(id = activity_object[0].activity_id).team_size
+            category_id = Activity.objects.get(id = activity_object[0].activity_id).category_id
+            activity_logo = Activity.objects.get(id = activity_object[0].activity_id).activity_logo
+            category_name = Category.objects.get(id = category_id).name
+            temp_response = {
+                "team_id" : team_id,
+                "team_name" : team_name,
+                "team_size" : team_size,
+                "team_lead" : team_lead,
+                "team_logo" : team_logo,
+                "team_mem" : team_mem,
+                "activity_name" : activity_name,
+                "actvity_size" : activity_size,
+                "activity_logo" : activity_logo,
+                "category_name" : category_name
+
+            }
+            print("team_id", temp_response)
+            response.append(temp_response)
+
+        json_post = json.dumps(response)
+
+    return HttpResponse(json_post, content_type='application/json')
+
+
+def get_activity_list(request):
+    if request.method == 'GET':
+        response = [item.name for item in Activity.objects.all()]
+        json_post = json.dumps(response)
+        return HttpResponse(json_post, content_type='application/json')
+
+
+
+
+def upload_aws(request,user_id):
+    if request.method=='POST':
+        my_uploaded_file = request.FILES.get('my_uploaded_file')
+        # print(type(my_uploaded_file))
+        print(my_uploaded_file.name)
+        my_uploaded_file.name=str(user_id)+"___"+my_uploaded_file.name
+        print(my_uploaded_file.content_type)
+        print(my_uploaded_file.size)
+        # if my_uploaded_file.size > settings.MAX_UPLOAD_SIZE:
+        #     return HttpResponseBadRequest("upload file size should not be greater than 100MB")
+
+        userEmail = User.objects.get(id=user_id).email
+        result1 = schema.execute(
+            '''
+            mutation CreateUpload($userEmail:String!){
+                createUpload(userEmail:$userEmail){
+                    upload{
+                        id
+                    }
+                }
+            }
+            '''
+            ,variables = {'userEmail':userEmail})
+        upload_instance = Upload.objects.get(user_id  = user_id)
+        upload_instance.uploaded_file = my_uploaded_file
+        upload_instance.save()
+          
+        return HttpResponse(200)
+
+def download_bucket(request,user_id):
+    if request.method == 'GET':
+        conn = boto.connect_s3(settings.AWS_ACCESS_KEY_ID,settings.AWS_SECRET_ACCESS_KEY)
+        bucket = conn.get_bucket(settings.AWS_STORAGE_BUCKET_NAME)
+        bucket_list = bucket.list()
+        for l in bucket_list:
+            if str(l.key).split("/")[-1].split("___")[0] == str(user_id):
+                l.get_contents_to_filename(settings.LOCAL_PATH+str(l.key)) 
+                return HttpResponse(200)
+        
+        return HttpResponse(200)  
