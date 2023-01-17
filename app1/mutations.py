@@ -290,3 +290,37 @@ class CreateRegistration(graphene.Mutation):
         print("outside")
 
         return CreateRegistration(reg=reg_instance)
+
+# update team scores and then players score as well
+class UpdateTeamScores(graphene.Mutation):
+    class Arguments:
+        event_id = graphene.ID()
+        first_prize_team_id = graphene.ID()
+        second_prize_team_id = graphene.ID()
+        third_prize_team_id = graphene.ID()
+
+    event = graphene.Field(EventType)
+
+    def mutate(self, info, event_id, first_prize_team_id, second_prize_team_id, third_prize_team_id):
+        print("inside mutate function of update event score")
+        event_instance = Event.objects.get(id=event_id)
+
+        prize_list = [first_prize_team_id,
+                      second_prize_team_id, third_prize_team_id]
+
+        prize_score = [event_instance.first_prize,
+                       event_instance.second_prize, event_instance.third_prize]
+
+        for i in range(3):
+            team_instance = Team.objects.get(id=prize_list[i])
+            team_instance.team_score = prize_score[i]
+            all_players_of_team = Player.team.through.objects.filter(
+                team_id=prize_list[i])
+            for player in all_players_of_team:
+                player_instance = Player.objects.get(id=player.player_id)
+                player_instance.score = prize_score[i] #giving all players same score
+                player_instance.save() 
+            team_instance.save()
+
+        print("done")
+        return UpdateTeamScores(event=event_instance)

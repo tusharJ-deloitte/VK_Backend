@@ -29,5 +29,6 @@ urlpatterns = [
 
     #Event Registration
     path('event/register', views.register, name='register'),
-    path('event/get_all_registrations/<int:event_id>',views.get_all_registrations,name='get_all_registrations')
+    path('event/get_all_registrations/<int:event_id>',views.get_all_registrations,name='get_all_registrations'),
+    path('event/update_score',views.update_score,name="update_score")
 ]

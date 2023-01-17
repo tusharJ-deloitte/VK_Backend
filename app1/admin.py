@@ -23,7 +23,7 @@ class ActivityAdmin(admin.ModelAdmin):
 @admin.register(Team)
 class TeamAdmin(admin.ModelAdmin):
     list_display = ['id', 'name', 'created_on',
-                    'team_lead', 'current_size', 'team_logo','team_score']
+                    'team_lead', 'current_size', 'team_score', 'team_logo']
 
 
 @admin.register(Player)
