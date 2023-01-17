@@ -39,6 +39,7 @@ class Team(models.Model):
     team_lead = models.TextField(max_length=20, null=True)
     created_on = models.DateTimeField(auto_now_add=True)
     team_logo = models.TextField(blank=True, null=True)
+    team_score = models.IntegerField(default=0)
 
     def __str__(self) -> str:
         return self.name
@@ -58,6 +59,19 @@ class Event(models.Model):
     second_prize = models.IntegerField(default=75)
     third_prize = models.IntegerField(default=50)
     cur_participation = models.IntegerField(default=0)
+
+    #setting up choices for status
+    YET_TO_START = "Yet To Start"
+    ACTIVE = "Active"
+    ELAPSED = "Elapsed"
+    STATUS_CHOICES = [
+        # (ACTUAL VALUE , HUMAN READABLE FORMAT)
+        (YET_TO_START,"yet to start"),
+        (ACTIVE,"active"),
+        (ELAPSED,"elapsed"),
+    ]
+
+    status = models.CharField(max_length=20,choices=STATUS_CHOICES,default=YET_TO_START)
 
     def __str__(self) -> str:
         return self.name
