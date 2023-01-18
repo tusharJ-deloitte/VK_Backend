@@ -242,6 +242,8 @@ def create_teams(request):
 
             ''', variables={'name': python_data["name"], 'activity': python_data["activity"], 'currentSize': python_data["currentSize"], 'teamLead': python_data["teamLead"], 'teamLogo': python_data["team_logo"]}
         )
+        activity_id = Activity.objects.get(name=python_data["activity"]).pk
+        print(activity_id)
 
         # team = Team.objects.get(name = python_data["name"])
         # team.team_logo = Te
@@ -249,8 +251,8 @@ def create_teams(request):
             user_email = python_data['players'][item]
             result1 = schema.execute(
                 '''
-                        mutation createPlayer($teamName:String!,$userEmail:String!,$score:Int!){
-                            createPlayer(teamName:$teamName,userEmail:$userEmail,score:$score){
+                        mutation createPlayer($teamName:String!,$userEmail:String!,$score:Int!,$activityId:Int!){
+                            createPlayer(teamName:$teamName,userEmail:$userEmail,score:$score,activityId:$activityId){
 
                                 player{
                                     id
@@ -259,7 +261,7 @@ def create_teams(request):
                             }
                         }
 
-                        ''', variables={'teamName': python_data["name"], 'userEmail': user_email, 'score': 0}
+                        ''', variables={'teamName': python_data["name"], 'userEmail': user_email, 'score': 0, 'activityId': activity_id}
             )
 
         json_post = json.dumps(result.data)
@@ -589,7 +591,7 @@ def get_all_registrations(request, event_id):
             ''',
         )
 
-        all_teams=[]
+        all_teams = []
         for regs in result.data["allRegistrations"]:
             e_id = int(regs["event"]["id"])
             if e_id == event_id:
@@ -599,7 +601,7 @@ def get_all_registrations(request, event_id):
         return HttpResponse(json_response, content_type='application/json')
 
 
-#update team score and players score
+# update team score and players score
 def update_score(request):
     if request.method == 'PUT':
         json_data = request.body
@@ -621,7 +623,66 @@ def update_score(request):
 
         print(result)
         json_response = json.dumps(result.data)
-        return HttpResponse(json_response,content_type="application/json")
+        return HttpResponse(json_response, content_type="application/json")
+
+
+def get_rank_by_activity(request, activity_id):
+    if request.method == 'GET':
+        result = []
+        ids = []
+        users = Player.objects.filter(
+            activity_id=activity_id).order_by("-score")
+
+        for usr in users:
+            score = usr.score
+            for usr2 in users:
+                if usr.user.id == usr2.user.id and usr.user.email != usr2.user.email:
+                    score = score+usr2.score
+
+            if usr.user.id in ids:
+                continue
+            else:
+                ids.append(usr.user.id)
+                result.append({"name": usr.user.first_name+" " +
+                               usr.user.last_name, "score": score})
+
+        # for player in users[0:20]:
+        #     result.append({"name": player.user.first_name+" " +
+        #                   player.user.last_name, "score": player.score})
+
+        print(result[0:20])
+
+        json_response = json.dumps(result[0:20])
+    return HttpResponse(json_response, content_type="application/json")
+
+
+def get_overall_rank(request):
+    if request.method == 'GET':
+        result = []
+        ids = []
+        users = Player.objects.all().order_by("-score")
+
+        for usr in users:
+            score = usr.score
+            for usr2 in users:
+                if usr.user.id == usr2.user.id and usr.user.email != usr2.user.email:
+                    score = score+usr2.score
+
+            if usr.user.id in ids:
+                continue
+            else:
+                ids.append(usr.user.id)
+                result.append({"name": usr.user.first_name+" " +
+                               usr.user.last_name, "score": score})
+
+        # for player in users[0:20]:
+        #     result.append({"name": player.user.first_name+" " +
+        #                   player.user.last_name, "score": player.score})
+
+        print(result[0:20])
+
+        json_response = json.dumps(result[0:20])
+    return HttpResponse(json_response, content_type="application/json")
 
 
 # def converter(data):

@@ -171,15 +171,17 @@ class CreatePlayer(graphene.Mutation):
         team_name = graphene.String(required=True)
         user_email = graphene.String(required=True)
         score = graphene.Int()
+        activity_id = graphene.Int()
 
     player = graphene.Field(PlayerType)
 
-    def mutate(self, info, team_name, user_email, score):
+    def mutate(self, info, team_name, user_email, score, activity_id):
         print("inside")
         player_instance = Player(
 
             user=User.objects.get(email=user_email),
-            score=score
+            score=score,
+            activity_id=activity_id
         )
         player_instance.save()
         # activity_instance = Activity.objects.filter(name=activity)[0]
@@ -292,6 +294,8 @@ class CreateRegistration(graphene.Mutation):
         return CreateRegistration(reg=reg_instance)
 
 # update team scores and then players score as well
+
+
 class UpdateTeamScores(graphene.Mutation):
     class Arguments:
         event_id = graphene.ID()
@@ -318,8 +322,9 @@ class UpdateTeamScores(graphene.Mutation):
                 team_id=prize_list[i])
             for player in all_players_of_team:
                 player_instance = Player.objects.get(id=player.player_id)
-                player_instance.score = prize_score[i] #giving all players same score
-                player_instance.save() 
+                # giving all players same score
+                player_instance.score = prize_score[i]
+                player_instance.save()
             team_instance.save()
 
         print("done")

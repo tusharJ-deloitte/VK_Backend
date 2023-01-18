@@ -28,7 +28,7 @@ class TeamAdmin(admin.ModelAdmin):
 
 @admin.register(Player)
 class PlayerAdmin(admin.ModelAdmin):
-    list_display = ['id', 'score', 'user_id']
+    list_display = ['id', 'score', 'user_id', 'activity_id']
 
 
 @admin.register(Registration)
@@ -39,4 +39,4 @@ class PlayerAdmin(admin.ModelAdmin):
 @admin.register(Event)
 class PlayerAdmin(admin.ModelAdmin):
     list_display = ['id', 'name', 'activity_id', 'activity_mode', 'start_date', 'end_date', 'start_time', 'end_time',
-                    'max_teams', 'max_members', 'first_prize', 'second_prize', 'third_prize', 'cur_participation','status']
+                    'max_teams', 'max_members', 'first_prize', 'second_prize', 'third_prize', 'cur_participation', 'status']

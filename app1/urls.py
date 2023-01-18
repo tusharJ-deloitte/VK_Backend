@@ -27,8 +27,13 @@ urlpatterns = [
     path('update_event/<int:event_id>', views.update_event, name='update_event'),
     path('delete_event/<int:event_id>', views.delete_event, name='delete_event'),
 
-    #Event Registration
+    # Event Registration
     path('event/register', views.register, name='register'),
-    path('event/get_all_registrations/<int:event_id>',views.get_all_registrations,name='get_all_registrations'),
-    path('event/update_score',views.update_score,name="update_score")
+    path('event/get_all_registrations/<int:event_id>',
+         views.get_all_registrations, name='get_all_registrations'),
+    path('event/update_score', views.update_score, name="update_score"),
+    path('get_rank_by_activity/<int:activity_id>', views.get_rank_by_activity,
+         name="get_rank_by_ctivity"),
+    path('get_overall_rank', views.get_overall_rank,
+         name="get_overall_rank")
 ]
