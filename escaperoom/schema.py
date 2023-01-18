@@ -1,7 +1,7 @@
 import graphene
 from .models import Detail, Question
 from .types import DetailType, QuestionType
-from .mutations import CreateDetail
+from .mutations import CreateDetail, DeleteDetail
 
 
 class Query(graphene.ObjectType):
@@ -21,6 +21,7 @@ class Mutation(graphene.ObjectType):
 
     #escaperoom mutations
     create_detail = CreateDetail.Field()
+    delete_detail = DeleteDetail.Field()
 
 
     

@@ -15,6 +15,7 @@ class Detail(models.Model):
     theme = models.TextField(max_length = 20)
     bg_image = models.TextField()
     number_of_questions = models.IntegerField()
+    time = models.TimeField(null = True, blank = True)
     level = models.IntegerField(choices= LevelTypes.choices(), default=LevelTypes.EASY)
 
     def __str__(self):

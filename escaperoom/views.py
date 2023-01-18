@@ -30,3 +30,23 @@ def create_detail(request):
         print("final result : ",  result)
         json_post = json.dumps(result.data)
     return HttpResponse(json_post, content_type='application/json')
+
+def delete_detail(request, room_id):
+    if request.method == 'DELETE':
+        result = schema.execute(
+            '''
+            mutation delete_detail ($id : ID!){
+                deleteDetail (id : $id) {
+                    escapeRoomDetails {
+                        id
+                    }
+                }
+            }
+            ''', variables={'id': room_id}
+        )
+
+        print("------------------------")
+        print("final result : ",  result)
+
+        return HttpResponse(status=200)
+    return HttpResponse(status=200)

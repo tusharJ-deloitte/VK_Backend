@@ -22,4 +22,15 @@ class CreateDetail(graphene.Mutation):
         room_details_instance.save()
         return CreateDetail(escapeRoomDetails = room_details_instance)
 
+class DeleteDetail(graphene.Mutation):
+    class Arguments:
+        id = graphene.ID(required=True)
+
+    escapeRoomDetails = graphene.Field(DetailType)
+
+    def mutate(self, info, id):
+        room_details_instance = Detail.objects.get(id=id)
+        room_details_instance.delete()
+        return DeleteDetail(escapeRoomDetails = room_details_instance)
+
 
