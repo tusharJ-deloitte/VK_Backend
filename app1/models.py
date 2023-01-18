@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.contrib.postgres.fields import ArrayField
 
 # Create your models here.
 
@@ -80,6 +81,36 @@ class Player(models.Model):
     def __str__(self):
         return self.user.first_name
 
+class EscapeRoomDetails(models.Model):
+
+    # questions = models.ForeignKey(EscapeRoomQuestions, on_delete = models.CASCADE)
+    title = models.TextField(max_length = 20)
+    bg_image = models.TextField()
+    number_of_questions = models.IntegerField()
+    level = models.IntegerField()
+
+    def __str__(self):
+        return self.title
+
+class EscapeRoomQuestions(models.Model):
+    escape_room = models.ForeignKey(EscapeRoomDetails, on_delete = models.CASCADE)
+    context = models.TextField()
+    number_of_images = models.IntegerField()
+    images = models.JSONField(null =True, blank = True)
+    question_type = models.IntegerField()
+    question = models.TextField()
+    options = models.JSONField(null = True, blank = True)
+    answers = models.TextField()
+    hints = models.TextField(null = True)
+
+
+
+
+
+
+
+
+    
 
 # class Logo(models.Model):
 #     title = models.CharField(

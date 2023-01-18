@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Category, Activity, Team, Player, Event, Registration
+from .models import Post, Category, Activity, Team, Player, Event, Registration, EscapeRoomDetails,EscapeRoomQuestions
 
 # Register your models here.
 
@@ -40,3 +40,12 @@ class PlayerAdmin(admin.ModelAdmin):
 class PlayerAdmin(admin.ModelAdmin):
     list_display = ['id', 'name', 'activity_id', 'activity_mode', 'start_date', 'end_date', 'start_time', 'end_time',
                     'max_teams', 'max_members', 'first_prize', 'second_prize', 'third_prize', 'cur_participation']
+
+
+@admin.register(EscapeRoomDetails)
+class EscapeRoomDetailsAdmin(admin.ModelAdmin):
+    list_display = ['id', 'title', 'bg_image', 'number_of_questions', 'level']
+
+@admin.register(EscapeRoomQuestions)
+class EscapeRoomQuestionsAdmin(admin.ModelAdmin):
+    list_display = ['id','escape_room_id', 'images', 'options', 'context', 'number_of_images', 'question_type', 'question', 'answers', 'hints']

@@ -1,6 +1,6 @@
 from graphene_django.types import DjangoObjectType
 from django.contrib.auth.models import User
-from .models import Category, Activity, Team, Player, Event, Registration
+from .models import Category, Activity, Team, Player, Event, Registration, EscapeRoomDetails, EscapeRoomQuestions
 
 
 class UserType(DjangoObjectType):
@@ -47,3 +47,15 @@ class RegistrationType(DjangoObjectType):
     class Meta:
         model = Registration
         fields = ('id', 'event', 'team')
+
+
+class EscapeRoomDetailsType(DjangoObjectType):
+    class Meta:
+        model = EscapeRoomDetails
+        fields = ('id', 'title', 'bg_image', 'number_of_questions', 'level')
+
+
+class EscapeRoomQuestionsType(DjangoObjectType):
+    class Meta:
+        model = EscapeRoomDetails
+        fields = ('id','escape_room_id', 'images','options','context', 'number_of_images', 'question_type', 'question', 'answers', 'hints')
