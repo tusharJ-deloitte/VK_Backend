@@ -1,7 +1,7 @@
 import graphene
 from .models import Category, Activity, Team, Player, Event, Registration
 from app1.types import CategoryType, ActivityType, TeamType, PlayerType, EventType, RegistrationType
-from .mutations import CreateCategory, UpdateCategory, DeleteCategory, CreateActivity, UpdateActivity, DeleteActivity, CreateTeam, CreatePlayer, UpdatePlayer, DeletePlayer, CreateEvent, CreateRegistration
+from .mutations import CreateCategory, UpdateCategory, DeleteCategory, CreateActivity, UpdateActivity, DeleteActivity, CreateTeam, CreatePlayer, UpdatePlayer, DeletePlayer, CreateEvent, CreateRegistration, UpdateTeamScores
 
 
 class Query(graphene.ObjectType):
@@ -85,6 +85,9 @@ class Mutation(graphene.ObjectType):
 
     #registrations mutations
     create_registration = CreateRegistration.Field()
+
+    #update team score
+    update_team_scores = UpdateTeamScores().Field()
 
 
 schema = graphene.Schema(query=Query, mutation=Mutation)

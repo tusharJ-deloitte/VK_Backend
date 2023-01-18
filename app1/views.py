@@ -599,6 +599,31 @@ def get_all_registrations(request, event_id):
         return HttpResponse(json_response, content_type='application/json')
 
 
+#update team score and players score
+def update_score(request):
+    if request.method == 'PUT':
+        json_data = request.body
+        stream = io.BytesIO(json_data)
+        python_data = JSONParser().parse(stream)
+        print(python_data)
+
+        result = schema.execute(
+            '''
+            mutation updateTeamScores($eventId:ID!,$firstPrizeTeamId:ID!,$secondPrizeTeamId:ID!,$thirdPrizeTeamId:ID!){
+                updateTeamScores(eventId:$eventId,firstPrizeTeamId:$firstPrizeTeamId,secondPrizeTeamId:$secondPrizeTeamId,thirdPrizeTeamId:$thirdPrizeTeamId){
+                    event{
+                        id
+                    }
+                }
+            }
+            ''', variables={'eventId': python_data['event_id'], 'firstPrizeTeamId': python_data['first_prize_team_id'], 'secondPrizeTeamId': python_data['second_prize_team_id'], 'thirdPrizeTeamId': python_data['third_prize_team_id']}
+        )
+
+        print(result)
+        json_response = json.dumps(result.data)
+        return HttpResponse(json_response,content_type="application/json")
+
+
 # def converter(data):
 #     # data = base64.b64decode(data.encode('UTF-8'))
 #     # buf = io.BytesIO(data)
