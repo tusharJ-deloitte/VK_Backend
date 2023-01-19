@@ -13,6 +13,7 @@ import base64
 from PIL import Image
 from django.core.files.uploadedfile import InMemoryUploadedFile
 from django.core.files.base import ContentFile
+from django.db.models import Sum
 
 
 def home(request):
@@ -628,28 +629,14 @@ def update_score(request):
 
 def get_rank_by_activity(request, activity_id):
     if request.method == 'GET':
+        players = Player.objects.filter(
+            activity_id=activity_id).values("user_id").annotate(total_score=Sum('score')).order_by("-total_score")
+        
         result = []
-        ids = []
-        users = Player.objects.filter(
-            activity_id=activity_id).order_by("-score")
-
-        for usr in users:
-            score = usr.score
-            for usr2 in users:
-                if usr.user.id == usr2.user.id and usr.user.email != usr2.user.email:
-                    score = score+usr2.score
-
-            if usr.user.id in ids:
-                continue
-            else:
-                ids.append(usr.user.id)
-                result.append({"name": usr.user.first_name+" " +
-                               usr.user.last_name, "score": score})
-
-        # for player in users[0:20]:
-        #     result.append({"name": player.user.first_name+" " +
-        #                   player.user.last_name, "score": player.score})
-
+        for user in players:
+            usr = User.objects.get(id=user['user_id'])
+            result.append({"name": usr.first_name+" " +
+                           usr.last_name, "score": user['total_score']})
         print(result[0:20])
 
         json_response = json.dumps(result[0:20])
@@ -658,29 +645,15 @@ def get_rank_by_activity(request, activity_id):
 
 def get_overall_rank(request):
     if request.method == 'GET':
+        players = Player.objects.values("user_id").annotate(total_score=Sum('score')).order_by("-total_score")
+        
         result = []
-        ids = []
-        users = Player.objects.all().order_by("-score")
-
-        for usr in users:
-            score = usr.score
-            for usr2 in users:
-                if usr.user.id == usr2.user.id and usr.user.email != usr2.user.email:
-                    score = score+usr2.score
-
-            if usr.user.id in ids:
-                continue
-            else:
-                ids.append(usr.user.id)
-                result.append({"name": usr.user.first_name+" " +
-                               usr.user.last_name, "score": score})
-
-        # for player in users[0:20]:
-        #     result.append({"name": player.user.first_name+" " +
-        #                   player.user.last_name, "score": player.score})
+        for user in players:
+            usr = User.objects.get(id=user['user_id'])
+            result.append({"name": usr.first_name+" " +
+                           usr.last_name, "score": user['total_score']})
 
         print(result[0:20])
-
         json_response = json.dumps(result[0:20])
     return HttpResponse(json_response, content_type="application/json")
 
