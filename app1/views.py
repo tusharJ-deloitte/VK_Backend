@@ -633,18 +633,16 @@ def get_rank_by_activity(request, activity_id):
         users = Player.objects.filter(
             activity_id=activity_id).order_by("-score")
 
+        dict = {}
         for usr in users:
-            score = usr.score
-            for usr2 in users:
-                if usr.user.id == usr2.user.id and usr.user.email != usr2.user.email:
-                    score = score+usr2.score
+            dict[usr.user.id] = 0
+        for usr in users:
+            dict[usr.user.id] += usr.score
 
-            if usr.user.id in ids:
-                continue
-            else:
-                ids.append(usr.user.id)
-                result.append({"name": usr.user.first_name+" " +
-                               usr.user.last_name, "score": score})
+        for key, value in dict.items():
+            usr = User.objects.get(id=key)
+            result.append({"name": usr.first_name+" " +
+                           usr.last_name, "score": value})
 
         # for player in users[0:20]:
         #     result.append({"name": player.user.first_name+" " +
@@ -662,18 +660,31 @@ def get_overall_rank(request):
         ids = []
         users = Player.objects.all().order_by("-score")
 
-        for usr in users:
-            score = usr.score
-            for usr2 in users:
-                if usr.user.id == usr2.user.id and usr.user.email != usr2.user.email:
-                    score = score+usr2.score
+        # for usr in users:
+        #     score = usr.score
+        #     for usr2 in users:
+        #         if usr.user.id == usr2.user.id and usr.user.email != usr2.user.email:
+        #             score = score+usr2.score
 
-            if usr.user.id in ids:
-                continue
-            else:
-                ids.append(usr.user.id)
-                result.append({"name": usr.user.first_name+" " +
-                               usr.user.last_name, "score": score})
+        #     if usr.user.id in ids:
+        #         continue
+        #     else:
+        #         ids.append(usr.user.id)
+        #         result.append({"name": usr.user.first_name+" " +
+        #                        usr.user.last_name, "score": score})
+
+        dict = {}
+        for usr in users:
+            dict[usr.user.id] = 0
+        for usr in users:
+            dict[usr.user.id] += usr.score
+
+        for key, value in dict.items():
+            usr = User.objects.get(id=key)
+            result.append({"name": usr.first_name+" " +
+                           usr.last_name, "score": value})
+
+        print(dict)
 
         # for player in users[0:20]:
         #     result.append({"name": player.user.first_name+" " +
