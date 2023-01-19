@@ -24,6 +24,7 @@ class Activity(models.Model):
     team_size = models.IntegerField(default=1)
     created_on = models.DateTimeField(auto_now_add=True)
     activity_logo = models.TextField(blank=True, null=True)
+    
 
     def __str__(self) -> str:
         return self.name

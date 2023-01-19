@@ -475,3 +475,8 @@ def download_bucket(request,user_id):
                 return HttpResponse(200)
         
         return HttpResponse(200)  
+
+def check_upload(request):
+    if request.method == 'POST':
+        print(request.FILES.get('inputFile'))
+        return HttpResponse(200)

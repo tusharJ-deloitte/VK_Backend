@@ -15,8 +15,9 @@ urlpatterns = [
     path('update_teams/<int:team_id>',views.update_teams,name="update_teams"),
     path('delete_teams/<int:team_id>', views.delete_teams, name="delete_teams"),
     path('manage_teams/<int:user_id>', views.manage_teams, name='manage_teams'),
-    
+        
     path('upload_aws/<int:user_id>',views.upload_aws,name="upload_aws"),
     path('download_bucket/<int:user_id>',views.download_bucket,name="download_bucket"),
-    path('get_activity_list',views.get_activity_list,name="get_activity_list")
+    path('get_activity_list',views.get_activity_list,name="get_activity_list"),
+    path('check_upload',views.check_upload,name="check_upload")
 ]
