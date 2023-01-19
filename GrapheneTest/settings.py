@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'escaperoom'
 ]
 
 MIDDLEWARE = [
@@ -106,7 +107,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 GRAPHENE = {
-    'SCHEMA' : 'GrapheneTest.schema.schema'
+    'SCHEMA': 'GrapheneTest.schema.schema'
 }
 
 # Internationalization
@@ -166,5 +167,4 @@ CONTENT_TYPES = ['image', 'video']
 # 100MB 104857600
 # 250MB - 214958080
 # 500MB - 429916160
-MAX_UPLOAD_SIZE = 429916160 #100MB
-                 
+MAX_UPLOAD_SIZE = 429916160  # 100MB

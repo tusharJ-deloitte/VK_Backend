@@ -3,21 +3,42 @@ from app1 import views
 
 urlpatterns = [
     path('', views.home, name='home'),
+    # category
     path('get_category/<int:pk>', views.get_category, name='get_category'),
     path('create_category', views.create_category, name='create_category'),
     path('update_category/<int:pk>', views.update_category, name="update_category"),
     path('delete_category/<int:pk>', views.delete_category, name='delete_category'),
-    path('create_activity',views.create_activity,name="create_activity"),
-    path('update_activity/<int:activity_id>',views.update_activity,name="update_activity"),
-    path('get_activity/<int:pk>',views.get_activity,name="get_activity"),
-    path('delete_activity/<int:activity_id>',views.delete_activity,name="delete_activity"),
-    path('create_teams',views.create_teams,name="create_teams"),
-    path('update_teams/<int:team_id>',views.update_teams,name="update_teams"),
+
+    # Activity
+    path('create_activity', views.create_activity, name="create_activity"),
+    path('update_activity/<int:activity_id>',
+         views.update_activity, name="update_activity"),
+    path('get_activity/<int:activity_id>',
+         views.get_activity, name="get_activity"),
+    path('delete_activity/<int:activity_id>',
+         views.delete_activity, name="delete_activity"),
+    path('get_activity_list', views.get_activity_list, name="get_activity_list"),
+
+    # Teams
+    path('create_teams', views.create_teams, name="create_teams"),
+    path('update_teams/<int:team_id>', views.update_teams, name="update_teams"),
     path('delete_teams/<int:team_id>', views.delete_teams, name="delete_teams"),
     path('manage_teams/<int:user_id>', views.manage_teams, name='manage_teams'),
-        
-    path('upload_aws/<int:user_id>',views.upload_aws,name="upload_aws"),
-    path('download_bucket/<int:user_id>',views.download_bucket,name="download_bucket"),
-    path('get_activity_list',views.get_activity_list,name="get_activity_list"),
-    path('check_upload',views.check_upload,name="check_upload")
+
+    # Events
+    path('create_event', views.create_event, name='create_event'),
+    path('get_all_events', views.get_all_events, name='get_all_events'),
+    path('update_event/<int:event_id>', views.update_event, name='update_event'),
+    path('delete_event/<int:event_id>', views.delete_event, name='delete_event'),
+
+    # Event Registration
+    path('event/register', views.register, name='register'),
+    path('event/get_all_registrations/<int:event_id>',
+         views.get_all_registrations, name='get_all_registrations'),
+
+    # Plank
+    path('upload_aws/<int:user_id>', views.upload_aws, name="upload_aws"),
+    path('check_upload', views.check_upload, name="check_upload"),
+    path('download_bucket/<int:user_id>',
+         views.download_bucket, name="download_bucket")
 ]

@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from .models import Activity, Player,Team, Category,Upload
-from django.http import HttpResponse,HttpResponseBadRequest
+from .models import Activity, Player, Team, Category, Event, Category, Upload
+from django.http import HttpResponse, HttpResponseBadRequest
 import io
 from rest_framework.parsers import JSONParser
 from .schema import schema
@@ -15,6 +15,8 @@ import boto
 from boto.s3.key import Key
 from GrapheneTest import settings
 import os
+
+
 def home(request):
     return render(request, 'app1/home.html')
 
@@ -130,7 +132,7 @@ def create_activity(request):
                    }
                }
            }
-            ''', variables={'name': python_data["name"], 'category': python_data["category"], 'teamSize': python_data["teamSize"],'activityLogo':python_data["activityLogo"]}
+            ''', variables={'name': python_data["name"], 'category': python_data["category"], 'teamSize': python_data["teamSize"], 'activityLogo': python_data["activityLogo"]}
         )
 
         print("------------------------")
@@ -160,7 +162,7 @@ def update_activity(request, activity_id):
                     }
                 }
             }
-            ''', variables={'id': activity_id, 'name': python_data["name"], 'category': python_data['category'], 'teamSize': python_data['teamSize'],'activityLogo':python_data['activityLogo']}
+            ''', variables={'id': activity_id, 'name': python_data["name"], 'category': python_data['category'], 'teamSize': python_data['teamSize'], 'activityLogo': python_data['activityLogo']}
         )
 
         print("------------------------")
@@ -191,7 +193,7 @@ def get_activity(request, activity_id):
     return HttpResponse(json_post, content_type='application/json')
 
 
-def delete_activity(request, pk):
+def delete_activity(request, activity_id):
     if request.method == 'DELETE':
         result = schema.execute(
             '''
@@ -202,7 +204,7 @@ def delete_activity(request, pk):
                     }
                 }
             }
-            ''', variables={'id': pk}
+            ''', variables={'id': activity_id}
         )
 
         print("------------------------")
@@ -231,16 +233,15 @@ def create_teams(request):
             }
 
 
-            '''
-            , variables = {'name': python_data["name"],'activity':python_data["activity"],'currentSize':python_data["currentSize"],'teamLead':python_data["teamLead"], 'teamLogo' : python_data["team_logo"]}
+            ''', variables={'name': python_data["name"], 'activity': python_data["activity"], 'currentSize': python_data["currentSize"], 'teamLead': python_data["teamLead"], 'teamLogo': python_data["team_logo"]}
         )
 
         # team = Team.objects.get(name = python_data["name"])
         # team.team_logo = Te
-        for item in range(0,python_data["currentSize"]):
-                user_email = python_data['players'][item]
-                result1 = schema.execute(
-                        '''
+        for item in range(0, python_data["currentSize"]):
+            user_email = python_data['players'][item]
+            result1 = schema.execute(
+                '''
                         mutation createPlayer($teamName:String!,$userEmail:String!,$score:Int!){
                             createPlayer(teamName:$teamName,userEmail:$userEmail,score:$score){
                                 player{
@@ -250,10 +251,8 @@ def create_teams(request):
                             }
                         }
 
-                        '''
-                        , variables = {'teamName': python_data["name"],'userEmail':user_email,'score':0}
-                    )
-
+                        ''', variables={'teamName': python_data["name"], 'userEmail': user_email, 'score': 0}
+            )
 
         json_post = json.dumps(result.data)
 
@@ -274,12 +273,13 @@ def update_teams(request, team_id):
         team_instance.team_logo = python_data["team_logo"]
         team_instance.save()
 
-        Team.activity.through.objects.filter(team_id=team_id)[0].delete()
-        
-        activity_instance = Activity.objects.filter(name=python_data['activity'])[0]
+        # Team.activity.through.objects.filter(team_id=team_id)[0].delete()
+
+        activity_instance = Activity.objects.filter(
+            name=python_data['activity'])[0]
         print(activity_instance)
         team_instance.activity.add(activity_instance)
-        
+
         team_instance.save()
 
         players = Player.team.through.objects.filter(team_id=team_id)
@@ -288,7 +288,8 @@ def update_teams(request, team_id):
         existing_players = []
 
         for player in players:
-            existing_players.append(Player.objects.get(id=player.player_id).user.email)
+            existing_players.append(Player.objects.get(
+                id=player.player_id).user.email)
 
         print("--------\n", existing_players)
 
@@ -313,15 +314,17 @@ def update_teams(request, team_id):
             if value == 1:
                 result1 = schema.execute(
                     '''
-                        mutation createPlayer($teamName:String!,$userName:String!,$score:Int!,$activity:String!){
-                            createPlayer(teamName:$teamName,username:$userName,score:$score,activity:$activity){
+                        mutation createPlayer($teamName:String!,$userEmail:String!,$score:Int!){
+                            createPlayer(teamName:$teamName,userEmail:$userEmail,score:$score){
+
                                 player{
                                     id
                                     score
                                 }
                             }
                         }
-                        ''', variables={'teamName': python_data["name"], 'activity': python_data["activity"], 'userName': username, 'score': 0}
+
+                        ''', variables={'teamName': python_data["name"], 'userEmail': key, 'score': 0}
                 )
 
             elif value == -1:
@@ -340,31 +343,33 @@ def update_teams(request, team_id):
     return HttpResponse({"msg": "successful"}, content_type='application/json')
 
 
-def delete_teams(request,team_id):
+def delete_teams(request, team_id):
     if request.method == 'DELETE':
 
         pt = Player.team.through.objects.filter(team_id=team_id)
 
         for item in pt:
 
-            Player.objects.get(id = item.player_id).delete()
+            Player.objects.get(id=item.player_id).delete()
 
-        Team.objects.get(id = team_id).delete()
+        Team.objects.get(id=team_id).delete()
 
     return HttpResponse(200)
+
 
 def manage_teams(request, user_id):
 
     if request.method == 'GET':
 
-        players = Player.objects.filter(user_id = user_id)
+        players = Player.objects.filter(user_id=user_id)
 
         teams = []
         print(players)
         for player in players:
             print("inside")
             print(player)
-            teams.append(Player.team.through.objects.get(player_id=player.id).team_id)
+            teams.append(Player.team.through.objects.get(
+                player_id=player.id).team_id)
 
         print("teams : ", teams)
 
@@ -379,7 +384,7 @@ def manage_teams(request, user_id):
 
             team_lead = team_object.team_lead
             team_logo = team_object.team_logo
-            team_mem_ids = Player.team.through.objects.filter(team_id = team_id)
+            team_mem_ids = Player.team.through.objects.filter(team_id=team_id)
 
             print("team_mem_ids", team_mem_ids)
             team_mem = []
@@ -392,30 +397,35 @@ def manage_teams(request, user_id):
                 user_email = user_object.email
                 p = {
 
-                    "first_name" : first_name,
-                    "last_name" : last_name,
-                    "user_email" : user_email
+                    "first_name": first_name,
+                    "last_name": last_name,
+                    "user_email": user_email
                 }
                 team_mem.append(p)
 
-            activity_object = Team.activity.through.objects.filter(team_id = team_id)
+            activity_object = Team.activity.through.objects.filter(
+                team_id=team_id)
             print(activity_object)
-            activity_name = Activity.objects.get(id = activity_object[0].activity_id).name
-            activity_size = Activity.objects.get(id = activity_object[0].activity_id).team_size
-            category_id = Activity.objects.get(id = activity_object[0].activity_id).category_id
-            activity_logo = Activity.objects.get(id = activity_object[0].activity_id).activity_logo
-            category_name = Category.objects.get(id = category_id).name
+            activity_name = Activity.objects.get(
+                id=activity_object[0].activity_id).name
+            activity_size = Activity.objects.get(
+                id=activity_object[0].activity_id).team_size
+            category_id = Activity.objects.get(
+                id=activity_object[0].activity_id).category_id
+            activity_logo = Activity.objects.get(
+                id=activity_object[0].activity_id).activity_logo
+            category_name = Category.objects.get(id=category_id).name
             temp_response = {
-                "team_id" : team_id,
-                "team_name" : team_name,
-                "team_size" : team_size,
-                "team_lead" : team_lead,
-                "team_logo" : team_logo,
-                "team_mem" : team_mem,
-                "activity_name" : activity_name,
-                "actvity_size" : activity_size,
-                "activity_logo" : activity_logo,
-                "category_name" : category_name
+                "team_id": team_id,
+                "team_name": team_name,
+                "team_size": team_size,
+                "team_lead": team_lead,
+                "team_logo": team_logo,
+                "team_mem": team_mem,
+                "activity_name": activity_name,
+                "actvity_size": activity_size,
+                "activity_logo": activity_logo,
+                "category_name": category_name
 
             }
             print("team_id", temp_response)
@@ -433,14 +443,172 @@ def get_activity_list(request):
         return HttpResponse(json_post, content_type='application/json')
 
 
+def create_event(request):
+    if request.method == 'POST':
+        json_data = request.body
+        stream = io.BytesIO(json_data)
+        python_data = JSONParser().parse(stream)
+        print(python_data)
+
+        result = schema.execute(
+            '''
+            mutation createEvent($name : String!,$activityName: String!,$activityMode: String!,$maxTeams:Int!,$maxMembers:Int!,$firstPrize:Int!,$secondPrize:Int!,$thirdPrize:Int!,$startDate:Date!,$endDate:Date!,$startTime:Time!,$endTime:Time!){
+               createEvent(name:$name,activityName:$activityName,activityMode:$activityMode,maxTeams:$maxTeams,maxMembers:$maxMembers, firstPrize:$firstPrize,secondPrize:$secondPrize,thirdPrize:$thirdPrize,startTime:$startTime,endTime:$endTime,startDate:$startDate,endDate:$endDate){
+                    event{
+                        name
+                    }
+                }
+
+            }
 
 
-def upload_aws(request,user_id):
-    if request.method=='POST':
+            ''', variables={'name': python_data["name"], 'activityName': python_data["activityName"], 'activityMode': python_data['activityMode'], 'maxTeams': python_data["maxTeams"], 'maxMembers': python_data["maxMembers"], 'firstPrize': python_data["firstPrize"], 'secondPrize': python_data["secondPrize"], 'thirdPrize': python_data["thirdPrize"], 'startDate': python_data['startDate'], 'endDate': python_data['endDate'], 'startTime': python_data['startTime'], 'endTime': python_data['endTime']}
+        )
+
+        json_post = json.dumps(result.data)
+
+    return HttpResponse(json_post, content_type='application/json')
+
+
+def get_all_events(request):
+    if request.method == 'GET':
+        result = schema.execute(
+            '''query{
+                    allEvents{
+                        id,
+                        name,
+                        activityMode,
+                        maxTeams,
+                        maxMembers,
+                        curParticipation,
+                        startDate,
+                        endDate,
+                        startTime,
+                        endTime,
+                        firstPrize,
+                        secondPrize,
+                        thirdPrize,
+                        activity{
+                            name,
+                            activityLogo
+                        
+                            
+
+                        }
+                            }
+                }
+
+                ''',
+        )
+
+        json_post = json.dumps(result.data)
+
+        return HttpResponse(json_post, content_type='application/json')
+
+
+def update_event(request, event_id):
+    if request.method == 'PUT':
+        json_data = request.body
+        stream = io.BytesIO(json_data)
+        python_data = JSONParser().parse(stream)
+        print(python_data)
+
+        event_instance = Event.objects.get(id=event_id)
+        event_instance.name = python_data["name"]
+        event_instance.activity_mode = python_data["activityMode"]
+        event_instance.start_date = python_data["startDate"]
+        event_instance.end_date = python_data["endDate"]
+        event_instance.start_time = python_data["startTime"]
+        event_instance.end_time = python_data["endTime"]
+        event_instance.max_teams = python_data["maxTeams"]
+        event_instance.max_members = python_data["maxMembers"]
+        event_instance.first_prize = python_data["firstPrize"]
+        event_instance.second_prize = python_data["secondPrize"]
+        event_instance.third_prize = python_data["thirdPrize"]
+
+        activity_instance = Activity.objects.get(
+            name=python_data["activityName"])
+        event_instance.activity = activity_instance
+        event_instance.save()
+
+    return HttpResponse({"msg": "successful"}, content_type='application/json')
+
+
+def delete_event(request, event_id):
+    if request.method == 'DELETE':
+
+        ev = Event.objects.get(id=event_id)
+        ev.delete()
+    return HttpResponse(200)
+
+
+def register(request):
+    if request.method == 'POST':
+        json_data = request.body
+        stream = io.BytesIO(json_data)
+        python_data = JSONParser().parse(stream)
+        print(python_data)
+
+        result = schema.execute(
+            '''
+            mutation createRegistration($eventId : ID!,$teamId: ID!){
+               createRegistration(eventId:$eventId,teamId:$teamId){
+                    reg{
+                        id
+                    }
+                }
+
+            }
+
+
+            ''', variables={'eventId': python_data["event_id"], 'teamId': python_data["team_id"]}
+        )
+
+        json_post = json.dumps(result.data)
+        size = Team.objects.get(id=python_data["team_id"]).current_size
+        event = Event.objects.get(id=python_data["event_id"])
+        event.cur_participation = event.cur_participation+size
+        event.save()
+        print(event.cur_participation)
+
+    return HttpResponse(json_post, content_type='application/json')
+
+
+# get all registrations for a event
+def get_all_registrations(request, event_id):
+    if request.method == 'GET':
+        result = schema.execute(
+            '''
+            query{
+                allRegistrations{
+                    event{
+                        id
+                    },
+                    team{
+                        id,
+                        name
+                    }
+                }
+            }
+            ''',
+        )
+
+        all_teams = []
+        for regs in result.data["allRegistrations"]:
+            e_id = int(regs["event"]["id"])
+            if e_id == event_id:
+                all_teams.append(regs["team"])
+
+        json_response = json.dumps(all_teams)
+        return HttpResponse(json_response, content_type='application/json')
+
+
+def upload_aws(request, user_id):
+    if request.method == 'POST':
         my_uploaded_file = request.FILES.get('my_uploaded_file')
         # print(type(my_uploaded_file))
         print(my_uploaded_file.name)
-        my_uploaded_file.name=str(user_id)+"___"+my_uploaded_file.name
+        my_uploaded_file.name = str(user_id)+"___"+my_uploaded_file.name
         print(my_uploaded_file.content_type)
         print(my_uploaded_file.size)
         # if my_uploaded_file.size > settings.MAX_UPLOAD_SIZE:
@@ -456,25 +624,27 @@ def upload_aws(request,user_id):
                     }
                 }
             }
-            '''
-            ,variables = {'userEmail':userEmail})
-        upload_instance = Upload.objects.get(user_id  = user_id)
+            ''', variables={'userEmail': userEmail})
+        upload_instance = Upload.objects.get(user_id=user_id)
         upload_instance.uploaded_file = my_uploaded_file
         upload_instance.save()
-          
+
         return HttpResponse(200)
 
-def download_bucket(request,user_id):
+
+def download_bucket(request, user_id):
     if request.method == 'GET':
-        conn = boto.connect_s3(settings.AWS_ACCESS_KEY_ID,settings.AWS_SECRET_ACCESS_KEY)
+        conn = boto.connect_s3(settings.AWS_ACCESS_KEY_ID,
+                               settings.AWS_SECRET_ACCESS_KEY)
         bucket = conn.get_bucket(settings.AWS_STORAGE_BUCKET_NAME)
         bucket_list = bucket.list()
         for l in bucket_list:
             if str(l.key).split("/")[-1].split("___")[0] == str(user_id):
-                l.get_contents_to_filename(settings.LOCAL_PATH+str(l.key)) 
+                l.get_contents_to_filename(settings.LOCAL_PATH+str(l.key))
                 return HttpResponse(200)
-        
-        return HttpResponse(200)  
+
+        return HttpResponse(200)
+
 
 def check_upload(request):
     if request.method == 'POST':
