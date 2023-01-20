@@ -19,6 +19,20 @@ from django.db.models import Sum
 def home(request):
     return render(request, 'app1/home.html')
 
+def is_admin(request,userId):
+    if request.method == 'GET':
+        try:
+            user = User.objects.get(id=userId)
+            adminUser=[]
+            if user.is_superuser:
+                adminUser.append({"isAdmin" : 1})
+            else:
+                adminUser.append({"isAdmin": 0})
+            return HttpResponse(adminUser,content_type='application/json')
+        except:
+            return HttpResponse("Error Occured", content_type='application/json')
+
+    
 
 def get_category(request, pk):
     if request.method == 'GET':

@@ -3,6 +3,7 @@ from app1 import views
 
 urlpatterns = [
     path('', views.home, name='home'),
+    path('is_admin/<int:userId>', views.is_admin, name='is_admin'),
     # category
     path('get_category/<int:pk>', views.get_category, name='get_category'),
     path('create_category', views.create_category, name='create_category'),
