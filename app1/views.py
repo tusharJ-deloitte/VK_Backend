@@ -13,6 +13,10 @@ import base64
 from PIL import Image
 from django.core.files.uploadedfile import InMemoryUploadedFile
 from django.core.files.base import ContentFile
+from django.conf import settings
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
+from django.core.mail import EmailMessage
 
 
 def home(request):
@@ -629,7 +633,6 @@ def update_score(request):
 def get_rank_by_activity(request, activity_id):
     if request.method == 'GET':
         result = []
-        ids = []
         users = Player.objects.filter(
             activity_id=activity_id).order_by("-score")
 
@@ -657,8 +660,24 @@ def get_rank_by_activity(request, activity_id):
 def get_overall_rank(request):
     if request.method == 'GET':
         result = []
-        ids = []
+
         users = Player.objects.all().order_by("-score")
+
+        # subject = 'welcome to Virtual Kuna Kidza'
+        # message = f'Hi Ayush, thank you for registering in VirtualKunaEvent.'
+        # email_from = settings.EMAIL_HOST_USER
+        # recipient_list = ['m.ayush089@gmail.com']
+        # send_mail(subject, message, email_from, recipient_list)
+        mydict = {'username': "Ayush Mishra", "event": "Event-1"}
+        html_template = 'success.html'
+        html_message = render_to_string(html_template, context=mydict)
+        subject = 'Thank you for Registering'
+        email_from = settings.EMAIL_HOST_USER
+        recipient_list = ['ayushmishra7@deloitte.com', 'm.ayush089@gmail.com']
+        message = EmailMessage(subject, html_message,
+                               email_from, recipient_list)
+        message.content_subtype = 'html'
+        message.send()
 
         # for usr in users:
         #     score = usr.score
@@ -683,8 +702,6 @@ def get_overall_rank(request):
             usr = User.objects.get(id=key)
             result.append({"name": usr.first_name+" " +
                            usr.last_name, "score": value})
-
-        print(dict)
 
         # for player in users[0:20]:
         #     result.append({"name": player.user.first_name+" " +
