@@ -25,14 +25,14 @@ class Detail(models.Model):
 
 class Question(models.Model):
     escape_room = models.ForeignKey(Detail, on_delete=models.CASCADE)
-    context = models.TextField()
-    number_of_images = models.IntegerField()
+    context = models.TextField(null=True, blank=True)
+    number_of_images = models.IntegerField(null=True, blank=True)
     images = models.JSONField(null=True, blank=True)
     question_type = models.IntegerField(
-        choices=QuestionChoices.choices(), default=QuestionChoices.TEXTBOX)
+        choices=QuestionChoices.choices(), default=QuestionChoices.TEXTBOX, null=True, blank=True)
     question = models.TextField()
     options = models.JSONField(null=True, blank=True)
-    answers = models.TextField()
+    answers = models.TextField(null=True, blank=True)
     hints = models.TextField(null=True)
 
     def __str__(self):

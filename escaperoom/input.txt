@@ -1,0 +1,100 @@
+add or update questions - 
+
+[{
+            "context":"ab",
+            "images":"['image1','image2']",
+            "numberOfImages":2,
+            "questionType":1,
+            "question":"q1",
+            "answers":"ans1",
+            "hints":"hint1",
+            "options":""
+
+},
+{
+            "context":"ab2",
+            "images":"['image1','image2']",
+            "numberOfImages":2,
+            "questionType":1,
+            "question":"q2",
+            "answers":"ans2",
+            "hints":"hint2",
+            "options":""
+}
+]
+
+
+
+def update_questions(request, room_id):
+    if request.method == "PUT":
+        json_data = request.body
+        stream = io.BytesIO(json_data)
+        python_data = JSONParser().parse(stream)
+        escapeRoomTheme = Detail.objects.get(id=room_id).theme
+
+        existing_questions = []
+        questions_list = Question.objects.filter(escape_room_id=room_id)
+        for item in questions_list:
+            existing_questions.append(item.question)
+
+        d = {}
+        for ques in existing_questions:
+            d[ques] = -1
+        updated_questions = []
+        index = {}
+        k = 0
+        for item in python_data:
+            updated_questions.append(item['question'])
+            index[item['question']] = k
+            k = k+1
+
+        for ques in updated_questions:
+            if ques in d.keys():
+                d[ques] = d[ques]+1
+            else:
+                d[ques] = 1
+
+        item = 0
+        for ques, value in d.items():
+            if value == 1:
+                item = index[ques]
+                print(item)
+                result = schema.execute(
+                    '''
+                mutation create_question($escapeRoomTheme: String!, $context: String!, $numberOfImages: Int!, $images: String!,$options:String!,$questionType:Int!,$question:String!,$answers:String!,$hints:String!){
+                createQuestion(escapeRoomTheme: $escapeRoomTheme, context: $context, numberOfImages:$numberOfImages, images:$images,options:$options,questionType:$questionType,question:$question,answers:$answers,hints:$hints){
+                    question
+                    {
+                    id
+                    }
+                }
+                }
+                ''', variables={'escapeRoomTheme': escapeRoomTheme, 'context': python_data[item]["context"], 'numberOfImages': python_data[item]["numberOfImages"], 'images': python_data[item]["images"], 'options': python_data[item]["options"], 'questionType': python_data[item]["questionType"], 'question': ques, 'answers': python_data[item]["answers"], 'hints': python_data[item]["hints"]}
+                )
+                print("created", ques)
+            elif value == -1:
+                Question.objects.get(question=ques).delete()
+                print("deleted", ques)
+            elif value == 0:
+                item = index[ques]
+                print("item----", item)
+                print(python_data[item])
+                print(python_data[item]["context"])
+                id = Question.objects.get(question=ques).id
+                print("id----", id)
+                result = schema.execute(
+                    '''
+                mutation update_question($id:Int!,$escapeRoomTheme: String!, $context: String!, $numberOfImages: Int!, $images: String!,$options:String!,$questionType:Int!,$question:String!,$answers:String!,$hints:String!){
+                updateQuestion(id:$id,escapeRoomTheme: $escapeRoomTheme, context: $context, numberOfImages:$numberOfImages, images:$images,options:$options,questionType:$questionType,question:$question,answers:$answers,hints:$hints){
+                    question
+                    {
+                    id
+                    }
+                }
+                }
+                ''', variables={'id': id, 'escapeRoomTheme': escapeRoomTheme, 'context': python_data[item]["context"], 'numberOfImages': python_data[item]["numberOfImages"], 'images': python_data[item]["images"], 'options': python_data[item]["options"], 'questionType': python_data[item]["questionType"], 'question': ques, 'answers': python_data[item]["answers"], 'hints': python_data[item]["hints"]}
+                )
+                print("updated", ques)
+
+        return HttpResponse(200)
+

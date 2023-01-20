@@ -100,7 +100,18 @@ class UpdateQuestion(graphene.Mutation):
 
     question = graphene.Field(QuestionType)
 
+    # **update_data):
     def mutate(self, info, id, escape_room_theme, images, options, context, number_of_images, question_type, question, answers, hints):
+        # question = Question.objects.filter(id=id)
+        # if question:
+        #     params = update_data
+        #     print(params)
+        #     question.update(**{k: v for k, v in params.items() if params[k]})
+        #     print("updated")
+        #     return UpdateQuestion(question=question.first())
+        # else:
+        #     print("!!!")
+        # # escape_room_theme, images, options, context, number_of_images, question_type, question, answers, hints):
         question_instance = Question.objects.get(id=id)
         question_instance.escape_room = Detail.objects.get(
             theme=escape_room_theme)
@@ -113,5 +124,4 @@ class UpdateQuestion(graphene.Mutation):
         question_instance.answers = answers
         question_instance.hints = hints
         question_instance.save()
-
         return UpdateQuestion(question=question_instance)

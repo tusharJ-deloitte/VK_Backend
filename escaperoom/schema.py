@@ -1,7 +1,7 @@
 import graphene
 from .models import Detail, Question
 from .types import DetailType, QuestionType
-from .mutations import CreateDetail, DeleteDetail, UpdateDetail, CreateQuestion
+from .mutations import CreateDetail, DeleteDetail, UpdateDetail, CreateQuestion, UpdateQuestion
 
 
 class Query(graphene.ObjectType):
@@ -30,6 +30,7 @@ class Mutation(graphene.ObjectType):
     delete_detail = DeleteDetail.Field()
     update_detail = UpdateDetail.Field()
     create_question = CreateQuestion.Field()
+    update_question = UpdateQuestion.Field()
 
 
 schema = graphene.Schema(query=Query, mutation=Mutation)
