@@ -17,10 +17,25 @@ from django.conf import settings
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.core.mail import EmailMessage
+from django.db.models import Sum
 
 
 def home(request):
     return render(request, 'app1/home.html')
+
+
+def is_admin(request, userId):
+    if request.method == 'GET':
+        try:
+            user = User.objects.get(id=userId)
+            adminUser = []
+            if user.is_superuser:
+                adminUser.append({"isAdmin": 1})
+            else:
+                adminUser.append({"isAdmin": 0})
+            return HttpResponse(adminUser, content_type='application/json')
+        except:
+            return HttpResponse("Error Occured", content_type='application/json')
 
 
 def get_category(request, pk):
@@ -476,6 +491,7 @@ def get_all_events(request):
             '''query{
                     allEvents{
                         id,
+                        createdOn,
                         name,
                         activityMode,
                         maxTeams,
@@ -632,25 +648,25 @@ def update_score(request):
 
 def get_rank_by_activity(request, activity_id):
     if request.method == 'GET':
+        players = Player.objects.filter(
+            activity_id=activity_id).values("user_id").annotate(total_score=Sum('score')).order_by("-total_score")
+
         result = []
-        users = Player.objects.filter(
-            activity_id=activity_id).order_by("-score")
+        # users = Player.objects.filter(
+        #     activity_id=activity_id).order_by("-score")
 
-        dict = {}
-        for usr in users:
-            dict[usr.user.id] = 0
-        for usr in users:
-            dict[usr.user.id] += usr.score
+        # dict = {}
+        # for usr in users:
+        #     dict[usr.user.id] = 0
+        # for usr in users:
+        #     dict[usr.user.id] += usr.score
 
-        for key, value in dict.items():
-            usr = User.objects.get(id=key)
+        # for key, value in dict.items():
+        #     usr = User.objects.get(id=key)
+        for user in players:
+            usr = User.objects.get(id=user['user_id'])
             result.append({"name": usr.first_name+" " +
-                           usr.last_name, "score": value})
-
-        # for player in users[0:20]:
-        #     result.append({"name": player.user.first_name+" " +
-        #                   player.user.last_name, "score": player.score})
-
+                           usr.last_name, "score": user['total_score']})
         print(result[0:20])
 
         json_response = json.dumps(result[0:20])
@@ -659,15 +675,13 @@ def get_rank_by_activity(request, activity_id):
 
 def get_overall_rank(request):
     if request.method == 'GET':
+        players = Player.objects.values("user_id").annotate(
+            total_score=Sum('score')).order_by("-total_score")
+
         result = []
 
-        users = Player.objects.all().order_by("-score")
+        # users = Player.objects.all().order_by("-score")
 
-        # subject = 'welcome to Virtual Kuna Kidza'
-        # message = f'Hi Ayush, thank you for registering in VirtualKunaEvent.'
-        # email_from = settings.EMAIL_HOST_USER
-        # recipient_list = ['m.ayush089@gmail.com']
-        # send_mail(subject, message, email_from, recipient_list)
         mydict = {'username': "Ayush Mishra", "event": "Event-1"}
         html_template = 'success.html'
         html_message = render_to_string(html_template, context=mydict)
@@ -679,78 +693,25 @@ def get_overall_rank(request):
         message.content_subtype = 'html'
         message.send()
 
+        # dict = {}
         # for usr in users:
-        #     score = usr.score
-        #     for usr2 in users:
-        #         if usr.user.id == usr2.user.id and usr.user.email != usr2.user.email:
-        #             score = score+usr2.score
+        #     dict[usr.user.id] = 0
+        # for usr in users:
+        #     dict[usr.user.id] += usr.score
 
-        #     if usr.user.id in ids:
-        #         continue
-        #     else:
-        #         ids.append(usr.user.id)
-        #         result.append({"name": usr.user.first_name+" " +
-        #                        usr.user.last_name, "score": score})
-
-        dict = {}
-        for usr in users:
-            dict[usr.user.id] = 0
-        for usr in users:
-            dict[usr.user.id] += usr.score
-
-        for key, value in dict.items():
-            usr = User.objects.get(id=key)
-            result.append({"name": usr.first_name+" " +
-                           usr.last_name, "score": value})
+        # for key, value in dict.items():
+        #     usr = User.objects.get(id=key)
+        #     result.append({"name": usr.first_name+" " +
+        #                    usr.last_name, "score": value})
 
         # for player in users[0:20]:
         #     result.append({"name": player.user.first_name+" " +
         #                   player.user.last_name, "score": player.score})
+        for user in players:
+            usr = User.objects.get(id=user['user_id'])
+            result.append({"name": usr.first_name+" " +
+                           usr.last_name, "score": user['total_score']})
 
         print(result[0:20])
-
         json_response = json.dumps(result[0:20])
     return HttpResponse(json_response, content_type="application/json")
-
-
-# def converter(data):
-#     # data = base64.b64decode(data.encode('UTF-8'))
-#     # buf = io.BytesIO(data)
-#     # img = Image.open(buf)
-
-#     # img_io = io.BytesIO()
-#     # img.save(img_io, format='JPEG')
-#     # return InMemoryUploadedFile(img_io, field_name=None, name=token+".jpg", content_type='image/jpeg', size=img_io.tell, charset=None)
-#     format, imgstr = data.split(';base64,')
-#     ext = format.split('/')[-1]
-
-#     data = ContentFile(base64.b64decode(imgstr), name='temp.' + ext) # You can save this as file instance.
-#     return data
-
-# class LogoViewSet(viewsets.ModelViewSet):
-#     queryset = Logo.objects.order_by('id')
-#     serializer_class = LogoSerializer
-#     parser_classes = (MultiPartParser, FormParser)
-#     permission_classes = [
-#         permissions.IsAuthenticatedOrReadOnly]
-
-#     def perform_create(self, serializer):
-#         serializer.save(creator=self.request.user)
-
-
-# class LogoView(APIView):
-#     parser_classes = (MultiPartParser, FormParser)
-
-#     def get(self, request, *args, **kwargs):
-#         posts = Logo.objects.all()
-#         serializer = LogoSerializer(posts, many=True)
-#         return Response(serializer.data)
-
-#     def post(self, request, *args, **kwargs):
-#         posts_serializer = LogoSerializer(data=request.data)
-#         if posts_serializer.is_valid():
-#             posts_serializer.save()
-#             return Response(posts_serializer.data, status=status.HTTP_201_CREATED)
-#         else:
-#             print('error', posts_serializer.errors)
-#             return Response(posts_serializer.errors, status=status.HTTP_400_BAD_REQUEST)

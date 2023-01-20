@@ -47,6 +47,7 @@ class Team(models.Model):
 
 class Event(models.Model):
     activity = models.ForeignKey(Activity, on_delete=models.CASCADE)
+    created_on = models.DateTimeField(auto_now=True)
     activity_mode = models.TextField(max_length=20)
     name = models.TextField(max_length=20)
     start_date = models.DateField()
