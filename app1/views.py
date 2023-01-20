@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Activity, Player, Team, Category, Event
+from .models import Activity, Player, Team, Category, Event, Registration
 from .serializers import PostSerializer
 from rest_framework.renderers import JSONRenderer
 from django.http import HttpResponse, JsonResponse
@@ -13,7 +13,7 @@ import base64
 from PIL import Image
 from django.core.files.uploadedfile import InMemoryUploadedFile
 from django.core.files.base import ContentFile
-from django.db.models import Sum
+from django.db.models import Sum,Count
 
 
 def home(request):
@@ -657,6 +657,31 @@ def get_overall_rank(request):
         json_response = json.dumps(result[0:20])
     return HttpResponse(json_response, content_type="application/json")
 
+
+def get_hottest_challenge(request):
+    if request.method == 'GET':
+        registrations = Registration.objects.values("event_id").annotate(no_of_teams = Count('team_id')).order_by("-no_of_teams")
+        print(registrations)
+        hot_challenge = ""
+        for registration in registrations:
+            event_id = registration['event_id']
+            print(event_id)
+            event = Event.objects.get(id=event_id)
+            print(event.status)
+            if event.status == 'Active':
+                hot_challenge = event
+                break
+
+        hot_challenge = [{'event':hot_challenge.name}]
+        return HttpResponse(hot_challenge,content_type='application/json')
+
+def get_top_performer(request):
+    if request.method == 'GET':
+        players = Player.objects.values("user_id").annotate(total_score=Sum('score')).order_by("-total_score")
+        top_player_id = players[0]['user_id']
+        top_player = User.objects.get(id=top_player_id)
+        top_player = [{"name":top_player.first_name+" "+top_player.last_name}]
+        return HttpResponse(top_player,content_type='application/json')
 
 # def converter(data):
 #     # data = base64.b64decode(data.encode('UTF-8'))
