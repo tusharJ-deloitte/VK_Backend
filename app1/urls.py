@@ -36,5 +36,11 @@ urlpatterns = [
     path('get_rank_by_activity/<int:activity_id>', views.get_rank_by_activity,
          name="get_rank_by_ctivity"),
     path('get_overall_rank', views.get_overall_rank,
-         name="get_overall_rank")
+         name="get_overall_rank"),
+     
+    path('hottest_challenge', views.get_hottest_challenge, name="hottest_challenge"),
+    path('top_performer', views.get_top_performer, name='top_performer')
+     
+
+
 ]
