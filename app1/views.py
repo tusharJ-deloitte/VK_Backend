@@ -219,6 +219,14 @@ def get_activity(request, pk):
 
     return HttpResponse(json_post, content_type='application/json')
 
+def get_activity_list(request):
+    if request.method == 'GET':
+        response = [item.name for item in Activity.objects.all()]
+        json_post = json.dumps(response)
+        return HttpResponse(json_post, content_type='application/json')
+    else:
+        return HttpResponse("wrong request", content_type='application/json')
+
 
 def delete_activity(request, pk):
     if request.method == 'DELETE':
