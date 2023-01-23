@@ -1,7 +1,7 @@
 import graphene
-from .models import Detail, Question
-from .types import DetailType, QuestionType
-from .mutations import CreateDetail, DeleteDetail, UpdateDetail, CreateQuestion, UpdateQuestion
+from .models import Detail, Question, Tally
+from .types import DetailType, QuestionType, TallyType
+from .mutations import CreateDetail, DeleteDetail, UpdateDetail, CreateQuestion, UpdateQuestion, CreateTally
 
 
 class Query(graphene.ObjectType):
@@ -9,6 +9,14 @@ class Query(graphene.ObjectType):
     all_details = graphene.List(DetailType)
     question = graphene.Field(QuestionType, id=graphene.ID(required=True))
     all_questions = graphene.List(QuestionType)
+    tally = graphene.Field(TallyType, id=graphene.ID(required=True))
+    all_tallys = graphene.List(TallyType)
+
+    def resolve_all_tallys(self, info, **kwargs):
+        return Tally.objects.all()
+
+    def resolve_tally(self, info, id):
+        return Tally.objects.get(id=id)
 
     def resolve_all_details(self, info, **kwargs):
         return Detail.objects.all()
@@ -31,6 +39,7 @@ class Mutation(graphene.ObjectType):
     update_detail = UpdateDetail.Field()
     create_question = CreateQuestion.Field()
     update_question = UpdateQuestion.Field()
+    create_tally = CreateTally.Field()
 
 
 schema = graphene.Schema(query=Query, mutation=Mutation)

@@ -4,6 +4,7 @@ from django.http import HttpResponse
 import json
 from rest_framework.parsers import JSONParser
 from .schema import schema
+from app1.models import Event
 from .models import Detail, Question
 
 # Create your views here.
@@ -18,15 +19,15 @@ def create_detail(request):
 
         result = schema.execute(
             '''
-            mutation create_detail($theme: String!, $bgImage: String!, $numberOfQuestions: Int!, $level: Int!){
-            createDetail(theme: $theme, bgImage: $bgImage, numberOfQuestions:$numberOfQuestions, level:$level){
+            mutation create_detail($theme: String!,$eventId: Int!, $time: Int!,$bgImage: String!, $numberOfQuestions: Int!, $level: Int!){
+            createDetail(theme: $theme, eventId: $eventId, time:$time,bgImage: $bgImage, numberOfQuestions:$numberOfQuestions, level:$level){
                 escapeRoomDetails
                 {
                 id
                 }
             }
             }
-            ''', variables={'theme': python_data["theme"], 'bgImage': python_data["bgImage"], 'numberOfQuestions': python_data["numberOfQuestions"], 'level': python_data["level"]}
+            ''', variables={'theme': python_data["theme"], 'eventId' :python_data["eventId"], 'time': python_data["time"],'bgImage': python_data["bgImage"], 'numberOfQuestions': python_data["numberOfQuestions"], 'level': python_data["level"]}
         )
 
         print("------------------------")
@@ -63,14 +64,14 @@ def update_detail(request, room_id):
         python_data = JSONParser().parse(stream)
         result = schema.execute(
             '''
-            mutation update_detail($id:ID!,$theme: String!, $bgImage: String!, $numberOfQuestions: Int!, $level: Int!){
-                updateDetail(id:$id,theme: $theme, bgImage: $bgImage, numberOfQuestions:$numberOfQuestions, level:$level){
+            mutation update_detail($id:ID!, $eventId: Int!, $time: Int!,$theme: String!, $bgImage: String!, $numberOfQuestions: Int!, $level: Int!){
+                updateDetail(id:$id, eventId:$eventId, time:$time,theme: $theme, bgImage: $bgImage, numberOfQuestions:$numberOfQuestions, level:$level){
                     escapeRoomDetails {
                         id
                     }
                 }
             }
-            ''', variables={'id': room_id, 'theme': python_data["theme"], 'bgImage': python_data["bgImage"], 'numberOfQuestions': python_data["numberOfQuestions"], 'level': python_data["level"]}
+            ''', variables={'id': room_id, 'theme': python_data["theme"], 'eventId' :python_data["eventId"], 'time': python_data["time"],'bgImage': python_data["bgImage"], 'numberOfQuestions': python_data["numberOfQuestions"], 'level': python_data["level"]}
         )
         print("------------------------")
         print("final result : ",  result)
@@ -79,11 +80,11 @@ def update_detail(request, room_id):
     return HttpResponse(status=200)
 
 
-def get_all_rooms(request):
-    if request.method == "GET":
-        response = [item.theme for item in Detail.objects.all()]
-        json_post = json.dumps(response)
-        return HttpResponse(json_post, content_type='application/json')
+# def get_all_rooms(request):
+#     if request.method == "GET":
+#         response = [item.theme for item in Detail.objects.all()]
+#         json_post = json.dumps(response)
+#         return HttpResponse(json_post, content_type='application/json')
 
 
 def add_questions(request, room_id):
@@ -112,11 +113,11 @@ def add_questions(request, room_id):
     # return HttpResponse(status=200)
 
 
-def get_all_questions(request):
-    if request.method == "GET":
-        response = [item.question for item in Question.objects.all()]
-        json_post = json.dumps(response)
-        return HttpResponse(json_post, content_type='application/json')
+# def get_all_questions(request):
+#     if request.method == "GET":
+#         response = [item.question for item in Question.objects.all()]
+#         json_post = json.dumps(response)
+#         return HttpResponse(json_post, content_type='application/json')
 
 
 def update_questions(request, room_id):
@@ -178,7 +179,7 @@ def update_questions(request, room_id):
                 print("id----", id)
                 result = schema.execute(
                     '''
-                mutation update_question($id:Int!,$escapeRoomTheme: String!, $context: String!, $numberOfImages: Int!, $images: String!,$options:String!,$questionType:Int!,$question:String!,$answers:String!,$hints:String!){
+                mutation update_question($id:ID!,$escapeRoomTheme: String!, $context: String!, $numberOfImages: Int!, $images: String!,$options:String!,$questionType:Int!,$question:String!,$answers:String!,$hints:String!){
                 updateQuestion(id:$id,escapeRoomTheme: $escapeRoomTheme, context: $context, numberOfImages:$numberOfImages, images:$images,options:$options,questionType:$questionType,question:$question,answers:$answers,hints:$hints){
                     question
                     {
@@ -191,3 +192,102 @@ def update_questions(request, room_id):
                 print("updated", ques)
 
         return HttpResponse(200)
+
+def add_scores(request):
+    if request.method == 'POST':
+        json_data = request.body
+        stream = io.BytesIO(json_data)
+        python_data = JSONParser().parse(stream)
+        # print(python_data["name"])
+
+        result = schema.execute(
+            '''
+            mutation create_tally( $teamId: Int!, $eventId: Int!, $finalScore: Int!, $timeTaken: Int!){
+            createTally(teamId: $teamId, eventId: $eventId, finalScore:$finalScore,timeTaken: $timeTaken){
+                tallyDetails
+                {
+                id
+                }
+            }
+            }
+            ''', variables={'teamId': python_data["teamId"], 'eventId' :python_data["eventId"], 'finalScore': python_data["finalScore"],'timeTaken': python_data["timeTaken"]}
+        )
+
+        print("------------------------")
+        print("final result : ",  result)
+        json_post = json.dumps(result.data)
+        return HttpResponse(json_post, content_type='application/json')
+
+def get_all_rooms(request):
+    if request.method == 'GET':
+        result = schema.execute(
+        '''query{
+            allDetails{
+            id,
+            theme,
+            event {
+            id,
+            name,
+            activityMode,
+            startTime,
+            endTime,
+            startDate,
+            endDate
+            }
+            bgImage,
+            numberOfQuestions,
+            time,
+            level
+        }
+
+        }
+
+                ''',
+        )
+
+        json_post = json.dumps(result.data)
+
+        return HttpResponse(json_post, content_type='application/json')
+
+def get_all_questions(request, room_id):
+    print("inside get all questions")
+    if request.method == 'GET':
+        result = schema.execute(
+            '''
+            query{
+            allQuestions{
+            escapeRoom{
+                id
+                event{
+                id
+                name
+                }
+                theme
+                bgImage
+                numberOfQuestions
+                time
+                level
+            }
+            id
+            context
+            numberOfImages
+            images
+            questionType
+            question
+            options
+            answers
+            hints
+            }
+
+            }
+            ''',
+        )
+
+        all_questions=[]
+        for question in result.data["allQuestions"]:
+            r_id = int(question["escapeRoom"]["id"])
+            if r_id == room_id:
+                all_questions.append(question)
+
+        json_response = json.dumps(all_questions)
+        return HttpResponse(json_response, content_type='application/json')

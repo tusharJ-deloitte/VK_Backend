@@ -1,20 +1,25 @@
 import graphene
-from .types import DetailType, QuestionType
-from .models import Detail, Question
+from .types import DetailType, QuestionType, TallyType
+from .models import Detail, Question, Tally
+from app1.models import Event, Team
 
 
 class CreateDetail(graphene.Mutation):
     class Arguments:
         theme = graphene.String()
+        event_id = graphene.Int()
         bg_image = graphene.String()
+        time = graphene.Int()
         number_of_questions = graphene.Int()
         level = graphene.Int()
 
     escapeRoomDetails = graphene.Field(DetailType)
 
-    def mutate(self, info, theme, bg_image, number_of_questions, level):
+    def mutate(self, info, theme, event_id, time, bg_image, number_of_questions, level):
         room_details_instance = Detail(
             theme=theme,
+            event = Event.objects.get(id = event_id),
+            time = time,
             bg_image=bg_image,
             number_of_questions=number_of_questions,
             level=level
@@ -38,6 +43,8 @@ class DeleteDetail(graphene.Mutation):
 class UpdateDetail(graphene.Mutation):
     class Arguments:
         id = graphene.ID()
+        event_id = graphene.Int()
+        time = graphene.Int()
         theme = graphene.String()
         bg_image = graphene.String()
         number_of_questions = graphene.Int()
@@ -45,8 +52,10 @@ class UpdateDetail(graphene.Mutation):
 
     escapeRoomDetails = graphene.Field(DetailType)
 
-    def mutate(self, info, id, theme, bg_image, number_of_questions, level):
+    def mutate(self, info, id, event_id, time ,theme, bg_image, number_of_questions, level):
         room_details_instance = Detail.objects.get(id=id)
+        room_details_instance.event = Event.objects.get(id = event_id)
+        room_details_instance.time = time
         room_details_instance.theme = theme
         room_details_instance.bg_image = bg_image
         room_details_instance.number_of_questions = number_of_questions
@@ -125,3 +134,27 @@ class UpdateQuestion(graphene.Mutation):
         question_instance.hints = hints
         question_instance.save()
         return UpdateQuestion(question=question_instance)
+
+class CreateTally(graphene.Mutation):
+    class Arguments:
+        event_id = graphene.Int()
+        team_id = graphene.Int()
+        final_score = graphene.Int()
+        time_taken = graphene.Int()
+
+    tallyDetails = graphene.Field(TallyType)
+
+    def mutate(self, info,  team_id,event_id, final_score, time_taken):
+        print("inside mutate")
+        tally_instance = Tally(
+            event = Event.objects.get(id = event_id),
+            team = Team.objects.get(id = team_id),
+            final_score = final_score,
+            time_taken = time_taken
+        )
+        print("created")
+        tally_instance.save()
+        # tally_instance.event = Event.objects.get(id = event_id)
+        # print(tally_instance.event)
+        # tally_instance.save()
+        return CreateTally(tallyDetails=tally_instance)

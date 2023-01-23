@@ -8,7 +8,8 @@ urlpatterns = [
     path('get_all_rooms', views.get_all_rooms, name="get_all_rooms"),
     path('add_questions/<int:room_id>',
          views.add_questions, name="add_questions"),
-    path('get_all_questions', views.get_all_questions, name="get_all_questions"),
+    path('get_all_questions/<int:room_id>', views.get_all_questions, name="get_all_questions"),
     path('update_questions/<int:room_id>',
-         views.update_questions, name="update_questions")
+         views.update_questions, name="update_questions"),
+     path('add_scores', views.add_scores, name="add_scores")
 ]
