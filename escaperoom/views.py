@@ -5,7 +5,9 @@ import json
 from rest_framework.parsers import JSONParser
 from .schema import schema
 from app1.models import Event
-from .models import Detail, Question
+from .models import Detail, Question, Tally
+from heapq import nlargest
+from collections import Counter
 
 # Create your views here.
 
@@ -291,3 +293,38 @@ def get_all_questions(request, room_id):
 
         json_response = json.dumps(all_questions)
         return HttpResponse(json_response, content_type='application/json')
+
+def get_winner(request, event_id):
+    if request.method == 'GET':
+        teams = Tally.objects.filter(event_id = event_id)
+        winners =[]
+        d_score ={}
+        d_time ={}
+        for team in teams:
+            d_score[team.team_id]= team.final_score
+            d_time[team.team_id]= team.time_taken
+        
+        print(d_score)
+        print(d_time)
+        three_highest_scores = nlargest(3, d_score, key = d_score.get)
+        three_highest_scores_list = []
+        print(three_highest_scores)
+        for val in three_highest_scores:
+            three_highest_scores_list.append(d_score.get(val))
+
+        print(d_score.get(11))
+        for ind in range(0,2):
+
+            print(d_time[d_score.get(three_highest_scores_list[ind])],d_time[d_score.get(three_highest_scores_list[ind+1])])
+            # if(three_highest_scores_list[ind] == three_highest_scores_list[ind+1]):
+            #     if(d_time[three_highest_scores[ind]] < d_time[three_highest_scores[ind+1]]):  
+            #         winners.append(d_score.get(three_highest_scores_list[ind]))
+
+        
+
+        print(winners)
+
+
+
+
+        # print(teams)

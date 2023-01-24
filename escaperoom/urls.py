@@ -11,5 +11,6 @@ urlpatterns = [
     path('get_all_questions/<int:room_id>', views.get_all_questions, name="get_all_questions"),
     path('update_questions/<int:room_id>',
          views.update_questions, name="update_questions"),
-     path('add_scores', views.add_scores, name="add_scores")
+     path('add_scores', views.add_scores, name="add_scores"),
+     path('get_winner/<int:event_id>', views.get_winner, name="get_winner"),
 ]
