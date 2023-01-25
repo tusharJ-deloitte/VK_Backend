@@ -15,6 +15,7 @@ urlpatterns = [
     path('update_activity/<int:pk>', views.update_activity, name="update_activity"),
     path('get_activity/<int:pk>', views.get_activity, name="get_activity"),
     path('delete_activity/<int:pk>', views.delete_activity, name="delete_activity"),
+    path('get_activity_list',views.get_activity_list,name="get_activity_list"),
 
     # Teams
     path('create_teams', views.create_teams, name="create_teams"),

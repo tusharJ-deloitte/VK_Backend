@@ -39,15 +39,13 @@ def is_admin(request, userId):
             return HttpResponse(json_post, content_type='application/json')
         except:
             return HttpResponse("Error Occured", content_type='application/json')
+    else:
+        return HttpResponse("wrong request", content_type='application/json')
 
 
 def get_category(request, pk):
     if request.method == 'GET':
         result = schema.execute(
-
-
-
-
             '''
             query getCategory ($id : ID!){
                 category (id : $id) {
@@ -60,8 +58,9 @@ def get_category(request, pk):
         )
 
         json_post = json.dumps(result.data)
-
-    return HttpResponse(json_post, content_type='application/json')
+        return HttpResponse(json_post, content_type='application/json')
+    else:
+        return HttpResponse("wrong request", content_type='application/json')
 
 
 def create_category(request):
@@ -88,7 +87,8 @@ def create_category(request):
         print("final result : ",  result)
 
         return HttpResponse(status=200)
-    return HttpResponse(status=200)
+    else:
+        return HttpResponse("wrong request", content_type='application/json')
 
 
 def update_category(request, pk):
@@ -116,7 +116,8 @@ def update_category(request, pk):
         print("final result : ",  result)
 
         return HttpResponse(status=200)
-    return HttpResponse(status=200)
+    else:
+        return HttpResponse("wrong request", content_type='application/json')
 
 
 def delete_category(request, pk):
@@ -137,7 +138,8 @@ def delete_category(request, pk):
         print("final result : ",  result)
 
         return HttpResponse(status=200)
-    return HttpResponse(status=200)
+    else:
+        return HttpResponse("wrong request", content_type='application/json')
 
 
 def create_activity(request):
@@ -165,8 +167,9 @@ def create_activity(request):
         print("final result : ",  result)
 
         json_post = json.dumps(result.data)
-
-    return HttpResponse(json_post, content_type='application/json')
+        return HttpResponse(json_post, content_type='application/json')
+    else:
+        return HttpResponse("wrong request", content_type='application/json')
 
 
 def update_activity(request, pk):
@@ -198,8 +201,9 @@ def update_activity(request, pk):
         print("final result : ",  result)
 
         json_post = json.dumps(result.data)
-
-    return HttpResponse(json_post, content_type='application/json')
+        return HttpResponse(json_post, content_type='application/json')
+    else:
+        return HttpResponse("wrong request", content_type='application/json')
 
 
 def get_activity(request, pk):
@@ -218,8 +222,18 @@ def get_activity(request, pk):
         )
 
         json_post = json.dumps(result.data)
+        return HttpResponse(json_post, content_type='application/json')
+    else:
+        return HttpResponse("wrong request", content_type='application/json')
 
-    return HttpResponse(json_post, content_type='application/json')
+
+def get_activity_list(request):
+    if request.method == 'GET':
+        response = [item.name for item in Activity.objects.all()]
+        json_post = json.dumps(response)
+        return HttpResponse(json_post, content_type='application/json')
+    else:
+        return HttpResponse("wrong request", content_type='application/json')
 
 
 def delete_activity(request, pk):
@@ -240,7 +254,8 @@ def delete_activity(request, pk):
         print("final result : ",  result)
 
         return HttpResponse(status=200)
-    return HttpResponse(status=200)
+    else:
+        return HttpResponse("wrong request", content_type='application/json')
 
 
 def create_teams(request):
@@ -287,8 +302,9 @@ def create_teams(request):
             )
 
         json_post = json.dumps(result.data)
-
-    return HttpResponse(json_post, content_type='application/json')
+        return HttpResponse(json_post, content_type='application/json')
+    else:
+        return HttpResponse("wrong request", content_type='application/json')
 
 
 def update_teams(request, team_id):
@@ -368,22 +384,21 @@ def update_teams(request, team_id):
                         Player.objects.get(id=item.player_id).delete()
 
         return HttpResponse({"msg": "successful"}, content_type='application/json')
-
-    return HttpResponse({"msg": "successful"}, content_type='application/json')
+    else:
+        return HttpResponse("wrong request", content_type='application/json')
 
 
 def delete_teams(request, team_id):
     if request.method == 'DELETE':
-
         pt = Player.team.through.objects.filter(team_id=team_id)
 
         for item in pt:
-
             Player.objects.get(id=item.player_id).delete()
 
         Team.objects.get(id=team_id).delete()
-
-    return HttpResponse(200)
+        return HttpResponse(200)
+    else:
+        return HttpResponse("wrong request", content_type='application/json')
 
 
 def manage_teams(request, user_id):
@@ -457,8 +472,9 @@ def manage_teams(request, user_id):
             response.append(temp_response)
 
         json_post = json.dumps(response)
-
-    return HttpResponse(json_post, content_type='application/json')
+        return HttpResponse(json_post, content_type='application/json')
+    else:
+        return HttpResponse("wrong request", content_type='application/json')
 
 
 def create_event(request):
@@ -484,8 +500,9 @@ def create_event(request):
         )
 
         json_post = json.dumps(result.data)
-
-    return HttpResponse(json_post, content_type='application/json')
+        return HttpResponse(json_post, content_type='application/json')
+    else:
+        return HttpResponse("wrong request", content_type='application/json')
 
 
 def get_all_events(request):
@@ -523,8 +540,8 @@ def get_all_events(request):
         json_post = json.dumps(result.data)
 
         return HttpResponse(json_post, content_type='application/json')
-    # print(result.data['allEvents'])
-    # return result.data['allEvents']
+    else:
+        return HttpResponse("wrong request", content_type='application/json')
 
 
 def update_event(request, event_id):
@@ -552,7 +569,9 @@ def update_event(request, event_id):
         event_instance.activity = activity_instance
         event_instance.save()
 
-    return HttpResponse({"msg": "successful"}, content_type='application/json')
+        return HttpResponse({"msg": "successful"}, content_type='application/json')
+    else:
+        return HttpResponse("wrong request", content_type='application/json')
 
 
 def delete_event(request, event_id):
@@ -592,7 +611,9 @@ def register(request):
         event.save()
         print(event.cur_participation)
 
-    return HttpResponse(json_post, content_type='application/json')
+        return HttpResponse(json_post, content_type='application/json')
+    else:
+        return HttpResponse("wrong request", content_type='application/json')
 
 
 # get all registrations for a event
@@ -622,6 +643,8 @@ def get_all_registrations(request, event_id):
 
         json_response = json.dumps(all_teams)
         return HttpResponse(json_response, content_type='application/json')
+    else:
+        return HttpResponse("wrong request", content_type='application/json')
 
 
 # update team score and players score
@@ -647,6 +670,8 @@ def update_score(request):
         print(result)
         json_response = json.dumps(result.data)
         return HttpResponse(json_response, content_type="application/json")
+    else:
+        return HttpResponse("wrong request", content_type='application/json')
 
 
 def get_rank_by_activity(request, activity_id):
@@ -655,17 +680,6 @@ def get_rank_by_activity(request, activity_id):
             activity_id=activity_id).values("user_id").annotate(total_score=Sum('score')).order_by("-total_score")
 
         result = []
-        # users = Player.objects.filter(
-        #     activity_id=activity_id).order_by("-score")
-
-        # dict = {}
-        # for usr in users:
-        #     dict[usr.user.id] = 0
-        # for usr in users:
-        #     dict[usr.user.id] += usr.score
-
-        # for key, value in dict.items():
-        #     usr = User.objects.get(id=key)
         for user in players:
             usr = User.objects.get(id=user['user_id'])
             result.append({"name": usr.first_name+" " +
@@ -673,7 +687,9 @@ def get_rank_by_activity(request, activity_id):
         print(result[0:20])
 
         json_response = json.dumps(result[0:20])
-    return HttpResponse(json_response, content_type="application/json")
+        return HttpResponse(json_response, content_type="application/json")
+    else:
+        return HttpResponse("wrong request", content_type='application/json')
 
 
 def get_overall_rank(request):
@@ -682,7 +698,6 @@ def get_overall_rank(request):
             total_score=Sum('score')).order_by("-total_score")
 
         result = []
-
         # users = Player.objects.all().order_by("-score")
 
         # mydict = {'username': "Ayush Mishra", "event": "Event-1"}
@@ -696,20 +711,6 @@ def get_overall_rank(request):
         # message.content_subtype = 'html'
         # message.send()
 
-        # dict = {}
-        # for usr in users:
-        #     dict[usr.user.id] = 0
-        # for usr in users:
-        #     dict[usr.user.id] += usr.score
-
-        # for key, value in dict.items():
-        #     usr = User.objects.get(id=key)
-        #     result.append({"name": usr.first_name+" " +
-        #                    usr.last_name, "score": value})
-
-        # for player in users[0:20]:
-        #     result.append({"name": player.user.first_name+" " +
-        #                   player.user.last_name, "score": player.score})
         for user in players:
             usr = User.objects.get(id=user['user_id'])
             result.append({"name": usr.first_name+" " +
@@ -717,7 +718,9 @@ def get_overall_rank(request):
 
         print(result[0:20])
         json_response = json.dumps(result[0:20])
-    return HttpResponse(json_response, content_type="application/json")
+        return HttpResponse(json_response, content_type="application/json")
+    else:
+        return HttpResponse("wrong request", content_type='application/json')
 
 
 def get_hottest_challenge(request):
@@ -737,6 +740,8 @@ def get_hottest_challenge(request):
 
         hot_challenge = [{'event': hot_challenge.name}]
         return HttpResponse(hot_challenge, content_type='application/json')
+    else:
+        return HttpResponse("wrong request", content_type='application/json')
 
 
 def get_top_performer(request):
@@ -747,6 +752,8 @@ def get_top_performer(request):
         top_player = User.objects.get(id=top_player_id)
         top_player = [{"name": top_player.first_name+" "+top_player.last_name}]
         return HttpResponse(top_player, content_type='application/json')
+    else:
+        return HttpResponse("wrong request", content_type='application/json')
 
 
 def get_star_of_week(request):
