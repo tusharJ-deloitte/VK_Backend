@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Activity, Player, Team, Category, Event
+from .models import Activity, Player, Team, Category, Event, Registration
 from .serializers import PostSerializer
 from rest_framework.renderers import JSONRenderer
 from django.http import HttpResponse, JsonResponse
@@ -13,19 +13,39 @@ import base64
 from PIL import Image
 from django.core.files.uploadedfile import InMemoryUploadedFile
 from django.core.files.base import ContentFile
+from django.conf import settings
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
+from django.core.mail import EmailMessage
+from django.db.models import Sum
+from django.db.models import Sum, Count
+import datetime
 
 
 def home(request):
     return render(request, 'app1/home.html')
 
 
+def is_admin(request, userId):
+    if request.method == 'GET':
+        try:
+            user = User.objects.get(id=userId)
+            adminUser = []
+            if user.is_superuser:
+                adminUser.append({"isAdmin": 1})
+            else:
+                adminUser.append({"isAdmin": 0})
+            json_post = json.dumps(adminUser)
+            return HttpResponse(json_post, content_type='application/json')
+        except:
+            return HttpResponse("Error Occured", content_type='application/json')
+    else:
+        return HttpResponse("wrong request", content_type='application/json')
+
+
 def get_category(request, pk):
     if request.method == 'GET':
         result = schema.execute(
-
-
-
-
             '''
             query getCategory ($id : ID!){
                 category (id : $id) {
@@ -38,8 +58,9 @@ def get_category(request, pk):
         )
 
         json_post = json.dumps(result.data)
-
-    return HttpResponse(json_post, content_type='application/json')
+        return HttpResponse(json_post, content_type='application/json')
+    else:
+        return HttpResponse("wrong request", content_type='application/json')
 
 
 def create_category(request):
@@ -66,7 +87,8 @@ def create_category(request):
         print("final result : ",  result)
 
         return HttpResponse(status=200)
-    return HttpResponse(status=200)
+    else:
+        return HttpResponse("wrong request", content_type='application/json')
 
 
 def update_category(request, pk):
@@ -94,7 +116,8 @@ def update_category(request, pk):
         print("final result : ",  result)
 
         return HttpResponse(status=200)
-    return HttpResponse(status=200)
+    else:
+        return HttpResponse("wrong request", content_type='application/json')
 
 
 def delete_category(request, pk):
@@ -115,7 +138,8 @@ def delete_category(request, pk):
         print("final result : ",  result)
 
         return HttpResponse(status=200)
-    return HttpResponse(status=200)
+    else:
+        return HttpResponse("wrong request", content_type='application/json')
 
 
 def create_activity(request):
@@ -143,8 +167,9 @@ def create_activity(request):
         print("final result : ",  result)
 
         json_post = json.dumps(result.data)
-
-    return HttpResponse(json_post, content_type='application/json')
+        return HttpResponse(json_post, content_type='application/json')
+    else:
+        return HttpResponse("wrong request", content_type='application/json')
 
 
 def update_activity(request, pk):
@@ -176,8 +201,9 @@ def update_activity(request, pk):
         print("final result : ",  result)
 
         json_post = json.dumps(result.data)
-
-    return HttpResponse(json_post, content_type='application/json')
+        return HttpResponse(json_post, content_type='application/json')
+    else:
+        return HttpResponse("wrong request", content_type='application/json')
 
 
 def get_activity(request, pk):
@@ -196,8 +222,18 @@ def get_activity(request, pk):
         )
 
         json_post = json.dumps(result.data)
+        return HttpResponse(json_post, content_type='application/json')
+    else:
+        return HttpResponse("wrong request", content_type='application/json')
 
-    return HttpResponse(json_post, content_type='application/json')
+
+def get_activity_list(request):
+    if request.method == 'GET':
+        response = [item.name for item in Activity.objects.all()]
+        json_post = json.dumps(response)
+        return HttpResponse(json_post, content_type='application/json')
+    else:
+        return HttpResponse("wrong request", content_type='application/json')
 
 
 def delete_activity(request, pk):
@@ -218,7 +254,8 @@ def delete_activity(request, pk):
         print("final result : ",  result)
 
         return HttpResponse(status=200)
-    return HttpResponse(status=200)
+    else:
+        return HttpResponse("wrong request", content_type='application/json')
 
 
 def create_teams(request):
@@ -242,6 +279,8 @@ def create_teams(request):
 
             ''', variables={'name': python_data["name"], 'activity': python_data["activity"], 'currentSize': python_data["currentSize"], 'teamLead': python_data["teamLead"], 'teamLogo': python_data["team_logo"]}
         )
+        activity_id = Activity.objects.get(name=python_data["activity"]).pk
+        print(activity_id)
 
         # team = Team.objects.get(name = python_data["name"])
         # team.team_logo = Te
@@ -249,8 +288,8 @@ def create_teams(request):
             user_email = python_data['players'][item]
             result1 = schema.execute(
                 '''
-                        mutation createPlayer($teamName:String!,$userEmail:String!,$score:Int!){
-                            createPlayer(teamName:$teamName,userEmail:$userEmail,score:$score){
+                        mutation createPlayer($teamName:String!,$userEmail:String!,$score:Int!,$activityId:Int!){
+                            createPlayer(teamName:$teamName,userEmail:$userEmail,score:$score,activityId:$activityId){
 
                                 player{
                                     id
@@ -259,12 +298,13 @@ def create_teams(request):
                             }
                         }
 
-                        ''', variables={'teamName': python_data["name"], 'userEmail': user_email, 'score': 0}
+                        ''', variables={'teamName': python_data["name"], 'userEmail': user_email, 'score': 0, 'activityId': activity_id}
             )
 
         json_post = json.dumps(result.data)
-
-    return HttpResponse(json_post, content_type='application/json')
+        return HttpResponse(json_post, content_type='application/json')
+    else:
+        return HttpResponse("wrong request", content_type='application/json')
 
 
 def update_teams(request, team_id):
@@ -344,22 +384,21 @@ def update_teams(request, team_id):
                         Player.objects.get(id=item.player_id).delete()
 
         return HttpResponse({"msg": "successful"}, content_type='application/json')
-
-    return HttpResponse({"msg": "successful"}, content_type='application/json')
+    else:
+        return HttpResponse("wrong request", content_type='application/json')
 
 
 def delete_teams(request, team_id):
     if request.method == 'DELETE':
-
         pt = Player.team.through.objects.filter(team_id=team_id)
 
         for item in pt:
-
             Player.objects.get(id=item.player_id).delete()
 
         Team.objects.get(id=team_id).delete()
-
-    return HttpResponse(200)
+        return HttpResponse(200)
+    else:
+        return HttpResponse("wrong request", content_type='application/json')
 
 
 def manage_teams(request, user_id):
@@ -433,8 +472,9 @@ def manage_teams(request, user_id):
             response.append(temp_response)
 
         json_post = json.dumps(response)
-
-    return HttpResponse(json_post, content_type='application/json')
+        return HttpResponse(json_post, content_type='application/json')
+    else:
+        return HttpResponse("wrong request", content_type='application/json')
 
 
 def create_event(request):
@@ -460,8 +500,9 @@ def create_event(request):
         )
 
         json_post = json.dumps(result.data)
-
-    return HttpResponse(json_post, content_type='application/json')
+        return HttpResponse(json_post, content_type='application/json')
+    else:
+        return HttpResponse("wrong request", content_type='application/json')
 
 
 def get_all_events(request):
@@ -470,6 +511,7 @@ def get_all_events(request):
             '''query{
                     allEvents{
                         id,
+                        createdOn,
                         name,
                         activityMode,
                         maxTeams,
@@ -498,8 +540,8 @@ def get_all_events(request):
         json_post = json.dumps(result.data)
 
         return HttpResponse(json_post, content_type='application/json')
-    # print(result.data['allEvents'])
-    # return result.data['allEvents']
+    else:
+        return HttpResponse("wrong request", content_type='application/json')
 
 
 def update_event(request, event_id):
@@ -527,7 +569,9 @@ def update_event(request, event_id):
         event_instance.activity = activity_instance
         event_instance.save()
 
-    return HttpResponse({"msg": "successful"}, content_type='application/json')
+        return HttpResponse({"msg": "successful"}, content_type='application/json')
+    else:
+        return HttpResponse("wrong request", content_type='application/json')
 
 
 def delete_event(request, event_id):
@@ -567,7 +611,9 @@ def register(request):
         event.save()
         print(event.cur_participation)
 
-    return HttpResponse(json_post, content_type='application/json')
+        return HttpResponse(json_post, content_type='application/json')
+    else:
+        return HttpResponse("wrong request", content_type='application/json')
 
 
 # get all registrations for a event
@@ -589,13 +635,179 @@ def get_all_registrations(request, event_id):
             ''',
         )
 
-        all_teams=[]
+        all_teams = []
         for regs in result.data["allRegistrations"]:
             e_id = int(regs["event"]["id"])
             if e_id == event_id:
                 all_teams.append(regs["team"])
 
         json_response = json.dumps(all_teams)
+        return HttpResponse(json_response, content_type='application/json')
+    else:
+        return HttpResponse("wrong request", content_type='application/json')
+
+
+# update team score and players score
+def update_score(request):
+    if request.method == 'PUT':
+        json_data = request.body
+        stream = io.BytesIO(json_data)
+        python_data = JSONParser().parse(stream)
+        print(python_data)
+
+        result = schema.execute(
+            '''
+            mutation updateTeamScores($eventId:ID!,$firstPrizeTeamId:ID!,$secondPrizeTeamId:ID!,$thirdPrizeTeamId:ID!){
+                updateTeamScores(eventId:$eventId,firstPrizeTeamId:$firstPrizeTeamId,secondPrizeTeamId:$secondPrizeTeamId,thirdPrizeTeamId:$thirdPrizeTeamId){
+                    event{
+                        id
+                    }
+                }
+            }
+            ''', variables={'eventId': python_data['event_id'], 'firstPrizeTeamId': python_data['first_prize_team_id'], 'secondPrizeTeamId': python_data['second_prize_team_id'], 'thirdPrizeTeamId': python_data['third_prize_team_id']}
+        )
+
+        print(result)
+        json_response = json.dumps(result.data)
+        return HttpResponse(json_response, content_type="application/json")
+    else:
+        return HttpResponse("wrong request", content_type='application/json')
+
+
+def get_rank_by_activity(request, activity_id):
+    if request.method == 'GET':
+        players = Player.objects.filter(
+            activity_id=activity_id).values("user_id").annotate(total_score=Sum('score')).order_by("-total_score")
+
+        result = []
+        for user in players:
+            usr = User.objects.get(id=user['user_id'])
+            result.append({"name": usr.first_name+" " +
+                           usr.last_name, "score": user['total_score']})
+        print(result[0:20])
+
+        json_response = json.dumps(result[0:20])
+        return HttpResponse(json_response, content_type="application/json")
+    else:
+        return HttpResponse("wrong request", content_type='application/json')
+
+
+def get_overall_rank(request):
+    if request.method == 'GET':
+        players = Player.objects.values("user_id").annotate(
+            total_score=Sum('score')).order_by("-total_score")
+
+        result = []
+        # users = Player.objects.all().order_by("-score")
+
+        # mydict = {'username': "Ayush Mishra", "event": "Event-1"}
+        # html_template = 'success.html'
+        # html_message = render_to_string(html_template, context=mydict)
+        # subject = 'Thank you for Registering'
+        # email_from = settings.EMAIL_HOST_USER
+        # recipient_list = ['ayushmishra7@deloitte.com', 'm.ayush089@gmail.com']
+        # message = EmailMessage(subject, html_message,
+        #                        email_from, recipient_list)
+        # message.content_subtype = 'html'
+        # message.send()
+
+        for user in players:
+            usr = User.objects.get(id=user['user_id'])
+            result.append({"name": usr.first_name+" " +
+                           usr.last_name, "score": user['total_score']})
+
+        print(result[0:20])
+        json_response = json.dumps(result[0:20])
+        return HttpResponse(json_response, content_type="application/json")
+    else:
+        return HttpResponse("wrong request", content_type='application/json')
+
+
+def get_hottest_challenge(request):
+    if request.method == 'GET':
+        registrations = Registration.objects.values("event_id").annotate(
+            no_of_teams=Count('team_id')).order_by("-no_of_teams")
+        print(registrations)
+        hot_challenge = ""
+        for registration in registrations:
+            event_id = registration['event_id']
+            print(event_id)
+            event = Event.objects.get(id=event_id)
+            print(event.status)
+            if event.status == 'Active':
+                hot_challenge = event
+                break
+
+        hot_challenge = [{'event': hot_challenge.name}]
+        return HttpResponse(hot_challenge, content_type='application/json')
+    else:
+        return HttpResponse("wrong request", content_type='application/json')
+
+
+def get_top_performer(request):
+    if request.method == 'GET':
+        players = Player.objects.values("user_id").annotate(
+            total_score=Sum('score')).order_by("-total_score")
+        top_player_id = players[0]['user_id']
+        top_player = User.objects.get(id=top_player_id)
+        top_player = [{"name": top_player.first_name+" "+top_player.last_name}]
+        return HttpResponse(top_player, content_type='application/json')
+    else:
+        return HttpResponse("wrong request", content_type='application/json')
+
+
+def get_star_of_week(request):
+    if request.method == "GET":
+
+        events = Event.objects.all()
+
+        # print(datetime.datetime.now())
+        score = 0
+        star = ""
+        for event in events:
+            # print(event.created_on.astimezone())
+            curr = datetime.datetime.now().astimezone()
+            diff = event.created_on.astimezone()
+
+            res = curr-diff
+
+            print(res.days)
+            if (res.days <= 7):
+                result = schema.execute(
+                    '''
+                    query{
+                        allRegistrations{
+                            event{
+                                id
+                            },
+                            team{
+                                id,
+                                name
+                            }
+                        }
+                    }
+                    ''',
+                )
+
+                all_teams = []
+                for regs in result.data["allRegistrations"]:
+                    e_id = int(regs["event"]["id"])
+                    if e_id == event.pk:
+                        all_teams.append(regs["team"])
+
+                for team in all_teams:
+                    players = Player.team.through.objects.filter(
+                        team_id=team["id"])
+                    for player in players:
+                        plr = Player.objects.get(id=player.player_id)
+                        if plr.score > score:
+                            score = plr.score
+                            user = User.objects.get(id=plr.user_id)
+                            star = ""+user.first_name+" "+user.last_name
+
+        response = {"name": star, "score": score}
+        json_response = json.dumps(response)
+
         return HttpResponse(json_response, content_type='application/json')
 
 

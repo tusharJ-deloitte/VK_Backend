@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+import datetime
 
 # Create your models here.
 
@@ -39,6 +40,7 @@ class Team(models.Model):
     team_lead = models.TextField(max_length=20, null=True)
     created_on = models.DateTimeField(auto_now_add=True)
     team_logo = models.TextField(blank=True, null=True)
+    team_score = models.IntegerField(default=0)
 
     def __str__(self) -> str:
         return self.name
@@ -46,7 +48,8 @@ class Team(models.Model):
 
 class Event(models.Model):
     activity = models.ForeignKey(Activity, on_delete=models.CASCADE)
-    activity_mode = models.TextField(max_length=20)
+    created_on = models.DateTimeField(default=datetime.datetime.now())
+    activity_mode = models.TextField(max_length=20, default='online')
     name = models.TextField(max_length=20)
     start_date = models.DateField()
     end_date = models.DateField()
@@ -58,6 +61,20 @@ class Event(models.Model):
     second_prize = models.IntegerField(default=75)
     third_prize = models.IntegerField(default=50)
     cur_participation = models.IntegerField(default=0)
+
+    # setting up choices for status
+    YET_TO_START = "Yet To Start"
+    ACTIVE = "Active"
+    ELAPSED = "Elapsed"
+    STATUS_CHOICES = [
+        # (ACTUAL VALUE , HUMAN READABLE FORMAT)
+        (YET_TO_START, "yet to start"),
+        (ACTIVE, "active"),
+        (ELAPSED, "elapsed"),
+    ]
+
+    status = models.CharField(
+        max_length=20, choices=STATUS_CHOICES, default=YET_TO_START)
 
     def __str__(self) -> str:
         return self.name
@@ -73,9 +90,9 @@ class Registration(models.Model):
 
 class Player(models.Model):
     team = models.ManyToManyField(Team)
+    activity_id = models.IntegerField(default=0)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     score = models.IntegerField(default=0)
-    # activity = models.ManyToManyField(Activity)
 
     def __str__(self):
         return self.user.first_name
