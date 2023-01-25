@@ -229,8 +229,10 @@ class CreateEvent(graphene.Mutation):
             max_members=max_members,
             first_prize=first_prize,
             second_prize=second_prize,
-            third_prize=third_prize
+            third_prize=third_prize,
+
         )
+
         event_instance.save()
         print("outside")
 

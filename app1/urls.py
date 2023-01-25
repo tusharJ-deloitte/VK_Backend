@@ -37,10 +37,12 @@ urlpatterns = [
          name="get_rank_by_ctivity"),
     path('get_overall_rank', views.get_overall_rank,
          name="get_overall_rank"),
-     
-    path('hottest_challenge', views.get_hottest_challenge, name="hottest_challenge"),
-    path('top_performer', views.get_top_performer, name='top_performer')
-     
+
+    path('hottest_challenge', views.get_hottest_challenge,
+         name="hottest_challenge"),
+    path('top_performer', views.get_top_performer, name='top_performer'),
+    path('star_of_week', views.get_star_of_week, name='star_of_week')
+
 
 
 ]

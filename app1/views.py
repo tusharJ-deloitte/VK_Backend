@@ -19,6 +19,7 @@ from django.template.loader import render_to_string
 from django.core.mail import EmailMessage
 from django.db.models import Sum
 from django.db.models import Sum, Count
+import datetime
 
 
 def home(request):
@@ -34,7 +35,8 @@ def is_admin(request, userId):
                 adminUser.append({"isAdmin": 1})
             else:
                 adminUser.append({"isAdmin": 0})
-            return HttpResponse(adminUser, content_type='application/json')
+            json_post = json.dumps(adminUser)
+            return HttpResponse(json_post, content_type='application/json')
         except:
             return HttpResponse("Error Occured", content_type='application/json')
 
@@ -683,16 +685,16 @@ def get_overall_rank(request):
 
         # users = Player.objects.all().order_by("-score")
 
-        mydict = {'username': "Ayush Mishra", "event": "Event-1"}
-        html_template = 'success.html'
-        html_message = render_to_string(html_template, context=mydict)
-        subject = 'Thank you for Registering'
-        email_from = settings.EMAIL_HOST_USER
-        recipient_list = ['ayushmishra7@deloitte.com', 'm.ayush089@gmail.com']
-        message = EmailMessage(subject, html_message,
-                               email_from, recipient_list)
-        message.content_subtype = 'html'
-        message.send()
+        # mydict = {'username': "Ayush Mishra", "event": "Event-1"}
+        # html_template = 'success.html'
+        # html_message = render_to_string(html_template, context=mydict)
+        # subject = 'Thank you for Registering'
+        # email_from = settings.EMAIL_HOST_USER
+        # recipient_list = ['ayushmishra7@deloitte.com', 'm.ayush089@gmail.com']
+        # message = EmailMessage(subject, html_message,
+        #                        email_from, recipient_list)
+        # message.content_subtype = 'html'
+        # message.send()
 
         # dict = {}
         # for usr in users:
@@ -745,6 +747,62 @@ def get_top_performer(request):
         top_player = User.objects.get(id=top_player_id)
         top_player = [{"name": top_player.first_name+" "+top_player.last_name}]
         return HttpResponse(top_player, content_type='application/json')
+
+
+def get_star_of_week(request):
+    if request.method == "GET":
+
+        events = Event.objects.all()
+
+        # print(datetime.datetime.now())
+        score = 0
+        star = ""
+        for event in events:
+            # print(event.created_on.astimezone())
+            curr = datetime.datetime.now().astimezone()
+            diff = event.created_on.astimezone()
+
+            res = curr-diff
+
+            print(res.days)
+            if (res.days <= 7):
+                result = schema.execute(
+                    '''
+                    query{
+                        allRegistrations{
+                            event{
+                                id
+                            },
+                            team{
+                                id,
+                                name
+                            }
+                        }
+                    }
+                    ''',
+                )
+
+                all_teams = []
+                for regs in result.data["allRegistrations"]:
+                    e_id = int(regs["event"]["id"])
+                    if e_id == event.pk:
+                        all_teams.append(regs["team"])
+
+                for team in all_teams:
+                    players = Player.team.through.objects.filter(
+                        team_id=team["id"])
+                    for player in players:
+                        plr = Player.objects.get(id=player.player_id)
+                        if plr.score > score:
+                            score = plr.score
+                            user = User.objects.get(id=plr.user_id)
+                            star = ""+user.first_name+" "+user.last_name
+
+        response = {"name": star, "score": score}
+        json_response = json.dumps(response)
+
+        return HttpResponse(json_response, content_type='application/json')
+
 
 # def converter(data):
 #     # data = base64.b64decode(data.encode('UTF-8'))

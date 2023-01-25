@@ -39,7 +39,7 @@ class PlayerType(DjangoObjectType):
 class EventType(DjangoObjectType):
     class Meta:
         model = Event
-        fields = ('id', 'name', 'activity', 'created_on' 'activity_mode', 'start_date', 'end_date', 'start_time', 'end_time',
+        fields = ('id', 'name', 'activity', 'created_on', 'activity_mode', 'start_date', 'end_date', 'start_time', 'end_time',
                   'max_teams', 'max_members', 'first_prize', 'second_prize', 'third_prize', 'cur_participation', 'status')
 
 

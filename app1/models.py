@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+import datetime
 
 # Create your models here.
 
@@ -47,8 +48,8 @@ class Team(models.Model):
 
 class Event(models.Model):
     activity = models.ForeignKey(Activity, on_delete=models.CASCADE)
-    created_on = models.DateTimeField(auto_now=True)
-    activity_mode = models.TextField(max_length=20)
+    created_on = models.DateTimeField(default=datetime.datetime.now())
+    activity_mode = models.TextField(max_length=20, default='online')
     name = models.TextField(max_length=20)
     start_date = models.DateField()
     end_date = models.DateField()
