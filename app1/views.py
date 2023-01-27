@@ -737,9 +737,12 @@ def get_hottest_challenge(request):
             if event.status == 'Active':
                 hot_challenge = event
                 break
-
-        hot_challenge = [{'event': hot_challenge.name}]
-        return HttpResponse(hot_challenge, content_type='application/json')
+        if hot_challenge != "":
+            hot_challenge = [{'event': hot_challenge.name}]
+            return HttpResponse(hot_challenge, content_type='application/json')
+        else:
+            hot_challenge = [{'event': "hottest challenge not available"}]
+            return HttpResponse(hot_challenge, content_type='application/json')
     else:
         return HttpResponse("wrong request", content_type='application/json')
 
@@ -800,7 +803,7 @@ def get_star_of_week(request):
                         team_id=team["id"])
                     for player in players:
                         plr = Player.objects.get(id=player.player_id)
-                        if plr.score > score:
+                        if plr.score >= score:
                             score = plr.score
                             user = User.objects.get(id=plr.user_id)
                             star = ""+user.first_name+" "+user.last_name
@@ -811,44 +814,64 @@ def get_star_of_week(request):
         return HttpResponse(json_response, content_type='application/json')
 
 
-# def converter(data):
-#     # data = base64.b64decode(data.encode('UTF-8'))
-#     # buf = io.BytesIO(data)
-#     # img = Image.open(buf)
+def get_events_participated(request, user_id):
+    if request.method == "GET":
+        events = Event.objects.all()
+        total = events.__len__()
+        print(total)
+        count = 0
+        for event in events:
 
-#     # img_io = io.BytesIO()
-#     # img.save(img_io, format='JPEG')
-#     # return InMemoryUploadedFile(img_io, field_name=None, name=token+".jpg", content_type='image/jpeg', size=img_io.tell, charset=None)
-#     format, imgstr = data.split(';base64,')
-#     ext = format.split('/')[-1]
+            result = schema.execute(
+                '''
+                    query{
+                        allRegistrations{
+                            event{
+                                id
+                            },
+                            team{
+                                id,
+                                name
+                            }
+                        }
+                    }
+                    ''',
+            )
 
-#     data = ContentFile(base64.b64decode(imgstr), name='temp.' + ext) # You can save this as file instance.
-#     return data
+            all_teams = []
+            for regs in result.data["allRegistrations"]:
+                e_id = int(regs["event"]["id"])
+                if e_id == event.pk:
+                    all_teams.append(regs["team"])
 
-# class LogoViewSet(viewsets.ModelViewSet):
-#     queryset = Logo.objects.order_by('id')
-#     serializer_class = LogoSerializer
-#     parser_classes = (MultiPartParser, FormParser)
-#     permission_classes = [
-#         permissions.IsAuthenticatedOrReadOnly]
+            for team in all_teams:
+                players = Player.team.through.objects.filter(
+                    team_id=team["id"])
+                for player in players:
+                    plr = Player.objects.get(id=player.player_id)
+                    if plr.user_id == user_id:
+                        count += 1
 
-#     def perform_create(self, serializer):
-#         serializer.save(creator=self.request.user)
+        response = {"total_events": total, "participated": count}
+        json_response = json.dumps(response)
+
+        return HttpResponse(json_response, content_type='application/json')
 
 
-# class LogoView(APIView):
-#     parser_classes = (MultiPartParser, FormParser)
+def get_my_rank(request, user_id):
+    if request.method == 'GET':
+        players = Player.objects.values("user_id").annotate(
+            total_score=Sum('score')).order_by("-total_score")
 
-#     def get(self, request, *args, **kwargs):
-#         posts = Logo.objects.all()
-#         serializer = LogoSerializer(posts, many=True)
-#         return Response(serializer.data)
+        result = []
 
-#     def post(self, request, *args, **kwargs):
-#         posts_serializer = LogoSerializer(data=request.data)
-#         if posts_serializer.is_valid():
-#             posts_serializer.save()
-#             return Response(posts_serializer.data, status=status.HTTP_201_CREATED)
-#         else:
-#             print('error', posts_serializer.errors)
-#             return Response(posts_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        for user in players:
+            usr = User.objects.get(id=user['user_id'])
+            result.append(user['user_id'])
+
+        myRank = result.index(user_id)
+
+        json_response = json.dumps({"myrank": myRank+1})
+        return HttpResponse(json_response, content_type="application/json")
+    else:
+        return HttpResponse("wrong request", content_type='application/json')

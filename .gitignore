@@ -1,4 +1,4 @@
 app1/__pycache__
 GrapheneTest/__pycache__
-db.sqlite3
+/db.sqlite3
 venv

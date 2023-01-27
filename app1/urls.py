@@ -15,7 +15,7 @@ urlpatterns = [
     path('update_activity/<int:pk>', views.update_activity, name="update_activity"),
     path('get_activity/<int:pk>', views.get_activity, name="get_activity"),
     path('delete_activity/<int:pk>', views.delete_activity, name="delete_activity"),
-    path('get_activity_list',views.get_activity_list,name="get_activity_list"),
+    path('get_activity_list', views.get_activity_list, name="get_activity_list"),
 
     # Teams
     path('create_teams', views.create_teams, name="create_teams"),
@@ -34,15 +34,24 @@ urlpatterns = [
     path('event/get_all_registrations/<int:event_id>',
          views.get_all_registrations, name='get_all_registrations'),
     path('event/update_score', views.update_score, name="update_score"),
+
+    # leaderboard
     path('get_rank_by_activity/<int:activity_id>', views.get_rank_by_activity,
          name="get_rank_by_ctivity"),
     path('get_overall_rank', views.get_overall_rank,
          name="get_overall_rank"),
 
+    # wall of fame
     path('hottest_challenge', views.get_hottest_challenge,
          name="hottest_challenge"),
     path('top_performer', views.get_top_performer, name='top_performer'),
-    path('star_of_week', views.get_star_of_week, name='star_of_week')
+    path('star_of_week', views.get_star_of_week, name='star_of_week'),
+
+    # personal stats
+    path('events_participated/<int:user_id>', views.get_events_participated,
+         name='events_participated'),
+    path('my_rank/<int:user_id>', views.get_my_rank,
+         name='my_rank')
 
 
 
