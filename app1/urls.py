@@ -48,6 +48,7 @@ urlpatterns = [
     path('star_of_week', views.get_star_of_week, name='star_of_week'),
 
     # personal stats
+
     path('events_participated/<int:user_id>', views.get_events_participated,
          name='events_participated'),
     path('my_rank/<int:user_id>', views.get_my_rank,

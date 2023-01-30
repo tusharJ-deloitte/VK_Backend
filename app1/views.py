@@ -738,11 +738,11 @@ def get_hottest_challenge(request):
                 hot_challenge = event
                 break
         if hot_challenge != "":
-            hot_challenge = [{'event': hot_challenge.name}]
-            return HttpResponse(hot_challenge, content_type='application/json')
+            hot_challenge = {'event': hot_challenge.name}
+            return HttpResponse(json.dumps(hot_challenge), content_type='application/json')
         else:
-            hot_challenge = [{'event': "hottest challenge not available"}]
-            return HttpResponse(hot_challenge, content_type='application/json')
+            hot_challenge = {'event': "hottest challenge not available"}
+            return HttpResponse(json.dumps(hot_challenge), content_type='application/json')
     else:
         return HttpResponse("wrong request", content_type='application/json')
 
@@ -753,8 +753,8 @@ def get_top_performer(request):
             total_score=Sum('score')).order_by("-total_score")
         top_player_id = players[0]['user_id']
         top_player = User.objects.get(id=top_player_id)
-        top_player = [{"name": top_player.first_name+" "+top_player.last_name}]
-        return HttpResponse(top_player, content_type='application/json')
+        top_player = {"name": top_player.first_name+" "+top_player.last_name}
+        return HttpResponse(json.dumps(top_player), content_type='application/json')
     else:
         return HttpResponse("wrong request", content_type='application/json')
 
