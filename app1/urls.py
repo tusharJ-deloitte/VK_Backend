@@ -52,7 +52,10 @@ urlpatterns = [
     path('events_participated/<int:user_id>', views.get_events_participated,
          name='events_participated'),
     path('my_rank/<int:user_id>', views.get_my_rank,
-         name='my_rank')
+         name='my_rank'),
+
+     #integration PODS & DNA
+     path("get_pods",views.get_pods_data,name='get_pods_data')
 
 
 

@@ -875,3 +875,55 @@ def get_my_rank(request, user_id):
         return HttpResponse(json_response, content_type="application/json")
     else:
         return HttpResponse("wrong request", content_type='application/json')
+
+
+import requests
+
+#get data from PODS platform
+def get_pods_data(request):
+    if request.method == 'POST':
+        try:
+            body = request.body
+            stream = io.BytesIO(body)
+            data = JSONParser().parse(stream)
+            print(data)
+
+            url = "https://apis.dna-staging.hashedin.com/pods/gql/"
+            payload = "{\"query\":\"query paginatedAllocationList ($filtering: AllocationListFilterInput) {\\r\\n  paginatedAllocationList(filtering: $filtering) {\\r\\n    result {\\r\\n      pod {\\r\\n        id\\r\\n        podAllocations {\\r\\n          employee {\\r\\n            id\\r\\n            name\\r\\n            email\\r\\n            designation\\r\\n          }\\r\\n          startDate\\r\\n          endDate\\r\\n        }\\r\\n      }\\r\\n    }\\r\\n  }\\r\\n}\",\"variables\":{\"filtering\":{\"employee_Email\":\"donnaalsop_test@deloitte.com\",\"startDate_Lte\":\"2023-01-31\",\"endDate_Gte\":\"2023-01-31\"}}}"
+            headers = {
+                'x-api-token': 'eyJraWQiOiJSWjVxekdQNHFNYnl0SG1uXC9XcitONXA0cVgzOVBFQUpIWEw5SFpvR2tWVT0iLCJhbGciOiJSUzI1NiJ9.eyJhdF9oYXNoIjoibXpIcnFISFgzU2JMbjE1cjBBX0hRUSIsInN1YiI6Ijc0M2NjMzJiLTkxYzktNGEzOS1iZjExLTYyZmM2ZGM4YTNjMCIsImNvZ25pdG86Z3JvdXBzIjpbInVzLWVhc3QtMl9xb05jNTdxajhfRGVsb2l0dGUiXSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLnVzLWVhc3QtMi5hbWF6b25hd3MuY29tXC91cy1lYXN0LTJfcW9OYzU3cWo4IiwiY3VzdG9tOm9yZ19pZCI6IjExMjIiLCJjdXN0b206am9iX3RpdGxlIjoiREMgU29mdHdhcmUgRW5naW5lZXIgSSIsImN1c3RvbTpsb2NhdGlvbiI6IlVTIC0gQmVuZ2FsdXJ1IiwiaWRlbnRpdGllcyI6W3sidXNlcklkIjoidlZLM0t1c1ZjN2RBa1VhRVk3dkZZamtjMDI4UVNfU19hQ084TVlYczF5byIsInByb3ZpZGVyTmFtZSI6IkRlbG9pdHRlIiwicHJvdmlkZXJUeXBlIjoiT0lEQyIsImlzc3VlciI6bnVsbCwicHJpbWFyeSI6InRydWUiLCJkYXRlQ3JlYXRlZCI6IjE2NzUwNjcxMDYzODAifV0sImF1dGhfdGltZSI6MTY3NTE1MjA3NCwiY3VzdG9tOmVtYWlscyI6IntcInByaW1hcnlfZW1haWxcIjogXCJtb2hkc3Voa2hhbkBkZWxvaXR0ZS5jb21cIiwgXCJzZWNvbmRhcnlfZW1haWxzXCI6IFtdfSIsImV4cCI6MTY3NTIzNDg4MCwiaWF0IjoxNjc1MjMxMjgxLCJqdGkiOiJkMzY5ZWI0ZC1iYWEwLTRjMTQtOTEwMy02ZDFmMGQzOWVhZWMiLCJlbWFpbCI6Im1vaGRzdWhraGFuQGRlbG9pdHRlLmNvbSIsIm9yZ2FuaXNhdGlvbl9kZXRhaWxzIjoiW3tcIm5hbWVcIjogXCJIYXNoZWRJblwiLCBcInRpbWV6b25lXCI6IFwiVVRDXCIsIFwidGVuYW50X2lkXCI6IFwiMTEyMlwiLCBcImFsbG93ZWRfYXBwc1wiOiBbXCJoaXJlXCIsIFwicnRcIiwgXCJwdWxzZVwiLCBcImxlYXZlc1wiLCBcInBvZHNcIiwgXCJodS1ldmFsdWF0aW9uXCIsIFwidm9sdW50ZWVyXCIsIFwicmV3YXJkc1wiLCBcInRpbWVzaGVldFwiLCBcImFsbG9jYXRpb25cIiwgXCJob21lXCIsIFwiaHUtYXV0b21hdGlvblwiXSwgXCJjdXJyZW5jeVwiOiBcIklOUlwiLCBcImxvZ29fczNfb2JqZWN0X3VybFwiOiBcImh0dHBzOlwvXC9kbmEtc3RhZ2luZy1yZXNvdXJjZS1idWNrZXQuczMudXMtZWFzdC0yLmFtYXpvbmF3cy5jb21cL29yZ19kaXJlY3RvcnlcL29yZ2FuaXNhdGlvbl9sb2dvc1wvaGFzaGVkaW4ucG5nXCJ9XSIsImN1c3RvbTp1dWlkIjoiNmM3MTgxZjUtNGM3ZS00NjJmLTlmODMtNmNlY2M3ZTU0OWI0IiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJjb2duaXRvOnVzZXJuYW1lIjoiRGVsb2l0dGVfdlZLM0t1c1ZjN2RBa1VhRVk3dkZZamtjMDI4UVNfU19hQ084TVlYczF5byIsInBpY3R1cmUiOiJodHRwczpcL1wvZ3JhcGgubWljcm9zb2Z0LmNvbVwvdjEuMFwvbWVcL3Bob3RvXC8kdmFsdWUiLCJvcmlnaW5fanRpIjoiNzhmYWE1NTktZmE2OS00ZTgyLWEwNjktNWMzZWE5MDU4NjRhIiwiYXVkIjoiMjkwazI0M3RrdWwxdTNmdGFwdmFkYjlhMGUiLCJ0b2tlbl91c2UiOiJpZCIsIm5hbWUiOiJLaGFuLCBNb2hkIFN1aGFpbCIsInNlc3Npb25fdGVuYW50IjoiMTEyMiJ9.vWvfEG_N1uuz9-EtVL46Pmt6WdY-iXESXnyu8vJrBP7FxOyXg4VHeufpjFDNxpdSatqZFICekiIAxTnio0ob2qc-z-JdlAqbT_I8gDIElaq9xuYCxqk974dn_iDUdxlcsafjeiICX6XcBPGRxlRlRkn7W9K0e-vjzoYrsdlLTlSiAWvsALZR0GaNl1ijxqYo2rIsaR2BIYlvCiaZDeanxE-ntn9DICHrylgiX8y1_Re5Wt-o_yGNKmgkUZQ4fmuB2Eoxh9O2sFBPRXhmCVCbUy6S7cO7s5hdv0VoWL7mJL61xscbGLmLjCaQ_nwL6RgKfVBMNOeznm4RGYRWt2B6Tw',
+                'Content-Type': 'application/json',
+                'Cookie': 'csrftoken=4UqAWHGIzb3UIeTVU90Ogd05ITUmueZObaV726GSwcV2whtGlndmDuz3Yx5OlXPW'
+            }
+
+            response = requests.request("POST", url, headers=headers, data=payload)
+            print(response.text)
+            response = json.loads(response.text)
+            
+            pods = response['data']['paginatedAllocationList']['result']
+            employee_list = []
+            emp_ids = []
+            for pod in pods:
+                podEmployees = pod['pod']['podAllocations']
+                for emp in podEmployees:
+                    emp = emp['employee']
+                    print(emp['id'])
+                    if emp['id'] in emp_ids:
+                        continue
+                    emp_ids.append(emp['id'])
+                    employee_list.append({
+                        "id": emp['id'],
+                        "name":emp['name'],
+                        "email":emp['email'],
+                        "designation": emp['designation']
+                    })
+                    
+            print(employee_list)
+            return HttpResponse(json.dumps(employee_list), content_type='application/json')
+        except Exception as err:
+            print(err)
+            return HttpResponse(err, content_type='application/json')
+    else:
+        return HttpResponse("wrong request", content_type='application/json')
+    
+    
