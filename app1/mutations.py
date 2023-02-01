@@ -1,6 +1,6 @@
 import graphene
-from app1.types import CategoryType, ActivityType, TeamType, PlayerType, EventType, RegistrationType
-from .models import Category, Activity, Team, Player, Event, Registration
+from app1.types import CategoryType, ActivityType, TeamType, PlayerType, EventType, RegistrationType, UploadType
+from .models import Category, Activity, Team, Player, Event, Registration, Upload
 import datetime
 from django.contrib.auth.models import User
 
@@ -331,3 +331,21 @@ class UpdateTeamScores(graphene.Mutation):
 
         print("done")
         return UpdateTeamScores(event=event_instance)
+
+
+class CreateUpload(graphene.Mutation):
+    class Arguments:
+        user_email = graphene.String(required=True)
+        file_name = graphene.String(required=True)
+
+    upload = graphene.Field(UploadType)
+
+    def mutate(self, info, user_email, file_name):
+        upload_instance = Upload(
+            user=User.objects.get(email=user_email),
+            file_name=file_name
+        )
+        upload_instance.save()
+        return CreateUpload(upload_instance)
+
+

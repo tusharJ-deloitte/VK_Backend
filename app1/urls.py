@@ -36,7 +36,7 @@ urlpatterns = [
          views.get_all_registrations, name='get_all_registrations'),
     path('event/update_score', views.update_score, name="update_score"),
 
-    # leaderboard
+    # leaderboard-overall
     path('get_rank_by_activity/<int:activity_id>', views.get_rank_by_activity,
          name="get_rank_by_ctivity"),
     path('get_overall_rank', views.get_overall_rank,
@@ -49,14 +49,13 @@ urlpatterns = [
     path('star_of_week', views.get_star_of_week, name='star_of_week'),
 
     # personal stats
-
     path('events_participated/<int:user_id>', views.get_events_participated,
          name='events_participated'),
     path('my_rank/<int:user_id>', views.get_my_rank,
          name='my_rank'),
 
 
-
+    # leaderboard-personal
     path('my_top_events/<int:user_id>', views.get_top_events_participated,
          name='my_top_events'),
     path('get_my_score/<int:user_id>', views.get_my_score,
@@ -64,6 +63,12 @@ urlpatterns = [
     path('get_top_events_activity/<int:user_id>/<int:activity_id>', views.get_top_events_by_activity,
          name='get_top_events_activity'),
 
+
+
+    # plank
+    path('upload_aws/<str:user_email>', views.upload_aws, name="upload_aws"),
+    # path('edit_upload/<str:user_email>',views.edit_upload,name="edit_upload"),
+    path('get_files_list', views.get_files_list, name="get_files_list")
 
 
 ]

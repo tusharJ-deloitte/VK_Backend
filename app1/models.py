@@ -97,6 +97,13 @@ class Player(models.Model):
     def __str__(self):
         return self.user.first_name
 
+class Upload(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    uploaded_file = models.FileField(upload_to="activity_plank/", null=True)
+    file_name = models.TextField(null=True, blank=True)
+
+    def __str__(self):
+        return self.user.first_name
 
 # class Logo(models.Model):
 #     title = models.CharField(
