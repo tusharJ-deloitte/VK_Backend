@@ -55,8 +55,7 @@ urlpatterns = [
          name='my_rank'),
 
      #integration PODS & DNA
-     path("get_pods",views.get_pods_data,name='get_pods_data')
-
-
+     path("get_pods",views.get_pods_data,name='get_pods_data'),
+     path("get_users_dna",views.get_all_user_dna,name='get_pods_data'),
 
 ]
