@@ -1,6 +1,6 @@
 from graphene_django.types import DjangoObjectType
 from django.contrib.auth.models import User
-from .models import Category, Activity, Team, Player, Event, Registration
+from .models import Category, Activity, Team, Player, Event, Registration,Upload
 
 
 class UserType(DjangoObjectType):
@@ -47,3 +47,8 @@ class RegistrationType(DjangoObjectType):
     class Meta:
         model = Registration
         fields = ('id', 'event', 'team')
+
+class UploadType(DjangoObjectType):
+    class Meta:
+        model = Upload
+        fields = ('id', 'user', 'uploaded_file', 'file_name')

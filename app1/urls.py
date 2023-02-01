@@ -52,8 +52,12 @@ urlpatterns = [
     path('events_participated/<int:user_id>', views.get_events_participated,
          name='events_participated'),
     path('my_rank/<int:user_id>', views.get_my_rank,
-         name='my_rank')
+         name='my_rank'),
 
+     # plank
+     path('upload_aws/<str:user_email>', views.upload_aws, name="upload_aws"),
+     # path('edit_upload/<str:user_email>',views.edit_upload,name="edit_upload"),
+     path('get_files_list',views.get_files_list,name="get_files_list")
 
 
 ]

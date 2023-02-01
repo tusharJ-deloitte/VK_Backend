@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Activity, Player, Team, Category, Event, Registration
+from .models import Activity, Player, Team, Category, Event, Registration,Upload
 from .serializers import PostSerializer
 from rest_framework.renderers import JSONRenderer
 from django.http import HttpResponse, JsonResponse
@@ -20,6 +20,8 @@ from django.core.mail import EmailMessage
 from django.db.models import Sum
 from django.db.models import Sum, Count
 import datetime
+from GrapheneTest import settings
+import boto3
 
 
 def home(request):
@@ -576,8 +578,8 @@ def update_event(request, event_id):
 
 def delete_event(request, event_id):
     if request.method == 'DELETE':
-
         ev = Event.objects.get(id=event_id)
+        print(ev)
         ev.delete()
     return HttpResponse(200)
 
@@ -873,5 +875,56 @@ def get_my_rank(request, user_id):
 
         json_response = json.dumps({"myrank": myRank+1})
         return HttpResponse(json_response, content_type="application/json")
+    else:
+        return HttpResponse("wrong request", content_type='application/json')
+
+
+def upload_aws(request, user_email):
+    if request.method == 'POST':
+        my_uploaded_file = request.FILES.get('my_uploaded_file')
+        # print(type(my_uploaded_file))
+        print(my_uploaded_file.name)
+        my_uploaded_file.name = str(user_email)+"___"+my_uploaded_file.name
+        print(my_uploaded_file.content_type)
+        print(my_uploaded_file.size)
+
+        result = schema.execute(
+            '''
+            mutation CreateUpload($userEmail:String!,$fileName:String!){
+                createUpload(userEmail:$userEmail,fileName:$fileName){
+                    upload{
+                        id
+                    }
+                }
+            }
+            ''', variables={'userEmail': user_email, 'fileName': my_uploaded_file.name})
+        
+        upload_instance = Upload.objects.get(user_id = User.objects.get(email = user_email).id)
+        upload_instance.uploaded_file = my_uploaded_file
+        upload_instance.save()
+
+        return HttpResponse(200)
+
+# def edit_upload(request,user_email):
+#     if request.method == "POST":
+#         my_uploaded_file = request.FILES.get('my_uploaded_file')
+#         my_uploaded_file.name = str(user_email)+"___"+my_uploaded_file.name
+
+#         upload_instance = Upload.objects.get(user_id = User.objects.get(email = user_email).id)
+
+#         s3_client = boto3.client('s3', region_name=settings.AWS_REGION_NAME)
+#         s3_client.delete_object(Bucket=settings.AWS_STORAGE_BUCKET_NAME, Key=upload_instance.uploaded_file.name)
+        
+#         upload_instance.uploaded_file = my_uploaded_file
+#         upload_instance.save()
+#         return HttpResponse(200)
+#     else:
+#         return HttpResponse("wrong request", content_type='application/json')
+
+def get_files_list(request):
+    if request.method == 'GET':
+        response = [settings.CLOUDFRONT_DOMAIN+"/"+item.uploaded_file.name for item in Upload.objects.all()]
+        json_post = json.dumps(response)
+        return HttpResponse(json_post, content_type='application/json')
     else:
         return HttpResponse("wrong request", content_type='application/json')

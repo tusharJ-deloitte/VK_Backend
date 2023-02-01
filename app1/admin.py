@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Category, Activity, Team, Player, Event, Registration
+from .models import Post, Category, Activity, Team, Player, Event, Registration, Upload
 
 # Register your models here.
 
@@ -40,3 +40,8 @@ class PlayerAdmin(admin.ModelAdmin):
 class PlayerAdmin(admin.ModelAdmin):
     list_display = ['id', 'name', 'activity_id', 'created_on', 'activity_mode', 'start_date', 'end_date', 'start_time', 'end_time',
                     'max_teams', 'max_members', 'first_prize', 'second_prize', 'third_prize', 'cur_participation', 'status']
+
+
+@admin.register(Upload)
+class UploadAdmin(admin.ModelAdmin):
+    list_display = ['id', 'user_id', 'uploaded_file', 'file_name']
