@@ -2,3 +2,4 @@ app1/__pycache__
 GrapheneTest/__pycache__
 db.sqlite3
 venv
+requirements.txt
