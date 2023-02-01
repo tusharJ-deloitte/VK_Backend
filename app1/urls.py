@@ -15,7 +15,8 @@ urlpatterns = [
     path('update_activity/<int:pk>', views.update_activity, name="update_activity"),
     path('get_activity/<int:pk>', views.get_activity, name="get_activity"),
     path('delete_activity/<int:pk>', views.delete_activity, name="delete_activity"),
-    path('get_activity_list', views.get_activity_list, name="get_activity_list"),
+    path('get_activity_list', views.get_activity_list,
+         name="get_activity_list"),
 
     # Teams
     path('create_teams', views.create_teams, name="create_teams"),
@@ -52,7 +53,16 @@ urlpatterns = [
     path('events_participated/<int:user_id>', views.get_events_participated,
          name='events_participated'),
     path('my_rank/<int:user_id>', views.get_my_rank,
-         name='my_rank')
+         name='my_rank'),
+
+
+
+    path('my_top_events/<int:user_id>', views.get_top_events_participated,
+         name='my_top_events'),
+    path('get_my_score/<int:user_id>', views.get_my_score,
+         name='get_my_score'),
+    path('get_top_events_activity/<int:user_id>/<int:activity_id>', views.get_top_events_by_activity,
+         name='get_top_events_activity'),
 
 
 

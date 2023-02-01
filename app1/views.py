@@ -875,3 +875,67 @@ def get_my_rank(request, user_id):
         return HttpResponse(json_response, content_type="application/json")
     else:
         return HttpResponse("wrong request", content_type='application/json')
+
+
+def get_top_events_participated(request, user_id):
+    if request.method == "GET":
+        players = Player.objects.filter(user_id=user_id).order_by("-score")
+        result = []
+        for player in players:
+            team = Player.team.through.objects.filter(
+                player_id=player.pk)
+            reg = []
+            if (team.__len__() != 0):
+                reg = Registration.objects.filter(team_id=team[0].team_id)
+            if (reg.__len__() != 0):
+                event = Event.objects.get(id=reg[0].event_id)
+                result.append(
+                    {"activity_name": Activity.objects.get(id=event.activity_id).name, "event_name": event.name, "date": str(event.start_date), "score": player.score})
+
+        json_response = json.dumps(result[0:10])
+
+        return HttpResponse(json_response, content_type='application/json')
+
+
+def get_my_score(request, user_id):
+    if request.method == 'GET':
+        players = Player.objects.filter(user_id=user_id).values("user_id").annotate(
+            total_score=Sum('score')).order_by("-total_score")
+        res = {}
+        if (players.__len__() != 0):
+            res = players[0]
+        return HttpResponse(json.dumps(res), content_type='application/json')
+
+
+def get_top_events_by_activity(request, user_id, activity_id):
+    if request.method == "GET":
+        players = Player.objects.filter(
+            user_id=user_id, activity_id=activity_id).order_by("-score")
+        result = []
+        response = []
+        score = 0
+        events = Event.objects.filter(activity_id=activity_id)
+        count = 0
+        for player in players:
+            team = Player.team.through.objects.filter(
+                player_id=player.pk)
+            reg = []
+            if (team.__len__() != 0):
+                reg = Registration.objects.filter(team_id=team[0].team_id)
+            if (reg.__len__() != 0):
+                event = Event.objects.get(id=reg[0].event_id)
+                count += 1
+                score += player.score
+                result.append(
+                    {"activity_name": Activity.objects.get(id=activity_id).name, "event_name": event.name, "date": str(event.start_date), "score": player.score})
+
+        response = {
+            "participation": count,
+            "total": events.__len__(),
+            "total_score": score,
+            "events": result
+        }
+
+        json_response = json.dumps(response)
+
+        return HttpResponse(json_response, content_type='application/json')
