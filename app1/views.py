@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Activity, Player, Team, Category, Event, Registration,Upload
+from .models import Activity, Player, Team, Category, Event, Registration, Upload
 from .serializers import PostSerializer
 from rest_framework.renderers import JSONRenderer
 from django.http import HttpResponse, JsonResponse
@@ -326,6 +326,10 @@ def update_teams(request, team_id):
         activity_instance = Activity.objects.filter(
             name=python_data['activity'])[0]
         print(activity_instance)
+        team_activity_instance = Team.activity.through.objects.filter(
+            team_id=team_id)
+        for item in team_activity_instance:
+            item.delete()
         team_instance.activity.add(activity_instance)
         team_instance.save()
 
@@ -898,8 +902,9 @@ def upload_aws(request, user_email):
                 }
             }
             ''', variables={'userEmail': user_email, 'fileName': my_uploaded_file.name})
-        
-        upload_instance = Upload.objects.get(user_id = User.objects.get(email = user_email).id)
+
+        upload_instance = Upload.objects.get(
+            user_id=User.objects.get(email=user_email).id)
         upload_instance.uploaded_file = my_uploaded_file
         upload_instance.save()
 
@@ -914,16 +919,18 @@ def upload_aws(request, user_email):
 
 #         s3_client = boto3.client('s3', region_name=settings.AWS_REGION_NAME)
 #         s3_client.delete_object(Bucket=settings.AWS_STORAGE_BUCKET_NAME, Key=upload_instance.uploaded_file.name)
-        
+
 #         upload_instance.uploaded_file = my_uploaded_file
 #         upload_instance.save()
 #         return HttpResponse(200)
 #     else:
 #         return HttpResponse("wrong request", content_type='application/json')
 
+
 def get_files_list(request):
     if request.method == 'GET':
-        response = [settings.CLOUDFRONT_DOMAIN+"/"+item.uploaded_file.name for item in Upload.objects.all()]
+        response = [settings.CLOUDFRONT_DOMAIN+"/" +
+                    item.uploaded_file.name for item in Upload.objects.all()]
         json_post = json.dumps(response)
         return HttpResponse(json_post, content_type='application/json')
     else:
