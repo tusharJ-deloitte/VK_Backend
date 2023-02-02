@@ -976,7 +976,7 @@ def get_all_user_dna(request):
                     "pic": pic
                 })
             # print(users)
-
+        
             return HttpResponse(json.dumps(users), content_type='application/json')
         except Exception as err:
             print(err)

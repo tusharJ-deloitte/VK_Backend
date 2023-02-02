@@ -3,6 +3,15 @@ from django.contrib.auth.models import User
 import datetime
 
 # Create your models here.
+class Detail(models.Model):    
+    user = models.OneToOneField(User,on_delete=models.CASCADE)
+    employee_id = models.IntegerField(null=True,blank=True)
+    designation = models.TextField(max_length=30,null=True,blank=True)
+    profile_pic = models.TextField(null=True,blank=True)
+    doj = models.DateField(null=True,blank=True)
+    
+    def __str__(self) -> str:
+        return self.user.username
 
 
 class Post(models.Model):

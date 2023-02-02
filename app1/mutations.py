@@ -1,9 +1,31 @@
 import graphene
-from app1.types import CategoryType, ActivityType, TeamType, PlayerType, EventType, RegistrationType
-from .models import Category, Activity, Team, Player, Event, Registration
+from app1.types import UserType,CategoryType, ActivityType, TeamType, PlayerType, EventType, RegistrationType
+from .models import User,Category, Activity, Team, Player, Event, Registration
 import datetime
 from django.contrib.auth.models import User
 
+class CreateUser(graphene.Mutation):
+    class Arguments:   
+        employee_id = graphene.Int()
+        name = graphene.String()
+        email = graphene.String()
+        designation = graphene.String()
+        doj = graphene.Date()
+        profile_pic = graphene.String()
+
+    user = graphene.Field(UserType)
+
+    def mutate(self,info,name,email,designation,doj,profile_pic,employee_id):
+        user_instance = User(
+            email = email,
+            first_name = name.split(' ',1)[0],
+            last_name = name.split(' ',1)[1]
+        )
+        print(user_instance)
+        user_instance.save()
+        print(user_instance.email)
+        # print(user_instance.)
+        return CreateUser(user = user_instance)
 
 class CreateCategory(graphene.Mutation):
     class Arguments:

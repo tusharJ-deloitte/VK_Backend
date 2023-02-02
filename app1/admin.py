@@ -1,9 +1,19 @@
 from django.contrib import admin
-from .models import Post, Category, Activity, Team, Player, Event, Registration
+from django.contrib.auth.models import User
+from django.contrib.auth.admin import UserAdmin
+from .models import   Detail, Post, Category, Activity, Team, Player, Event, Registration
+
+class DetailInline(admin.StackedInline):
+    model = Detail
+    can_delete = False
+
+class CustomizedUserAdmin(UserAdmin):
+    inlines = (DetailInline,)
+
+admin.site.unregister(User)
+admin.site.register(User,CustomizedUserAdmin)
 
 # Register your models here.
-
-
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
     list_display = ['title', 'content', 'author']
