@@ -878,7 +878,7 @@ def get_my_rank(request, user_id):
         return HttpResponse("wrong request", content_type='application/json')
 
 
-#Integration Variables
+# Integration Variables
 token = "eyJraWQiOiJSWjVxekdQNHFNYnl0SG1uXC9XcitONXA0cVgzOVBFQUpIWEw5SFpvR2tWVT0iLCJhbGciOiJSUzI1NiJ9.eyJhdF9oYXNoIjoieHNFbVVvSlpmRUtocjBDN2VRVmowUSIsInN1YiI6Ijc0M2NjMzJiLTkxYzktNGEzOS1iZjExLTYyZmM2ZGM4YTNjMCIsImNvZ25pdG86Z3JvdXBzIjpbInVzLWVhc3QtMl9xb05jNTdxajhfRGVsb2l0dGUiXSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLnVzLWVhc3QtMi5hbWF6b25hd3MuY29tXC91cy1lYXN0LTJfcW9OYzU3cWo4IiwiY3VzdG9tOm9yZ19pZCI6IjExMjIiLCJjdXN0b206am9iX3RpdGxlIjoiREMgU29mdHdhcmUgRW5naW5lZXIgSSIsImN1c3RvbTpsb2NhdGlvbiI6IlVTIC0gQmVuZ2FsdXJ1IiwiaWRlbnRpdGllcyI6W3sidXNlcklkIjoidlZLM0t1c1ZjN2RBa1VhRVk3dkZZamtjMDI4UVNfU19hQ084TVlYczF5byIsInByb3ZpZGVyTmFtZSI6IkRlbG9pdHRlIiwicHJvdmlkZXJUeXBlIjoiT0lEQyIsImlzc3VlciI6bnVsbCwicHJpbWFyeSI6InRydWUiLCJkYXRlQ3JlYXRlZCI6IjE2NzUwNjcxMDYzODAifV0sImF1dGhfdGltZSI6MTY3NTE1MjA3NCwiY3VzdG9tOmVtYWlscyI6IntcInByaW1hcnlfZW1haWxcIjogXCJtb2hkc3Voa2hhbkBkZWxvaXR0ZS5jb21cIiwgXCJzZWNvbmRhcnlfZW1haWxzXCI6IFtdfSIsImV4cCI6MTY3NTI1NjAyNiwiaWF0IjoxNjc1MjUyNDI3LCJqdGkiOiI5M2JkMTc3MS0wOTgwLTRhMTUtOTI2YS01M2E0NTU4ZDliZmMiLCJlbWFpbCI6Im1vaGRzdWhraGFuQGRlbG9pdHRlLmNvbSIsIm9yZ2FuaXNhdGlvbl9kZXRhaWxzIjoiW3tcIm5hbWVcIjogXCJIYXNoZWRJblwiLCBcInRpbWV6b25lXCI6IFwiVVRDXCIsIFwidGVuYW50X2lkXCI6IFwiMTEyMlwiLCBcImFsbG93ZWRfYXBwc1wiOiBbXCJoaXJlXCIsIFwicnRcIiwgXCJwdWxzZVwiLCBcImxlYXZlc1wiLCBcInBvZHNcIiwgXCJodS1ldmFsdWF0aW9uXCIsIFwidm9sdW50ZWVyXCIsIFwicmV3YXJkc1wiLCBcInRpbWVzaGVldFwiLCBcImFsbG9jYXRpb25cIiwgXCJob21lXCIsIFwiaHUtYXV0b21hdGlvblwiXSwgXCJjdXJyZW5jeVwiOiBcIklOUlwiLCBcImxvZ29fczNfb2JqZWN0X3VybFwiOiBcImh0dHBzOlwvXC9kbmEtc3RhZ2luZy1yZXNvdXJjZS1idWNrZXQuczMudXMtZWFzdC0yLmFtYXpvbmF3cy5jb21cL29yZ19kaXJlY3RvcnlcL29yZ2FuaXNhdGlvbl9sb2dvc1wvaGFzaGVkaW4ucG5nXCJ9XSIsImN1c3RvbTp1dWlkIjoiNmM3MTgxZjUtNGM3ZS00NjJmLTlmODMtNmNlY2M3ZTU0OWI0IiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJjb2duaXRvOnVzZXJuYW1lIjoiRGVsb2l0dGVfdlZLM0t1c1ZjN2RBa1VhRVk3dkZZamtjMDI4UVNfU19hQ084TVlYczF5byIsInBpY3R1cmUiOiJodHRwczpcL1wvZ3JhcGgubWljcm9zb2Z0LmNvbVwvdjEuMFwvbWVcL3Bob3RvXC8kdmFsdWUiLCJvcmlnaW5fanRpIjoiNzhmYWE1NTktZmE2OS00ZTgyLWEwNjktNWMzZWE5MDU4NjRhIiwiYXVkIjoiMjkwazI0M3RrdWwxdTNmdGFwdmFkYjlhMGUiLCJ0b2tlbl91c2UiOiJpZCIsIm5hbWUiOiJLaGFuLCBNb2hkIFN1aGFpbCIsInNlc3Npb25fdGVuYW50IjoiMTEyMiJ9.JxxhPzPpNUUGZF0XmC8ao9mhm-A0qjFZ-PyLUr6FK93iU07AEvWnM9onryl9_mLcrjaQA91WZg3A5uH5YlZCs9bGdf_HjW82Uyvt-CgXv84ziJfwNbp0x7iQzNNNrEUlA8AcM1HhKz0aO-8jkg3t8bztNXBML_AhknJVssaWOgKGeAbtUDOa0oAgmrn3WqpC2vLSFkfvYvkFkQnLvbdw4IxVBtr76ZbTfKbnaBSu60tuIB1PhtYtUfwGUSUkHpFOfsuyWJbvLmoGPTFjPasAFPFiuQQoiLmPfThR4vOieBkD6k2hy9pLS0mYt-tG3RZuE_7iKv7Tf2Qv8xWvs2QkzQ"
 
 
@@ -890,9 +890,10 @@ def get_pods_data(request):
             stream = io.BytesIO(body)
             data = JSONParser().parse(stream)
             print(data)
+            email = data['email']
 
             url = "https://apis.dna-staging.hashedin.com/pods/gql/"
-            payload = "{\"query\":\"query paginatedAllocationList ($filtering: AllocationListFilterInput) {\\r\\n  paginatedAllocationList(filtering: $filtering) {\\r\\n    result {\\r\\n      pod {\\r\\n        id\\r\\n        podAllocations {\\r\\n          employee {\\r\\n            id\\r\\n            name\\r\\n            email\\r\\n            designation\\r\\n          }\\r\\n          startDate\\r\\n          endDate\\r\\n        }\\r\\n      }\\r\\n    }\\r\\n  }\\r\\n}\",\"variables\":{\"filtering\":{\"employee_Email\":\"donnaalsop_test@deloitte.com\",\"startDate_Lte\":\"2023-01-31\",\"endDate_Gte\":\"2023-01-31\"}}}"
+            payload = "{\"query\":\"query paginatedAllocationList ($filtering: AllocationListFilterInput) {\\r\\n  paginatedAllocationList(filtering: $filtering) {\\r\\n    result {\\r\\n      pod {\\r\\n        id\\r\\n        podAllocations {\\r\\n          employee {\\r\\n            id\\r\\n            name\\r\\n            email\\r\\n            designation\\r\\n          }\\r\\n          startDate\\r\\n          endDate\\r\\n        }\\r\\n      }\\r\\n    }\\r\\n  }\\r\\n}\",\"variables\":{\"filtering\":{\"employee_Email\":\"" + email + "\",\"startDate_Lte\":\"2023-01-31\",\"endDate_Gte\":\"2023-01-31\"}}}"
             headers = {
                 'x-api-token': token,
                 'Content-Type': 'application/json',
@@ -945,7 +946,8 @@ def get_all_user_dna(request):
                 'Cookie': 'csrftoken=4UqAWHGIzb3UIeTVU90Ogd05ITUmueZObaV726GSwcV2whtGlndmDuz3Yx5OlXPW'
             }
 
-            response = requests.request("POST", url, headers=headers, data=payload)
+            response = requests.request(
+                "POST", url, headers=headers, data=payload)
             response = json.loads(response.text)
 
             all_users = response['data']['listUsers']['result']
@@ -953,7 +955,7 @@ def get_all_user_dna(request):
             print("running")
             users = []
             for user in all_users:
-                name, doj, designation,pic = "", "", "", ""
+                name, doj, designation, pic = "", "", "", ""
                 if user['basicProfile']:
                     if user['basicProfile']['name']:
                         name = user['basicProfile']['name']
@@ -971,7 +973,7 @@ def get_all_user_dna(request):
                     "name": name,
                     "designation": designation,
                     "doj": doj,
-                    "pic":pic
+                    "pic": pic
                 })
             # print(users)
 
