@@ -1,6 +1,6 @@
 from graphene_django.types import DjangoObjectType
 from django.contrib.auth.models import User
-from .models import Category, Activity, Team, Player, Event, Registration
+from .models import Detail,Category, Activity, Team, Player, Event, Registration
 
 
 class UserType(DjangoObjectType):
@@ -8,6 +8,11 @@ class UserType(DjangoObjectType):
         model = User
         # fields = ('id','name')
     exclude = ('password')
+
+class DetailType(DjangoObjectType):
+    class Meta:
+        model = Detail
+        fields = ('id','user','employee_id','designation','profile_pic','doj')
 
 
 class CategoryType(DjangoObjectType):
