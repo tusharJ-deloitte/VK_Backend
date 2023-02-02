@@ -2,7 +2,7 @@ import graphene
 from .models import Category, Activity, Team, Player, Event, Registration
 from app1.types import UserType, CategoryType, ActivityType, TeamType, PlayerType, EventType, RegistrationType
 from .mutations import CreateUser,CreateCategory, UpdateCategory, DeleteCategory, CreateActivity, UpdateActivity, DeleteActivity, CreateTeam, CreatePlayer, UpdatePlayer, DeletePlayer, CreateEvent, CreateRegistration, UpdateTeamScores
-
+from django.contrib.auth.models import User
 
 class Query(graphene.ObjectType):
     user = graphene.Field(UserType, id=graphene.ID(required=True))
@@ -25,7 +25,11 @@ class Query(graphene.ObjectType):
                                   id=graphene.ID(required=True))
     all_registrations = graphene.List(RegistrationType)
 
-    
+    def resolve_all_users(self,info,**kwargs):
+        return User.objects.all()
+
+    def resolve_user(self, info, id):
+        return User.objects.get(id=id)
 
     def resolve_all_categories(self, info, **kwargs):
         return Category.objects.all()
