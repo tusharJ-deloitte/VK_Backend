@@ -57,5 +57,6 @@ urlpatterns = [
      #integration PODS & DNA
      path("get_pods",views.get_pods_data,name='get_pods_data'),
      path("get_users_dna",views.get_all_user_dna,name='get_pods_data'),
+     path("get_token_dna", views.get_token_from_dna, name='get_token_dna'),
 
 ]

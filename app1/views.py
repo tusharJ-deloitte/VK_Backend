@@ -879,7 +879,7 @@ def get_my_rank(request, user_id):
 
 
 # Integration Variables
-token = "eyJraWQiOiJSWjVxekdQNHFNYnl0SG1uXC9XcitONXA0cVgzOVBFQUpIWEw5SFpvR2tWVT0iLCJhbGciOiJSUzI1NiJ9.eyJhdF9oYXNoIjoieHNFbVVvSlpmRUtocjBDN2VRVmowUSIsInN1YiI6Ijc0M2NjMzJiLTkxYzktNGEzOS1iZjExLTYyZmM2ZGM4YTNjMCIsImNvZ25pdG86Z3JvdXBzIjpbInVzLWVhc3QtMl9xb05jNTdxajhfRGVsb2l0dGUiXSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLnVzLWVhc3QtMi5hbWF6b25hd3MuY29tXC91cy1lYXN0LTJfcW9OYzU3cWo4IiwiY3VzdG9tOm9yZ19pZCI6IjExMjIiLCJjdXN0b206am9iX3RpdGxlIjoiREMgU29mdHdhcmUgRW5naW5lZXIgSSIsImN1c3RvbTpsb2NhdGlvbiI6IlVTIC0gQmVuZ2FsdXJ1IiwiaWRlbnRpdGllcyI6W3sidXNlcklkIjoidlZLM0t1c1ZjN2RBa1VhRVk3dkZZamtjMDI4UVNfU19hQ084TVlYczF5byIsInByb3ZpZGVyTmFtZSI6IkRlbG9pdHRlIiwicHJvdmlkZXJUeXBlIjoiT0lEQyIsImlzc3VlciI6bnVsbCwicHJpbWFyeSI6InRydWUiLCJkYXRlQ3JlYXRlZCI6IjE2NzUwNjcxMDYzODAifV0sImF1dGhfdGltZSI6MTY3NTE1MjA3NCwiY3VzdG9tOmVtYWlscyI6IntcInByaW1hcnlfZW1haWxcIjogXCJtb2hkc3Voa2hhbkBkZWxvaXR0ZS5jb21cIiwgXCJzZWNvbmRhcnlfZW1haWxzXCI6IFtdfSIsImV4cCI6MTY3NTI1NjAyNiwiaWF0IjoxNjc1MjUyNDI3LCJqdGkiOiI5M2JkMTc3MS0wOTgwLTRhMTUtOTI2YS01M2E0NTU4ZDliZmMiLCJlbWFpbCI6Im1vaGRzdWhraGFuQGRlbG9pdHRlLmNvbSIsIm9yZ2FuaXNhdGlvbl9kZXRhaWxzIjoiW3tcIm5hbWVcIjogXCJIYXNoZWRJblwiLCBcInRpbWV6b25lXCI6IFwiVVRDXCIsIFwidGVuYW50X2lkXCI6IFwiMTEyMlwiLCBcImFsbG93ZWRfYXBwc1wiOiBbXCJoaXJlXCIsIFwicnRcIiwgXCJwdWxzZVwiLCBcImxlYXZlc1wiLCBcInBvZHNcIiwgXCJodS1ldmFsdWF0aW9uXCIsIFwidm9sdW50ZWVyXCIsIFwicmV3YXJkc1wiLCBcInRpbWVzaGVldFwiLCBcImFsbG9jYXRpb25cIiwgXCJob21lXCIsIFwiaHUtYXV0b21hdGlvblwiXSwgXCJjdXJyZW5jeVwiOiBcIklOUlwiLCBcImxvZ29fczNfb2JqZWN0X3VybFwiOiBcImh0dHBzOlwvXC9kbmEtc3RhZ2luZy1yZXNvdXJjZS1idWNrZXQuczMudXMtZWFzdC0yLmFtYXpvbmF3cy5jb21cL29yZ19kaXJlY3RvcnlcL29yZ2FuaXNhdGlvbl9sb2dvc1wvaGFzaGVkaW4ucG5nXCJ9XSIsImN1c3RvbTp1dWlkIjoiNmM3MTgxZjUtNGM3ZS00NjJmLTlmODMtNmNlY2M3ZTU0OWI0IiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJjb2duaXRvOnVzZXJuYW1lIjoiRGVsb2l0dGVfdlZLM0t1c1ZjN2RBa1VhRVk3dkZZamtjMDI4UVNfU19hQ084TVlYczF5byIsInBpY3R1cmUiOiJodHRwczpcL1wvZ3JhcGgubWljcm9zb2Z0LmNvbVwvdjEuMFwvbWVcL3Bob3RvXC8kdmFsdWUiLCJvcmlnaW5fanRpIjoiNzhmYWE1NTktZmE2OS00ZTgyLWEwNjktNWMzZWE5MDU4NjRhIiwiYXVkIjoiMjkwazI0M3RrdWwxdTNmdGFwdmFkYjlhMGUiLCJ0b2tlbl91c2UiOiJpZCIsIm5hbWUiOiJLaGFuLCBNb2hkIFN1aGFpbCIsInNlc3Npb25fdGVuYW50IjoiMTEyMiJ9.JxxhPzPpNUUGZF0XmC8ao9mhm-A0qjFZ-PyLUr6FK93iU07AEvWnM9onryl9_mLcrjaQA91WZg3A5uH5YlZCs9bGdf_HjW82Uyvt-CgXv84ziJfwNbp0x7iQzNNNrEUlA8AcM1HhKz0aO-8jkg3t8bztNXBML_AhknJVssaWOgKGeAbtUDOa0oAgmrn3WqpC2vLSFkfvYvkFkQnLvbdw4IxVBtr76ZbTfKbnaBSu60tuIB1PhtYtUfwGUSUkHpFOfsuyWJbvLmoGPTFjPasAFPFiuQQoiLmPfThR4vOieBkD6k2hy9pLS0mYt-tG3RZuE_7iKv7Tf2Qv8xWvs2QkzQ"
+token = "eyJraWQiOiJSWjVxekdQNHFNYnl0SG1uXC9XcitONXA0cVgzOVBFQUpIWEw5SFpvR2tWVT0iLCJhbGciOiJSUzI1NiJ9.eyJhdF9oYXNoIjoiMEI2ejB2d3VsUHR0bmZkUmt3TW14USIsInN1YiI6Ijc0M2NjMzJiLTkxYzktNGEzOS1iZjExLTYyZmM2ZGM4YTNjMCIsImNvZ25pdG86Z3JvdXBzIjpbInVzLWVhc3QtMl9xb05jNTdxajhfRGVsb2l0dGUiXSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLnVzLWVhc3QtMi5hbWF6b25hd3MuY29tXC91cy1lYXN0LTJfcW9OYzU3cWo4IiwiY3VzdG9tOm9yZ19pZCI6IjExMjIiLCJjdXN0b206am9iX3RpdGxlIjoiREMgU29mdHdhcmUgRW5naW5lZXIgSSIsImN1c3RvbTpsb2NhdGlvbiI6IlVTIC0gQmVuZ2FsdXJ1IiwiaWRlbnRpdGllcyI6W3sidXNlcklkIjoidlZLM0t1c1ZjN2RBa1VhRVk3dkZZamtjMDI4UVNfU19hQ084TVlYczF5byIsInByb3ZpZGVyTmFtZSI6IkRlbG9pdHRlIiwicHJvdmlkZXJUeXBlIjoiT0lEQyIsImlzc3VlciI6bnVsbCwicHJpbWFyeSI6InRydWUiLCJkYXRlQ3JlYXRlZCI6IjE2NzUwNjcxMDYzODAifV0sImF1dGhfdGltZSI6MTY3NTE1MjA3NCwiY3VzdG9tOmVtYWlscyI6IntcInByaW1hcnlfZW1haWxcIjogXCJtb2hkc3Voa2hhbkBkZWxvaXR0ZS5jb21cIiwgXCJzZWNvbmRhcnlfZW1haWxzXCI6IFtdfSIsImV4cCI6MTY3NTM1MDYzNCwiaWF0IjoxNjc1MzQ3MDM1LCJqdGkiOiJkNTM3ZWNhNy0yMTRiLTQ0NzQtOTFkNy1jMWY3YThjY2MzYTEiLCJlbWFpbCI6Im1vaGRzdWhraGFuQGRlbG9pdHRlLmNvbSIsIm9yZ2FuaXNhdGlvbl9kZXRhaWxzIjoiW3tcIm5hbWVcIjogXCJIYXNoZWRJblwiLCBcInRpbWV6b25lXCI6IFwiVVRDXCIsIFwidGVuYW50X2lkXCI6IFwiMTEyMlwiLCBcImFsbG93ZWRfYXBwc1wiOiBbXCJsZWF2ZXNcIl0sIFwiY3VycmVuY3lcIjogXCJJTlJcIiwgXCJsb2dvX3MzX29iamVjdF91cmxcIjogXCJodHRwczpcL1wvZG5hLXN0YWdpbmctcmVzb3VyY2UtYnVja2V0LnMzLnVzLWVhc3QtMi5hbWF6b25hd3MuY29tXC9vcmdfZGlyZWN0b3J5XC9vcmdhbmlzYXRpb25fbG9nb3NcL2hhc2hlZGluLnBuZ1wifV0iLCJjdXN0b206dXVpZCI6IjZjNzE4MWY1LTRjN2UtNDYyZi05ZjgzLTZjZWNjN2U1NDliNCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiY29nbml0bzp1c2VybmFtZSI6IkRlbG9pdHRlX3ZWSzNLdXNWYzdkQWtVYUVZN3ZGWWprYzAyOFFTX1NfYUNPOE1ZWHMxeW8iLCJwaWN0dXJlIjoiaHR0cHM6XC9cL2dyYXBoLm1pY3Jvc29mdC5jb21cL3YxLjBcL21lXC9waG90b1wvJHZhbHVlIiwib3JpZ2luX2p0aSI6Ijc4ZmFhNTU5LWZhNjktNGU4Mi1hMDY5LTVjM2VhOTA1ODY0YSIsImF1ZCI6IjI5MGsyNDN0a3VsMXUzZnRhcHZhZGI5YTBlIiwidG9rZW5fdXNlIjoiaWQiLCJuYW1lIjoiS2hhbiwgTW9oZCBTdWhhaWwiLCJzZXNzaW9uX3RlbmFudCI6IjExMjIifQ.CNaHFesfl-4IBJ20K_wmW7DJElYbXW_T8f5xvchBq8YlmBBTR0rCmt-bFias8-qzEfT5YJ6mc3SxHZbD9v3HGq_ibjxLfqoQpHsQaTNTbMoCqKBEU4BRviHy6gu1t5wKeAPppZ5ubwXzXL4X2b0oWco5WRR_GhcXxah2Lqc6O_9geowKRtvjcqvnIaR3noovp3Ijgl9L6vfFIs5TgHZRucE3MbMQ9UK8biA27UMrEW6rzLSRW1kLOpQQOh6VD3QuBcznq1c1CkW62hEufypR-uVSOs5Ms45DrSOvNgS_ekgCoqx4mWZlvR6P0EK3k8JgdnZ8Xwi0HYvmh6aQB0BxRQ"
 
 
 # get data from PODS platform
@@ -933,6 +933,7 @@ def get_pods_data(request):
 
 
 # get data from dna platform
+users=[]
 def get_all_user_dna(request):
     if request.method == 'GET':
         try:
@@ -953,7 +954,7 @@ def get_all_user_dna(request):
             all_users = response['data']['listUsers']['result']
             # print(all_users)
             print("running")
-            users = []
+            # users = []
             for user in all_users:
                 name, doj, designation, pic = "", "", "", ""
                 if user['basicProfile']:
@@ -975,11 +976,96 @@ def get_all_user_dna(request):
                     "doj": doj,
                     "pic": pic
                 })
-            # print(users)
-        
+
+                # print("Saving "+user['id']+" in db.")
+                # result = schema.execute(
+                #     '''
+                #     mutation createUser($designation:String!,$name:String!,$email:String!,$employeeId:Int!,$profilePic:String!,$doj:Date!){
+                #         createUser(designation:$designation,name:$name,email:$email,employeeId:$employeeId,profilePic:$profilePic,doj:$doj){
+                #             user{
+                #                 id
+                #             }
+                #         }
+                #     }
+                #     ''', variables={"designation": designation,
+                #                     "name": name,
+                #                     "email": user['email'],
+                #                     "employeeId": user['id'],
+                #                     "doj": doj,
+                #                     "profilePic": pic}
+                # )
+                # print(result.data)
+            print(users)
+
+            # for user in users[:10]:
+            #     print("Saving "+user['id']+" "+user['email']+" in db.")
+            #     result = schema.execute(
+            #         '''
+            #         mutation createUser($designation:String!,$name:String!,$email:String!,$employeeId:Int!,$profilePic:String!,$doj:Date!){
+            #             createUser(designation:$designation,name:$name,email:$email,employeeId:$employeeId,profilePic:$profilePic,doj:$doj){
+            #                 user{
+            #                     id
+            #                 }
+            #             }
+            #         }
+            #         ''', variables={"designation": user['designation'],
+            #                         "name": user['name'],
+            #                         "email": user['email'],
+            #                         "employeeId": user['id'],
+            #                         "doj": user['doj'],
+            #                         "profilePic": user['pic']}
+            #     )
+            #     print(result.data)
+            # print("User data filled in user table")
+
             return HttpResponse(json.dumps(users), content_type='application/json')
         except Exception as err:
             print(err)
-            return HttpResponse(err, content_type='application/json')
+            return HttpResponse(str(err), content_type='application/json')
     else:
         return HttpResponse("wrong request", content_type='application/json')
+
+
+B2B_CLIENT_ID = "7af854s3foajsnvn1c0n9hnmg8"
+B2B_CLIENT_SECRET = "enb9eljppf2025ksmtvlhenbvabfblmmh8ghv828r0nths2b8qu"
+token_url = "https://staging.apis.hashedin.com/virtualkunakidza/b2b/gql/"
+
+# get token from the dna server
+def get_token_from_dna(request):
+    try:
+        print(users[:20])
+        for user in users[:2]:
+            print("Saving ")
+            print(user['id'])
+            print(user['email'])
+            print(user['designation'])
+            print(user['name'])
+            print(user['doj'])
+            result = schema.execute(
+                '''
+                mutation createUser($designation:String!,$name:String!,$email:String!,$employeeId:Int!,$doj:Date!){
+                    createUser(designation:$designation,name:$name,email:$email,employeeId:$employeeId,doj:$doj){
+                        user{
+                            id
+                        }
+                    }
+                }
+                ''', variables={"designation": user['designation'],
+                                "name": user['name'],
+                                "email": user['email'],
+                                "employeeId": user['id'],
+                                "doj": user['doj']}
+            )
+            print(result.data)
+            print("User data filled in user table")
+
+
+        return HttpResponse("Ok",content_type="application/json")
+    except requests.ConnectionError:
+        return {"result": "Connection error"}
+    except requests.HTTPError:
+        return {"result": "Http error"}
+    except requests.RequetsException:
+        return {"result": "Request error"}
+    except Exception as exception:
+        return {"result": str(exception)}

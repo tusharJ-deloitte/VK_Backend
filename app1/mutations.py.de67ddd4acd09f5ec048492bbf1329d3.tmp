@@ -11,11 +11,13 @@ class CreateUser(graphene.Mutation):
         email = graphene.String()
         designation = graphene.String()
         doj = graphene.Date()
+        profile_pic = graphene.String()
 
     user = graphene.Field(UserType)
 
-    def mutate(self,info,name,email,designation,doj,employee_id):
+    def mutate(self,info,name,email,designation,doj,profile_pic,employee_id):
         print("inside createUser mutation")
+        print(name)
         if " " in name:
             fname = name.split(' ', 1)[0]
             lname = name.split(' ', 1)[1]
@@ -34,6 +36,7 @@ class CreateUser(graphene.Mutation):
             user = user_instance,
             employee_id = employee_id,
             designation = designation,
+            profile_pic = profile_pic,
             doj = doj
         )
         detail_instance.save()
