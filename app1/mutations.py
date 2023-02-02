@@ -1,6 +1,6 @@
 import graphene
 from app1.types import UserType,CategoryType, ActivityType, TeamType, PlayerType, EventType, RegistrationType
-from .models import User,Category, Activity, Team, Player, Event, Registration
+from .models import Detail,User,Category, Activity, Team, Player, Event, Registration
 import datetime
 from django.contrib.auth.models import User
 
@@ -18,12 +18,20 @@ class CreateUser(graphene.Mutation):
     def mutate(self,info,name,email,designation,doj,profile_pic,employee_id):
         user_instance = User(
             email = email,
+            username = email.split('@')[0],
             first_name = name.split(' ',1)[0],
             last_name = name.split(' ',1)[1]
         )
         print(user_instance)
         user_instance.save()
-        print(user_instance.email)
+        detail_instance = Detail(
+            user = user_instance,
+            employee_id = employee_id,
+            designation = designation,
+            profile_pic = profile_pic,
+            doj = doj
+        )
+        detail_instance.save()
         # print(user_instance.)
         return CreateUser(user = user_instance)
 
