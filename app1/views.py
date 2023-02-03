@@ -1,16 +1,12 @@
-import requests
 from django.shortcuts import render
 from .models import Detail, Activity, Player, Team, Category, Event, Registration
 from .serializers import PostSerializer
 from rest_framework.renderers import JSONRenderer
 from django.http import HttpResponse, JsonResponse
-import io
 from rest_framework.parsers import JSONParser
 from .schema import schema
-import json
 from django.contrib.auth.models import User
 from rest_framework import viewsets
-import base64
 from PIL import Image
 from django.core.files.uploadedfile import InMemoryUploadedFile
 from django.core.files.base import ContentFile
@@ -19,9 +15,13 @@ from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.core.mail import EmailMessage
 from django.db.models import Sum, Count
-import datetime
-from .utils import data as credentials
 from GrapheneTest import settings
+import datetime
+import requests
+import base64
+import json
+import io
+
 
 def home(request):
     return render(request, 'app1/home.html')
@@ -1049,23 +1049,22 @@ def get_access_token(token_url, client_id, client_secret):
 def get_all_users_organisation(request):
     if request.method == 'GET':
         try:
-            print(settings.B2B_DASHBOARD_URL)
-            # result = schema.execute(
-            #     '''
-            #         query allUsers{
-            #             allUsers{
-            #                 firstName
-            #                 lastName
-            #                 email
-            #                 detail{
-            #                     designation
-            #                 }
-            #             }
-            #         }
-            #     '''
-            # )
-            # allData = result.data['allUsers'][::-1]
-            # return HttpResponse(json.dumps({"data":allData}),content_type="application/json")
+            result = schema.execute(
+                '''
+                    query allUsers{
+                        allUsers{
+                            firstName
+                            lastName
+                            email
+                            detail{
+                                designation
+                            }
+                        }
+                    }
+                '''
+            )
+            allData = result.data['allUsers'][::-1]
+            return HttpResponse(json.dumps({"data":allData}),content_type="application/json")
             return HttpResponse("ok", content_type="application/json")
         except Exception as exception:
             print(exception)
