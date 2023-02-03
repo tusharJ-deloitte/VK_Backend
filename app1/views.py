@@ -879,8 +879,11 @@ def get_my_rank(request, user_id):
 
 
 # Integration Variables
-token = "eyJraWQiOiJSWjVxekdQNHFNYnl0SG1uXC9XcitONXA0cVgzOVBFQUpIWEw5SFpvR2tWVT0iLCJhbGciOiJSUzI1NiJ9.eyJhdF9oYXNoIjoiMEI2ejB2d3VsUHR0bmZkUmt3TW14USIsInN1YiI6Ijc0M2NjMzJiLTkxYzktNGEzOS1iZjExLTYyZmM2ZGM4YTNjMCIsImNvZ25pdG86Z3JvdXBzIjpbInVzLWVhc3QtMl9xb05jNTdxajhfRGVsb2l0dGUiXSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLnVzLWVhc3QtMi5hbWF6b25hd3MuY29tXC91cy1lYXN0LTJfcW9OYzU3cWo4IiwiY3VzdG9tOm9yZ19pZCI6IjExMjIiLCJjdXN0b206am9iX3RpdGxlIjoiREMgU29mdHdhcmUgRW5naW5lZXIgSSIsImN1c3RvbTpsb2NhdGlvbiI6IlVTIC0gQmVuZ2FsdXJ1IiwiaWRlbnRpdGllcyI6W3sidXNlcklkIjoidlZLM0t1c1ZjN2RBa1VhRVk3dkZZamtjMDI4UVNfU19hQ084TVlYczF5byIsInByb3ZpZGVyTmFtZSI6IkRlbG9pdHRlIiwicHJvdmlkZXJUeXBlIjoiT0lEQyIsImlzc3VlciI6bnVsbCwicHJpbWFyeSI6InRydWUiLCJkYXRlQ3JlYXRlZCI6IjE2NzUwNjcxMDYzODAifV0sImF1dGhfdGltZSI6MTY3NTE1MjA3NCwiY3VzdG9tOmVtYWlscyI6IntcInByaW1hcnlfZW1haWxcIjogXCJtb2hkc3Voa2hhbkBkZWxvaXR0ZS5jb21cIiwgXCJzZWNvbmRhcnlfZW1haWxzXCI6IFtdfSIsImV4cCI6MTY3NTM1MDYzNCwiaWF0IjoxNjc1MzQ3MDM1LCJqdGkiOiJkNTM3ZWNhNy0yMTRiLTQ0NzQtOTFkNy1jMWY3YThjY2MzYTEiLCJlbWFpbCI6Im1vaGRzdWhraGFuQGRlbG9pdHRlLmNvbSIsIm9yZ2FuaXNhdGlvbl9kZXRhaWxzIjoiW3tcIm5hbWVcIjogXCJIYXNoZWRJblwiLCBcInRpbWV6b25lXCI6IFwiVVRDXCIsIFwidGVuYW50X2lkXCI6IFwiMTEyMlwiLCBcImFsbG93ZWRfYXBwc1wiOiBbXCJsZWF2ZXNcIl0sIFwiY3VycmVuY3lcIjogXCJJTlJcIiwgXCJsb2dvX3MzX29iamVjdF91cmxcIjogXCJodHRwczpcL1wvZG5hLXN0YWdpbmctcmVzb3VyY2UtYnVja2V0LnMzLnVzLWVhc3QtMi5hbWF6b25hd3MuY29tXC9vcmdfZGlyZWN0b3J5XC9vcmdhbmlzYXRpb25fbG9nb3NcL2hhc2hlZGluLnBuZ1wifV0iLCJjdXN0b206dXVpZCI6IjZjNzE4MWY1LTRjN2UtNDYyZi05ZjgzLTZjZWNjN2U1NDliNCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiY29nbml0bzp1c2VybmFtZSI6IkRlbG9pdHRlX3ZWSzNLdXNWYzdkQWtVYUVZN3ZGWWprYzAyOFFTX1NfYUNPOE1ZWHMxeW8iLCJwaWN0dXJlIjoiaHR0cHM6XC9cL2dyYXBoLm1pY3Jvc29mdC5jb21cL3YxLjBcL21lXC9waG90b1wvJHZhbHVlIiwib3JpZ2luX2p0aSI6Ijc4ZmFhNTU5LWZhNjktNGU4Mi1hMDY5LTVjM2VhOTA1ODY0YSIsImF1ZCI6IjI5MGsyNDN0a3VsMXUzZnRhcHZhZGI5YTBlIiwidG9rZW5fdXNlIjoiaWQiLCJuYW1lIjoiS2hhbiwgTW9oZCBTdWhhaWwiLCJzZXNzaW9uX3RlbmFudCI6IjExMjIifQ.CNaHFesfl-4IBJ20K_wmW7DJElYbXW_T8f5xvchBq8YlmBBTR0rCmt-bFias8-qzEfT5YJ6mc3SxHZbD9v3HGq_ibjxLfqoQpHsQaTNTbMoCqKBEU4BRviHy6gu1t5wKeAPppZ5ubwXzXL4X2b0oWco5WRR_GhcXxah2Lqc6O_9geowKRtvjcqvnIaR3noovp3Ijgl9L6vfFIs5TgHZRucE3MbMQ9UK8biA27UMrEW6rzLSRW1kLOpQQOh6VD3QuBcznq1c1CkW62hEufypR-uVSOs5Ms45DrSOvNgS_ekgCoqx4mWZlvR6P0EK3k8JgdnZ8Xwi0HYvmh6aQB0BxRQ"
-
+token = "eyJraWQiOiJSWjVxekdQNHFNYnl0SG1uXC9XcitONXA0cVgzOVBFQUpIWEw5SFpvR2tWVT0iLCJhbGciOiJSUzI1NiJ9.eyJhdF9oYXNoIjoieGpyaVJublFoZVdLZjBETXhhbEZ0dyIsInN1YiI6Ijc0M2NjMzJiLTkxYzktNGEzOS1iZjExLTYyZmM2ZGM4YTNjMCIsImNvZ25pdG86Z3JvdXBzIjpbInVzLWVhc3QtMl9xb05jNTdxajhfRGVsb2l0dGUiXSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLnVzLWVhc3QtMi5hbWF6b25hd3MuY29tXC91cy1lYXN0LTJfcW9OYzU3cWo4IiwiY3VzdG9tOm9yZ19pZCI6IjExMjIiLCJjdXN0b206am9iX3RpdGxlIjoiREMgU29mdHdhcmUgRW5naW5lZXIgSSIsImN1c3RvbTpsb2NhdGlvbiI6IlVTIC0gQmVuZ2FsdXJ1IiwiaWRlbnRpdGllcyI6W3sidXNlcklkIjoidlZLM0t1c1ZjN2RBa1VhRVk3dkZZamtjMDI4UVNfU19hQ084TVlYczF5byIsInByb3ZpZGVyTmFtZSI6IkRlbG9pdHRlIiwicHJvdmlkZXJUeXBlIjoiT0lEQyIsImlzc3VlciI6bnVsbCwicHJpbWFyeSI6InRydWUiLCJkYXRlQ3JlYXRlZCI6IjE2NzUwNjcxMDYzODAifV0sImF1dGhfdGltZSI6MTY3NTE1MjA3NCwiY3VzdG9tOmVtYWlscyI6IntcInByaW1hcnlfZW1haWxcIjogXCJtb2hkc3Voa2hhbkBkZWxvaXR0ZS5jb21cIiwgXCJzZWNvbmRhcnlfZW1haWxzXCI6IFtdfSIsImV4cCI6MTY3NTQwNjcxOCwiaWF0IjoxNjc1NDAzMTE5LCJqdGkiOiJlOGIwZjBmYy0yNjZjLTRmNTUtYTg2ZC1jMDM1Y2VhM2I5ZTciLCJlbWFpbCI6Im1vaGRzdWhraGFuQGRlbG9pdHRlLmNvbSIsIm9yZ2FuaXNhdGlvbl9kZXRhaWxzIjoiW3tcIm5hbWVcIjogXCJIYXNoZWRJblwiLCBcInRpbWV6b25lXCI6IFwiVVRDXCIsIFwidGVuYW50X2lkXCI6IFwiMTEyMlwiLCBcImFsbG93ZWRfYXBwc1wiOiBbXCJoaXJlXCIsIFwicHVsc2VcIiwgXCJsZWF2ZXNcIiwgXCJwb2RzXCJdLCBcImN1cnJlbmN5XCI6IFwiSU5SXCIsIFwibG9nb19zM19vYmplY3RfdXJsXCI6IFwiaHR0cHM6XC9cL2RuYS1zdGFnaW5nLXJlc291cmNlLWJ1Y2tldC5zMy51cy1lYXN0LTIuYW1hem9uYXdzLmNvbVwvb3JnX2RpcmVjdG9yeVwvb3JnYW5pc2F0aW9uX2xvZ29zXC9oYXNoZWRpbi5wbmdcIn1dIiwiY3VzdG9tOnV1aWQiOiI2YzcxODFmNS00YzdlLTQ2MmYtOWY4My02Y2VjYzdlNTQ5YjQiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImNvZ25pdG86dXNlcm5hbWUiOiJEZWxvaXR0ZV92VkszS3VzVmM3ZEFrVWFFWTd2Rllqa2MwMjhRU19TX2FDTzhNWVhzMXlvIiwicGljdHVyZSI6Imh0dHBzOlwvXC9ncmFwaC5taWNyb3NvZnQuY29tXC92MS4wXC9tZVwvcGhvdG9cLyR2YWx1ZSIsIm9yaWdpbl9qdGkiOiI3OGZhYTU1OS1mYTY5LTRlODItYTA2OS01YzNlYTkwNTg2NGEiLCJhdWQiOiIyOTBrMjQzdGt1bDF1M2Z0YXB2YWRiOWEwZSIsInRva2VuX3VzZSI6ImlkIiwibmFtZSI6IktoYW4sIE1vaGQgU3VoYWlsIiwic2Vzc2lvbl90ZW5hbnQiOiIxMTIyIn0.HHTqjMs2Gxfm9SfTNG3tT4w-2FDqmvzDSjVzrb73sW4Li8UawJRySOIf0paZOu8psQylZmWWYRSN-Km6nW5iVPMxsttaogKGr7pkfdvfwfinnRco1nzXgiov9B_rgd6hb2D1FwKltvP-Ufywm6uSPF0orQqUeV5AfZLx_c5m9Lpux3LPf7Sa4UhvilP6hpQuKnVOm5UTFyrso80ezUxHZW8jE50oKpPKg18_VNtbzilk323NmaSJiKD2gh8eEI1dQHFepkf9Cb6ktlXBSg2tm-jPmOrASb_TN1G5BEQGa2wa7_1_GwWLwoRrlC4maBXXI9GeIbmg5D62vEbHikGXYg"
+B2B_CLIENT_ID = "7af854s3foajsnvn1c0n9hnmg8"
+B2B_CLIENT_SECRET = "enb9eljppf2025ksmtvlhenbvabfblmmh8ghv828r0nths2b8qu"
+token_url = "https://staging.apis.hashedin.com/virtualkunakidza/b2b/gql/"
+# users = []
 
 # get data from PODS platform
 def get_pods_data(request):
@@ -933,7 +936,6 @@ def get_pods_data(request):
 
 
 # get data from dna platform
-users=[]
 def get_all_user_dna(request):
     if request.method == 'GET':
         try:
@@ -954,9 +956,9 @@ def get_all_user_dna(request):
             all_users = response['data']['listUsers']['result']
             # print(all_users)
             print("running")
-            # users = []
+            users = []
             for user in all_users:
-                name, doj, designation, pic = "", "", "", ""
+                name, doj, designation, pic = " ", "0000-00-00", " ", " "
                 if user['basicProfile']:
                     if user['basicProfile']['name']:
                         name = user['basicProfile']['name']
@@ -977,46 +979,9 @@ def get_all_user_dna(request):
                     "pic": pic
                 })
 
-                # print("Saving "+user['id']+" in db.")
-                # result = schema.execute(
-                #     '''
-                #     mutation createUser($designation:String!,$name:String!,$email:String!,$employeeId:Int!,$profilePic:String!,$doj:Date!){
-                #         createUser(designation:$designation,name:$name,email:$email,employeeId:$employeeId,profilePic:$profilePic,doj:$doj){
-                #             user{
-                #                 id
-                #             }
-                #         }
-                #     }
-                #     ''', variables={"designation": designation,
-                #                     "name": name,
-                #                     "email": user['email'],
-                #                     "employeeId": user['id'],
-                #                     "doj": doj,
-                #                     "profilePic": pic}
-                # )
-                # print(result.data)
+                
             print(users)
-
-            # for user in users[:10]:
-            #     print("Saving "+user['id']+" "+user['email']+" in db.")
-            #     result = schema.execute(
-            #         '''
-            #         mutation createUser($designation:String!,$name:String!,$email:String!,$employeeId:Int!,$profilePic:String!,$doj:Date!){
-            #             createUser(designation:$designation,name:$name,email:$email,employeeId:$employeeId,profilePic:$profilePic,doj:$doj){
-            #                 user{
-            #                     id
-            #                 }
-            #             }
-            #         }
-            #         ''', variables={"designation": user['designation'],
-            #                         "name": user['name'],
-            #                         "email": user['email'],
-            #                         "employeeId": user['id'],
-            #                         "doj": user['doj'],
-            #                         "profilePic": user['pic']}
-            #     )
-            #     print(result.data)
-            # print("User data filled in user table")
+            print("User data filled in user table")
 
             return HttpResponse(json.dumps(users), content_type='application/json')
         except Exception as err:
@@ -1025,30 +990,31 @@ def get_all_user_dna(request):
     else:
         return HttpResponse("wrong request", content_type='application/json')
 
-
-B2B_CLIENT_ID = "7af854s3foajsnvn1c0n9hnmg8"
-B2B_CLIENT_SECRET = "enb9eljppf2025ksmtvlhenbvabfblmmh8ghv828r0nths2b8qu"
-token_url = "https://staging.apis.hashedin.com/virtualkunakidza/b2b/gql/"
+from .utils import users
 
 # get token from the dna server
 def get_token_from_dna(request):
     try:
         for user in users:
-            print("Saving ")
-            print(user['id'])
-            print(user['email'])
-            print(user['designation'])
-            print(user['name'])
-            print(user['doj'])
+            print("Saving "+user['id'])
+            # isUser = User.objects.get(email = user['email'])
+            # print(isUser)
+            # if isUser is not None:
+            #     print("Already exists "+user[id])
+            #     continue
+            if "@" not in user['email']:
+                print("Not saved "+user[id])
+                continue
             if " " in user['name']:
                 fname = user['name'].split(' ', 1)[0]
                 lname = user['name'].split(' ', 1)[1]
             else:
                 fname = user['name']
                 lname = ""
+
             user_instance = User(
                 email = user['email'],
-                username = user['email'].split('@')[0],
+                username = user['email'].split("@")[0],
                 first_name = fname,
                 last_name=lname
             )
@@ -1063,27 +1029,12 @@ def get_token_from_dna(request):
             )
             detail_instance.save()
             print("User data filled in user table")
-            # result = schema.execute(
-            #     '''
-            #     mutation createUser($designation:String!,$name:String!,$email:String!,$employeeId:Int!,$doj:Date!){
-            #         createUser(designation:$designation,name:$name,email:$email,employeeId:$employeeId,doj:$doj){
-            #             user{
-            #                 id
-            #             }
-            #         }
-            #     }
-            #     ''', variables={"designation": user['designation'],"name": user['name'],"email": user['email'],"employeeId": user['id'],"doj": user['doj']}
-            # )
-            # print(result.data)
-            
-
-
         return HttpResponse("Ok",content_type="application/json")
-    except requests.ConnectionError:
-        return {"result": "Connection error"}
-    except requests.HTTPError:
-        return {"result": "Http error"}
-    except requests.RequetsException:
-        return {"result": "Request error"}
+    # except requests.ConnectionError:
+    #     return {"result": "Connection error"}
+    # except requests.HTTPError:
+    #     return {"result": "Http error"}
+    # except requests.RequetsException:
+    #     return {"result": "Request error"}
     except Exception as exception:
         return {"result": str(exception)}
