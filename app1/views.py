@@ -1,6 +1,6 @@
 import requests
 from django.shortcuts import render
-from .models import Activity, Player, Team, Category, Event, Registration
+from .models import Detail,Activity, Player, Team, Category, Event, Registration
 from .serializers import PostSerializer
 from rest_framework.renderers import JSONRenderer
 from django.http import HttpResponse, JsonResponse
@@ -1033,31 +1033,49 @@ token_url = "https://staging.apis.hashedin.com/virtualkunakidza/b2b/gql/"
 # get token from the dna server
 def get_token_from_dna(request):
     try:
-        print(users[:20])
-        for user in users[:2]:
+        for user in users:
             print("Saving ")
             print(user['id'])
             print(user['email'])
             print(user['designation'])
             print(user['name'])
             print(user['doj'])
-            result = schema.execute(
-                '''
-                mutation createUser($designation:String!,$name:String!,$email:String!,$employeeId:Int!,$doj:Date!){
-                    createUser(designation:$designation,name:$name,email:$email,employeeId:$employeeId,doj:$doj){
-                        user{
-                            id
-                        }
-                    }
-                }
-                ''', variables={"designation": user['designation'],
-                                "name": user['name'],
-                                "email": user['email'],
-                                "employeeId": user['id'],
-                                "doj": user['doj']}
+            if " " in user['name']:
+                fname = user['name'].split(' ', 1)[0]
+                lname = user['name'].split(' ', 1)[1]
+            else:
+                fname = user['name']
+                lname = ""
+            user_instance = User(
+                email = user['email'],
+                username = user['email'].split('@')[0],
+                first_name = fname,
+                last_name=lname
             )
-            print(result.data)
+            print(user_instance)
+            user_instance.save()
+            detail_instance = Detail(
+                user = user_instance,
+                employee_id = user['id'],
+                designation = user['designation'],
+                doj = user['doj'],
+                profile_pic = user['pic']
+            )
+            detail_instance.save()
             print("User data filled in user table")
+            # result = schema.execute(
+            #     '''
+            #     mutation createUser($designation:String!,$name:String!,$email:String!,$employeeId:Int!,$doj:Date!){
+            #         createUser(designation:$designation,name:$name,email:$email,employeeId:$employeeId,doj:$doj){
+            #             user{
+            #                 id
+            #             }
+            #         }
+            #     }
+            #     ''', variables={"designation": user['designation'],"name": user['name'],"email": user['email'],"employeeId": user['id'],"doj": user['doj']}
+            # )
+            # print(result.data)
+            
 
 
         return HttpResponse("Ok",content_type="application/json")
