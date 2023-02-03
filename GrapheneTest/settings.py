@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 import os
 from pathlib import Path
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-l4_!5l2)%vo0^&vl%@5=(_5kjx%)*p!d#c^$ftkkq^6x_)5!k-'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -156,3 +157,10 @@ CSRF_TRUSTED_ORIGINS = [
 ]
 
 CORS_ALLOW_CREDENTIALS = True
+
+#SECRET KEYS/VARIABLES
+B2B_CLIENT_ID = config('B2B_CLIENT_ID')
+B2B_CLIENT_SECRET = config('B2B_CLIENT_SECRET')
+B2B_TOKEN_URL = config('B2B_TOKEN_URL')
+B2B_PODS_URL=config('B2B_PODS_URL')
+B2B_DASHBOARD_URL=config('B2B_DASHBOARD_URL')

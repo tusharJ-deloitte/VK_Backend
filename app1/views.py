@@ -18,10 +18,10 @@ from django.conf import settings
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.core.mail import EmailMessage
-from django.db.models import Sum
 from django.db.models import Sum, Count
 import datetime
-
+from .utils import data as credentials
+from GrapheneTest import settings
 
 def home(request):
     return render(request, 'app1/home.html')
@@ -879,13 +879,11 @@ def get_my_rank(request, user_id):
 
 
 # Integration Variables
-token = "eyJraWQiOiJSWjVxekdQNHFNYnl0SG1uXC9XcitONXA0cVgzOVBFQUpIWEw5SFpvR2tWVT0iLCJhbGciOiJSUzI1NiJ9.eyJhdF9oYXNoIjoibWx2bUl5ZWRBZjlFVDRNUy1uejVPUSIsInN1YiI6Ijc0M2NjMzJiLTkxYzktNGEzOS1iZjExLTYyZmM2ZGM4YTNjMCIsImNvZ25pdG86Z3JvdXBzIjpbInVzLWVhc3QtMl9xb05jNTdxajhfRGVsb2l0dGUiXSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLnVzLWVhc3QtMi5hbWF6b25hd3MuY29tXC91cy1lYXN0LTJfcW9OYzU3cWo4IiwiY3VzdG9tOm9yZ19pZCI6IjExMjIiLCJjdXN0b206am9iX3RpdGxlIjoiREMgU29mdHdhcmUgRW5naW5lZXIgSSIsImN1c3RvbTpsb2NhdGlvbiI6IlVTIC0gQmVuZ2FsdXJ1IiwiaWRlbnRpdGllcyI6W3sidXNlcklkIjoidlZLM0t1c1ZjN2RBa1VhRVk3dkZZamtjMDI4UVNfU19hQ084TVlYczF5byIsInByb3ZpZGVyTmFtZSI6IkRlbG9pdHRlIiwicHJvdmlkZXJUeXBlIjoiT0lEQyIsImlzc3VlciI6bnVsbCwicHJpbWFyeSI6InRydWUiLCJkYXRlQ3JlYXRlZCI6IjE2NzUwNjcxMDYzODAifV0sImF1dGhfdGltZSI6MTY3NTE1MjA3NCwiY3VzdG9tOmVtYWlscyI6IntcInByaW1hcnlfZW1haWxcIjogXCJtb2hkc3Voa2hhbkBkZWxvaXR0ZS5jb21cIiwgXCJzZWNvbmRhcnlfZW1haWxzXCI6IFtdfSIsImV4cCI6MTY3NTQxMDQ4MSwiaWF0IjoxNjc1NDA2ODgyLCJqdGkiOiI2MzRhN2U4OS1lMjQ4LTRkNjQtYjc1NC02NDM0ODAxZGY4NDEiLCJlbWFpbCI6Im1vaGRzdWhraGFuQGRlbG9pdHRlLmNvbSIsIm9yZ2FuaXNhdGlvbl9kZXRhaWxzIjoiW3tcIm5hbWVcIjogXCJIYXNoZWRJblwiLCBcInRpbWV6b25lXCI6IFwiVVRDXCIsIFwidGVuYW50X2lkXCI6IFwiMTEyMlwiLCBcImFsbG93ZWRfYXBwc1wiOiBbXCJoaXJlXCIsIFwicHVsc2VcIiwgXCJsZWF2ZXNcIiwgXCJwb2RzXCJdLCBcImN1cnJlbmN5XCI6IFwiSU5SXCIsIFwibG9nb19zM19vYmplY3RfdXJsXCI6IFwiaHR0cHM6XC9cL2RuYS1zdGFnaW5nLXJlc291cmNlLWJ1Y2tldC5zMy51cy1lYXN0LTIuYW1hem9uYXdzLmNvbVwvb3JnX2RpcmVjdG9yeVwvb3JnYW5pc2F0aW9uX2xvZ29zXC9oYXNoZWRpbi5wbmdcIn1dIiwiY3VzdG9tOnV1aWQiOiI2YzcxODFmNS00YzdlLTQ2MmYtOWY4My02Y2VjYzdlNTQ5YjQiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImNvZ25pdG86dXNlcm5hbWUiOiJEZWxvaXR0ZV92VkszS3VzVmM3ZEFrVWFFWTd2Rllqa2MwMjhRU19TX2FDTzhNWVhzMXlvIiwicGljdHVyZSI6Imh0dHBzOlwvXC9ncmFwaC5taWNyb3NvZnQuY29tXC92MS4wXC9tZVwvcGhvdG9cLyR2YWx1ZSIsIm9yaWdpbl9qdGkiOiI3OGZhYTU1OS1mYTY5LTRlODItYTA2OS01YzNlYTkwNTg2NGEiLCJhdWQiOiIyOTBrMjQzdGt1bDF1M2Z0YXB2YWRiOWEwZSIsInRva2VuX3VzZSI6ImlkIiwibmFtZSI6IktoYW4sIE1vaGQgU3VoYWlsIiwic2Vzc2lvbl90ZW5hbnQiOiIxMTIyIn0.gQ9r4iJuXXTGk2sEFzX3APrjDYFW6abuSmGeUXqwugmmUCr1EkrFhqhLjQLOzFuFUazUbP_gmVvLauzw9P7yoDCXMSAB5S8RSGD4VQ8ZZXzAmAYulrtA5uEE4lax9B7bZ9w6gsQp7q2scgciBh8PaJbLbmjmc2TB0pXtNI-Uvd3zEoKlNYJjYBTITvwFrcNC-djFeyLp5QLUwI1PIEST1djPuyeUj05zNpFOxEJBJzo-mhTkNUHfhEBSSKyY-L0X19PukJlBd7zq-hiRXBPW5x9Gxvg3YCDX12OHOF_CV_T2Kj1lwY1PXqlzhioLl7UGOEScg-yXoYWWcJ-XGPrR-Q"
+# token = "eyJraWQiOiJSWjVxekdQNHFNYnl0SG1uXC9XcitONXA0cVgzOVBFQUpIWEw5SFpvR2tWVT0iLCJhbGciOiJSUzI1NiJ9.eyJhdF9oYXNoIjoibWx2bUl5ZWRBZjlFVDRNUy1uejVPUSIsInN1YiI6Ijc0M2NjMzJiLTkxYzktNGEzOS1iZjExLTYyZmM2ZGM4YTNjMCIsImNvZ25pdG86Z3JvdXBzIjpbInVzLWVhc3QtMl9xb05jNTdxajhfRGVsb2l0dGUiXSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLnVzLWVhc3QtMi5hbWF6b25hd3MuY29tXC91cy1lYXN0LTJfcW9OYzU3cWo4IiwiY3VzdG9tOm9yZ19pZCI6IjExMjIiLCJjdXN0b206am9iX3RpdGxlIjoiREMgU29mdHdhcmUgRW5naW5lZXIgSSIsImN1c3RvbTpsb2NhdGlvbiI6IlVTIC0gQmVuZ2FsdXJ1IiwiaWRlbnRpdGllcyI6W3sidXNlcklkIjoidlZLM0t1c1ZjN2RBa1VhRVk3dkZZamtjMDI4UVNfU19hQ084TVlYczF5byIsInByb3ZpZGVyTmFtZSI6IkRlbG9pdHRlIiwicHJvdmlkZXJUeXBlIjoiT0lEQyIsImlzc3VlciI6bnVsbCwicHJpbWFyeSI6InRydWUiLCJkYXRlQ3JlYXRlZCI6IjE2NzUwNjcxMDYzODAifV0sImF1dGhfdGltZSI6MTY3NTE1MjA3NCwiY3VzdG9tOmVtYWlscyI6IntcInByaW1hcnlfZW1haWxcIjogXCJtb2hkc3Voa2hhbkBkZWxvaXR0ZS5jb21cIiwgXCJzZWNvbmRhcnlfZW1haWxzXCI6IFtdfSIsImV4cCI6MTY3NTQxMDQ4MSwiaWF0IjoxNjc1NDA2ODgyLCJqdGkiOiI2MzRhN2U4OS1lMjQ4LTRkNjQtYjc1NC02NDM0ODAxZGY4NDEiLCJlbWFpbCI6Im1vaGRzdWhraGFuQGRlbG9pdHRlLmNvbSIsIm9yZ2FuaXNhdGlvbl9kZXRhaWxzIjoiW3tcIm5hbWVcIjogXCJIYXNoZWRJblwiLCBcInRpbWV6b25lXCI6IFwiVVRDXCIsIFwidGVuYW50X2lkXCI6IFwiMTEyMlwiLCBcImFsbG93ZWRfYXBwc1wiOiBbXCJoaXJlXCIsIFwicHVsc2VcIiwgXCJsZWF2ZXNcIiwgXCJwb2RzXCJdLCBcImN1cnJlbmN5XCI6IFwiSU5SXCIsIFwibG9nb19zM19vYmplY3RfdXJsXCI6IFwiaHR0cHM6XC9cL2RuYS1zdGFnaW5nLXJlc291cmNlLWJ1Y2tldC5zMy51cy1lYXN0LTIuYW1hem9uYXdzLmNvbVwvb3JnX2RpcmVjdG9yeVwvb3JnYW5pc2F0aW9uX2xvZ29zXC9oYXNoZWRpbi5wbmdcIn1dIiwiY3VzdG9tOnV1aWQiOiI2YzcxODFmNS00YzdlLTQ2MmYtOWY4My02Y2VjYzdlNTQ5YjQiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImNvZ25pdG86dXNlcm5hbWUiOiJEZWxvaXR0ZV92VkszS3VzVmM3ZEFrVWFFWTd2Rllqa2MwMjhRU19TX2FDTzhNWVhzMXlvIiwicGljdHVyZSI6Imh0dHBzOlwvXC9ncmFwaC5taWNyb3NvZnQuY29tXC92MS4wXC9tZVwvcGhvdG9cLyR2YWx1ZSIsIm9yaWdpbl9qdGkiOiI3OGZhYTU1OS1mYTY5LTRlODItYTA2OS01YzNlYTkwNTg2NGEiLCJhdWQiOiIyOTBrMjQzdGt1bDF1M2Z0YXB2YWRiOWEwZSIsInRva2VuX3VzZSI6ImlkIiwibmFtZSI6IktoYW4sIE1vaGQgU3VoYWlsIiwic2Vzc2lvbl90ZW5hbnQiOiIxMTIyIn0.gQ9r4iJuXXTGk2sEFzX3APrjDYFW6abuSmGeUXqwugmmUCr1EkrFhqhLjQLOzFuFUazUbP_gmVvLauzw9P7yoDCXMSAB5S8RSGD4VQ8ZZXzAmAYulrtA5uEE4lax9B7bZ9w6gsQp7q2scgciBh8PaJbLbmjmc2TB0pXtNI-Uvd3zEoKlNYJjYBTITvwFrcNC-djFeyLp5QLUwI1PIEST1djPuyeUj05zNpFOxEJBJzo-mhTkNUHfhEBSSKyY-L0X19PukJlBd7zq-hiRXBPW5x9Gxvg3YCDX12OHOF_CV_T2Kj1lwY1PXqlzhioLl7UGOEScg-yXoYWWcJ-XGPrR-Q"
 
 # users = []
 
 # get data from PODS platform
-
-
 def get_pods_data(request):
     if request.method == 'POST':
         try:
@@ -895,19 +893,24 @@ def get_pods_data(request):
             print(data)
             email = data['email']
 
-            url = "https://apis.dna-staging.hashedin.com/pods/gql/"
+            # get token to access pods server
+            token = get_access_token(
+                settings.B2B_TOKEN_URL, settings.B2B_CLIENT_ID, settings.B2B_CLIENT_SECRET)
+            print("token :: "+token)
+
+            url = settings.B2B_PODS_URL
             payload = "{\"query\":\"query paginatedAllocationList ($filtering: AllocationListFilterInput) {\\r\\n  paginatedAllocationList(filtering: $filtering) {\\r\\n    result {\\r\\n      pod {\\r\\n        id\\r\\n        podAllocations {\\r\\n          employee {\\r\\n            id\\r\\n            name\\r\\n            email\\r\\n            designation\\r\\n          }\\r\\n          startDate\\r\\n          endDate\\r\\n        }\\r\\n      }\\r\\n    }\\r\\n  }\\r\\n}\",\"variables\":{\"filtering\":{\"employee_Email\":\"" + email + "\",\"startDate_Lte\":\"2023-01-31\",\"endDate_Gte\":\"2023-01-31\"}}}"
             headers = {
                 'x-api-token': token,
-                'Content-Type': 'application/json',
-                'Cookie': 'csrftoken=4UqAWHGIzb3UIeTVU90Ogd05ITUmueZObaV726GSwcV2whtGlndmDuz3Yx5OlXPW'
+                'Content-Type': 'application/json'
+                # 'Cookie': 'csrftoken=4UqAWHGIzb3UIeTVU90Ogd05ITUmueZObaV726GSwcV2whtGlndmDuz3Yx5OlXPW'
             }
-
             response = requests.request(
                 "POST", url, headers=headers, data=payload)
-            print(response.text)
+            print("Response received from PODS ==> "+response.text)
             response = json.loads(response.text)
 
+            # filtering PODS Data
             pods = response['data']['paginatedAllocationList']['result']
             employee_list = []
             emp_ids = []
@@ -915,9 +918,8 @@ def get_pods_data(request):
                 podEmployees = pod['pod']['podAllocations']
                 for emp in podEmployees:
                     emp = emp['employee']
-                    if emp['id'] in emp_ids:
+                    if emp['id'] in emp_ids or emp['email'] == email:
                         continue
-                    # print(emp['id'])
                     emp_ids.append(emp['id'])
                     employee_list.append({
                         "id": emp['id'],
@@ -925,38 +927,42 @@ def get_pods_data(request):
                         "email": emp['email'],
                         "designation": emp['designation']
                     })
-
-            # print(employee_list)
             return HttpResponse(json.dumps(employee_list), content_type='application/json')
         except Exception as err:
             print(err)
             return HttpResponse(err, content_type='application/json')
     else:
-        return HttpResponse("wrong request", content_type='application/json')
+        return HttpResponse("Wrong Request Method", content_type='application/json')
 
 
 # get data from dna platform
 def get_all_user_dna(request):
     if request.method == 'GET':
         try:
-            print("sending request")
-            url = "https://apis.dna-staging.hashedin.com/dashboard/gql/"
+            print("inside get all users from DNA API")
 
+            # get token to access pods server
+            token = get_access_token(
+                settings.B2B_TOKEN_URL, settings.B2B_CLIENT_ID, settings.B2B_CLIENT_SECRET)
+            print("token :: "+token)
+
+            url = settings.B2B_DASHBOARD_URL
             payload = "{\"query\":\"query allUsers{\\r\\n    listUsers{\\r\\n        result{\\r\\n            id\\r\\n            email\\r\\n            basicProfile{\\r\\n                id\\r\\n                name\\r\\n                profilePic\\r\\n            }\\r\\n            detailedProfile{\\r\\n                designation{\\r\\n                    id\\r\\n                    name\\r\\n                }\\r\\n                doj\\r\\n            }\\r\\n        }\\r\\n    }\\r\\n}\",\"variables\":{}}"
             headers = {
                 'x-api-token': token,
                 'Content-Type': 'application/json',
-                'Cookie': 'csrftoken=4UqAWHGIzb3UIeTVU90Ogd05ITUmueZObaV726GSwcV2whtGlndmDuz3Yx5OlXPW'
+                # 'Cookie': 'csrftoken=4UqAWHGIzb3UIeTVU90Ogd05ITUmueZObaV726GSwcV2whtGlndmDuz3Yx5OlXPW'
             }
-
+            print("Sending data request to dashboard server")
             response = requests.request(
                 "POST", url, headers=headers, data=payload)
             response = json.loads(response.text)
+            print("data received from server")
 
+            # Filtering out Users Data
             all_users = response['data']['listUsers']['result']
-            # print(all_users)
-            print("running")
-            # users = []
+            users = []
+            records_inserted = 0
             for user in all_users:
                 name, doj, designation, pic = " ", "2023-02-02", " ", " "
                 if user['basicProfile']:
@@ -970,30 +976,29 @@ def get_all_user_dna(request):
                     if user['detailedProfile']['designation'] and user['detailedProfile']['designation']['name']:
                         designation = user['detailedProfile']['designation']['name']
 
-                # users.append({
-                #     "id": user['id'],
-                #     "email": user['email'],
-                #     "name": name,
-                #     "designation": designation,
-                #     "doj": doj,
-                #     "pic": pic
-                # })
+                users.append({
+                    "id": user['id'],
+                    "email": user['email'],
+                    "name": name,
+                    "designation": designation,
+                    "doj": doj,
+                    "pic": pic
+                })
 
-                print("Saving "+user['id'])
+                print("Saving "+user['email']+" in db.")
                 isUser = User.objects.filter(email=user['email'])
-                # print(len(isUser))
                 if len(isUser) >= 1:
-                    print("Already exists "+user['id'])
+                    print("User Already exists :: "+user['email'])
                     continue
-                if user['email'] == " " or "@" not in user['email'] or user['name'] == " " or user['designation'] == " " or user['doj'] == "2023-02-02":
-                    print("Not saved "+user['id'])
+                elif user['email'] == " " or "@" not in user['email'] or name == " " or designation == " " or doj == "2023-02-02":
+                    print("User Not saved :: "+user['email'])
                     continue
-                if " " in user['name']:
-                    fname = user['name'].split(' ', 1)[0]
-                    lname = user['name'].split(' ', 1)[1]
+                elif " " in name:
+                    fname = name.split(' ', 1)[0]
+                    lname = name.split(' ', 1)[1]
                 else:
-                    fname = user['name']
-                    lname = ""
+                    fname = name
+                    lname = " "
 
                 user_instance = User(
                     email=user['email'],
@@ -1001,109 +1006,69 @@ def get_all_user_dna(request):
                     first_name=fname,
                     last_name=lname
                 )
-                print(user_instance)
                 user_instance.save()
                 detail_instance = Detail(
                     user=user_instance,
                     employee_id=user['id'],
-                    designation=user['designation'],
-                    doj=user['doj'],
-                    profile_pic=user['pic']
+                    designation=designation,
+                    doj=doj,
+                    profile_pic=" "
                 )
                 detail_instance.save()
-                print("User data filled in user table")
+                print("User Created :: ", str(user_instance))
+                records_inserted = records_inserted + 1
 
-            print(users)
-            print("User data filled in user table")
-
-            return HttpResponse(json.dumps(users), content_type='application/json')
-        except Exception as err:
-            print(err)
-            return HttpResponse(str(err), content_type='application/json')
+            print(str(records_inserted)+"records inserted into user table")
+            return HttpResponse("Done", content_type='application/json')
+        except Exception as exception:
+            print(exception)
+            return HttpResponse(str(exception), content_type='application/json')
     else:
-        return HttpResponse("wrong request", content_type='application/json')
+        return HttpResponse("Wrong Request Method", content_type='application/json')
 
-
-# from .utils import users
-B2B_CLIENT_ID = "7af854s3foajsnvn1c0n9hnmg8"
-B2B_CLIENT_SECRET = "enb9eljppf2025ksmtvlhenbvabfblmmh8ghv828r0nths2b8qu"
-token_url = "https://auth.dna-staging.hashedin.com/oauth2/token"
-# get token from the dna server
-
-
-def get_token_from_dna(request):
-    try:
-        data = {
-            'grant_type': 'client_credentials',
-            'client_id': B2B_CLIENT_ID,
-            'client_secret': B2B_CLIENT_SECRET,
-        }
-        response = requests.post(token_url, data=data)
-        token = response.json()['access_token']
-        print(token)
-        # response = json.loads(response.text)
-        # print(response['access_token'])
-        return HttpResponse(json.dumps({"token":token}), content_type="application/json")
-    except Exception as err:
-        print(str(err))
-        return HttpResponse(str(err), content_type="application/json")
-
-    # try:
-    # for user in users:
-    #     print("Saving "+user['id'])
-    #     isUser = User.objects.filter(email = user['email'])
-    #     print(len(isUser))
-    #     if len(isUser) >= 1:
-    #         print("Already exists "+user['id'])
-    #         continue
-    #     if user['email'] == " " or  "@" not in user['email'] or user['name'] == " " or user['designation'] == " " or user['doj'] == "2023-02-02":
-    #         print("Not saved "+user['id'])
-    #         continue
-    #     if " " in user['name']:
-    #         fname = user['name'].split(' ', 1)[0]
-    #         lname = user['name'].split(' ', 1)[1]
-    #     else:
-    #         fname = user['name']
-    #         lname = ""
-
-    #     user_instance = User(
-    #         email = user['email'],
-    #         username = user['email'].split("@")[0],
-    #         first_name = fname,
-    #         last_name=lname
-    #     )
-    #     print(user_instance)
-    #     user_instance.save()
-    #     detail_instance = Detail(
-    #         user = user_instance,
-    #         employee_id = user['id'],
-    #         designation = user['designation'],
-    #         doj = user['doj'],
-    #         profile_pic = user['pic']
-    #     )
-    #     detail_instance.save()
-    #     print("User data filled in user table")
-    # return HttpResponse("Ok",content_type="application/json")
-    # except Exception as exception:
-    #     return HttpResponse(str(exception), content_type="application/json")
+# function to get the access token from the dna server for b2b query
 
 
 def get_access_token(token_url, client_id, client_secret):
     try:
+        print("inside get_access_token function")
         data = {
             'grant_type': 'client_credentials',
             'client_id': client_id,
             'client_secret': client_secret,
         }
+        print("sending request for getting access token")
         response = requests.post(token_url, data=data)
-        print(str(response))
-        return response.json()
+        token = response.json()['access_token']
+        return token
+    except Exception as err:
+        raise err
 
-    # except requests.ConnectionError:
-    #     return {"result": "Connection error"}
-    # except requests.HTTPError:
-    #     return {"result": "Http error"}
-    # except requests.RequetsException:
-    #     return {"result": "Request error"}
-    except Exception as exception:
-        return HttpResponse(str(exception), content_type="application/json")
+
+# Function to get all the users from the organisation
+def get_all_users_organisation(request):
+    if request.method == 'GET':
+        try:
+            print(settings.B2B_DASHBOARD_URL)
+            # result = schema.execute(
+            #     '''
+            #         query allUsers{
+            #             allUsers{
+            #                 firstName
+            #                 lastName
+            #                 email
+            #                 detail{
+            #                     designation
+            #                 }
+            #             }
+            #         }
+            #     '''
+            # )
+            # allData = result.data['allUsers'][::-1]
+            # return HttpResponse(json.dumps({"data":allData}),content_type="application/json")
+            return HttpResponse("ok", content_type="application/json")
+        except Exception as exception:
+            print(exception)
+            return HttpResponse(str(exception), content_type='application/json')
+    else:
+        return HttpResponse("Wrong Request Method", content_type='application/json', status=400)

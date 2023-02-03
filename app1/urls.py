@@ -48,7 +48,6 @@ urlpatterns = [
     path('star_of_week', views.get_star_of_week, name='star_of_week'),
 
     # personal stats
-
     path('events_participated/<int:user_id>', views.get_events_participated,
          name='events_participated'),
     path('my_rank/<int:user_id>', views.get_my_rank,
@@ -57,6 +56,7 @@ urlpatterns = [
      #integration PODS & DNA
      path("get_pods",views.get_pods_data,name='get_pods_data'),
      path("get_users_dna",views.get_all_user_dna,name='get_pods_data'),
-     path("get_token_dna", views.get_token_from_dna, name='get_token_dna'),
+     path("get_users_org", views.get_all_users_organisation,
+          name='get_all_users_organisation'),
 
 ]
