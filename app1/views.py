@@ -1,6 +1,6 @@
 import requests
 from django.shortcuts import render
-from .models import Detail,Activity, Player, Team, Category, Event, Registration
+from .models import Detail, Activity, Player, Team, Category, Event, Registration
 from .serializers import PostSerializer
 from rest_framework.renderers import JSONRenderer
 from django.http import HttpResponse, JsonResponse
@@ -879,13 +879,13 @@ def get_my_rank(request, user_id):
 
 
 # Integration Variables
-token = "eyJraWQiOiJSWjVxekdQNHFNYnl0SG1uXC9XcitONXA0cVgzOVBFQUpIWEw5SFpvR2tWVT0iLCJhbGciOiJSUzI1NiJ9.eyJhdF9oYXNoIjoieGpyaVJublFoZVdLZjBETXhhbEZ0dyIsInN1YiI6Ijc0M2NjMzJiLTkxYzktNGEzOS1iZjExLTYyZmM2ZGM4YTNjMCIsImNvZ25pdG86Z3JvdXBzIjpbInVzLWVhc3QtMl9xb05jNTdxajhfRGVsb2l0dGUiXSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLnVzLWVhc3QtMi5hbWF6b25hd3MuY29tXC91cy1lYXN0LTJfcW9OYzU3cWo4IiwiY3VzdG9tOm9yZ19pZCI6IjExMjIiLCJjdXN0b206am9iX3RpdGxlIjoiREMgU29mdHdhcmUgRW5naW5lZXIgSSIsImN1c3RvbTpsb2NhdGlvbiI6IlVTIC0gQmVuZ2FsdXJ1IiwiaWRlbnRpdGllcyI6W3sidXNlcklkIjoidlZLM0t1c1ZjN2RBa1VhRVk3dkZZamtjMDI4UVNfU19hQ084TVlYczF5byIsInByb3ZpZGVyTmFtZSI6IkRlbG9pdHRlIiwicHJvdmlkZXJUeXBlIjoiT0lEQyIsImlzc3VlciI6bnVsbCwicHJpbWFyeSI6InRydWUiLCJkYXRlQ3JlYXRlZCI6IjE2NzUwNjcxMDYzODAifV0sImF1dGhfdGltZSI6MTY3NTE1MjA3NCwiY3VzdG9tOmVtYWlscyI6IntcInByaW1hcnlfZW1haWxcIjogXCJtb2hkc3Voa2hhbkBkZWxvaXR0ZS5jb21cIiwgXCJzZWNvbmRhcnlfZW1haWxzXCI6IFtdfSIsImV4cCI6MTY3NTQwNjcxOCwiaWF0IjoxNjc1NDAzMTE5LCJqdGkiOiJlOGIwZjBmYy0yNjZjLTRmNTUtYTg2ZC1jMDM1Y2VhM2I5ZTciLCJlbWFpbCI6Im1vaGRzdWhraGFuQGRlbG9pdHRlLmNvbSIsIm9yZ2FuaXNhdGlvbl9kZXRhaWxzIjoiW3tcIm5hbWVcIjogXCJIYXNoZWRJblwiLCBcInRpbWV6b25lXCI6IFwiVVRDXCIsIFwidGVuYW50X2lkXCI6IFwiMTEyMlwiLCBcImFsbG93ZWRfYXBwc1wiOiBbXCJoaXJlXCIsIFwicHVsc2VcIiwgXCJsZWF2ZXNcIiwgXCJwb2RzXCJdLCBcImN1cnJlbmN5XCI6IFwiSU5SXCIsIFwibG9nb19zM19vYmplY3RfdXJsXCI6IFwiaHR0cHM6XC9cL2RuYS1zdGFnaW5nLXJlc291cmNlLWJ1Y2tldC5zMy51cy1lYXN0LTIuYW1hem9uYXdzLmNvbVwvb3JnX2RpcmVjdG9yeVwvb3JnYW5pc2F0aW9uX2xvZ29zXC9oYXNoZWRpbi5wbmdcIn1dIiwiY3VzdG9tOnV1aWQiOiI2YzcxODFmNS00YzdlLTQ2MmYtOWY4My02Y2VjYzdlNTQ5YjQiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImNvZ25pdG86dXNlcm5hbWUiOiJEZWxvaXR0ZV92VkszS3VzVmM3ZEFrVWFFWTd2Rllqa2MwMjhRU19TX2FDTzhNWVhzMXlvIiwicGljdHVyZSI6Imh0dHBzOlwvXC9ncmFwaC5taWNyb3NvZnQuY29tXC92MS4wXC9tZVwvcGhvdG9cLyR2YWx1ZSIsIm9yaWdpbl9qdGkiOiI3OGZhYTU1OS1mYTY5LTRlODItYTA2OS01YzNlYTkwNTg2NGEiLCJhdWQiOiIyOTBrMjQzdGt1bDF1M2Z0YXB2YWRiOWEwZSIsInRva2VuX3VzZSI6ImlkIiwibmFtZSI6IktoYW4sIE1vaGQgU3VoYWlsIiwic2Vzc2lvbl90ZW5hbnQiOiIxMTIyIn0.HHTqjMs2Gxfm9SfTNG3tT4w-2FDqmvzDSjVzrb73sW4Li8UawJRySOIf0paZOu8psQylZmWWYRSN-Km6nW5iVPMxsttaogKGr7pkfdvfwfinnRco1nzXgiov9B_rgd6hb2D1FwKltvP-Ufywm6uSPF0orQqUeV5AfZLx_c5m9Lpux3LPf7Sa4UhvilP6hpQuKnVOm5UTFyrso80ezUxHZW8jE50oKpPKg18_VNtbzilk323NmaSJiKD2gh8eEI1dQHFepkf9Cb6ktlXBSg2tm-jPmOrASb_TN1G5BEQGa2wa7_1_GwWLwoRrlC4maBXXI9GeIbmg5D62vEbHikGXYg"
-B2B_CLIENT_ID = "7af854s3foajsnvn1c0n9hnmg8"
-B2B_CLIENT_SECRET = "enb9eljppf2025ksmtvlhenbvabfblmmh8ghv828r0nths2b8qu"
-token_url = "https://staging.apis.hashedin.com/virtualkunakidza/b2b/gql/"
+token = "eyJraWQiOiJSWjVxekdQNHFNYnl0SG1uXC9XcitONXA0cVgzOVBFQUpIWEw5SFpvR2tWVT0iLCJhbGciOiJSUzI1NiJ9.eyJhdF9oYXNoIjoibWx2bUl5ZWRBZjlFVDRNUy1uejVPUSIsInN1YiI6Ijc0M2NjMzJiLTkxYzktNGEzOS1iZjExLTYyZmM2ZGM4YTNjMCIsImNvZ25pdG86Z3JvdXBzIjpbInVzLWVhc3QtMl9xb05jNTdxajhfRGVsb2l0dGUiXSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLnVzLWVhc3QtMi5hbWF6b25hd3MuY29tXC91cy1lYXN0LTJfcW9OYzU3cWo4IiwiY3VzdG9tOm9yZ19pZCI6IjExMjIiLCJjdXN0b206am9iX3RpdGxlIjoiREMgU29mdHdhcmUgRW5naW5lZXIgSSIsImN1c3RvbTpsb2NhdGlvbiI6IlVTIC0gQmVuZ2FsdXJ1IiwiaWRlbnRpdGllcyI6W3sidXNlcklkIjoidlZLM0t1c1ZjN2RBa1VhRVk3dkZZamtjMDI4UVNfU19hQ084TVlYczF5byIsInByb3ZpZGVyTmFtZSI6IkRlbG9pdHRlIiwicHJvdmlkZXJUeXBlIjoiT0lEQyIsImlzc3VlciI6bnVsbCwicHJpbWFyeSI6InRydWUiLCJkYXRlQ3JlYXRlZCI6IjE2NzUwNjcxMDYzODAifV0sImF1dGhfdGltZSI6MTY3NTE1MjA3NCwiY3VzdG9tOmVtYWlscyI6IntcInByaW1hcnlfZW1haWxcIjogXCJtb2hkc3Voa2hhbkBkZWxvaXR0ZS5jb21cIiwgXCJzZWNvbmRhcnlfZW1haWxzXCI6IFtdfSIsImV4cCI6MTY3NTQxMDQ4MSwiaWF0IjoxNjc1NDA2ODgyLCJqdGkiOiI2MzRhN2U4OS1lMjQ4LTRkNjQtYjc1NC02NDM0ODAxZGY4NDEiLCJlbWFpbCI6Im1vaGRzdWhraGFuQGRlbG9pdHRlLmNvbSIsIm9yZ2FuaXNhdGlvbl9kZXRhaWxzIjoiW3tcIm5hbWVcIjogXCJIYXNoZWRJblwiLCBcInRpbWV6b25lXCI6IFwiVVRDXCIsIFwidGVuYW50X2lkXCI6IFwiMTEyMlwiLCBcImFsbG93ZWRfYXBwc1wiOiBbXCJoaXJlXCIsIFwicHVsc2VcIiwgXCJsZWF2ZXNcIiwgXCJwb2RzXCJdLCBcImN1cnJlbmN5XCI6IFwiSU5SXCIsIFwibG9nb19zM19vYmplY3RfdXJsXCI6IFwiaHR0cHM6XC9cL2RuYS1zdGFnaW5nLXJlc291cmNlLWJ1Y2tldC5zMy51cy1lYXN0LTIuYW1hem9uYXdzLmNvbVwvb3JnX2RpcmVjdG9yeVwvb3JnYW5pc2F0aW9uX2xvZ29zXC9oYXNoZWRpbi5wbmdcIn1dIiwiY3VzdG9tOnV1aWQiOiI2YzcxODFmNS00YzdlLTQ2MmYtOWY4My02Y2VjYzdlNTQ5YjQiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImNvZ25pdG86dXNlcm5hbWUiOiJEZWxvaXR0ZV92VkszS3VzVmM3ZEFrVWFFWTd2Rllqa2MwMjhRU19TX2FDTzhNWVhzMXlvIiwicGljdHVyZSI6Imh0dHBzOlwvXC9ncmFwaC5taWNyb3NvZnQuY29tXC92MS4wXC9tZVwvcGhvdG9cLyR2YWx1ZSIsIm9yaWdpbl9qdGkiOiI3OGZhYTU1OS1mYTY5LTRlODItYTA2OS01YzNlYTkwNTg2NGEiLCJhdWQiOiIyOTBrMjQzdGt1bDF1M2Z0YXB2YWRiOWEwZSIsInRva2VuX3VzZSI6ImlkIiwibmFtZSI6IktoYW4sIE1vaGQgU3VoYWlsIiwic2Vzc2lvbl90ZW5hbnQiOiIxMTIyIn0.gQ9r4iJuXXTGk2sEFzX3APrjDYFW6abuSmGeUXqwugmmUCr1EkrFhqhLjQLOzFuFUazUbP_gmVvLauzw9P7yoDCXMSAB5S8RSGD4VQ8ZZXzAmAYulrtA5uEE4lax9B7bZ9w6gsQp7q2scgciBh8PaJbLbmjmc2TB0pXtNI-Uvd3zEoKlNYJjYBTITvwFrcNC-djFeyLp5QLUwI1PIEST1djPuyeUj05zNpFOxEJBJzo-mhTkNUHfhEBSSKyY-L0X19PukJlBd7zq-hiRXBPW5x9Gxvg3YCDX12OHOF_CV_T2Kj1lwY1PXqlzhioLl7UGOEScg-yXoYWWcJ-XGPrR-Q"
+
 # users = []
 
 # get data from PODS platform
+
+
 def get_pods_data(request):
     if request.method == 'POST':
         try:
@@ -956,9 +956,9 @@ def get_all_user_dna(request):
             all_users = response['data']['listUsers']['result']
             # print(all_users)
             print("running")
-            users = []
+            # users = []
             for user in all_users:
-                name, doj, designation, pic = " ", "0000-00-00", " ", " "
+                name, doj, designation, pic = " ", "2023-02-02", " ", " "
                 if user['basicProfile']:
                     if user['basicProfile']['name']:
                         name = user['basicProfile']['name']
@@ -970,16 +970,49 @@ def get_all_user_dna(request):
                     if user['detailedProfile']['designation'] and user['detailedProfile']['designation']['name']:
                         designation = user['detailedProfile']['designation']['name']
 
-                users.append({
-                    "id": user['id'],
-                    "email": user['email'],
-                    "name": name,
-                    "designation": designation,
-                    "doj": doj,
-                    "pic": pic
-                })
+                # users.append({
+                #     "id": user['id'],
+                #     "email": user['email'],
+                #     "name": name,
+                #     "designation": designation,
+                #     "doj": doj,
+                #     "pic": pic
+                # })
 
-                
+                print("Saving "+user['id'])
+                isUser = User.objects.filter(email=user['email'])
+                # print(len(isUser))
+                if len(isUser) >= 1:
+                    print("Already exists "+user['id'])
+                    continue
+                if user['email'] == " " or "@" not in user['email'] or user['name'] == " " or user['designation'] == " " or user['doj'] == "2023-02-02":
+                    print("Not saved "+user['id'])
+                    continue
+                if " " in user['name']:
+                    fname = user['name'].split(' ', 1)[0]
+                    lname = user['name'].split(' ', 1)[1]
+                else:
+                    fname = user['name']
+                    lname = ""
+
+                user_instance = User(
+                    email=user['email'],
+                    username=user['email'].split("@")[0],
+                    first_name=fname,
+                    last_name=lname
+                )
+                print(user_instance)
+                user_instance.save()
+                detail_instance = Detail(
+                    user=user_instance,
+                    employee_id=user['id'],
+                    designation=user['designation'],
+                    doj=user['doj'],
+                    profile_pic=user['pic']
+                )
+                detail_instance.save()
+                print("User data filled in user table")
+
             print(users)
             print("User data filled in user table")
 
@@ -990,46 +1023,82 @@ def get_all_user_dna(request):
     else:
         return HttpResponse("wrong request", content_type='application/json')
 
-from .utils import users
 
+# from .utils import users
+B2B_CLIENT_ID = "7af854s3foajsnvn1c0n9hnmg8"
+B2B_CLIENT_SECRET = "enb9eljppf2025ksmtvlhenbvabfblmmh8ghv828r0nths2b8qu"
+token_url = "https://auth.dna-staging.hashedin.com/oauth2/token"
 # get token from the dna server
+
+
 def get_token_from_dna(request):
     try:
-        for user in users:
-            print("Saving "+user['id'])
-            # isUser = User.objects.get(email = user['email'])
-            # print(isUser)
-            # if isUser is not None:
-            #     print("Already exists "+user[id])
-            #     continue
-            if "@" not in user['email']:
-                print("Not saved "+user[id])
-                continue
-            if " " in user['name']:
-                fname = user['name'].split(' ', 1)[0]
-                lname = user['name'].split(' ', 1)[1]
-            else:
-                fname = user['name']
-                lname = ""
+        data = {
+            'grant_type': 'client_credentials',
+            'client_id': B2B_CLIENT_ID,
+            'client_secret': B2B_CLIENT_SECRET,
+        }
+        response = requests.post(token_url, data=data)
+        token = response.json()['access_token']
+        print(token)
+        # response = json.loads(response.text)
+        # print(response['access_token'])
+        return HttpResponse(json.dumps({"token":token}), content_type="application/json")
+    except Exception as err:
+        print(str(err))
+        return HttpResponse(str(err), content_type="application/json")
 
-            user_instance = User(
-                email = user['email'],
-                username = user['email'].split("@")[0],
-                first_name = fname,
-                last_name=lname
-            )
-            print(user_instance)
-            user_instance.save()
-            detail_instance = Detail(
-                user = user_instance,
-                employee_id = user['id'],
-                designation = user['designation'],
-                doj = user['doj'],
-                profile_pic = user['pic']
-            )
-            detail_instance.save()
-            print("User data filled in user table")
-        return HttpResponse("Ok",content_type="application/json")
+    # try:
+    # for user in users:
+    #     print("Saving "+user['id'])
+    #     isUser = User.objects.filter(email = user['email'])
+    #     print(len(isUser))
+    #     if len(isUser) >= 1:
+    #         print("Already exists "+user['id'])
+    #         continue
+    #     if user['email'] == " " or  "@" not in user['email'] or user['name'] == " " or user['designation'] == " " or user['doj'] == "2023-02-02":
+    #         print("Not saved "+user['id'])
+    #         continue
+    #     if " " in user['name']:
+    #         fname = user['name'].split(' ', 1)[0]
+    #         lname = user['name'].split(' ', 1)[1]
+    #     else:
+    #         fname = user['name']
+    #         lname = ""
+
+    #     user_instance = User(
+    #         email = user['email'],
+    #         username = user['email'].split("@")[0],
+    #         first_name = fname,
+    #         last_name=lname
+    #     )
+    #     print(user_instance)
+    #     user_instance.save()
+    #     detail_instance = Detail(
+    #         user = user_instance,
+    #         employee_id = user['id'],
+    #         designation = user['designation'],
+    #         doj = user['doj'],
+    #         profile_pic = user['pic']
+    #     )
+    #     detail_instance.save()
+    #     print("User data filled in user table")
+    # return HttpResponse("Ok",content_type="application/json")
+    # except Exception as exception:
+    #     return HttpResponse(str(exception), content_type="application/json")
+
+
+def get_access_token(token_url, client_id, client_secret):
+    try:
+        data = {
+            'grant_type': 'client_credentials',
+            'client_id': client_id,
+            'client_secret': client_secret,
+        }
+        response = requests.post(token_url, data=data)
+        print(str(response))
+        return response.json()
+
     # except requests.ConnectionError:
     #     return {"result": "Connection error"}
     # except requests.HTTPError:
@@ -1037,4 +1106,4 @@ def get_token_from_dna(request):
     # except requests.RequetsException:
     #     return {"result": "Request error"}
     except Exception as exception:
-        return {"result": str(exception)}
+        return HttpResponse(str(exception), content_type="application/json")

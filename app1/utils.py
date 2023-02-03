@@ -13,7 +13,7 @@ users = [
         "name": "HiBridge_Sally Rutherford",
         "designation": "DevOps Leader",
         "doj": "2011-11-01",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/6857a608-f527-11eb-8963-4f9d97070525.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061931Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=7aa2e5654cf3f209b883b0b61f03c52362e0384c2e115c7e4fed7b2cb85ce3a8"
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/6857a608-f527-11eb-8963-4f9d97070525.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065042Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=26eb3ca01ef9b2ee95ceccc8a91a25ac59d8fe648744c585ef49202508b0eff4"
     },
     {
         "id": "3",
@@ -4533,7 +4533,7 @@ users = [
         "name": "Sonia Lyman",
         "designation": "Senior Engineering Management Master",
         "doj": "2019-12-02",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/078aa39f-ab72-11ec-b469-df51ff3b741d.png?response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061933Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=0339635a44fe350f64b5e64d450af4f4d4940b5597c4802e89fdcc1e82f43801"
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/078aa39f-ab72-11ec-b469-df51ff3b741d.png?response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065043Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=00d8d7e72be7a89969a511db10ccc127fec17de89510a9a02a4cbcb6a97f7c38"
     },
     {
         "id": "569",
@@ -4804,7 +4804,7 @@ users = [
         "email": "sakshisingh57@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -4812,7 +4812,7 @@ users = [
         "email": "manglnu@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -4820,7 +4820,7 @@ users = [
         "email": "divyajain75@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -4828,7 +4828,7 @@ users = [
         "email": "rajarao@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -4836,7 +4836,7 @@ users = [
         "email": "sumantghosh@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -4844,7 +4844,7 @@ users = [
         "email": "kritpandey@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -4852,7 +4852,7 @@ users = [
         "email": "hsanjaysharma@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -4860,7 +4860,7 @@ users = [
         "email": "dbijo@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -4868,7 +4868,7 @@ users = [
         "email": "shivangsrivastava@deloitte.com",
         "name": " ",
         "designation": "Software Engineer-III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -4876,7 +4876,7 @@ users = [
         "email": "gcalebr@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -4884,7 +4884,7 @@ users = [
         "email": "khygupta@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -4892,7 +4892,7 @@ users = [
         "email": "snelamanesrikanta@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -4900,7 +4900,7 @@ users = [
         "email": "sprusti@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -4908,7 +4908,7 @@ users = [
         "email": "clijohnson@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -4916,7 +4916,7 @@ users = [
         "email": "subsinghal@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -4924,7 +4924,7 @@ users = [
         "email": "devaskumar@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -4932,7 +4932,7 @@ users = [
         "email": "anofrancis@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -4940,7 +4940,7 @@ users = [
         "email": "anusgarg@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -4948,7 +4948,7 @@ users = [
         "email": "abhishekkumar736@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -4956,7 +4956,7 @@ users = [
         "email": "himanjoshi@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -4964,7 +4964,7 @@ users = [
         "email": "chiragjpatel@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -4972,7 +4972,7 @@ users = [
         "email": "viveksingh92@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -4988,7 +4988,7 @@ users = [
         "email": "ahariwal@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -4996,7 +4996,7 @@ users = [
         "email": "vismada@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5004,7 +5004,7 @@ users = [
         "email": "dinigam@deloitte.com",
         "name": "Divyata Nigam",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5012,7 +5012,7 @@ users = [
         "email": "sakshisingh6@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5020,7 +5020,7 @@ users = [
         "email": "abhijeemishra@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5028,7 +5028,7 @@ users = [
         "email": "nitkishore@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5036,7 +5036,7 @@ users = [
         "email": "pyuktha@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5044,7 +5044,7 @@ users = [
         "email": "krmg@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5052,7 +5052,7 @@ users = [
         "email": "namrab@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5060,7 +5060,7 @@ users = [
         "email": "manojkm@deloitte.com",
         "name": "Manoj Kumar M",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5068,7 +5068,7 @@ users = [
         "email": "gaubhatt@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5077,14 +5077,14 @@ users = [
         "name": "Aishwarya G",
         "designation": "Software Engineer-III",
         "doj": "2021-11-28",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/bf27fc8c-ed2e-11ec-8b54-776878763ada.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061933Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=5c8ce33ee1f72d36ae5c1fe6d47f4670b5be96c8824eab4a2a71d9f13e1514ed"
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/bf27fc8c-ed2e-11ec-8b54-776878763ada.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065043Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=23240398d2bcf988694ebf394e73debe7c9a51bc699526bbdd0a1aa169493cbd"
     },
     {
         "id": "637",
         "email": "bhujain@deloitte.com",
         "name": "Bhumika Jain",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5092,7 +5092,7 @@ users = [
         "email": "vgs@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5100,7 +5100,7 @@ users = [
         "email": "sugoel@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5108,7 +5108,7 @@ users = [
         "email": "amarmalik@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5116,7 +5116,7 @@ users = [
         "email": "mchidambaram@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5124,7 +5124,7 @@ users = [
         "email": "makamar@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5132,7 +5132,7 @@ users = [
         "email": "srathikanti@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5140,7 +5140,7 @@ users = [
         "email": "avunnava@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5148,7 +5148,7 @@ users = [
         "email": "mohhamid@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5156,7 +5156,7 @@ users = [
         "email": "saurabhkumar5@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5164,7 +5164,7 @@ users = [
         "email": "rohitsinha4@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5172,7 +5172,7 @@ users = [
         "email": "akashsharma629@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5180,7 +5180,7 @@ users = [
         "email": "rajatkumar6@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5188,7 +5188,7 @@ users = [
         "email": "ysuresh@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5196,7 +5196,7 @@ users = [
         "email": "vjeevankishore@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5204,7 +5204,7 @@ users = [
         "email": "manishakumari@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5212,7 +5212,7 @@ users = [
         "email": "darpatel@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5220,7 +5220,7 @@ users = [
         "email": "kkatiyar@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5228,7 +5228,7 @@ users = [
         "email": "shupundir@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5236,7 +5236,7 @@ users = [
         "email": "shpriyadarshini@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5244,7 +5244,7 @@ users = [
         "email": "bhgopinath@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5252,7 +5252,7 @@ users = [
         "email": "smnama@deloitte.com",
         "name": "Smaran Nama",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5260,7 +5260,7 @@ users = [
         "email": "abhishektiwari9@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5268,7 +5268,7 @@ users = [
         "email": "gjadhav@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5276,7 +5276,7 @@ users = [
         "email": "armondal@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5284,7 +5284,7 @@ users = [
         "email": "ugussain@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5292,7 +5292,7 @@ users = [
         "email": "mkurimeti@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5300,7 +5300,7 @@ users = [
         "email": "srakhee@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5308,7 +5308,7 @@ users = [
         "email": "vineagrawal@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5316,7 +5316,7 @@ users = [
         "email": "pchavan@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5324,7 +5324,7 @@ users = [
         "email": "rajsingla@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5340,7 +5340,7 @@ users = [
         "email": "richasingh3@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5348,7 +5348,7 @@ users = [
         "email": "rohitkumar3@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5356,7 +5356,7 @@ users = [
         "email": "mohitagarwal79@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5364,7 +5364,7 @@ users = [
         "email": "chhkishore@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5372,7 +5372,7 @@ users = [
         "email": "shravshetty@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5380,7 +5380,7 @@ users = [
         "email": "mharibabu@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5388,7 +5388,7 @@ users = [
         "email": "sumitkumar42@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5396,7 +5396,7 @@ users = [
         "email": "maganji@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5404,7 +5404,7 @@ users = [
         "email": "tbandlamudi@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5412,7 +5412,7 @@ users = [
         "email": "mannagendra@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5420,7 +5420,7 @@ users = [
         "email": "jyotikumari6@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5428,7 +5428,7 @@ users = [
         "email": "rotripathi@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5436,7 +5436,7 @@ users = [
         "email": "aayussingh@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5444,7 +5444,7 @@ users = [
         "email": "vishalraj@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5452,7 +5452,7 @@ users = [
         "email": "ishmalhotra@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5460,7 +5460,7 @@ users = [
         "email": "lalkumar@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5468,7 +5468,7 @@ users = [
         "email": "gauravkumar64@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5476,7 +5476,7 @@ users = [
         "email": "nikpinto@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5484,7 +5484,7 @@ users = [
         "email": "rislnu@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5492,7 +5492,7 @@ users = [
         "email": "nrajanna@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5500,7 +5500,7 @@ users = [
         "email": "saprajapati@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5508,7 +5508,7 @@ users = [
         "email": "tanyasharma7@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5516,7 +5516,7 @@ users = [
         "email": "anspaliwal@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5524,7 +5524,7 @@ users = [
         "email": "akssuresh@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5532,7 +5532,7 @@ users = [
         "email": "nkanchisamudram@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5540,7 +5540,7 @@ users = [
         "email": "layadav@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5548,7 +5548,7 @@ users = [
         "email": "kamchowdary@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5556,7 +5556,7 @@ users = [
         "email": "srunnikrishnan@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5564,7 +5564,7 @@ users = [
         "email": "ilnu@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5580,7 +5580,7 @@ users = [
         "email": "pranjugupta@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5588,7 +5588,7 @@ users = [
         "email": "apkakrannaya@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5596,7 +5596,7 @@ users = [
         "email": "diwaverma@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5605,7 +5605,7 @@ users = [
         "name": "Evan Randall",
         "designation": "Recruitment Specialist",
         "doj": "2020-12-12",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboardhttps%3A//images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f%3Fixid%3DMnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8%26ixlib%3Drb-1.2.1%26auto%3Dformat%26fit%3Dcrop%26w%3D1050%26q%3D80?response-content-type=image%2F1%26auto%3Dformat%26fit%3Dcrop%26w%3D1050%26q%3D80&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061933Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=e076fc0b21ff0dae4b92c582f3724e5588986bdd52418bcfb3badd7a8e9383bc"
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboardhttps%3A//images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f%3Fixid%3DMnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8%26ixlib%3Drb-1.2.1%26auto%3Dformat%26fit%3Dcrop%26w%3D1050%26q%3D80?response-content-type=image%2F1%26auto%3Dformat%26fit%3Dcrop%26w%3D1050%26q%3D80&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065043Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=2afb236257e91e6affdf90382df9d4ea33f1e2e846ef060051091c66d5938f61"
     },
     {
         "id": "703",
@@ -5620,7 +5620,7 @@ users = [
         "email": "iamdaredevil@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5636,7 +5636,7 @@ users = [
         "email": "virginiapaterson_test@deloitte.com",
         "name": "Virginia Paterson",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5644,7 +5644,7 @@ users = [
         "email": "kimberlypowell_test@deloitte.com",
         "name": "Kimberly Powell",
         "designation": "Software Engineering Master",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -5652,7 +5652,7 @@ users = [
         "email": "isaacjackson_test@deloitte.com",
         "name": "Isaac Jackson",
         "designation": "Software Engineering Master",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -7149,7 +7149,7 @@ users = [
         "name": "Angela Poole",
         "designation": "Intern",
         "doj": "2022-03-07",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/078aa39f-ab72-11ec-b469-df51ff3b741d.png?response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061933Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=0339635a44fe350f64b5e64d450af4f4d4940b5597c4802e89fdcc1e82f43801"
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/078aa39f-ab72-11ec-b469-df51ff3b741d.png?response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065044Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=d215935f0e26a71838451d6d564c19ee98c405271a99bcfca3bfce6cb3a2cfde"
     },
     {
         "id": "900",
@@ -7189,15 +7189,15 @@ users = [
         "name": "Vinoth Amirdham Mohan",
         "designation": "Software Engineer-II",
         "doj": "2022-03-07",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/71d9cb4a-13d3-11ed-b139-9aa512629264.png?response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061933Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=bd28489f1d9503f6793fdde0ca9a7ae5e8b6e5ae3c2d59f6b48d0f9b4b0ca6d0"
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/71d9cb4a-13d3-11ed-b139-9aa512629264.png?response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065044Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=3e02be393073a8de33eebd16792dc82bcea428e687109784f52270d224c91cbb"
     },
     {
         "id": "905",
         "email": "vipoojary@deloitte.com",
         "name": "Vishal V Poojary",
         "designation": "Software Engineer-III",
-        "doj": "0000-00-00",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/b7fb53fe-5678-11ed-8081-26aaf3107b7e.png?response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061933Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=15753afde48a03bcb584bad5ccd5b851ca8f40b901ddf4169dc49615a844825a"
+        "doj": "2023-02-02",
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/b7fb53fe-5678-11ed-8081-26aaf3107b7e.png?response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065044Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=d0b94c34453f41caf68694a827f09a16525bfba11f5f9df6a362e30aff4f3fdb"
     },
     {
         "id": "906",
@@ -7212,15 +7212,15 @@ users = [
         "email": "pasharma@deloitte.com",
         "name": "Pallav Sharma",
         "designation": "Software Engineer-II",
-        "doj": "0000-00-00",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/a49ceaa4-809c-11ed-a44a-364e68b4a1e0.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061933Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=0a3d9a994cf71b0d60d7b983074fa2409b752eb345600e3410fbfd7eaf7ef49c"
+        "doj": "2023-02-02",
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/a49ceaa4-809c-11ed-a44a-364e68b4a1e0.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065044Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=a475a78de5d1ba7104b6f55d5a4ec3f0d1d26c383d04f52120e9f8f61b448a88"
     },
     {
         "id": "908",
         "email": "racrai@deloitte.com",
         "name": "Rachith Chandrahasa Rai",
         "designation": "Engineering Management Master",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -7237,7 +7237,7 @@ users = [
         "name": "Rishabh Jain",
         "designation": " ",
         "doj": "2021-06-09",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/7e63dc3a-eca8-11ec-a3b1-4798f6542d9e.png?response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061933Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=50c2b45fc1149ec971db3dff124dc6fd72663b6f5da58d97e800a0ea95907bf0"
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/7e63dc3a-eca8-11ec-a3b1-4798f6542d9e.png?response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065044Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=ec63507328921eb00251246aa3a29597868e232c34852ca86406fd059d94feeb"
     },
     {
         "id": "911",
@@ -7245,7 +7245,7 @@ users = [
         "name": "Marsh Vishal Lobo",
         "designation": "Software Engineer-I",
         "doj": "2021-11-08",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/e93cbd7a-4aea-11ed-889d-a623c48f54fa.png?response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061933Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=5267dc47a85219d78b7f91da79e6895d1b30e58a9f95045d008029923600fdf3"
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/e93cbd7a-4aea-11ed-889d-a623c48f54fa.png?response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065044Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=0509fada617206b7b352af6a97c1b94c8c27762ea6ee688537d817199b71f6c2"
     },
     {
         "id": "912",
@@ -7260,7 +7260,7 @@ users = [
         "email": "pkatiyar@deloitte.com",
         "name": "Pranav Katiyar",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -7268,7 +7268,7 @@ users = [
         "email": "skuttipuravan@deloitte.com",
         "name": "Sajan Kuttipuravan",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -7276,7 +7276,7 @@ users = [
         "email": "bharipriya@deloitte.com",
         "name": "B V Haripriya",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -7284,7 +7284,7 @@ users = [
         "email": "zaali@deloitte.com",
         "name": "Zainul Ali",
         "designation": "Engineering Management Master",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -7300,7 +7300,7 @@ users = [
         "email": "venkkatta@deloitte.com",
         "name": "Venkatesh Katta",
         "designation": "Software Engineer-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -7309,14 +7309,14 @@ users = [
         "name": "Shambavi Elangovan",
         "designation": "Software Engineer-I",
         "doj": "2022-01-01",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/bf27fc8c-ed2e-11ec-8b54-776878763ada.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061933Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=5c8ce33ee1f72d36ae5c1fe6d47f4670b5be96c8824eab4a2a71d9f13e1514ed"
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/bf27fc8c-ed2e-11ec-8b54-776878763ada.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065044Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=63a517f52af5243c053dd0b16bd86d66d224ff772dd9bede2a3e55a8ab6fbb8b"
     },
     {
         "id": "921",
         "email": "nguglani@deloitte.com",
         "name": "Niharika Guglani",
         "designation": "Software Engineer-III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -7340,7 +7340,7 @@ users = [
         "email": "kushaggupta@deloitte.com",
         "name": "Kushagra Gupta",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -7348,7 +7348,7 @@ users = [
         "email": "seskala@deloitte.com",
         "name": "Srekar Eskala",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -7357,7 +7357,7 @@ users = [
         "name": "Sakshi Pradiprao Gotmare",
         "designation": "SDET-II",
         "doj": "2022-01-17",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/8ead5f1a-4ae8-11ed-8703-629608b06df5.png?response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061933Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=3a3fd679eb12abec7bc91cc8ecb390e04f591b0e904ea9ea0c5e00cd14aeb571"
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/8ead5f1a-4ae8-11ed-8703-629608b06df5.png?response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065044Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=06e4356871889cc58acb1ab564d0d907646d2deafcc3bbee09f0a5666d2fbb3f"
     },
     {
         "id": "928",
@@ -7365,14 +7365,14 @@ users = [
         "name": "Hari Krishna B",
         "designation": "Software Engineer-II",
         "doj": "2021-08-16",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/57f7c77e-4ac7-11ed-b88f-a6db986c730f.png?response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061933Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=c8fb5d3285751239f03df7353ce1504574cb2a1fd4719393ad45364a891fd425"
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/57f7c77e-4ac7-11ed-b88f-a6db986c730f.png?response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065044Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=c676d3933c2b2ffc8bdbca9cc4c3aba21ca11ccf7f78aec8781f53c09ef5d510"
     },
     {
         "id": "929",
         "email": "nanbandyopadhyay@deloitte.com",
         "name": "Nanak Bandyopadhyay",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -7380,7 +7380,7 @@ users = [
         "email": "sranganatha@deloitte.com",
         "name": "Srinidhi Ranganatha",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -7397,7 +7397,7 @@ users = [
         "name": "Sudhakar M",
         "designation": "Software Engineer-II",
         "doj": "2022-08-22",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/01203e52-5e9c-11ed-9e73-4207deacbc91.png?response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061934Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=b4aebb46fcacbba1d7374c9f08d3a544a5c8ed3a9150f06bc14156dcea85e3e6"
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/01203e52-5e9c-11ed-9e73-4207deacbc91.png?response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065044Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=bf501d8f736a09623a702359c507a79cd0ef550e3c51233144e7721b6f7f169d"
     },
     {
         "id": "934",
@@ -7405,7 +7405,7 @@ users = [
         "name": "Ankita Bhardwaj",
         "designation": "Software Engineer-II",
         "doj": "2021-11-04",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/45fb8f96-9596-11ed-b332-ce0a48b1041c.gif?response-content-type=image%2Fgif&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061934Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=7a1a188c3396248924f42da831ef23a5fc9ae7a4af2998a5e2dae7543f36eef2"
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/45fb8f96-9596-11ed-b332-ce0a48b1041c.gif?response-content-type=image%2Fgif&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065044Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=d6b7a0000f19718afd1c38da645acc9ee04fd9b20281bbc27f11d4f4c91deb8f"
     },
     {
         "id": "935",
@@ -7413,7 +7413,7 @@ users = [
         "name": "Yukti Mittal",
         "designation": "DevOps Engineer-I",
         "doj": "2022-06-06",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/de0aab88-6af2-11ed-aad8-12a5470cfd44.jpeg?response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061934Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=b8dab7e84d6141537d4d85c9738c6fae192d8bc391766770ceae6b0d0a34c4f0"
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/de0aab88-6af2-11ed-aad8-12a5470cfd44.jpeg?response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065044Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=8bcad58337c8ea385789b140895ca8872428af917df571ab58072099e0b0412e"
     },
     {
         "id": "936",
@@ -7429,7 +7429,7 @@ users = [
         "name": "Rakesh Mariyaplar Ravikumar",
         "designation": "DevOps Engineer-II",
         "doj": "2022-06-06",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/aff92dbc-ed3d-11ec-8cd7-d5c0f769b851.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061934Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=db6bcbbfc838ddc9922417f96e26045107d44a19db2efdbedf7ec7eac3054f36"
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/aff92dbc-ed3d-11ec-8cd7-d5c0f769b851.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065044Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=38d0c3f17d4034078eb467d4fb44462c3223743c1f6f373fbad22cfe564d4ca1"
     },
     {
         "id": "938",
@@ -7444,7 +7444,7 @@ users = [
         "email": "vyogasekar@deloitte.com",
         "name": "Vasanth Yogasekar",
         "designation": "Delivery Leader",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -7452,7 +7452,7 @@ users = [
         "email": "akhilpsingh@deloitte.com",
         "name": "Akhil Pratap Singh",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -7460,7 +7460,7 @@ users = [
         "email": "chithakkar@deloitte.com",
         "name": "Chintan Thakkar",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -7477,7 +7477,7 @@ users = [
         "name": "Ashish Chauhan",
         "designation": "Software Engineer-I",
         "doj": "2022-01-08",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/b88f95c0-4ac8-11ed-a042-6e2ae0c16f0c.png?response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061934Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=a2f11545fde35426c3e0a4cae5d7e34f56c9734f9a32cdaea0862712c9407a98"
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/b88f95c0-4ac8-11ed-a042-6e2ae0c16f0c.png?response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065044Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=9d05f29f2107af876829b428649e8a9ccdaf49fc004a13775c0cd51dbd8f6be8"
     },
     {
         "id": "944",
@@ -7533,7 +7533,7 @@ users = [
         "name": "Aditya Gupta",
         "designation": "Software Engineer-II",
         "doj": "2022-09-29",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/f0cc3570-035f-11ed-9df3-52c56de5d3cf.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061934Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=c764218d6efe556d0ba3fbcc2ff41a28776a288e6706f4df3eb838af92127e5b"
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/f0cc3570-035f-11ed-9df3-52c56de5d3cf.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065044Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=0fa3152681e1dd5e7c4956e92b7f8ac0719acaa5aa4210ce242992f20de3e04b"
     },
     {
         "id": "951",
@@ -7612,7 +7612,7 @@ users = [
         "email": "vaishnk@deloitte.com",
         "name": "Vaishnavi K",
         "designation": "Program Manager",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -7620,7 +7620,7 @@ users = [
         "email": "rrosy@deloitte.com",
         "name": "Rhea Sanjan Balaji Singh Rosy",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -7628,7 +7628,7 @@ users = [
         "email": "nammehrotra@deloitte.com",
         "name": "Naman Mehrotra",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -7636,7 +7636,7 @@ users = [
         "email": "aadik@deloitte.com",
         "name": "Amit Bahl",
         "designation": "Tech Architect Leader",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -7644,7 +7644,7 @@ users = [
         "email": "jashrivastava@deloitte.com",
         "name": "Jayant Shrivastava",
         "designation": "Delivery Leader",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -7652,7 +7652,7 @@ users = [
         "email": "sshanthalakshmi@deloitte.com",
         "name": "Shakthi Shantha Lakshmi",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -7677,7 +7677,7 @@ users = [
         "name": "Samajumdar",
         "designation": "DevOps Engineer-I",
         "doj": "2022-06-06",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/bf27fc8c-ed2e-11ec-8b54-776878763ada.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061934Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=81eea8644744f9aa525f5bd83f79ad9ca3c4c0fe5b3e0c6378359a5f1255dad0"
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/bf27fc8c-ed2e-11ec-8b54-776878763ada.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065044Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=63a517f52af5243c053dd0b16bd86d66d224ff772dd9bede2a3e55a8ab6fbb8b"
     },
     {
         "id": "973",
@@ -7685,7 +7685,7 @@ users = [
         "name": "Rakshitha Ravi",
         "designation": "Software Engineer-II",
         "doj": "2022-06-06",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/bf27fc8c-ed2e-11ec-8b54-776878763ada.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061934Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=81eea8644744f9aa525f5bd83f79ad9ca3c4c0fe5b3e0c6378359a5f1255dad0"
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/bf27fc8c-ed2e-11ec-8b54-776878763ada.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065045Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=40b2e800f1ef659f1464a302175ecf85fa166ceb745b0f951293ec48a929dfb6"
     },
     {
         "id": "974",
@@ -7700,7 +7700,7 @@ users = [
         "email": "dikshaagarwal22@deloitte.com",
         "name": "Diksha Agarwal",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -7716,7 +7716,7 @@ users = [
         "email": "asajeev@deloitte.com",
         "name": "Aswin Sajeev",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -7724,7 +7724,7 @@ users = [
         "email": "bochandana@deloitte.com",
         "name": "Bonala Chandana",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -7732,7 +7732,7 @@ users = [
         "email": "saurasahu@deloitte.com",
         "name": "Saurabh Sahu",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -7740,7 +7740,7 @@ users = [
         "email": "sajic@deloitte.com",
         "name": "Saji C",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -7748,7 +7748,7 @@ users = [
         "email": "ashutoshgupta78@deloitte.com",
         "name": "Ashutosh Gupta",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -7756,7 +7756,7 @@ users = [
         "email": "ksaivenkatapavank@deloitte.com",
         "name": "Kosana Sai Venkata Pavan Kumar",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -7764,7 +7764,7 @@ users = [
         "email": "rijsanyal@deloitte.com",
         "name": "Rijul Sanyal",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -7772,7 +7772,7 @@ users = [
         "email": "asomashekar@deloitte.com",
         "name": "Anusha Somashekar",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -7781,14 +7781,14 @@ users = [
         "name": "Akash Verma",
         "designation": "Software Engineer-I",
         "doj": "2022-06-06",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/bf27fc8c-ed2e-11ec-8b54-776878763ada.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061934Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=81eea8644744f9aa525f5bd83f79ad9ca3c4c0fe5b3e0c6378359a5f1255dad0"
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/bf27fc8c-ed2e-11ec-8b54-776878763ada.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065045Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=40b2e800f1ef659f1464a302175ecf85fa166ceb745b0f951293ec48a929dfb6"
     },
     {
         "id": "991",
         "email": "sisehgal@deloitte.com",
         "name": "Siddhant Sehgal",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -7796,8 +7796,8 @@ users = [
         "email": "vinsm@deloitte.com",
         "name": "Vinutha S M",
         "designation": " ",
-        "doj": "0000-00-00",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/0621768e-6fe8-11ed-8c01-f64649889b7c.jpeg?response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061934Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=b577d511e0a5eb527459fb469a7788ac41e23044b795031768279670de6c8c01"
+        "doj": "2023-02-02",
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/0621768e-6fe8-11ed-8c01-f64649889b7c.jpeg?response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065045Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=bc246c70633fe1bf4d88b6352e6ac7e1853e73b77fff442a5812f631dc05f5da"
     },
     {
         "id": "995",
@@ -7805,14 +7805,14 @@ users = [
         "name": "Anushree Shenoy Balkunje",
         "designation": "Software Engineer-I",
         "doj": "2022-06-06",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/bf27fc8c-ed2e-11ec-8b54-776878763ada.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061934Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=81eea8644744f9aa525f5bd83f79ad9ca3c4c0fe5b3e0c6378359a5f1255dad0"
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/bf27fc8c-ed2e-11ec-8b54-776878763ada.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065045Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=40b2e800f1ef659f1464a302175ecf85fa166ceb745b0f951293ec48a929dfb6"
     },
     {
         "id": "996",
         "email": "shivabhardwaj@deloitte.com",
         "name": "Shivangi Bhardwaj",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -7852,7 +7852,7 @@ users = [
         "email": "gauravkumar86@deloitte.com",
         "name": "Gaurav Kumar",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -7861,7 +7861,7 @@ users = [
         "name": "Vedaant Bali",
         "designation": "Software Engineer-II",
         "doj": "2021-12-15",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/7cf9b0f2-4aca-11ed-909f-72cc86e36a05.png?response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061934Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=7b658c050ff198ea4f91902b97911e7429dc1d10febab877d4f8fcd928b2bff2"
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/7cf9b0f2-4aca-11ed-909f-72cc86e36a05.png?response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065045Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=cd4158fe59c6ad89064c7db41a5ef6941671a41d87a5d0a9604564d286700a49"
     },
     {
         "id": "1006",
@@ -7869,7 +7869,7 @@ users = [
         "name": "Akansha Jain",
         "designation": "Software Engineer-I",
         "doj": "2022-06-06",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/02ad124a-3d7c-11ed-aac4-fa45b713401d.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061934Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=b4cb078fdd8777ff6be00a32c7edbfe803aae471e614487bba6a890573a7d405"
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/02ad124a-3d7c-11ed-aac4-fa45b713401d.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065045Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=7428d44bc78e1a3d6b3a2b250483f9493dacfa8f37b7d131a8b0729c132aff45"
     },
     {
         "id": "1007",
@@ -7884,7 +7884,7 @@ users = [
         "email": "sjanakivenkata@deloitte.com",
         "name": "Sajja Praveen Janaki Venkata",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -7900,7 +7900,7 @@ users = [
         "email": "madravi@deloitte.com",
         "name": "Madan Ravi",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -7909,14 +7909,14 @@ users = [
         "name": "Eswar Muthu",
         "designation": "Software Engineer-I",
         "doj": "2021-01-31",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/7340a55a-958b-11ed-92af-861d05c8a158.jpeg?response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061934Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=e277cafa41eb32f1488e5c1265fb6927b4c5bca7f8e749c3b512a1a51216a820"
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/7340a55a-958b-11ed-92af-861d05c8a158.jpeg?response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065045Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=523b88b5d14a702e251cc7f3cb695b90de357357cf6d1a25f00a86f1351bafbf"
     },
     {
         "id": "1018",
         "email": "sarmaurya@deloitte.com",
         "name": "Sarvesh Maurya",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -7924,7 +7924,7 @@ users = [
         "email": "poojavpatil@deloitte.com",
         "name": "Pooja Vilas Patil",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -7932,7 +7932,7 @@ users = [
         "email": "vijayakumars@deloitte.com",
         "name": "Vijayakumar S",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -7941,7 +7941,7 @@ users = [
         "name": "Eva Lnu",
         "designation": "Software Engineer-I",
         "doj": "2022-06-06",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/bf27fc8c-ed2e-11ec-8b54-776878763ada.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061934Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=81eea8644744f9aa525f5bd83f79ad9ca3c4c0fe5b3e0c6378359a5f1255dad0"
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/bf27fc8c-ed2e-11ec-8b54-776878763ada.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065045Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=40b2e800f1ef659f1464a302175ecf85fa166ceb745b0f951293ec48a929dfb6"
     },
     {
         "id": "1023",
@@ -7949,7 +7949,7 @@ users = [
         "name": "makarunakaran",
         "designation": "Software Engineer-I",
         "doj": "2022-06-06",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/bf27fc8c-ed2e-11ec-8b54-776878763ada.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061934Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=81eea8644744f9aa525f5bd83f79ad9ca3c4c0fe5b3e0c6378359a5f1255dad0"
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/bf27fc8c-ed2e-11ec-8b54-776878763ada.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065045Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=40b2e800f1ef659f1464a302175ecf85fa166ceb745b0f951293ec48a929dfb6"
     },
     {
         "id": "1024",
@@ -7957,7 +7957,7 @@ users = [
         "name": "Shaloo Verma",
         "designation": "Software Engineer-I",
         "doj": "2022-06-06",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/bf27fc8c-ed2e-11ec-8b54-776878763ada.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061934Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=81eea8644744f9aa525f5bd83f79ad9ca3c4c0fe5b3e0c6378359a5f1255dad0"
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/bf27fc8c-ed2e-11ec-8b54-776878763ada.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065045Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=40b2e800f1ef659f1464a302175ecf85fa166ceb745b0f951293ec48a929dfb6"
     },
     {
         "id": "1028",
@@ -7965,14 +7965,14 @@ users = [
         "name": "Himanshu Sharma",
         "designation": "Software Engineer-I",
         "doj": "2022-06-06",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/bf27fc8c-ed2e-11ec-8b54-776878763ada.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061934Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=81eea8644744f9aa525f5bd83f79ad9ca3c4c0fe5b3e0c6378359a5f1255dad0"
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/bf27fc8c-ed2e-11ec-8b54-776878763ada.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065045Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=40b2e800f1ef659f1464a302175ecf85fa166ceb745b0f951293ec48a929dfb6"
     },
     {
         "id": "1031",
         "email": "pratluri@deloitte.com",
         "name": "Prem Swaroop Atluri",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -7981,7 +7981,7 @@ users = [
         "name": "eparnami",
         "designation": "Software Engineer-I",
         "doj": "2022-06-06",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/bf27fc8c-ed2e-11ec-8b54-776878763ada.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061934Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=81eea8644744f9aa525f5bd83f79ad9ca3c4c0fe5b3e0c6378359a5f1255dad0"
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/bf27fc8c-ed2e-11ec-8b54-776878763ada.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065045Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=40b2e800f1ef659f1464a302175ecf85fa166ceb745b0f951293ec48a929dfb6"
     },
     {
         "id": "1034",
@@ -7989,14 +7989,14 @@ users = [
         "name": "Shankar Prasad K",
         "designation": "Software Engineer-I",
         "doj": "2022-06-06",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/bf27fc8c-ed2e-11ec-8b54-776878763ada.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061934Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=81eea8644744f9aa525f5bd83f79ad9ca3c4c0fe5b3e0c6378359a5f1255dad0"
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/bf27fc8c-ed2e-11ec-8b54-776878763ada.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065045Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=40b2e800f1ef659f1464a302175ecf85fa166ceb745b0f951293ec48a929dfb6"
     },
     {
         "id": "1035",
         "email": "abhimbajaj@deloitte.com",
         "name": "Abhimanyu Bajaj",
         "designation": "Senior Engineering Management Master",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -8004,7 +8004,7 @@ users = [
         "email": "vmahipatijadhav@deloitte.com",
         "name": "Vishal Mahipati Jadhav",
         "designation": "Software Engineer-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -8012,7 +8012,7 @@ users = [
         "email": "srimajumder@deloitte.com",
         "name": "Srikant Majumder",
         "designation": "Senior Product Specialist",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -8020,7 +8020,7 @@ users = [
         "email": "cmaheendranthayyi@deloitte.com",
         "name": "Chythra Maheendran Thayyil",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -8028,7 +8028,7 @@ users = [
         "email": "samrit@deloitte.com",
         "name": "Saurabh Amrit",
         "designation": "Program Manager",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -8036,7 +8036,7 @@ users = [
         "email": "sanmandal@deloitte.com",
         "name": "Sangita Mandal",
         "designation": "Program Manager",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -8044,7 +8044,7 @@ users = [
         "email": "paresethi@deloitte.com",
         "name": "Paresh Sethi",
         "designation": "Program Manager",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -8052,7 +8052,7 @@ users = [
         "email": "pbirdi@deloitte.com",
         "name": "Parmanshu Birdi",
         "designation": "Program Manager",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -8060,7 +8060,7 @@ users = [
         "email": "manstiwari@deloitte.com",
         "name": "Mansi Tiwari",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -8069,7 +8069,7 @@ users = [
         "name": "Sethuram Revathy Adhaarsh",
         "designation": "Software Engineer-I",
         "doj": "2022-06-06",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/bf27fc8c-ed2e-11ec-8b54-776878763ada.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061935Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=5a7e68e7947c113afd392b50fe3a3e26e33c37e198fcf5f2fd8bc9363bfcf1d3"
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/bf27fc8c-ed2e-11ec-8b54-776878763ada.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065045Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=40b2e800f1ef659f1464a302175ecf85fa166ceb745b0f951293ec48a929dfb6"
     },
     {
         "id": "1048",
@@ -8077,14 +8077,14 @@ users = [
         "name": "Adarsh Ranjan",
         "designation": "Software Engineer-I",
         "doj": "2022-01-01",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/bf27fc8c-ed2e-11ec-8b54-776878763ada.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061935Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=5a7e68e7947c113afd392b50fe3a3e26e33c37e198fcf5f2fd8bc9363bfcf1d3"
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/bf27fc8c-ed2e-11ec-8b54-776878763ada.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065045Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=40b2e800f1ef659f1464a302175ecf85fa166ceb745b0f951293ec48a929dfb6"
     },
     {
         "id": "1050",
         "email": "akshatjoshi@deloitte.com",
         "name": "Akshat Joshi",
         "designation": "Software Engineer-I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -8101,7 +8101,7 @@ users = [
         "name": "Parul Jain",
         "designation": "Software Engineer-I",
         "doj": "2022-06-06",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/bf27fc8c-ed2e-11ec-8b54-776878763ada.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061935Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=5a7e68e7947c113afd392b50fe3a3e26e33c37e198fcf5f2fd8bc9363bfcf1d3"
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/bf27fc8c-ed2e-11ec-8b54-776878763ada.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065045Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=40b2e800f1ef659f1464a302175ecf85fa166ceb745b0f951293ec48a929dfb6"
     },
     {
         "id": "1057",
@@ -8117,14 +8117,14 @@ users = [
         "name": "nagrwal",
         "designation": "Software Engineer-I",
         "doj": "2022-06-06",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/bf27fc8c-ed2e-11ec-8b54-776878763ada.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061935Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=5a7e68e7947c113afd392b50fe3a3e26e33c37e198fcf5f2fd8bc9363bfcf1d3"
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/bf27fc8c-ed2e-11ec-8b54-776878763ada.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065045Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=40b2e800f1ef659f1464a302175ecf85fa166ceb745b0f951293ec48a929dfb6"
     },
     {
         "id": "1059",
         "email": "schannappa@deloitte.com",
         "name": "Saraswati Channappa",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -8132,7 +8132,7 @@ users = [
         "email": "xavier_test@deloitte.com",
         "name": "Xavier",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -8141,7 +8141,7 @@ users = [
         "name": "Himanshu Varshney",
         "designation": "Managing Director",
         "doj": "2011-11-01",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/57f7c77e-4ac7-11ed-b88f-a6db986c730f.png?response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061935Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=e463145d57050cd62cdda56f54d219457c95ecb6def678f3a08e555de9e3e897"
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/57f7c77e-4ac7-11ed-b88f-a6db986c730f.png?response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065045Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=55e0c2e07621644bdbedfb4650b81df7ee81dd2c33298dc79c36d8fe75f99e0b"
     },
     {
         "id": "1064",
@@ -8149,7 +8149,7 @@ users = [
         "name": "fasheikh",
         "designation": "Software Engineer-I",
         "doj": "2022-06-06",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/bf27fc8c-ed2e-11ec-8b54-776878763ada.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061935Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=5a7e68e7947c113afd392b50fe3a3e26e33c37e198fcf5f2fd8bc9363bfcf1d3"
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/bf27fc8c-ed2e-11ec-8b54-776878763ada.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065045Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=40b2e800f1ef659f1464a302175ecf85fa166ceb745b0f951293ec48a929dfb6"
     },
     {
         "id": "1066",
@@ -8157,7 +8157,7 @@ users = [
         "name": "tapdeb",
         "designation": "Software Engineer-I",
         "doj": "2022-06-06",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/bf27fc8c-ed2e-11ec-8b54-776878763ada.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061935Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=5a7e68e7947c113afd392b50fe3a3e26e33c37e198fcf5f2fd8bc9363bfcf1d3"
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/bf27fc8c-ed2e-11ec-8b54-776878763ada.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065045Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=40b2e800f1ef659f1464a302175ecf85fa166ceb745b0f951293ec48a929dfb6"
     },
     {
         "id": "1068",
@@ -8165,7 +8165,7 @@ users = [
         "name": "Swman Junath",
         "designation": "Software Engineer-I",
         "doj": "2022-06-06",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/bf27fc8c-ed2e-11ec-8b54-776878763ada.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061935Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=5a7e68e7947c113afd392b50fe3a3e26e33c37e198fcf5f2fd8bc9363bfcf1d3"
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/bf27fc8c-ed2e-11ec-8b54-776878763ada.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065045Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=40b2e800f1ef659f1464a302175ecf85fa166ceb745b0f951293ec48a929dfb6"
     },
     {
         "id": "1069",
@@ -8181,7 +8181,7 @@ users = [
         "name": "Gaurav Kumar Bharadwaj",
         "designation": "Software Engineer-I",
         "doj": "2022-06-06",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/bf27fc8c-ed2e-11ec-8b54-776878763ada.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061935Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=5a7e68e7947c113afd392b50fe3a3e26e33c37e198fcf5f2fd8bc9363bfcf1d3"
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/bf27fc8c-ed2e-11ec-8b54-776878763ada.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065045Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=40b2e800f1ef659f1464a302175ecf85fa166ceb745b0f951293ec48a929dfb6"
     },
     {
         "id": "1072",
@@ -8189,7 +8189,7 @@ users = [
         "name": "Shivam Khurana",
         "designation": "Software Engineer-I",
         "doj": "2020-06-06",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/4fc1866a-fd21-11ec-9b26-82dfcebcd7df.png?response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061935Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=d8724249234e5ac26b1a37da3b14f327a7af2f2671c53667b364850244d00df1"
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/4fc1866a-fd21-11ec-9b26-82dfcebcd7df.png?response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065046Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=06274b53c4fa7a820cc1d5c8fe0f4f1f43e101a9c494ac3a84ed743abe2de466"
     },
     {
         "id": "1074",
@@ -8197,7 +8197,7 @@ users = [
         "name": "Pooja .",
         "designation": "Software Engineer-I",
         "doj": "2022-06-06",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/bf27fc8c-ed2e-11ec-8b54-776878763ada.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061935Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=5a7e68e7947c113afd392b50fe3a3e26e33c37e198fcf5f2fd8bc9363bfcf1d3"
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/bf27fc8c-ed2e-11ec-8b54-776878763ada.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065046Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=d6e0c483be623b3790fa1f2e7adc48de0b76f752a0b6bf040f6c1a1a3833ba71"
     },
     {
         "id": "1075",
@@ -8205,7 +8205,7 @@ users = [
         "name": "Rakesh Raghavan Kutty",
         "designation": "Software Engineer-I",
         "doj": "2022-06-06",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/bf27fc8c-ed2e-11ec-8b54-776878763ada.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061935Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=5a7e68e7947c113afd392b50fe3a3e26e33c37e198fcf5f2fd8bc9363bfcf1d3"
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/bf27fc8c-ed2e-11ec-8b54-776878763ada.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065046Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=d6e0c483be623b3790fa1f2e7adc48de0b76f752a0b6bf040f6c1a1a3833ba71"
     },
     {
         "id": "1076",
@@ -8213,7 +8213,7 @@ users = [
         "name": "Shubham Kumar",
         "designation": "Software Engineer-I",
         "doj": "2022-06-06",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/bf27fc8c-ed2e-11ec-8b54-776878763ada.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061935Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=5a7e68e7947c113afd392b50fe3a3e26e33c37e198fcf5f2fd8bc9363bfcf1d3"
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/bf27fc8c-ed2e-11ec-8b54-776878763ada.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065046Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=d6e0c483be623b3790fa1f2e7adc48de0b76f752a0b6bf040f6c1a1a3833ba71"
     },
     {
         "id": "1078",
@@ -8309,7 +8309,7 @@ users = [
         "name": "Pandya Rudra",
         "designation": "Software Engineer-II",
         "doj": "2022-06-06",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/bf27fc8c-ed2e-11ec-8b54-776878763ada.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061935Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=5a7e68e7947c113afd392b50fe3a3e26e33c37e198fcf5f2fd8bc9363bfcf1d3"
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/bf27fc8c-ed2e-11ec-8b54-776878763ada.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065046Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=d6e0c483be623b3790fa1f2e7adc48de0b76f752a0b6bf040f6c1a1a3833ba71"
     },
     {
         "id": "1090",
@@ -8317,7 +8317,7 @@ users = [
         "name": "Rakshit M Yalameli",
         "designation": "Software Engineer-II",
         "doj": "2022-03-01",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/c66ea586-4e0c-11ed-a37c-9a331aa0804f.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061935Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=576f8578ec21e75619733763f207a7f993cb3651589d483b2e941c294cec2498"
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/c66ea586-4e0c-11ed-a37c-9a331aa0804f.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065046Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=44fc1d91876fb4b758c9df370a12d26ebc8368d7aa1469bea91702fd5e033fe6"
     },
     {
         "id": "1091",
@@ -8333,7 +8333,7 @@ users = [
         "name": "Ekanki Pareek",
         "designation": "Software Engineer-II",
         "doj": "2022-06-06",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/bf27fc8c-ed2e-11ec-8b54-776878763ada.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061935Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=5a7e68e7947c113afd392b50fe3a3e26e33c37e198fcf5f2fd8bc9363bfcf1d3"
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/bf27fc8c-ed2e-11ec-8b54-776878763ada.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065046Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=d6e0c483be623b3790fa1f2e7adc48de0b76f752a0b6bf040f6c1a1a3833ba71"
     },
     {
         "id": "1093",
@@ -8341,7 +8341,7 @@ users = [
         "name": "Jatin Mittal",
         "designation": "DevOps Engineer-II",
         "doj": "2022-06-06",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/bf27fc8c-ed2e-11ec-8b54-776878763ada.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061935Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=5a7e68e7947c113afd392b50fe3a3e26e33c37e198fcf5f2fd8bc9363bfcf1d3"
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/bf27fc8c-ed2e-11ec-8b54-776878763ada.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065046Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=d6e0c483be623b3790fa1f2e7adc48de0b76f752a0b6bf040f6c1a1a3833ba71"
     },
     {
         "id": "1094",
@@ -8349,7 +8349,7 @@ users = [
         "name": "Tushaar Tiwari",
         "designation": "Software Engineer-II",
         "doj": "2022-06-06",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/bf27fc8c-ed2e-11ec-8b54-776878763ada.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061935Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=5a7e68e7947c113afd392b50fe3a3e26e33c37e198fcf5f2fd8bc9363bfcf1d3"
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/bf27fc8c-ed2e-11ec-8b54-776878763ada.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065046Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=d6e0c483be623b3790fa1f2e7adc48de0b76f752a0b6bf040f6c1a1a3833ba71"
     },
     {
         "id": "1095",
@@ -8357,7 +8357,7 @@ users = [
         "name": "Kumari Smitha",
         "designation": "Software Engineer-I",
         "doj": "2022-06-06",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/bf27fc8c-ed2e-11ec-8b54-776878763ada.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061935Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=5a7e68e7947c113afd392b50fe3a3e26e33c37e198fcf5f2fd8bc9363bfcf1d3"
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/bf27fc8c-ed2e-11ec-8b54-776878763ada.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065046Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=d6e0c483be623b3790fa1f2e7adc48de0b76f752a0b6bf040f6c1a1a3833ba71"
     },
     {
         "id": "1098",
@@ -8372,7 +8372,7 @@ users = [
         "email": "kashthakur@deloitte.com",
         "name": "Kashis Kumar Thakur",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -8380,7 +8380,7 @@ users = [
         "email": "rirampuria@deloitte.com",
         "name": "Rishika Rampuria",
         "designation": "Senior Product Specialist",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -8388,7 +8388,7 @@ users = [
         "email": "sniaz@deloitte.com",
         "name": "Shaikh Yusuf Niaz",
         "designation": "Project Manager",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -8396,7 +8396,7 @@ users = [
         "email": "aatray@deloitte.com",
         "name": "Akshat Atray",
         "designation": "Software Engineer-III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -8404,7 +8404,7 @@ users = [
         "email": "ykhemani@deloitte.com",
         "name": "Yashvardhan Khemani",
         "designation": "Project Manager",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -8413,7 +8413,7 @@ users = [
         "name": "Samridhi Jain",
         "designation": "Software Engineer-I",
         "doj": "2022-05-19",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/97eeda3a-6fbf-11ed-a3d2-6644179c3ae6.png?response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061935Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=d9b590418307872730ee4c3d8ccabba3cc393231b0fae4ccc44cf82289ef94c3"
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/97eeda3a-6fbf-11ed-a3d2-6644179c3ae6.png?response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065046Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=5061104f72502c5019f02a308d4b8378924ff2a08b81f07670fed1f764200a70"
     },
     {
         "id": "1112",
@@ -8428,7 +8428,7 @@ users = [
         "email": "ssewaiwar@deloitte.com",
         "name": "Shiwani Premchand Sewaiwar",
         "designation": "Software Engineer-III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -8442,9 +8442,9 @@ users = [
     {
         "id": "1119",
         "email": "abhing4@deloitte.com",
-        "name": "Abhin G",
-        "designation": "Software Engineer-III",
-        "doj": "0000-00-00",
+        "name": "Abhin",
+        "designation": "Software Engineer-I",
+        "doj": "2022-01-31",
         "pic": " "
     },
     {
@@ -8452,7 +8452,7 @@ users = [
         "email": "amwarad@deloitte.com",
         "name": "Ambika Warad",
         "designation": "Software Engineer-III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -8460,7 +8460,7 @@ users = [
         "email": "susneh@deloitte.com",
         "name": "Suhana Sneh",
         "designation": "Program Leader",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -8468,7 +8468,7 @@ users = [
         "email": "asingh090539@deloitte.com",
         "name": " ",
         "designation": "Program Leader",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -8476,7 +8476,7 @@ users = [
         "email": "nitmurthy@deloitte.com",
         "name": "Nitish Srinivasa Murthy",
         "designation": "Delivery Leader",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -8516,7 +8516,7 @@ users = [
         "email": "qa_test_user_5@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -8524,7 +8524,7 @@ users = [
         "email": "qa_test_user_6@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -8532,7 +8532,7 @@ users = [
         "email": "qa_test_user_7@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -8540,7 +8540,7 @@ users = [
         "email": "qa_test_user_8@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -8548,7 +8548,7 @@ users = [
         "email": "qa_test_user_9@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -8580,7 +8580,7 @@ users = [
         "email": "qa_test_user_13@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -8588,7 +8588,7 @@ users = [
         "email": "qa_test_user_14@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -8668,7 +8668,7 @@ users = [
         "email": "qa30@deloitte.com",
         "name": "QA Test30",
         "designation": "Senior Product Specialist",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -8788,7 +8788,7 @@ users = [
         "email": "ashamsudeen@deloitte.com",
         "name": "Abeeth Shamsudeen",
         "designation": "Project Manager",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -8796,7 +8796,7 @@ users = [
         "email": "megspal@deloitte.com",
         "name": "Meghna Pal",
         "designation": "Project Manager",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -8972,7 +8972,7 @@ users = [
         "email": "test32@deloitte.com",
         "name": "Test32",
         "designation": "Senior Product Specialist",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -8980,7 +8980,7 @@ users = [
         "email": "papisen@deloitte.com",
         "name": "Papiya Sen",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -8996,7 +8996,7 @@ users = [
         "email": "test34@deloitte.com",
         "name": "Test34",
         "designation": "Senior Product Specialist",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9004,7 +9004,7 @@ users = [
         "email": "test35@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9012,7 +9012,7 @@ users = [
         "email": "test36@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9036,7 +9036,7 @@ users = [
         "email": "subiju@deloitte.com",
         "name": "Subi",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9052,7 +9052,7 @@ users = [
         "email": "rondash@deloitte.com",
         "name": "Ronica Dash",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9060,7 +9060,7 @@ users = [
         "email": "naressahu@deloitte.com",
         "name": "Naresh Kumar Sahu",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9124,7 +9124,7 @@ users = [
         "email": "surdeep@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9284,7 +9284,7 @@ users = [
         "email": "qatest28@deloitte.com",
         "name": "QA Test28",
         "designation": "Software Engineer-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9332,7 +9332,7 @@ users = [
         "email": "prhegde@deloitte.com",
         "name": "Praveena Hegde",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9380,7 +9380,7 @@ users = [
         "email": "gaujhunjhunwala@deloitte.com",
         "name": "Gaurav Jhunjhunwala",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9388,7 +9388,7 @@ users = [
         "email": "mdadheech@deloitte.com",
         "name": "Mahesh Dadheech",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9396,7 +9396,7 @@ users = [
         "email": "mahaak@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9404,7 +9404,7 @@ users = [
         "email": "shardsingh@deloitte.com",
         "name": "Shardul Singh",
         "designation": "Software Engineer-III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9412,7 +9412,7 @@ users = [
         "email": "malpraneeth@deloitte.com",
         "name": "Malyala Sai Praneeth",
         "designation": "SDET-I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9421,7 +9421,7 @@ users = [
         "name": "Avunoori Manikanth",
         "designation": "Managing Director",
         "doj": "2023-01-02",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/30062e9c-a385-11ed-b7e0-ae88d64055fc.jpeg?response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061937Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=fcf8077d6ba1e73fa9c95eac66c32a7395fad6e750bcc2b0489039fd835b368f"
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/e2db0336-a38e-11ed-9978-86c5d8c8e9d0.gif?response-content-type=image%2Fgif&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065046Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=c39638e3d687597ac82e67271b0d6103d3dafeae25a8f2f11fcb1bc6a0cf7c24"
     },
     {
         "id": "1266",
@@ -9429,14 +9429,14 @@ users = [
         "name": "Mithan Kumar H A",
         "designation": "Software Engineer-II",
         "doj": "2022-09-27",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/326e5514-9c1a-11ed-99c2-0e3dfca2126f.jpeg?response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061937Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=71a426c313f38841bad74df6a952f12e51b6103608b10c794b181873d8eb55ec"
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/326e5514-9c1a-11ed-99c2-0e3dfca2126f.jpeg?response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065046Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=3fc3109c31b6551ec8f94139ae643a1c57daa0ddabe64f76e330a270ebf34584"
     },
     {
         "id": "1267",
         "email": "maydey@deloitte.com",
         "name": "Mayurakhee Dey",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9444,15 +9444,15 @@ users = [
         "email": "dbora@deloitte.com",
         "name": "Deepak Bora",
         "designation": " ",
-        "doj": "0000-00-00",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/d2624ba4-715c-11ed-9734-9e60c8ffac85.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061937Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=6b2aeb1f791db0530b8fdd0be3a8b487467bb83459d77dcdfe11f436bcf593a4"
+        "doj": "2023-02-02",
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/d2624ba4-715c-11ed-9734-9e60c8ffac85.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065046Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=4a509fd4cdc5a314a277af2ad0161bf6eb807c641a7e97b7eb2be2e0671da338"
     },
     {
         "id": "1269",
         "email": "rasatyanarayana@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9469,14 +9469,14 @@ users = [
         "name": "Nashit Meraan",
         "designation": "Software Engineer-II",
         "doj": "2022-02-21",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/e5255e62-568a-11ed-acba-6e7ce76c03de.jpeg?response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061937Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=a3b4fbe23beb9abe309bddb96a5c1b0335dd498a7b0f263f73eec00c659e914d"
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/e5255e62-568a-11ed-acba-6e7ce76c03de.jpeg?response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065046Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=35b41423cd0f27b25f681e00c1e174db047d02ce493af59464695fbcb99156d9"
     },
     {
         "id": "1275",
         "email": "ashugarg@deloitte.com",
         "name": "Ashutosh Garg",
         "designation": "Software Engineer-III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9484,7 +9484,7 @@ users = [
         "email": "prichhariya@deloitte.com",
         "name": "Pallavi Richhariya",
         "designation": "Software Engineer-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9492,7 +9492,7 @@ users = [
         "email": "mildave@deloitte.com",
         "name": "Milind Dave",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9501,14 +9501,14 @@ users = [
         "name": "Anurag Patidar",
         "designation": "Tech Architect Leader",
         "doj": "2023-01-02",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/d4188fe8-9bce-11ed-ba2c-86a68e8e627b.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061937Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=069283ee546b1fd746b728c3e0ceb768c16b3307cd36e83a41c95234bdb71fdd"
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/d4188fe8-9bce-11ed-ba2c-86a68e8e627b.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065046Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=515cf8e59a4514473af196a32f34bb866c892e5fe5b0630246d978d00a6e19e5"
     },
     {
         "id": "1279",
         "email": "sravanp@deloitte.com",
         "name": "Sravani P",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9516,7 +9516,7 @@ users = [
         "email": "anshumasingh@deloitte.com",
         "name": "Anshuman Singh",
         "designation": "Managing Director",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9524,7 +9524,7 @@ users = [
         "email": "vypant@deloitte.com",
         "name": "Vyom Pant",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9532,15 +9532,15 @@ users = [
         "email": "kavibalasubramani@deloitte.com",
         "name": "Kavinraj Balasubramanian",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/5f32bdd2-2d1c-11ed-9402-523295f2670e.jpeg?response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061937Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=d9eb405cb52aaff9588c13910e82fe73d35f7aced658e68456d4504712dcf019"
+        "doj": "2023-02-02",
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/5f32bdd2-2d1c-11ed-9402-523295f2670e.jpeg?response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065046Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=bbf52800c66f64f72005407783b8f6b66442e63cee6d9d806831cfa058952c98"
     },
     {
         "id": "1284",
         "email": "likshetty@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9548,7 +9548,7 @@ users = [
         "email": "jahns@deloitte.com",
         "name": "Jahnavi S",
         "designation": "HR Specialist",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9556,7 +9556,7 @@ users = [
         "email": "aturaj@deloitte.com",
         "name": "Atul Raj",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9564,7 +9564,7 @@ users = [
         "email": "sanpl@deloitte.com",
         "name": "Santhosh P L",
         "designation": "Software Engineer-III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9572,7 +9572,7 @@ users = [
         "email": "srispanda@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9580,7 +9580,7 @@ users = [
         "email": "vnainani@deloitte.com",
         "name": "Vinita Nainani",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9588,7 +9588,7 @@ users = [
         "email": "priyanl@deloitte.com",
         "name": "Priyanka L",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9604,7 +9604,7 @@ users = [
         "email": "pradhp@deloitte.com",
         "name": "Pradhan P",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9612,15 +9612,15 @@ users = [
         "email": "tsaimanikanta@deloitte.com",
         "name": "Thatikonda Saimanikanta",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/ad9986e6-2546-11ed-abcd-2a2de238b480.jpeg?response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061937Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=812e5d42c51d12400b6c6e9745b6bbde3ee1aa1e5c19734128689e69a2929e1f"
+        "doj": "2023-02-02",
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/ad9986e6-2546-11ed-abcd-2a2de238b480.jpeg?response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065046Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=62af0e103faf02ea0d54d7f0c27a27a711d501db9ef470d9285e5948655ceb71"
     },
     {
         "id": "1311",
         "email": "makumarc@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9628,7 +9628,7 @@ users = [
         "email": "bhukaur@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9636,7 +9636,7 @@ users = [
         "email": "chamkumar@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9644,7 +9644,7 @@ users = [
         "email": "submg@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9652,7 +9652,7 @@ users = [
         "email": "ndhurandher@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9660,7 +9660,7 @@ users = [
         "email": "ghajain@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9668,15 +9668,15 @@ users = [
         "email": "swchoubey@deloitte.com",
         "name": "Swati Choubey",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/5fad960a-2539-11ed-bcb1-c29a7bcbcfcc.gif?response-content-type=image%2Fgif&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061937Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=8132df03b7092fc2b3038206c9754187600aecd1e3c125645e4a31516703ad10"
+        "doj": "2023-02-02",
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/5fad960a-2539-11ed-bcb1-c29a7bcbcfcc.gif?response-content-type=image%2Fgif&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065046Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=08b4e3e05384c653b37ef9fbbe253c3890fac5b207971ce36f200de69360a143"
     },
     {
         "id": "1340",
         "email": "vivekkumar85@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9684,7 +9684,7 @@ users = [
         "email": "nelangovan@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9692,7 +9692,7 @@ users = [
         "email": "naratreddy@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9700,7 +9700,7 @@ users = [
         "email": "divyasbhat@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9708,7 +9708,7 @@ users = [
         "email": "poojapal@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9716,7 +9716,7 @@ users = [
         "email": "mumarkhan@deloitte.com",
         "name": "Mohd Umar Khan",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9724,7 +9724,7 @@ users = [
         "email": "sngupta@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9732,7 +9732,7 @@ users = [
         "email": "praslnu@deloitte.com",
         "name": "Prasad Lnu",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9740,7 +9740,7 @@ users = [
         "email": "shrakesh@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9748,7 +9748,7 @@ users = [
         "email": "almurugappan@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9756,7 +9756,7 @@ users = [
         "email": "shivaps@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9764,7 +9764,7 @@ users = [
         "email": "abhisheksingh74@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9772,7 +9772,7 @@ users = [
         "email": "sarpanigrahi@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9780,7 +9780,7 @@ users = [
         "email": "manijami@deloitte.com",
         "name": "Manikanta Jami",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9788,7 +9788,7 @@ users = [
         "email": "surbehera@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9796,7 +9796,7 @@ users = [
         "email": "sikalidas@deloitte.com",
         "name": "Siddharth Kalidas",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9804,7 +9804,7 @@ users = [
         "email": "roodesai@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9812,7 +9812,7 @@ users = [
         "email": "aiskulkarni@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9820,7 +9820,7 @@ users = [
         "email": "shanlnu@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9828,7 +9828,7 @@ users = [
         "email": "nannaik@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9836,7 +9836,7 @@ users = [
         "email": "iguranni@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9844,7 +9844,7 @@ users = [
         "email": "surajnayak@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9852,7 +9852,7 @@ users = [
         "email": "vasanp@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9860,7 +9860,7 @@ users = [
         "email": "amananand7@deloitte.com",
         "name": "Aman Anand",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9868,7 +9868,7 @@ users = [
         "email": "hhegde@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9876,7 +9876,7 @@ users = [
         "email": "sharpereira@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9884,7 +9884,7 @@ users = [
         "email": "rajnisharma6@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9892,7 +9892,7 @@ users = [
         "email": "namnayak@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9900,7 +9900,7 @@ users = [
         "email": "arjlnu@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9908,7 +9908,7 @@ users = [
         "email": "ajaysingh9@deloitte.com",
         "name": "Ajay Singh",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9916,7 +9916,7 @@ users = [
         "email": "sweshaw@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9924,7 +9924,7 @@ users = [
         "email": "vaishaagarwal@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9932,15 +9932,15 @@ users = [
         "email": "tejasl@deloitte.com",
         "name": "Tejaswini L",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
         "id": "1453",
         "email": "srabmukherjee@deloitte.com",
         "name": "Srabani Mukherjee",
-        "designation": " ",
-        "doj": "0000-00-00",
+        "designation": "Software Engineer-I",
+        "doj": "2022-01-31",
         "pic": " "
     },
     {
@@ -9948,7 +9948,7 @@ users = [
         "email": "amitkumar376@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9956,7 +9956,7 @@ users = [
         "email": "rbudihal@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9964,7 +9964,7 @@ users = [
         "email": "bkumary@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9972,7 +9972,7 @@ users = [
         "email": "ppolnaya@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9980,7 +9980,7 @@ users = [
         "email": "vidye@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9988,7 +9988,7 @@ users = [
         "email": "namakashyap@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -9996,7 +9996,7 @@ users = [
         "email": "avinashkumar278@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10004,7 +10004,7 @@ users = [
         "email": "sahankh@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10012,7 +10012,7 @@ users = [
         "email": "amohitnatearlal@deloitte.com",
         "name": "Adhiya Mohit Natearlal",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10020,7 +10020,7 @@ users = [
         "email": "pransshrivastava@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10028,7 +10028,7 @@ users = [
         "email": "kdhoraswami@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10036,7 +10036,7 @@ users = [
         "email": "ishamalhotra@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10044,7 +10044,7 @@ users = [
         "email": "vidmisra@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10052,7 +10052,7 @@ users = [
         "email": "jmerwin@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10060,7 +10060,7 @@ users = [
         "email": "swedutta@deloitte.com",
         "name": "Sweta Dutta",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10068,7 +10068,7 @@ users = [
         "email": "udayprsingh@deloitte.com",
         "name": "Uday Pratap Singh",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10076,7 +10076,7 @@ users = [
         "email": "rohitkumar49@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10084,7 +10084,7 @@ users = [
         "email": "bgadiyapagowdar@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10092,7 +10092,7 @@ users = [
         "email": "shivangisharma8@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10100,7 +10100,7 @@ users = [
         "email": "jasmeetsingh59@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10108,7 +10108,7 @@ users = [
         "email": "vbalasubramaniyam@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10116,7 +10116,7 @@ users = [
         "email": "chalnu@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10124,7 +10124,7 @@ users = [
         "email": "mgowthamraj@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10132,7 +10132,7 @@ users = [
         "email": "adbm@deloitte.com",
         "name": "Adithya Parashar B M",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10140,7 +10140,7 @@ users = [
         "email": "chandanr4@deloitte.com",
         "name": "Chandan R",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10148,7 +10148,7 @@ users = [
         "email": "kvakshay@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10156,7 +10156,7 @@ users = [
         "email": "miyera@deloitte.com",
         "name": "Dharini Iyer A",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10164,7 +10164,7 @@ users = [
         "email": "preepawar@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10172,7 +10172,7 @@ users = [
         "email": "prkarande@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10180,7 +10180,7 @@ users = [
         "email": "vbasuvappan@deloitte.com",
         "name": "Vijayalakshmi Basuvappan",
         "designation": "Software Engineer-I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10188,7 +10188,7 @@ users = [
         "email": "sinarendra@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10196,7 +10196,7 @@ users = [
         "email": "rubapt@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10204,7 +10204,7 @@ users = [
         "email": "israjkumar@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10212,7 +10212,7 @@ users = [
         "email": "dlnu@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10220,7 +10220,7 @@ users = [
         "email": "pujakumari2@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10228,7 +10228,7 @@ users = [
         "email": "mahec@dealoitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10236,7 +10236,7 @@ users = [
         "email": "sumkm@deloitte.com",
         "name": "Sumanth K M",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10244,7 +10244,7 @@ users = [
         "email": "dsainagasindhuja@deloitte.com",
         "name": "Dantuluri Sindhuja",
         "designation": "Software Engineer-III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10252,7 +10252,7 @@ users = [
         "email": "abhispattnaik@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10260,7 +10260,7 @@ users = [
         "email": "ayurai@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10268,7 +10268,7 @@ users = [
         "email": "riyagupta8@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10276,7 +10276,7 @@ users = [
         "email": "pkiranjikumar@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10284,7 +10284,7 @@ users = [
         "email": "kaharshavardhan@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10292,7 +10292,7 @@ users = [
         "email": "sragani@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10300,7 +10300,7 @@ users = [
         "email": "amanmishra6@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10308,7 +10308,7 @@ users = [
         "email": "hisatija@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10316,7 +10316,7 @@ users = [
         "email": "rudrkrishna@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10324,7 +10324,7 @@ users = [
         "email": "ssanthoshbalaji@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10332,7 +10332,7 @@ users = [
         "email": "gangd@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10340,7 +10340,7 @@ users = [
         "email": "vgowdamt@deloitte.com",
         "name": "Vithun Gowda M T",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10348,7 +10348,7 @@ users = [
         "email": "ttayyab@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10356,7 +10356,7 @@ users = [
         "email": "asanmukh@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10364,7 +10364,7 @@ users = [
         "email": "soprajapat@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10372,7 +10372,7 @@ users = [
         "email": "triptgupta@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10380,7 +10380,7 @@ users = [
         "email": "dinesht@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10388,7 +10388,7 @@ users = [
         "email": "pbharatdethe@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10396,7 +10396,7 @@ users = [
         "email": "kikumara@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10404,7 +10404,7 @@ users = [
         "email": "mdajawed@deloitte.com",
         "name": "Md. Aquib Jawed",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10412,7 +10412,7 @@ users = [
         "email": "anjuabraham@deloitte.com",
         "name": "Anjuman Abraham",
         "designation": "Delivery Leader",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10420,7 +10420,7 @@ users = [
         "email": "omprakash@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10428,7 +10428,7 @@ users = [
         "email": "saurjadhav@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10436,7 +10436,7 @@ users = [
         "email": "amrcm@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10444,7 +10444,7 @@ users = [
         "email": "csilawat@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10452,7 +10452,7 @@ users = [
         "email": "indrsharma@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10460,7 +10460,7 @@ users = [
         "email": "chethp@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10476,7 +10476,7 @@ users = [
         "email": "karamjeesingh@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10484,7 +10484,7 @@ users = [
         "email": "jayhn@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10492,7 +10492,7 @@ users = [
         "email": "girikulkarni@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10500,7 +10500,7 @@ users = [
         "email": "shmisra@deloitte.com",
         "name": "Shubham Misra",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10508,7 +10508,7 @@ users = [
         "email": "misurve@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10516,7 +10516,7 @@ users = [
         "email": "kasao@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10524,7 +10524,7 @@ users = [
         "email": "abhijshetty@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10532,7 +10532,7 @@ users = [
         "email": "gsurana@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10540,7 +10540,7 @@ users = [
         "email": "visinghi@deloitte.com",
         "name": "Vinita Singhi",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10548,7 +10548,7 @@ users = [
         "email": "gangd@Deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10556,7 +10556,7 @@ users = [
         "email": "riyagupt8@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10564,7 +10564,7 @@ users = [
         "email": "rubapt@Deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10572,7 +10572,7 @@ users = [
         "email": "sinarendra@deloitte.com ",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10580,7 +10580,7 @@ users = [
         "email": "POOJAPAL@DELOITTE.COM",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10588,7 +10588,7 @@ users = [
         "email": "Kribansal@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10596,7 +10596,7 @@ users = [
         "email": "chanlu@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10604,7 +10604,7 @@ users = [
         "email": "Kasao@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10612,7 +10612,7 @@ users = [
         "email": "avinashkumar27@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10620,7 +10620,7 @@ users = [
         "email": "Jmerwin@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10628,7 +10628,7 @@ users = [
         "email": "ravikumaa@deloitte.com",
         "name": " ",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10636,7 +10636,7 @@ users = [
         "email": "ranisingh@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10644,7 +10644,7 @@ users = [
         "email": "roopr@deloitte.com",
         "name": "Roopashree R",
         "designation": "SDET-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10652,7 +10652,7 @@ users = [
         "email": "rahmaheshwari@deloitte.com",
         "name": "Rahul Maheshwari",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10660,7 +10660,7 @@ users = [
         "email": "gpratyusha@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10668,15 +10668,15 @@ users = [
         "email": "gorajuluv@deloitte.com",
         "name": "Govind Rajulu V",
         "designation": "Software Engineer-II",
-        "doj": "0000-00-00",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/bba10188-a07a-11ed-91e0-427eaa471ec8.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061937Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=46feedc8620f3dd0691100dcd8762ca25576abdb3e5145db196eefe40e5f2cff"
+        "doj": "2023-02-02",
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/bba10188-a07a-11ed-91e0-427eaa471ec8.jpg?response-content-type=image%2Fjpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065047Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=250f442d38ac8faaa85534339daf8b5c21a438d074a46689fb351bf6e0a6635b"
     },
     {
         "id": "1681",
         "email": "anurtripathi@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10684,7 +10684,7 @@ users = [
         "email": "anusbuch@deloitte.com",
         "name": "Anusha Buch",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10692,7 +10692,7 @@ users = [
         "email": "adisatapathy@deloitte.com",
         "name": "Aditya Satapathy",
         "designation": "Software Engineer-III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10700,7 +10700,7 @@ users = [
         "email": "vthoomu@deloitte.com",
         "name": "Thoomu Venkata Durga Rajesh",
         "designation": "Software Engineer-III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10708,7 +10708,7 @@ users = [
         "email": "riteshkumar5@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10724,7 +10724,7 @@ users = [
         "email": "chaitd@deloitte.com",
         "name": "Chaithnya D",
         "designation": "Senior Project Management Specialist",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10740,7 +10740,7 @@ users = [
         "email": "shasheth@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10748,7 +10748,7 @@ users = [
         "email": "modhawan@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10756,7 +10756,7 @@ users = [
         "email": "akaskumarsingh@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10764,7 +10764,7 @@ users = [
         "email": "puthreddy@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10772,7 +10772,7 @@ users = [
         "email": "bkareti@deloitte.com",
         "name": "Bala Naga Gopi Krishna Kareti",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10780,7 +10780,7 @@ users = [
         "email": "rajeevkumar23@deloitte.com",
         "name": "Rajeev kumar",
         "designation": "DevOps Leader",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10788,7 +10788,7 @@ users = [
         "email": "dkrishnakanth@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10796,7 +10796,7 @@ users = [
         "email": "lhingorani@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10812,7 +10812,7 @@ users = [
         "email": "qa03@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10820,7 +10820,7 @@ users = [
         "email": "qa04@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10828,7 +10828,7 @@ users = [
         "email": "qa06@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10836,7 +10836,7 @@ users = [
         "email": "qa07@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10844,7 +10844,7 @@ users = [
         "email": "qa14@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10852,7 +10852,7 @@ users = [
         "email": "qa15@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10860,7 +10860,7 @@ users = [
         "email": "omkushwaha@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10868,7 +10868,7 @@ users = [
         "email": "qa35@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10876,7 +10876,7 @@ users = [
         "email": "qa36@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10884,7 +10884,7 @@ users = [
         "email": "qa39@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10892,7 +10892,7 @@ users = [
         "email": "qa40@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10900,7 +10900,7 @@ users = [
         "email": "qa43@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10908,7 +10908,7 @@ users = [
         "email": "qa44@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10916,7 +10916,7 @@ users = [
         "email": "qa47@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10924,7 +10924,7 @@ users = [
         "email": "qa48@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10940,7 +10940,7 @@ users = [
         "email": "debashismohanty@deloitte.com",
         "name": "Debashish Mohanty",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10964,7 +10964,7 @@ users = [
         "email": "test007@gmail.com",
         "name": "test007",
         "designation": "SDET-III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10972,7 +10972,7 @@ users = [
         "email": "test009@deloitte.com",
         "name": " ",
         "designation": "Software Engineer-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10980,7 +10980,7 @@ users = [
         "email": "rajakumarsingh@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10988,7 +10988,7 @@ users = [
         "email": "megsatish@deloitte.com",
         "name": "Meghana Satish",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -10996,7 +10996,7 @@ users = [
         "email": "atrimukherjee@deloitte.com",
         "name": "Atrim Mukherjee",
         "designation": "Software Engineer-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11004,7 +11004,7 @@ users = [
         "email": "aishwarypsingh@deloitte.com",
         "name": "Aishwary Pratap Singh",
         "designation": "Program Manager",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11012,7 +11012,7 @@ users = [
         "email": "sacdev@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11020,7 +11020,7 @@ users = [
         "email": "ashkaushik@deloitte.com",
         "name": "Ashutosh Kaushik",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11092,7 +11092,7 @@ users = [
         "email": "anmolkaur@deloitte.com",
         "name": "Anmoldeep Kaur",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11100,7 +11100,7 @@ users = [
         "email": "shivamkugupta@deloitte.com",
         "name": "Shivam Kumar Gupta",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11108,7 +11108,7 @@ users = [
         "email": "ukumawat@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11116,7 +11116,7 @@ users = [
         "email": "akashshetty@deloitte.com",
         "name": "Akash D Shetty",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11124,7 +11124,7 @@ users = [
         "email": "farheen4@deloitte.com",
         "name": "Farheen .",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11132,7 +11132,7 @@ users = [
         "email": "needas@deloitte.com",
         "name": "Neermalya Pratim Das",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11140,7 +11140,7 @@ users = [
         "email": "nchikkamagluruann@deloitte.com",
         "name": "nchikkamagluruann",
         "designation": "Finance Specialist",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11148,7 +11148,7 @@ users = [
         "email": "avinashkumar6@deloitte.com",
         "name": "avinashkumar6",
         "designation": "Quality Engineer-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11156,7 +11156,7 @@ users = [
         "email": "sauvardhan@deloitte.com",
         "name": "sauvardhan",
         "designation": "Quality Engineer-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11164,7 +11164,7 @@ users = [
         "email": "arushisharma@deloitte.com",
         "name": "arushisharma",
         "designation": "Quality Engineer-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11172,7 +11172,7 @@ users = [
         "email": "ashwinkumar2@deloitte.com",
         "name": "ashwinkumar2",
         "designation": "Quality Engineer-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11180,7 +11180,7 @@ users = [
         "email": "sishrat@deloitte.com",
         "name": "sishrat",
         "designation": "Quality Engineer-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11188,7 +11188,7 @@ users = [
         "email": "akashagarwal25@deloitte.com",
         "name": "akashagarwal25",
         "designation": "Quality Engineer-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11196,7 +11196,7 @@ users = [
         "email": "nababu@deloitte.com",
         "name": "nababu",
         "designation": "Quality Engineer-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11205,7 +11205,7 @@ users = [
         "name": "Vidushee Singh",
         "designation": "Quality Engineer-I",
         "doj": "2021-10-12",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/1c4b4f68-4aca-11ed-83a0-ea7b87ceb2f5.png?response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061937Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=2961828c545d0e7e3bec6fc0578a6c28f56f97c44e8d9cee79b1079fd7e1b996"
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/1c4b4f68-4aca-11ed-83a0-ea7b87ceb2f5.png?response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065047Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=53e0f6e2054e44cfcfeacf58045a3fc31d185d2575223793c51ac4cc791ab586"
     },
     {
         "id": "1985",
@@ -11213,14 +11213,14 @@ users = [
         "name": "Prateek Sharma",
         "designation": "Software Engineer-I",
         "doj": "2021-10-12",
-        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/d256a0b0-4ac9-11ed-be93-7efc4c09d4b0.png?response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COS64ZV4X5C%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T061937Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIQCujF73hWp9bYAC1ye3hY2OpR8gk9sukMs%2BzuXQK2lFJgIgY8dpmeRWagg%2Fip7XdErC3taKfs0gaHP4SbEGpRmzzxkqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDIxiSJ7oT7Uemb96HSr6An5WoLsvh%2BDkgYu3ap3Z2g6kna9oRvlO4MWAJnc5wpPIffIeZ%2F736mF3YlVmS%2F28OxX16KupCNIp0P%2FYZ60H3r%2FTmv1CqEwv1%2F81xCyRmcrTBn3hTIzLadreMwvCPXDxIGJo1C3s70Lye5veOdPdlwFxoCHaqNjrdOU4pBo%2B3FO72X9LePrr%2FCbfh2QcMLga%2F7VdxvRnwrZgsl6erp%2FQruUfnFXZoS4P21wj6exVFezLHNkbSe29jHdlQKffXqnqufadtyBffmYqvobC1ThamyALUIHqJ3wmenp6Qu3klHqocQtfKcwW%2BxvkAewJXf429z5Iitf7AkY688j%2Bnc71n9JKi6WdMl7LvvdbuBuiyv78zhXZ9Pwy7hvgnm31uwTBM67IA8NpqnsCaMgZIKg%2BEAbn8zTyTLcXdwu9biV7s1fGBSxu9P8ZYGKPGzmTdTP3tkvkAtATWxZn0rzBRmCVq1%2Fed22hKE1a76vfpjO7x9M2zhhIIlTyTmTuwjClwPKeBjqdAWDfIKy2jo86NDlgtHAj8VLyk6SaicF3fhDxOQeBlLPj8dTvtsN1lwdN%2FK%2B1hUMo1R2i1t823p%2BtihqTMMSxmqvhU1VmKVYnGIjVNt0RtoehPJg5cJrRzlAtuNttR32Yt56vqES6xSFFXSTI3D0ItYqp0HvASOR45uIZyDQGLfL9xb6z657Os874Ce7ZBXNAlNPlrjqerMnv6yl0MhE%3D&X-Amz-Signature=a9c9b7667d9c54196cabf06bd9a191d7848d5c514aa44b0e89fe8d04879f8cd7"
+        "pic": "https://s3.us-east-2.amazonaws.com/dna-staging-resource-bucket/dashboard/public/profile-pics/image/d256a0b0-4ac9-11ed-be93-7efc4c09d4b0.png?response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQQV26COSZ7ZVWI2W%2F20230203%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T065047Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLWVhc3QtMiJHMEUCIGx7nKhLQRMFeatiEfkov6UsOtUtPa4%2FiaHmZLaLoPYqAiEA4V7EUAW3V5UOXxFcUiYdjSTGu6pdwB85N77hjSdi4pEqpgMI5%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgwwMzU4MjU1MjE1NzMiDPhqi6uN7trLVxc2BSr6ArlS4GM0drAdcvx11VXxecjovdy6f02youCFo6YkxZfVY3BqcfLGNwjWxCtC76vpmjIMQtxKcBte87oZaVdUWxZBukiJCFmHAg6pLXzJwGRqN2YcRBL63RS%2FuEajsR0fj5rwKbqJEcNjIUr9ODIGUn5vds5FAzc3COEgSKfmVwCGMQdKiYKrgETntdoxM9wHqzwPpwK9dyfExrDU9%2Fni7gyvNG5%2F94fvgKEL4OPCJAwIamRtw3TjhN9z5gP2Oi3bHiIOHRg0my%2BeIr57XFa13f5Q%2FSZ8bGJ58doSu8HM732DQ2%2B3hNa6%2FToND9coVy6enuCzhBMVpzdGoS85ru2M2OP6p6UxPwvBsXwF5YkP8TrAxTke11yO4leNZV1LPlhi4bHjqiGkEp8WewHeln%2FrlwNEEWkYieNCDM4mWVbXhYBVZ%2B1NFtIK9%2BNDX26nwOppyV%2B0rARWge%2F%2FSfix8Tc59526HuPVVe3rTcft5WAbGToMrSCrj3CSwkPSrjDYzvKeBjqdAWYRam6Q%2FV0ahcVwAfqs93jioTeylOiNizK7WDUSPcOGGIsuxJ6r2LwO%2BbKrcdFdM45UUEekg1LdxVVsJSUnkW1XyNcd%2BCfV00pek1rI58nJBkRHFJy8ecznYVvndItmPaGgbiqSbdBtQkjRg3Z0TEwZXMgHsUDkRW7drTpZBO2RP%2Fx6roeBhdU2arAHUZLbGPCg8jJIpSCpXEhqbf8%3D&X-Amz-Signature=d27307650ae9950c67574b89813a9e223bae73f6b1161a01908c2714cb99f180"
     },
     {
         "id": "1986",
         "email": "sanmurugan@deloitte.com",
         "name": "Sankaran Murugan",
         "designation": "Quality Engineer-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11236,7 +11236,7 @@ users = [
         "email": "shivanrao@deloitte.com",
         "name": "Shivani Rao",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11244,7 +11244,7 @@ users = [
         "email": "repzibha@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11252,7 +11252,7 @@ users = [
         "email": "amohite@deloitte.com",
         "name": "Aditya Mohite",
         "designation": "Software Engineer-III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11268,7 +11268,7 @@ users = [
         "email": "umajoshi@deloitte.com",
         "name": "Umang Joshi",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11276,7 +11276,7 @@ users = [
         "email": "tdhurwe@deloitte.com",
         "name": "Tarun Kumar Dhurwe",
         "designation": "HR Specialist",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11284,7 +11284,7 @@ users = [
         "email": "testing1@deloitte.com",
         "name": "QA data1101",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11292,7 +11292,7 @@ users = [
         "email": "testing2@deloitte.com",
         "name": "QA data1102",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11300,7 +11300,7 @@ users = [
         "email": "testing3@deloitte.com",
         "name": "QA data1103",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11308,7 +11308,7 @@ users = [
         "email": "testing4@deloitte.com",
         "name": "QA data1104",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11316,7 +11316,7 @@ users = [
         "email": "testing5@deloitte.com",
         "name": "QA data1105",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11324,7 +11324,7 @@ users = [
         "email": "testing6@deloitte.com",
         "name": "QA data1106",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11332,7 +11332,7 @@ users = [
         "email": "testing7@deloitte.com",
         "name": "QA data1107",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11340,7 +11340,7 @@ users = [
         "email": "testing8@deloitte.com",
         "name": "QA data1108",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11348,7 +11348,7 @@ users = [
         "email": "testing9@deloitte.com",
         "name": "QA data1109",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11356,7 +11356,7 @@ users = [
         "email": "testing10@deloitte.com",
         "name": "QA data1110",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11364,7 +11364,7 @@ users = [
         "email": "testing11@deloitte.com",
         "name": "QA data1111",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11372,7 +11372,7 @@ users = [
         "email": "testing12@deloitte.com",
         "name": "QA data1112",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11380,7 +11380,7 @@ users = [
         "email": "testing13@deloitte.com",
         "name": "QA data1113",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11388,7 +11388,7 @@ users = [
         "email": "testing14@deloitte.com",
         "name": "QA data1114",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11396,7 +11396,7 @@ users = [
         "email": "testing15@deloitte.com",
         "name": "QA data1115",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11404,7 +11404,7 @@ users = [
         "email": "testing16@deloitte.com",
         "name": "QA data1116",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11412,7 +11412,7 @@ users = [
         "email": "testing17@deloitte.com",
         "name": "QA data1117",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11420,7 +11420,7 @@ users = [
         "email": "testing18@deloitte.com",
         "name": "QA data1118",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11428,7 +11428,7 @@ users = [
         "email": "testing19@deloitte.com",
         "name": "Anurag Thakur",
         "designation": "SDET-I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11436,7 +11436,7 @@ users = [
         "email": "sarthman@deloitte.com",
         "name": "Sarthak Mandal",
         "designation": "SDET-I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11444,7 +11444,7 @@ users = [
         "email": "gbajoria@deloitte.com",
         "name": "Govind Bajoria",
         "designation": "Deloitte US - Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11452,7 +11452,7 @@ users = [
         "email": "bebailey@deloitte.com",
         "name": "Ben Bailey",
         "designation": "Deloitte US - Software Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11460,7 +11460,7 @@ users = [
         "email": "saqadeer@deloitte.com",
         "name": "Sarah Qadeer",
         "designation": "Deloitte US - Software Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11468,7 +11468,7 @@ users = [
         "email": "tarashah@deloitte.com",
         "name": "Taraj Shah",
         "designation": "Deloitte US - Software Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11476,7 +11476,7 @@ users = [
         "email": "jacgreene@deloitte.com",
         "name": "Jack Greene",
         "designation": "Deloitte US - Software Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11484,7 +11484,7 @@ users = [
         "email": "mmaloo@deloitte.com",
         "name": "Mufadal Maloo",
         "designation": "Deloitte US - Senior Consultant",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11492,7 +11492,7 @@ users = [
         "email": "jbaustad@deloitte.com",
         "name": "Jostein Baustad",
         "designation": "Deloitte US - Senior Manager",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11500,7 +11500,7 @@ users = [
         "email": "ahajra@deloitte.com",
         "name": "Arpita Hajra",
         "designation": "Deloitte US - Senior Manager",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11508,7 +11508,7 @@ users = [
         "email": "plecong@deloitte.com",
         "name": "Phuong Lecong",
         "designation": "Deloitte US - Senior Manager",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11516,7 +11516,7 @@ users = [
         "email": "salimaye@deloitte.com",
         "name": "Sameer Limaye",
         "designation": "Deloitte US - Specialist Leader",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11524,7 +11524,7 @@ users = [
         "email": "manumisra@deloitte.com",
         "name": "Manu Misra",
         "designation": "Deloitte US - Specialist Leader",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11532,7 +11532,7 @@ users = [
         "email": "arichhariya@deloitte.com",
         "name": "Ankur Richhariya",
         "designation": "Deloitte US - Specialist Leader",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11540,7 +11540,7 @@ users = [
         "email": "ramandeepsingh9@deloitte.com",
         "name": "Raman Singh",
         "designation": "Deloitte US - Specialist Master",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11548,7 +11548,7 @@ users = [
         "email": "tkhosla@deloitte.com",
         "name": "Tripti Khosla",
         "designation": "Deloitte US - Sr Product Specialist",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11556,7 +11556,7 @@ users = [
         "email": "penema@deloitte.com",
         "name": "Peeyush Nema",
         "designation": "Deloitte US - Sr Product Specialist",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11564,7 +11564,7 @@ users = [
         "email": "kkashikar@deloitte.com",
         "name": "Amol Kashikar",
         "designation": "Deloitte US - Sr Product Specialist",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11572,7 +11572,7 @@ users = [
         "email": "nawhite@deloitte.com",
         "name": "Natalie White",
         "designation": "Deloitte US - Specialist Leader",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11580,7 +11580,7 @@ users = [
         "email": "vmahendraluthia@deloitte.com",
         "name": "Vikas Luthia",
         "designation": "Deloitte US - Sr Product Specialist",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11588,7 +11588,7 @@ users = [
         "email": "ekatnic@deloitte.com",
         "name": "Ethan Katnic",
         "designation": "Deloitte US - Software Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11596,7 +11596,7 @@ users = [
         "email": "tdohadwala@deloitte.com",
         "name": "Taher Dohadwala",
         "designation": "Deloitte US - Software Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11604,7 +11604,7 @@ users = [
         "email": "allgilbert@deloitte.com",
         "name": "Ally Gilbert",
         "designation": "Deloitte US - Software Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11612,7 +11612,7 @@ users = [
         "email": "aunoh@deloitte.com",
         "name": "Austin Noh",
         "designation": "Deloitte US - Software Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11620,7 +11620,7 @@ users = [
         "email": "lilanderson@deloitte.com",
         "name": "Lillian Anderson",
         "designation": "Deloitte US - Software Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11628,7 +11628,7 @@ users = [
         "email": "juldavis@deloitte.com",
         "name": "Julian Davis",
         "designation": "Deloitte US - Software Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11636,7 +11636,7 @@ users = [
         "email": "spdouglas@deloitte.com",
         "name": "Spencer Douglas",
         "designation": "Deloitte US - Software Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11644,7 +11644,7 @@ users = [
         "email": "nrosato@deloitte.com",
         "name": "Nick Rosato",
         "designation": "Deloitte US - Software Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11652,7 +11652,7 @@ users = [
         "email": "saksaraswat@deloitte.com",
         "name": "Saksham Saraswat",
         "designation": "Deloitte US - Software Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11660,7 +11660,7 @@ users = [
         "email": "sunsrinivasan@deloitte.com",
         "name": "Sunil Srinivasan",
         "designation": "Deloitte US - Sr Product Specialist",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11668,7 +11668,7 @@ users = [
         "email": "hangyu6@deloitte.com",
         "name": "Hang Yu",
         "designation": "Deloitte US - Software Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11676,7 +11676,7 @@ users = [
         "email": "ankitmahajan3@deloitte.com",
         "name": "Ankit Mahajan",
         "designation": "Deloitte US - Software Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11684,7 +11684,7 @@ users = [
         "email": "gechatterjee@deloitte.com",
         "name": "Geetanjali Chatterjee",
         "designation": "Deloitte US - Sr Product Specialist",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11692,7 +11692,7 @@ users = [
         "email": "nevyas@deloitte.com",
         "name": "Neeraj Vyas",
         "designation": "Deloitte US - Product Master",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11700,7 +11700,7 @@ users = [
         "email": "gagopalan@deloitte.com",
         "name": "Ganesh Gopalan",
         "designation": "Deloitte US - Sr Product Specialist",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11708,7 +11708,7 @@ users = [
         "email": "sumchavan@deloitte.com",
         "name": "Sumeet Chavan",
         "designation": "Deloitte US - Sr Product Specialist",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11716,7 +11716,7 @@ users = [
         "email": "shelchoudhary@deloitte.com",
         "name": "Shelly Choudhary",
         "designation": "Deloitte US - Product Specialist",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11724,7 +11724,7 @@ users = [
         "email": "hmaheswaran@deloitte.com",
         "name": "Jayaharini (Harini) Maheswaran",
         "designation": "Deloitte US - Software Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11732,7 +11732,7 @@ users = [
         "email": "jzylstra@deloitte.com",
         "name": "John Zylstra",
         "designation": "Deloitte US - Analyst",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11740,7 +11740,7 @@ users = [
         "email": "imiller@deloitte.com",
         "name": "Ian Miller",
         "designation": "Deloitte US - Analyst",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11748,7 +11748,7 @@ users = [
         "email": "npalakodeti@deloitte.com",
         "name": "Nishith Palakodeti",
         "designation": "Deloitte US - Software Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11756,7 +11756,7 @@ users = [
         "email": "sstensland@deloitte.com",
         "name": "Sarah Stensland",
         "designation": "Deloitte US - Software Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11764,7 +11764,7 @@ users = [
         "email": "almarks@deloitte.com",
         "name": "Alex Marks",
         "designation": "Deloitte US - Software Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11772,7 +11772,7 @@ users = [
         "email": "reixiao@deloitte.com",
         "name": "Xinyi (Rei) (Damien) Xiao",
         "designation": "Deloitte US - Software Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11780,7 +11780,7 @@ users = [
         "email": "rcatalano@deloitte.com",
         "name": "Robert Catalano",
         "designation": "Deloitte US - Consultant",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11788,7 +11788,7 @@ users = [
         "email": "ebertolozzi@deloitte.com",
         "name": "Erica Bertolozzi",
         "designation": "Deloitte US - Software Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11796,7 +11796,7 @@ users = [
         "email": "hsanghvi@deloitte.com",
         "name": "Harshit Sanghvi",
         "designation": "Deloitte US - Manager",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11804,7 +11804,7 @@ users = [
         "email": "analge@deloitte.com",
         "name": "Aditya Nalge",
         "designation": "Deloitte US - Consultant",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11812,7 +11812,7 @@ users = [
         "email": "jcottingham@deloitte.com",
         "name": "Joe Cottingham",
         "designation": "Deloitte US - Analyst",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11820,7 +11820,7 @@ users = [
         "email": "ruskim@deloitte.com",
         "name": "Russell Kim",
         "designation": "Deloitte US - Analyst",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11828,7 +11828,7 @@ users = [
         "email": "raymoli@deloitte.com",
         "name": "Raymond Li",
         "designation": "Deloitte US - Analyst",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11836,7 +11836,7 @@ users = [
         "email": "jtepper@deloitte.com",
         "name": "Jessie Tepper",
         "designation": "Deloitte US - Analyst",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11844,7 +11844,7 @@ users = [
         "email": "rbakes@deloitte.com",
         "name": "Riley Bakes",
         "designation": "Deloitte US - Consultant",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11852,7 +11852,7 @@ users = [
         "email": "mischuler@deloitte.com",
         "name": "Michael Schuler",
         "designation": "Deloitte US - Senior Manager",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11868,7 +11868,7 @@ users = [
         "email": "simkaur@deloitte.com",
         "name": "Simran Kaur",
         "designation": "SDET-I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11892,7 +11892,7 @@ users = [
         "email": "mghayal@deloitte.com",
         "name": "Mansi Ghayal",
         "designation": "Senior Tech Architect",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11900,7 +11900,7 @@ users = [
         "email": "smoholkar@deloitte.com",
         "name": "Shubham Rajesh Moholkar",
         "designation": "Product Manager",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11932,7 +11932,7 @@ users = [
         "email": "sauraraj@deloitte.com",
         "name": "Saurabh Raj",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11940,7 +11940,7 @@ users = [
         "email": "mikirankumar@deloitte.com",
         "name": "Mistry Sanketkumar Kirankumar",
         "designation": "DevOps Leader",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11948,7 +11948,7 @@ users = [
         "email": "anmolkapoor@deloitte.com",
         "name": "Anmol Kapoor",
         "designation": "SDET-I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11956,7 +11956,7 @@ users = [
         "email": "rruser1@deloitte.com",
         "name": " ",
         "designation": "Quality Engineer-I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11964,7 +11964,7 @@ users = [
         "email": "dashboard_new_joinees_test_user_2@deloitte.com",
         "name": "dashboard_new_joinees_test_user_2",
         "designation": "Software Engineer-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11972,7 +11972,7 @@ users = [
         "email": "yasiiqbal@deloitte.com",
         "name": "Md Yasir Iqbal",
         "designation": "Software Engineer-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11980,7 +11980,7 @@ users = [
         "email": "sarthanareeswaran@deloitte.com",
         "name": "Subramani Arthanareeswaran",
         "designation": "Quality Engineer-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -11988,7 +11988,7 @@ users = [
         "email": "testing@deloitte.com",
         "name": "testing import",
         "designation": "Software Engineer-I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12012,7 +12012,7 @@ users = [
         "email": "riosuribe@deloitte.com",
         "name": "Monica Lizbeth",
         "designation": "Deloitte US - Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12020,7 +12020,7 @@ users = [
         "email": "mbarriosuribe@deloitte.com",
         "name": "Monica Lizbeth Barrios Uribe",
         "designation": "Dextra - XMX-DC Sr Project Mgmt Specialist",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12028,7 +12028,7 @@ users = [
         "email": "cpantojadelamora@deloitte.com",
         "name": "Carlos Pantoja De La Mora",
         "designation": "Dextra - XMX-DC SDET II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12036,7 +12036,7 @@ users = [
         "email": "esoliscruz@deloitte.com",
         "name": "Emmanuel Solis Cruz",
         "designation": "Dextra - XMX-DC Quality Master",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12044,7 +12044,7 @@ users = [
         "email": "jquinterobenitez@deloitte.com",
         "name": "Jose Quintero Benitez",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12052,7 +12052,7 @@ users = [
         "email": "jrodriguezpasquel@deloitte.com",
         "name": "Jorge Yael Rodriguez Pasquel",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12060,7 +12060,7 @@ users = [
         "email": "fmarizcaltorres@deloitte.com",
         "name": "Francisco Javier Marizcal Torres",
         "designation": "Dextra - XMX-DC SDET I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12068,7 +12068,7 @@ users = [
         "email": "jdiazsotelo@deloitte.com",
         "name": "Jose Roberto Diaz Sotelo",
         "designation": "Dextra - XMX-DC Quality Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12076,7 +12076,7 @@ users = [
         "email": "dfraustrocastaned@deloitte.com",
         "name": "David Sinuhe Fraustro Castañeda",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12084,7 +12084,7 @@ users = [
         "email": "jperezpozos@deloitte.com",
         "name": "Jesus David Perez Pozos",
         "designation": "Dextra - XMX-DC Quality Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12092,7 +12092,7 @@ users = [
         "email": "oguendulainperez@deloitte.com",
         "name": "Octavio Raziel Guendulain Perez",
         "designation": "Dextra - XMX-DC Software Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12100,7 +12100,7 @@ users = [
         "email": "isarmientobarbosa@deloitte.com",
         "name": "Ivan Emanuel Sarmiento Barbosa",
         "designation": "Dextra - XMX-DC Quality Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12108,7 +12108,7 @@ users = [
         "email": "amonterosilva@deloitte.com",
         "name": "Alberto Montero Silva",
         "designation": "Dextra - XMX-DC Quality Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12116,7 +12116,7 @@ users = [
         "email": "jgranadosruiz@deloitte.com",
         "name": "Jackeline De Jesus Granados  Ruiz",
         "designation": "Dextra - XMX-DC Quality Associate",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12124,7 +12124,7 @@ users = [
         "email": "htovarortiz@deloitte.com",
         "name": "Hector Alejandro Tovar Ortiz",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12132,7 +12132,7 @@ users = [
         "email": "adavilavazquez@deloitte.com",
         "name": "Adrian Alberto Davila Vazquez",
         "designation": "Dextra - XMX-DC Quality Associate",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12140,7 +12140,7 @@ users = [
         "email": "rbustamantebolano@deloitte.com",
         "name": "Roberto Carlos Bustamante Bolaños",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12148,7 +12148,7 @@ users = [
         "email": "agonzalezmontemay@deloitte.com",
         "name": "Ana Silvia Gonzalez Montemayor",
         "designation": "Dextra - XMX-DC Software Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12156,7 +12156,7 @@ users = [
         "email": "jgalvanceballos@deloitte.com",
         "name": "Jose Francisco Galvan Ceballos",
         "designation": "Dextra - XMX-DC Quality Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12164,7 +12164,7 @@ users = [
         "email": "lcortesleal@deloitte.com",
         "name": "Luis Cortes Leal",
         "designation": "Dextra - XMX-DC Quality Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12172,7 +12172,7 @@ users = [
         "email": "ulomelihernandez@deloitte.com",
         "name": "Uriel Lomeli Hernandez",
         "designation": "Dextra - XMX-DC Quality Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12180,7 +12180,7 @@ users = [
         "email": "mmartigarcia@deloitte.com",
         "name": "Maria Mercedes Marti Garcia",
         "designation": "Dextra - XMX-DC Quality Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12188,7 +12188,7 @@ users = [
         "email": "cvirueteaceves@deloitte.com",
         "name": "Christian Viruete Aceves",
         "designation": "Dextra - XMX-DC Quality Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12196,7 +12196,7 @@ users = [
         "email": "agomezgarnica@deloitte.com",
         "name": "Alejandro Gomez Garnica",
         "designation": "Dextra - XMX-DC Quality Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12204,7 +12204,7 @@ users = [
         "email": "ayanezramirez@deloitte.com",
         "name": "Adrian Yañez Ramirez",
         "designation": "Dextra - XMX-DC Project Manager",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12212,7 +12212,7 @@ users = [
         "email": "nlimflores@deloitte.com",
         "name": "Nataly Tei Lim Flores",
         "designation": "Dextra - XMX-DC Quality Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12220,7 +12220,7 @@ users = [
         "email": "smaganagonzalez@deloitte.com",
         "name": "Sofia Magaña  Gonzalez",
         "designation": "Dextra - XMX-DC Quality Associate",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12228,7 +12228,7 @@ users = [
         "email": "mfabelus@deloitte.com",
         "name": "Moise Fabelus",
         "designation": "Dextra - XMX-DC Quality Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12236,7 +12236,7 @@ users = [
         "email": "lriveromuniz@deloitte.com",
         "name": "Leonel Rivero Muñiz",
         "designation": "Dextra - XMX-DC Quality Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12244,7 +12244,7 @@ users = [
         "email": "fsandovalruelas@deloitte.com",
         "name": "Francisco Javier Sandoval  Ruelas",
         "designation": "Dextra - XMX-DC Quality Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12252,7 +12252,7 @@ users = [
         "email": "aguerreroromo@deloitte.com",
         "name": "Aldo Sebastian Guerrero Romo",
         "designation": "Dextra - XMX-DC Quality Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12260,7 +12260,7 @@ users = [
         "email": "rsanchezleyva@deloitte.com",
         "name": "Rodrigo Sanchez  Leyva",
         "designation": "Dextra - XMX-DC SDET III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12268,7 +12268,7 @@ users = [
         "email": "kenriquezvenegas@deloitte.com",
         "name": "Karen Beatriz Enriquez Venegas",
         "designation": "Dextra - XMX-DC Software Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12276,7 +12276,7 @@ users = [
         "email": "jorizaarmas@deloitte.com",
         "name": "Juan Antonio Oriza Armas",
         "designation": "Dextra - XMX-DC Software Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12284,7 +12284,7 @@ users = [
         "email": "yhernandezoviedo@deloitte.com",
         "name": "Yonatan Rodolfo Hernandez  Oviedo",
         "designation": "Dextra - XMX-DC Quality Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12292,7 +12292,7 @@ users = [
         "email": "lcortesdelgadillo@deloitte.com",
         "name": "Luz Alejandra Cortes Delgadillo",
         "designation": "Dextra - XMX-DC Quality Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12300,7 +12300,7 @@ users = [
         "email": "jmoranbravo@deloitte.com",
         "name": "Jorge Alejandro Moran Bravo",
         "designation": "Dextra - XMX-DC Software Engineering Master",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12308,7 +12308,7 @@ users = [
         "email": "lguadalupearias@deloitte.com",
         "name": "Luis Eduardo Guadalupe Arias",
         "designation": "Dextra - XMX-DC Quality Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12316,7 +12316,7 @@ users = [
         "email": "aalonsoromero@deloitte.com",
         "name": "Arturo Alonso Romero",
         "designation": "Dextra - XMX-DC Quality Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12324,7 +12324,7 @@ users = [
         "email": "cahernandezdavila@deloitte.com",
         "name": "Carlos Hernandez Davila",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12332,7 +12332,7 @@ users = [
         "email": "darmendarizcabana@deloitte.com",
         "name": "Daniel Armendariz Cabañas",
         "designation": "Dextra - XMX-DC Quality Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12340,7 +12340,7 @@ users = [
         "email": "ebarrigaramirez@deloitte.com",
         "name": "Esteban Barriga Ramirez",
         "designation": "Dextra - XMX-DC Quality Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12348,7 +12348,7 @@ users = [
         "email": "hmaciasaceves@deloitte.com",
         "name": "Hector Alejandro Macias Aceves",
         "designation": "Dextra - XMX-DC Quality Master",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12356,7 +12356,7 @@ users = [
         "email": "lbernachesantana@deloitte.com",
         "name": "Luis Antonio Bernache Santana",
         "designation": "Dextra - XMX-DC Quality Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12364,7 +12364,7 @@ users = [
         "email": "dleperodriguez@deloitte.com",
         "name": "Daniel Alejandro Lepe Rodriguez",
         "designation": "Dextra - XMX-DC Quality Master",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12372,7 +12372,7 @@ users = [
         "email": "atellomunoz@deloitte.com",
         "name": "Antonio De Jesus Tello Muñoz",
         "designation": "Dextra - XMX-DC Quality Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12380,7 +12380,7 @@ users = [
         "email": "agaliciasilva@deloitte.com",
         "name": "Armando De Jesus Galicia Silva",
         "designation": "Dextra - XMX-DC Software Engineering Master",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12388,7 +12388,7 @@ users = [
         "email": "avarelatsuchiya@deloitte.com",
         "name": "Alejandro Varela Tsuchiya",
         "designation": "Dextra - XMX-DC Quality Associate",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12396,7 +12396,7 @@ users = [
         "email": "rantoniomendez@deloitte.com",
         "name": "Raul Antonio Mendez",
         "designation": "Dextra - XMX-DC Software Engineering Master",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12404,7 +12404,7 @@ users = [
         "email": "ygarciahuizar@deloitte.com",
         "name": "Yanni Alexandro Garcia Huizar",
         "designation": "Dextra - XMX-DC Quality Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12412,7 +12412,7 @@ users = [
         "email": "jrivasmata@deloitte.com",
         "name": "Joel Adid Rivas Mata",
         "designation": "Dextra - XMX-DC Software Engineering Master",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12420,7 +12420,7 @@ users = [
         "email": "mbustosbanuet@deloitte.com",
         "name": "Maximiliano Alexis Bustos Banuet",
         "designation": "Dextra - XMX-DC Quality Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12428,7 +12428,7 @@ users = [
         "email": "magarciamendez@deloitte.com",
         "name": "Marco Antonio Garcia Mendez",
         "designation": "Dextra - XMX-DC Quality Associate",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12436,7 +12436,7 @@ users = [
         "email": "galanisgudino@deloitte.com",
         "name": "Geovanni Alanis Gudiño",
         "designation": "Dextra - XMX-DC Software Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12444,7 +12444,7 @@ users = [
         "email": "oaguilarcruz@deloitte.com",
         "name": "Oscar Aguilar Cruz",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12452,7 +12452,7 @@ users = [
         "email": "lbecerrilflores@deloitte.com",
         "name": "Leonardo Becerril Flores",
         "designation": "Dextra - XMX-DC Quality Master",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12460,7 +12460,7 @@ users = [
         "email": "edelatorremena@deloitte.com",
         "name": "Elizabeth De La Torre Mena",
         "designation": "Dextra - XMX-DC Quality Master",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12468,7 +12468,7 @@ users = [
         "email": "svalenzuelaguerre@deloitte.com",
         "name": "Sergio Eduardo Valenzuela Guerrero",
         "designation": "Dextra - XMX-DC Software Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12476,7 +12476,7 @@ users = [
         "email": "cpedrazavazquez@deloitte.com",
         "name": "Carlos Pedraza Vazquez",
         "designation": "Dextra - XMX-DC SDET III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12484,7 +12484,7 @@ users = [
         "email": "atorrescontreras@deloitte.com",
         "name": "Alejandro Torres Contreras",
         "designation": "Dextra - XMX-DC Quality Associate",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12492,7 +12492,7 @@ users = [
         "email": "rguerrajimenez@deloitte.com",
         "name": "Roberto Guerra Jimenez",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12500,7 +12500,7 @@ users = [
         "email": "elopezsalinas@deloitte.com",
         "name": "Edgar Lopez Salinas",
         "designation": "Dextra - XMX-DC Quality Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12508,7 +12508,7 @@ users = [
         "email": "haquinomarquez@deloitte.com",
         "name": "Hector Manuel Aquino Marquez",
         "designation": "Dextra - XMX-DC Quality Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12516,7 +12516,7 @@ users = [
         "email": "aguadalupevaldovi@deloitte.com",
         "name": "Alexis Guadalupe Valdovinos",
         "designation": "Dextra - XMX-DC Quality Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12524,7 +12524,7 @@ users = [
         "email": "amadridhernandez@deloitte.com",
         "name": "Aldo Fernando Madrid Hernandez",
         "designation": "Dextra - XMX-DC Quality Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12532,7 +12532,7 @@ users = [
         "email": "lquezadahernandez@deloitte.com",
         "name": "Luis Antonio Quezada Hernandez",
         "designation": "Dextra - XMX-DC SDET III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12540,7 +12540,7 @@ users = [
         "email": "mgardunoramon@deloitte.com",
         "name": "Marco Antonio Garduño Ramón",
         "designation": "Dextra - XMX-DC SDET III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12548,7 +12548,7 @@ users = [
         "email": "rsolisrivas@deloitte.com",
         "name": "Rodolfo Solis Rivas",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12556,7 +12556,7 @@ users = [
         "email": "aguevaraayala@deloitte.com",
         "name": "Annet Guadalupe Guevara Ayala",
         "designation": "Dextra - XMX-DC Quality Associate",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12564,7 +12564,7 @@ users = [
         "email": "jzamoramoreno@deloitte.com",
         "name": "Jose Omar Zamora Moreno",
         "designation": "Dextra - XMX-DC Sr Project Mgmt Specialist",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12572,7 +12572,7 @@ users = [
         "email": "flopezbonilla@deloitte.com",
         "name": "Felipe Arturo Lopez Bonilla",
         "designation": "Dextra - XMX-DC Software Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12580,7 +12580,7 @@ users = [
         "email": "jramirezmorales@deloitte.com",
         "name": "Jose Arturo Ramirez Morales",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12588,7 +12588,7 @@ users = [
         "email": "rtoledoflandes@deloitte.com",
         "name": "Roberto Carlos Toledo Flandes",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12596,7 +12596,7 @@ users = [
         "email": "amejiaesparza@deloitte.com",
         "name": "Abraham Mejia Esparza",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12604,7 +12604,7 @@ users = [
         "email": "jpanolamadrigal@deloitte.com",
         "name": "Jose Alfredo Pañola Madrigal",
         "designation": "Dextra - XMX-DC SDET III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12612,7 +12612,7 @@ users = [
         "email": "mmartinezsarmient@deloitte.com",
         "name": "Manuel Martinez Sarmiento",
         "designation": "Dextra - XMX-DC Software Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12620,7 +12620,7 @@ users = [
         "email": "marrodriguezperez@deloitte.com",
         "name": "Martin Abdias Rodriguez Perez",
         "designation": "Dextra - XMX-DC Quality Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12628,7 +12628,7 @@ users = [
         "email": "jriverarangel@deloitte.com",
         "name": "Jose Israel Rivera Rangel",
         "designation": "Dextra - XMX-DC Quality Master",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12636,7 +12636,7 @@ users = [
         "email": "epedrozagarcia@deloitte.com",
         "name": "Edgar Daniel Pedroza Garcia",
         "designation": "Dextra - XMX-DC Software Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12644,7 +12644,7 @@ users = [
         "email": "cfraireguerrero@deloitte.com",
         "name": "Carlos Eduardo Fraire Guerrero",
         "designation": "Dextra - XMX-DC Quality Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12652,7 +12652,7 @@ users = [
         "email": "rfloresarriaga@deloitte.com",
         "name": "Ricardo Flores Arriaga",
         "designation": "Dextra - XMX-DC Quality Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12660,7 +12660,7 @@ users = [
         "email": "egiacomanzarzar@deloitte.com",
         "name": "Eduardo Giacoman Zarzar",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12668,7 +12668,7 @@ users = [
         "email": "alozanodelao@deloitte.com",
         "name": "Antonio Hector Lozano De La O",
         "designation": "Dextra - XMX-DC Quality Master",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12676,7 +12676,7 @@ users = [
         "email": "haragonhernandez@deloitte.com",
         "name": "Hector Daniel Aragon Hernandez",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12684,7 +12684,7 @@ users = [
         "email": "gmendozapatricio@deloitte.com",
         "name": "Gustavo Hermilo Mendoza Patricio",
         "designation": "Dextra - XMX-DC Quality Master",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12692,7 +12692,7 @@ users = [
         "email": "jjuarezsantoyo@deloitte.com",
         "name": "Jorge Luis Juarez Santoyo",
         "designation": "Dextra - XMX-DC Quality Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12700,7 +12700,7 @@ users = [
         "email": "brosasdelgado@deloitte.com",
         "name": "Brandon Joan Rosas Delgado",
         "designation": "Dextra - XMX-DC Quality Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12708,7 +12708,7 @@ users = [
         "email": "abuciozuniga@deloitte.com",
         "name": "Alejandro Bucio Zuñiga",
         "designation": "Dextra - XMX-DC UI Designer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12716,7 +12716,7 @@ users = [
         "email": "mborjaszepeda@deloitte.com",
         "name": "Mario Luis Borjas Zepeda",
         "designation": "Dextra - XMX-DC Quality Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12724,7 +12724,7 @@ users = [
         "email": "ctiznadocarrillo@deloitte.com",
         "name": "Carlos Javier Tiznado Carrillo",
         "designation": "Dextra - XMX-DC Quality Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12732,7 +12732,7 @@ users = [
         "email": "lamezcuamoreno@deloitte.com",
         "name": "Luis Amezcua Moreno",
         "designation": "Dextra - XMX-DC SDET I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12740,7 +12740,7 @@ users = [
         "email": "rfigueroabustaman@deloitte.com",
         "name": "Rafael Figueroa Bustamante",
         "designation": "Dextra - XMX-DC Quality Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12748,7 +12748,7 @@ users = [
         "email": "smartinezmendoza@deloitte.com",
         "name": "Sayuri Kumiko Martinez Mendoza",
         "designation": "Dextra - XMX-DC Quality Associate",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12756,7 +12756,7 @@ users = [
         "email": "jserratomoreno@deloitte.com",
         "name": "Jose Miguel Serrato Moreno",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12764,7 +12764,7 @@ users = [
         "email": "gparravilla@deloitte.com",
         "name": "Gilberto De Jesus Parra Villa",
         "designation": "Dextra - XMX-DC Quality Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12772,7 +12772,7 @@ users = [
         "email": "amedranoaldana@deloitte.com",
         "name": "Ana Maria De Jesus Medrano Aldana",
         "designation": "Dextra - XMX-DC Quality Associate",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12780,7 +12780,7 @@ users = [
         "email": "mgorgonescamilla@deloitte.com",
         "name": "Marco Antonio Gorgon Escamilla",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12788,7 +12788,7 @@ users = [
         "email": "jtiburciocortes@deloitte.com",
         "name": "Jesus Jaime Tiburcio Cortes",
         "designation": "Dextra - XMX-DC Quality Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12796,7 +12796,7 @@ users = [
         "email": "mmartinezhughes@deloitte.com",
         "name": "Manuel Martinez Hughes",
         "designation": "Dextra - XMX-DC Quality Associate",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12804,7 +12804,7 @@ users = [
         "email": "jrodriguezmarti3@deloitte.com",
         "name": "Josue Ricardo Rodriguez Martinez",
         "designation": "Dextra - XMX-DC Quality Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12812,7 +12812,7 @@ users = [
         "email": "spintobarajas@deloitte.com",
         "name": "Saul Pinto Barajas",
         "designation": "Dextra - XMX-DC Quality Associate",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12820,7 +12820,7 @@ users = [
         "email": "fmendozafranco@deloitte.com",
         "name": "Fernando Mendoza Franco",
         "designation": "Dextra - XMX-DC SDET I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12828,7 +12828,7 @@ users = [
         "email": "cescarenopadilla@deloitte.com",
         "name": "Cynthia Yamili Escareño Padilla",
         "designation": "Dextra - XMX-DC UI Designer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12836,7 +12836,7 @@ users = [
         "email": "ecarmonaorta@deloitte.com",
         "name": "Efren De Jesus Carmona  Orta",
         "designation": "Dextra - XMX-DC Quality Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12844,7 +12844,7 @@ users = [
         "email": "emartinezsuarez@deloitte.com",
         "name": "Edgar Uriel Martinez Suarez",
         "designation": "Dextra - XMX-DC Software Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12852,7 +12852,7 @@ users = [
         "email": "eramirezsahagun@deloitte.com",
         "name": "Emmanuel Ramirez Sahagun",
         "designation": "Dextra - XMX-DC Quality Associate",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12860,7 +12860,7 @@ users = [
         "email": "chernandezmoncada@deloitte.com",
         "name": "Carlos Emmanuel Hernandez Moncada",
         "designation": "Dextra - XMX-DC SDET II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12868,7 +12868,7 @@ users = [
         "email": "lperaltaortiz@deloitte.com",
         "name": "Luis Alberto Peralta Ortiz",
         "designation": "Dextra - XMX-DC Software Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12876,7 +12876,7 @@ users = [
         "email": "jsotelorocha@deloitte.com",
         "name": "Jesus Esaul Sotelo Rocha",
         "designation": "Dextra - XMX-DC Quality Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12884,7 +12884,7 @@ users = [
         "email": "jgutierreztapia@deloitte.com",
         "name": "Jonatan Eduardo Gutierrez Tapia",
         "designation": "Dextra - XMX-DC Quality Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12892,7 +12892,7 @@ users = [
         "email": "adiazruiz@deloitte.com",
         "name": "Adan Diaz Ruiz",
         "designation": "Dextra - XMX-DC Software Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12900,7 +12900,7 @@ users = [
         "email": "dlopezgallardo@deloitte.com",
         "name": "Daniel Alejandro Lopez Gallardo",
         "designation": "Dextra - XMX-DC Quality Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12908,7 +12908,7 @@ users = [
         "email": "jbecerrafonseca@deloitte.com",
         "name": "Jesus Jovani Becerra Fonseca",
         "designation": "Dextra - XMX-DC SDET I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12916,7 +12916,7 @@ users = [
         "email": "jpinonbante@deloitte.com",
         "name": "Jorge Piñon Bante",
         "designation": "Dextra - XMX-DC Quality Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12924,7 +12924,7 @@ users = [
         "email": "hreynabermudez@deloitte.com",
         "name": "Hector Daniel Reyna Bermudez",
         "designation": "Dextra - XMX-DC Quality Associate",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12932,7 +12932,7 @@ users = [
         "email": "jmartinezjuarez@deloitte.com",
         "name": "Jossue Benjamin Martinez Juarez",
         "designation": "Dextra - XMX-DC Software Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12940,7 +12940,7 @@ users = [
         "email": "jlopezostos@deloitte.com",
         "name": "Julio Adrian Lopez Ostos",
         "designation": "Dextra - XMX-DC Quality Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12948,7 +12948,7 @@ users = [
         "email": "cherreravillanuev@deloitte.com",
         "name": "Cesar Jaif Herrera Villanueva",
         "designation": "Dextra - XMX-DC SDET III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12956,7 +12956,7 @@ users = [
         "email": "hvillaramirez@deloitte.com",
         "name": "Hermes Fortino Villa Ramirez",
         "designation": "Dextra - XMX-DC SDET III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12964,7 +12964,7 @@ users = [
         "email": "ccovarrubiascarra@deloitte.com",
         "name": "Cuauhtemoc Covarrubias Carranza",
         "designation": "Dextra - XMX-DC SDET III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12972,7 +12972,7 @@ users = [
         "email": "jrodriguezmuraira@deloitte.com",
         "name": "Jose Antonio Rodriguez Muraira",
         "designation": "Dextra - XMX-DC Project Manager",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12980,7 +12980,7 @@ users = [
         "email": "ipenadebenito@deloitte.com",
         "name": "Ivan Arturo Peña De Benito",
         "designation": "Dextra - XMX-DC Quality Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12988,7 +12988,7 @@ users = [
         "email": "jvaldesalvarado@deloitte.com",
         "name": "Jorge Manuel Valdes  Alvarado",
         "designation": "Dextra - XMX-DC Quality Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -12996,7 +12996,7 @@ users = [
         "email": "areglatorres@deloitte.com",
         "name": "Andrea Regla Torres",
         "designation": "Dextra - XMX-DC Quality Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13004,7 +13004,7 @@ users = [
         "email": "hhernandezramirez@deloitte.com",
         "name": "Hector Emmanuel Hernandez Ramirez",
         "designation": "Dextra - XMX-DC Quality Master",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13012,7 +13012,7 @@ users = [
         "email": "oreyesbarrera@deloitte.com",
         "name": "Octavio Reyes Barrera",
         "designation": "Dextra - XMX-DC Quality Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13020,7 +13020,7 @@ users = [
         "email": "eruiztorres@deloitte.com",
         "name": "Eduardo Ruiz Torres",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13028,7 +13028,7 @@ users = [
         "email": "cmedinamontoya@deloitte.com",
         "name": "Cristian Fernando Medina Montoya",
         "designation": "Dextra - XMX-DC Software Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13036,7 +13036,7 @@ users = [
         "email": "jvallejorios@deloitte.com",
         "name": "Jose Alonso Vallejo  Rios",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13044,7 +13044,7 @@ users = [
         "email": "jhuertasanchez@deloitte.com",
         "name": "Jose Alejandro Huerta Sanchez",
         "designation": "Dextra - XMX-DC Quality Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13052,7 +13052,7 @@ users = [
         "email": "nnietoarroyo@deloitte.com",
         "name": "Noe Misael Nieto Arroyo",
         "designation": "Dextra - XMX-DC SDET III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13060,7 +13060,7 @@ users = [
         "email": "rlopezvallin@deloitte.com",
         "name": "Rafael Alejandro Lopez Vallin",
         "designation": "Dextra - XMX-DC Quality Master",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13068,7 +13068,7 @@ users = [
         "email": "dhurtadogamez@deloitte.com",
         "name": "Diana Carolina Hurtado Gamez",
         "designation": "Dextra - XMX-DC Quality Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13076,7 +13076,7 @@ users = [
         "email": "mriveroespindola@deloitte.com",
         "name": "Mauro Alberto Rivero Espindola",
         "designation": "Dextra - XMX-DC Software Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13084,7 +13084,7 @@ users = [
         "email": "maraizaruiz@deloitte.com",
         "name": "Ma Isabel Araiza Ruiz",
         "designation": "Dextra - XMX-DC Quality Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13092,7 +13092,7 @@ users = [
         "email": "lvalenciaquevedo@deloitte.com",
         "name": "Leonardo Fabian Valencia Quevedo",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13100,7 +13100,7 @@ users = [
         "email": "jvaldibiezomora@deloitte.com",
         "name": "Jesus Noel Valdibiezo  Mora",
         "designation": "Dextra - XMX-DC SDET II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13108,7 +13108,7 @@ users = [
         "email": "lloeradiaz@deloitte.com",
         "name": "Luisa Fernanda Loera Diaz",
         "designation": "Dextra - XMX-DC Software Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13116,7 +13116,7 @@ users = [
         "email": "jramirezsalazar@deloitte.com",
         "name": "Jose Jorge Ramirez Salazar",
         "designation": "Dextra - XMX-DC Quality Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13124,7 +13124,7 @@ users = [
         "email": "dozunaalatorre@deloitte.com",
         "name": "David Alejandro Ozuna Alatorre",
         "designation": "Dextra - XMX-DC Quality Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13132,7 +13132,7 @@ users = [
         "email": "hfloresreynoso@deloitte.com",
         "name": "Horacio Flores Reynoso",
         "designation": "Dextra - XMX-DC Delivery Manager",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13140,7 +13140,7 @@ users = [
         "email": "amartinezornelas@deloitte.com",
         "name": "Adriana Martinez Ornelas",
         "designation": "Dextra - XMX-DC SDET III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13148,7 +13148,7 @@ users = [
         "email": "egonzalezgomez@deloitte.com",
         "name": "Erick Gonzalez Gomez",
         "designation": "Dextra - XMX-DC Software Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13156,7 +13156,7 @@ users = [
         "email": "gcardenasalva@deloitte.com",
         "name": "Gustavo Adolfo Cardenas Alva",
         "designation": "Dextra - XMX-DC Delivery Manager",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13164,7 +13164,7 @@ users = [
         "email": "jfriaslopez@deloitte.com",
         "name": "Juan Carlos Frias Lopez",
         "designation": "Dextra - XMX-DC Quality Associate",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13172,7 +13172,7 @@ users = [
         "email": "gfigueroadelbosqu@deloitte.com",
         "name": "Guillermo Alfonso Figueroa Del Bosque",
         "designation": "Dextra - XMX-DC Quality Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13180,7 +13180,7 @@ users = [
         "email": "ecarranzacortes@deloitte.com",
         "name": "Elias Carranza Cortes",
         "designation": "Dextra - XMX-DC Quality Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13188,7 +13188,7 @@ users = [
         "email": "emoracontreras@deloitte.com",
         "name": "Emmanuel Mora Contreras",
         "designation": "Dextra - XMX-DC Quality Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13196,7 +13196,7 @@ users = [
         "email": "lalcarazromero@deloitte.com",
         "name": "Luis Eduardo Alcaraz Romero",
         "designation": "Dextra - XMX-DC Quality Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13204,7 +13204,7 @@ users = [
         "email": "emosquedamejia@deloitte.com",
         "name": "Edgar Adrian Mosqueda Mejia",
         "designation": "Dextra - XMX-DC SDET III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13212,7 +13212,7 @@ users = [
         "email": "ariveraquezada@deloitte.com",
         "name": "Adrian Rivera Quezada",
         "designation": "Dextra - XMX-DC Quality Associate",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13220,7 +13220,7 @@ users = [
         "email": "dgallardogallegos@deloitte.com",
         "name": "Daniel Alejandro Gallardo Gallegos",
         "designation": "Dextra - XMX-DC Quality Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13228,7 +13228,7 @@ users = [
         "email": "jacunallaca@deloitte.com",
         "name": "Joaquin Acuña Llaca",
         "designation": "Dextra - XMX-DC Software Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13236,7 +13236,7 @@ users = [
         "email": "dbarrancasaucedo@deloitte.com",
         "name": "Diego Alberto Barranca Saucedo",
         "designation": "Dextra - XMX-DC Quality Associate",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13244,7 +13244,7 @@ users = [
         "email": "jfloresgonzalez@deloitte.com",
         "name": "Jose Francisco Flores Gonzalez",
         "designation": "Dextra - XMX-DC Quality Master",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13252,7 +13252,7 @@ users = [
         "email": "jtorresramirez@deloitte.com",
         "name": "Jose Luis Torres Ramirez",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13260,7 +13260,7 @@ users = [
         "email": "dpuentecarrillo@deloitte.com",
         "name": "Dorian Manuel Puente Carrillo",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13268,7 +13268,7 @@ users = [
         "email": "jdelatorrebernal@deloitte.com",
         "name": "Jorge Eduardo De La Torre Bernal",
         "designation": "Dextra - XMX-DC Project Manager",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13276,7 +13276,7 @@ users = [
         "email": "gchavezveloz@deloitte.com",
         "name": "Gabriela Chavez Veloz",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13284,7 +13284,7 @@ users = [
         "email": "nzamudiosepulveda@deloitte.com",
         "name": "Nancy Esthela Zamudio Sepulveda",
         "designation": "Dextra - XMX-DC Quality Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13292,7 +13292,7 @@ users = [
         "email": "eperezgaxiola@deloitte.com",
         "name": "Enrique Horacio Perez Gaxiola",
         "designation": "Dextra - XMX-DC Quality Associate",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13300,7 +13300,7 @@ users = [
         "email": "cdeleonlopez@deloitte.com",
         "name": "Cesar Enrique De Leon  Lopez",
         "designation": "Dextra - XMX-DC Software Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13308,7 +13308,7 @@ users = [
         "email": "mcabrerasaldana@deloitte.com",
         "name": "Marco Valente Cabrera Saldaña",
         "designation": "Dextra - XMX-DC Quality Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13316,7 +13316,7 @@ users = [
         "email": "gverdiaaguayo@deloitte.com",
         "name": "Gabriel Alejandro Verdia Aguayo",
         "designation": "Dextra - XMX-DC Quality Associate",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13324,7 +13324,7 @@ users = [
         "email": "jrodriguezbernal@deloitte.com",
         "name": "Juan Manuel Rodriguez Bernal",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13332,7 +13332,7 @@ users = [
         "email": "joaguilarperez@deloitte.com",
         "name": "Jose Fernando Aguilar Perez",
         "designation": "Dextra - XMX-DC Software Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13340,7 +13340,7 @@ users = [
         "email": "dcamposcastaneda@deloitte.com",
         "name": "Daniel Campos Castañeda",
         "designation": "Dextra - XMX-DC Quality Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13348,7 +13348,7 @@ users = [
         "email": "fgarciamelendez@deloitte.com",
         "name": "Felix Juan Carlos Garcia Melendez",
         "designation": "Dextra - XMX-DC Quality Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13356,7 +13356,7 @@ users = [
         "email": "jrazonegrete@deloitte.com",
         "name": "Jesus Alejandro Razo Negrete",
         "designation": "Dextra - XMX-DC Quality Associate",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13364,7 +13364,7 @@ users = [
         "email": "eibarraestrada@deloitte.com",
         "name": "Edgar Humberto Ibarra Estrada",
         "designation": "Dextra - XMX-DC Quality Associate",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13372,7 +13372,7 @@ users = [
         "email": "vsantosramirez@deloitte.com",
         "name": "Victor Ivan Santos Ramirez",
         "designation": "Dextra - XMX-DC Quality Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13380,7 +13380,7 @@ users = [
         "email": "vvargasvilla@deloitte.com",
         "name": "Vincent Vargas Villa",
         "designation": "Dextra - XMX-DC Software Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13388,7 +13388,7 @@ users = [
         "email": "jalmadafuerte@deloitte.com",
         "name": "Julio Cesar Almada Fuerte",
         "designation": "Dextra - XMX-DC Quality Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13396,7 +13396,7 @@ users = [
         "email": "eortegarosales@deloitte.com",
         "name": "Edgardo Benedicto Ortega Rosales",
         "designation": "Dextra - XMX-DC Quality Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13404,7 +13404,7 @@ users = [
         "email": "ccerdamartinez@deloitte.com",
         "name": "Cynthia Nallely Cerda Martinez",
         "designation": "Dextra - XMX-DC Quality Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13412,7 +13412,7 @@ users = [
         "email": "itorresrios@deloitte.com",
         "name": "Ismael Eduardo Torres Rios",
         "designation": "Dextra - XMX-DC Project Manager",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13420,7 +13420,7 @@ users = [
         "email": "drodriguezulloa@deloitte.com",
         "name": "David Fabian Rodriguez Ulloa",
         "designation": "Dextra - XMX-DC Quality Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13428,7 +13428,7 @@ users = [
         "email": "lalvarezhernandez@deloitte.com",
         "name": "Luis Alvarez Hernandez",
         "designation": "Dextra - XMX-DC Delivery Manager",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13436,7 +13436,7 @@ users = [
         "email": "rrodriguezrios@deloitte.com",
         "name": "Rocio Sinai Rodriguez Rios",
         "designation": "Dextra - XMX-DC Quality Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13444,7 +13444,7 @@ users = [
         "email": "carriolacarmona@deloitte.com",
         "name": "Carlos Fabrizio Arriola Carmona",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13452,7 +13452,7 @@ users = [
         "email": "dosunagutierrez@deloitte.com",
         "name": "Daniel Alberto Osuna Gutierrez",
         "designation": "Dextra - XMX-DC Quality Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13460,7 +13460,7 @@ users = [
         "email": "mramirezdelgado@deloitte.com",
         "name": "Manuel Angel Ramirez Delgado",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13468,7 +13468,7 @@ users = [
         "email": "mochoamontes@deloitte.com",
         "name": "Miguel Angel Ochoa Montes",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13476,7 +13476,7 @@ users = [
         "email": "mfloresgonzalez@deloitte.com",
         "name": "Martin Alonso Flores Gonzalez",
         "designation": "Dextra - XMX-DC Software Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13484,7 +13484,7 @@ users = [
         "email": "lfloresdeanda@deloitte.com",
         "name": "Leonardo Flores De Anda",
         "designation": "Dextra - XMX-DC Quality Associate",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13492,7 +13492,7 @@ users = [
         "email": "carreolasoto@deloitte.com",
         "name": "Carlos Johan Gabriel Arreola Soto",
         "designation": "Dextra - XMX-DC Quality Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13500,7 +13500,7 @@ users = [
         "email": "jparedeslopez@deloitte.com",
         "name": "Julio Enrique Paredes Lopez",
         "designation": "Dextra - XMX-DC SDET II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13508,7 +13508,7 @@ users = [
         "email": "rtellomunoz@deloitte.com",
         "name": "Rogelio Tello Muñoz",
         "designation": "Dextra - XMX-DC Quality Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13516,7 +13516,7 @@ users = [
         "email": "lrosasarias@deloitte.com",
         "name": "Leonel Rosas Arias",
         "designation": "Dextra - XMX-DC SDET II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13524,7 +13524,7 @@ users = [
         "email": "jperezvera@deloitte.com",
         "name": "Jose Alejandro Perez Vera",
         "designation": "Dextra - XMX-DC SDET II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13532,7 +13532,7 @@ users = [
         "email": "lescamillaestrada@deloitte.com",
         "name": "Luis Ivan Escamilla Estrada",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13540,7 +13540,7 @@ users = [
         "email": "fromanavila@deloitte.com",
         "name": "Francisco Javier Roman Avila",
         "designation": "Dextra - XMX-DC Quality Associate",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13548,7 +13548,7 @@ users = [
         "email": "etorrerodiaz@deloitte.com",
         "name": "Erick Torrero Diaz",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13556,7 +13556,7 @@ users = [
         "email": "jacostagomez@deloitte.com",
         "name": "Jesus Acosta Gomez",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13564,7 +13564,7 @@ users = [
         "email": "aperezcastellanos@deloitte.com",
         "name": "Allan Niethmer Perez Castellanos",
         "designation": "Dextra - XMX-DC Quality Master",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13572,7 +13572,7 @@ users = [
         "email": "greyesmontiel@deloitte.com",
         "name": "Gregorio Eduardo Reyes Montiel",
         "designation": "Dextra - XMX-DC SDET III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13580,7 +13580,7 @@ users = [
         "email": "jcovarrubiasrodri@deloitte.com",
         "name": "Julio Cesar Covarrubias Rodriguez",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13588,7 +13588,7 @@ users = [
         "email": "lrodriguezgallego@deloitte.com",
         "name": "Luis Antonio Rodriguez Gallegos",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13596,7 +13596,7 @@ users = [
         "email": "nperezgarnica@deloitte.com",
         "name": "Norberto Perez Garnica",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13604,7 +13604,7 @@ users = [
         "email": "cperezaguilar@deloitte.com",
         "name": "Carlos Eduardo Perez Aguilar",
         "designation": "Dextra - XMX-DC Software Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13612,7 +13612,7 @@ users = [
         "email": "aesparzalimon@deloitte.com",
         "name": "Amaury Esparza Limon",
         "designation": "Dextra - XMX-DC Project Manager",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13620,7 +13620,7 @@ users = [
         "email": "jmedranovaladez@deloitte.com",
         "name": "Jorge Alberto Medrano Valadez",
         "designation": "Dextra - XMX-DC Quality Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13628,7 +13628,7 @@ users = [
         "email": "sfloresuribe@deloitte.com",
         "name": "Salvador Flores Uribe",
         "designation": "Dextra - XMX-DC Quality Master",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13636,7 +13636,7 @@ users = [
         "email": "angomezperez@deloitte.com",
         "name": "Andres Amadeus Gomez Perez",
         "designation": "Dextra - XMX-DC Quality Master",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13644,7 +13644,7 @@ users = [
         "email": "mdelacruzreyes@deloitte.com",
         "name": "Mario Saul De La Cruz Reyes",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13652,7 +13652,7 @@ users = [
         "email": "dgonzalezrosendo@deloitte.com",
         "name": "Daniel Gonzalez Rosendo",
         "designation": "Dextra - XMX-DC Software Engineering Master",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13660,7 +13660,7 @@ users = [
         "email": "fdiazmartinez@deloitte.com",
         "name": "Fernando Diaz Martinez",
         "designation": "Dextra - XMX-DC Quality Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13668,7 +13668,7 @@ users = [
         "email": "alopezcastaneda@deloitte.com",
         "name": "Ana Paola Lopez  Castañeda",
         "designation": "Dextra - XMX-DC Quality Associate",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13676,7 +13676,7 @@ users = [
         "email": "amelendezvelazque@deloitte.com",
         "name": "Antonio Melendez Velazquez",
         "designation": "Dextra - XMX-DC SDET III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13684,7 +13684,7 @@ users = [
         "email": "lgallegoscanales@deloitte.com",
         "name": "Luis Marcos Gallegos Canales",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13692,7 +13692,7 @@ users = [
         "email": "esalinasfranco@deloitte.com",
         "name": "Eduardo Daniel Salinas Franco",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13700,7 +13700,7 @@ users = [
         "email": "dalatorreguerrero@deloitte.com",
         "name": "David Fernando Alatorre Guerrero",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13708,7 +13708,7 @@ users = [
         "email": "vmendozamendoza@deloitte.com",
         "name": "Victor Emir Mendoza Mendoza",
         "designation": "Dextra - XMX-DC SDET Master",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13716,7 +13716,7 @@ users = [
         "email": "nvegamachado@deloitte.com",
         "name": "Nestor Alan Vega Machado",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13724,7 +13724,7 @@ users = [
         "email": "igarciavega@deloitte.com",
         "name": "Ivan Uriel Garcia Vega",
         "designation": "Dextra - XMX-DC Quality Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13732,7 +13732,7 @@ users = [
         "email": "jgodinezlimas@deloitte.com",
         "name": "Jose Luis Godinez Limas",
         "designation": "Dextra - XMX-DC Quality Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13740,7 +13740,7 @@ users = [
         "email": "elariosrubio@deloitte.com",
         "name": "Emmanuel Larios Rubio",
         "designation": "Dextra - XMX-DC Quality Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13748,7 +13748,7 @@ users = [
         "email": "lfloresmonzon@deloitte.com",
         "name": "Luis Miguel Flores Monzon",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13756,7 +13756,7 @@ users = [
         "email": "mgarcianavarrete@deloitte.com",
         "name": "Manuel Alejandro Garcia Navarrete",
         "designation": "Dextra - XMX-DC Quality Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13764,7 +13764,7 @@ users = [
         "email": "ihuertacastaneda@deloitte.com",
         "name": "Ignacio Huerta Castañeda",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13772,7 +13772,7 @@ users = [
         "email": "dgarciaescobar@deloitte.com",
         "name": "David Antonio Garcia Escobar",
         "designation": "Dextra - XMX-DC Quality Master",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13780,7 +13780,7 @@ users = [
         "email": "dtomoff@deloitte.com",
         "name": "Denis Ivan Tomoff",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13788,7 +13788,7 @@ users = [
         "email": "msantosrubalcava@deloitte.com",
         "name": "Mario Eduardo Santos Rubalcava",
         "designation": "Dextra - XMX-DC Software Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13796,7 +13796,7 @@ users = [
         "email": "lsalinasrangel@deloitte.com",
         "name": "Luis Ricardo Salinas Rangel",
         "designation": "Dextra - XMX-DC Project Manager",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13804,7 +13804,7 @@ users = [
         "email": "jluevanoalvarado@deloitte.com",
         "name": "Jaime Gabriel Luevano Alvarado",
         "designation": "Dextra - XMX-DC Project Manager",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13812,7 +13812,7 @@ users = [
         "email": "jlopezgaspar@deloitte.com",
         "name": "Juan Francisco Lopez Gaspar",
         "designation": "Dextra - XMX-DC Project Manager",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13820,7 +13820,7 @@ users = [
         "email": "jyanezgutierrez@deloitte.com",
         "name": "Jose Jahir Yañez Gutierrez",
         "designation": "Dextra - XMX-DC Quality Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13828,7 +13828,7 @@ users = [
         "email": "aeuanchan@deloitte.com",
         "name": "Adrian Jesus Euan Chan",
         "designation": "Dextra - XMX-DC SDET II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13836,7 +13836,7 @@ users = [
         "email": "mhurtadovargas@deloitte.com",
         "name": "Marco Antonio Hurtado Vargas",
         "designation": "Dextra - XMX-DC Quality Master",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13844,7 +13844,7 @@ users = [
         "email": "dreyeslopez@deloitte.com",
         "name": "Daniel Reyes Lopez",
         "designation": "Dextra - XMX-DC Quality Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13852,7 +13852,7 @@ users = [
         "email": "lgarciacalderonch@deloitte.com",
         "name": "Luis Garcia-Calderon Chavez",
         "designation": "Dextra - XMX-DC Software Engineering Master",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13860,7 +13860,7 @@ users = [
         "email": "lpalaciosgarcia@deloitte.com",
         "name": "Leo Palacios Garcia",
         "designation": "Dextra - XMX-DC Sr Delivery Leader",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13868,7 +13868,7 @@ users = [
         "email": "jsamaniegonava@deloitte.com",
         "name": "Jair Samaniego Nava",
         "designation": "Dextra - XMX-DC Software Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13876,7 +13876,7 @@ users = [
         "email": "lleivalinan@deloitte.com",
         "name": "Leonardo Leiva Liñan",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13884,7 +13884,7 @@ users = [
         "email": "hramoncordova@deloitte.com",
         "name": "Hector Alberto Ramon Cordova",
         "designation": "Dextra - XMX-DC Quality Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13892,7 +13892,7 @@ users = [
         "email": "jchinunez@deloitte.com",
         "name": "Josue Eleazar Chi Nuñez",
         "designation": "Dextra - XMX-DC Quality Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13900,7 +13900,7 @@ users = [
         "email": "dolveracastaneda@deloitte.com",
         "name": "Daniel Omar Olvera Castañeda",
         "designation": "Dextra - XMX-DC SDET III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13908,7 +13908,7 @@ users = [
         "email": "ofernandezgonzale@deloitte.com",
         "name": "Orfelio Reynolds Fernandez Gonzalez",
         "designation": "Dextra - XMX-DC Quality Master",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13916,7 +13916,7 @@ users = [
         "email": "jriosfuentes@deloitte.com",
         "name": "Jesus Ricardo Rios Fuentes",
         "designation": "Dextra - XMX-DC Quality Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13924,7 +13924,7 @@ users = [
         "email": "mguevaraarellano@deloitte.com",
         "name": "Marco Antonio Guevara Arellano",
         "designation": "Dextra - XMX-DC Quality Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13932,7 +13932,7 @@ users = [
         "email": "jruiztagle@deloitte.com",
         "name": "Javier Humberto Ruiz Tagle",
         "designation": "Dextra - XMX-DC Project Manager",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13940,7 +13940,7 @@ users = [
         "email": "glopezbaeza@deloitte.com",
         "name": "Geovani Lopez Baeza",
         "designation": "Dextra - XMX-DC Quality Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13948,7 +13948,7 @@ users = [
         "email": "gmolledacontreras@deloitte.com",
         "name": "German Molleda Contreras",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13956,7 +13956,7 @@ users = [
         "email": "egarciamedina@deloitte.com",
         "name": "Everardo Garcia Medina",
         "designation": "Dextra - XMX-DC Software Engineering Master",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13964,7 +13964,7 @@ users = [
         "email": "bbaldwincruzado@deloitte.com",
         "name": "Brian Emilio Baldwin Cruzado",
         "designation": "Dextra - XMX-DC Software Engineering Master",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13972,7 +13972,7 @@ users = [
         "email": "clepeanasagasti@deloitte.com",
         "name": "Christian Emai Lepe Anasagasti",
         "designation": "Dextra - XMX-DC Project Manager",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13980,7 +13980,7 @@ users = [
         "email": "jlopezrizo@deloitte.com",
         "name": "Josue Lopez Rizo",
         "designation": "Dextra - XMX-DC Project Manager",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13988,7 +13988,7 @@ users = [
         "email": "jhernandezortiz@deloitte.com",
         "name": "Jorge Noel Hernandez Ortiz",
         "designation": "Dextra - XMX-DC Quality Master",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -13996,7 +13996,7 @@ users = [
         "email": "cgarzagarcia@deloitte.com",
         "name": "Carlos Alberto Garza Garcia",
         "designation": "Dextra - XMX-DC Quality Master",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14004,7 +14004,7 @@ users = [
         "email": "rjaquezleal@deloitte.com",
         "name": "Ricardo Jaquez Leal",
         "designation": "Dextra - XMX-DC Quality Master",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14012,7 +14012,7 @@ users = [
         "email": "lfernandezgonzale@deloitte.com",
         "name": "Luis Abraham Fernandez Gonzalez",
         "designation": "Dextra - XMX-DC Quality Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14020,7 +14020,7 @@ users = [
         "email": "amartinezflores@deloitte.com",
         "name": "Aaron Alexander Martinez Flores",
         "designation": "Dextra - XMX-DC Quality Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14028,7 +14028,7 @@ users = [
         "email": "jramoschapa@deloitte.com",
         "name": "Jesus Guillermo Ramos Chapa",
         "designation": "Dextra - XMX-DC Quality Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14036,7 +14036,7 @@ users = [
         "email": "agonzalezsanchez@deloitte.com",
         "name": "Angel Enrique Gonzalez Sanchez",
         "designation": "Dextra - XMX-DC Project Manager",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14044,7 +14044,7 @@ users = [
         "email": "jvazquezhuerta@deloitte.com",
         "name": "Jonathan Axel Vazquez  Huerta",
         "designation": "Dextra - XMX-DC Quality Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14052,7 +14052,7 @@ users = [
         "email": "jmillanarana@deloitte.com",
         "name": "Juan Manuel Millan  Arana",
         "designation": "Dextra - XMX-DC Quality Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14060,7 +14060,7 @@ users = [
         "email": "jreymendez@deloitte.com",
         "name": "Jose Alfredo Rey Mendez",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14068,7 +14068,7 @@ users = [
         "email": "lsanchezrivera@deloitte.com",
         "name": "Luis Angel Sanchez Rivera",
         "designation": "Dextra - XMX-DC SDET II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14076,7 +14076,7 @@ users = [
         "email": "icejamendoza@deloitte.com",
         "name": "Ilse Bethsabe Ceja Mendoza",
         "designation": "Dextra - XMX-DC Quality Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14084,7 +14084,7 @@ users = [
         "email": "ydelunacerda@deloitte.com",
         "name": "Yaretzi Alejandra De Luna Cerda",
         "designation": "Dextra - XMX-DC Quality Associate",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14092,7 +14092,7 @@ users = [
         "email": "asecenassiller@deloitte.com",
         "name": "Alan Ferzen Seceñas Siller",
         "designation": "Dextra - XMX-DC Software Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14100,7 +14100,7 @@ users = [
         "email": "jtrejomartinez@deloitte.com",
         "name": "Janhil Aurora Trejo Martinez",
         "designation": "Dextra - XMX-DC Sr Project Mgmt Specialist",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14108,7 +14108,7 @@ users = [
         "email": "adelatorremena@deloitte.com",
         "name": "Adan De la Torre Mena",
         "designation": "Dextra - XMX-DC Quality Associate",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14116,7 +14116,7 @@ users = [
         "email": "sriveraluna@deloitte.com",
         "name": "Saul Antonio Rivera Luna",
         "designation": "Dextra - XMX-DC SDET II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14124,7 +14124,7 @@ users = [
         "email": "ertiradoflores@deloitte.com",
         "name": "Erick Fidel Tirado Flores",
         "designation": "Dextra - XMX-DC Quality Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14132,7 +14132,7 @@ users = [
         "email": "rmatavaro@deloitte.com",
         "name": "Ruben Mata Varo",
         "designation": "Dextra - XMX-DC Quality Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14140,7 +14140,7 @@ users = [
         "email": "jvillanuevaocampo@deloitte.com",
         "name": "Julio Cesar Villanueva Ocampo",
         "designation": "Dextra - XMX-DC Quality Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14148,7 +14148,7 @@ users = [
         "email": "aflorescastro@deloitte.com",
         "name": "Agustin Flores Castro",
         "designation": "Dextra - XMX-DC SDET III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14156,7 +14156,7 @@ users = [
         "email": "jgomezgomez@deloitte.com",
         "name": "Jesús Alexander Gómez Gómez",
         "designation": "Dextra - XMX-DC Software Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14164,7 +14164,7 @@ users = [
         "email": "gnavarropalomino@deloitte.com",
         "name": "Gabriel Navarro Palomino",
         "designation": "Dextra - XMX-DC Quality Associate",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14172,7 +14172,7 @@ users = [
         "email": "coavalosmedrano@deloitte.com",
         "name": "Coral Denisse Avalos Medrano",
         "designation": "Dextra - XMX-DC Quality Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14180,7 +14180,7 @@ users = [
         "email": "rfrancoramirez@deloitte.com",
         "name": "Ricardo Esteban Franco Ramirez",
         "designation": "Dextra - XMX-DC Quality Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14188,7 +14188,7 @@ users = [
         "email": "aaguirrearmenta@deloitte.com",
         "name": "Abner Aguirre Armenta",
         "designation": "Dextra - XMX-DC Project Manager",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14196,7 +14196,7 @@ users = [
         "email": "alhernandezlopez@deloitte.com",
         "name": "Alvaro Hernandez Lopez",
         "designation": "Dextra - XMX-DC Project Manager",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14204,7 +14204,7 @@ users = [
         "email": "asanchezcasillas@deloitte.com",
         "name": "Angel Francisco Sanchez Casillas",
         "designation": "Dextra - XMX-DC Quality Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14212,7 +14212,7 @@ users = [
         "email": "fescamillaluna@deloitte.com",
         "name": "Fernanda Isabel Escamilla Luna",
         "designation": "Dextra - XMX-DC Quality Associate",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14220,7 +14220,7 @@ users = [
         "email": "ossanchezgarcia@deloitte.com",
         "name": "Oswaldo Sanchez Garcia",
         "designation": "Dextra - XMX-DC Quality Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14228,7 +14228,7 @@ users = [
         "email": "cplascenciaprecia@deloitte.com",
         "name": "Carlos Gabriel Plascencia Preciado",
         "designation": "Dextra - XMX-DC Quality Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14236,7 +14236,7 @@ users = [
         "email": "mquinonezgudino@deloitte.com",
         "name": "Miguel Alejandro Quiñonez Gudiño",
         "designation": "Dextra - XMX-DC Quality Associate",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14244,7 +14244,7 @@ users = [
         "email": "bestradamazariego@deloitte.com",
         "name": "Bryan David Estrada Mazariegos",
         "designation": "Dextra - XMX-DC Quality Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14252,7 +14252,7 @@ users = [
         "email": "jhernandezcorrea@deloitte.com",
         "name": "Jesús Eduardo Hernández Correa",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14260,7 +14260,7 @@ users = [
         "email": "jcaamalgarzon@deloitte.com",
         "name": "Jessica Gabriela Caamal Garzón",
         "designation": "Dextra - XMX-DC Quality Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14268,7 +14268,7 @@ users = [
         "email": "avelascohermosi3@deloitte.com",
         "name": "Adrián Noe Velasco Hermosillo",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14276,7 +14276,7 @@ users = [
         "email": "jtorresbeltran@deloitte.com",
         "name": "Juan Jonás Torres Beltrán",
         "designation": "Dextra - XMX-DC Quality Associate",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14284,7 +14284,7 @@ users = [
         "email": "gcedillovillalpan@deloitte.com",
         "name": "Gerardo Rogelio Cedillo Villalpando",
         "designation": "Dextra - XMX-DC Quality Associate",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14292,7 +14292,7 @@ users = [
         "email": "mgurrolasanchez@deloitte.com",
         "name": "Mauricio Gurrola Sánchez",
         "designation": "Dextra - XMX-DC Quality Associate",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14300,7 +14300,7 @@ users = [
         "email": "dcastrohernandez@deloitte.com",
         "name": "Dafne Castro Hernandez",
         "designation": "Dextra - XMX-DC Quality Associate",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14308,7 +14308,7 @@ users = [
         "email": "jdiazveloz@deloitte.com",
         "name": "José Daniel Díaz Veloz",
         "designation": "Dextra - XMX-DC Quality Associate",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14316,7 +14316,7 @@ users = [
         "email": "gjimenezsanchez@deloitte.com",
         "name": "Giovanna Lizette Jimenez Sanchez",
         "designation": "Dextra - XMX-DC Quality Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14324,7 +14324,7 @@ users = [
         "email": "adelgadillofarias@deloitte.com",
         "name": "Alonso Vladimir Delgadillo Farías",
         "designation": "Dextra - XMX-DC Software Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14332,7 +14332,7 @@ users = [
         "email": "svelasquezsanchez@deloitte.com",
         "name": "Santiago Velásquez Sánchez",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14340,7 +14340,7 @@ users = [
         "email": "abperezestrada@deloitte.com",
         "name": "Abraham Jashiel Pérez Estrada",
         "designation": "Dextra - XMX-DC Quality Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14348,7 +14348,7 @@ users = [
         "email": "aguendulainperez@deloitte.com",
         "name": "Abner Eli Güendulain Pérez",
         "designation": "Dextra - XMX-DC Software Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14356,7 +14356,7 @@ users = [
         "email": "rcondediaz@deloitte.com",
         "name": "Ricardo Conde Díaz",
         "designation": "Dextra - XMX-DC Quality Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14364,7 +14364,7 @@ users = [
         "email": "jcristernarivas@deloitte.com",
         "name": "Jesús Alejandro Cristerna Rivas",
         "designation": "Dextra - XMX-DC Quality Associate",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14372,7 +14372,7 @@ users = [
         "email": "jrodriguezbuenoma@deloitte.com",
         "name": "Jorge Alberto Rodríguez Bueno Manzano",
         "designation": "Dextra - XMX-DC Quality Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14380,7 +14380,7 @@ users = [
         "email": "echiquitoresendiz@deloitte.com",
         "name": "Emmanuel Chiquito Resendiz",
         "designation": "Dextra - XMX-DC Quality Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14388,7 +14388,7 @@ users = [
         "email": "dfloresflores@deloitte.com",
         "name": "Diana Laura Flores Flores",
         "designation": "Dextra - XMX-DC Quality Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14396,7 +14396,7 @@ users = [
         "email": "jhuertadominguez@deloitte.com",
         "name": "Jorge Alejandro Huerta Dominguez",
         "designation": "Dextra - XMX-DC Quality Associate",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14404,7 +14404,7 @@ users = [
         "email": "jsanchezflores@deloitte.com",
         "name": "Juan Antonio Sanchez Flores",
         "designation": "Dextra - XMX-DC Quality Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14412,7 +14412,7 @@ users = [
         "email": "asandovaltavares@deloitte.com",
         "name": "Antonio Javier Sandoval Tavares",
         "designation": "Dextra - XMX-DC Quality Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14420,7 +14420,7 @@ users = [
         "email": "lsalazargonzalez@deloitte.com",
         "name": "Luis Gerardo Salazar Gonzalez",
         "designation": "Dextra - XMX-DC Quality Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14428,7 +14428,7 @@ users = [
         "email": "cmaldonadorodrigu@deloitte.com",
         "name": "Carlos Eduardo Maldonado Rodriguez",
         "designation": "Dextra - XMX-DC Quality Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14436,7 +14436,7 @@ users = [
         "email": "slizarragatirado@deloitte.com",
         "name": "Sergio Ivan Lizarraga Tirado",
         "designation": "Dextra - XMX-DC Quality Associate",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14444,7 +14444,7 @@ users = [
         "email": "jgarciagonzalez@deloitte.com",
         "name": "Jesus Garcia Gonzalez",
         "designation": "Dextra - XMX-DC Quality Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14452,7 +14452,7 @@ users = [
         "email": "jgonzalezlizarrag@deloitte.com",
         "name": "Jose Gerardo Gonzalez Lizarraga",
         "designation": "Dextra - XMX-DC Quality Associate",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14460,7 +14460,7 @@ users = [
         "email": "nrodriguezfigue6@deloitte.com",
         "name": "Nestor De Jesus Rodriguez Figueroa",
         "designation": "Dextra - XMX-DC Quality Associate",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14468,7 +14468,7 @@ users = [
         "email": "rcalderonisais@deloitte.com",
         "name": "Rigoberto Calderon Isais",
         "designation": "Dextra - XMX-DC Quality Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14476,7 +14476,7 @@ users = [
         "email": "drosalesfabian@deloitte.com",
         "name": "Daniel Rosales Fabian",
         "designation": "Dextra - XMX-DC Quality Associate",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14484,7 +14484,7 @@ users = [
         "email": "apereztorres@deloitte.com",
         "name": "Alan Eduardo Perez Torres",
         "designation": "Dextra - XMX-DC Quality Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14492,7 +14492,7 @@ users = [
         "email": "pgarciamota@deloitte.com",
         "name": "Paul Armando Garcia Mota",
         "designation": "Dextra - XMX-DC Quality Associate",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14500,7 +14500,7 @@ users = [
         "email": "agarzaflores@deloitte.com",
         "name": "Alexis Tonatiu Garza Flores",
         "designation": "Dextra - XMX-DC SDET I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14508,7 +14508,7 @@ users = [
         "email": "rraigozaozuna@deloitte.com",
         "name": "Ricardo Bernabe Raigoza Ozuna",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14516,7 +14516,7 @@ users = [
         "email": "lcruzlopez@deloitte.com",
         "name": "Leonardo Joel Cruz Lopez",
         "designation": "Dextra - XMX-DC Software Engineering Associate",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14524,7 +14524,7 @@ users = [
         "email": "adominguezlopez@deloitte.com",
         "name": "Aldo Bricio Dominguez Lopez",
         "designation": "Dextra - XMX-DC Quality Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14532,7 +14532,7 @@ users = [
         "email": "oornelasalvarado@deloitte.com",
         "name": "Oscar Ornelas Alvarado",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14540,7 +14540,7 @@ users = [
         "email": "framirezreyes@deloitte.com",
         "name": "Fernando Ramírez Reyes",
         "designation": "Dextra - XMX-DC Quality Associate",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14548,7 +14548,7 @@ users = [
         "email": "amaldonadotorres@deloitte.com",
         "name": "Ana Karen Maldonado Torres",
         "designation": "Dextra - XMX-DC Quality Associate",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14556,7 +14556,7 @@ users = [
         "email": "dcuarentabaltazar@deloitte.com",
         "name": "David Isai Cuarenta Baltazar",
         "designation": "Dextra - XMX-DC Quality Associate",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14564,7 +14564,7 @@ users = [
         "email": "lherreraleyva@deloitte.com",
         "name": "Luis Jesus Herrera Leyva",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14572,7 +14572,7 @@ users = [
         "email": "mzempoaltecatltor@deloitte.com",
         "name": "Marco Fabricio Zempoaltecatl Torres",
         "designation": "Dextra - XMX-DC Delivery Manager",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14580,7 +14580,7 @@ users = [
         "email": "darellanoserna@deloitte.com",
         "name": "Daniel Enrique Arellano Serna",
         "designation": "Dextra - XMX-DC Quality Associate",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14588,7 +14588,7 @@ users = [
         "email": "jfrancogomez@deloitte.com",
         "name": "Jose Carlos Franco Gomez",
         "designation": "Dextra - XMX-DC Quality Associate",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14596,7 +14596,7 @@ users = [
         "email": "msantosramirez@deloitte.com",
         "name": "Mauricio Israel Santos Ramirez",
         "designation": "Dextra - XMX-DC Quality Associate",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14604,7 +14604,7 @@ users = [
         "email": "jdiazrobles@deloitte.com",
         "name": "Jesus Manuel Diaz Robles",
         "designation": "Dextra - XMX-DC Quality Associate",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14612,7 +14612,7 @@ users = [
         "email": "jbravorodriguez@deloitte.com",
         "name": "Jazmin Itzel Bravo Rodriguez",
         "designation": "Dextra - XMX-DC Quality Associate",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14620,7 +14620,7 @@ users = [
         "email": "jlopezbriceno@deloitte.com",
         "name": "Jesus David Lopez Briceño",
         "designation": "Dextra - XMX-DC Quality Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14628,7 +14628,7 @@ users = [
         "email": "esolisfrias@deloitte.com",
         "name": "Eduardo Antonio Solis Frias",
         "designation": "Dextra - XMX-DC SDET I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14636,7 +14636,7 @@ users = [
         "email": "hcalderaaguirre@deloitte.com",
         "name": "Hector Caldera Aguirre",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14644,7 +14644,7 @@ users = [
         "email": "ybecerramendez@deloitte.com",
         "name": "Yareltzi Maria Becerra Mendez",
         "designation": "Dextra - XMX-DC Quality Associate",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14652,7 +14652,7 @@ users = [
         "email": "arouracruz@deloitte.com",
         "name": "Alberto Roura Cruz",
         "designation": "Dextra - XMX-DC Software Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14660,7 +14660,7 @@ users = [
         "email": "ecarrillopuente@deloitte.com",
         "name": "Enrique Ivan Carrillo Puente",
         "designation": "Dextra - XMX-DC Software Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14668,7 +14668,7 @@ users = [
         "email": "blopezortiz@deloitte.com",
         "name": "Brandon Eduardo Lopez Ortiz",
         "designation": "Dextra - XMX-DC Quality Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14676,7 +14676,7 @@ users = [
         "email": "rashidahernandez@deloitte.com",
         "name": "Ricardo Ashida Hernandez",
         "designation": "Dextra - XMX-DC SDET I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14684,7 +14684,7 @@ users = [
         "email": "afajardozacarias@deloitte.com",
         "name": "Ana Gabriela Fajardo Zacarias",
         "designation": "Dextra - XMX-DC Quality Associate",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14692,7 +14692,7 @@ users = [
         "email": "aordazdevierna@deloitte.com",
         "name": "Andrea Juliett Ordaz de Vierna",
         "designation": "Dextra - XMX-DC Quality Associate",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14700,7 +14700,7 @@ users = [
         "email": "lcardenasalaniz@deloitte.com",
         "name": "Luis Manuel Cardenas Alaniz",
         "designation": "Dextra - XMX-DC Quality Associate",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14708,7 +14708,7 @@ users = [
         "email": "jnoyolamontes@deloitte.com",
         "name": "Juan Jose Noyola Montes",
         "designation": "Dextra - XMX-DC Quality Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14716,7 +14716,7 @@ users = [
         "email": "rmartinezmunoz@deloitte.com",
         "name": "Roman Ubaldo Martinez Muñoz",
         "designation": "Dextra - XMX-DC SDET II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14724,7 +14724,7 @@ users = [
         "email": "jhernandezvivanco@deloitte.com",
         "name": "Jose Noe Hernandez Vivanco",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14732,7 +14732,7 @@ users = [
         "email": "dlopezpacheco@deloitte.com",
         "name": "David Adolfo Lopez Pacheco",
         "designation": "Dextra - XMX-DC Quality Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14740,7 +14740,7 @@ users = [
         "email": "niniguezmadrigal@deloitte.com",
         "name": "Nestor Josue Iñiguez Madrigal",
         "designation": "Dextra - XMX-DC Quality Associate",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14748,7 +14748,7 @@ users = [
         "email": "ahernandezdelgado@deloitte.com",
         "name": "Armando Salomon Hernandez Delgado",
         "designation": "Dextra - XMX-DC Software Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14756,7 +14756,7 @@ users = [
         "email": "omurguiaguzman@deloitte.com",
         "name": "Oscar Eduardo Murguia Guzman",
         "designation": "Dextra - XMX-DC Quality Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14764,7 +14764,7 @@ users = [
         "email": "vcastillourquijo@deloitte.com",
         "name": "Victor Manuel Castillo Urquijo",
         "designation": "Dextra - XMX-DC SDET III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14772,7 +14772,7 @@ users = [
         "email": "rzavalaruiz@deloitte.com",
         "name": "Rodrigo Zavala Ruiz",
         "designation": "Dextra - XMX-DC Quality Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14780,7 +14780,7 @@ users = [
         "email": "ewirichagaprimero@deloitte.com",
         "name": "Eduardo Wirichaga Primero",
         "designation": "Dextra - XMX-DC SDET III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14788,7 +14788,7 @@ users = [
         "email": "cariassanchez@deloitte.com",
         "name": "Carlos Salvador Arias Sanchez",
         "designation": "Dextra - XMX-DC Quality Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14796,7 +14796,7 @@ users = [
         "email": "emendosaramires@deloitte.com",
         "name": "Esmeralda Anali Mendosa Ramires",
         "designation": "Dextra - XMX-DC Quality Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14804,7 +14804,7 @@ users = [
         "email": "lpadillabelmonte@deloitte.com",
         "name": "Luis Enrique Padilla Belmonte",
         "designation": "Dextra - XMX-DC Quality Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14812,7 +14812,7 @@ users = [
         "email": "dpueblalopez@deloitte.com",
         "name": "Diego Humberto Puebla Lopez",
         "designation": "Dextra - XMX-DC Quality Associate",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14820,7 +14820,7 @@ users = [
         "email": "acampillogarcia@deloitte.com",
         "name": "Angeles Daniela Campillo Garcia",
         "designation": "Dextra - XMX-DC Quality Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14828,7 +14828,7 @@ users = [
         "email": "fondarzamartinez@deloitte.com",
         "name": "Federico Ondarza Martinez",
         "designation": "Dextra - XMX-DC Quality Associate",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14836,7 +14836,7 @@ users = [
         "email": "rramirezfrayre@deloitte.com",
         "name": "Rafael Ramirez Frayre",
         "designation": "Dextra - XMX-DC Quality Associate",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14844,7 +14844,7 @@ users = [
         "email": "rruizaguilar@deloitte.com",
         "name": "Raul Ruiz Aguilar",
         "designation": "Dextra - XMX-DC Quality Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14852,7 +14852,7 @@ users = [
         "email": "jcastroelizondo@deloitte.com",
         "name": "Jose Ezequiel Castro Elizondo",
         "designation": "Dextra - XMX-DC Software Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14860,7 +14860,7 @@ users = [
         "email": "kmartineztirado@deloitte.com",
         "name": "Kareem Martinez Tirado",
         "designation": "Dextra - XMX-DC Project Manager",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14868,7 +14868,7 @@ users = [
         "email": "jpereaaguilar@deloitte.com",
         "name": "Jose Mauricio Perea Aguilar",
         "designation": "Dextra - XMX-DC SDET III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14876,7 +14876,7 @@ users = [
         "email": "mmaresruiz@deloitte.com",
         "name": "Martin Jhonatan Mares Ruiz",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14884,7 +14884,7 @@ users = [
         "email": "dnietorojas@deloitte.com",
         "name": "Daniel Gerardo Nieto Riojas",
         "designation": "Dextra - XMX-DC Software Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14892,7 +14892,7 @@ users = [
         "email": "rcastillogarcia@deloitte.com",
         "name": "Raul Castillo Garcia",
         "designation": "Dextra - XMX-DC SDET III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14900,7 +14900,7 @@ users = [
         "email": "ltapialedesma@deloitte.com",
         "name": "Lilia Carolina Tapia Ledesma",
         "designation": "Dextra - XMX-DC Quality Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14908,7 +14908,7 @@ users = [
         "email": "arosalesquezada@deloitte.com",
         "name": "Arely Noemi Rosales Quezada",
         "designation": "Dextra - XMX-DC Quality Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14916,7 +14916,7 @@ users = [
         "email": "rtapiadominguez@deloitte.com",
         "name": "Ramses Javier Tapia Dominguez",
         "designation": "Dextra - XMX-DC Quality Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14924,7 +14924,7 @@ users = [
         "email": "maortizlopez@deloitte.com",
         "name": "Manuel Alfonso Ortiz Lopez",
         "designation": "Dextra - XMX-DC SDET III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14932,7 +14932,7 @@ users = [
         "email": "fperezrulcastillo@deloitte.com",
         "name": "Francisco Perez Rul Castillo",
         "designation": "Dextra - XMX-DC Quality Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14940,7 +14940,7 @@ users = [
         "email": "jmartinezhernan2@deloitte.com",
         "name": "Jose Roberto Martinez Hernandez",
         "designation": "Dextra - XMX-DC Quality Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14948,7 +14948,7 @@ users = [
         "email": "snavarretelorenzo@deloitte.com",
         "name": "Samantha Navarrete Lorenzon",
         "designation": "Dextra - XMX-DC Quality Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14956,7 +14956,7 @@ users = [
         "email": "rcarrillojimenez@deloitte.com",
         "name": "Raul Alberto Carrillo Jimenez",
         "designation": "Dextra - XMX-DC Quality Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14964,7 +14964,7 @@ users = [
         "email": "gramirezvasquez@deloitte.com",
         "name": "Guillermo Francisco Ramirez Vasquez",
         "designation": "Dextra - XMX-DC Project Manager",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14972,7 +14972,7 @@ users = [
         "email": "lgonzalezacosta@deloitte.com",
         "name": "Leonel Gonzalez Acosta",
         "designation": "Dextra - XMX-DC Quality Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14980,7 +14980,7 @@ users = [
         "email": "mmorabrito@deloitte.com",
         "name": "Marisela Mora Brito",
         "designation": "Dextra - XMX-DC Delivery Manager",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14988,7 +14988,7 @@ users = [
         "email": "rcastillotorres@deloitte.com",
         "name": "Ricardo de Jesus Castillo Torres",
         "designation": "Dextra - XMX-DC SDET II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -14996,7 +14996,7 @@ users = [
         "email": "bgonzalezgarza@deloitte.com",
         "name": "Brayan Roosevelt Gonzalez Garza",
         "designation": "Dextra - XMX-DC Software Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15004,7 +15004,7 @@ users = [
         "email": "gsanchezsalazar@deloitte.com",
         "name": "Gisel Jimena Sanchez Salazar",
         "designation": "Dextra - XMX-DC Quality Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15012,7 +15012,7 @@ users = [
         "email": "kvelacarino@deloitte.com",
         "name": "Karina Araceli Vela Cariño",
         "designation": "Dextra - XMX-DC Sr Project Mgmt Specialist",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15020,7 +15020,7 @@ users = [
         "email": "echanalejandre@deloitte.com",
         "name": "Eduardo Alberto Chan Alejandre",
         "designation": "Dextra - XMX-DC SDET III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15028,7 +15028,7 @@ users = [
         "email": "ezepedasanchez@deloitte.com",
         "name": "Elio Zepeda Sanchez",
         "designation": "Dextra - XMX-DC Software Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15036,7 +15036,7 @@ users = [
         "email": "fmaderatorres@deloitte.com",
         "name": "Fernando Alberto Madera Torres",
         "designation": "Dextra - XMX-DC Software Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15044,7 +15044,7 @@ users = [
         "email": "csantanajimenez@deloitte.com",
         "name": "Carlos Omar Santana Jimenez",
         "designation": "Dextra - XMX-DC Quality Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15052,7 +15052,7 @@ users = [
         "email": "osamaniegocorona@deloitte.com",
         "name": "Oscar Daniel Samaniego Corona",
         "designation": "Dextra - XMX-DC SDET II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15060,7 +15060,7 @@ users = [
         "email": "ltenientemiranda@deloitte.com",
         "name": "Luis Fernando Teniente Miranda",
         "designation": "Dextra - XMX-DC Software Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15068,7 +15068,7 @@ users = [
         "email": "mterronessalgado@deloitte.com",
         "name": "Moises Terrones Salgado",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15076,7 +15076,7 @@ users = [
         "email": "aflorespatricio@deloitte.com",
         "name": "Aaron Antonio Flores Patricio",
         "designation": "Dextra - XMX-DC SDET III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15084,7 +15084,7 @@ users = [
         "email": "jonofrerosas@deloitte.com",
         "name": "Jorge Eduardo Onofre Rosas",
         "designation": "Dextra - XMX-DC Quality Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15092,7 +15092,7 @@ users = [
         "email": "irodriguezdomingu@deloitte.com",
         "name": "Ingrid Rodriguez Dominguez",
         "designation": "Dextra - XMX-DC Software Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15100,7 +15100,7 @@ users = [
         "email": "jcabreraberriel@deloitte.com",
         "name": "Jonatan Rodrigo Cabrera Berriel",
         "designation": "Dextra - XMX-DC SDET II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15108,7 +15108,7 @@ users = [
         "email": "emontoyamendez@deloitte.com",
         "name": "Edgar Montoya Mendez",
         "designation": "Dextra - XMX-DC Software Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15116,7 +15116,7 @@ users = [
         "email": "ctovargarcia@deloitte.com",
         "name": "Carlos Antonio Tovar Garcia",
         "designation": "Dextra - XMX-DC SDET III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15124,7 +15124,7 @@ users = [
         "email": "jalzaldebalanzari@deloitte.com",
         "name": "Jorge Alzalde Balanzario",
         "designation": "Dextra - XMX-DC Software Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15132,7 +15132,7 @@ users = [
         "email": "emercadogonzalez@deloitte.com",
         "name": "Eduardo Mercado Gonzalez",
         "designation": "Dextra - XMX-DC SDET III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15140,7 +15140,7 @@ users = [
         "email": "lhernandezguevara@deloitte.com",
         "name": "Luis Daniel Hernandez Guevara",
         "designation": "Dextra - XMX-DC Software Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15148,7 +15148,7 @@ users = [
         "email": "plunalopez@deloitte.com",
         "name": "Pedro Jesus Luna Lopez",
         "designation": "Dextra - XMX-DC SDET III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15156,7 +15156,7 @@ users = [
         "email": "erodriguezrios@deloitte.com",
         "name": "Eisser Wladimir Rodriguez Rios",
         "designation": "Dextra - XMX-DC Software Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15164,7 +15164,7 @@ users = [
         "email": "npalmaangeles@deloitte.com",
         "name": "Nancy Palma Angeles",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15172,7 +15172,7 @@ users = [
         "email": "calcantaramontiel@deloitte.com",
         "name": "Cinthia Viviana Alcantara Montiel",
         "designation": "Dextra - XMX-DC SDET III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15180,7 +15180,7 @@ users = [
         "email": "sponceisturiz@deloitte.com",
         "name": "Sail Jesus Ponce Isturiz",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15188,7 +15188,7 @@ users = [
         "email": "foviedomaltez@deloitte.com",
         "name": "Felipe de Jesus Zacarias Oviedo Maltez",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15196,7 +15196,7 @@ users = [
         "email": "javicortes@deloitte.com",
         "name": "Javier Cortes",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15204,7 +15204,7 @@ users = [
         "email": "szepedaperez@deloitte.com",
         "name": "Salvador Zepeda Perez",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15212,7 +15212,7 @@ users = [
         "email": "imartinezhernande@deloitte.com",
         "name": "Ivan Felipe Martinez Hernandez",
         "designation": "Dextra - XMX-DC SDET II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15220,7 +15220,7 @@ users = [
         "email": "janconarodriguez@deloitte.com",
         "name": "Jose Alberto Ancona Rodriguez",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15228,7 +15228,7 @@ users = [
         "email": "harreolarubio@deloitte.com",
         "name": "Hugo Arturo Arreola Rubio",
         "designation": "Dextra - XMX-DC Software Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15236,7 +15236,7 @@ users = [
         "email": "srenteriamoreno@deloitte.com",
         "name": "Samuel Alonso Renteria Moreno",
         "designation": "Dextra - XMX-DC Software Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15244,7 +15244,7 @@ users = [
         "email": "mpootchin@deloitte.com",
         "name": "Manuel Esteban Poot Chin",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15252,7 +15252,7 @@ users = [
         "email": "adominguezmartine@deloitte.com",
         "name": "Aldo Abraham Dominguez Martinez",
         "designation": "Dextra - XMX-DC Software Engineer II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15260,7 +15260,7 @@ users = [
         "email": "mvillanuevasanche@deloitte.com",
         "name": "Mario Alberto Villanueva Sanchez Rojas",
         "designation": "Dextra - XMX-DC Software Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15268,7 +15268,7 @@ users = [
         "email": "fmorenoquinonez@deloitte.com",
         "name": "Francisco Javier Moreno Quiñonez",
         "designation": "Dextra - XMX-DC SDET II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15276,7 +15276,7 @@ users = [
         "email": "flujanpedrozo@deloitte.com",
         "name": "Fabio Lujan Pedrozo",
         "designation": "Dextra - XMX-DC Project Manager",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15284,7 +15284,7 @@ users = [
         "email": "lrodriguezsandova@deloitte.com",
         "name": "Luis Fernando Rodriguez Sandoval",
         "designation": "Dextra - XMX-DC Quality Engineer III",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15292,7 +15292,7 @@ users = [
         "email": "dgallovalenzuela@deloitte.com",
         "name": "Diego Fernando Gallo Valenzuela",
         "designation": "Dextra - XMX-DC Software Engineer I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15300,7 +15300,7 @@ users = [
         "email": "netgupta@deloitte.com",
         "name": "Netrica Gupta",
         "designation": "Software Engineer-I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15316,7 +15316,7 @@ users = [
         "email": "subhosarkar@deloitte.com",
         "name": "Subhodeep Sarkar",
         "designation": "Recruitment Specialist",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15324,7 +15324,7 @@ users = [
         "email": "cariram@deloitte.com",
         "name": "Chitra",
         "designation": "Recruitment Specialist",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15332,7 +15332,7 @@ users = [
         "email": "swshenoy@deloitte.com",
         "name": "Swathi Shenoy",
         "designation": "Software Engineering Master",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15372,7 +15372,7 @@ users = [
         "email": "validation_test_case_1@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15380,7 +15380,7 @@ users = [
         "email": "validation_test_case_2@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15388,7 +15388,7 @@ users = [
         "email": "bulk_user_data_0@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15396,7 +15396,7 @@ users = [
         "email": "bulk_user_data_1@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15404,7 +15404,7 @@ users = [
         "email": "bulk_user_data_2@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15412,7 +15412,7 @@ users = [
         "email": "bulk_user_data_3@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15420,7 +15420,7 @@ users = [
         "email": "bulk_user_data_4@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15428,7 +15428,7 @@ users = [
         "email": "bulk_user_data_5@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15436,7 +15436,7 @@ users = [
         "email": "bulk_user_data_6@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15444,7 +15444,7 @@ users = [
         "email": "bulk_user_data_7@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15452,7 +15452,7 @@ users = [
         "email": "bulk_user_data_8@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15460,7 +15460,7 @@ users = [
         "email": "bulk_user_data_9@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15468,7 +15468,7 @@ users = [
         "email": "bulk_user_data_10@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15476,7 +15476,7 @@ users = [
         "email": "bulk_user_data_11@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15484,7 +15484,7 @@ users = [
         "email": "bulk_user_data_12@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15492,7 +15492,7 @@ users = [
         "email": "bulk_user_data_13@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15500,7 +15500,7 @@ users = [
         "email": "bulk_user_data_14@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15508,7 +15508,7 @@ users = [
         "email": "bulk_user_data_15@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15516,7 +15516,7 @@ users = [
         "email": "bulk_user_data_16@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15524,7 +15524,7 @@ users = [
         "email": "bulk_user_data_17@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15532,7 +15532,7 @@ users = [
         "email": "bulk_user_data_18@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15540,7 +15540,7 @@ users = [
         "email": "bulk_user_data_19@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15548,7 +15548,7 @@ users = [
         "email": "bulk_user_data_20@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15556,7 +15556,7 @@ users = [
         "email": "bulk_user_data_21@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15564,7 +15564,7 @@ users = [
         "email": "bulk_user_data_22@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15572,7 +15572,7 @@ users = [
         "email": "bulk_user_data_23@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15580,7 +15580,7 @@ users = [
         "email": "bulk_user_data_24@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15588,7 +15588,7 @@ users = [
         "email": "bulk_user_data_25@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15596,7 +15596,7 @@ users = [
         "email": "bulk_user_data_26@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15604,7 +15604,7 @@ users = [
         "email": "bulk_user_data_27@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15612,7 +15612,7 @@ users = [
         "email": "bulk_user_data_28@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15620,7 +15620,7 @@ users = [
         "email": "bulk_user_data_29@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15628,7 +15628,7 @@ users = [
         "email": "bulk_user_data_30@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15636,7 +15636,7 @@ users = [
         "email": "bulk_user_data_31@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15644,7 +15644,7 @@ users = [
         "email": "bulk_user_data_32@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15652,7 +15652,7 @@ users = [
         "email": "bulk_user_data_33@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15660,7 +15660,7 @@ users = [
         "email": "bulk_user_data_34@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15668,7 +15668,7 @@ users = [
         "email": "bulk_user_data_35@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15676,7 +15676,7 @@ users = [
         "email": "bulk_user_data_36@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15684,7 +15684,7 @@ users = [
         "email": "bulk_user_data_37@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15692,7 +15692,7 @@ users = [
         "email": "bulk_user_data_38@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15700,7 +15700,7 @@ users = [
         "email": "bulk_user_data_39@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15708,7 +15708,7 @@ users = [
         "email": "bulk_user_data_40@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15716,7 +15716,7 @@ users = [
         "email": "bulk_user_data_41@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15724,7 +15724,7 @@ users = [
         "email": "bulk_user_data_42@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15732,7 +15732,7 @@ users = [
         "email": "bulk_user_data_43@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15740,7 +15740,7 @@ users = [
         "email": "bulk_user_data_44@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15748,7 +15748,7 @@ users = [
         "email": "bulk_user_data_45@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15756,7 +15756,7 @@ users = [
         "email": "bulk_user_data_46@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15764,7 +15764,7 @@ users = [
         "email": "bulk_user_data_47@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15772,7 +15772,7 @@ users = [
         "email": "bulk_user_data_48@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15780,7 +15780,7 @@ users = [
         "email": "bulk_user_data_49@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15788,7 +15788,7 @@ users = [
         "email": "bulk_user_data_50@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15796,7 +15796,7 @@ users = [
         "email": "bulk_user_data_51@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15804,7 +15804,7 @@ users = [
         "email": "bulk_user_data_52@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15812,7 +15812,7 @@ users = [
         "email": "bulk_user_data_53@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15820,7 +15820,7 @@ users = [
         "email": "bulk_user_data_54@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15828,7 +15828,7 @@ users = [
         "email": "bulk_user_data_55@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15836,7 +15836,7 @@ users = [
         "email": "bulk_user_data_56@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15844,7 +15844,7 @@ users = [
         "email": "bulk_user_data_57@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15852,7 +15852,7 @@ users = [
         "email": "bulk_user_data_58@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15860,7 +15860,7 @@ users = [
         "email": "bulk_user_data_59@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15868,7 +15868,7 @@ users = [
         "email": "bulk_user_data_60@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15876,7 +15876,7 @@ users = [
         "email": "bulk_user_data_61@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15884,7 +15884,7 @@ users = [
         "email": "bulk_user_data_62@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15892,7 +15892,7 @@ users = [
         "email": "bulk_user_data_63@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15900,7 +15900,7 @@ users = [
         "email": "bulk_user_data_64@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15908,7 +15908,7 @@ users = [
         "email": "bulk_user_data_65@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15916,7 +15916,7 @@ users = [
         "email": "bulk_user_data_66@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15924,7 +15924,7 @@ users = [
         "email": "bulk_user_data_67@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15932,7 +15932,7 @@ users = [
         "email": "bulk_user_data_68@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15940,7 +15940,7 @@ users = [
         "email": "bulk_user_data_69@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15948,7 +15948,7 @@ users = [
         "email": "bulk_user_data_70@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15956,7 +15956,7 @@ users = [
         "email": "bulk_user_data_71@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15964,7 +15964,7 @@ users = [
         "email": "bulk_user_data_72@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15972,7 +15972,7 @@ users = [
         "email": "bulk_user_data_73@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15980,7 +15980,7 @@ users = [
         "email": "bulk_user_data_74@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15988,7 +15988,7 @@ users = [
         "email": "bulk_user_data_75@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -15996,7 +15996,7 @@ users = [
         "email": "bulk_user_data_76@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -16004,7 +16004,7 @@ users = [
         "email": "bulk_user_data_77@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -16012,7 +16012,7 @@ users = [
         "email": "bulk_user_data_78@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -16020,7 +16020,7 @@ users = [
         "email": "bulk_user_data_79@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -16028,7 +16028,7 @@ users = [
         "email": "bulk_user_data_80@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -16036,7 +16036,7 @@ users = [
         "email": "bulk_user_data_81@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -16044,7 +16044,7 @@ users = [
         "email": "bulk_user_data_82@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -16052,7 +16052,7 @@ users = [
         "email": "bulk_user_data_83@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -16060,7 +16060,7 @@ users = [
         "email": "bulk_user_data_84@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -16068,7 +16068,7 @@ users = [
         "email": "bulk_user_data_85@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -16076,7 +16076,7 @@ users = [
         "email": "bulk_user_data_86@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -16084,7 +16084,7 @@ users = [
         "email": "bulk_user_data_87@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -16092,7 +16092,7 @@ users = [
         "email": "bulk_user_data_88@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -16100,7 +16100,7 @@ users = [
         "email": "bulk_user_data_89@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -16108,7 +16108,7 @@ users = [
         "email": "bulk_user_data_90@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -16116,7 +16116,7 @@ users = [
         "email": "bulk_user_data_91@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -19388,7 +19388,7 @@ users = [
         "email": "vivekkumarsingh@deloitte.com",
         "name": " ",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -19556,7 +19556,7 @@ users = [
         "email": "krramesh@deloitte.com",
         "name": "Krithika Ramesh",
         "designation": " ",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -19564,7 +19564,7 @@ users = [
         "email": "aamarbagrecha@deloitte.com",
         "name": "Aman Amar Bagrecha",
         "designation": "Software Engineering Master",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -19572,7 +19572,7 @@ users = [
         "email": "vaibhavsharma9@deloitte.com",
         "name": "Vaibhav Sharma",
         "designation": "Software Engineer-I",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -19580,7 +19580,7 @@ users = [
         "email": "mahavsingh@deloitte.com",
         "name": "Mahaveer Singh",
         "designation": "Senior Engineering Management Master",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -19588,7 +19588,7 @@ users = [
         "email": "krpancholi@deloitte.com",
         "name": " ",
         "designation": "Software Engineer-II",
-        "doj": "0000-00-00",
+        "doj": "2023-02-02",
         "pic": " "
     },
     {
@@ -19661,6 +19661,38 @@ users = [
         "name": "Tushar Jangid",
         "designation": "Software Engineer-I",
         "doj": "2022-08-22",
+        "pic": " "
+    },
+    {
+        "id": "4794",
+        "email": "satyammishra6@deloitte.com",
+        "name": " ",
+        "designation": " ",
+        "doj": "2023-02-02",
+        "pic": " "
+    },
+    {
+        "id": "4795",
+        "email": "manbhargav@deloitte.com",
+        "name": " ",
+        "designation": " ",
+        "doj": "2023-02-02",
+        "pic": " "
+    },
+    {
+        "id": "4796",
+        "email": "piyprasad@deloitte.com",
+        "name": " ",
+        "designation": " ",
+        "doj": "2023-02-02",
+        "pic": " "
+    },
+    {
+        "id": "4797",
+        "email": "sachinkumar2@deloitte.com",
+        "name": " ",
+        "designation": " ",
+        "doj": "2023-02-02",
         "pic": " "
     }
 ]
