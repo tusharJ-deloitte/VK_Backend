@@ -28,6 +28,55 @@ def home(request):
     return render(request, 'app1/home.html')
 
 
+def getMyRating(score):
+    if score <= 250:
+        if score <= 50:
+            return 'Bronze-1'
+        elif score <= 100:
+            return 'Bronze-2'
+        elif score <= 150:
+            return 'Bronze-3'
+        elif score <= 200:
+            return 'Bronze-4'
+        elif score <= 250:
+            return 'Bronze-5'
+    elif score <= 500:
+        if score <= 300:
+            return 'Silver-1'
+        elif score <= 350:
+            return 'Silver-2'
+        elif score <= 400:
+            return 'Silver-3'
+        elif score <= 450:
+            return 'Silver-4'
+        elif score <= 500:
+            return 'Silver-5'
+    elif score <= 750:
+        if score <= 550:
+            return 'Gold-1'
+        elif score <= 600:
+            return 'Gold-2'
+        elif score <= 650:
+            return 'Gold-3'
+        elif score <= 700:
+            return 'Gold-4'
+        elif score <= 750:
+            return 'Gold-5'
+    elif score <= 1000:
+        if score <= 800:
+            return 'Platinum-1'
+        elif score <= 850:
+            return 'Platinum-2'
+        elif score <= 900:
+            return 'Platinum-3'
+        elif score <= 950:
+            return 'Platinum-4'
+        elif score <= 1000:
+            return 'Platinum-5'
+    else:
+        return 'Diamond'
+
+
 def is_admin(request, userId):
     if request.method == 'GET':
         try:
@@ -448,14 +497,12 @@ def manage_teams(request, user_id):
 
             activity_object = Team.activity.through.objects.filter(
                 team_id=team_id)
-            activity_name = Activity.objects.get(
-                id=activity_object[0].activity_id).name
-            activity_size = Activity.objects.get(
-                id=activity_object[0].activity_id).team_size
-            category_id = Activity.objects.get(
-                id=activity_object[0].activity_id).category_id
-            activity_logo = Activity.objects.get(
-                id=activity_object[0].activity_id).activity_logo
+            activity = Activity.objects.get(
+                id=activity_object[0].activity_id)
+            activity_name = activity.name
+            activity_size = activity.team_size
+            category_id = activity.category_id
+            activity_logo = activity.activity_logo
             category_name = Category.objects.get(id=category_id).name
             temp_response = {
                 "team_id": team_id,
@@ -684,8 +731,9 @@ def get_rank_by_activity(request, activity_id):
         result = []
         for user in players:
             usr = User.objects.get(id=user['user_id'])
+            rating = getMyRating(user['total_score'])
             result.append({"name": usr.first_name+" " +
-                           usr.last_name, "score": user['total_score']})
+                           usr.last_name, "rating": rating, "score": user['total_score']})
         print(result[0:20])
 
         json_response = json.dumps(result[0:20])
@@ -715,10 +763,10 @@ def get_overall_rank(request):
 
         for user in players:
             usr = User.objects.get(id=user['user_id'])
+            rating = getMyRating(user['total_score'])
             result.append({"name": usr.first_name+" " +
-                           usr.last_name, "score": user['total_score']})
+                           usr.last_name, "rating": rating, "score": user['total_score']})
 
-        print(result[0:20])
         json_response = json.dumps(result[0:20])
         return HttpResponse(json_response, content_type="application/json")
     else:
@@ -743,7 +791,7 @@ def get_hottest_challenge(request):
             hot_challenge = {'event': hot_challenge.name}
             return HttpResponse(json.dumps(hot_challenge), content_type='application/json')
         else:
-            hot_challenge = {'event': "hottest challenge not available"}
+            hot_challenge = {'event': ""}
             return HttpResponse(json.dumps(hot_challenge), content_type='application/json')
     else:
         return HttpResponse("wrong request", content_type='application/json')
@@ -814,6 +862,8 @@ def get_star_of_week(request):
         json_response = json.dumps(response)
 
         return HttpResponse(json_response, content_type='application/json')
+    else:
+        return HttpResponse("wrong request", content_type='application/json')
 
 
 def get_events_participated(request, user_id):
@@ -858,6 +908,8 @@ def get_events_participated(request, user_id):
         json_response = json.dumps(response)
 
         return HttpResponse(json_response, content_type='application/json')
+    else:
+        return HttpResponse("wrong request", content_type='application/json')
 
 
 def get_my_rank(request, user_id):
@@ -897,6 +949,8 @@ def get_top_events_participated(request, user_id):
         json_response = json.dumps(result[0:10])
 
         return HttpResponse(json_response, content_type='application/json')
+    else:
+        return HttpResponse("wrong request", content_type='application/json')
 
 
 def get_my_score(request, user_id):
@@ -906,7 +960,13 @@ def get_my_score(request, user_id):
         res = {}
         if (players.__len__() != 0):
             res = players[0]
-        return HttpResponse(json.dumps(res), content_type='application/json')
+            print(res['total_score'])
+            rating = getMyRating(res['total_score'])
+            result = {'user_id': res['user_id'],
+                      'score': res['total_score'], 'rating': rating}
+        return HttpResponse(json.dumps(result), content_type='application/json')
+    else:
+        return HttpResponse("wrong request", content_type='application/json')
 
 
 def get_top_events_by_activity(request, user_id, activity_id):
@@ -941,6 +1001,8 @@ def get_top_events_by_activity(request, user_id, activity_id):
         json_response = json.dumps(response)
 
         return HttpResponse(json_response, content_type='application/json')
+    else:
+        return HttpResponse("wrong request", content_type='application/json')
 
 
 def upload_aws(request, user_email):
