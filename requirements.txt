@@ -21,3 +21,4 @@ tomli==2.0.1
 zope.interface==5.5.2
 python-decouple
 boto3
+django-storages
