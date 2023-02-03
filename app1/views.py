@@ -375,6 +375,10 @@ def update_teams(request, team_id):
         activity_instance = Activity.objects.filter(
             name=python_data['activity'])[0]
         print(activity_instance)
+        team_activity_instance = Team.activity.through.objects.filter(
+            team_id=team_id)
+        for item in team_activity_instance:
+            item.delete()
         team_instance.activity.add(activity_instance)
         team_instance.save()
 
