@@ -68,7 +68,13 @@ urlpatterns = [
     # plank
     path('upload_aws/<str:user_email>', views.upload_aws, name="upload_aws"),
     # path('edit_upload/<str:user_email>',views.edit_upload,name="edit_upload"),
-    path('get_files_list', views.get_files_list, name="get_files_list")
+    path('get_files_list', views.get_files_list, name="get_files_list"),
 
+
+     #integration PODS & DNA
+     path("get_pods",views.get_pods_data,name='get_pods_data'),
+     path("get_users_dna",views.get_all_user_dna,name='get_pods_data'),
+     path("get_users_org", views.get_all_users_organisation,
+          name='get_all_users_organisation'),
 
 ]

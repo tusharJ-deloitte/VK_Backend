@@ -1,10 +1,14 @@
 import graphene
-from .models import Category, Activity, Team, Player, Event, Registration, Upload
-from app1.types import CategoryType, ActivityType, TeamType, PlayerType, EventType, RegistrationType, UploadType
-from .mutations import CreateCategory, UpdateCategory, DeleteCategory, CreateActivity, UpdateActivity, DeleteActivity, CreateTeam, CreatePlayer, UpdatePlayer, DeletePlayer, CreateEvent, CreateRegistration, UpdateTeamScores, CreateUpload
-
+from .models import Detail, Category, Activity, Team, Player, Event, Registration, Upload
+from app1.types import DetailType, UserType, CategoryType, ActivityType, TeamType, PlayerType, EventType, RegistrationType, UploadType
+from .mutations import CreateUser, CreateCategory, UpdateCategory, DeleteCategory, CreateActivity, UpdateActivity, DeleteActivity, CreateTeam, CreatePlayer, UpdatePlayer, DeletePlayer, CreateEvent, CreateRegistration, UpdateTeamScores, CreateUpload
+from django.contrib.auth.models import User
 
 class Query(graphene.ObjectType):
+    detail = graphene.Field(DetailType,id=graphene.ID(required=True))
+    all_details = graphene.List(DetailType)
+    user = graphene.Field(UserType, id=graphene.ID(required=True))
+    all_users = graphene.List(UserType)
     category = graphene.Field(CategoryType, id=graphene.ID(required=True))
     all_categories = graphene.List(CategoryType)
     activity = graphene.Field(ActivityType, id=graphene.ID(required=True))
@@ -26,6 +30,17 @@ class Query(graphene.ObjectType):
     upload = graphene.Field(UploadType, id=graphene.ID(required=True))
     all_uploads = graphene.List(UploadType)
 
+    def resolve_all_detais(self,info,**kwargs):
+        return Detail.objects.all()
+
+    def resolve_detail(self, info, id):
+        return Detail.objects.get(id=id)
+    
+    def resolve_all_users(self,info,**kwargs):
+        return User.objects.all()
+
+    def resolve_user(self, info, id):
+        return User.objects.get(id=id)
 
     def resolve_all_categories(self, info, **kwargs):
         return Category.objects.all()
@@ -102,6 +117,7 @@ class Mutation(graphene.ObjectType):
     #plank(upload) mutations
     create_upload = CreateUpload.Field()
 
+    create_user = CreateUser.Field()
 
 
 schema = graphene.Schema(query=Query, mutation=Mutation)

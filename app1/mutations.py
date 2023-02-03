@@ -1,9 +1,46 @@
 import graphene
-from app1.types import CategoryType, ActivityType, TeamType, PlayerType, EventType, RegistrationType, UploadType
-from .models import Category, Activity, Team, Player, Event, Registration, Upload
+from app1.types import UserType,CategoryType, ActivityType, TeamType, PlayerType, EventType, RegistrationType, UploadType
+from .models import Detail,User,Category, Activity, Team, Player, Event, Registration, Upload
 import datetime
 from django.contrib.auth.models import User
 
+class CreateUser(graphene.Mutation):
+    class Arguments:   
+        employee_id = graphene.Int()
+        name = graphene.String()
+        email = graphene.String()
+        designation = graphene.String()
+        doj = graphene.Date()
+        profile_pic = graphene.String()
+
+    user = graphene.Field(UserType)
+
+    def mutate(self,info,name,email,designation,doj,employee_id,profile_pic):
+        print("inside createUser mutation")
+        if " " in name:
+            fname = name.split(' ', 1)[0]
+            lname = name.split(' ', 1)[1]
+        else:
+            fname = name
+            lname = ""
+        user_instance = User(
+            email = email,
+            username = email.split('@')[0],
+            first_name = fname,
+            last_name=lname
+        )
+        print(user_instance)
+        user_instance.save()
+        detail_instance = Detail(
+            user = user_instance,
+            employee_id = employee_id,
+            designation = designation,
+            doj = doj,
+            profile_pic=profile_pic
+        )
+        detail_instance.save()
+        print("outside createUser mutation")
+        return CreateUser(user = user_instance)
 
 class CreateCategory(graphene.Mutation):
     class Arguments:

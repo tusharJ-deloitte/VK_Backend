@@ -1,15 +1,12 @@
 from django.shortcuts import render
-from .models import Activity, Player, Team, Category, Event, Registration, Upload
+from .models import Detail, Activity, Player, Team, Category, Event, Registration, Upload
 from .serializers import PostSerializer
 from rest_framework.renderers import JSONRenderer
 from django.http import HttpResponse, JsonResponse
-import io
 from rest_framework.parsers import JSONParser
 from .schema import schema
-import json
 from django.contrib.auth.models import User
 from rest_framework import viewsets
-import base64
 from PIL import Image
 from django.core.files.uploadedfile import InMemoryUploadedFile
 from django.core.files.base import ContentFile
@@ -17,11 +14,15 @@ from django.conf import settings
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.core.mail import EmailMessage
-from django.db.models import Sum
 from django.db.models import Sum, Count
+from GrapheneTest import settings
 import datetime
 from GrapheneTest import settings
 import boto3
+import requests
+import base64
+import json
+import io
 
 
 def home(request):
@@ -1061,3 +1062,190 @@ def get_files_list(request):
         return HttpResponse(json_post, content_type='application/json')
     else:
         return HttpResponse("wrong request", content_type='application/json')
+
+# get data from PODS platform
+def get_pods_data(request):
+    if request.method == 'POST':
+        try:
+            body = request.body
+            stream = io.BytesIO(body)
+            data = JSONParser().parse(stream)
+            print(data)
+            email = data['email']
+
+            # get token to access pods server
+            token = get_access_token(
+                settings.B2B_TOKEN_URL, settings.B2B_CLIENT_ID, settings.B2B_CLIENT_SECRET)
+            print("token :: "+token)
+
+            url = settings.B2B_PODS_URL
+            payload = "{\"query\":\"query paginatedAllocationList ($filtering: AllocationListFilterInput) {\\r\\n  paginatedAllocationList(filtering: $filtering) {\\r\\n    result {\\r\\n      pod {\\r\\n        id\\r\\n        podAllocations {\\r\\n          employee {\\r\\n            id\\r\\n            name\\r\\n            email\\r\\n            designation\\r\\n          }\\r\\n          startDate\\r\\n          endDate\\r\\n        }\\r\\n      }\\r\\n    }\\r\\n  }\\r\\n}\",\"variables\":{\"filtering\":{\"employee_Email\":\"" + email + "\",\"startDate_Lte\":\"2023-01-31\",\"endDate_Gte\":\"2023-01-31\"}}}"
+            headers = {
+                'x-api-token': token,
+                'Content-Type': 'application/json'
+                # 'Cookie': 'csrftoken=4UqAWHGIzb3UIeTVU90Ogd05ITUmueZObaV726GSwcV2whtGlndmDuz3Yx5OlXPW'
+            }
+            response = requests.request(
+                "POST", url, headers=headers, data=payload)
+            print("Response received from PODS ==> "+response.text)
+            response = json.loads(response.text)
+
+            # filtering PODS Data
+            pods = response['data']['paginatedAllocationList']['result']
+            employee_list = []
+            emp_ids = []
+            for pod in pods:
+                podEmployees = pod['pod']['podAllocations']
+                for emp in podEmployees:
+                    emp = emp['employee']
+                    if emp['id'] in emp_ids or emp['email'] == email:
+                        continue
+                    emp_ids.append(emp['id'])
+                    employee_list.append({
+                        "id": emp['id'],
+                        "name": emp['name'],
+                        "email": emp['email'],
+                        "designation": emp['designation']
+                    })
+            return HttpResponse(json.dumps(employee_list), content_type='application/json')
+        except Exception as err:
+            print(err)
+            return HttpResponse(err, content_type='application/json')
+    else:
+        return HttpResponse("Wrong Request Method", content_type='application/json')
+
+
+# get data from dna platform
+def get_all_user_dna(request):
+    if request.method == 'GET':
+        try:
+            print("inside get all users from DNA API")
+
+            # get token to access pods server
+            token = get_access_token(
+                settings.B2B_TOKEN_URL, settings.B2B_CLIENT_ID, settings.B2B_CLIENT_SECRET)
+            print("token :: "+token)
+
+            url = settings.B2B_DASHBOARD_URL
+            payload = "{\"query\":\"query allUsers{\\r\\n    listUsers{\\r\\n        result{\\r\\n            id\\r\\n            email\\r\\n            basicProfile{\\r\\n                id\\r\\n                name\\r\\n                profilePic\\r\\n            }\\r\\n            detailedProfile{\\r\\n                designation{\\r\\n                    id\\r\\n                    name\\r\\n                }\\r\\n                doj\\r\\n            }\\r\\n        }\\r\\n    }\\r\\n}\",\"variables\":{}}"
+            headers = {
+                'x-api-token': token,
+                'Content-Type': 'application/json',
+                # 'Cookie': 'csrftoken=4UqAWHGIzb3UIeTVU90Ogd05ITUmueZObaV726GSwcV2whtGlndmDuz3Yx5OlXPW'
+            }
+            print("Sending data request to dashboard server")
+            response = requests.request(
+                "POST", url, headers=headers, data=payload)
+            response = json.loads(response.text)
+            print("data received from server")
+
+            # Filtering out Users Data
+            all_users = response['data']['listUsers']['result']
+            users = []
+            records_inserted = 0
+            for user in all_users:
+                name, doj, designation, pic = " ", "2023-02-02", " ", " "
+                if user['basicProfile']:
+                    if user['basicProfile']['name']:
+                        name = user['basicProfile']['name']
+                    if user['basicProfile']['profilePic']:
+                        pic = user['basicProfile']['profilePic']
+                if user['detailedProfile']:
+                    if user['detailedProfile']['doj']:
+                        doj = user['detailedProfile']['doj']
+                    if user['detailedProfile']['designation'] and user['detailedProfile']['designation']['name']:
+                        designation = user['detailedProfile']['designation']['name']
+
+                users.append({
+                    "id": user['id'],
+                    "email": user['email'],
+                    "name": name,
+                    "designation": designation,
+                    "doj": doj,
+                    "pic": pic
+                })
+
+                print("Saving "+user['email']+" in db.")
+                isUser = User.objects.filter(email=user['email'])
+                if len(isUser) >= 1:
+                    print("User Already exists :: "+user['email'])
+                    continue
+                elif user['email'] == " " or "@" not in user['email'] or name == " " or designation == " " or doj == "2023-02-02":
+                    print("User Not saved :: "+user['email'])
+                    continue
+                elif " " in name:
+                    fname = name.split(' ', 1)[0]
+                    lname = name.split(' ', 1)[1]
+                else:
+                    fname = name
+                    lname = " "
+
+                user_instance = User(
+                    email=user['email'],
+                    username=user['email'].split("@")[0],
+                    first_name=fname,
+                    last_name=lname
+                )
+                user_instance.save()
+                detail_instance = Detail(
+                    user=user_instance,
+                    employee_id=user['id'],
+                    designation=designation,
+                    doj=doj,
+                    profile_pic=" "
+                )
+                detail_instance.save()
+                print("User Created :: ", str(user_instance))
+                records_inserted = records_inserted + 1
+
+            print(str(records_inserted)+"records inserted into user table")
+            return HttpResponse("Done", content_type='application/json')
+        except Exception as exception:
+            print(exception)
+            return HttpResponse(str(exception), content_type='application/json')
+    else:
+        return HttpResponse("Wrong Request Method", content_type='application/json')
+
+# function to get the access token from the dna server for b2b query
+def get_access_token(token_url, client_id, client_secret):
+    try:
+        print("inside get_access_token function")
+        data = {
+            'grant_type': 'client_credentials',
+            'client_id': client_id,
+            'client_secret': client_secret,
+        }
+        print("sending request for getting access token")
+        response = requests.post(token_url, data=data)
+        token = response.json()['access_token']
+        return token
+    except Exception as err:
+        raise err
+
+
+# Function to get all the users from the organisation
+def get_all_users_organisation(request):
+    if request.method == 'GET':
+        try:
+            result = schema.execute(
+                '''
+                    query allUsers{
+                        allUsers{
+                            firstName
+                            lastName
+                            email
+                            detail{
+                                designation
+                            }
+                        }
+                    }
+                '''
+            )
+            allData = result.data['allUsers'][::-1]
+            return HttpResponse(json.dumps({"data":allData}),content_type="application/json")
+            return HttpResponse("ok", content_type="application/json")
+        except Exception as exception:
+            print(exception)
+            return HttpResponse(str(exception), content_type='application/json')
+    else:
+        return HttpResponse("Wrong Request Method", content_type='application/json', status=400)
