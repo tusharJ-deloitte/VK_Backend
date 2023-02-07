@@ -737,8 +737,9 @@ def get_rank_by_activity(request, activity_id):
         for user in players:
             usr = User.objects.get(id=user['user_id'])
             rating = getMyRating(user['total_score'])
+	    designation = Detail.objects.get(user_id = usr.pk).designation
             result.append({"name": usr.first_name+" " +
-                           usr.last_name, "rating": rating, "score": user['total_score']})
+                           usr.last_name, "rating": rating, "score": user['total_score'],"designation":designation})
         print(result[0:20])
 
         json_response = json.dumps(result[0:20])
@@ -769,8 +770,9 @@ def get_overall_rank(request):
         for user in players:
             usr = User.objects.get(id=user['user_id'])
             rating = getMyRating(user['total_score'])
+	    designation = Detail.objects.get(user_id = usr.pk).designation
             result.append({"name": usr.first_name+" " +
-                           usr.last_name, "rating": rating, "score": user['total_score']})
+                           usr.last_name, "rating": rating, "score": user['total_score'],"designation":designation})
 
         json_response = json.dumps(result[0:20])
         return HttpResponse(json_response, content_type="application/json")
@@ -1250,7 +1252,7 @@ def get_all_users_organisation(request):
             )
             allData = result.data['allUsers'][::-1]
             return HttpResponse(json.dumps({"data":allData}),content_type="application/json")
-            return HttpResponse("ok", content_type="application/json")
+#             return HttpResponse("ok", content_type="application/json")
         except Exception as exception:
             print(exception)
             return HttpResponse(str(exception), content_type='application/json')
