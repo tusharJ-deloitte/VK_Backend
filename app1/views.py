@@ -1083,14 +1083,16 @@ def get_pods_data(request):
             headers = {
                 'x-api-token': token,
                 'Content-Type': 'application/json'
-                # 'Cookie': 'csrftoken=4UqAWHGIzb3UIeTVU90Ogd05ITUmueZObaV726GSwcV2whtGlndmDuz3Yx5OlXPW'
             }
             print("Sending data request to pods server")
-            response = requests.request(
-                "POST", url, headers=headers, data=payload)
-            print("Response received from PODS ==> "+response.text)
-            response = json.loads(response.text)
+            response = requests.post(url, headers=headers, data=payload)
+            print("Response received from PODS")
+            if response.status_code != 200:
+                print(response.text)
+                return HttpResponse(response.text, content_type='application/json',status=response.status_code)
 
+            response = response.json()
+            print(response)
             # filtering PODS Data
             pods = response['data']['paginatedAllocationList']['result']
             employee_list = []
@@ -1137,9 +1139,13 @@ def get_all_user_dna(request):
             print("Sending data request to dashboard server")
             response = requests.request(
                 "POST", url, headers=headers, data=payload)
-            response = json.loads(response.text)
             print("data received from server")
 
+            if response.status_code != 200:
+                print(response.text)
+                return HttpResponse(response.text, content_type='application/json',status=response.status_code)
+
+            response = response.json()
             # Filtering out Users Data
             all_users = response['data']['listUsers']['result']
             users = []
