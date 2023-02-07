@@ -1085,6 +1085,7 @@ def get_pods_data(request):
                 'Content-Type': 'application/json'
                 # 'Cookie': 'csrftoken=4UqAWHGIzb3UIeTVU90Ogd05ITUmueZObaV726GSwcV2whtGlndmDuz3Yx5OlXPW'
             }
+            print("Sending data request to pods server")
             response = requests.request(
                 "POST", url, headers=headers, data=payload)
             print("Response received from PODS ==> "+response.text)
@@ -1112,7 +1113,7 @@ def get_pods_data(request):
             print(err)
             return HttpResponse(err, content_type='application/json')
     else:
-        return HttpResponse("Wrong Request Method", content_type='application/json')
+        return HttpResponse(json.dumps({"error":"Wrong Request Method"}), content_type='application/json',status=400)
 
 
 # get data from dna platform
@@ -1204,7 +1205,7 @@ def get_all_user_dna(request):
             print(exception)
             return HttpResponse(str(exception), content_type='application/json')
     else:
-        return HttpResponse("Wrong Request Method", content_type='application/json')
+        return HttpResponse(json.dumps({"error":"Wrong Request Method"}), content_type='application/json',status=400)
 
 # function to get the access token from the dna server for b2b query
 def get_access_token(token_url, client_id, client_secret):
@@ -1248,4 +1249,4 @@ def get_all_users_organisation(request):
             print(exception)
             return HttpResponse(str(exception), content_type='application/json')
     else:
-        return HttpResponse("Wrong Request Method", content_type='application/json', status=400)
+        return HttpResponse(json.dumps({"error":"Wrong Request Method"}), content_type='application/json', status=400)
