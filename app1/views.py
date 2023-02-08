@@ -78,10 +78,10 @@ def getMyRating(score):
         return 'Diamond'
 
 
-def is_admin(request, userId):
+def is_admin(request, user_email):
     if request.method == 'GET':
         try:
-            user = User.objects.get(id=userId)
+            user = User.objects.get(email=user_email)
             adminUser = []
             if user.is_superuser:
                 adminUser.append({"isAdmin": 1})
@@ -457,9 +457,9 @@ def delete_teams(request, team_id):
         return HttpResponse("wrong request", content_type='application/json')
 
 
-def manage_teams(request, user_id):
+def manage_teams(request, user_email):
     if request.method == 'GET':
-
+        user_id = User.objects.get(email=user_email).pk
         players = Player.objects.filter(user_id=user_id)
 
         teams = []
@@ -737,7 +737,8 @@ def get_rank_by_activity(request, activity_id):
         for user in players:
             usr = User.objects.get(id=user['user_id'])
             rating = getMyRating(user['total_score'])
-	    designation = Detail.objects.get(user_id = usr.pk).designation
+            designation = Detail.objects.get(user_id = usr.pk).designation
+	        
             result.append({"name": usr.first_name+" " +
                            usr.last_name, "rating": rating, "score": user['total_score'],"designation":designation})
         print(result[0:20])
@@ -770,7 +771,7 @@ def get_overall_rank(request):
         for user in players:
             usr = User.objects.get(id=user['user_id'])
             rating = getMyRating(user['total_score'])
-	    designation = Detail.objects.get(user_id = usr.pk).designation
+            designation = Detail.objects.get(user_id = usr.pk).designation
             result.append({"name": usr.first_name+" " +
                            usr.last_name, "rating": rating, "score": user['total_score'],"designation":designation})
 
@@ -873,8 +874,9 @@ def get_star_of_week(request):
         return HttpResponse("wrong request", content_type='application/json')
 
 
-def get_events_participated(request, user_id):
+def get_events_participated(request, user_email):
     if request.method == "GET":
+        user_id = User.objects.get(email=user_email).pk
         events = Event.objects.all()
         total = events.__len__()
         print(total)
@@ -919,8 +921,9 @@ def get_events_participated(request, user_id):
         return HttpResponse("wrong request", content_type='application/json')
 
 
-def get_my_rank(request, user_id):
+def get_my_rank(request, user_email):
     if request.method == 'GET':
+        user_id = User.objects.get(email=user_email).pk
         players = Player.objects.values("user_id").annotate(
             total_score=Sum('score')).order_by("-total_score")
 
@@ -938,8 +941,9 @@ def get_my_rank(request, user_id):
         return HttpResponse("wrong request", content_type='application/json')
 
 
-def get_top_events_participated(request, user_id):
+def get_top_events_participated(request, user_email):
     if request.method == "GET":
+        user_id = User.objects.get(email=user_email).pk
         players = Player.objects.filter(user_id=user_id).order_by("-score")
         result = []
         for player in players:
@@ -960,8 +964,9 @@ def get_top_events_participated(request, user_id):
         return HttpResponse("wrong request", content_type='application/json')
 
 
-def get_my_score(request, user_id):
+def get_my_score(request, user_email):
     if request.method == 'GET':
+        user_id = User.objects.get(email=user_email).pk
         players = Player.objects.filter(user_id=user_id).values("user_id").annotate(
             total_score=Sum('score')).order_by("-total_score")
         res = {}
@@ -976,8 +981,9 @@ def get_my_score(request, user_id):
         return HttpResponse("wrong request", content_type='application/json')
 
 
-def get_top_events_by_activity(request, user_id, activity_id):
+def get_top_events_by_activity(request, user_email, activity_id):
     if request.method == "GET":
+        user_id = User.objects.get(email=user_email).pk
         players = Player.objects.filter(
             user_id=user_id, activity_id=activity_id).order_by("-score")
         result = []

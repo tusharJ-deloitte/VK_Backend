@@ -3,7 +3,7 @@ from app1 import views
 
 urlpatterns = [
     path('', views.home, name='home'),
-    path('is_admin/<int:userId>', views.is_admin, name='is_admin'),
+    path('is_admin/<str:user_email>', views.is_admin, name='is_admin'),
     # category
     path('get_category/<int:pk>', views.get_category, name='get_category'),
     path('create_category', views.create_category, name='create_category'),
@@ -49,18 +49,18 @@ urlpatterns = [
     path('star_of_week', views.get_star_of_week, name='star_of_week'),
 
     # personal stats
-    path('events_participated/<int:user_id>', views.get_events_participated,
+    path('events_participated/<str:user_email>', views.get_events_participated,
          name='events_participated'),
-    path('my_rank/<int:user_id>', views.get_my_rank,
+    path('my_rank/<str:user_email>', views.get_my_rank,
          name='my_rank'),
 
 
     # leaderboard-personal
-    path('my_top_events/<int:user_id>', views.get_top_events_participated,
+    path('my_top_events/<str:user_email>', views.get_top_events_participated,
          name='my_top_events'),
-    path('get_my_score/<int:user_id>', views.get_my_score,
+    path('get_my_score/<str:user_email>', views.get_my_score,
          name='get_my_score'),
-    path('get_top_events_activity/<int:user_id>/<int:activity_id>', views.get_top_events_by_activity,
+    path('get_top_events_activity/<str:user_email>/<int:activity_id>', views.get_top_events_by_activity,
          name='get_top_events_activity'),
 
 
