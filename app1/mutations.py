@@ -1,6 +1,6 @@
 import graphene
-from app1.types import UserType,CategoryType, ActivityType, TeamType, PlayerType, EventType, RegistrationType, UploadType
-from .models import Detail,User,Category, Activity, Team, Player, Event, Registration, Upload
+from app1.types import UserType,CategoryType, ActivityType, TeamType, PlayerType, EventType, RegistrationType, UploadType,PodType
+from .models import Detail,User,Category, Activity, Team, Player, Event, Registration, Upload,Pod
 import datetime
 from django.contrib.auth.models import User
 
@@ -386,3 +386,20 @@ class CreateUpload(graphene.Mutation):
         return CreateUpload(upload_instance)
 
 
+class CreatePod(graphene.Mutation):
+    class Arguments:
+        pod_id = graphene.Int(required=True)
+        user_email = graphene.String(required=True)
+        name = graphene.String(required=True)
+        size = graphene.Int(required=True)
+
+    pod = graphene.Field(PodType)
+    def mutate(self,info,pod_id,user_email,name,size):
+        pod_instance = Pod(
+            pod_id = pod_id,
+            user = User.objects.get(email = user_email),
+            pod_name = name,
+            pod_size = size
+        )
+        pod_instance.save()
+        return CreatePod(pod_instance)

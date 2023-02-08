@@ -59,7 +59,7 @@ class Event(models.Model):
     activity = models.ForeignKey(Activity, on_delete=models.CASCADE)
     created_on = models.DateTimeField(default=datetime.datetime.now())
     activity_mode = models.TextField(max_length=20, default='online')
-    name = models.TextField(max_length=20)
+    name = models.TextField(max_length=20,unique=True)
     start_date = models.DateField()
     end_date = models.DateField()
     start_time = models.TimeField()
@@ -113,6 +113,18 @@ class Upload(models.Model):
 
     def __str__(self):
         return self.user.first_name
+
+class Pod(models.Model):
+    pod_id = models.IntegerField(default=0)
+    pod_name = models.TextField(null=True,blank=True)
+    pod_size = models.IntegerField(default = 0)
+
+    user = models.ForeignKey(User,on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.pod_name
+    
+
 
 # class Logo(models.Model):
 #     title = models.CharField(

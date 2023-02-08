@@ -1,10 +1,11 @@
 import graphene
-from .models import Detail, Category, Activity, Team, Player, Event, Registration, Upload
-from app1.types import DetailType, UserType, CategoryType, ActivityType, TeamType, PlayerType, EventType, RegistrationType, UploadType
-from .mutations import CreateUser, CreateCategory, UpdateCategory, DeleteCategory, CreateActivity, UpdateActivity, DeleteActivity, CreateTeam, CreatePlayer, UpdatePlayer, DeletePlayer, CreateEvent, CreateRegistration, UpdateTeamScores, CreateUpload
+from .models import Detail, Category, Activity, Team, Player, Event, Registration, Upload, Pod
+from app1.types import DetailType, UserType, CategoryType, ActivityType, TeamType, PlayerType, EventType, RegistrationType, UploadType,PodType
+from .mutations import CreateUser, CreateCategory, UpdateCategory, DeleteCategory, CreateActivity, UpdateActivity, DeleteActivity, CreateTeam, CreatePlayer, UpdatePlayer, DeletePlayer, CreateEvent, CreateRegistration, UpdateTeamScores, CreateUpload,CreatePod
 from django.contrib.auth.models import User
 
 class Query(graphene.ObjectType):
+
     detail = graphene.Field(DetailType,id=graphene.ID(required=True))
     all_details = graphene.List(DetailType)
     user = graphene.Field(UserType, id=graphene.ID(required=True))
@@ -29,6 +30,8 @@ class Query(graphene.ObjectType):
 
     upload = graphene.Field(UploadType, id=graphene.ID(required=True))
     all_uploads = graphene.List(UploadType)
+    pod = graphene.Field(PodType,id=graphene.ID(required=True))
+    all_pods = graphene.List(PodType)
 
     def resolve_all_detais(self,info,**kwargs):
         return Detail.objects.all()
@@ -84,6 +87,13 @@ class Query(graphene.ObjectType):
     def resolve_all_uploads(self, info, **kwargs):
         return Upload.objects.all()
 
+    def resolve_pod(self, info, id):
+        return Pod.objects.get(id=id)
+
+    def resolve_all_pods(self, info, **kwargs):
+        return Pod.objects.all()
+    
+
 
 class Mutation(graphene.ObjectType):
     #category mutations
@@ -118,6 +128,8 @@ class Mutation(graphene.ObjectType):
     create_upload = CreateUpload.Field()
 
     create_user = CreateUser.Field()
+
+    create_pod = CreatePod.Field()
 
 
 schema = graphene.Schema(query=Query, mutation=Mutation)

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Category, Activity, Team, Player, Event, Registration, Upload, Detail
+from .models import Post, Category, Activity, Team, Player, Event, Registration, Upload, Detail,Pod
 from django.contrib.auth.models import User
 from django.contrib.auth.admin import UserAdmin
 
@@ -55,3 +55,7 @@ class PlayerAdmin(admin.ModelAdmin):
 @admin.register(Upload)
 class UploadAdmin(admin.ModelAdmin):
     list_display = ['id', 'user_id', 'uploaded_file', 'file_name']
+
+@admin.register(Pod)
+class PodAdmin(admin.ModelAdmin):
+    list_display = ['pod_id', 'user', 'pod_name', 'pod_size']
