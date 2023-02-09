@@ -73,7 +73,7 @@ urlpatterns = [
 
 
     # integration PODS & DNA
-    path("get_pods", views.get_pods_data, name='get_pods_data'),
+    path("get_pods/<str:user_email>", views.get_pods, name='get_pods_data'),
     path("get_users_dna", views.get_all_user_dna, name='get_all_user_dna'),
     path("get_users_org", views.get_all_users_organisation,
          name='get_all_users_organisation'),

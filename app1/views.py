@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Detail, Activity, Player, Team, Category, Event, Registration, Upload, IndRegistration
+from .models import Detail, Activity, Player, Team, Category, Event, Registration, Upload, IndRegistration, Pod
 from .serializers import PostSerializer
 from rest_framework.renderers import JSONRenderer
 from django.http import HttpResponse, JsonResponse
@@ -498,9 +498,9 @@ def manage_teams(request, user_email):
                 user_email = user_object.email
                 p = {
 
-                    "first_name": first_name,
-                    "last_name": last_name,
-                    "user_email": user_email
+                    "firstName": first_name,
+                    "lastName": last_name,
+                    "email": user_email
                 }
                 team_mem.append(p)
 
@@ -1228,7 +1228,7 @@ def get_files_list(request):
 # get data from PODS platform
 
 
-def get_pods_data(request):
+def get_podssssss_data(request):
     if request.method == 'POST':
         try:
             body = request.body
@@ -1396,6 +1396,68 @@ def get_access_token(token_url, client_id, client_secret):
         raise err
 
 
+def get_pods(request, user_email):
+    if request.method == "GET":
+        print("inside get pods data")
+        user = User.objects.get(email=user_email)
+        pod_name = Pod.objects.get(user=user).pod_name
+        print(pod_name)
+        members = [member.user for member in Pod.objects.filter(
+            pod_name=pod_name)]
+        result = []
+        print(members)
+
+        for member in members:
+            if member.email == user_email:
+                print("email of logged in user")
+                continue
+
+            designation = Detail.objects.get(user_id=member.pk).designation
+            print(designation)
+            result.append({
+                "firstName": member.first_name,
+                "lastName": member.last_name,
+                "email": member.email,
+                "detail": {
+                    "designation": designation
+                }
+            })
+
+        return HttpResponse(json.dumps({"data": result}), content_type="application/json")
+
+    else:
+        return HttpResponse(json.dumps({"error": "Wrong Request Method"}), content_type='application/json', status=400)
+
+
+def get_pods_data(request, user_email):
+    if request.method == "GET":
+
+        user = User.objects.get(email=user_email)
+        pod_name = Pod.objects.get(user=user).pod_name
+        members = [member.user for member in Pod.objects.filter(
+            pod_name=pod_name)]
+        result = []
+
+        for member in members:
+            if member.email == user_email:
+                print("email of logged in user")
+                continue
+
+            designation = Detail.objects.get(user_id=member.pk).designation
+            result.append({
+                "firstName": member.first_name,
+                "lastName": member.last_name,
+                "email": member.email,
+                "detail": {
+                    "designation": designation
+                }
+            })
+        return HttpResponse(json.dumps({"data": result}), content_type="application/json")
+
+    else:
+        return HttpResponse(json.dumps({"error": "Wrong Request Method"}), content_type='application/json', status=400)
+
+
 # Function to get all the users from the organisation
 def get_all_users_organisation(request):
     if request.method == 'GET':
@@ -1414,6 +1476,7 @@ def get_all_users_organisation(request):
                     }
                 '''
             )
+
             allData = result.data['allUsers'][::-1]
             return HttpResponse(json.dumps({"data": allData}), content_type="application/json")
 #             return HttpResponse("ok", content_type="application/json")

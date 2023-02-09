@@ -126,6 +126,18 @@ class Upload(models.Model):
     def __str__(self):
         return self.user.first_name
 
+
+class Pod(models.Model):
+    pod_id = models.IntegerField(default=0)
+    pod_name = models.TextField(null=True, blank=True)
+    pod_size = models.IntegerField(default=0)
+
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.pod_name
+
+
 # class Logo(models.Model):
 #     title = models.CharField(
 #         max_length=80, blank=False, null=False)
