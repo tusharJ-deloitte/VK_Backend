@@ -1,3 +1,4 @@
+import re
 from django.shortcuts import render
 from .models import Detail, Activity, Player, Team, Category, Event, Registration, Upload, IndRegistration, Pod
 from .serializers import PostSerializer
@@ -1485,3 +1486,47 @@ def get_all_users_organisation(request):
             return HttpResponse(str(exception), content_type='application/json')
     else:
         return HttpResponse(json.dumps({"error": "Wrong Request Method"}), content_type='application/json', status=400)
+
+
+def sns(request):
+    if request.method == "POST":
+        receiver = "sweetasingh@deloitte.com"
+        subject = "test-email"
+        message = "test-email"
+        topic_name = re.split(r'[.@]', receiver)[0]
+        print(topic_name)
+        sns = boto3.client("sns", region_name="ap-northeast-1", aws_access_key_id='AKIAWKWVVT6XDSKL7SRQ',
+                           aws_secret_access_key='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')
+        print(sns)
+        response = sns.create_topic(Name=topic_name)
+        print(response)
+        topic_arn = response["TopicArn"]
+        print(topic_arn)
+        response = sns.list_subscriptions_by_topic(TopicArn=topic_arn)
+        subscriptions = response["Subscriptions"]
+        print(subscriptions)
+        if len(subscriptions) == 0:
+            print("inside1")
+            response = sns.subscribe(
+                TopicArn=topic_arn,
+                Protocol='email',
+                Endpoint=receiver
+            )
+            return HttpResponse(json.dumps({
+                'statusCode': 400,
+                'body': 'User is not subscribed, So user have to manually subscribe to the service.'
+            }), content_type="application/json")
+        elif subscriptions[0]['Endpoint'] == receiver and subscriptions[0]['SubscriptionArn'] == 'PendingConfirmation':
+            print("inside4")
+            return HttpResponse(json.dumps({
+                'statusCode': 400,
+                'body': 'User is still not subscribed, So user have to manually subscribe to the service. Check spam folder!'
+            }), content_type="application/json")
+        else:
+            print("inside3")
+            sns.publish(
+                TopicArn=topic_arn,
+                Message=message,
+                Subject=subject
+            )
+            return HttpResponse(json.dumps({'body': 'email sent'}), content_type="application/json")

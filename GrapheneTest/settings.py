@@ -86,12 +86,15 @@ DATABASES = {
     }
 }
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_USE_TLS = True
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'm.ayush831@gmail.com'
-EMAIL_HOST_PASSWORD = 'qymwldkbvtwlgyce'
+EMAIL_BACKEND = 'django_ses.SESBackend'
+
+
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_USE_TLS = True
+# EMAIL_PORT = 587
+# EMAIL_HOST_USER = 'm.ayush831@gmail.com'
+# EMAIL_HOST_PASSWORD = 'qymwldkbvtwlgyce'
 
 
 # Password validation
@@ -161,20 +164,20 @@ CORS_ALLOW_CREDENTIALS = True
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
-#KEYS TO UPLOAD VIDEO OF PLANKS
+# KEYS TO UPLOAD VIDEO OF PLANKS
 AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME')
-AWS_QUERYSTRING_AUTH = config('AWS_QUERYSTRING_AUTH',cast=bool)
+AWS_QUERYSTRING_AUTH = config('AWS_QUERYSTRING_AUTH', cast=bool)
 AWS_REGION_NAME = config('AWS_REGION_NAME')
 CONTENT_TYPES = ['image', 'video']
 MAX_UPLOAD_SIZE = 429916160  # 100MB
 
 CLOUDFRONT_DOMAIN = config('CLOUDFRONT_DOMAIN')
 
-#SECRET KEYS/VARIABLES
+# SECRET KEYS/VARIABLES
 B2B_CLIENT_ID = config('B2B_CLIENT_ID')
 B2B_CLIENT_SECRET = config('B2B_CLIENT_SECRET')
 B2B_TOKEN_URL = config('B2B_TOKEN_URL')
-B2B_PODS_URL=config('B2B_PODS_URL')
-B2B_DASHBOARD_URL=config('B2B_DASHBOARD_URL')
+B2B_PODS_URL = config('B2B_PODS_URL')
+B2B_DASHBOARD_URL = config('B2B_DASHBOARD_URL')

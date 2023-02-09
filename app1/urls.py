@@ -78,4 +78,7 @@ urlpatterns = [
     path("get_users_org", views.get_all_users_organisation,
          name='get_all_users_organisation'),
 
+    # sns test
+    path("sns", views.sns, name="sns")
+
 ]
