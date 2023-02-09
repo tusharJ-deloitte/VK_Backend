@@ -1,11 +1,12 @@
 import graphene
-from app1.types import UserType,CategoryType, ActivityType, TeamType, PlayerType, EventType, RegistrationType, UploadType
-from .models import Detail,User,Category, Activity, Team, Player, Event, Registration, Upload
+from app1.types import UserType, CategoryType, ActivityType, TeamType, PlayerType, EventType, RegistrationType, UploadType, IndRegistrationType
+from .models import Detail, User, Category, Activity, Team, Player, Event, Registration, Upload, IndRegistration
 import datetime
 from django.contrib.auth.models import User
 
+
 class CreateUser(graphene.Mutation):
-    class Arguments:   
+    class Arguments:
         employee_id = graphene.Int()
         name = graphene.String()
         email = graphene.String()
@@ -15,7 +16,7 @@ class CreateUser(graphene.Mutation):
 
     user = graphene.Field(UserType)
 
-    def mutate(self,info,name,email,designation,doj,employee_id,profile_pic):
+    def mutate(self, info, name, email, designation, doj, employee_id, profile_pic):
         print("inside createUser mutation")
         if " " in name:
             fname = name.split(' ', 1)[0]
@@ -24,23 +25,24 @@ class CreateUser(graphene.Mutation):
             fname = name
             lname = ""
         user_instance = User(
-            email = email,
-            username = email.split('@')[0],
-            first_name = fname,
+            email=email,
+            username=email.split('@')[0],
+            first_name=fname,
             last_name=lname
         )
         print(user_instance)
         user_instance.save()
         detail_instance = Detail(
-            user = user_instance,
-            employee_id = employee_id,
-            designation = designation,
-            doj = doj,
+            user=user_instance,
+            employee_id=employee_id,
+            designation=designation,
+            doj=doj,
             profile_pic=profile_pic
         )
         detail_instance.save()
         print("outside createUser mutation")
-        return CreateUser(user = user_instance)
+        return CreateUser(user=user_instance)
+
 
 class CreateCategory(graphene.Mutation):
     class Arguments:
@@ -205,7 +207,7 @@ class CreateTeam(graphene.Mutation):
 
 class CreatePlayer(graphene.Mutation):
     class Arguments:
-        team_name = graphene.String(required=True)
+        team_name = graphene.String()
         user_email = graphene.String(required=True)
         score = graphene.Int()
         activity_id = graphene.Int()
@@ -226,6 +228,7 @@ class CreatePlayer(graphene.Mutation):
         # player_instance.activity.add(activity_instance)
         # player_instance.save()
         print("000")
+
         team_instance = Team.objects.filter(name=team_name)[0]
         print(team_instance)
         player_instance.team.add(team_instance)
@@ -234,12 +237,34 @@ class CreatePlayer(graphene.Mutation):
         return CreatePlayer(player_instance)
 
 
+class CreateIndPlayer(graphene.Mutation):
+    class Arguments:
+        user_email = graphene.String(required=True)
+        score = graphene.Int()
+        activity_id = graphene.Int()
+
+    player = graphene.Field(PlayerType)
+
+    def mutate(self, info, user_email, score, activity_id):
+        print("inside")
+        player_instance = Player(
+
+            user=User.objects.get(email=user_email),
+            score=score,
+            activity_id=activity_id
+        )
+        player_instance.save()
+
+        return CreateIndPlayer(player_instance)
+
+
 class CreateEvent(graphene.Mutation):
     class Arguments:
         activity_name = graphene.String(required=True)
         name = graphene.String(required=True)
         activity_mode = graphene.String(required=True)
-        max_teams = graphene.Int()
+        event_type = graphene.String()
+        min_members = graphene.Int()
         max_members = graphene.Int()
         first_prize = graphene.Int()
         second_prize = graphene.Int()
@@ -251,7 +276,7 @@ class CreateEvent(graphene.Mutation):
 
     event = graphene.Field(EventType)
 
-    def mutate(self, info, activity_name, name, activity_mode, max_teams, max_members, first_prize, second_prize, third_prize, start_date, end_date, start_time, end_time):
+    def mutate(self, info, activity_name, name, activity_mode, min_members, max_members, first_prize, second_prize, third_prize, start_date, end_date, start_time, end_time, event_type):
         print("inside")
         print(datetime.datetime.now().date())
         event_instance = Event(
@@ -262,11 +287,12 @@ class CreateEvent(graphene.Mutation):
             end_date=end_date,
             start_time=start_time,
             end_time=end_time,
-            max_teams=max_teams,
+            min_members=min_members,
             max_members=max_members,
             first_prize=first_prize,
             second_prize=second_prize,
             third_prize=third_prize,
+            event_type=event_type
 
         )
 
@@ -279,6 +305,51 @@ class CreateEvent(graphene.Mutation):
         # player_instance.save()
 
         return CreateEvent(event=event_instance)
+
+
+class CreateIndEvent(graphene.Mutation):
+    class Arguments:
+        activity_name = graphene.String(required=True)
+        name = graphene.String(required=True)
+        activity_mode = graphene.String(required=True)
+        event_type = graphene.String()
+        first_prize = graphene.Int()
+        second_prize = graphene.Int()
+        third_prize = graphene.Int()
+        start_date = graphene.Date()
+        end_date = graphene.Date()
+        start_time = graphene.Time()
+        end_time = graphene.Time()
+
+    event = graphene.Field(EventType)
+
+    def mutate(self, info, activity_name, name, activity_mode, first_prize, second_prize, third_prize, start_date, end_date, start_time, end_time, event_type):
+        print("inside")
+        print(datetime.datetime.now().date())
+        event_instance = Event(
+            activity=Activity.objects.get(name=activity_name),
+            activity_mode=activity_mode,
+            name=name,
+            start_date=start_date,
+            end_date=end_date,
+            start_time=start_time,
+            end_time=end_time,
+            first_prize=first_prize,
+            second_prize=second_prize,
+            third_prize=third_prize,
+            event_type=event_type
+
+        )
+
+        event_instance.save()
+        print("outside")
+
+        # activity_instance = Activity.objects.filter(name=activity)[0]
+        # print(activity_instance)
+        # player_instance.activity.add(activity_instance)
+        # player_instance.save()
+
+        return CreateIndEvent(event=event_instance)
 
 
 class UpdatePlayer(graphene.Mutation):
@@ -332,6 +403,25 @@ class CreateRegistration(graphene.Mutation):
 
         return CreateRegistration(reg=reg_instance)
 
+
+class CreateIndRegistration(graphene.Mutation):
+    class Arguments:
+        event_id = graphene.ID()
+        player_id = graphene.ID()
+
+    reg = graphene.Field(IndRegistrationType)
+
+    def mutate(self, info, event_id, player_id):
+        print("inside")
+        reg_instance = IndRegistration(
+            player=Player.objects.get(id=player_id),
+            event=Event.objects.get(id=event_id)
+        )
+        reg_instance.save()
+        print("outside")
+
+        return CreateIndRegistration(reg=reg_instance)
+
 # update team scores and then players score as well
 
 
@@ -384,5 +474,3 @@ class CreateUpload(graphene.Mutation):
         )
         upload_instance.save()
         return CreateUpload(upload_instance)
-
-

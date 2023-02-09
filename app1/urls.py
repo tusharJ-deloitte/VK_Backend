@@ -35,6 +35,7 @@ urlpatterns = [
     path('event/get_all_registrations/<int:event_id>',
          views.get_all_registrations, name='get_all_registrations'),
     path('event/update_score', views.update_score, name="update_score"),
+    path('event/register/ind', views.register_individual, name='register'),
 
     # leaderboard-overall
     path('get_rank_by_activity/<int:activity_id>', views.get_rank_by_activity,
@@ -71,10 +72,10 @@ urlpatterns = [
     path('get_files_list', views.get_files_list, name="get_files_list"),
 
 
-     #integration PODS & DNA
-     path("get_pods",views.get_pods_data,name='get_pods_data'),
-     path("get_users_dna", views.get_all_user_dna, name='get_all_user_dna'),
-     path("get_users_org", views.get_all_users_organisation,
-          name='get_all_users_organisation'),
+    # integration PODS & DNA
+    path("get_pods", views.get_pods_data, name='get_pods_data'),
+    path("get_users_dna", views.get_all_user_dna, name='get_all_user_dna'),
+    path("get_users_org", views.get_all_users_organisation,
+         name='get_all_users_organisation'),
 
 ]

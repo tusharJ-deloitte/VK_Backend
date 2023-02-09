@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Detail, Activity, Player, Team, Category, Event, Registration, Upload
+from .models import Detail, Activity, Player, Team, Category, Event, Registration, Upload, IndRegistration
 from .serializers import PostSerializer
 from rest_framework.renderers import JSONRenderer
 from django.http import HttpResponse, JsonResponse
@@ -316,45 +316,49 @@ def create_teams(request):
         stream = io.BytesIO(json_data)
         python_data = JSONParser().parse(stream)
         print(python_data)
+        try:
+            name = Team.objects.get(name=python_data['name'])
+            return HttpResponse("Team name already exists", content_type='application/json')
+        except Team.DoesNotExist:
 
-        result = schema.execute(
-            '''
-            mutation createTeams($name : String!,$activity: String!,$currentSize:Int!,$teamLead:String!,$teamLogo:String!){
-               createTeam(name:$name,activity:$activity,teamLead:$teamLead,currentSize:$currentSize, teamLogo:$teamLogo){
-                    team{
-                        id
+            result = schema.execute(
+                '''
+                mutation createTeams($name : String!,$activity: String!,$currentSize:Int!,$teamLead:String!,$teamLogo:String!){
+                createTeam(name:$name,activity:$activity,teamLead:$teamLead,currentSize:$currentSize, teamLogo:$teamLogo){
+                        team{
+                            id
+                        }
                     }
+
                 }
 
-            }
 
+                ''', variables={'name': python_data["name"], 'activity': python_data["activity"], 'currentSize': python_data["currentSize"], 'teamLead': python_data["teamLead"], 'teamLogo': python_data["team_logo"]}
+            )
+            activity_id = Activity.objects.get(name=python_data["activity"]).pk
+            print(activity_id)
 
-            ''', variables={'name': python_data["name"], 'activity': python_data["activity"], 'currentSize': python_data["currentSize"], 'teamLead': python_data["teamLead"], 'teamLogo': python_data["team_logo"]}
-        )
-        activity_id = Activity.objects.get(name=python_data["activity"]).pk
-        print(activity_id)
+            # team = Team.objects.get(name = python_data["name"])
+            # team.team_logo = Te
+            for item in range(0, python_data["currentSize"]):
+                user_email = python_data['players'][item]
+                result1 = schema.execute(
+                    '''
+                            mutation createPlayer($teamName:String!,$userEmail:String!,$score:Int!,$activityId:Int!){
+                                createPlayer(teamName:$teamName,userEmail:$userEmail,score:$score,activityId:$activityId){
 
-        # team = Team.objects.get(name = python_data["name"])
-        # team.team_logo = Te
-        for item in range(0, python_data["currentSize"]):
-            user_email = python_data['players'][item]
-            result1 = schema.execute(
-                '''
-                        mutation createPlayer($teamName:String!,$userEmail:String!,$score:Int!,$activityId:Int!){
-                            createPlayer(teamName:$teamName,userEmail:$userEmail,score:$score,activityId:$activityId){
-
-                                player{
-                                    id
-                                    score
+                                    player{
+                                        id
+                                        score
+                                    }
                                 }
                             }
-                        }
 
-                        ''', variables={'teamName': python_data["name"], 'userEmail': user_email, 'score': 0, 'activityId': activity_id}
-            )
+                            ''', variables={'teamName': python_data["name"], 'userEmail': user_email, 'score': 0, 'activityId': activity_id}
+                )
 
-        json_post = json.dumps(result.data)
-        return HttpResponse(json_post, content_type='application/json')
+            json_post = json.dumps(result.data)
+            return HttpResponse(json_post, content_type='application/json')
     else:
         return HttpResponse("wrong request", content_type='application/json')
 
@@ -537,21 +541,31 @@ def create_event(request):
         stream = io.BytesIO(json_data)
         python_data = JSONParser().parse(stream)
         print(python_data)
-
-        result = schema.execute(
-            '''
-            mutation createEvent($name : String!,$activityName: String!,$activityMode: String!,$maxTeams:Int!,$maxMembers:Int!,$firstPrize:Int!,$secondPrize:Int!,$thirdPrize:Int!,$startDate:Date!,$endDate:Date!,$startTime:Time!,$endTime:Time!){
-               createEvent(name:$name,activityName:$activityName,activityMode:$activityMode,maxTeams:$maxTeams,maxMembers:$maxMembers, firstPrize:$firstPrize,secondPrize:$secondPrize,thirdPrize:$thirdPrize,startTime:$startTime,endTime:$endTime,startDate:$startDate,endDate:$endDate){
+        result = {}
+        if "minMembers" in python_data:
+            result = schema.execute(
+                '''
+            mutation createEvent($name : String!,$activityName: String!,$activityMode: String!,$minMembers:Int!,$maxMembers:Int!,$firstPrize:Int!,$secondPrize:Int!,$thirdPrize:Int!,$startDate:Date!,$endDate:Date!,$startTime:Time!,$endTime:Time!,$eventType: String!){
+               createEvent(name:$name,activityName:$activityName,activityMode:$activityMode,minMembers:$minMembers,maxMembers:$maxMembers, firstPrize:$firstPrize,secondPrize:$secondPrize,thirdPrize:$thirdPrize,startTime:$startTime,endTime:$endTime,startDate:$startDate,endDate:$endDate,eventType:$eventType){
                     event{
                         name
                     }
                 }
-
             }
-
-
-            ''', variables={'name': python_data["name"], 'activityName': python_data["activityName"], 'activityMode': python_data['activityMode'], 'maxTeams': python_data["maxTeams"], 'maxMembers': python_data["maxMembers"], 'firstPrize': python_data["firstPrize"], 'secondPrize': python_data["secondPrize"], 'thirdPrize': python_data["thirdPrize"], 'startDate': python_data['startDate'], 'endDate': python_data['endDate'], 'startTime': python_data['startTime'], 'endTime': python_data['endTime']}
-        )
+            ''', variables={'name': python_data["name"], 'activityName': python_data["activityName"], 'activityMode': python_data['activityMode'], 'minMembers': python_data["minMembers"], 'maxMembers': python_data["maxMembers"], 'firstPrize': python_data["firstPrize"], 'secondPrize': python_data["secondPrize"], 'thirdPrize': python_data["thirdPrize"], 'startDate': python_data['startDate'], 'endDate': python_data['endDate'], 'startTime': python_data['startTime'], 'endTime': python_data['endTime'], 'eventType': python_data["eventType"]}
+            )
+        else:
+            result = schema.execute(
+                '''
+            mutation createIndEvent($name : String!,$activityName: String!,$activityMode: String!,$firstPrize:Int!,$secondPrize:Int!,$thirdPrize:Int!,$startDate:Date!,$endDate:Date!,$startTime:Time!,$endTime:Time!,$eventType: String!){
+               createIndEvent(name:$name,activityName:$activityName,activityMode:$activityMode,firstPrize:$firstPrize,secondPrize:$secondPrize,thirdPrize:$thirdPrize,startTime:$startTime,endTime:$endTime,startDate:$startDate,endDate:$endDate,eventType:$eventType){
+                    event{
+                        name
+                    }
+                }
+            }
+            ''', variables={'name': python_data["name"], 'activityName': python_data["activityName"], 'activityMode': python_data['activityMode'], 'firstPrize': python_data["firstPrize"], 'secondPrize': python_data["secondPrize"], 'thirdPrize': python_data["thirdPrize"], 'startDate': python_data['startDate'], 'endDate': python_data['endDate'], 'startTime': python_data['startTime'], 'endTime': python_data['endTime'], 'eventType': python_data["eventType"]}
+            )
 
         json_post = json.dumps(result.data)
         return HttpResponse(json_post, content_type='application/json')
@@ -567,8 +581,9 @@ def get_all_events(request):
                         id,
                         createdOn,
                         name,
+                        eventType,
                         activityMode,
-                        maxTeams,
+                        minMembers,
                         maxMembers,
                         curParticipation,
                         startDate,
@@ -670,30 +685,100 @@ def register(request):
         return HttpResponse("wrong request", content_type='application/json')
 
 
+def register_individual(request):
+    if request.method == 'POST':
+        json_data = request.body
+        stream = io.BytesIO(json_data)
+        python_data = JSONParser().parse(stream)
+        print(python_data)
+        activity_id = Event.objects.get(id=python_data['event_id']).activity.pk
+        print(activity_id)
+
+        result = schema.execute(
+            '''
+                        mutation createIndPlayer($userEmail:String!,$score:Int!,$activityId:Int!){
+                            createIndPlayer(userEmail:$userEmail,score:$score,activityId:$activityId){
+                                player{
+                                    id
+                                }
+                            }
+                        }
+
+                        ''', variables={'userEmail': python_data['user_email'], 'score': 0, 'activityId': activity_id}
+        )
+
+        player_id = result.data['createIndPlayer']['player']['id']
+        result2 = schema.execute(
+            '''
+            mutation createIndRegistration($eventId : ID!,$playerId: ID!){
+               createIndRegistration(eventId:$eventId,playerId:$playerId){
+                    reg{
+                        id
+                    }
+                }
+
+            }
+
+
+            ''', variables={'eventId': python_data["event_id"], 'playerId': player_id}
+        )
+        json_post = json.dumps(result2.data)
+
+        return HttpResponse(json_post, content_type='application/json')
+    else:
+        return HttpResponse("wrong request", content_type='application/json')
+
+
 # get all registrations for a event
 def get_all_registrations(request, event_id):
     if request.method == 'GET':
-        result = schema.execute(
-            '''
-            query{
-                allRegistrations{
-                    event{
-                        id
-                    },
-                    team{
-                        id,
-                        name
-                    }
-                }
-            }
-            ''',
-        )
+        try:
+            event = Event.objects.get(id=event_id)
+        except Event.DoesNotExist:
+            return HttpResponse("wrong request", content_type='application/json')
 
         all_teams = []
-        for regs in result.data["allRegistrations"]:
-            e_id = int(regs["event"]["id"])
-            if e_id == event_id:
-                all_teams.append(regs["team"])
+        if event.event_type == "Group":
+            result = schema.execute(
+                '''
+                query{
+                    allRegistrations{
+                        event{
+                            id
+                        },
+                        team{
+                            id,
+                            name
+                        }
+                    }
+                }
+            ''',
+            )
+            for regs in result.data["allRegistrations"]:
+                e_id = int(regs["event"]["id"])
+                if e_id == event_id:
+                    all_teams.append(regs["team"])
+        else:
+            result2 = schema.execute(
+                '''
+                query{
+                    allIndregistrations{
+                        event{
+                            id
+                        }
+                        player{
+                            id
+                        }
+                    }
+                }
+            ''',
+            )
+            for regs in result2.data["allIndregistrations"]:
+                e_id = int(regs["event"]["id"])
+                if e_id == event_id:
+                    player = Player.objects.get(id=regs["player"]["id"])
+                    all_teams.append(
+                        {"id": player.pk, "name": player.user.first_name+" "+player.user.last_name})
 
         json_response = json.dumps(all_teams)
         return HttpResponse(json_response, content_type='application/json')
@@ -737,10 +822,13 @@ def get_rank_by_activity(request, activity_id):
         for user in players:
             usr = User.objects.get(id=user['user_id'])
             rating = getMyRating(user['total_score'])
-            designation = Detail.objects.get(user_id = usr.pk).designation
-	        
-            result.append({"name": usr.first_name+" " +
-                           usr.last_name, "rating": rating, "score": user['total_score'],"designation":designation})
+            try:
+                designation = Detail.objects.get(user_id=usr.pk)
+                result.append({"name": usr.first_name+" " +
+                               usr.last_name, "rating": rating, "score": user['total_score'], "designation": designation.designation})
+            except Detail.DoesNotExist:
+                result.append({"name": usr.first_name+" " +
+                               usr.last_name, "rating": rating, "score": user['total_score'], "designation": "None"})
         print(result[0:20])
 
         json_response = json.dumps(result[0:20])
@@ -755,25 +843,17 @@ def get_overall_rank(request):
             total_score=Sum('score')).order_by("-total_score")
 
         result = []
-        # users = Player.objects.all().order_by("-score")
-
-        # mydict = {'username': "Ayush Mishra", "event": "Event-1"}
-        # html_template = 'success.html'
-        # html_message = render_to_string(html_template, context=mydict)
-        # subject = 'Thank you for Registering'
-        # email_from = settings.EMAIL_HOST_USER
-        # recipient_list = ['ayushmishra7@deloitte.com', 'm.ayush089@gmail.com']
-        # message = EmailMessage(subject, html_message,
-        #                        email_from, recipient_list)
-        # message.content_subtype = 'html'
-        # message.send()
 
         for user in players:
             usr = User.objects.get(id=user['user_id'])
             rating = getMyRating(user['total_score'])
-            designation = Detail.objects.get(user_id = usr.pk).designation
-            result.append({"name": usr.first_name+" " +
-                           usr.last_name, "rating": rating, "score": user['total_score'],"designation":designation})
+            try:
+                designation = Detail.objects.get(user_id=usr.pk)
+                result.append({"name": usr.first_name+" " +
+                               usr.last_name, "rating": rating, "score": user['total_score'], "designation": designation.designation})
+            except Detail.DoesNotExist:
+                result.append({"name": usr.first_name+" " +
+                               usr.last_name, "rating": rating, "score": user['total_score'], "designation": "None"})
 
         json_response = json.dumps(result[0:20])
         return HttpResponse(json_response, content_type="application/json")
@@ -785,8 +865,11 @@ def get_hottest_challenge(request):
     if request.method == 'GET':
         registrations = Registration.objects.values("event_id").annotate(
             no_of_teams=Count('team_id')).order_by("-no_of_teams")
+        ind_registrations = IndRegistration.objects.values("event_id").annotate(
+            no_of_players=Count('player_id')).order_by("-no_of_players")
         print(registrations)
         hot_challenge = ""
+        count = ""
         for registration in registrations:
             event_id = registration['event_id']
             print(event_id)
@@ -794,7 +877,18 @@ def get_hottest_challenge(request):
             print(event.status)
             if event.status == 'Active':
                 hot_challenge = event
+                count = registration['no_of_teams']
                 break
+        for registration in ind_registrations:
+            event_id = registration['event_id']
+            print(event_id)
+            event = Event.objects.get(id=event_id)
+            print(event.status)
+            if event.status == 'Active':
+                if registration['no_of_players'] > count:
+                    hot_challenge = event
+                    count = registration['no_of_players']
+                    break
         if hot_challenge != "":
             hot_challenge = {'event': hot_challenge.name}
             return HttpResponse(json.dumps(hot_challenge), content_type='application/json')
@@ -834,37 +928,64 @@ def get_star_of_week(request):
 
             print(res.days)
             if (res.days <= 7):
-                result = schema.execute(
-                    '''
-                    query{
-                        allRegistrations{
-                            event{
-                                id
-                            },
-                            team{
-                                id,
-                                name
+
+                if event.event_type == "Group":
+
+                    result = schema.execute(
+                        '''
+                        query{
+                            allRegistrations{
+                                event{
+                                    id
+                                },
+                                team{
+                                    id,
+                                    name
+                                }
                             }
                         }
-                    }
-                    ''',
-                )
+                        ''',
+                    )
 
-                all_teams = []
-                for regs in result.data["allRegistrations"]:
-                    e_id = int(regs["event"]["id"])
-                    if e_id == event.pk:
-                        all_teams.append(regs["team"])
+                    all_teams = []
+                    for regs in result.data["allRegistrations"]:
+                        e_id = int(regs["event"]["id"])
+                        if e_id == event.pk:
+                            all_teams.append(regs["team"])
 
-                for team in all_teams:
-                    players = Player.team.through.objects.filter(
-                        team_id=team["id"])
-                    for player in players:
-                        plr = Player.objects.get(id=player.player_id)
-                        if plr.score >= score:
-                            score = plr.score
-                            user = User.objects.get(id=plr.user_id)
-                            star = ""+user.first_name+" "+user.last_name
+                    for team in all_teams:
+                        players = Player.team.through.objects.filter(
+                            team_id=team["id"])
+                        for player in players:
+                            plr = Player.objects.get(id=player.player_id)
+                            if plr.score >= score:
+                                score = plr.score
+                                user = User.objects.get(id=plr.user_id)
+                                star = ""+user.first_name+" "+user.last_name
+                else:
+                    result = schema.execute(
+                        '''
+                        query{
+                            allIndregistrations{
+                                event{
+                                    id
+                                }
+                                player{
+                                    id
+                                }
+                            }
+                        }
+                        ''',
+                    )
+                    for regs in result.data["allIndregistrations"]:
+                        e_id = int(regs["event"]["id"])
+                        if e_id == event.pk:
+                            player = Player.objects.get(
+                                id=regs["player"]["id"])
+                            if (player.score >= score):
+                                score = player.score
+                                user = User.objects.get(id=player.user_id)
+                                star = ""+user.first_name+" "+user.last_name
 
         response = {"name": star, "score": score}
         json_response = json.dumps(response)
@@ -882,36 +1003,57 @@ def get_events_participated(request, user_email):
         print(total)
         count = 0
         for event in events:
-
-            result = schema.execute(
-                '''
-                    query{
-                        allRegistrations{
-                            event{
-                                id
-                            },
-                            team{
-                                id,
-                                name
+            if event.event_type == "Group":
+                result = schema.execute(
+                    '''
+                        query{
+                            allRegistrations{
+                                event{
+                                    id
+                                },
+                                team{
+                                    id,
+                                    name
+                                }
                             }
                         }
-                    }
-                    ''',
-            )
+                        ''',
+                )
 
-            all_teams = []
-            for regs in result.data["allRegistrations"]:
-                e_id = int(regs["event"]["id"])
-                if e_id == event.pk:
-                    all_teams.append(regs["team"])
+                all_teams = []
+                for regs in result.data["allRegistrations"]:
+                    e_id = int(regs["event"]["id"])
+                    if e_id == event.pk:
+                        all_teams.append(regs["team"])
 
-            for team in all_teams:
-                players = Player.team.through.objects.filter(
-                    team_id=team["id"])
-                for player in players:
-                    plr = Player.objects.get(id=player.player_id)
-                    if plr.user_id == user_id:
-                        count += 1
+                for team in all_teams:
+                    players = Player.team.through.objects.filter(
+                        team_id=team["id"])
+                    for player in players:
+                        plr = Player.objects.get(id=player.player_id)
+                        if plr.user_id == user_id:
+                            count += 1
+            else:
+                result = schema.execute(
+                    '''
+                        query{
+                            allIndregistrations{
+                                event{
+                                    id
+                                }
+                                player{
+                                    id
+                                }
+                            }
+                        }
+                        ''',
+                )
+                for regs in result.data["allIndregistrations"]:
+                    e_id = int(regs["event"]["id"])
+                    if e_id == event.pk:
+                        player = Player.objects.get(id=regs["player"]["id"])
+                        if player.user.pk == user_id:
+                            count += 1
 
         response = {"total_events": total, "participated": count}
         json_response = json.dumps(response)
@@ -949,13 +1091,18 @@ def get_top_events_participated(request, user_email):
         for player in players:
             team = Player.team.through.objects.filter(
                 player_id=player.pk)
-            reg = []
             if (team.__len__() != 0):
                 reg = Registration.objects.filter(team_id=team[0].team_id)
-            if (reg.__len__() != 0):
-                event = Event.objects.get(id=reg[0].event_id)
-                result.append(
-                    {"activity_name": Activity.objects.get(id=event.activity_id).name, "event_name": event.name, "date": str(event.start_date), "score": player.score})
+                if (reg.__len__() != 0):
+                    event = Event.objects.get(id=reg[0].event_id)
+                    result.append(
+                        {"activity_name": Activity.objects.get(id=event.activity_id).name, "event_name": event.name, "date": str(event.start_date), "score": player.score})
+            else:
+                reg = IndRegistration.objects.filter(player_id=player.pk)
+                if (reg.__len__() != 0):
+                    event = Event.objects.get(id=reg[0].event_id)
+                    result.append(
+                        {"activity_name": Activity.objects.get(id=event.activity_id).name, "event_name": event.name, "date": str(event.start_date), "score": player.score})
 
         json_response = json.dumps(result[0:10])
 
@@ -987,22 +1134,29 @@ def get_top_events_by_activity(request, user_email, activity_id):
         players = Player.objects.filter(
             user_id=user_id, activity_id=activity_id).order_by("-score")
         result = []
-        response = []
         score = 0
         events = Event.objects.filter(activity_id=activity_id)
         count = 0
         for player in players:
             team = Player.team.through.objects.filter(
                 player_id=player.pk)
-            reg = []
+
             if (team.__len__() != 0):
                 reg = Registration.objects.filter(team_id=team[0].team_id)
-            if (reg.__len__() != 0):
-                event = Event.objects.get(id=reg[0].event_id)
-                count += 1
-                score += player.score
-                result.append(
-                    {"activity_name": Activity.objects.get(id=activity_id).name, "event_name": event.name, "date": str(event.start_date), "score": player.score})
+                if (reg.__len__() != 0):
+                    event = Event.objects.get(id=reg[0].event_id)
+                    count += 1
+                    score += player.score
+                    result.append(
+                        {"activity_name": Activity.objects.get(id=activity_id).name, "event_name": event.name, "date": str(event.start_date), "score": player.score})
+            else:
+                reg = IndRegistration.objects.filter(player_id=player.pk)
+                if (reg.__len__() != 0):
+                    event = Event.objects.get(id=reg[0].event_id)
+                    count += 1
+                    score += player.score
+                    result.append(
+                        {"activity_name": Activity.objects.get(id=event.activity_id).name, "event_name": event.name, "date": str(event.start_date), "score": player.score})
 
         response = {
             "participation": count,
@@ -1072,6 +1226,8 @@ def get_files_list(request):
         return HttpResponse("wrong request", content_type='application/json')
 
 # get data from PODS platform
+
+
 def get_pods_data(request):
     if request.method == 'POST':
         try:
@@ -1097,7 +1253,7 @@ def get_pods_data(request):
             print("Response received from PODS")
             if response.status_code != 200:
                 print(response.text)
-                return HttpResponse(response.text, content_type='application/json',status=response.status_code)
+                return HttpResponse(response.text, content_type='application/json', status=response.status_code)
 
             response = response.json()
             print(response)
@@ -1123,7 +1279,7 @@ def get_pods_data(request):
             print(err)
             return HttpResponse(err, content_type='application/json')
     else:
-        return HttpResponse(json.dumps({"error":"Wrong Request Method"}), content_type='application/json',status=400)
+        return HttpResponse(json.dumps({"error": "Wrong Request Method"}), content_type='application/json', status=400)
 
 
 # get data from dna platform
@@ -1151,7 +1307,7 @@ def get_all_user_dna(request):
 
             if response.status_code != 200:
                 print(response.text)
-                return HttpResponse(response.text, content_type='application/json',status=response.status_code)
+                return HttpResponse(response.text, content_type='application/json', status=response.status_code)
 
             response = response.json()
             # Filtering out Users Data
@@ -1219,9 +1375,11 @@ def get_all_user_dna(request):
             print(exception)
             return HttpResponse(str(exception), content_type='application/json')
     else:
-        return HttpResponse(json.dumps({"error":"Wrong Request Method"}), content_type='application/json',status=400)
+        return HttpResponse(json.dumps({"error": "Wrong Request Method"}), content_type='application/json', status=400)
 
 # function to get the access token from the dna server for b2b query
+
+
 def get_access_token(token_url, client_id, client_secret):
     try:
         print("inside get_access_token function")
@@ -1257,10 +1415,10 @@ def get_all_users_organisation(request):
                 '''
             )
             allData = result.data['allUsers'][::-1]
-            return HttpResponse(json.dumps({"data":allData}),content_type="application/json")
+            return HttpResponse(json.dumps({"data": allData}), content_type="application/json")
 #             return HttpResponse("ok", content_type="application/json")
         except Exception as exception:
             print(exception)
             return HttpResponse(str(exception), content_type='application/json')
     else:
-        return HttpResponse(json.dumps({"error":"Wrong Request Method"}), content_type='application/json', status=400)
+        return HttpResponse(json.dumps({"error": "Wrong Request Method"}), content_type='application/json', status=400)
