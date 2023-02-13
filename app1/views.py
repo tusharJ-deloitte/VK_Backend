@@ -1,3 +1,4 @@
+import re
 from django.shortcuts import render
 from .models import Detail, Activity, Player, Team, Category, Event, Registration, Upload, IndRegistration, Pod
 from .serializers import PostSerializer
@@ -356,6 +357,12 @@ def create_teams(request):
 
                             ''', variables={'teamName': python_data["name"], 'userEmail': user_email, 'score': 0, 'activityId': activity_id}
                 )
+                msg = "You have been added to the team"+python_data["name"]
+                response = sns(user_email, "Team Created", msg)
+                if response:
+                    print("email sent")
+                else:
+                    print("not subscribed to email service")
 
             json_post = json.dumps(result.data)
             return HttpResponse(json_post, content_type='application/json')
@@ -431,6 +438,12 @@ def update_teams(request, team_id):
 
                         ''', variables={'teamName': python_data["name"], 'userEmail': key, 'score': 0}
                 )
+                msg = "You have been added to the team }"+python_data["name"]
+                response = sns(key, "Team Created", msg)
+                if response:
+                    print("email sent")
+                else:
+                    print("not subscribed to email service")
 
             elif value == -1:
                 l = []
@@ -442,6 +455,14 @@ def update_teams(request, team_id):
                 for item in t_id:
                     if item.player_id in l:
                         Player.objects.get(id=item.player_id).delete()
+
+                msg = "You have been deleted from the team }" + \
+                    python_data["name"]
+                response = sns(key, "Player Deleted", msg)
+                if response:
+                    print("email sent")
+                else:
+                    print("not subscribed to email service")
 
         return HttpResponse({"msg": "successful"}, content_type='application/json')
     else:
@@ -557,7 +578,8 @@ def create_event(request):
             result = schema.execute(
                 '''
             mutation createEvent($name : String!,$activityName: String!,$activityMode: String!,$minMembers:Int!,$maxMembers:Int!,$firstPrize:Int!,$secondPrize:Int!,$thirdPrize:Int!,$startDate:Date!,$endDate:Date!,$startTime:Time!,$endTime:Time!,$eventType: String!){
-               createEvent(name:$name,activityName:$activityName,activityMode:$activityMode,minMembers:$minMembers,maxMembers:$maxMembers, firstPrize:$firstPrize,secondPrize:$secondPrize,thirdPrize:$thirdPrize,startTime:$startTime,endTime:$endTime,startDate:$startDate,endDate:$endDate,eventType:$eventType){
+   # from moviepy.editor import VideoClipFile
+from PIL import Image            createEvent(name:$name,activityName:$activityName,activityMode:$activityMode,minMembers:$minMembers,maxMembers:$maxMembers, firstPrize:$firstPrize,secondPrize:$secondPrize,thirdPrize:$thirdPrize,startTime:$startTime,endTime:$endTime,startDate:$startDate,endDate:$endDate,eventType:$eventType){
                     event{
                         name
                     }
@@ -1235,33 +1257,45 @@ def cancel_registration(request, event_id, p_id):
         return HttpResponse("wrong request", content_type='application/json')
 
 
-def upload_aws(request, user_email):
+def upload_aws(request):
     if request.method == 'POST':
+        data = request.POST.copy()  # receiving formdata
         my_uploaded_file = request.FILES.get('my_uploaded_file')
-        # print(type(my_uploaded_file))
-        print(my_uploaded_file.name)
-        my_uploaded_file.name = str(user_email)+"___"+my_uploaded_file.name
-        print(my_uploaded_file.content_type)
-        print(my_uploaded_file.size)
+        print(data)
+        print(data.get("user_email"))
+        # frame_data = my_uploaded_file.get_frame(1)  # 1 means frame at first second
+        # print("-----------------",frame_data)
 
         result = schema.execute(
             '''
-            mutation CreateUpload($userEmail:String!,$fileName:String!){
-                createUpload(userEmail:$userEmail,fileName:$fileName){
+            mutation CreateUpload($userEmail:String!,$fileName:String!,$eventName:String!,$fileDuration:Int!){
+                createUpload(userEmail:$userEmail,fileName:$fileName,eventName:$eventName,fileDuration:$fileDuration){
                     upload{
                         id
                     }
                 }
             }
-            ''', variables={'userEmail': user_email, 'fileName': my_uploaded_file.name})
-
-        upload_instance = Upload.objects.get(
-            user_id=User.objects.get(email=user_email).id)
+            ''', variables={'userEmail': data.get("user_email"), 'fileName': my_uploaded_file.name, 'eventName': data.get('event_name'), 'fileDuration': int(data.get('file_duration'))})
+        print(result)
+        my_uploaded_file.name = str(data.get(
+            "event_name"))+"___"+str(data.get("user_email"))+"___"+my_uploaded_file.name
+        id = result.data['createUpload']['upload']['id']
+        print(id)
+        upload_instance = Upload.objects.get(id=id)
+        print("1")
         upload_instance.uploaded_file = my_uploaded_file
+        print("2")
         upload_instance.save()
-
+        upload_instance.file_size = my_uploaded_file.size
+        upload_instance.score = 0
+        print("3")
+        upload_instance.is_uploaded = True
+        print("done----1")
+        upload_instance.save()
+        print("done----2")
         return HttpResponse(200)
 
+# upload_instance.file_frame  = Image.fromarray(frame_data, 'RGB')
 # def edit_upload(request,user_email):
 #     if request.method == "POST":
 #         my_uploaded_file = request.FILES.get('my_uploaded_file')
@@ -1288,7 +1322,91 @@ def get_files_list(request):
     else:
         return HttpResponse("wrong request", content_type='application/json')
 
-# get data from PODS platform
+# user flow
+
+
+def get_list_user_event(request, user_email, event_name):
+    if request.method == "GET":
+        response = []
+        upload_id = [item for item in Upload.objects.filter(
+            user=User.objects.get(email=user_email))]
+        for item in upload_id:
+            if item.event.name == event_name:
+                response.append(item.pk)
+
+        result = []
+        for item in response:
+            print(item)
+            uploadedOn = Upload.objects.get(id=item).uploaded_on
+            result.append({
+                "file": settings.CLOUDFRONT_DOMAIN+"/"+Upload.objects.get(id=item).uploaded_file.name,
+                "file_name": Upload.objects.get(id=item).file_name,
+                "uploaded_on_date": str(uploadedOn).split(' ')[0],
+                "uploaded_on_time": str(uploadedOn).split(' ')[1].split('.')[0],
+                "is_uploaded": Upload.objects.get(id=item).is_uploaded
+            })
+        print("outside")
+
+        return HttpResponse(json.dumps({"data": result}), content_type="application/json")
+    else:
+        return HttpResponse(json.dumps({"error": "Wrong Request Method"}), content_type='application/json', status=400)
+# admin flow
+
+
+def get_uploads(request, event_name):
+    if request.method == "GET":
+        upload_id = [item.pk for item in Upload.objects.filter(
+            event=Event.objects.get(name=event_name))]
+        print(upload_id)
+        result = []
+        for item in upload_id:
+            uploadedOn = Upload.objects.get(id=item).uploaded_on
+            print(settings.CLOUDFRONT_DOMAIN+"/" +
+                  Upload.objects.get(id=item).uploaded_file.name)
+            result.append({
+                "user": Upload.objects.get(id=item).user.first_name+" "+Upload.objects.get(id=item).user.last_name,
+                "user_email": Upload.objects.get(id=item).user.email,
+                "file": settings.CLOUDFRONT_DOMAIN+"/"+Upload.objects.get(id=item).uploaded_file.name,
+                "uploaded_on_date": str(uploadedOn).split(' ')[0],
+                "uploaded_on_time": str(uploadedOn).split(' ')[1].split('.')[0],
+                "file_name": Upload.objects.get(id=item).file_name,
+                "file_size": Upload.objects.get(id=item).file_size,
+                "file_duration": Upload.objects.get(id=item).file_duration
+            })
+
+        return HttpResponse(json.dumps({"data": result}), content_type="application/json")
+    else:
+        return HttpResponse(json.dumps({"error": "Wrong Request Method"}), content_type='application/json', status=400)
+# admin flow
+
+
+def get_uploads_by_date(request, event_name, date):
+    if request.method == "GET":
+        upload_id = [item.pk for item in Upload.objects.filter(
+            event=Event.objects.get(name=event_name))]
+        print(upload_id)
+        result = []
+        for item in upload_id:
+            uploadedOn = Upload.objects.get(id=item).uploaded_on
+            uploaded_on = str(uploadedOn).split(' ')[0]
+            if uploaded_on == date:
+                print(settings.CLOUDFRONT_DOMAIN+"/" +
+                      Upload.objects.get(id=item).uploaded_file.name)
+                result.append({
+                    "user": Upload.objects.get(id=item).user.first_name+" "+Upload.objects.get(id=item).user.last_name,
+                    "user_email": Upload.objects.get(id=item).user.email,
+                    "file": settings.CLOUDFRONT_DOMAIN+"/"+Upload.objects.get(id=item).uploaded_file.name,
+                    "uploaded_on_date": str(uploadedOn).split(' ')[0],
+                    "uploaded_on_time": str(uploadedOn).split(' ')[1].split('.')[0],
+                    "file_name": Upload.objects.get(id=item).file_name,
+                    "file_size": Upload.objects.get(id=item).file_size,
+                    "file_duration": Upload.objects.get(id=item).file_duration
+                })
+
+        print(result)
+        return HttpResponse(json.dumps({"data": result}), content_type="application/json")
+    else:
+        return HttpResponse(json.dumps({"error": "Wrong Request Method"}), content_type='application/json', status=400)
 
 
 def get_podssssss_data(request):
@@ -1548,3 +1666,43 @@ def get_all_users_organisation(request):
             return HttpResponse(str(exception), content_type='application/json')
     else:
         return HttpResponse(json.dumps({"error": "Wrong Request Method"}), content_type='application/json', status=400)
+
+
+def sns(receiver, subject, message):
+    receiver = receiver
+    subject = subject
+    message = message
+    topic_name = re.split(r'[.@]', receiver)[0]
+    print(topic_name)
+    sns = boto3.client("sns", region_name="ap-northeast-1", aws_access_key_id='AKIAWKWVVT6XDSKL7SRQ',
+                       aws_secret_access_key='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')
+    print(sns)
+    response = sns.create_topic(Name=topic_name)
+    print(response)
+    topic_arn = response["TopicArn"]
+    print(topic_arn)
+    response = sns.list_subscriptions_by_topic(TopicArn=topic_arn)
+    subscriptions = response["Subscriptions"]
+    print(subscriptions)
+    if len(subscriptions) == 0:
+        print("inside1")
+        response = sns.subscribe(
+            TopicArn=topic_arn,
+            Protocol='email',
+            Endpoint=receiver
+        )
+        return False
+        # return HttpResponse(json.dumps({'body': 'User is not subscribed, So user have to manually subscribe to the service.'}), content_type="application/json")
+    elif subscriptions[0]['Endpoint'] == receiver and subscriptions[0]['SubscriptionArn'] == 'PendingConfirmation':
+        print("inside4")
+        return False
+        # return HttpResponse(json.dumps({'body': 'User is not subscribed, So user have to manually subscribe to the service.'}), content_type="application/json")
+    else:
+        print("inside3")
+        sns.publish(
+            TopicArn=topic_arn,
+            Message=message,
+            Subject=subject
+        )
+        return True
+        # return HttpResponse(json.dumps({'body': 'email sent'}), content_type="application/json")

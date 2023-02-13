@@ -119,14 +119,19 @@ class IndRegistration(models.Model):
 
 
 class Upload(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User,on_delete=models.CASCADE,default="1")
+    event = models.ForeignKey(Event,on_delete=models.CASCADE,default="1")
+    uploaded_on = models.DateTimeField(auto_now_add=True,null=True,blank=True)
+    is_uploaded = models.BooleanField(default=False)
     uploaded_file = models.FileField(upload_to="activity_plank/", null=True)
     file_name = models.TextField(null=True, blank=True)
+    file_size = models.IntegerField(default=0,null=True,blank=True)
+    file_duration = models.IntegerField(null=True,blank=True)#in seconds
+    score = models.IntegerField(default=0,null=True,blank=True)
 
-    def __str__(self):
-        return self.user.first_name
-
-
+    def __str__(self)->str:
+        return self.user.email
+        
 class Pod(models.Model):
     pod_id = models.IntegerField(default=0)
     pod_name = models.TextField(null=True, blank=True)

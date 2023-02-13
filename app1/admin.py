@@ -70,7 +70,7 @@ class PlayerAdmin(admin.ModelAdmin):
 
 @admin.register(Upload)
 class UploadAdmin(admin.ModelAdmin):
-    list_display = ['id', 'user_id', 'uploaded_file', 'file_name']
+    list_display = ['id', 'event','user','uploaded_on','is_uploaded', 'uploaded_file','file_name','file_size','file_duration','score']
 
 
 @admin.register(Pod)
