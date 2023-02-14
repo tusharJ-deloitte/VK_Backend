@@ -37,7 +37,7 @@ urlpatterns = [
          views.get_all_registrations, name='get_all_registrations'),
     path('event/update_score', views.update_score, name="update_score"),
     path('event/register/ind', views.register_individual, name='register'),
-    path('event/register/cancel/<int:event_id>/<int:p_id>',
+    path('event/register/cancel/<int:event_id>/<p_id>',
          views.cancel_registration, name="cancel_registration"),
 
     # leaderboard-overall
@@ -73,9 +73,11 @@ urlpatterns = [
     path('upload_aws', views.upload_aws, name="upload_aws"),
     # path('edit_upload/<str:user_email>',views.edit_upload,name="edit_upload"),
     path('get_files_list', views.get_files_list, name="get_files_list"),
-    path('get_list_user_event/<str:user_email>/<str:event_name>',views.get_list_user_event,name="get_list_user_event"),
-    path('get_uploads/<str:event_name>',views.get_uploads,name="get_uploads"),
-    path('get_uploads_by_date/<str:event_name>/<str:date>',views.get_uploads_by_date,name="get_uploads_by_date"),
+    path('get_list_user_event/<str:user_email>/<str:event_name>',
+         views.get_list_user_event, name="get_list_user_event"),
+    path('get_uploads/<str:event_name>', views.get_uploads, name="get_uploads"),
+    path('get_uploads_by_date/<str:event_name>/<str:date>',
+         views.get_uploads_by_date, name="get_uploads_by_date"),
 
 
     # integration PODS & DNA

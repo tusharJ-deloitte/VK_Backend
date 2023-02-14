@@ -1240,19 +1240,46 @@ def cancel_registration(request, event_id, p_id):
             try:
                 reg = Registration.objects.get(event_id=event_id, team_id=p_id)
                 reg.delete()
+                team = Team.objects.get(id=p_id)
+                event.cur_participation = event.cur_participation-team.current_size
+                event.save()
                 return HttpResponse("Deleted")
             except:
                 return HttpResponse("wrong request")
 
         else:
-            try:
-                reg = IndRegistration.objects.get(
-                    event_id=event_id, player_id=p_id)
-                reg.delete()
-                return HttpResponse("Deleted")
-            except:
-                return HttpResponse("wrong request")
-
+            print(p_id)
+            user = User.objects.get(email=p_id)
+            result2 = schema.execute(
+                '''
+                query{
+                    allIndregistrations{
+                        event{
+                            id
+                        }
+                        player{
+                            id
+                        }
+                    }
+                }
+            ''',
+            )
+            for regs in result2.data["allIndregistrations"]:
+                e_id = int(regs["event"]["id"])
+                if e_id == event_id:
+                    player = Player.objects.get(id=regs["player"]["id"])
+                    if player.user.pk == user.pk:
+                        print("found")
+                        try:
+                            reg = IndRegistration.objects.get(
+                                event_id=event_id, player_id=player.pk)
+                            reg.delete()
+                            event.cur_participation = event.cur_participation-1
+                            event.save()
+                            return HttpResponse("Deleted")
+                        except:
+                            return HttpResponse("wrong request")
+        return HttpResponse("wrong request")
     else:
         return HttpResponse("wrong request", content_type='application/json')
 
