@@ -18,12 +18,12 @@ from django.core.mail import EmailMessage
 from django.db.models import Sum, Count
 from GrapheneTest import settings
 import datetime
-from GrapheneTest import settings
 import boto3
 import requests
 import base64
 import json
 import io
+import datetime
 
 
 def home(request):
@@ -1214,10 +1214,12 @@ def upload_aws(request):
             }
             ''', variables={'userEmail': data.get("user_email"), 'fileName': my_uploaded_file.name,'eventName':data.get('event_name'),'fileDuration':int(data.get('file_duration'))})
         print(result)
-        my_uploaded_file.name = str(data.get("event_name"))+"___"+str(data.get("user_email"))+"___"+my_uploaded_file.name
+        print("date---",datetime.datetime.now())
         id=result.data['createUpload']['upload']['id']
-        print(id)
         upload_instance = Upload.objects.get(id=id)
+        my_uploaded_file.name = str(upload_instance.uploaded_on).split(' ')[0]+"___"+str(data.get("event_name"))+"___"+str(data.get("user_email"))+"___"+my_uploaded_file.name
+        
+        
         print("1")
         upload_instance.uploaded_file = my_uploaded_file
         print("2")
@@ -1257,6 +1259,26 @@ def get_files_list(request):
         return HttpResponse(json_post, content_type='application/json')
     else:
         return HttpResponse("wrong request", content_type='application/json')
+
+def delete_file(request,upload_id):
+    if request.method == "DELETE":           
+        upload_instance = Upload.objects.get(id=upload_id)
+        # date=str(upload_instance.uploaded_on).split(' ')[0]
+        key=upload_instance.uploaded_file.name
+        print(key)
+        print("1")
+        # key = date+"___"+upload_instance.event.name+"___"+upload_instance.user.email+"___"+upload_instance.file_name
+        s3_client = boto3.client('s3', region_name=settings.AWS_REGION_NAME,aws_access_key_id = settings.AWS_ACCESS_KEY_ID,aws_secret_access_key=settings.AWS_SECRET_ACCESS_KEY)
+        print("2")
+        response = s3_client.delete_object(Bucket=settings.AWS_STORAGE_BUCKET_NAME, Key=key)
+        print("3")
+        print(response)
+        upload_instance.delete()
+        return HttpResponse("deleted", content_type='application/json')
+    else:
+        return HttpResponse("wrong request", content_type='application/json')
+    
+        
 
 #user flow
 def get_list_user_event(request,user_email,event_name):
