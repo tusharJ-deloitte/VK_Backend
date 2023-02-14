@@ -1238,12 +1238,42 @@ def cancel_registration(request, event_id, p_id):
         event = Event.objects.get(id=event_id)
         if event.event_type == "Group":
             try:
-                reg = Registration.objects.get(event_id=event_id, team_id=p_id)
-                reg.delete()
-                team = Team.objects.get(id=p_id)
-                event.cur_participation = event.cur_participation-team.current_size
-                event.save()
-                return HttpResponse("Deleted")
+                user = User.objects.get(email=p_id)
+                result = schema.execute(
+                    '''
+                        query{
+                            allRegistrations{
+                                event{
+                                    id
+                                },
+                                team{
+                                    id,
+                                    name
+                                }
+                            }
+                        }
+                        ''',
+                )
+
+                all_teams = []
+                for regs in result.data["allRegistrations"]:
+                    e_id = int(regs["event"]["id"])
+                    if e_id == event_id:
+                        all_teams.append(regs["team"])
+                for team in all_teams:
+                    players = Player.team.through.objects.filter(
+                        team_id=team["id"])
+                    for player in players:
+                        plr = Player.objects.get(id=player.player_id)
+                        if plr.user_id == user.pk:
+                            reg = Registration.objects.get(
+                                event_id=event_id, team_id=team["id"])
+                            reg.delete()
+                            team = Team.objects.get(id=team["id"])
+                            event.cur_participation = event.cur_participation-team.current_size
+                            event.save()
+                            return HttpResponse("Deleted")
+                return HttpResponse("wrong request")
             except:
                 return HttpResponse("wrong request")
 
