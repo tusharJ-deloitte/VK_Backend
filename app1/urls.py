@@ -22,7 +22,8 @@ urlpatterns = [
     path('create_teams', views.create_teams, name="create_teams"),
     path('update_teams/<int:team_id>', views.update_teams, name="update_teams"),
     path('delete_teams/<int:team_id>', views.delete_teams, name="delete_teams"),
-    path('manage_teams/<int:user_id>', views.manage_teams, name='manage_teams'),
+    path('manage_teams/<str:user_email>',
+         views.manage_teams, name='manage_teams'),
 
     # Events
     path('create_event', views.create_event, name='create_event'),
@@ -36,6 +37,8 @@ urlpatterns = [
          views.get_all_registrations, name='get_all_registrations'),
     path('event/update_score', views.update_score, name="update_score"),
     path('event/register/ind', views.register_individual, name='register'),
+    path('event/register/cancel/<int:event_id>/<p_id>',
+         views.cancel_registration, name="cancel_registration"),
 
     # leaderboard-overall
     path('get_rank_by_activity/<int:activity_id>', views.get_rank_by_activity,
