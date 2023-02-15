@@ -464,7 +464,7 @@ class CreateUpload(graphene.Mutation):
         user_email = graphene.String(required=True)
         file_name = graphene.String(required=True)
         event_name = graphene.String(required=True)
-        file_duration = graphene.Int(required=True)
+        file_duration = graphene.String(required=True)
 
     upload = graphene.Field(UploadType)
 

@@ -1332,7 +1332,7 @@ def upload_aws(request):
                     }
                 }
             }
-            ''', variables={'userEmail': data.get("user_email"), 'fileName': my_uploaded_file.name, 'eventName': data.get('event_name'), 'fileDuration': int(data.get('file_duration'))})
+            ''', variables={'userEmail': data.get("user_email"), 'fileName': my_uploaded_file.name, 'eventName': data.get('event_name'), 'fileDuration': data.get('file_duration')})
         print(result)
         print("date---",datetime.datetime.now())
         id=result.data['createUpload']['upload']['id']
