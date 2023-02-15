@@ -12,11 +12,6 @@ class Migration(migrations.Migration):
     operations = [
         migrations.AddField(
             model_name='upload',
-            name='file_duration',
-            field=models.TimeField(blank=True, null=True),
-        ),
-        migrations.AddField(
-            model_name='upload',
             name='file_size',
             field=models.IntegerField(blank=True, default=0, null=True),
         ),

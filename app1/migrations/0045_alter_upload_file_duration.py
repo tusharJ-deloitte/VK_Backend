@@ -10,9 +10,14 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.AlterField(
+        migrations.AddField(
             model_name='upload',
             name='file_duration',
-            field=models.IntegerField(blank=True, null=True),
-        ),
+            field=models.TextField(blank=True, null=True),
+        )#,
+        # migrations.AlterField(
+        #     model_name='upload',
+        #     name='file_duration',
+        #     field=models.IntegerField(blank=True, null=True),
+        # ),
     ]
