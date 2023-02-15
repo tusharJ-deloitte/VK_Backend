@@ -1085,8 +1085,8 @@ def get_events_participated(request, user_email):
                         team_id=team["id"])
                     for player in players:
                         plr = Player.objects.get(id=player.player_id)
-                        if plr.user_id == user_id:
-                            e_id = int(regs["event"]["id"])
+                        if plr.user.pk == user_id:
+                            e_id = event.pk
                             evt = Event.objects.get(id=e_id).name
                             all_events.append({"id": e_id, "name": evt})
                             count += 1
@@ -1306,6 +1306,7 @@ def cancel_registration(request, event_id, p_id):
                             reg.delete()
                             event.cur_participation = event.cur_participation-1
                             event.save()
+                            player.delete()
                             return HttpResponse("Deleted")
                         except:
                             return HttpResponse("wrong request")
