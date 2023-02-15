@@ -1,6 +1,6 @@
 import re
 from django.shortcuts import render
-from .models import Detail, Activity, Player, Team, Category, Event, Registration, Upload, IndRegistration, Pod
+from .models import Detail, Activity, Player, Team, Category, Event, Registration, IndRegistration, Pod
 from .serializers import PostSerializer
 from rest_framework.renderers import JSONRenderer
 from django.http import HttpResponse, JsonResponse
@@ -1314,175 +1314,175 @@ def cancel_registration(request, event_id, p_id):
         return HttpResponse("wrong request", content_type='application/json')
 
 
-def upload_aws(request):
-    if request.method == 'POST':
-        data = request.POST.copy()  # receiving formdata
-        my_uploaded_file = request.FILES.get('my_uploaded_file')
-        print(data)
-        print(data.get("user_email"))
-        # frame_data = my_uploaded_file.get_frame(1)  # 1 means frame at first second
-        # print("-----------------",frame_data)
-
-        result = schema.execute(
-            '''
-            mutation CreateUpload($userEmail:String!,$fileName:String!,$eventName:String!,$fileDuration:Int!){
-                createUpload(userEmail:$userEmail,fileName:$fileName,eventName:$eventName,fileDuration:$fileDuration){
-                    upload{
-                        id
-                    }
-                }
-            }
-            ''', variables={'userEmail': data.get("user_email"), 'fileName': my_uploaded_file.name, 'eventName': data.get('event_name'), 'fileDuration': data.get('file_duration')})
-        print(result)
-        print("date---",datetime.datetime.now())
-        id=result.data['createUpload']['upload']['id']
-        upload_instance = Upload.objects.get(id=id)
-        my_uploaded_file.name = str(upload_instance.uploaded_on).split(' ')[0]+"___"+str(data.get("event_name"))+"___"+str(data.get("user_email"))+"___"+my_uploaded_file.name
-        
-        
-        print("1")
-        upload_instance.uploaded_file = my_uploaded_file
-        print("2")
-        upload_instance.save()
-        upload_instance.file_size = my_uploaded_file.size
-        upload_instance.score = 0
-        print("3")
-        upload_instance.is_uploaded = True
-        print("done----1")
-        upload_instance.save()
-        print("done----2")
-        return HttpResponse(200)
-
-# upload_instance.file_frame  = Image.fromarray(frame_data, 'RGB')
-# def edit_upload(request,user_email):
-#     if request.method == "POST":
+# def upload_aws(request):
+#     if request.method == 'POST':
+#         data = request.POST.copy()  # receiving formdata
 #         my_uploaded_file = request.FILES.get('my_uploaded_file')
-#         my_uploaded_file.name = str(user_email)+"___"+my_uploaded_file.name
+#         print(data)
+#         print(data.get("user_email"))
+#         # frame_data = my_uploaded_file.get_frame(1)  # 1 means frame at first second
+#         # print("-----------------",frame_data)
 
-#         upload_instance = Upload.objects.get(user_id = User.objects.get(email = user_email).id)
-
-#         s3_client = boto3.client('s3', region_name=settings.AWS_REGION_NAME)
-#         s3_client.delete_object(Bucket=settings.AWS_STORAGE_BUCKET_NAME, Key=upload_instance.uploaded_file.name)
-
+#         result = schema.execute(
+#             '''
+#             mutation CreateUpload($userEmail:String!,$fileName:String!,$eventName:String!,$fileDuration:Int!){
+#                 createUpload(userEmail:$userEmail,fileName:$fileName,eventName:$eventName,fileDuration:$fileDuration){
+#                     upload{
+#                         id
+#                     }
+#                 }
+#             }
+#             ''', variables={'userEmail': data.get("user_email"), 'fileName': my_uploaded_file.name, 'eventName': data.get('event_name'), 'fileDuration': data.get('file_duration')})
+#         print(result)
+#         print("date---",datetime.datetime.now())
+#         id=result.data['createUpload']['upload']['id']
+#         upload_instance = Upload.objects.get(id=id)
+#         my_uploaded_file.name = str(upload_instance.uploaded_on).split(' ')[0]+"___"+str(data.get("event_name"))+"___"+str(data.get("user_email"))+"___"+my_uploaded_file.name
+        
+        
+#         print("1")
 #         upload_instance.uploaded_file = my_uploaded_file
+#         print("2")
 #         upload_instance.save()
+#         upload_instance.file_size = my_uploaded_file.size
+#         upload_instance.score = 0
+#         print("3")
+#         upload_instance.is_uploaded = True
+#         print("done----1")
+#         upload_instance.save()
+#         print("done----2")
 #         return HttpResponse(200)
+
+# # upload_instance.file_frame  = Image.fromarray(frame_data, 'RGB')
+# # def edit_upload(request,user_email):
+# #     if request.method == "POST":
+# #         my_uploaded_file = request.FILES.get('my_uploaded_file')
+# #         my_uploaded_file.name = str(user_email)+"___"+my_uploaded_file.name
+
+# #         upload_instance = Upload.objects.get(user_id = User.objects.get(email = user_email).id)
+
+# #         s3_client = boto3.client('s3', region_name=settings.AWS_REGION_NAME)
+# #         s3_client.delete_object(Bucket=settings.AWS_STORAGE_BUCKET_NAME, Key=upload_instance.uploaded_file.name)
+
+# #         upload_instance.uploaded_file = my_uploaded_file
+# #         upload_instance.save()
+# #         return HttpResponse(200)
+# #     else:
+# #         return HttpResponse("wrong request", content_type='application/json')
+
+
+# def get_files_list(request):
+#     if request.method == 'GET':
+#         response = [settings.CLOUDFRONT_DOMAIN+"/" +
+#                     item.uploaded_file.name for item in Upload.objects.all()]
+#         json_post = json.dumps(response)
+#         return HttpResponse(json_post, content_type='application/json')
 #     else:
 #         return HttpResponse("wrong request", content_type='application/json')
 
-
-def get_files_list(request):
-    if request.method == 'GET':
-        response = [settings.CLOUDFRONT_DOMAIN+"/" +
-                    item.uploaded_file.name for item in Upload.objects.all()]
-        json_post = json.dumps(response)
-        return HttpResponse(json_post, content_type='application/json')
-    else:
-        return HttpResponse("wrong request", content_type='application/json')
-
-def delete_file(request,upload_id):
-    if request.method == "DELETE":           
-        upload_instance = Upload.objects.get(id=upload_id)
-        # date=str(upload_instance.uploaded_on).split(' ')[0]
-        key=upload_instance.uploaded_file.name
-        print(key)
-        print("1")
-        # key = date+"___"+upload_instance.event.name+"___"+upload_instance.user.email+"___"+upload_instance.file_name
-        s3_client = boto3.client('s3', region_name=settings.AWS_REGION_NAME,aws_access_key_id = settings.AWS_ACCESS_KEY_ID,aws_secret_access_key=settings.AWS_SECRET_ACCESS_KEY)
-        print("2")
-        response = s3_client.delete_object(Bucket=settings.AWS_STORAGE_BUCKET_NAME, Key=key)
-        print("3")
-        print(response)
-        upload_instance.delete()
-        return HttpResponse("deleted", content_type='application/json')
-    else:
-        return HttpResponse("wrong request", content_type='application/json')
+# def delete_file(request,upload_id):
+#     if request.method == "DELETE":           
+#         upload_instance = Upload.objects.get(id=upload_id)
+#         # date=str(upload_instance.uploaded_on).split(' ')[0]
+#         key=upload_instance.uploaded_file.name
+#         print(key)
+#         print("1")
+#         # key = date+"___"+upload_instance.event.name+"___"+upload_instance.user.email+"___"+upload_instance.file_name
+#         s3_client = boto3.client('s3', region_name=settings.AWS_REGION_NAME,aws_access_key_id = settings.AWS_ACCESS_KEY_ID,aws_secret_access_key=settings.AWS_SECRET_ACCESS_KEY)
+#         print("2")
+#         response = s3_client.delete_object(Bucket=settings.AWS_STORAGE_BUCKET_NAME, Key=key)
+#         print("3")
+#         print(response)
+#         upload_instance.delete()
+#         return HttpResponse("deleted", content_type='application/json')
+#     else:
+#         return HttpResponse("wrong request", content_type='application/json')
     
         
 
-#user flow
-def get_list_user_event(request,user_email,event_name):
-    if request.method=="GET":
-        response = []
-        upload_id = [item for item in Upload.objects.filter(
-            user=User.objects.get(email=user_email))]
-        for item in upload_id:
-            if item.event.name == event_name:
-                response.append(item.pk)
+# #user flow
+# def get_list_user_event(request,user_email,event_name):
+#     if request.method=="GET":
+#         response = []
+#         upload_id = [item for item in Upload.objects.filter(
+#             user=User.objects.get(email=user_email))]
+#         for item in upload_id:
+#             if item.event.name == event_name:
+#                 response.append(item.pk)
 
-        result = []
-        for item in response:
-            print(item)
-            uploadedOn = Upload.objects.get(id=item).uploaded_on
-            result.append({
-                "file": settings.CLOUDFRONT_DOMAIN+"/"+Upload.objects.get(id=item).uploaded_file.name,
-                "file_name": Upload.objects.get(id=item).file_name,
-                "uploaded_on_date": str(uploadedOn).split(' ')[0],
-                "uploaded_on_time": str(uploadedOn).split(' ')[1].split('.')[0],
-                "is_uploaded": Upload.objects.get(id=item).is_uploaded
-            })
-        print("outside")
+#         result = []
+#         for item in response:
+#             print(item)
+#             uploadedOn = Upload.objects.get(id=item).uploaded_on
+#             result.append({
+#                 "file": settings.CLOUDFRONT_DOMAIN+"/"+Upload.objects.get(id=item).uploaded_file.name,
+#                 "file_name": Upload.objects.get(id=item).file_name,
+#                 "uploaded_on_date": str(uploadedOn).split(' ')[0],
+#                 "uploaded_on_time": str(uploadedOn).split(' ')[1].split('.')[0],
+#                 "is_uploaded": Upload.objects.get(id=item).is_uploaded
+#             })
+#         print("outside")
 
-        return HttpResponse(json.dumps({"data": result}), content_type="application/json")
-    else:
-        return HttpResponse(json.dumps({"error": "Wrong Request Method"}), content_type='application/json', status=400)
-# admin flow
-
-
-def get_uploads(request, event_name):
-    if request.method == "GET":
-        upload_id = [item.pk for item in Upload.objects.filter(
-            event=Event.objects.get(name=event_name))]
-        print(upload_id)
-        result = []
-        for item in upload_id:
-            uploadedOn = Upload.objects.get(id=item).uploaded_on
-            print(settings.CLOUDFRONT_DOMAIN+"/" +
-                  Upload.objects.get(id=item).uploaded_file.name)
-            result.append({
-                "user": Upload.objects.get(id=item).user.first_name+" "+Upload.objects.get(id=item).user.last_name,
-                "user_email": Upload.objects.get(id=item).user.email,
-                "file": settings.CLOUDFRONT_DOMAIN+"/"+Upload.objects.get(id=item).uploaded_file.name,
-                "uploaded_on_date": str(uploadedOn).split(' ')[0],
-                "uploaded_on_time": str(uploadedOn).split(' ')[1].split('.')[0],
-                "file_name": Upload.objects.get(id=item).file_name,
-                "file_size": Upload.objects.get(id=item).file_size,
-                "file_duration": Upload.objects.get(id=item).file_duration
-            })
-
-        return HttpResponse(json.dumps({"data": result}), content_type="application/json")
-    else:
-        return HttpResponse(json.dumps({"error": "Wrong Request Method"}), content_type='application/json', status=400)
-# admin flow
+#         return HttpResponse(json.dumps({"data": result}), content_type="application/json")
+#     else:
+#         return HttpResponse(json.dumps({"error": "Wrong Request Method"}), content_type='application/json', status=400)
+# # admin flow
 
 
-def get_uploads_by_date(request, event_name, date):
-    if request.method == "GET":
-        upload_id = [item.pk for item in Upload.objects.filter(
-            event=Event.objects.get(name=event_name))]
-        print(upload_id)
-        result = []
-        for item in upload_id:
-            uploadedOn = Upload.objects.get(id=item).uploaded_on
-            uploaded_on = str(uploadedOn).split(' ')[0]
-            if uploaded_on == date:
-                print(settings.CLOUDFRONT_DOMAIN+"/" +
-                      Upload.objects.get(id=item).uploaded_file.name)
-                result.append({
-                    "user": Upload.objects.get(id=item).user.first_name+" "+Upload.objects.get(id=item).user.last_name,
-                    "user_email": Upload.objects.get(id=item).user.email,
-                    "file": settings.CLOUDFRONT_DOMAIN+"/"+Upload.objects.get(id=item).uploaded_file.name,
-                    "uploaded_on_date": str(uploadedOn).split(' ')[0],
-                    "uploaded_on_time": str(uploadedOn).split(' ')[1].split('.')[0],
-                    "file_name": Upload.objects.get(id=item).file_name,
-                    "file_size": Upload.objects.get(id=item).file_size,
-                    "file_duration": Upload.objects.get(id=item).file_duration
-                })
+# def get_uploads(request, event_name):
+#     if request.method == "GET":
+#         upload_id = [item.pk for item in Upload.objects.filter(
+#             event=Event.objects.get(name=event_name))]
+#         print(upload_id)
+#         result = []
+#         for item in upload_id:
+#             uploadedOn = Upload.objects.get(id=item).uploaded_on
+#             print(settings.CLOUDFRONT_DOMAIN+"/" +
+#                   Upload.objects.get(id=item).uploaded_file.name)
+#             result.append({
+#                 "user": Upload.objects.get(id=item).user.first_name+" "+Upload.objects.get(id=item).user.last_name,
+#                 "user_email": Upload.objects.get(id=item).user.email,
+#                 "file": settings.CLOUDFRONT_DOMAIN+"/"+Upload.objects.get(id=item).uploaded_file.name,
+#                 "uploaded_on_date": str(uploadedOn).split(' ')[0],
+#                 "uploaded_on_time": str(uploadedOn).split(' ')[1].split('.')[0],
+#                 "file_name": Upload.objects.get(id=item).file_name,
+#                 "file_size": Upload.objects.get(id=item).file_size,
+#                 "file_duration": Upload.objects.get(id=item).file_duration
+#             })
 
-        print(result)
-        return HttpResponse(json.dumps({"data": result}), content_type="application/json")
-    else:
-        return HttpResponse(json.dumps({"error": "Wrong Request Method"}), content_type='application/json', status=400)
+#         return HttpResponse(json.dumps({"data": result}), content_type="application/json")
+#     else:
+#         return HttpResponse(json.dumps({"error": "Wrong Request Method"}), content_type='application/json', status=400)
+# # admin flow
+
+
+# def get_uploads_by_date(request, event_name, date):
+#     if request.method == "GET":
+#         upload_id = [item.pk for item in Upload.objects.filter(
+#             event=Event.objects.get(name=event_name))]
+#         print(upload_id)
+#         result = []
+#         for item in upload_id:
+#             uploadedOn = Upload.objects.get(id=item).uploaded_on
+#             uploaded_on = str(uploadedOn).split(' ')[0]
+#             if uploaded_on == date:
+#                 print(settings.CLOUDFRONT_DOMAIN+"/" +
+#                       Upload.objects.get(id=item).uploaded_file.name)
+#                 result.append({
+#                     "user": Upload.objects.get(id=item).user.first_name+" "+Upload.objects.get(id=item).user.last_name,
+#                     "user_email": Upload.objects.get(id=item).user.email,
+#                     "file": settings.CLOUDFRONT_DOMAIN+"/"+Upload.objects.get(id=item).uploaded_file.name,
+#                     "uploaded_on_date": str(uploadedOn).split(' ')[0],
+#                     "uploaded_on_time": str(uploadedOn).split(' ')[1].split('.')[0],
+#                     "file_name": Upload.objects.get(id=item).file_name,
+#                     "file_size": Upload.objects.get(id=item).file_size,
+#                     "file_duration": Upload.objects.get(id=item).file_duration
+#                 })
+
+#         print(result)
+#         return HttpResponse(json.dumps({"data": result}), content_type="application/json")
+#     else:
+#         return HttpResponse(json.dumps({"error": "Wrong Request Method"}), content_type='application/json', status=400)
 
 
 def get_podssssss_data(request):

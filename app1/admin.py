@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Category, Activity, Team, Player, Event, Registration, Upload, Detail, IndRegistration, Pod
+from .models import Post, Category, Activity, Team, Player, Event, Registration, Detail, IndRegistration, Pod
 from django.contrib.auth.models import User
 from django.contrib.auth.admin import UserAdmin
 
@@ -68,9 +68,9 @@ class PlayerAdmin(admin.ModelAdmin):
                     'min_members', 'max_members', 'first_prize', 'second_prize', 'third_prize', 'cur_participation', 'status']
 
 
-@admin.register(Upload)
-class UploadAdmin(admin.ModelAdmin):
-    list_display = ['id', 'event','user','uploaded_on','is_uploaded', 'uploaded_file','file_name','file_size','file_duration','score']
+# @admin.register(Upload)
+# class UploadAdmin(admin.ModelAdmin):
+#     list_display = ['id', 'event','user','uploaded_on','is_uploaded', 'uploaded_file','file_name','file_size','file_duration','score']
 
 
 @admin.register(Pod)

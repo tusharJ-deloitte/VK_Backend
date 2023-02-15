@@ -1,7 +1,7 @@
 import graphene
-from .models import Detail, Category, Activity, Team, Player, Event, Registration, Upload, IndRegistration, Pod
-from app1.types import DetailType, UserType, CategoryType, ActivityType, TeamType, PlayerType, EventType, RegistrationType, UploadType, IndRegistrationType, PodType
-from .mutations import CreateUser, CreateCategory, UpdateCategory, DeleteCategory, CreateActivity, UpdateActivity, DeleteActivity, CreateTeam, CreatePlayer, UpdatePlayer, DeletePlayer, CreateEvent, CreateRegistration, UpdateTeamScores, CreateUpload, CreateIndEvent, CreateIndPlayer, CreateIndRegistration, CreatePod
+from .models import Detail, Category, Activity, Team, Player, Event, Registration, IndRegistration, Pod
+from app1.types import DetailType, UserType, CategoryType, ActivityType, TeamType, PlayerType, EventType, RegistrationType, IndRegistrationType, PodType
+from .mutations import CreateUser, CreateCategory, UpdateCategory, DeleteCategory, CreateActivity, UpdateActivity, DeleteActivity, CreateTeam, CreatePlayer, UpdatePlayer, DeletePlayer, CreateEvent, CreateRegistration, UpdateTeamScores, CreateIndEvent, CreateIndPlayer, CreateIndRegistration, CreatePod
 from django.contrib.auth.models import User
 
 
@@ -32,8 +32,8 @@ class Query(graphene.ObjectType):
                                       id=graphene.ID(required=True))
     all_indregistrations = graphene.List(IndRegistrationType)
 
-    upload = graphene.Field(UploadType, id=graphene.ID(required=True))
-    all_uploads = graphene.List(UploadType)
+    # upload = graphene.Field(UploadType, id=graphene.ID(required=True))
+    # all_uploads = graphene.List(UploadType)
     pod = graphene.Field(PodType, id=graphene.ID(required=True))
     all_pods = graphene.List(PodType)
 
@@ -91,11 +91,11 @@ class Query(graphene.ObjectType):
     def resolve_all_indregistrations(self, info, **kwargs):
         return IndRegistration.objects.all()
 
-    def resolve_upload(self, info, id):
-        return Upload.objects.get(id=id)
+    # def resolve_upload(self, info, id):
+    #     return Upload.objects.get(id=id)
 
-    def resolve_all_uploads(self, info, **kwargs):
-        return Upload.objects.all()
+    # def resolve_all_uploads(self, info, **kwargs):
+    #     return Upload.objects.all()
 
     def resolve_pod(self, info, id):
         return Pod.objects.get(id=id)
@@ -137,7 +137,7 @@ class Mutation(graphene.ObjectType):
     update_team_scores = UpdateTeamScores().Field()
 
     # plank(upload) mutations
-    create_upload = CreateUpload.Field()
+    # create_upload = CreateUpload.Field()
 
     create_user = CreateUser.Field()
 
