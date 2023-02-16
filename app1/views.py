@@ -1,6 +1,6 @@
 import re
 from django.shortcuts import render
-from .models import Detail, Activity, Player, Team, Category, Event, Registration, IndRegistration, Pod,Upload
+from .models import Detail, Activity, Player, Team, Category, Event, Registration, IndRegistration, Pod, Upload
 from .serializers import PostSerializer
 from rest_framework.renderers import JSONRenderer
 from django.http import HttpResponse, JsonResponse
@@ -577,26 +577,26 @@ def create_event(request):
         if "minMembers" in python_data:
             result = schema.execute(
                 '''
-            mutation createEvent($name : String!,$activityName: String!,$activityMode: String!,$minMembers:Int!,$maxMembers:Int!,$firstPrize:Int!,$secondPrize:Int!,$thirdPrize:Int!,$startDate:Date!,$endDate:Date!,$startTime:Time!,$endTime:Time!,$eventType: String!){
-                createEvent(name:$name,activityName:$activityName,activityMode:$activityMode,minMembers:$minMembers,maxMembers:$maxMembers, firstPrize:$firstPrize,secondPrize:$secondPrize,thirdPrize:$thirdPrize,startTime:$startTime,endTime:$endTime,startDate:$startDate,endDate:$endDate,eventType:$eventType){
+            mutation createEvent($name : String!,$activityName: String!,$activityMode: String!,$minMembers:Int!,$maxMembers:Int!,$startDate:Date!,$endDate:Date!,$startTime:Time!,$endTime:Time!,$eventType: String!){
+                createEvent(name:$name,activityName:$activityName,activityMode:$activityMode,minMembers:$minMembers,maxMembers:$maxMembers,startTime:$startTime,endTime:$endTime,startDate:$startDate,endDate:$endDate,eventType:$eventType){
                     event{
                         name
                     }
                 }
             }
-            ''', variables={'name': python_data["name"], 'activityName': python_data["activityName"], 'activityMode': python_data['activityMode'], 'minMembers': python_data["minMembers"], 'maxMembers': python_data["maxMembers"], 'firstPrize': python_data["firstPrize"], 'secondPrize': python_data["secondPrize"], 'thirdPrize': python_data["thirdPrize"], 'startDate': python_data['startDate'], 'endDate': python_data['endDate'], 'startTime': python_data['startTime'], 'endTime': python_data['endTime'], 'eventType': python_data["eventType"]}
+            ''', variables={'name': python_data["name"], 'activityName': python_data["activityName"], 'activityMode': python_data['activityMode'], 'minMembers': python_data["minMembers"], 'maxMembers': python_data["maxMembers"], 'startDate': python_data['startDate'], 'endDate': python_data['endDate'], 'startTime': python_data['startTime'], 'endTime': python_data['endTime'], 'eventType': python_data["eventType"]}
             )
         else:
             result = schema.execute(
                 '''
-            mutation createIndEvent($name : String!,$activityName: String!,$activityMode: String!,$firstPrize:Int!,$secondPrize:Int!,$thirdPrize:Int!,$startDate:Date!,$endDate:Date!,$startTime:Time!,$endTime:Time!,$eventType: String!){
-               createIndEvent(name:$name,activityName:$activityName,activityMode:$activityMode,firstPrize:$firstPrize,secondPrize:$secondPrize,thirdPrize:$thirdPrize,startTime:$startTime,endTime:$endTime,startDate:$startDate,endDate:$endDate,eventType:$eventType){
+            mutation createIndEvent($name : String!,$activityName: String!,$activityMode: String!,$startDate:Date!,$endDate:Date!,$startTime:Time!,$endTime:Time!,$eventType: String!){
+               createIndEvent(name:$name,activityName:$activityName,activityMode:$activityMode,startTime:$startTime,endTime:$endTime,startDate:$startDate,endDate:$endDate,eventType:$eventType){
                     event{
                         name
                     }
                 }
             }
-            ''', variables={'name': python_data["name"], 'activityName': python_data["activityName"], 'activityMode': python_data['activityMode'], 'firstPrize': python_data["firstPrize"], 'secondPrize': python_data["secondPrize"], 'thirdPrize': python_data["thirdPrize"], 'startDate': python_data['startDate'], 'endDate': python_data['endDate'], 'startTime': python_data['startTime'], 'endTime': python_data['endTime'], 'eventType': python_data["eventType"]}
+            ''', variables={'name': python_data["name"], 'activityName': python_data["activityName"], 'activityMode': python_data['activityMode'], 'startDate': python_data['startDate'], 'endDate': python_data['endDate'], 'startTime': python_data['startTime'], 'endTime': python_data['endTime'], 'eventType': python_data["eventType"]}
             )
 
         json_post = json.dumps(result.data)
@@ -622,9 +622,6 @@ def get_all_events(request):
                         endDate,
                         startTime,
                         endTime,
-                        firstPrize,
-                        secondPrize,
-                        thirdPrize,
                         activity{
                             name,
                             activityLogo
@@ -662,9 +659,6 @@ def update_event(request, event_id):
             event_instance.end_time = python_data["endTime"]
             event_instance.min_members = python_data["minMembers"]
             event_instance.max_members = python_data["maxMembers"]
-            event_instance.first_prize = python_data["firstPrize"]
-            event_instance.second_prize = python_data["secondPrize"]
-            event_instance.third_prize = python_data["thirdPrize"]
 
             activity_instance = Activity.objects.get(
                 name=python_data["activityName"])
@@ -678,9 +672,6 @@ def update_event(request, event_id):
             event_instance.end_date = python_data["endDate"]
             event_instance.start_time = python_data["startTime"]
             event_instance.end_time = python_data["endTime"]
-            event_instance.first_prize = python_data["firstPrize"]
-            event_instance.second_prize = python_data["secondPrize"]
-            event_instance.third_prize = python_data["thirdPrize"]
 
             activity_instance = Activity.objects.get(
                 name=python_data["activityName"])
@@ -1128,13 +1119,13 @@ def get_my_rank(request, user_email):
         user_id = User.objects.get(email=user_email).pk
         players = Player.objects.values("user_id").annotate(
             total_score=Sum('score')).order_by("-total_score")
- 
+
         result = []
- 
+
         for user in players:
             usr = User.objects.get(id=user['user_id'])
             result.append(user['user_id'])
- 
+
         myRank = result.index(user_id)
         resp = ""
         if myRank+1 == 1:
@@ -1146,11 +1137,12 @@ def get_my_rank(request, user_email):
         else:
             rank = myRank+1
             resp = {"myrank": ""+rank+"th"}
- 
+
         json_response = json.dumps(resp)
         return HttpResponse(json_response, content_type="application/json")
     else:
         return HttpResponse("wrong request", content_type='application/json')
+
 
 def get_top_events_participated(request, user_email):
     if request.method == "GET":
@@ -1343,12 +1335,12 @@ def upload_aws(request):
             }
             ''', variables={'userEmail': data.get("user_email"), 'fileName': my_uploaded_file.name, 'eventName': data.get('event_name'), 'fileDuration': data.get('file_duration')})
         print(result)
-        print("date---",datetime.datetime.now())
-        id=result.data['createUpload']['upload']['id']
+        print("date---", datetime.datetime.now())
+        id = result.data['createUpload']['upload']['id']
         upload_instance = Upload.objects.get(id=id)
-        my_uploaded_file.name = str(upload_instance.uploaded_on).split(' ')[0]+"___"+str(data.get("event_name"))+"___"+str(data.get("user_email"))+"___"+my_uploaded_file.name
-        
-        
+        my_uploaded_file.name = str(upload_instance.uploaded_on).split(' ')[0]+"___"+str(
+            data.get("event_name"))+"___"+str(data.get("user_email"))+"___"+my_uploaded_file.name
+
         print("1")
         upload_instance.uploaded_file = my_uploaded_file
         print("2")
@@ -1389,29 +1381,31 @@ def get_files_list(request):
     else:
         return HttpResponse("wrong request", content_type='application/json')
 
-def delete_file(request,upload_id):
-    if request.method == "DELETE":           
+
+def delete_file(request, upload_id):
+    if request.method == "DELETE":
         upload_instance = Upload.objects.get(id=upload_id)
         # date=str(upload_instance.uploaded_on).split(' ')[0]
-        key=upload_instance.uploaded_file.name
+        key = upload_instance.uploaded_file.name
         print(key)
         print("1")
         # key = date+"___"+upload_instance.event.name+"___"+upload_instance.user.email+"___"+upload_instance.file_name
-        s3_client = boto3.client('s3', region_name=settings.AWS_REGION_NAME,aws_access_key_id = settings.AWS_ACCESS_KEY_ID,aws_secret_access_key=settings.AWS_SECRET_ACCESS_KEY)
+        s3_client = boto3.client('s3', region_name=settings.AWS_REGION_NAME,
+                                 aws_access_key_id=settings.AWS_ACCESS_KEY_ID, aws_secret_access_key=settings.AWS_SECRET_ACCESS_KEY)
         print("2")
-        response = s3_client.delete_object(Bucket=settings.AWS_STORAGE_BUCKET_NAME, Key=key)
+        response = s3_client.delete_object(
+            Bucket=settings.AWS_STORAGE_BUCKET_NAME, Key=key)
         print("3")
         print(response)
         upload_instance.delete()
         return HttpResponse("deleted", content_type='application/json')
     else:
         return HttpResponse("wrong request", content_type='application/json')
-    
-        
 
-#user flow
-def get_list_user_event(request,user_email,event_name):
-    if request.method=="GET":
+
+# user flow
+def get_list_user_event(request, user_email, event_name):
+    if request.method == "GET":
         response = []
         upload_id = [item for item in Upload.objects.filter(
             user=User.objects.get(email=user_email))]

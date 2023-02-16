@@ -1,6 +1,6 @@
 import graphene
-from app1.types import UserType, CategoryType, ActivityType, TeamType, PlayerType, EventType, RegistrationType, IndRegistrationType, PodType,UploadType
-from .models import Detail, User, Category, Activity, Team, Player, Event, Registration, IndRegistration, Pod,Upload
+from app1.types import UserType, CategoryType, ActivityType, TeamType, PlayerType, EventType, RegistrationType, IndRegistrationType, PodType, UploadType
+from .models import Detail, User, Category, Activity, Team, Player, Event, Registration, IndRegistration, Pod, Upload
 import datetime
 from django.contrib.auth.models import User
 
@@ -266,9 +266,6 @@ class CreateEvent(graphene.Mutation):
         event_type = graphene.String()
         min_members = graphene.Int()
         max_members = graphene.Int()
-        first_prize = graphene.Int()
-        second_prize = graphene.Int()
-        third_prize = graphene.Int()
         start_date = graphene.Date()
         end_date = graphene.Date()
         start_time = graphene.Time()
@@ -276,7 +273,7 @@ class CreateEvent(graphene.Mutation):
 
     event = graphene.Field(EventType)
 
-    def mutate(self, info, activity_name, name, activity_mode, min_members, max_members, first_prize, second_prize, third_prize, start_date, end_date, start_time, end_time, event_type):
+    def mutate(self, info, activity_name, name, activity_mode, min_members, max_members, start_date, end_date, start_time, end_time, event_type):
         print("inside")
         print(datetime.datetime.now().date())
         event_instance = Event(
@@ -289,9 +286,6 @@ class CreateEvent(graphene.Mutation):
             end_time=end_time,
             min_members=min_members,
             max_members=max_members,
-            first_prize=first_prize,
-            second_prize=second_prize,
-            third_prize=third_prize,
             event_type=event_type
 
         )
@@ -313,9 +307,6 @@ class CreateIndEvent(graphene.Mutation):
         name = graphene.String(required=True)
         activity_mode = graphene.String(required=True)
         event_type = graphene.String()
-        first_prize = graphene.Int()
-        second_prize = graphene.Int()
-        third_prize = graphene.Int()
         start_date = graphene.Date()
         end_date = graphene.Date()
         start_time = graphene.Time()
@@ -323,7 +314,7 @@ class CreateIndEvent(graphene.Mutation):
 
     event = graphene.Field(EventType)
 
-    def mutate(self, info, activity_name, name, activity_mode, first_prize, second_prize, third_prize, start_date, end_date, start_time, end_time, event_type):
+    def mutate(self, info, activity_name, name, activity_mode, start_date, end_date, start_time, end_time, event_type):
         print("inside")
         print(datetime.datetime.now().date())
         event_instance = Event(
@@ -334,9 +325,6 @@ class CreateIndEvent(graphene.Mutation):
             end_date=end_date,
             start_time=start_time,
             end_time=end_time,
-            first_prize=first_prize,
-            second_prize=second_prize,
-            third_prize=third_prize,
             event_type=event_type
 
         )
@@ -459,6 +447,7 @@ class UpdateTeamScores(graphene.Mutation):
         print("done")
         return UpdateTeamScores(event=event_instance)
 
+
 class CreateUpload(graphene.Mutation):
     class Arguments:
         user_email = graphene.String(required=True)
@@ -468,7 +457,7 @@ class CreateUpload(graphene.Mutation):
 
     upload = graphene.Field(UploadType)
 
-    def mutate(self, info, user_email, file_name,event_name,file_duration):
+    def mutate(self, info, user_email, file_name, event_name, file_duration):
         upload_instance = Upload(
             user=User.objects.get(email=user_email),
             event=Event.objects.get(name=event_name),

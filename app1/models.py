@@ -69,9 +69,6 @@ class Event(models.Model):
     end_time = models.TimeField()
     min_members = models.IntegerField(default=0)
     max_members = models.IntegerField(default=0)
-    first_prize = models.IntegerField(default=100)
-    second_prize = models.IntegerField(default=75)
-    third_prize = models.IntegerField(default=50)
     cur_participation = models.IntegerField(default=0)
 
     # setting up choices for status
@@ -119,19 +116,21 @@ class IndRegistration(models.Model):
 
 
 class Upload(models.Model):
-    user = models.ForeignKey(User,on_delete=models.CASCADE,default="1")
-    event = models.ForeignKey(Event,on_delete=models.CASCADE,default="1")
-    uploaded_on = models.DateTimeField(auto_now_add=True,null=True,blank=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default="1")
+    event = models.ForeignKey(Event, on_delete=models.CASCADE, default="1")
+    uploaded_on = models.DateTimeField(
+        auto_now_add=True, null=True, blank=True)
     is_uploaded = models.BooleanField(default=False)
     uploaded_file = models.FileField(upload_to="activity_plank/", null=True)
     file_name = models.TextField(null=True, blank=True)
-    file_size = models.IntegerField(default=0,null=True,blank=True)
-    file_duration = models.TextField(null=True,blank=True)#in seconds
-    score = models.IntegerField(default=0,null=True,blank=True)
+    file_size = models.IntegerField(default=0, null=True, blank=True)
+    file_duration = models.TextField(null=True, blank=True)  # in seconds
+    score = models.IntegerField(default=0, null=True, blank=True)
 
-    def __str__(self)->str:
+    def __str__(self) -> str:
         return self.user.email
-        
+
+
 class Pod(models.Model):
     pod_id = models.IntegerField(default=0)
     pod_name = models.TextField(null=True, blank=True)
