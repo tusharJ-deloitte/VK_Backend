@@ -70,13 +70,13 @@ urlpatterns = [
 
 
     # plank
-#     path('upload_aws', views.upload_aws, name="upload_aws"),
-#     # path('edit_upload/<str:user_email>',views.edit_upload,name="edit_upload"),
+    path('upload_aws', views.upload_aws, name="upload_aws"),
+    # path('edit_upload/<str:user_email>',views.edit_upload,name="edit_upload"),
 #     path('get_files_list', views.get_files_list, name="get_files_list"),
-#     path('get_list_user_event/<str:user_email>/<str:event_name>',views.get_list_user_event,name="get_list_user_event"),
-#     path('get_uploads/<str:event_name>',views.get_uploads,name="get_uploads"),
-#     path('get_uploads_by_date/<str:event_name>/<str:date>',views.get_uploads_by_date,name="get_uploads_by_date"),
-#     path('delete_file/<int:upload_id>',views.delete_file,name="delete_file"),
+    path('get_list_user_event/<str:user_email>/<str:event_name>',views.get_list_user_event,name="get_list_user_event"),
+    path('get_uploads/<str:event_name>',views.get_uploads,name="get_uploads"),
+    path('get_uploads_by_date/<str:event_name>/<str:date>',views.get_uploads_by_date,name="get_uploads_by_date"),
+    path('delete_file/<int:upload_id>',views.delete_file,name="delete_file"),
 
 
     # integration PODS & DNA
