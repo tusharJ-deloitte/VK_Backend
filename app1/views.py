@@ -1128,20 +1128,29 @@ def get_my_rank(request, user_email):
         user_id = User.objects.get(email=user_email).pk
         players = Player.objects.values("user_id").annotate(
             total_score=Sum('score')).order_by("-total_score")
-
+ 
         result = []
-
+ 
         for user in players:
             usr = User.objects.get(id=user['user_id'])
             result.append(user['user_id'])
-
+ 
         myRank = result.index(user_id)
-
-        json_response = json.dumps({"myrank": myRank+1})
+        resp = ""
+        if myRank+1 == 1:
+            resp = {"myrank": "1st"}
+        elif myRank+1 == 2:
+            resp = {"myrank": "2nd"}
+        elif myRank+1 == 3:
+            resp = {"myrank": "3rd"}
+        else:
+            rank = myRank+1
+            resp = {"myrank": ""+rank+"th"}
+ 
+        json_response = json.dumps(resp)
         return HttpResponse(json_response, content_type="application/json")
     else:
         return HttpResponse("wrong request", content_type='application/json')
-
 
 def get_top_events_participated(request, user_email):
     if request.method == "GET":
