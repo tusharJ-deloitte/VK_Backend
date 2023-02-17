@@ -24,6 +24,8 @@ import base64
 import json
 import io
 import datetime
+from django.forms.models import model_to_dict
+from django.core import serializers
 
 
 def home(request):
@@ -83,11 +85,11 @@ def is_admin(request, user_email):
     if request.method == 'GET':
         try:
             user = User.objects.get(email=user_email)
-            adminUser = []
+            adminUser = {}
             if user.is_superuser:
-                adminUser.append({"isAdmin": 1})
+                adminUser = {"isAdmin": 1}
             else:
-                adminUser.append({"isAdmin": 0})
+                adminUser = {"isAdmin": 0}
             json_post = json.dumps(adminUser)
             return HttpResponse(json_post, content_type='application/json')
         except:
@@ -634,8 +636,27 @@ def get_all_events(request):
 
                 ''',
         )
+        print(datetime.date.today())
+        active = []
+        elapsed = []
+        upcoming = []
+        events = Event.objects.all()
+        for i, event in enumerate(events):
+            curr = datetime.date.today()
+            curt = datetime.datetime.now().time()
+            if event.end_date < curr:
+                elapsed.append(result.data['allEvents'][i])
+            elif event.start_date > curr:
+                upcoming.append(result.data['allEvents'][i])
+            elif event.end_time < curt:
+                elapsed.append(result.data['allEvents'][i])
+            elif event.start_time > curt:
+                upcoming.append(result.data['allEvents'][i])
+            else:
+                active.append(result.data['allEvents'][i])
 
-        json_post = json.dumps(result.data)
+        json_post = json.dumps(
+            {"active": active, "upcoming": upcoming, "elapsed": elapsed})
 
         return HttpResponse(json_post, content_type='application/json')
     else:
@@ -964,8 +985,8 @@ def get_star_of_week(request):
         star = ""
         for event in events:
             # #print(event.created_on.astimezone())
-            curr = datetime.datetime.now().astimezone()
-            diff = event.created_on.astimezone()
+            curr = datetime.date.today()
+            diff = event.start_date
 
             res = curr-diff
 
@@ -1043,10 +1064,37 @@ def get_events_participated(request, user_email):
         user_id = User.objects.get(email=user_email).pk
         events = Event.objects.all()
         total = events.__len__()
+        results = schema.execute(
+            '''query{
+                    allEvents{
+                        id,
+                        createdOn,
+                        name,
+                        eventType,
+                        activityMode,
+                        minMembers,
+                        maxMembers,
+                        curParticipation,
+                        startDate,
+                        endDate,
+                        startTime,
+                        endTime,
+                        activity{
+                            name,
+                            activityLogo
+                        
+                            
+
+                        }
+                            }
+                }
+
+                ''',
+        )
         all_events = []
         # print(total)
         count = 0
-        for event in events:
+        for i, event in enumerate(events):
             if event.event_type == "Group":
                 result = schema.execute(
                     '''
@@ -1078,7 +1126,8 @@ def get_events_participated(request, user_email):
                         if plr.user.pk == user_id:
                             e_id = event.pk
                             evt = Event.objects.get(id=e_id).name
-                            all_events.append({"id": e_id, "name": evt})
+                            all_events.append(
+                                results.data['allEvents'][i])
                             count += 1
             else:
                 result = schema.execute(
@@ -1102,7 +1151,8 @@ def get_events_participated(request, user_email):
                         if player.user.pk == user_id:
                             e_id = int(regs["event"]["id"])
                             evt = Event.objects.get(id=e_id).name
-                            all_events.append({"id": e_id, "name": evt})
+                            all_events.append(
+                                results.data['allEvents'][i])
                             count += 1
 
         response = {"total_events": total,
@@ -1117,29 +1167,33 @@ def get_events_participated(request, user_email):
 def get_my_rank(request, user_email):
     if request.method == 'GET':
         user_id = User.objects.get(email=user_email).pk
-        players = Player.objects.values("user_id").annotate(
-            total_score=Sum('score')).order_by("-total_score")
+        try:
+            players = Player.objects.values("user_id").annotate(
+                total_score=Sum('score')).order_by("-total_score")
+            result = []
 
-        result = []
+            for user in players:
+                usr = User.objects.get(id=user['user_id'])
+                result.append(user['user_id'])
 
-        for user in players:
-            usr = User.objects.get(id=user['user_id'])
-            result.append(user['user_id'])
-
-        myRank = result.index(user_id)
-        resp = ""
-        if myRank+1 == 1:
+            myRank = result.index(user_id)
             resp = {"myrank": "1st"}
-        elif myRank+1 == 2:
-            resp = {"myrank": "2nd"}
-        elif myRank+1 == 3:
-            resp = {"myrank": "3rd"}
-        else:
-            rank = myRank+1
-            resp = {"myrank": ""+rank+"th"}
+            if myRank+1 == 1:
+                resp = {"myrank": "1st"}
+            elif myRank+1 == 2:
+                resp = {"myrank": "2nd"}
+            elif myRank+1 == 3:
+                resp = {"myrank": "3rd"}
+            else:
+                rank = myRank+1
+                resp = {"myrank": ""+rank+"th"}
 
-        json_response = json.dumps(resp)
-        return HttpResponse(json_response, content_type="application/json")
+            json_response = json.dumps(resp)
+            return HttpResponse(json_response, content_type="application/json")
+        except:
+            resp = {"myrank": "1st"}
+            json_response = json.dumps(resp)
+            return HttpResponse(json_response, content_type="application/json")
     else:
         return HttpResponse("wrong request", content_type='application/json')
 
@@ -1175,16 +1229,24 @@ def get_top_events_participated(request, user_email):
 def get_my_score(request, user_email):
     if request.method == 'GET':
         user_id = User.objects.get(email=user_email).pk
-        players = Player.objects.filter(user_id=user_id).values("user_id").annotate(
-            total_score=Sum('score')).order_by("-total_score")
-        res = {}
-        if (players.__len__() != 0):
-            res = players[0]
-            # print(res['total_score'])
-            rating = getMyRating(res['total_score'])
-            result = {'user_id': res['user_id'],
-                      'score': res['total_score'], 'rating': rating}
-        return HttpResponse(json.dumps(result), content_type='application/json')
+        try:
+
+            players = Player.objects.filter(user_id=user_id).values("user_id").annotate(
+                total_score=Sum('score')).order_by("-total_score")
+            result = {'user_id': user_id,
+                      'score': 0, 'rating': 'Bronze-1'}
+            if (players.__len__() != 0):
+                res = players[0]
+                # print(res['total_score'])
+                rating = getMyRating(res['total_score'])
+                result = {'user_id': res['user_id'],
+                          'score': res['total_score'], 'rating': rating}
+            return HttpResponse(json.dumps(result), content_type='application/json')
+        except:
+            result = {'user_id': user_id,
+                      'score': 0, 'rating': 'Bronze-1'}
+            return HttpResponse(json.dumps(result), content_type='application/json')
+
     else:
         return HttpResponse("wrong request", content_type='application/json')
 
