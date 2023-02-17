@@ -1,10 +1,16 @@
 import graphene
-from .models import Category, Activity, Team, Player, Event, Registration
-from app1.types import CategoryType, ActivityType, TeamType, PlayerType, EventType, RegistrationType
-from .mutations import CreateCategory, UpdateCategory, DeleteCategory, CreateActivity, UpdateActivity, DeleteActivity, CreateTeam, CreatePlayer, UpdatePlayer, DeletePlayer, CreateEvent, CreateRegistration, UpdateTeamScores
+from .models import Detail, Category, Activity, Team, Player, Event, Registration, IndRegistration, Pod,Upload
+from app1.types import DetailType, UserType, CategoryType, ActivityType, TeamType, PlayerType, EventType, RegistrationType, IndRegistrationType, PodType,UploadType
+from .mutations import CreateUser, CreateCategory, UpdateCategory, DeleteCategory, CreateActivity, UpdateActivity, DeleteActivity, CreateTeam, CreatePlayer, UpdatePlayer, DeletePlayer, CreateEvent, CreateRegistration, UpdateTeamScores, CreateIndEvent, CreateIndPlayer, CreateIndRegistration, CreatePod,CreateUpload
+from django.contrib.auth.models import User
 
 
 class Query(graphene.ObjectType):
+
+    detail = graphene.Field(DetailType, id=graphene.ID(required=True))
+    all_details = graphene.List(DetailType)
+    user = graphene.Field(UserType, id=graphene.ID(required=True))
+    all_users = graphene.List(UserType)
     category = graphene.Field(CategoryType, id=graphene.ID(required=True))
     all_categories = graphene.List(CategoryType)
     activity = graphene.Field(ActivityType, id=graphene.ID(required=True))
@@ -22,6 +28,26 @@ class Query(graphene.ObjectType):
     registration = graphene.Field(RegistrationType,
                                   id=graphene.ID(required=True))
     all_registrations = graphene.List(RegistrationType)
+    indregistrations = graphene.Field(IndRegistrationType,
+                                      id=graphene.ID(required=True))
+    all_indregistrations = graphene.List(IndRegistrationType)
+
+    upload = graphene.Field(UploadType, id=graphene.ID(required=True))
+    all_uploads = graphene.List(UploadType)
+    pod = graphene.Field(PodType, id=graphene.ID(required=True))
+    all_pods = graphene.List(PodType)
+
+    def resolve_all_detais(self, info, **kwargs):
+        return Detail.objects.all()
+
+    def resolve_detail(self, info, id):
+        return Detail.objects.get(id=id)
+
+    def resolve_all_users(self, info, **kwargs):
+        return User.objects.all()
+
+    def resolve_user(self, info, id):
+        return User.objects.get(id=id)
 
     def resolve_all_categories(self, info, **kwargs):
         return Category.objects.all()
@@ -59,35 +85,63 @@ class Query(graphene.ObjectType):
     def resolve_all_registrations(self, info, **kwargs):
         return Registration.objects.all()
 
+    def resolve_indregistration(self, info, id):
+        return IndRegistration.objects.get(id=id)
+
+    def resolve_all_indregistrations(self, info, **kwargs):
+        return IndRegistration.objects.all()
+
+    def resolve_upload(self, info, id):
+        return Upload.objects.get(id=id)
+
+    def resolve_all_uploads(self, info, **kwargs):
+        return Upload.objects.all()
+
+    def resolve_pod(self, info, id):
+        return Pod.objects.get(id=id)
+
+    def resolve_all_pods(self, info, **kwargs):
+        return Pod.objects.all()
+
 
 class Mutation(graphene.ObjectType):
-    #category mutations
+    # category mutations
     create_category = CreateCategory.Field()
     update_category = UpdateCategory.Field()
     delete_category = DeleteCategory.Field()
 
-    #activity mutations
+    # activity mutations
     create_activity = CreateActivity.Field()
     update_activity = UpdateActivity.Field()
     delete_activity = DeleteActivity.Field()
 
-    #team mutations
+    # team mutations
     create_team = CreateTeam.Field()
     # update_team = UpdateTeam.Field()
 
-    #player mutations
+    # player mutations
     create_player = CreatePlayer.Field()
     update_player = UpdatePlayer.Field()
     delete_player = DeletePlayer.Field()
+    create_ind_player = CreateIndPlayer.Field()
 
-    #event mutations
+    # event mutations
     create_event = CreateEvent.Field()
+    create_ind_event = CreateIndEvent.Field()
 
-    #registrations mutations
+    # registrations mutations
     create_registration = CreateRegistration.Field()
+    create_ind_registration = CreateIndRegistration.Field()
 
-    #update team score
+    # update team score
     update_team_scores = UpdateTeamScores().Field()
+
+    # plank(upload) mutations
+    create_upload = CreateUpload.Field()
+
+    create_user = CreateUser.Field()
+
+    create_pod = CreatePod.Field()
 
 
 schema = graphene.Schema(query=Query, mutation=Mutation)

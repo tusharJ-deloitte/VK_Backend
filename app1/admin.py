@@ -1,5 +1,20 @@
 from django.contrib import admin
-from .models import Post, Category, Activity, Team, Player, Event, Registration
+from .models import Post, Category, Activity, Team, Player, Event, Registration, Detail, IndRegistration, Pod, Upload
+from django.contrib.auth.models import User
+from django.contrib.auth.admin import UserAdmin
+
+
+class DetailInline(admin.StackedInline):
+    model = Detail
+    can_delete = False
+
+
+class CustomizedUserAdmin(UserAdmin):
+    inlines = (DetailInline,)
+
+
+admin.site.unregister(User)
+admin.site.register(User, CustomizedUserAdmin)
 
 # Register your models here.
 
@@ -36,7 +51,29 @@ class PlayerAdmin(admin.ModelAdmin):
     list_display = ['id', 'event_id', 'team_id']
 
 
+@admin.register(IndRegistration)
+class PlayerAdmin(admin.ModelAdmin):
+    list_display = ['id', 'event_id', 'player_id']
+
+
+@admin.register(Detail)
+class PlayerAdmin(admin.ModelAdmin):
+    list_display = ['id', 'user_id', 'employee_id',
+                    'designation', 'profile_pic', 'doj']
+
+
 @admin.register(Event)
 class PlayerAdmin(admin.ModelAdmin):
-    list_display = ['id', 'name', 'activity_id', 'created_on', 'activity_mode', 'start_date', 'end_date', 'start_time', 'end_time',
-                    'max_teams', 'max_members', 'first_prize', 'second_prize', 'third_prize', 'cur_participation', 'status']
+    list_display = ['id', 'name', 'activity_id', 'created_on', 'event_type', 'activity_mode', 'start_date', 'end_date', 'start_time', 'end_time',
+                    'min_members', 'max_members', 'cur_participation', 'status']
+
+
+@admin.register(Upload)
+class UploadAdmin(admin.ModelAdmin):
+    list_display = ['id', 'event', 'user', 'uploaded_on', 'is_uploaded',
+                    'uploaded_file', 'file_name', 'file_size', 'file_duration', 'score']
+
+
+@admin.register(Pod)
+class PodAdmin(admin.ModelAdmin):
+    list_display = ['pod_id', 'user', 'pod_name', 'pod_size']

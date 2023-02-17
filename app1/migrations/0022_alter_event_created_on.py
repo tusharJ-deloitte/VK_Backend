@@ -14,6 +14,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='event',
             name='created_on',
-            field=models.DateTimeField(default=datetime.datetime(2023, 1, 31, 10, 47, 35, 860668)),
+            field=models.DateTimeField(default=datetime.datetime(2023, 2, 1, 10, 42, 9, 24463)),
         ),
     ]

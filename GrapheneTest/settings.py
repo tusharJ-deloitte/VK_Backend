@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 import os
 from pathlib import Path
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-l4_!5l2)%vo0^&vl%@5=(_5kjx%)*p!d#c^$ftkkq^6x_)5!k-'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -85,12 +86,15 @@ DATABASES = {
     }
 }
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_USE_TLS = True
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'm.ayush831@gmail.com'
-EMAIL_HOST_PASSWORD = 'qymwldkbvtwlgyce'
+EMAIL_BACKEND = 'django_ses.SESBackend'
+
+
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_USE_TLS = True
+# EMAIL_PORT = 587
+# EMAIL_HOST_USER = 'm.ayush831@gmail.com'
+# EMAIL_HOST_PASSWORD = 'qymwldkbvtwlgyce'
 
 
 # Password validation
@@ -156,3 +160,24 @@ CSRF_TRUSTED_ORIGINS = [
 ]
 
 CORS_ALLOW_CREDENTIALS = True
+
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+# KEYS TO UPLOAD VIDEO OF PLANKS
+AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME')
+AWS_QUERYSTRING_AUTH = config('AWS_QUERYSTRING_AUTH', cast=bool)
+AWS_REGION_NAME = config('AWS_REGION_NAME')
+CONTENT_TYPES = ['image', 'video']
+MAX_UPLOAD_SIZE = 429916160  # 100MB
+
+CLOUDFRONT_DOMAIN = config('CLOUDFRONT_DOMAIN')
+
+# SECRET KEYS/VARIABLES
+B2B_CLIENT_ID = config('B2B_CLIENT_ID')
+B2B_CLIENT_SECRET = config('B2B_CLIENT_SECRET')
+B2B_TOKEN_URL = config('B2B_TOKEN_URL')
+B2B_PODS_URL = config('B2B_PODS_URL')
+B2B_DASHBOARD_URL = config('B2B_DASHBOARD_URL')
