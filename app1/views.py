@@ -20,6 +20,9 @@ from django.core.mail import EmailMessage
 from django.db.models import Sum
 from django.db.models import Sum, Count
 import datetime
+from graphql import GraphQLError
+from .messages import messages
+# from .mutations import CreateEventnameExists
 
 
 def home(request):
@@ -263,46 +266,53 @@ def create_teams(request):
         json_data = request.body
         stream = io.BytesIO(json_data)
         python_data = JSONParser().parse(stream)
-        print(python_data)
+        # print(python_data)
+        if(Team.objects.filter(name=python_data["name"]).exists()):
+            print("duplicate team")
+            error = messages["duplicate_team"]
+            json_post = json.dumps(error)
+            return HttpResponse(json_post, content_type='application/json')
+        else:
 
-        result = schema.execute(
-            '''
-            mutation createTeams($name : String!,$activity: String!,$currentSize:Int!,$teamLead:String!,$teamLogo:String!){
-               createTeam(name:$name,activity:$activity,teamLead:$teamLead,currentSize:$currentSize, teamLogo:$teamLogo){
-                    team{
-                        id
+
+            result = schema.execute(
+                '''
+                mutation createTeams($name : String!,$activity: String!,$currentSize:Int!,$teamLead:String!,$teamLogo:String!){
+                createTeam(name:$name,activity:$activity,teamLead:$teamLead,currentSize:$currentSize, teamLogo:$teamLogo){
+                        team{
+                            id
+                        }
                     }
+
                 }
 
-            }
 
+                ''', variables={'name': python_data["name"], 'activity': python_data["activity"], 'currentSize': python_data["currentSize"], 'teamLead': python_data["teamLead"], 'teamLogo': python_data["team_logo"]}
+            )
+            activity_id = Activity.objects.get(name=python_data["activity"]).pk
+            print(activity_id)
 
-            ''', variables={'name': python_data["name"], 'activity': python_data["activity"], 'currentSize': python_data["currentSize"], 'teamLead': python_data["teamLead"], 'teamLogo': python_data["team_logo"]}
-        )
-        activity_id = Activity.objects.get(name=python_data["activity"]).pk
-        print(activity_id)
+            # team = Team.objects.get(name = python_data["name"])
+            # team.team_logo = Te
+            for item in range(0, python_data["currentSize"]):
+                user_email = python_data['players'][item]
+                result1 = schema.execute(
+                    '''
+                            mutation createPlayer($teamName:String!,$userEmail:String!,$score:Int!,$activityId:Int!){
+                                createPlayer(teamName:$teamName,userEmail:$userEmail,score:$score,activityId:$activityId){
 
-        # team = Team.objects.get(name = python_data["name"])
-        # team.team_logo = Te
-        for item in range(0, python_data["currentSize"]):
-            user_email = python_data['players'][item]
-            result1 = schema.execute(
-                '''
-                        mutation createPlayer($teamName:String!,$userEmail:String!,$score:Int!,$activityId:Int!){
-                            createPlayer(teamName:$teamName,userEmail:$userEmail,score:$score,activityId:$activityId){
-
-                                player{
-                                    id
-                                    score
+                                    player{
+                                        id
+                                        score
+                                    }
                                 }
                             }
-                        }
 
-                        ''', variables={'teamName': python_data["name"], 'userEmail': user_email, 'score': 0, 'activityId': activity_id}
-            )
+                            ''', variables={'teamName': python_data["name"], 'userEmail': user_email, 'score': 0, 'activityId': activity_id}
+                )
 
-        json_post = json.dumps(result.data)
-        return HttpResponse(json_post, content_type='application/json')
+            json_post = json.dumps(result.data)
+            return HttpResponse(json_post, content_type='application/json')
     else:
         return HttpResponse("wrong request", content_type='application/json')
 
@@ -323,8 +333,10 @@ def update_teams(request, team_id):
 
         activity_instance = Activity.objects.filter(
             name=python_data['activity'])[0]
-        print(activity_instance)
+        activity_instance.save()
+        print(type(activity_instance))
         team_instance.activity.add(activity_instance)
+        print(team_instance.activity.all())
         team_instance.save()
 
         players = Player.team.through.objects.filter(team_id=team_id)
@@ -482,25 +494,31 @@ def create_event(request):
         json_data = request.body
         stream = io.BytesIO(json_data)
         python_data = JSONParser().parse(stream)
-        print(python_data)
-
-        result = schema.execute(
-            '''
-            mutation createEvent($name : String!,$activityName: String!,$activityMode: String!,$maxTeams:Int!,$maxMembers:Int!,$firstPrize:Int!,$secondPrize:Int!,$thirdPrize:Int!,$startDate:Date!,$endDate:Date!,$startTime:Time!,$endTime:Time!){
-               createEvent(name:$name,activityName:$activityName,activityMode:$activityMode,maxTeams:$maxTeams,maxMembers:$maxMembers, firstPrize:$firstPrize,secondPrize:$secondPrize,thirdPrize:$thirdPrize,startTime:$startTime,endTime:$endTime,startDate:$startDate,endDate:$endDate){
-                    event{
-                        name
+        # print(python_ data)
+        
+        if(Event.objects.filter(name=python_data["name"]).exists()):
+            print("duplicate event")
+            error = messages["duplicate_event"]
+            json_post = json.dumps(error)
+            return HttpResponse(json_post, content_type='application/json')
+        else:
+            result = schema.execute(
+                '''
+                mutation createEvent($name : String!,$activityName: String!,$activityMode: String!,$maxTeams:Int!,$maxMembers:Int!,$firstPrize:Int!,$secondPrize:Int!,$thirdPrize:Int!,$startDate:Date!,$endDate:Date!,$startTime:Time!,$endTime:Time!){
+                createEvent(name:$name,activityName:$activityName,activityMode:$activityMode,maxTeams:$maxTeams,maxMembers:$maxMembers, firstPrize:$firstPrize,secondPrize:$secondPrize,thirdPrize:$thirdPrize,startTime:$startTime,endTime:$endTime,startDate:$startDate,endDate:$endDate){
+                        event{
+                            name
+                        }
                     }
+
                 }
 
-            }
 
+                ''', variables={'name': python_data["name"], 'activityName': python_data["activityName"], 'activityMode': python_data['activityMode'], 'maxTeams': python_data["maxTeams"], 'maxMembers': python_data["maxMembers"], 'firstPrize': python_data["firstPrize"], 'secondPrize': python_data["secondPrize"], 'thirdPrize': python_data["thirdPrize"], 'startDate': python_data['startDate'], 'endDate': python_data['endDate'], 'startTime': python_data['startTime'], 'endTime': python_data['endTime']}
+            )
 
-            ''', variables={'name': python_data["name"], 'activityName': python_data["activityName"], 'activityMode': python_data['activityMode'], 'maxTeams': python_data["maxTeams"], 'maxMembers': python_data["maxMembers"], 'firstPrize': python_data["firstPrize"], 'secondPrize': python_data["secondPrize"], 'thirdPrize': python_data["thirdPrize"], 'startDate': python_data['startDate'], 'endDate': python_data['endDate'], 'startTime': python_data['startTime'], 'endTime': python_data['endTime']}
-        )
-
-        json_post = json.dumps(result.data)
-        return HttpResponse(json_post, content_type='application/json')
+            json_post = json.dumps(result.data)
+            return HttpResponse(json_post, content_type='application/json')
     else:
         return HttpResponse("wrong request", content_type='application/json')
 
@@ -549,7 +567,7 @@ def update_event(request, event_id):
         json_data = request.body
         stream = io.BytesIO(json_data)
         python_data = JSONParser().parse(stream)
-        print(python_data)
+        # print(python_data)
 
         event_instance = Event.objects.get(id=event_id)
         event_instance.name = python_data["name"]

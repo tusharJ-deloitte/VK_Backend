@@ -3,6 +3,7 @@ from app1.types import CategoryType, ActivityType, TeamType, PlayerType, EventTy
 from .models import Category, Activity, Team, Player, Event, Registration
 import datetime
 from django.contrib.auth.models import User
+from graphql import GraphQLError
 
 
 class CreateCategory(graphene.Mutation):
@@ -153,16 +154,19 @@ class CreateTeam(graphene.Mutation):
 #     class Arguments:
 #         id = graphene.ID(required=True)
 #         name = graphene.String()
+#         activity = graphene.Int()
+
 
 #     team = graphene.Field(TeamType)
 
-#     def mutate(self, info, id, name, ):
+#     def mutate(self, info, id, name, activity ):
 #         team_instance = Team.objects.get(id=id)
 
 #         team_instance.name = name
+#         team_instance.activity = Activity.objects.get(id = activity)
 #         team_instance.created_on = datetime.datetime.utcnow()
 #         team_instance.save()
-#         return UpdateTeam(teamactivity = Activity.objects.get(id=activity)
+#         return UpdateTeam(team = team_instance)
 #         # team_instance.activity.add(activity)
 #         # team_instance.save()=team_instance)
 
@@ -196,6 +200,9 @@ class CreatePlayer(graphene.Mutation):
 
         return CreatePlayer(player_instance)
 
+# class CreateEventnameExists(graphene.ObjectType):
+# 	error_message = graphene.String(required=True)
+
 
 class CreateEvent(graphene.Mutation):
     class Arguments:
@@ -216,20 +223,21 @@ class CreateEvent(graphene.Mutation):
 
     def mutate(self, info, activity_name, name, activity_mode, max_teams, max_members, first_prize, second_prize, third_prize, start_date, end_date, start_time, end_time):
         print("inside")
-        print(datetime.datetime.now().date())
+        print(name)
+        print(datetime.datetime.now().date())   
         event_instance = Event(
-            activity=Activity.objects.get(name=activity_name),
-            activity_mode=activity_mode,
-            name=name,
-            start_date=start_date,
-            end_date=end_date,
-            start_time=start_time,
-            end_time=end_time,
-            max_teams=max_teams,
-            max_members=max_members,
-            first_prize=first_prize,
-            second_prize=second_prize,
-            third_prize=third_prize,
+        activity=Activity.objects.get(name=activity_name),
+        activity_mode=activity_mode,
+        name=name,
+        start_date=start_date,
+        end_date=end_date,
+        start_time=start_time,
+        end_time=end_time,
+        max_teams=max_teams,
+        max_members=max_members,
+        first_prize=first_prize,
+        second_prize=second_prize,
+        third_prize=third_prize,
 
         )
 

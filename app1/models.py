@@ -35,7 +35,7 @@ class Activity(models.Model):
 
 class Team(models.Model):
     activity = models.ManyToManyField(Activity, null=True)
-    name = models.TextField(max_length=20)
+    name = models.TextField(unique = True,max_length=20)
     current_size = models.IntegerField(default=0)
     team_lead = models.TextField(max_length=20, null=True)
     created_on = models.DateTimeField(auto_now_add=True)
@@ -50,7 +50,7 @@ class Event(models.Model):
     activity = models.ForeignKey(Activity, on_delete=models.CASCADE)
     created_on = models.DateTimeField(default=datetime.datetime.now())
     activity_mode = models.TextField(max_length=20, default='online')
-    name = models.TextField(max_length=20)
+    name = models.TextField(max_length=20, unique = True)
     start_date = models.DateField()
     end_date = models.DateField()
     start_time = models.TimeField()
