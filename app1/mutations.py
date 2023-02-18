@@ -495,17 +495,15 @@ class UpdateTeamScores(graphene.Mutation):
 class CreateUpload(graphene.Mutation):
     class Arguments:
         user_email = graphene.String(required=True)
-        file_name = graphene.String(required=True)
         event_name = graphene.String(required=True)
         file_duration = graphene.String(required=True)
 
     upload = graphene.Field(UploadType)
 
-    def mutate(self, info, user_email, file_name, event_name, file_duration):
+    def mutate(self, info, user_email, event_name, file_duration):
         upload_instance = Upload(
             user=User.objects.get(email=user_email),
             event=Event.objects.get(name=event_name),
-            file_name=file_name,
             file_duration=file_duration
         )
         upload_instance.save()
