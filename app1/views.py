@@ -24,8 +24,6 @@ import base64
 import json
 import io
 import datetime
-from django.forms.models import model_to_dict
-from django.core import serializers
 
 
 def home(request):
@@ -965,12 +963,17 @@ def get_hottest_challenge(request):
 
 def get_top_performer(request):
     if request.method == 'GET':
-        players = Player.objects.values("user_id").annotate(
-            total_score=Sum('score')).order_by("-total_score")
-        top_player_id = players[0]['user_id']
-        top_player = User.objects.get(id=top_player_id)
-        top_player = {"name": top_player.first_name+" "+top_player.last_name}
-        return HttpResponse(json.dumps(top_player), content_type='application/json')
+        try:
+            players = Player.objects.values("user_id").annotate(
+                total_score=Sum('score')).order_by("-total_score")
+            top_player_id = players[0]['user_id']
+            top_player = User.objects.get(id=top_player_id)
+            top_player = {"name": top_player.first_name +
+                          " "+top_player.last_name}
+            return HttpResponse(json.dumps(top_player), content_type='application/json')
+        except:
+            return HttpResponse("", content_type='application/json')
+
     else:
         return HttpResponse("wrong request", content_type='application/json')
 
@@ -1061,8 +1064,13 @@ def get_star_of_week(request):
 
 def get_events_participated(request, user_email):
     if request.method == "GET":
-        user_id = User.objects.get(email=user_email).pk
-        events = Event.objects.all()
+        try:
+            user_id = User.objects.get(email=user_email).pk
+            events = Event.objects.all()
+
+        except:
+            return HttpResponse("wrong request", content_type='application/json')
+        not_participated = []
         total = events.__len__()
         results = schema.execute(
             '''query{
@@ -1117,18 +1125,20 @@ def get_events_participated(request, user_email):
                     e_id = int(regs["event"]["id"])
                     if e_id == event.pk:
                         all_teams.append(regs["team"])
-
+                flag = 0
                 for team in all_teams:
                     players = Player.team.through.objects.filter(
                         team_id=team["id"])
                     for player in players:
                         plr = Player.objects.get(id=player.player_id)
                         if plr.user.pk == user_id:
-                            e_id = event.pk
-                            evt = Event.objects.get(id=e_id).name
                             all_events.append(
                                 results.data['allEvents'][i])
                             count += 1
+                            flag = 1
+                if flag == 0:
+                    not_participated.append(results.data['allEvents'][i])
+
             else:
                 result = schema.execute(
                     '''
@@ -1144,19 +1154,21 @@ def get_events_participated(request, user_email):
                         }
                         ''',
                 )
+                flag = 0
                 for regs in result.data["allIndregistrations"]:
                     e_id = int(regs["event"]["id"])
                     if e_id == event.pk:
-                        player = Player.objects.get(id=regs["player"]["id"])
+                        player = Player.objects.get(
+                            id=int(regs["player"]["id"]))
                         if player.user.pk == user_id:
-                            e_id = int(regs["event"]["id"])
-                            evt = Event.objects.get(id=e_id).name
                             all_events.append(
                                 results.data['allEvents'][i])
                             count += 1
-
+                            flag = 1
+                if flag == 0:
+                    not_participated.append(results.data['allEvents'][i])
         response = {"total_events": total,
-                    "participated": count, "events": all_events}
+                    "participated": count, "events": all_events, "not_participated": not_participated}
         json_response = json.dumps(response)
 
         return HttpResponse(json_response, content_type='application/json')
