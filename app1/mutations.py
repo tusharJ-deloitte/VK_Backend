@@ -497,14 +497,16 @@ class CreateUpload(graphene.Mutation):
         user_email = graphene.String(required=True)
         event_name = graphene.String(required=True)
         file_duration = graphene.String(required=True)
+        file_size = graphene.Int(required=True)
 
     upload = graphene.Field(UploadType)
 
-    def mutate(self, info, user_email, event_name, file_duration):
+    def mutate(self, info, user_email, event_name, file_duration,file_size):
         upload_instance = Upload(
             user=User.objects.get(email=user_email),
             event=Event.objects.get(name=event_name),
-            file_duration=file_duration
+            file_duration=file_duration,
+            file_size=file_size
         )
         upload_instance.save()
         return CreateUpload(upload_instance)

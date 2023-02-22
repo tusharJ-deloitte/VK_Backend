@@ -1324,7 +1324,7 @@ def upload_aws(request):
         
         result = schema.execute(
             '''
-            mutation CreateUpload($userEmail:String!,$eventName:String!,$fileDuration:Int!,$fileSize:Int!){
+            mutation CreateUpload($userEmail:String!,$eventName:String!,$fileDuration:String!,$fileSize:Int!){
                 createUpload(userEmail:$userEmail,eventName:$eventName,fileDuration:$fileDuration,fileSize:$fileSize){
                     upload{
                         id
@@ -1416,9 +1416,8 @@ def get_list_user_event(request, user_email, event_name):
         return HttpResponse(json.dumps({"data": result}), content_type="application/json")
     else:
         return HttpResponse(json.dumps({"error": "Wrong Request Method"}), content_type='application/json', status=400)
+
 # admin flow
-
-
 def get_uploads(request, event_name):
     if request.method == "GET":
         upload_id = [item.pk for item in Upload.objects.filter(
@@ -1443,9 +1442,8 @@ def get_uploads(request, event_name):
         return HttpResponse(json.dumps({"data": result}), content_type="application/json")
     else:
         return HttpResponse(json.dumps({"error": "Wrong Request Method"}), content_type='application/json', status=400)
+
 # admin flow
-
-
 def get_uploads_by_date(request, event_name, date):
     if request.method == "GET":
         upload_id = [item.pk for item in Upload.objects.filter(
