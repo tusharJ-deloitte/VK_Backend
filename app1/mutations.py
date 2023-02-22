@@ -3,6 +3,46 @@ from app1.types import UserType, CategoryType, ActivityType, TeamType, PlayerTyp
 from .models import Detail, User, Category, Activity, Team, Player, Event, Registration, IndRegistration, Pod, Upload
 import datetime
 from django.contrib.auth.models import User
+from graphql import GraphQLError
+
+
+class CreateUser(graphene.Mutation):
+    class Arguments:
+        employee_id = graphene.Int()
+        name = graphene.String()
+        email = graphene.String()
+        designation = graphene.String()
+        doj = graphene.Date()
+        profile_pic = graphene.String()
+
+    user = graphene.Field(UserType)
+
+    def mutate(self, info, name, email, designation, doj, employee_id, profile_pic):
+        print("inside createUser mutation")
+        if " " in name:
+            fname = name.split(' ', 1)[0]
+            lname = name.split(' ', 1)[1]
+        else:
+            fname = name
+            lname = ""
+        user_instance = User(
+            email=email,
+            username=email.split('@')[0],
+            first_name=fname,
+            last_name=lname
+        )
+        print(user_instance)
+        user_instance.save()
+        detail_instance = Detail(
+            user=user_instance,
+            employee_id=employee_id,
+            designation=designation,
+            doj=doj,
+            profile_pic=profile_pic
+        )
+        detail_instance.save()
+        print("outside createUser mutation")
+        return CreateUser(user=user_instance)
 
 
 class CreateUser(graphene.Mutation):
@@ -192,16 +232,19 @@ class CreateTeam(graphene.Mutation):
 #     class Arguments:
 #         id = graphene.ID(required=True)
 #         name = graphene.String()
+#         activity = graphene.Int()
+
 
 #     team = graphene.Field(TeamType)
 
-#     def mutate(self, info, id, name, ):
+#     def mutate(self, info, id, name, activity ):
 #         team_instance = Team.objects.get(id=id)
 
 #         team_instance.name = name
+#         team_instance.activity = Activity.objects.get(id = activity)
 #         team_instance.created_on = datetime.datetime.utcnow()
 #         team_instance.save()
-#         return UpdateTeam(teamactivity = Activity.objects.get(id=activity)
+#         return UpdateTeam(team = team_instance)
 #         # team_instance.activity.add(activity)
 #         # team_instance.save()=team_instance)
 
@@ -275,7 +318,8 @@ class CreateEvent(graphene.Mutation):
 
     def mutate(self, info, activity_name, name, activity_mode, min_members, max_members, start_date, end_date, start_time, end_time, event_type):
         print("inside")
-        print(datetime.datetime.now().date())
+        print(name)
+        print(datetime.datetime.now().date())   
         event_instance = Event(
             activity=Activity.objects.get(name=activity_name),
             activity_mode=activity_mode,
@@ -451,18 +495,18 @@ class UpdateTeamScores(graphene.Mutation):
 class CreateUpload(graphene.Mutation):
     class Arguments:
         user_email = graphene.String(required=True)
-        file_name = graphene.String(required=True)
         event_name = graphene.String(required=True)
         file_duration = graphene.String(required=True)
+        file_size = graphene.Int(required=True)
 
     upload = graphene.Field(UploadType)
 
-    def mutate(self, info, user_email, file_name, event_name, file_duration):
+    def mutate(self, info, user_email, event_name, file_duration,file_size):
         upload_instance = Upload(
             user=User.objects.get(email=user_email),
             event=Event.objects.get(name=event_name),
-            file_name=file_name,
-            file_duration=file_duration
+            file_duration=file_duration,
+            file_size=file_size
         )
         upload_instance.save()
         return CreateUpload(upload_instance)

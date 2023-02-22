@@ -24,6 +24,9 @@ import base64
 import json
 import io
 import datetime
+from graphql import GraphQLError
+from .messages import messages
+# from .mutations import CreateEventnameExists
 
 
 def home(request):
@@ -318,54 +321,51 @@ def create_teams(request):
         python_data = JSONParser().parse(stream)
         # print(python_data)
 
-        try:
-            name = Team.objects.get(name=python_data['name'])
-            return HttpResponse("Team name already exists", content_type='application/json')
-        except Team.DoesNotExist:
-            result = schema.execute(
-                '''
-                mutation createTeams($name : String!,$activity: String!,$currentSize:Int!,$teamLead:String!,$teamLogo:String!){
-                createTeam(name:$name,activity:$activity,teamLead:$teamLead,currentSize:$currentSize, teamLogo:$teamLogo){
-                        team{
-                            id
-                        }
+        result = schema.execute(
+            '''
+            mutation createTeams($name : String!,$activity: String!,$currentSize:Int!,$teamLead:String!,$teamLogo:String!){
+               createTeam(name:$name,activity:$activity,teamLead:$teamLead,currentSize:$currentSize, teamLogo:$teamLogo){
+                    team{
+                        id
                     }
+                }
 
                 }
 
 
                 ''', variables={'name': python_data["name"], 'activity': python_data["activity"], 'currentSize': python_data["currentSize"], 'teamLead': python_data["teamLead"], 'teamLogo': python_data["team_logo"]}
             )
-            activity_id = Activity.objects.get(name=python_data["activity"]).pk
-            # print(activity_id)
+        activity_id = Activity.objects.get(name=python_data["activity"]).pk
+        
+        # print(activity_id)
 
-            # team = Team.objects.get(name = python_data["name"])
-            # team.team_logo = Te
-            for item in range(0, python_data["currentSize"]):
-                user_email = python_data['players'][item]
-                result1 = schema.execute(
-                    '''
-                            mutation createPlayer($teamName:String!,$userEmail:String!,$score:Int!,$activityId:Int!){
-                                createPlayer(teamName:$teamName,userEmail:$userEmail,score:$score,activityId:$activityId){
+        # team = Team.objects.get(name = python_data["name"])
+        # team.team_logo = Te
+        for item in range(0, python_data["currentSize"]):
+            user_email = python_data['players'][item]
+            result1 = schema.execute(
+                '''
+                        mutation createPlayer($teamName:String!,$userEmail:String!,$score:Int!,$activityId:Int!){
+                            createPlayer(teamName:$teamName,userEmail:$userEmail,score:$score,activityId:$activityId){
 
-                                    player{
-                                        id
-                                        score
-                                    }
+                                player{
+                                    id
+                                    score
                                 }
                             }
+                        }
 
-                            ''', variables={'teamName': python_data["name"], 'userEmail': user_email, 'score': 0, 'activityId': activity_id}
-                )
-                msg = "You have been added to the team"+python_data["name"]
-                response = sns(user_email, "Team Created", msg)
-                if response:
-                    print("email sent")
-                else:
-                    print("not subscribed to email service")
+                        ''', variables={'teamName': python_data["name"], 'userEmail': user_email, 'score': 0, 'activityId': activity_id}
+            )
+            msg = "You have been added to the team"+python_data["name"]
+            response = sns(user_email, "Team Created", msg)
+            if response:
+                print("email sent")
+            else:
+                print("not subscribed to email service")
 
-            json_post = json.dumps(result.data)
-            return HttpResponse(json_post, content_type='application/json')
+        json_post = json.dumps(result.data)
+        return HttpResponse(json_post, content_type='application/json')
     else:
         return HttpResponse("wrong request", content_type='application/json')
 
@@ -392,6 +392,7 @@ def update_teams(request, team_id):
         for item in team_activity_instance:
             item.delete()
         team_instance.activity.add(activity_instance)
+        print(team_instance.activity.all())
         team_instance.save()
 
         players = Player.team.through.objects.filter(team_id=team_id)
@@ -599,8 +600,8 @@ def create_event(request):
             ''', variables={'name': python_data["name"], 'activityName': python_data["activityName"], 'activityMode': python_data['activityMode'], 'startDate': python_data['startDate'], 'endDate': python_data['endDate'], 'startTime': python_data['startTime'], 'endTime': python_data['endTime'], 'eventType': python_data["eventType"]}
             )
 
-        json_post = json.dumps(result.data)
-        return HttpResponse(json_post, content_type='application/json')
+            json_post = json.dumps(result.data)
+            return HttpResponse(json_post, content_type='application/json')
     else:
         return HttpResponse("wrong request", content_type='application/json')
 
@@ -1391,41 +1392,29 @@ def cancel_registration(request, event_id, p_id):
 
 def upload_aws(request):
     if request.method == 'POST':
-        data = request.POST.copy()  # receiving formdata
-        my_uploaded_file = request.FILES.get('my_uploaded_file')
-        print(data)
-        print(data.get("user_email"))
-        # frame_data = my_uploaded_file.get_frame(1)  # 1 means frame at first second
-        # print("-----------------",frame_data)
-
+        json_data = request.body
+        stream = io.BytesIO(json_data)
+        python_data = JSONParser().parse(stream)   
+        
         result = schema.execute(
             '''
-            mutation CreateUpload($userEmail:String!,$fileName:String!,$eventName:String!,$fileDuration:Int!){
-                createUpload(userEmail:$userEmail,fileName:$fileName,eventName:$eventName,fileDuration:$fileDuration){
+            mutation CreateUpload($userEmail:String!,$eventName:String!,$fileDuration:String!,$fileSize:Int!){
+                createUpload(userEmail:$userEmail,eventName:$eventName,fileDuration:$fileDuration,fileSize:$fileSize){
                     upload{
                         id
                     }
                 }
             }
-            ''', variables={'userEmail': data.get("user_email"), 'fileName': my_uploaded_file.name, 'eventName': data.get('event_name'), 'fileDuration': data.get('file_duration')})
+            ''', variables={'userEmail': python_data["user_email"], 'eventName': python_data['event_name'], 'fileDuration': python_data['file_duration'],'fileSize':python_data['file_size']})
         print(result)
-        print("date---", datetime.datetime.now())
         id = result.data['createUpload']['upload']['id']
         upload_instance = Upload.objects.get(id=id)
-        my_uploaded_file.name = str(upload_instance.uploaded_on).split(' ')[0]+"___"+str(
-            data.get("event_name"))+"___"+str(data.get("user_email"))+"___"+my_uploaded_file.name
-
-        print("1")
-        upload_instance.uploaded_file = my_uploaded_file
-        print("2")
-        upload_instance.save()
-        upload_instance.file_size = my_uploaded_file.size
+        upload_instance.file_name = str(upload_instance.uploaded_on).split(' ')[0]+"___"+python_data['event_name']+"___"+python_data["user_email"]+"___"+python_data['file_name']
+        print("done---1")              
         upload_instance.score = 0
-        print("3")
         upload_instance.is_uploaded = True
-        print("done----1")
         upload_instance.save()
-        print("done----2")
+        print("done--2")
         return HttpResponse(200)
 
 # upload_instance.file_frame  = Image.fromarray(frame_data, 'RGB')
@@ -1460,15 +1449,13 @@ def delete_file(request, upload_id):
     if request.method == "DELETE":
         upload_instance = Upload.objects.get(id=upload_id)
         # date=str(upload_instance.uploaded_on).split(' ')[0]
-        key = upload_instance.uploaded_file.name
+        key = upload_instance.file_name
         print(key)
         print("1")
         # key = date+"___"+upload_instance.event.name+"___"+upload_instance.user.email+"___"+upload_instance.file_name
-        s3_client = boto3.client('s3', region_name=settings.AWS_REGION_NAME,
-                                 aws_access_key_id=settings.AWS_ACCESS_KEY_ID, aws_secret_access_key=settings.AWS_SECRET_ACCESS_KEY)
+        s3_client = boto3.client('s3')
         print("2")
-        response = s3_client.delete_object(
-            Bucket=settings.AWS_STORAGE_BUCKET_NAME, Key=key)
+        response = s3_client.delete_object(Bucket=settings.AWS_STORAGE_BUCKET_NAME, Key=key)
         print("3")
         print(response)
         upload_instance.delete()
@@ -1492,7 +1479,7 @@ def get_list_user_event(request, user_email, event_name):
             print(item)
             uploadedOn = Upload.objects.get(id=item).uploaded_on
             result.append({
-                "file": settings.CLOUDFRONT_DOMAIN+"/"+Upload.objects.get(id=item).uploaded_file.name,
+                "file": settings.CLOUDFRONT_DOMAIN+"/"+Upload.objects.get(id=item).file_name,
                 "file_name": Upload.objects.get(id=item).file_name,
                 "uploaded_on_date": str(uploadedOn).split(' ')[0],
                 "uploaded_on_time": str(uploadedOn).split(' ')[1].split('.')[0],
@@ -1503,9 +1490,8 @@ def get_list_user_event(request, user_email, event_name):
         return HttpResponse(json.dumps({"data": result}), content_type="application/json")
     else:
         return HttpResponse(json.dumps({"error": "Wrong Request Method"}), content_type='application/json', status=400)
+
 # admin flow
-
-
 def get_uploads(request, event_name):
     if request.method == "GET":
         upload_id = [item.pk for item in Upload.objects.filter(
@@ -1515,11 +1501,11 @@ def get_uploads(request, event_name):
         for item in upload_id:
             uploadedOn = Upload.objects.get(id=item).uploaded_on
             print(settings.CLOUDFRONT_DOMAIN+"/" +
-                  Upload.objects.get(id=item).uploaded_file.name)
+                  Upload.objects.get(id=item).file_name)
             result.append({
                 "user": Upload.objects.get(id=item).user.first_name+" "+Upload.objects.get(id=item).user.last_name,
                 "user_email": Upload.objects.get(id=item).user.email,
-                "file": settings.CLOUDFRONT_DOMAIN+"/"+Upload.objects.get(id=item).uploaded_file.name,
+                "file": settings.CLOUDFRONT_DOMAIN+"/"+Upload.objects.get(id=item).file_name,
                 "uploaded_on_date": str(uploadedOn).split(' ')[0],
                 "uploaded_on_time": str(uploadedOn).split(' ')[1].split('.')[0],
                 "file_name": Upload.objects.get(id=item).file_name,
@@ -1530,9 +1516,8 @@ def get_uploads(request, event_name):
         return HttpResponse(json.dumps({"data": result}), content_type="application/json")
     else:
         return HttpResponse(json.dumps({"error": "Wrong Request Method"}), content_type='application/json', status=400)
+
 # admin flow
-
-
 def get_uploads_by_date(request, event_name, date):
     if request.method == "GET":
         upload_id = [item.pk for item in Upload.objects.filter(
@@ -1544,11 +1529,11 @@ def get_uploads_by_date(request, event_name, date):
             uploaded_on = str(uploadedOn).split(' ')[0]
             if uploaded_on == date:
                 print(settings.CLOUDFRONT_DOMAIN+"/" +
-                      Upload.objects.get(id=item).uploaded_file.name)
+                      Upload.objects.get(id=item).file_name)
                 result.append({
                     "user": Upload.objects.get(id=item).user.first_name+" "+Upload.objects.get(id=item).user.last_name,
                     "user_email": Upload.objects.get(id=item).user.email,
-                    "file": settings.CLOUDFRONT_DOMAIN+"/"+Upload.objects.get(id=item).uploaded_file.name,
+                    "file": settings.CLOUDFRONT_DOMAIN+"/"+Upload.objects.get(id=item).file_name,
                     "uploaded_on_date": str(uploadedOn).split(' ')[0],
                     "uploaded_on_time": str(uploadedOn).split(' ')[1].split('.')[0],
                     "file_name": Upload.objects.get(id=item).file_name,

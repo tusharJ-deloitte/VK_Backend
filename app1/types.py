@@ -66,7 +66,7 @@ class UploadType(DjangoObjectType):
     class Meta:
         model = Upload
         fields = ('id', 'user', 'event', 'is_uploaded', 'uploaded_on',
-                  'uploaded_file', 'file_name', 'file_size', 'file_duration', 'score')
+                  'file_name', 'file_size', 'file_duration', 'score')
 
 
 class PodType(DjangoObjectType):

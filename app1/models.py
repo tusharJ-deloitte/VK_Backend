@@ -121,7 +121,6 @@ class Upload(models.Model):
     uploaded_on = models.DateTimeField(
         auto_now_add=True, null=True, blank=True)
     is_uploaded = models.BooleanField(default=False)
-    uploaded_file = models.FileField(upload_to="activity_plank/", null=True)
     file_name = models.TextField(null=True, blank=True)
     file_size = models.IntegerField(default=0, null=True, blank=True)
     file_duration = models.TextField(null=True, blank=True)  # in seconds
