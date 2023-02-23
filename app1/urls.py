@@ -86,6 +86,7 @@ urlpatterns = [
          name='get_all_users_organisation'),
 
     # sns test
-    path("sns", views.sns, name="sns")
+    path("sns", views.sns, name="sns"),
+    path("notifications/<str:user_email>", views.get_notifications_of_user, name="get_notifications_of_user")
 
 ]

@@ -15,7 +15,7 @@ from django.conf import settings
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.core.mail import EmailMessage
-from django.db.models import Sum, Count
+from django.db.models import Sum, Count, Q
 from GrapheneTest import settings
 import datetime
 import boto3
@@ -27,6 +27,7 @@ import datetime
 from graphql import GraphQLError
 from .messages import messages
 # from .mutations import CreateEventnameExists
+
 
 
 def home(request):
@@ -357,7 +358,20 @@ def create_teams(request):
 
                         ''', variables={'teamName': python_data["name"], 'userEmail': user_email, 'score': 0, 'activityId': activity_id}
             )
-            msg = "You have been added to the team"+python_data["name"]
+
+            msg = f"Congratulations! You have been added to the team {python_data['name']} under the activity {python_data['activity']}"
+
+            # create new entry in notifications table for new member added to team
+            print("creating new entry in notifications table for adding a new member to team")
+            memberAddedNotification = Notifications(
+                message_type="MEMBER_ADDED",
+                message=msg,
+                for_user=user_email
+            )
+            memberAddedNotification.save()
+            print("created new entry in notifications table")
+
+            #send email to the user for adding into the team
             response = sns(user_email, "Team Created", msg)
             if response:
                 print("email sent")
@@ -377,7 +391,13 @@ def update_teams(request, team_id):
         python_data = JSONParser().parse(stream)
         # print(python_data)
 
+        isTeamNameChanged = False
+        previousTeamName = ""
         team_instance = Team.objects.get(id=team_id)
+        if team_instance.name != python_data['name']:
+            isTeamNameChanged = True
+            previousTeamName = team_instance.name
+
         team_instance.name = python_data['name']
         team_instance.team_lead = python_data['teamLead']
         team_instance.current_size = python_data['currentSize']
@@ -439,7 +459,19 @@ def update_teams(request, team_id):
 
                         ''', variables={'teamName': python_data["name"], 'userEmail': key, 'score': 0}
                 )
-                msg = "You have been added to the team }"+python_data["name"]
+
+                msg = f"Congratulations! You have been added to the team {python_data['name']} under the activity {python_data['activity']}"
+                # create new entry in notifications table for new member added to team
+                print("creating new entry in notifications table for adding a new member to team")
+                memberAddedNotification = Notifications(
+                    message_type="MEMBER_ADDED",
+                    message=msg,
+                    for_user=key
+                )
+                memberAddedNotification.save()
+                print("created new entry in notifications table")
+
+                # send email to the user for adding into the team
                 response = sns(key, "Team Created", msg)
                 if response:
                     print("email sent")
@@ -457,9 +489,40 @@ def update_teams(request, team_id):
                     if item.player_id in l:
                         Player.objects.get(id=item.player_id).delete()
 
-                msg = "You have been deleted from the team }" + \
-                    python_data["name"]
+                msg = f"You are removed from the team {python_data['name']}"
+
+                # create new entry in notifications table for member removed from team
+                print(
+                    "creating new entry in notifications table for member removed from team")
+                memberRemovedNotification = Notifications(
+                    message_type="MEMBER_REMOVED",
+                    message=msg,
+                    for_user=key
+                )
+                memberRemovedNotification.save()
+                print("created new entry in notifications table")
+
+                # send email to the user for removing from the team
                 response = sns(key, "Player Deleted", msg)
+                if response:
+                    print("email sent")
+                else:
+                    print("not subscribed to email service")
+
+            elif value == 0:
+                msg = f"Your team name is changed from {previousTeamName} to {python_data['name']}"
+                # create new entry in notifications table if there is change in team name only to previous members
+                print("creating new entry in notifications table for change in team name")
+                teamNameNotification = Notifications(
+                    message_type="TEAM_NAME_CHANGED",
+                    message=msg,
+                    for_user=key
+                ) 
+                teamNameNotification.save()
+                print("created new entry in notifications table")
+
+                # send email to the user for change in team name
+                response = sns(key, "Team Name Changed", msg)
                 if response:
                     print("email sent")
                 else:
@@ -602,12 +665,12 @@ def create_event(request):
 
         #create new entry in notifications table for new event creation
         print("creating new entry in notifications table")
-        notificationInstance = Notifications(
+        newEventNotification = Notifications(
             message_type="EVENT_CREATED",
             message=f"New Event {python_data['name']} created under {python_data['activityName']} activity. Go and register now!",
             for_user="ALL"
         )
-        notificationInstance.save()
+        newEventNotification.save()
         print("created new entry in notifications table")
 
         json_post = json.dumps(result.data)
@@ -636,9 +699,6 @@ def get_all_events(request):
                         activity{
                             name,
                             activityLogo
-                        
-                            
-
                         }
                             }
                 }
@@ -744,11 +804,26 @@ def register(request):
         )
 
         json_post = json.dumps(result.data)
-        size = Team.objects.get(id=python_data["team_id"]).current_size
+        teamInstance = Team.objects.get(id=python_data["team_id"])
+        size = teamInstance.current_size
         event = Event.objects.get(id=python_data["event_id"])
         event.cur_participation = event.cur_participation+size
         event.save()
         # print(event.cur_participation)
+
+        players = Player.team.through.objects.filter(team_id=python_data["team_id"])
+        for player in players:
+            user_email = Player.objects.get(id=player.player_id).user.email
+            # create new entry in notifications table for participation in the event
+            print("creating new entry in notifications table for participation in the event")
+            participateEventNotification = Notifications(
+                message_type="PARTICIPATE_EVENT",
+                message=f"Your team {teamInstance.name} has participated in the event {event.name}",
+                for_user=user_email
+            )
+            participateEventNotification.save()
+            print("created new entry in notifications table")
+
 
         return HttpResponse(json_post, content_type='application/json')
     else:
@@ -796,6 +871,16 @@ def register_individual(request):
         event = Event.objects.get(id=python_data['event_id'])
         event.cur_participation = event.cur_participation+1
         event.save()
+
+        # create new entry in notifications table for participation in the event
+        print("creating new entry in notifications table for participation in the event")
+        participateEventNotification = Notifications(
+            message_type="PARTICIPATE_EVENT",
+            message=f"You have participated in the event {event.name}",
+            for_user=user_email
+        )
+        participateEventNotification.save()
+        print("created new entry in notifications table")
 
         return HttpResponse(json_post, content_type='application/json')
     else:
@@ -1854,3 +1939,22 @@ def sns(receiver, subject, message):
         )
         return True
         # return HttpResponse(json.dumps({'body': 'email sent'}), content_type="application/json")
+
+def get_notifications_of_user(request,user_email):
+    try:
+        if request.method == 'GET':
+            user_notifications = Notifications.objects.filter(Q(for_user = user_email) | Q(for_user = "ALL")).order_by("-createdOn")
+            result = []
+            for notification in user_notifications:
+                result.append({
+                    "message_type":notification.message_type,
+                    "message": notification.message,
+                    "createdOn": str(notification.createdOn),
+                    "seen":notification.seen
+                })
+            return HttpResponse(json.dumps(result), content_type='application/json', status=400)
+        else:
+            return HttpResponse("wrong request method", content_type='application/json', status=400)
+    except Exception as err:
+        print(err)
+        return HttpResponse(err, content_type='application/json')

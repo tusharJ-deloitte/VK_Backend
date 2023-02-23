@@ -149,6 +149,9 @@ class Notifications(models.Model):
     for_user = models.TextField(null=True)
     createdOn = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        ordering = ['-createdOn']
+
     def __str__(self) -> str:
         return self.message_type+" "+self.message
 
