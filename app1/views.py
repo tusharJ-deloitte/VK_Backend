@@ -600,16 +600,18 @@ def create_event(request):
             ''', variables={'name': python_data["name"], 'activityName': python_data["activityName"], 'activityMode': python_data['activityMode'], 'startDate': python_data['startDate'], 'endDate': python_data['endDate'], 'startTime': python_data['startTime'], 'endTime': python_data['endTime'], 'eventType': python_data["eventType"]}
             )
 
-            #create new entry in notifications table
-            notificationInstance = Notifications()
-            notifcationInstance.message_type = "EVENT_CREATED"
-            notifcationInstance.message = f"{python_data['name']} created under {python_data['activityName']}. Go and register now!"
-            notifcationInstance.for_user = "ALL" 
-            notifcationInstance.save()
+        #create new entry in notifications table for new event creation
+        print("creating new entry in notifications table")
+        notificationInstance = Notifications(
+            message_type="EVENT_CREATED",
+            message=f"New Event {python_data['name']} created under {python_data['activityName']} activity. Go and register now!",
+            for_user="ALL"
+        )
+        notificationInstance.save()
+        print("created new entry in notifications table")
 
-
-            json_post = json.dumps(result.data)
-            return HttpResponse(json_post, content_type='application/json')
+        json_post = json.dumps(result.data)
+        return HttpResponse(json_post, content_type='application/json')
     else:
         return HttpResponse("wrong request", content_type='application/json')
 

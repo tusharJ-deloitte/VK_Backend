@@ -143,10 +143,10 @@ class Pod(models.Model):
 
 class Notifications(models.Model):
     message_type = models.TextField()
-    message = models.TextField()
+    message = models.TextField(null=True)
     sent = models.BooleanField(default=False)
     seen = models.BooleanField(default=False)
-    for_user = models.TextField
+    for_user = models.TextField(null=True)
     createdOn = models.DateTimeField(auto_now_add=True)
 
     def __str__(self) -> str:
