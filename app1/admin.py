@@ -81,4 +81,4 @@ class PodAdmin(admin.ModelAdmin):
 
 @admin.register(Notifications)
 class NotificationsAdmin(admin.ModelAdmin):
-    list_display = ['id','message_type','message','sent','seen','created_on','for_user']
+    list_display = ['id','message_type','message','sent','seen','createdOn','for_user']

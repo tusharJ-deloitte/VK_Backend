@@ -141,7 +141,7 @@ class Pod(models.Model):
         return self.pod_name
 
 
-class Notifications(model.Model):
+class Notifications(models.Model):
     message_type = models.TextField()
     message = models.TextField()
     sent = models.BooleanField(default=False)
