@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Category, Activity, Team, Player, Event, Registration, Detail, IndRegistration, Pod, Upload
+from .models import Post, Category, Activity, Team, Player, Event, Registration, Detail, IndRegistration, Pod, Upload, Notifications
 from django.contrib.auth.models import User
 from django.contrib.auth.admin import UserAdmin
 
@@ -77,3 +77,8 @@ class UploadAdmin(admin.ModelAdmin):
 @admin.register(Pod)
 class PodAdmin(admin.ModelAdmin):
     list_display = ['pod_id', 'user', 'pod_name', 'pod_size']
+
+
+@admin.register(Notifications)
+class NotificationsAdmin(admin.ModelAdmin):
+    list_display = ['id','message_type','message','sent','seen','created_on','for_user']

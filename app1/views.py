@@ -1,6 +1,6 @@
 import re
 from django.shortcuts import render
-from .models import Detail, Activity, Player, Team, Category, Event, Registration, IndRegistration, Pod, Upload
+from .models import Detail, Activity, Player, Team, Category, Event, Registration, IndRegistration, Pod, Upload, Notifications
 from .serializers import PostSerializer
 from rest_framework.renderers import JSONRenderer
 from django.http import HttpResponse, JsonResponse
@@ -600,6 +600,14 @@ def create_event(request):
             ''', variables={'name': python_data["name"], 'activityName': python_data["activityName"], 'activityMode': python_data['activityMode'], 'startDate': python_data['startDate'], 'endDate': python_data['endDate'], 'startTime': python_data['startTime'], 'endTime': python_data['endTime'], 'eventType': python_data["eventType"]}
             )
 
+            #create new entry in notifications table
+            notificationInstance = Notifications()
+            notifcationInstance.message_type = "EVENT_CREATED"
+            notifcationInstance.message = f"{python_data['name']} created under {python_data['activityName']}. Go and register now!"
+            notifcationInstance.for_user = "ALL" 
+            notifcationInstance.save()
+
+
             json_post = json.dumps(result.data)
             return HttpResponse(json_post, content_type='application/json')
     else:
@@ -706,8 +714,8 @@ def update_event(request, event_id):
 def delete_event(request, event_id):
     if request.method == 'DELETE':
         ev = Event.objects.get(id=event_id)
-        # print(ev)
-        ev.delete()
+        print(ev)
+        # ev.delete()
     return HttpResponse(200)
 
 

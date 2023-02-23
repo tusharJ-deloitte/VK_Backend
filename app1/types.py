@@ -1,6 +1,6 @@
 from graphene_django.types import DjangoObjectType
 from django.contrib.auth.models import User
-from .models import Detail, Category, Activity, Team, Player, Event, Registration, IndRegistration, Pod, Upload
+from .models import Detail, Category, Activity, Team, Player, Event, Registration, IndRegistration, Pod, Upload, Notifications
 
 
 class UserType(DjangoObjectType):
@@ -73,3 +73,9 @@ class PodType(DjangoObjectType):
     class Meta:
         model = Pod
         fields = ('pod_id', 'user', 'pod_name', 'pod_size')
+
+
+class NotificationsType(DjangoObjectType):
+    class Meta:
+        model = Notifications
+        fields = ('id', 'message', 'message_type', 'sent', 'seen', 'createdOn')

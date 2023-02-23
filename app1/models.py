@@ -141,6 +141,18 @@ class Pod(models.Model):
         return self.pod_name
 
 
+class Notifications(model.Model):
+    message_type = models.TextField()
+    message = models.TextField()
+    sent = models.BooleanField(default=False)
+    seen = models.BooleanField(default=False)
+    for_user = models.TextField
+    createdOn = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self) -> str:
+        return self.message_type+" "+self.message
+
+
 # class Logo(models.Model):
 #     title = models.CharField(
 #         max_length=80, blank=False, null=False)
