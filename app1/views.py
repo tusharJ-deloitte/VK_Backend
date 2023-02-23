@@ -334,9 +334,9 @@ def create_teams(request):
 
 
                 ''', variables={'name': python_data["name"], 'activity': python_data["activity"], 'currentSize': python_data["currentSize"], 'teamLead': python_data["teamLead"], 'teamLogo': python_data["team_logo"]}
-            )
+        )
         activity_id = Activity.objects.get(name=python_data["activity"]).pk
-        
+
         # print(activity_id)
 
         # team = Team.objects.get(name = python_data["name"])
@@ -647,9 +647,9 @@ def get_all_events(request):
                 elapsed.append(result.data['allEvents'][i])
             elif event.start_date > curr:
                 upcoming.append(result.data['allEvents'][i])
-            elif event.end_time < curt:
+            elif event.end_time < curt and event.end_date == curr:
                 elapsed.append(result.data['allEvents'][i])
-            elif event.start_time > curt:
+            elif event.start_time > curt and event.start_date == curr:
                 upcoming.append(result.data['allEvents'][i])
             else:
                 active.append(result.data['allEvents'][i])
@@ -668,6 +668,11 @@ def update_event(request, event_id):
         stream = io.BytesIO(json_data)
         python_data = JSONParser().parse(stream)
         # print(python_data)
+        try:
+            name = Event.objects.get(name=python_data['name'])
+            return HttpResponse("Event name already exists", content_type='application/json')
+        except Event.DoesNotExist:
+            print("unique")
 
         if python_data['eventType'] == "Group":
             event_instance = Event.objects.get(id=event_id)
@@ -1394,8 +1399,8 @@ def upload_aws(request):
     if request.method == 'POST':
         json_data = request.body
         stream = io.BytesIO(json_data)
-        python_data = JSONParser().parse(stream)   
-        
+        python_data = JSONParser().parse(stream)
+
         result = schema.execute(
             '''
             mutation CreateUpload($userEmail:String!,$eventName:String!,$fileDuration:String!,$fileSize:Int!){
@@ -1405,12 +1410,13 @@ def upload_aws(request):
                     }
                 }
             }
-            ''', variables={'userEmail': python_data["user_email"], 'eventName': python_data['event_name'], 'fileDuration': python_data['file_duration'],'fileSize':python_data['file_size']})
+            ''', variables={'userEmail': python_data["user_email"], 'eventName': python_data['event_name'], 'fileDuration': python_data['file_duration'], 'fileSize': python_data['file_size']})
         print(result)
         id = result.data['createUpload']['upload']['id']
         upload_instance = Upload.objects.get(id=id)
-        upload_instance.file_name = str(upload_instance.uploaded_on).split(' ')[0]+"___"+python_data['event_name']+"___"+python_data["user_email"]+"___"+python_data['file_name']
-        print("done---1")              
+        upload_instance.file_name = str(upload_instance.uploaded_on).split(' ')[
+            0]+"___"+python_data['event_name']+"___"+python_data["user_email"]+"___"+python_data['file_name']
+        print("done---1")
         upload_instance.score = 0
         upload_instance.is_uploaded = True
         upload_instance.save()
@@ -1455,7 +1461,8 @@ def delete_file(request, upload_id):
         # key = date+"___"+upload_instance.event.name+"___"+upload_instance.user.email+"___"+upload_instance.file_name
         s3_client = boto3.client('s3')
         print("2")
-        response = s3_client.delete_object(Bucket=settings.AWS_STORAGE_BUCKET_NAME, Key=key)
+        response = s3_client.delete_object(
+            Bucket=settings.AWS_STORAGE_BUCKET_NAME, Key=key)
         print("3")
         print(response)
         upload_instance.delete()
@@ -1492,6 +1499,8 @@ def get_list_user_event(request, user_email, event_name):
         return HttpResponse(json.dumps({"error": "Wrong Request Method"}), content_type='application/json', status=400)
 
 # admin flow
+
+
 def get_uploads(request, event_name):
     if request.method == "GET":
         upload_id = [item.pk for item in Upload.objects.filter(
@@ -1518,6 +1527,8 @@ def get_uploads(request, event_name):
         return HttpResponse(json.dumps({"error": "Wrong Request Method"}), content_type='application/json', status=400)
 
 # admin flow
+
+
 def get_uploads_by_date(request, event_name, date):
     if request.method == "GET":
         upload_id = [item.pk for item in Upload.objects.filter(
