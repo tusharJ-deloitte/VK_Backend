@@ -27,7 +27,12 @@ import datetime
 from graphql import GraphQLError
 from .messages import messages
 # from .mutations import CreateEventnameExists
-
+from websocket import create_connection
+try:
+    ws = create_connection("wss://8u1oqx7th4.execute-api.us-east-1.amazonaws.com/production")
+    print("Connected to web socket successfully")
+except:
+    print("WebSocket connection unsuccessfull")
 
 
 def home(request):
@@ -342,6 +347,7 @@ def create_teams(request):
 
         # team = Team.objects.get(name = python_data["name"])
         # team.team_logo = Te
+        newMemberMessageDataForWS,notificationsToBeSent = {},[]
         for item in range(0, python_data["currentSize"]):
             user_email = python_data['players'][item]
             result1 = schema.execute(
@@ -370,6 +376,11 @@ def create_teams(request):
             )
             memberAddedNotification.save()
             print("created new entry in notifications table")
+            notificationsToBeSent.append(user_email)
+            newMemberMessageDataForWS = {
+                "message_type" : "MEMBER_ADDED",
+                "message" : msg
+            }
 
             #send email to the user for adding into the team
             response = sns(user_email, "Team Created", msg)
@@ -377,6 +388,12 @@ def create_teams(request):
                 print("email sent")
             else:
                 print("not subscribed to email service")
+
+        # send data over the websocket
+        newMemberMessageDataForWS["user"] = notificationsToBeSent
+        print("this is data", newMemberMessageDataForWS)
+        ws.send(json.dumps({"action": "sendToOne",
+                "msg": newMemberMessageDataForWS}))
 
         json_post = json.dumps(result.data)
         return HttpResponse(json_post, content_type='application/json')
@@ -439,6 +456,10 @@ def update_teams(request, team_id):
 
         # print("********", d)
 
+        addedMessageDataForWS,addedNotificationToBeSent = {},[]
+        removedMessageDataForWS,removedNotificationToBeSent = {},[]
+        teamNameChangedMessageDataForWS, teamNameChangeNotificationToBeSent = {}, []
+
         for key, value in d.items():
             username = User.objects.get(email=key).first_name
             id = User.objects.get(email=key).pk
@@ -468,6 +489,13 @@ def update_teams(request, team_id):
                     message=msg,
                     for_user=key
                 )
+                #data for ws
+                addedMessageDataForWS={
+                    "message_type":"MEMBER_ADDED",
+                    "message":msg
+                }
+                addedNotificationToBeSent.append(key)
+
                 memberAddedNotification.save()
                 print("created new entry in notifications table")
 
@@ -499,6 +527,12 @@ def update_teams(request, team_id):
                     message=msg,
                     for_user=key
                 )
+                # data for ws
+                removedMessageDataForWS = {
+                    "message_type": "MEMBER_REMOVED",
+                    "message": msg
+                }
+                removedNotificationToBeSent.append(key)
                 memberRemovedNotification.save()
                 print("created new entry in notifications table")
 
@@ -509,7 +543,7 @@ def update_teams(request, team_id):
                 else:
                     print("not subscribed to email service")
 
-            elif value == 0:
+            elif value == 0 and isTeamNameChanged:
                 msg = f"Your team name is changed from {previousTeamName} to {python_data['name']}"
                 # create new entry in notifications table if there is change in team name only to previous members
                 print("creating new entry in notifications table for change in team name")
@@ -518,8 +552,17 @@ def update_teams(request, team_id):
                     message=msg,
                     for_user=key
                 ) 
+                # data for ws
+                teamNameChangedMessageDataForWS = {
+                    "message_type": "TEAM_NAME_CHANGED",
+                    "message": msg
+                }
+                teamNameChangeNotificationToBeSent.append(key)
+
+
                 teamNameNotification.save()
                 print("created new entry in notifications table")
+
 
                 # send email to the user for change in team name
                 response = sns(key, "Team Name Changed", msg)
@@ -528,7 +571,21 @@ def update_teams(request, team_id):
                 else:
                     print("not subscribed to email service")
 
-        return HttpResponse({"msg": "successful"}, content_type='application/json')
+        #send added members data over web socket
+        addedMessageDataForWS["user"] = addedNotificationToBeSent
+        ws.send(json.dumps({"action": "sendToOne", "msg": addedMessageDataForWS}))
+
+        #send removed members data over web socket
+        removedMessageDataForWS["user"] = removedNotificationToBeSent
+        ws.send(json.dumps({"action": "sendToOne",
+                "msg": removedMessageDataForWS}))
+
+        # send team name changed data over web socket
+        teamNameChangedMessageDataForWS["user"]=teamNameChangeNotificationToBeSent
+        ws.send(json.dumps({"action": "sendToOne",
+                "msg": teamNameChangedMessageDataForWS}))
+
+        return HttpResponse(json.dumps({"msg": "successful"}), content_type='application/json')
     else:
         return HttpResponse("wrong request", content_type='application/json')
 
@@ -665,11 +722,21 @@ def create_event(request):
 
         #create new entry in notifications table for new event creation
         print("creating new entry in notifications table")
+        msg = f"New Event {python_data['name']} created under {python_data['activityName']} activity. Go and register now!"
         newEventNotification = Notifications(
             message_type="EVENT_CREATED",
-            message=f"New Event {python_data['name']} created under {python_data['activityName']} activity. Go and register now!",
+            message=msg,
             for_user="ALL"
         )
+        newEventNotification.save()
+        #send data over the websocket
+        ws.send(json.dumps({
+            "action": "sendToAll",
+            "msg": {
+                "message_type": "EVENT_CREATED",
+                "message": msg,
+            }
+        }))
         newEventNotification.save()
         print("created new entry in notifications table")
 
@@ -812,18 +879,35 @@ def register(request):
         # print(event.cur_participation)
 
         players = Player.team.through.objects.filter(team_id=python_data["team_id"])
+        print("players are ----------- ",players)
+        notificationToBeSent, participateMessageDataForWS = [], {}
         for player in players:
             user_email = Player.objects.get(id=player.player_id).user.email
-            # create new entry in notifications table for participation in the event
-            print("creating new entry in notifications table for participation in the event")
-            participateEventNotification = Notifications(
-                message_type="PARTICIPATE_EVENT",
-                message=f"Your team {teamInstance.name} has participated in the event {event.name}",
-                for_user=user_email
-            )
-            participateEventNotification.save()
-            print("created new entry in notifications table")
+            if user_email not in notificationToBeSent:
+                # create new entry in notifications table for participation in the event
+                print("creating new entry in notifications table for participation in the event")
+                msg = f"Your team {teamInstance.name} has participated in the event {event.name}"
+                participateEventNotification = Notifications(
+                    message_type="PARTICIPATE_EVENT",
+                    message=msg,
+                    for_user=user_email
+                )
+                participateEventNotification.save()
+                notificationToBeSent.append(user_email)
+                #data for sending over ws
+                participateMessageDataForWS = {
+                    "message_type" : "PARTICIPATE_EVENT",
+                    "message" : msg
+                }
+                print("created new entry in notifications table")
 
+        print("list----", notificationToBeSent)
+        # send data over the websocket
+        participateMessageDataForWS["user"] = notificationToBeSent
+        ws.send(json.dumps({
+            "action": "sendToOne",
+            "msg": participateMessageDataForWS
+        }))
 
         return HttpResponse(json_post, content_type='application/json')
     else:
@@ -874,13 +958,24 @@ def register_individual(request):
 
         # create new entry in notifications table for participation in the event
         print("creating new entry in notifications table for participation in the event")
+        msg = f"You have participated in the event {event.name}"
         participateEventNotification = Notifications(
             message_type="PARTICIPATE_EVENT",
-            message=f"You have participated in the event {event.name}",
-            for_user=user_email
+            message=msg,
+            for_user=python_data['user_email']
         )
         participateEventNotification.save()
         print("created new entry in notifications table")
+
+        # send data over the websocket
+        ws.send(json.dumps({
+            "action": "sendToOne",
+            "msg": {
+                "message_type": "PARTICIPATE_EVENT",
+                "message": msg,
+                "user": [python_data['user_email']]
+            }
+        }))
 
         return HttpResponse(json_post, content_type='application/json')
     else:
