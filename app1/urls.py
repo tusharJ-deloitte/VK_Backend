@@ -71,6 +71,7 @@ urlpatterns = [
 
     # plank
     path('upload_aws', views.upload_aws, name="upload_aws"),
+    path('upload/<str:user_email>/<str:event_name>',views.upload,name="upload"),
     # path('edit_upload/<str:user_email>',views.edit_upload,name="edit_upload"),
 #     path('get_files_list', views.get_files_list, name="get_files_list"),
     path('get_list_user_event/<str:user_email>/<str:event_name>',views.get_list_user_event,name="get_list_user_event"),
