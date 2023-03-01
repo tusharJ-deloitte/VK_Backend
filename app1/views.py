@@ -1936,23 +1936,77 @@ def create_quiz(request):
     except Exception as err:
         return HttpResponse(err, content_type="application/json")
         
+def get_library_for_quizs(request):
+    try:
+        if request.method != 'POST':
+            raise Exception(json.dumps({"message": "wrong request method", "status": 400}))
+        json_data = request.body
+        stream = io.BytesIO(json_data)
+        python_data = JSONParser().parse(stream)
 
+        print(python_data)
+        return HttpResponse("ok", content_type="application/json")
+    except Exception as err:
+        return HttpResponse(err, content_type="application/json")
 
+def get_all_quizs_information(request):
+    try:
+        if request.method != 'GET':
+            raise Exception(json.dumps({"message": "wrong request method", "status": 400}))
+
+        quizs_information = []
+        all_quizs = Quiz.objects.all()
+        for quiz in all_quizs:
+            all_questions_for_quiz = QuizQuestion.objects.filter(quiz=quiz)
+            all_questions_for_quiz = [all_questions_for_quiz]
+            questions=[]
+            for question in all_questions_for_quiz:
+                print(question)
+                all_options_for_question = Option.objects.filter(question=question[0])
+                options=[]
+                for option in all_options_for_question:
+                    options.append({
+                        "option_text": option.option_text,
+                        "is_correct": option.is_correct
+                    })
+
+                questions.append({
+                    "question_text":question[0].question_text,
+                    "image_clue":question[0].image_clue,
+                    "note":question[0].note,
+                    "question_type":question[0].question_type,
+                    "max_timer":question[0].max_timer,
+                    "points": question[0].points,
+                    "options": options
+                })
+            quizs_information.append({
+                "title":quiz.title,
+                "event":quiz.event.name,
+                "description":quiz.desc,
+                "banner_image":quiz.banner_image,
+                "last_modified":str(quiz.last_modified),
+                "questions":questions
+            })
+
+        print(quizs_information)
+        return HttpResponse(json.dumps(quizs_information), content_type="application/json")
+    except Exception as err:
+        return HttpResponse(err, content_type="application/json")
 
 def template(request):
     try:
-        if request.method == 'POST':
-            json_data = request.body
-            stream = io.BytesIO(json_data)
-            python_data = JSONParser().parse(stream)
+        if request.method != 'POST':
+            raise Exception(json.dumps({"message": "wrong request method", "status": 400}))
+        json_data = request.body
+        stream = io.BytesIO(json_data)
+        python_data = JSONParser().parse(stream)
 
-            print(python_data)
-            return HttpResponse("ok", content_type="application/json")
-        else:
-            raise Exception(json.dumps(
-                {"message": "wrong request method", "status": 400}))
+        print(python_data)
+        return HttpResponse("ok", content_type="application/json")            
     except Exception as err:
         return HttpResponse(err, content_type="application/json")
+
+
 def add_user_answer(request):
     if request.method == "POST":
         body = request.body
