@@ -93,6 +93,7 @@ urlpatterns = [
     #tech quiz apis
     path("quiz/create",views.create_quiz,name="create_quiz"), 
     #tech quiz user flow
-    path("add_user_answer",views.add_user_answer,name="add_user_answer")
+    path("add_user_answer",views.add_user_answer,name="add_user_answer"),
+    path("score_summary",views.score_summary,name="score_summary")
 
 ]

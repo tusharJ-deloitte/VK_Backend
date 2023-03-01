@@ -1992,7 +1992,42 @@ def add_user_answer(request):
     else:
         return HttpResponse(json.dumps({"error": "Wrong Request Method"}), content_type='application/json', status=400)
 
+def score_summary(request):
+    if request.method == "GET":
+        body = request.body
+        stream = io.BytesIO(body)
+        python_data = JSONParser().parse(stream)
+        print(python_data)
+        user_answer_instance = UserAnswer.objects.filter(
+            user = User.objects.get(email=python_data["user_email"]),
+            quiz = Quiz.objects.get(title=python_data['quiz_title'])    
+        )
+        correct_answers , total_score,total_time = 0,0,0
+        total_answers = len(user_answer_instance)
 
+        for item in user_answer_instance:
+            if item.is_correct_answer == True:
+                correct_answers = correct_answers+1
+                total_score = total_score+item.score
+            total_time = total_time+item.time_taken
+        
+        result={}
+        result['correct_amswers'] = correct_answers
+        result['total_answers'] = total_answers
+        result['total_time'] = total_time
+        result['total_score'] = total_score
+
+        ind = IndRegistration.objects.filter(event = Event.objects.get(name=python_data['event_name']))
+        for i in ind:
+            if i.player.user.email == python_data['user_email']:
+                player = Player.objects.get(user=i.player.user)
+
+                player.score = total_score
+                player.save()
+        return HttpResponse(json.dumps(result),content_type="application/json")
+    else:
+        return HttpResponse(json.dumps({"error": "Wrong Request Method"}), content_type='application/json', status=400)
+        
                 
             
 
