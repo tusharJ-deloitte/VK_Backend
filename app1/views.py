@@ -1,6 +1,6 @@
 import re
 from django.shortcuts import render
-from .models import Detail, Activity, Player, Team, Category, Event, Registration, IndRegistration, Pod, Upload
+from .models import Detail, Activity, Player, Team, Category, Event, Registration, IndRegistration, Pod, Upload, Quiz
 from .serializers import PostSerializer
 from rest_framework.renderers import JSONRenderer
 from django.http import HttpResponse, JsonResponse
@@ -23,7 +23,6 @@ import requests
 import base64
 import json
 import io
-import datetime
 from graphql import GraphQLError
 from .messages import messages
 # from .mutations import CreateEventnameExists
@@ -1902,3 +1901,55 @@ def sns(receiver, subject, message):
         )
         return True
         # return HttpResponse(json.dumps({'body': 'email sent'}), content_type="application/json")
+
+def create_quiz(request):
+    try:
+        if request.method == 'POST':
+            json_data = request.body
+            stream = io.BytesIO(json_data)
+            python_data = JSONParser().parse(stream)
+            print(python_data)
+
+            result = schema.execute(
+                '''
+                mutation createQuiz($eventId:Int!,$title:String!,$image:String!,$description:String!){
+                    createQuiz(eventId:$eventId,title:$title,image:$image,description:$description){
+                        quiz {
+                            id
+                            title
+                            desc
+                            lastModified
+                        }
+                    }
+                }
+                ''', variables={"eventId":python_data["event_id"],"title":python_data["title"],"image":python_data["image"],"description":python_data["description"]}
+            )
+
+            if result.errors:
+                raise Exception(result.errors[0].message)
+            
+            quizData = result.data["createQuiz"]["quiz"]
+
+            return HttpResponse(json.dumps({"message": "quiz saved successfully", "status": 200,"data":quizData}), content_type="application/json")
+        else:
+            raise Exception(json.dumps({"message": "wrong request method", "status": 400}))
+    except Exception as err:
+        return HttpResponse(err, content_type="application/json")
+        
+
+
+
+def template(request):
+    try:
+        if request.method == 'POST':
+            json_data = request.body
+            stream = io.BytesIO(json_data)
+            python_data = JSONParser().parse(stream)
+
+            print(python_data)
+            return HttpResponse("ok", content_type="application/json")
+        else:
+            raise Exception(json.dumps(
+                {"message": "wrong request method", "status": 400}))
+    except Exception as err:
+        return HttpResponse(err, content_type="application/json")

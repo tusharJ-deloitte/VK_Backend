@@ -1,9 +1,10 @@
 import graphene
-from app1.types import UserType, CategoryType, ActivityType, TeamType, PlayerType, EventType, RegistrationType, IndRegistrationType, PodType, UploadType
-from .models import Detail, User, Category, Activity, Team, Player, Event, Registration, IndRegistration, Pod, Upload
+from app1.types import UserType, CategoryType, ActivityType, TeamType, PlayerType, EventType, RegistrationType, IndRegistrationType, PodType, UploadType, QuizType
+from .models import Detail, User, Category, Activity, Team, Player, Event, Registration, IndRegistration, Pod, Upload, Quiz
 import datetime
 from django.contrib.auth.models import User
 from graphql import GraphQLError
+import json
 
 
 class CreateUser(graphene.Mutation):
@@ -530,3 +531,36 @@ class CreatePod(graphene.Mutation):
         )
         pod_instance.save()
         return CreatePod(pod_instance)
+
+class CreateQuiz(graphene.Mutation):
+    class Arguments:
+        event_id = graphene.Int(required=True)
+        title = graphene.String(required=True)
+        image = graphene.String(required=True)
+        description = graphene.String(required=True)
+
+    quiz = graphene.Field(QuizType)
+
+    def mutate(self,info,event_id,title,image,description):
+        print("inside create quiz mutation")
+        try:
+            print("finding the event with the eventId :: ",event_id)
+            event = Event.objects.filter(id=event_id)
+            if len(event) == 0:
+                print("event not exists")
+                raise Exception("event not exists")
+            print("event found!")
+            event = event[0]
+
+            quiz_instance = Quiz(
+                event=event,
+                banner_image=image,
+                title=title,
+                desc=description,
+                last_modified=datetime.datetime.now()
+            )
+            quiz_instance.save()
+            print("Quiz instance saved")
+            return CreateQuiz(quiz=quiz_instance)
+        except Exception as err:
+            return err

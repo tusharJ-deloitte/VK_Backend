@@ -88,6 +88,9 @@ urlpatterns = [
          name='get_all_users_organisation'),
 
     # sns test
-    path("sns", views.sns, name="sns")
+    path("sns", views.sns, name="sns"),
+
+    #tech quiz apis
+    path("quiz/create",views.create_quiz,name="create_quiz"), 
 
 ]
