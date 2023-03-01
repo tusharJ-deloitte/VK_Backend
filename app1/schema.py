@@ -1,7 +1,7 @@
 import graphene
 from .models import Detail, Category, Activity, Team, Player, Event, Registration, IndRegistration, Pod,Upload,Quiz,QuizQuestion,Option,UserAnswer
 from app1.types import DetailType, UserType, CategoryType, ActivityType, TeamType, PlayerType, EventType, RegistrationType, IndRegistrationType, PodType,UploadType,QuizType,QuizQuestionType,OptionType,UserAnswerType
-from .mutations import CreateUser, CreateCategory, UpdateCategory, DeleteCategory, CreateActivity, UpdateActivity, DeleteActivity, CreateTeam, CreatePlayer, UpdatePlayer, DeletePlayer, CreateEvent, CreateRegistration, UpdateTeamScores, CreateIndEvent, CreateIndPlayer, CreateIndRegistration, CreatePod,CreateUpload
+from .mutations import CreateUser, CreateCategory, UpdateCategory, DeleteCategory, CreateActivity, UpdateActivity, DeleteActivity, CreateTeam, CreatePlayer, UpdatePlayer, DeletePlayer, CreateEvent, CreateRegistration, UpdateTeamScores, CreateIndEvent, CreateIndPlayer, CreateIndRegistration, CreatePod,CreateUpload,CreateQuiz
 from django.contrib.auth.models import User
 
 
@@ -175,6 +175,11 @@ class Mutation(graphene.ObjectType):
 
     # plank(upload) mutations
     create_upload = CreateUpload.Field()
+
+    # quiz mutations
+    create_quiz = CreateQuiz.Field()
+
+    
 
     create_user = CreateUser.Field()
 
