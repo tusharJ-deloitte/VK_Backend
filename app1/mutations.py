@@ -1,5 +1,5 @@
 import graphene
-from app1.types import UserType, CategoryType, ActivityType, TeamType, PlayerType, EventType, RegistrationType, IndRegistrationType, PodType, UploadType, QuizType
+from app1.types import UserType, CategoryType, ActivityType, TeamType, PlayerType, EventType, RegistrationType, IndRegistrationType, PodType, UploadType, QuizType, QuizQuestionType
 from .models import Detail, User, Category, Activity, Team, Player, Event, Registration, IndRegistration, Pod, Upload, Quiz
 import datetime
 from django.contrib.auth.models import User
@@ -562,5 +562,43 @@ class CreateQuiz(graphene.Mutation):
             quiz_instance.save()
             print("Quiz instance saved")
             return CreateQuiz(quiz=quiz_instance)
+        except Exception as err:
+            return err
+
+
+class CreateQuizQuestion(graphene.Mutation):
+    class Arguments:
+        quiz = graphene.Int(required=True)
+        question_text = graphene.String(required=True)
+        image_clue = graphene.String()
+        note = graphene.String()
+        question_type = graphene.String()
+        max_timer = graphene.Int()
+        points = graphene.Int()
+
+    question_instance = graphene.Field(QuizQuestionType)
+    def mutate(self, info, quiz, question_text, image_clue, note,  max_timer, points):
+        print("inside create quiz question mutation")
+        try:
+            print("finding the quiz with the quizId :: ", quiz)
+            quiz_info = Quiz.objects.filter(id=quiz)
+            if len(quiz_info) == 0:
+                print("quiz not exists")
+                raise Exception("quiz not exists")
+            print("quiz found!")
+            quiz_info = quiz_info[0]
+
+            question_instance = QuizQuestion(
+                quiz=quiz_info,
+                question_text=question_text,
+                image_clue=image_clue,
+                note=note,
+                question_type=question_type,
+                max_timer=max_timer,
+                points=points
+            )
+            print("Quiz Question instance saved")
+            question_instance.save()
+            return CreateQuizQuestion(question_instance=question_instance)
         except Exception as err:
             return err

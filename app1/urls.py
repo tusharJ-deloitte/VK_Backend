@@ -95,6 +95,7 @@ urlpatterns = [
     path("quiz/get_library", views.get_library_for_quizs,name="get_library_for_quizs"),
     path("quiz/get_quiz_info/<int:quizId>",views.get_quiz_information, name="get_quiz_information"),
     path("quiz/add_user_answer",views.add_user_answer,name="add_user_answer"),
-    path("quiz/score_summary",views.score_summary,name="score_summary")
+    path("quiz/score_summary",views.score_summary,name="score_summary"),
+    path("quiz/create_quizquestion", views.create_quizquestion,name="create_quizquestion")
 
 ]

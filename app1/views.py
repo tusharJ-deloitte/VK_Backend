@@ -2108,6 +2108,40 @@ def score_summary(request):
         return HttpResponse(err, content_type="application/json")
 
 
+def create_quizquestion(request):
+    try:
+        if request.method != 'POST':
+            raise Exception(json.dumps({"message": "wrong request method", "status": 400}))
+        json_data = request.body
+        stream = io.BytesIO(json_data)
+        python_data = JSONParser().parse(stream)
+        print(python_data)
+        result = schema.execute(
+            '''
+            mutation createQuizQuestion($quiz:Int!,$questionText:String!, $imageClue:String!, $note:String!, $questionType: String!, $maxTimer:Int!, $points: Int!){
+                createQuizQuestion(quiz:$quiz, questionText:$questionText, imageClue:$imageClue, note:$note, questionType:$questionType, maxTimer:$maxTimer,  points:$points){
+                    questionInstance{
+                quiz{
+                    id
+                }
+                }
+            }
+            }
+            ''', variables={'quiz': python_data["quiz"], 'questionText': python_data["questionText"], 'imageClue': python_data["imageClue"], 'note': python_data["note"], 'questionType': python_data["questionType"], 'maxTimer': python_data["maxTimer"], 'points': python_data["points"]}
+        )
+        json_post = json.dumps(result.data)
+        return HttpResponse(json_post, content_type='application/json')
+    except Exception as err:
+        return HttpResponse(err, content_type="application/json")
+        
+
+
+
+
+
+
+
+
 def api_template_for_error_handling(request):
     try:
         if request.method != 'POST':
