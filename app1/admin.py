@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Category, Activity, Team, Player, Event, Registration, Detail, IndRegistration, Pod, Upload
+from .models import Post, Category, Activity, Team, Player, Event, Registration, Detail, IndRegistration, Pod, Upload,Quiz,QuizQuestion,Option,UserAnswer
 from django.contrib.auth.models import User
 from django.contrib.auth.admin import UserAdmin
 
@@ -77,3 +77,19 @@ class UploadAdmin(admin.ModelAdmin):
 @admin.register(Pod)
 class PodAdmin(admin.ModelAdmin):
     list_display = ['pod_id', 'user', 'pod_name', 'pod_size']
+
+@admin.register(Quiz)
+class QuizAdmin(admin.ModelAdmin):
+    list_display = ['id','event','banner_image','title','desc','last_modified']
+
+@admin.register(QuizQuestion)
+class QuizQuestionAdmin(admin.ModelAdmin):
+    list_display = ['id','quiz','question_text','image_clue','note','question_type','max_timer','points']
+
+@admin.register(Option)
+class OptionAdmin(admin.ModelAdmin):
+    list_display = ['id','question','option_text','is_correct']
+
+@admin.register(UserAnswer)
+class UserAnswerAdmin(admin.ModelAdmin):
+    list_display=['id','user','quiz','question','submitted_answer','is_correct_answer','time_taken','score']

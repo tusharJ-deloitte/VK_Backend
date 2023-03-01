@@ -1,6 +1,6 @@
 from graphene_django.types import DjangoObjectType
 from django.contrib.auth.models import User
-from .models import Detail, Category, Activity, Team, Player, Event, Registration, IndRegistration, Pod, Upload
+from .models import Detail, Category, Activity, Team, Player, Event, Registration, IndRegistration, Pod, Upload,Quiz,QuizQuestion,Option,UserAnswer
 
 
 class UserType(DjangoObjectType):
@@ -73,3 +73,25 @@ class PodType(DjangoObjectType):
     class Meta:
         model = Pod
         fields = ('pod_id', 'user', 'pod_name', 'pod_size')
+
+class QuizType(DjangoObjectType):
+    class Meta:
+        model = Quiz
+        fields=('id','event','banner_image','title','desc','last_modified')
+
+class QuizQuestionType(DjangoObjectType):
+    class Meta:
+        model = QuizQuestion
+        fields = ('id','quiz','question_text','image_clue','note','question_type','max_timer','points')
+
+class OptionType(DjangoObjectType):
+    class Meta:
+        model = Option
+        fields = ('id','question','option_text','is_correct')
+
+
+class UserAnswerType(DjangoObjectType):
+    class Meta:
+        model = UserAnswer
+        fields = ('id','user','quiz','question','submitted_answer','is_correct_answer','time_taken','score')
+

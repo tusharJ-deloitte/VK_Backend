@@ -140,9 +140,61 @@ class Pod(models.Model):
     def __str__(self):
         return self.pod_name
 
+class Quiz(models.Model):
+    event = models.ForeignKey(Event, on_delete=models.CASCADE, default="1")
+    banner_image = models.TextField(null=True, blank=True)
+    title = models.TextField(unique=True,null=True, blank=True)
+    desc = models.TextField(null=True, blank=True)
+    last_modified = models.DateTimeField(auto_now_add=True)
 
-# class Logo(models.Model):
-#     title = models.CharField(
-#         max_length=80, blank=False, null=False)
-#     #image_url = S3DirectField(dest='mediafiles/', blank=True)
-#     picture = models.FileField(upload_to='media/', blank=True, null=False)
+    def __str__(self):
+        return self.title
+
+class QuizQuestion(models.Model):
+    quiz = models.ForeignKey(Quiz,on_delete=models.CASCADE)
+    question_text = models.TextField(null=True, blank=True)
+    image_clue = models.TextField(null=True, blank=True)
+    note = models.TextField(null=True, blank=True)
+    MCQ = "MCQ"
+    CHECKBOX = "Checkbox"
+    QUESTION_CHOICES = [
+        # (ACTUAL VALUE , HUMAN READABLE FORMAT)
+        (MCQ, "MCQ"),
+        (CHECKBOX, "checkbox")
+    ]
+
+    question_type = models.CharField(
+        max_length=20, choices=QUESTION_CHOICES, default=MCQ)
+    
+    max_timer = models.IntegerField(default=0)
+    points = models.IntegerField(default=0)
+
+    def __str__(self) -> str:
+        return self.question_text
+    
+
+class Option(models.Model):
+    question = models.ForeignKey(QuizQuestion,on_delete=models.CASCADE)
+    option_text = models.TextField()
+    is_correct = models.BooleanField(default=False)
+
+    def __str__(self) -> str:
+        return self.option_text
+    
+
+class UserAnswer(models.Model):
+    user = models.ForeignKey(User,on_delete=models.CASCADE)
+    quiz = models.ForeignKey(Quiz,on_delete=models.CASCADE)
+    question = models.ForeignKey(QuizQuestion,on_delete=models.CASCADE)
+    submitted_answer = models.TextField()
+    is_correct_answer = models.BooleanField(null=True,blank=True)
+    time_taken = models.IntegerField(default=0)
+    score = models.IntegerField(default=0)
+
+    def __str__(self) -> str:
+        return self.user.email+" "+self.quiz.title+" "+self.question.question_text
+    
+    
+
+    
+
