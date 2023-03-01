@@ -141,7 +141,7 @@ class Pod(models.Model):
         return self.pod_name
 
 class Quiz(models.Model):
-    event = models.ForeignKey(Event, on_delete=models.CASCADE, default="1")
+    event = models.OneToOneField(Event, on_delete=models.CASCADE, default="1")
     banner_image = models.TextField(null=True, blank=True)
     title = models.TextField(unique=True,null=True, blank=True)
     desc = models.TextField(null=True, blank=True)
@@ -187,14 +187,11 @@ class UserAnswer(models.Model):
     quiz = models.ForeignKey(Quiz,on_delete=models.CASCADE)
     question = models.ForeignKey(QuizQuestion,on_delete=models.CASCADE)
     submitted_answer = models.TextField()
-    is_correct_answer = models.BooleanField(null=True,blank=True)
+    is_correct_answer = models.BooleanField(null=True,blank=True,default=False)
     time_taken = models.IntegerField(default=0)
     score = models.IntegerField(default=0)
 
     def __str__(self) -> str:
         return self.user.email+" "+self.quiz.title+" "+self.question.question_text
     
-    
-
-    
-
+   
