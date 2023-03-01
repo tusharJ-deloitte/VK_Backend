@@ -1,6 +1,6 @@
 import re
 from django.shortcuts import render
-from .models import Detail, Activity, Player, Team, Category, Event, Registration, IndRegistration, Pod, Upload, Quiz
+from .models import Detail, Activity, Player, Team, Category, Event, Registration, IndRegistration, Pod, Upload,UserAnswer,Quiz,QuizQuestion,Option
 from .serializers import PostSerializer
 from rest_framework.renderers import JSONRenderer
 from django.http import HttpResponse, JsonResponse
@@ -1953,3 +1953,36 @@ def template(request):
                 {"message": "wrong request method", "status": 400}))
     except Exception as err:
         return HttpResponse(err, content_type="application/json")
+def add_user_answer(request):
+    if request.method == "POST":
+        body = request.body
+        stream = io.BytesIO(body)
+        python_data = JSONParser().parse(stream)
+        print(python_data)
+        user_answer_instance = UserAnswer(
+            user = User.objects.get(email=python_data['user_email']),
+            quiz = Quiz.objects.get(title=python_data['quiz_title']),
+            question = QuizQuestion.objects.get(id = python_data['question_id']),
+            submitted_answer = python_data['answer'],#[ans1,ans2]
+            time_taken = python_data['time'],        
+        )
+        user_answer_instance.save()
+        if user_answer_instance.question.question_type == "MCQ":
+            options = Option.objects.filter(question=user_answer_instance.question)
+            for option in options:
+                if option.option_text == user_answer_instance.submitted_answer and option.is_correct==True:
+                    user_answer_instance.is_correct_answer = True
+                    user_answer_instance.score = user_answer_instance.question.points
+                    break
+            user_answer_instance.save()
+        else:
+            options = Option.objects.filter(question=user_answer_instance.question,is_correct=True)
+            print(options)
+            answer_list = user_answer_instance.submitted_answer.split(',')
+            if len(options) == len(answer_list):
+                return HttpResponse(200)
+            
+
+            
+
+        
