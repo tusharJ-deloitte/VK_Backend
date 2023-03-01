@@ -1928,9 +1928,22 @@ def add_user_answer(request):
         else:
             options = Option.objects.filter(question=user_answer_instance.question,is_correct=True)
             print(options)
+            option_list = [item.option_text for item in options]
             answer_list = user_answer_instance.submitted_answer.split(',')
-            if len(options) == len(answer_list):
-                return HttpResponse(200)
+            print(answer_list)
+            if len(option_list) == len(answer_list):
+                for item in answer_list:
+                    if item not in option_list:
+                        return HttpResponse("added",content_type="application/json")                    
+                user_answer_instance.is_correct_answer=True
+                user_answer_instance.score=user_answer_instance.question.points
+                user_answer_instance.save()
+            return HttpResponse("added",content_type="application/json")
+    else:
+        return HttpResponse(json.dumps({"error": "Wrong Request Method"}), content_type='application/json', status=400)
+
+
+                
             
 
             
