@@ -1938,8 +1938,181 @@ def create_quiz(request):
         
 def get_library_for_quizs(request):
     try:
+        if request.method != 'GET':
+            raise Exception(json.dumps({"message": "wrong request method", "status": 400}))
+
+        all_quizs = Quiz.objects.all()
+        quizs_information = []
+        for quiz in all_quizs:
+            all_questions = QuizQuestion.objects.filter(quiz=quiz)
+            no_of_questions = len(all_questions)
+            total_time=0
+            for question in all_questions:
+                total_time = total_time + question.max_timer
+            quizs_information.append({
+                "quiz_id":quiz.id,
+                "title": quiz.title,
+                "event": quiz.event.name,
+                "description": quiz.desc,
+                "banner_image": quiz.banner_image,
+                "last_modified": str(quiz.last_modified),
+                "total_questions": no_of_questions,
+                "total_time":total_time
+            })
+
+        print(quizs_information)
+        return HttpResponse(json.dumps(quizs_information), content_type="application/json")
+    except Exception as err:
+        return HttpResponse(err, content_type="application/json")
+
+def get_quiz_information(request,quizId):
+    try:
+        if request.method != 'GET':
+            raise Exception(json.dumps({"message": "wrong request method", "status": 400}))
+        
+        quiz = Quiz.objects.filter(id = quizId)
+        if len(quiz) == 0:
+            raise Exception(json.dumps({"message": "quiz not found", "status": 400}))
+        quiz = quiz[0]
+        print("quiz found")
+
+        all_questions_for_quiz = QuizQuestion.objects.filter(quiz=quiz)
+        # all_questions_for_quiz = [all_questions_for_quiz
+        print(all_questions_for_quiz)
+        no_of_questions = len(all_questions_for_quiz)
+
+        questions = []
+        total_time = 0
+        quizs_information={}
+        for question in all_questions_for_quiz:
+            print(question)
+            all_options_for_question = Option.objects.filter(question=question)
+            options = []
+            for option in all_options_for_question:
+                options.append({
+                    "option_text": option.option_text,
+                    "is_correct": option.is_correct
+                })
+
+            questions.append({
+                "question_text": question.question_text,
+                "image_clue": question.image_clue,
+                "note": question.note,
+                "question_type": question.question_type,
+                "max_timer": question.max_timer,
+                "points": question.points,
+                "options": options
+            })
+
+            total_time = total_time + question.max_timer
+
+        quiz_information={
+            "title": quiz.title,
+            "event": quiz.event.name,
+            "description": quiz.desc,
+            "banner_image": quiz.banner_image,
+            "last_modified": str(quiz.last_modified),
+            "total_time": total_time,
+            "total_questions":no_of_questions,
+            "questions": questions
+        }
+
+        print(quiz_information)
+        return HttpResponse(json.dumps(quiz_information), content_type="application/json")
+    except Exception as err:
+        return HttpResponse(err, content_type="application/json")
+
+
+def add_user_answer(request):
+    try:
         if request.method != 'POST':
             raise Exception(json.dumps({"message": "wrong request method", "status": 400}))
+
+        body = request.body
+        stream = io.BytesIO(body)
+        python_data = JSONParser().parse(stream)
+        print(python_data)
+        user_answer_instance = UserAnswer(
+            user=User.objects.get(email=python_data['user_email']),
+            quiz=Quiz.objects.get(title=python_data['quiz_title']),
+            question=QuizQuestion.objects.get(id=python_data['question_id']),
+            submitted_answer=python_data['answer'],  # [ans1,ans2]
+            time_taken=python_data['time'],
+        )
+        user_answer_instance.save()
+        if user_answer_instance.question.question_type == "MCQ":
+            options = Option.objects.filter(
+                question=user_answer_instance.question)
+            for option in options:
+                if option.option_text == user_answer_instance.submitted_answer and option.is_correct == True:
+                    user_answer_instance.is_correct_answer = True
+                    user_answer_instance.score = user_answer_instance.question.points
+                    break
+            user_answer_instance.save()
+        else:
+            options = Option.objects.filter(
+                question=user_answer_instance.question, is_correct=True)
+            print(options)
+            option_list = [item.option_text for item in options]
+            answer_list = user_answer_instance.submitted_answer.split(',')
+            print(answer_list)
+            if len(option_list) == len(answer_list):
+                for item in answer_list:
+                    if item not in option_list:
+                        return HttpResponse("added", content_type="application/json")
+                user_answer_instance.is_correct_answer = True
+                user_answer_instance.score = user_answer_instance.question.points
+                user_answer_instance.save()
+            return HttpResponse("added", content_type="application/json")
+    except Exception as err:
+        return HttpResponse(err, content_type="application/json")
+
+def score_summary(request):
+    try:
+        if request.method != 'POST':
+            raise Exception(json.dumps({"message": "wrong request method", "status": 400}))
+               
+        body = request.body
+        stream = io.BytesIO(body)
+        python_data = JSONParser().parse(stream)
+        print(python_data)
+        user_answer_instance = UserAnswer.objects.filter(
+            user=User.objects.get(email=python_data["user_email"]),
+            quiz=Quiz.objects.get(title=python_data['quiz_title'])
+        )
+        correct_answers, total_score, total_time = 0, 0, 0
+        total_answers = len(user_answer_instance)
+
+        for item in user_answer_instance:
+            if item.is_correct_answer == True:
+                correct_answers = correct_answers+1
+                total_score = total_score+item.score
+            total_time = total_time+item.time_taken
+
+        result = {}
+        result['correct_amswers'] = correct_answers
+        result['total_answers'] = total_answers
+        result['total_time'] = total_time
+        result['total_score'] = total_score
+
+        ind = IndRegistration.objects.filter(
+            event=Event.objects.get(name=python_data['event_name']))
+        for i in ind:
+            if i.player.user.email == python_data['user_email']:
+                player = Player.objects.get(user=i.player.user)
+
+                player.score = total_score
+                player.save()
+        return HttpResponse(json.dumps(result), content_type="application/json")
+    except Exception as err:
+        return HttpResponse(err, content_type="application/json")
+
+
+def api_template_for_error_handling(request):
+    try:
+        if request.method != 'POST':
+            raise Exception(json.dumps(
+                {"message": "wrong request method", "status": 400}))
         json_data = request.body
         stream = io.BytesIO(json_data)
         python_data = JSONParser().parse(stream)
@@ -1949,21 +2122,24 @@ def get_library_for_quizs(request):
     except Exception as err:
         return HttpResponse(err, content_type="application/json")
 
+# extra api
 def get_all_quizs_information(request):
     try:
         if request.method != 'GET':
-            raise Exception(json.dumps({"message": "wrong request method", "status": 400}))
+            raise Exception(json.dumps(
+                {"message": "wrong request method", "status": 400}))
 
         quizs_information = []
         all_quizs = Quiz.objects.all()
         for quiz in all_quizs:
             all_questions_for_quiz = QuizQuestion.objects.filter(quiz=quiz)
             all_questions_for_quiz = [all_questions_for_quiz]
-            questions=[]
+            questions = []
             for question in all_questions_for_quiz:
                 print(question)
-                all_options_for_question = Option.objects.filter(question=question[0])
-                options=[]
+                all_options_for_question = Option.objects.filter(
+                    question=question[0])
+                options = []
                 for option in all_options_for_question:
                     options.append({
                         "option_text": option.option_text,
@@ -1971,21 +2147,21 @@ def get_all_quizs_information(request):
                     })
 
                 questions.append({
-                    "question_text":question[0].question_text,
-                    "image_clue":question[0].image_clue,
-                    "note":question[0].note,
-                    "question_type":question[0].question_type,
-                    "max_timer":question[0].max_timer,
+                    "question_text": question[0].question_text,
+                    "image_clue": question[0].image_clue,
+                    "note": question[0].note,
+                    "question_type": question[0].question_type,
+                    "max_timer": question[0].max_timer,
                     "points": question[0].points,
                     "options": options
                 })
             quizs_information.append({
-                "title":quiz.title,
-                "event":quiz.event.name,
-                "description":quiz.desc,
-                "banner_image":quiz.banner_image,
-                "last_modified":str(quiz.last_modified),
-                "questions":questions
+                "title": quiz.title,
+                "event": quiz.event.name,
+                "description": quiz.desc,
+                "banner_image": quiz.banner_image,
+                "last_modified": str(quiz.last_modified),
+                "questions": questions
             })
 
         print(quizs_information)
@@ -1993,98 +2169,9 @@ def get_all_quizs_information(request):
     except Exception as err:
         return HttpResponse(err, content_type="application/json")
 
-def template(request):
-    try:
-        if request.method != 'POST':
-            raise Exception(json.dumps({"message": "wrong request method", "status": 400}))
-        json_data = request.body
-        stream = io.BytesIO(json_data)
-        python_data = JSONParser().parse(stream)
-
-        print(python_data)
-        return HttpResponse("ok", content_type="application/json")            
-    except Exception as err:
-        return HttpResponse(err, content_type="application/json")
 
 
-def add_user_answer(request):
-    if request.method == "POST":
-        body = request.body
-        stream = io.BytesIO(body)
-        python_data = JSONParser().parse(stream)
-        print(python_data)
-        user_answer_instance = UserAnswer(
-            user = User.objects.get(email=python_data['user_email']),
-            quiz = Quiz.objects.get(title=python_data['quiz_title']),
-            question = QuizQuestion.objects.get(id = python_data['question_id']),
-            submitted_answer = python_data['answer'],#[ans1,ans2]
-            time_taken = python_data['time'],        
-        )
-        user_answer_instance.save()
-        if user_answer_instance.question.question_type == "MCQ":
-            options = Option.objects.filter(question=user_answer_instance.question)
-            for option in options:
-                if option.option_text == user_answer_instance.submitted_answer and option.is_correct==True:
-                    user_answer_instance.is_correct_answer = True
-                    user_answer_instance.score = user_answer_instance.question.points
-                    break
-            user_answer_instance.save()
-        else:
-            options = Option.objects.filter(question=user_answer_instance.question,is_correct=True)
-            print(options)
-            option_list = [item.option_text for item in options]
-            answer_list = user_answer_instance.submitted_answer.split(',')
-            print(answer_list)
-            if len(option_list) == len(answer_list):
-                for item in answer_list:
-                    if item not in option_list:
-                        return HttpResponse("added",content_type="application/json")                    
-                user_answer_instance.is_correct_answer=True
-                user_answer_instance.score=user_answer_instance.question.points
-                user_answer_instance.save()
-            return HttpResponse("added",content_type="application/json")
-    else:
-        return HttpResponse(json.dumps({"error": "Wrong Request Method"}), content_type='application/json', status=400)
 
-def score_summary(request):
-    if request.method == "GET":
-        body = request.body
-        stream = io.BytesIO(body)
-        python_data = JSONParser().parse(stream)
-        print(python_data)
-        user_answer_instance = UserAnswer.objects.filter(
-            user = User.objects.get(email=python_data["user_email"]),
-            quiz = Quiz.objects.get(title=python_data['quiz_title'])    
-        )
-        correct_answers , total_score,total_time = 0,0,0
-        total_answers = len(user_answer_instance)
 
-        for item in user_answer_instance:
-            if item.is_correct_answer == True:
-                correct_answers = correct_answers+1
-                total_score = total_score+item.score
-            total_time = total_time+item.time_taken
-        
-        result={}
-        result['correct_amswers'] = correct_answers
-        result['total_answers'] = total_answers
-        result['total_time'] = total_time
-        result['total_score'] = total_score
-
-        ind = IndRegistration.objects.filter(event = Event.objects.get(name=python_data['event_name']))
-        for i in ind:
-            if i.player.user.email == python_data['user_email']:
-                player = Player.objects.get(user=i.player.user)
-
-                player.score = total_score
-                player.save()
-        return HttpResponse(json.dumps(result),content_type="application/json")
-    else:
-        return HttpResponse(json.dumps({"error": "Wrong Request Method"}), content_type='application/json', status=400)
-        
-                
-            
-
-            
 
         
