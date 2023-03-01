@@ -1,6 +1,6 @@
 import graphene
-from .models import Detail, Category, Activity, Team, Player, Event, Registration, IndRegistration, Pod,Upload
-from app1.types import DetailType, UserType, CategoryType, ActivityType, TeamType, PlayerType, EventType, RegistrationType, IndRegistrationType, PodType,UploadType
+from .models import Detail, Category, Activity, Team, Player, Event, Registration, IndRegistration, Pod,Upload,Quiz,QuizQuestion,Option,UserAnswer
+from app1.types import DetailType, UserType, CategoryType, ActivityType, TeamType, PlayerType, EventType, RegistrationType, IndRegistrationType, PodType,UploadType,QuizType,QuizQuestionType,OptionType,UserAnswerType
 from .mutations import CreateUser, CreateCategory, UpdateCategory, DeleteCategory, CreateActivity, UpdateActivity, DeleteActivity, CreateTeam, CreatePlayer, UpdatePlayer, DeletePlayer, CreateEvent, CreateRegistration, UpdateTeamScores, CreateIndEvent, CreateIndPlayer, CreateIndRegistration, CreatePod,CreateUpload
 from django.contrib.auth.models import User
 
@@ -36,6 +36,19 @@ class Query(graphene.ObjectType):
     all_uploads = graphene.List(UploadType)
     pod = graphene.Field(PodType, id=graphene.ID(required=True))
     all_pods = graphene.List(PodType)
+
+    quiz = graphene.Field(QuizType,id=graphene.ID(required=True))
+    all_quizs = graphene.List(QuizType)
+
+    quizquestion = graphene.Field(QuizQuestionType,id=graphene.ID(required=True))
+    all_quizquestions= graphene.List(QuizQuestionType)
+
+    option = graphene.Field(OptionType,id=graphene.ID(required=True))
+    all_options = graphene.List(OptionType)
+
+    useranswer = graphene.Field(UserAnswerType,id=graphene.ID(required=True))
+    all_useranswers = graphene.List(UserAnswerType)
+
 
     def resolve_all_detais(self, info, **kwargs):
         return Detail.objects.all()
@@ -102,6 +115,30 @@ class Query(graphene.ObjectType):
 
     def resolve_all_pods(self, info, **kwargs):
         return Pod.objects.all()
+    
+    def resolve_quiz(self, info, id):
+        return Quiz.objects.get(id=id)
+
+    def resolve_all_quizs(self, info, **kwargs):
+        return Quiz.objects.all()
+    
+    def resolve_quizquestion(self, info, id):
+        return QuizQuestion.objects.get(id=id)
+
+    def resolve_all_quizquestions(self, info, **kwargs):
+        return QuizQuestion.objects.all()
+    
+    def resolve_option(self, info, id):
+        return Option.objects.get(id=id)
+
+    def resolve_all_options(self, info, **kwargs):
+        return Option.objects.all()
+    
+    def resolve_useranswer(self, info, id):
+        return UserAnswer.objects.get(id=id)
+
+    def resolve_all_useranswers(self, info, **kwargs):
+        return UserAnswer.objects.all()
 
 
 class Mutation(graphene.ObjectType):
