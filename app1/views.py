@@ -32,6 +32,44 @@ from .messages import messages
 def home(request):
     return render(request, 'app1/home.html')
 
+#register user first time 
+def registerUser(request):
+    try:
+        if request.method == 'POST':
+            json_data = request.body
+            stream = io.BytesIO(json_data)
+            python_data = JSONParser().parse(stream)
+            
+            if "email" in python_data and "name" in python_data:
+                username = python_data["email"].split("@")[0]
+                lastname = python_data["name"].split(",")[0]
+                firstname = python_data["name"].split(",")[1].strip()
+
+                if User.objects.filter(email=python_data["email"]).exists():
+                    return HttpResponse("logged in", content_type='application/json', status=200)
+            
+                user_instance = User(
+                    username = username,
+                    email=python_data["email"],
+                    last_name=lastname,
+                    first_name=firstname
+                )
+                user_instance.save()
+                detail_instance=Detail(
+                    user=user_instance,
+                    designation="SDE 1"
+                )
+                detail_instance.save()
+                return HttpResponse("regsitered and logged in", content_type='application/json', status=200)
+            else:
+                raise Exception("data not found")
+
+        else:
+            return HttpResponse("wrong request method", content_type='application/json',status=400)
+
+    except Exception as err:
+        return HttpResponse(err, content_type='application/json')
+
 
 def getMyRating(score):
     if score <= 250:

@@ -3,6 +3,7 @@ from app1 import views
 
 urlpatterns = [
     path('', views.home, name='home'),
+    path('register', views.registerUser, name='registerUser'),
     path('is_admin/<str:user_email>', views.is_admin, name='is_admin'),
     # category
     path('get_category/<int:pk>', views.get_category, name='get_category'),
