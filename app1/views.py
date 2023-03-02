@@ -2061,7 +2061,7 @@ def add_user_answer(request):
                 user_answer_instance.is_correct_answer = True
                 user_answer_instance.score = user_answer_instance.question.points
                 user_answer_instance.save()
-            return HttpResponse("added", content_type="application/json")
+        return HttpResponse("added", content_type="application/json")
     except Exception as err:
         return HttpResponse(err, content_type="application/json")
 
