@@ -2032,10 +2032,26 @@ def add_user_answer(request):
         stream = io.BytesIO(body)
         python_data = JSONParser().parse(stream)
         print(python_data)
+        user=User.objects.filter(email=python_data['user_email'])
+        if len(user) == 0:
+            raise Exception(json.dumps({"message": "user not found", "status": 400}))
+        user=user[0]
+        quiz = Quiz.objects.filter(id=python_data['quiz_id'])
+        if len(quiz) ==0:
+            raise Exception(json.dumps({"message": "quiz not found", "status": 400}))
+        quiz=quiz[0]
+        quizQuestion = QuizQuestion.objects.filter(id=python_data['question_id'])
+        if len(quizQuestion) ==0:
+            raise Exception(json.dumps({"message": "question not found", "status": 400}))
+        quizQuestion=quizQuestion[0]
+        ua = UserAnswer.objects.filter(user=user,quiz=quiz,question=quizQuestion)
+        if len(ua) != 0 :
+            raise Exception(json.dumps({"message": "user answer already added for a particular question ", "status": 400}))
+        
         user_answer_instance = UserAnswer(
-            user=User.objects.get(email=python_data['user_email']),
-            quiz=Quiz.objects.get(title=python_data['quiz_title']),
-            question=QuizQuestion.objects.get(id=python_data['question_id']),
+            user=user,
+            quiz=quiz,
+            question=quizQuestion,
             submitted_answer=python_data['answer'],  # [ans1,ans2]
             time_taken=python_data['time'],
         )
@@ -2047,8 +2063,9 @@ def add_user_answer(request):
                 if option.option_text == user_answer_instance.submitted_answer and option.is_correct == True:
                     user_answer_instance.is_correct_answer = True
                     user_answer_instance.score = user_answer_instance.question.points
-                    break
-            user_answer_instance.save()
+                    user_answer_instance.save()                    
+                    return HttpResponse("user answer is correct", content_type="application/json")
+            return HttpResponse("user answer added but incorrect", content_type="application/json")
         else:
             options = Option.objects.filter(
                 question=user_answer_instance.question, is_correct=True)
@@ -2059,11 +2076,13 @@ def add_user_answer(request):
             if len(option_list) == len(answer_list):
                 for item in answer_list:
                     if item not in option_list:
-                        return HttpResponse("added", content_type="application/json")
+                        return HttpResponse("user answer added but incorrect", content_type="application/json")
                 user_answer_instance.is_correct_answer = True
                 user_answer_instance.score = user_answer_instance.question.points
-                user_answer_instance.save()
-        return HttpResponse("added", content_type="application/json")
+            else:
+                return HttpResponse("user answer added but incorrect", content_type="application/json")
+        user_answer_instance.save()
+        return HttpResponse("user answer is correct", content_type="application/json")
     except Exception as err:
         return HttpResponse(err, content_type="application/json")
 
@@ -2076,9 +2095,17 @@ def score_summary(request):
         stream = io.BytesIO(body)
         python_data = JSONParser().parse(stream)
         print(python_data)
+        user=User.objects.filter(email=python_data['user_email'])
+        if len(user) == 0:
+            raise Exception(json.dumps({"message": "user not found", "status": 400}))
+        user=user[0]
+        quiz = Quiz.objects.filter(id=python_data['quiz_id'])
+        if len(quiz) ==0:
+            raise Exception(json.dumps({"message": "quiz not found", "status": 400}))
+        quiz=quiz[0]
         user_answer_instance = UserAnswer.objects.filter(
-            user=User.objects.get(email=python_data["user_email"]),
-            quiz=Quiz.objects.get(title=python_data['quiz_title'])
+            user=user,
+            quiz=quiz
         )
         correct_answers, total_score, total_time = 0, 0, 0
         total_answers = len(user_answer_instance)
