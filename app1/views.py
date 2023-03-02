@@ -2065,8 +2065,8 @@ def add_user_answer(request):
                     user_answer_instance.is_correct_answer = True
                     user_answer_instance.score = user_answer_instance.question.points
                     user_answer_instance.save()                    
-                    return HttpResponse("user answer is correct", content_type="application/json")
-            return HttpResponse("user answer added but incorrect", content_type="application/json")
+                    return HttpResponse("user answer is correct", content_type="application/text")
+            return HttpResponse("user answer added but incorrect", content_type="application/text")
         else:
             options = Option.objects.filter(
                 question=user_answer_instance.question, is_correct=True)
@@ -2077,13 +2077,13 @@ def add_user_answer(request):
             if len(option_list) == len(answer_list):
                 for item in answer_list:
                     if item not in option_list:
-                        return HttpResponse("user answer added but incorrect", content_type="application/json")
+                        return HttpResponse("user answer added but incorrect", content_type="application/text")
                 user_answer_instance.is_correct_answer = True
                 user_answer_instance.score = user_answer_instance.question.points
             else:
-                return HttpResponse("user answer added but incorrect", content_type="application/json")
+                return HttpResponse("user answer added but incorrect", content_type="application/text")
         user_answer_instance.save()
-        return HttpResponse("user answer is correct", content_type="application/json")
+        return HttpResponse("user answer is correct", content_type="application/text")
     except Exception as err:
         return HttpResponse(err, content_type="application/json")
 
