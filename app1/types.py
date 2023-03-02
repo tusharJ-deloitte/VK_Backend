@@ -77,7 +77,7 @@ class PodType(DjangoObjectType):
 class QuizType(DjangoObjectType):
     class Meta:
         model = Quiz
-        fields=('id','event_id','banner_image','title','desc','last_modified')
+        fields=('id','event_id','banner_image','title','number_of_questions','desc','last_modified')
 
 class QuizQuestionType(DjangoObjectType):
     class Meta:

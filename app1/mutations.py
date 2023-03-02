@@ -538,10 +538,11 @@ class CreateQuiz(graphene.Mutation):
         title = graphene.String(required=True)
         image = graphene.String(required=True)
         description = graphene.String(required=True)
+        number_of_questions = graphene.Int(required=True)
 
     quiz = graphene.Field(QuizType)
 
-    def mutate(self,info,title,image,description):
+    def mutate(self,info,title,image,description,number_of_questions):
         print("inside create quiz mutation")
         try:
             # print("finding the event with the event name :: ",event_name)
@@ -556,7 +557,9 @@ class CreateQuiz(graphene.Mutation):
                 banner_image=image,
                 title=title,
                 desc=description,
-                last_modified=datetime.datetime.now()
+                last_modified=datetime.datetime.now(),
+                number_of_questions = number_of_questions
+
             )
             quiz_instance.save()
             print("Quiz instance saved")

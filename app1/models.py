@@ -147,6 +147,7 @@ class Quiz(models.Model):
     title = models.TextField(unique=True,null=True, blank=True)
     desc = models.TextField(null=True, blank=True)
     last_modified = models.DateTimeField(auto_now_add=True)
+    number_of_questions = models.IntegerField(default=0)
 
     def __str__(self):
         return self.title

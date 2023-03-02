@@ -80,7 +80,7 @@ class PodAdmin(admin.ModelAdmin):
 
 @admin.register(Quiz)
 class QuizAdmin(admin.ModelAdmin):
-    list_display = ['id','event_id','banner_image','title','desc','last_modified']
+    list_display = ['id','event_id','banner_image','title','number_of_questions','desc','last_modified']
 
 @admin.register(QuizQuestion)
 class QuizQuestionAdmin(admin.ModelAdmin):

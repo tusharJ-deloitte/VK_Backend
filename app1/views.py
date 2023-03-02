@@ -1910,8 +1910,8 @@ def create_quiz(request):
 
             result = schema.execute(
                 '''
-                mutation createQuiz($title:String!,$image:String!,$description:String!){
-                    createQuiz(title:$title,image:$image,description:$description){
+                mutation createQuiz($title:String!,$image:String!,$description:String!,$numberOfQuestions:Int!){
+                    createQuiz(title:$title,image:$image,description:$description,numberOfQuestions:$numberOfQuestions){
                         quiz {
                             id
                             title
@@ -1920,7 +1920,7 @@ def create_quiz(request):
                         }
                     }
                 }
-                ''', variables={"title":python_data["title"],"image":python_data["image"],"description":python_data["description"]}
+                ''', variables={"title":python_data["title"],"image":python_data["image"],"description":python_data["description"],"numberOfQuestions":python_data['number_of_questions']}
             )
 
             if result.errors:
