@@ -1912,8 +1912,8 @@ def create_quiz(request):
 
             result = schema.execute(
                 '''
-                mutation createQuiz($eventId:Int!,$title:String!,$image:String!,$description:String!){
-                    createQuiz(eventId:$eventId,title:$title,image:$image,description:$description){
+                mutation createQuiz($eventName:String!,$title:String!,$image:String!,$description:String!){
+                    createQuiz(eventName:$eventName,title:$title,image:$image,description:$description){
                         quiz {
                             id
                             title
@@ -1922,7 +1922,7 @@ def create_quiz(request):
                         }
                     }
                 }
-                ''', variables={"eventId":python_data["event_id"],"title":python_data["title"],"image":python_data["image"],"description":python_data["description"]}
+                ''', variables={"eventName":python_data["event_name"],"title":python_data["title"],"image":python_data["image"],"description":python_data["description"]}
             )
 
             if result.errors:
@@ -1950,7 +1950,7 @@ def get_library_for_quizs(request):
             for question in all_questions:
                 total_time = total_time + question.max_timer
             quizs_information.append({
-                "quiz_id":quiz.id,
+                "quiz_id":quiz.pk,
                 "title": quiz.title,
                 "event": quiz.event.name,
                 "description": quiz.desc,
@@ -1983,10 +1983,10 @@ def get_quiz_information(request,quizId):
 
         questions = []
         total_time = 0
-        quizs_information={}
+        
         for question in all_questions_for_quiz:
             print(question)
-            all_options_for_question = Option.objects.filter(question=question)
+            all_options_for_question = Option.objects.filter(quiz=quiz,question=question)
             options = []
             for option in all_options_for_question:
                 options.append({
@@ -2007,6 +2007,7 @@ def get_quiz_information(request,quizId):
             total_time = total_time + question.max_timer
 
         quiz_information={
+            "quiz_id":quiz.pk,
             "title": quiz.title,
             "event": quiz.event.name,
             "description": quiz.desc,
@@ -2095,14 +2096,14 @@ def score_summary(request):
         result['total_time'] = total_time
         result['total_score'] = total_score
 
-        ind = IndRegistration.objects.filter(
-            event=Event.objects.get(name=python_data['event_name']))
-        for i in ind:
-            if i.player.user.email == python_data['user_email']:
-                player = Player.objects.get(user=i.player.user)
+        # ind = IndRegistration.objects.filter(
+        #     event=Event.objects.get(name=python_data['event_name']))
+        # for i in ind:
+        #     if i.player.user.email == python_data['user_email']:
+        #         player = Player.objects.get(user=i.player.user)
 
-                player.score = total_score
-                player.save()
+        #         player.score = total_score
+        #         player.save()
         return HttpResponse(json.dumps(result), content_type="application/json")
     except Exception as err:
         return HttpResponse(err, content_type="application/json")
@@ -2120,28 +2121,29 @@ def create_quizquestion(request):
             '''
             mutation createQuizQuestion($quiz:Int!,$questionText:String!, $imageClue:String!, $note:String!, $questionType: String!, $maxTimer:Int!, $points: Int!){
                 createQuizQuestion(quiz:$quiz, questionText:$questionText, imageClue:$imageClue, note:$note, questionType:$questionType, maxTimer:$maxTimer,  points:$points){
-                    questionInstance{
-                quiz{
-                    id
-                }
+                questionInstance{
+                    id                
                 }
             }
             }
             ''', variables={'quiz': python_data["quiz"], 'questionText': python_data["questionText"], 'imageClue': python_data["imageClue"], 'note': python_data["note"], 'questionType': python_data["questionType"], 'maxTimer': python_data["maxTimer"], 'points': python_data["points"]}
         )
+        print(result.data['createQuizQuestion']['questionInstance']['id'])
+        options_list = python_data["options"]
+        for item in options_list:
+            option_instance = Option(
+                quiz = Quiz.objects.get(id=python_data['quiz']),
+                question = QuizQuestion.objects.get(id=result.data['createQuizQuestion']['questionInstance']['id']),
+                option_text = item[0],
+                is_correct = item[1]
+            )
+            option_instance.save()
         json_post = json.dumps(result.data)
+
         return HttpResponse(json_post, content_type='application/json')
     except Exception as err:
         return HttpResponse(err, content_type="application/json")
         
-
-
-
-
-
-
-
-
 def api_template_for_error_handling(request):
     try:
         if request.method != 'POST':

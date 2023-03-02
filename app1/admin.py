@@ -88,7 +88,7 @@ class QuizQuestionAdmin(admin.ModelAdmin):
 
 @admin.register(Option)
 class OptionAdmin(admin.ModelAdmin):
-    list_display = ['id','question','option_text','is_correct']
+    list_display = ['id','quiz','question','option_text','is_correct']
 
 @admin.register(UserAnswer)
 class UserAnswerAdmin(admin.ModelAdmin):

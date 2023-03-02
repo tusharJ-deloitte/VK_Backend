@@ -1,6 +1,6 @@
 import graphene
 from app1.types import UserType, CategoryType, ActivityType, TeamType, PlayerType, EventType, RegistrationType, IndRegistrationType, PodType, UploadType, QuizType, QuizQuestionType
-from .models import Detail, User, Category, Activity, Team, Player, Event, Registration, IndRegistration, Pod, Upload, Quiz
+from .models import Detail, User, Category, Activity, Team, Player, Event, Registration, IndRegistration, Pod, Upload, Quiz,QuizQuestion
 import datetime
 from django.contrib.auth.models import User
 from graphql import GraphQLError
@@ -534,18 +534,18 @@ class CreatePod(graphene.Mutation):
 
 class CreateQuiz(graphene.Mutation):
     class Arguments:
-        event_id = graphene.Int(required=True)
+        event_name = graphene.String(required=True)
         title = graphene.String(required=True)
         image = graphene.String(required=True)
         description = graphene.String(required=True)
 
     quiz = graphene.Field(QuizType)
 
-    def mutate(self,info,event_id,title,image,description):
+    def mutate(self,info,event_name,title,image,description):
         print("inside create quiz mutation")
         try:
-            print("finding the event with the eventId :: ",event_id)
-            event = Event.objects.filter(id=event_id)
+            print("finding the event with the event name :: ",event_name)
+            event = Event.objects.filter(name=event_name)
             if len(event) == 0:
                 print("event not exists")
                 raise Exception("event not exists")
@@ -577,7 +577,7 @@ class CreateQuizQuestion(graphene.Mutation):
         points = graphene.Int()
 
     question_instance = graphene.Field(QuizQuestionType)
-    def mutate(self, info, quiz, question_text, image_clue, note,  max_timer, points):
+    def mutate(self, info, quiz, question_text, image_clue, note,  max_timer, points,question_type):
         print("inside create quiz question mutation")
         try:
             print("finding the quiz with the quizId :: ", quiz)

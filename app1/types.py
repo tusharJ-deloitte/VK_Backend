@@ -87,7 +87,7 @@ class QuizQuestionType(DjangoObjectType):
 class OptionType(DjangoObjectType):
     class Meta:
         model = Option
-        fields = ('id','question','option_text','is_correct')
+        fields = ('id','quiz','question','option_text','is_correct')
 
 
 class UserAnswerType(DjangoObjectType):

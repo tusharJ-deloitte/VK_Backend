@@ -174,6 +174,7 @@ class QuizQuestion(models.Model):
     
 
 class Option(models.Model):
+    quiz = models.ForeignKey(Quiz,on_delete=models.CASCADE,default=1)
     question = models.ForeignKey(QuizQuestion,on_delete=models.CASCADE)
     option_text = models.TextField()
     is_correct = models.BooleanField(default=False)
