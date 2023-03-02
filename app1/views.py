@@ -1951,7 +1951,7 @@ def get_library_for_quizs(request):
                 "quiz_id":quiz.pk,
                 "title": quiz.title,
                 "event_id": quiz.event_id,
-                "event_name":Event.objects.get(id=quiz.event_id),
+                # "event_name":Event.objects.get(id=quiz.event_id),
                 "description": quiz.desc,
                 "banner_image": quiz.banner_image,
                 "last_modified": str(quiz.last_modified),
@@ -1993,6 +1993,7 @@ def get_quiz_information(request,quizId):
                 })
 
             questions.append({
+                "ques_id":question.pk,
                 "question_text": question.question_text,
                 "image_clue": question.image_clue,
                 "note": question.note,
@@ -2008,7 +2009,7 @@ def get_quiz_information(request,quizId):
             "quiz_id":quiz.pk,
             "title": quiz.title,
             "event_id": quiz.event_id,
-            "event_name":Event.objects.get(id=quiz.event_id),
+            # "event_name":Event.objects.get(id=quiz.event_id),
             "description": quiz.desc,
             "banner_image": quiz.banner_image,
             "last_modified": str(quiz.last_modified),
