@@ -65,7 +65,7 @@ class PlayerAdmin(admin.ModelAdmin):
 @admin.register(Event)
 class PlayerAdmin(admin.ModelAdmin):
     list_display = ['id', 'name', 'activity_id', 'created_on', 'event_type', 'activity_mode', 'start_date', 'end_date', 'start_time', 'end_time',
-                    'min_members', 'max_members', 'cur_participation', 'status']
+                    'min_members', 'max_members', 'cur_participation', 'status','task_id']
 
 
 @admin.register(Upload)
@@ -80,7 +80,7 @@ class PodAdmin(admin.ModelAdmin):
 
 @admin.register(Quiz)
 class QuizAdmin(admin.ModelAdmin):
-    list_display = ['id','event','banner_image','title','desc','last_modified']
+    list_display = ['id','event_id','banner_image','title','desc','last_modified']
 
 @admin.register(QuizQuestion)
 class QuizQuestionAdmin(admin.ModelAdmin):

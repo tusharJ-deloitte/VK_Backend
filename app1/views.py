@@ -637,8 +637,8 @@ def create_event(request):
             ''', variables={'name': python_data["name"], 'activityName': python_data["activityName"], 'activityMode': python_data['activityMode'], 'startDate': python_data['startDate'], 'endDate': python_data['endDate'], 'startTime': python_data['startTime'], 'endTime': python_data['endTime'], 'eventType': python_data["eventType"]}
             )
 
-            json_post = json.dumps(result.data)
-            return HttpResponse(json_post, content_type='application/json')
+        json_post = json.dumps(result.data)
+        return HttpResponse(json_post, content_type='application/json')
     else:
         return HttpResponse("wrong request", content_type='application/json')
 
@@ -660,12 +660,10 @@ def get_all_events(request):
                         endDate,
                         startTime,
                         endTime,
+                        taskId,
                         activity{
                             name,
                             activityLogo
-                        
-                            
-
                         }
                             }
                 }
@@ -1912,8 +1910,8 @@ def create_quiz(request):
 
             result = schema.execute(
                 '''
-                mutation createQuiz($eventName:String!,$title:String!,$image:String!,$description:String!){
-                    createQuiz(eventName:$eventName,title:$title,image:$image,description:$description){
+                mutation createQuiz($title:String!,$image:String!,$description:String!){
+                    createQuiz(title:$title,image:$image,description:$description){
                         quiz {
                             id
                             title
@@ -1922,7 +1920,7 @@ def create_quiz(request):
                         }
                     }
                 }
-                ''', variables={"eventName":python_data["event_name"],"title":python_data["title"],"image":python_data["image"],"description":python_data["description"]}
+                ''', variables={"title":python_data["title"],"image":python_data["image"],"description":python_data["description"]}
             )
 
             if result.errors:
@@ -1952,7 +1950,7 @@ def get_library_for_quizs(request):
             quizs_information.append({
                 "quiz_id":quiz.pk,
                 "title": quiz.title,
-                "event": quiz.event.name,
+                "event_id": quiz.event_id,
                 "description": quiz.desc,
                 "banner_image": quiz.banner_image,
                 "last_modified": str(quiz.last_modified),
@@ -1977,7 +1975,6 @@ def get_quiz_information(request,quizId):
         print("quiz found")
 
         all_questions_for_quiz = QuizQuestion.objects.filter(quiz=quiz)
-        # all_questions_for_quiz = [all_questions_for_quiz
         print(all_questions_for_quiz)
         no_of_questions = len(all_questions_for_quiz)
 
@@ -2009,7 +2006,7 @@ def get_quiz_information(request,quizId):
         quiz_information={
             "quiz_id":quiz.pk,
             "title": quiz.title,
-            "event": quiz.event.name,
+            "event_id": quiz.event_id,
             "description": quiz.desc,
             "banner_image": quiz.banner_image,
             "last_modified": str(quiz.last_modified),
@@ -2091,7 +2088,7 @@ def score_summary(request):
             total_time = total_time+item.time_taken
 
         result = {}
-        result['correct_amswers'] = correct_answers
+        result['correct_answers'] = correct_answers
         result['total_answers'] = total_answers
         result['total_time'] = total_time
         result['total_score'] = total_score
@@ -2138,11 +2135,46 @@ def create_quizquestion(request):
                 is_correct = item[1]
             )
             option_instance.save()
-        json_post = json.dumps(result.data)
 
+        json_post = json.dumps(result.data)
         return HttpResponse(json_post, content_type='application/json')
     except Exception as err:
+        print(err)
         return HttpResponse(err, content_type="application/json")
+
+
+def publish_quiz_for_event(request):
+    try:
+        if request.method != 'POST':
+            raise Exception(json.dumps({"message": "wrong request method", "status": 400}))
+        json_data = request.body
+        stream = io.BytesIO(json_data)
+        python_data = JSONParser().parse(stream)
+        print(python_data)
+
+        event = Event.objects.filter(id=python_data['event_id'])
+        if len(event) == 0:
+            raise Exception(json.dumps({"message": "event not exists", "status": 400}))
+        event = event[0]
+        print(event)
+
+        quiz = Quiz.objects.filter(id=python_data['quiz_id'])
+        if len(quiz) == 0:
+            raise Exception(json.dumps({"message": "quiz not exists", "status": 400}))
+        quiz = quiz[0]
+        print("quiz found :: ", quiz)
+
+        event.task_id = quiz.pk
+        event.save()
+
+        quiz.event_id = event.pk
+        quiz.save()
+
+        return HttpResponse(json.dumps({"message": f"quiz {quiz} published for the event {event}", "status": 200}), content_type="application/json")
+    except Exception as err:
+        return HttpResponse(err, content_type="application/json")
+
+
         
 def api_template_for_error_handling(request):
     try:

@@ -70,6 +70,7 @@ class Event(models.Model):
     min_members = models.IntegerField(default=0)
     max_members = models.IntegerField(default=0)
     cur_participation = models.IntegerField(default=0)
+    task_id = models.IntegerField(default=0, null=True, blank=True)
 
     # setting up choices for status
     YET_TO_START = "Yet To Start"
@@ -141,7 +142,7 @@ class Pod(models.Model):
         return self.pod_name
 
 class Quiz(models.Model):
-    event = models.OneToOneField(Event, on_delete=models.CASCADE, default="1")
+    event_id = models.IntegerField(default=0,null=True,blank=True)
     banner_image = models.TextField(null=True, blank=True)
     title = models.TextField(unique=True,null=True, blank=True)
     desc = models.TextField(null=True, blank=True)
@@ -174,7 +175,7 @@ class QuizQuestion(models.Model):
     
 
 class Option(models.Model):
-    quiz = models.ForeignKey(Quiz,on_delete=models.CASCADE,default=1)
+    quiz = models.ForeignKey(Quiz,on_delete=models.CASCADE)
     question = models.ForeignKey(QuizQuestion,on_delete=models.CASCADE)
     option_text = models.TextField()
     is_correct = models.BooleanField(default=False)

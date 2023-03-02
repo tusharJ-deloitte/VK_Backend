@@ -534,26 +534,25 @@ class CreatePod(graphene.Mutation):
 
 class CreateQuiz(graphene.Mutation):
     class Arguments:
-        event_name = graphene.String(required=True)
+        # event_name = graphene.String(required=True)
         title = graphene.String(required=True)
         image = graphene.String(required=True)
         description = graphene.String(required=True)
 
     quiz = graphene.Field(QuizType)
 
-    def mutate(self,info,event_name,title,image,description):
+    def mutate(self,info,title,image,description):
         print("inside create quiz mutation")
         try:
-            print("finding the event with the event name :: ",event_name)
-            event = Event.objects.filter(name=event_name)
-            if len(event) == 0:
-                print("event not exists")
-                raise Exception("event not exists")
-            print("event found!")
-            event = event[0]
+            # print("finding the event with the event name :: ",event_name)
+            # event = Event.objects.filter(name=event_name)
+            # if len(event) == 0:
+            #     print("event not exists")
+            #     raise Exception("event not exists")
+            # print("event found!")
+            # event = event[0]
 
             quiz_instance = Quiz(
-                event=event,
                 banner_image=image,
                 title=title,
                 desc=description,

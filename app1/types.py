@@ -47,7 +47,7 @@ class EventType(DjangoObjectType):
     class Meta:
         model = Event
         fields = ('id', 'name', 'activity', 'created_on', 'event_type', 'activity_mode', 'start_date', 'end_date', 'start_time', 'end_time',
-                  'min_members', 'max_members', 'cur_participation', 'status')
+                  'min_members', 'max_members', 'cur_participation', 'status','task_id')
 
 
 class RegistrationType(DjangoObjectType):
@@ -77,7 +77,7 @@ class PodType(DjangoObjectType):
 class QuizType(DjangoObjectType):
     class Meta:
         model = Quiz
-        fields=('id','event','banner_image','title','desc','last_modified')
+        fields=('id','event_id','banner_image','title','desc','last_modified')
 
 class QuizQuestionType(DjangoObjectType):
     class Meta:
