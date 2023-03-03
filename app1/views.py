@@ -2108,7 +2108,7 @@ def score_summary(request):
             user=user,
             quiz=quiz
         )
-        correct_answers, total_score,not_attempted, total_time = 0, 0, 0,0
+        correct_answers, total_score,not_attempted, total_time,user_score,user_time= 0, 0, 0,0,0,0
         total_answers = len(user_answer_instance)
 
         for item in user_answer_instance:
@@ -2116,16 +2116,20 @@ def score_summary(request):
                 not_attempted= not_attempted+1
             if item.is_correct_answer == True:
                 correct_answers = correct_answers+1
-                total_score = total_score+item.score
-            total_time = total_time+item.time_taken
+                user_score = user_score+item.score
+            user_time = user_time+item.time_taken
+            total_score = total_score + item.question.points
+            total_time = total_time + item.question.max_timer
 
         result = {}
         result['quiz_name'] = item.quiz.title
         result['attempted'] = total_answers - not_attempted
         result['correct_answers'] = f"{correct_answers}/{total_answers}"
         result['total_answers'] = total_answers
-        result['total_time'] = total_time
+        result['user_time'] = user_time
         result['total_score'] = total_score
+        result['user_score'] = user_score
+        result['total_time'] = total_time
         print(result)
 
         # ind = IndRegistration.objects.filter(

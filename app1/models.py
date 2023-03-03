@@ -189,7 +189,7 @@ class UserAnswer(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE)
     quiz = models.ForeignKey(Quiz,on_delete=models.CASCADE)
     question = models.ForeignKey(QuizQuestion,on_delete=models.CASCADE)
-    submitted_answer = models.TextField()
+    submitted_answer = models.TextField(null=True,blank=True)
     is_correct_answer = models.BooleanField(null=True,blank=True,default=False)
     time_taken = models.IntegerField(default=0)
     score = models.IntegerField(default=0)
