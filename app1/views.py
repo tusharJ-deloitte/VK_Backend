@@ -1951,16 +1951,34 @@ def get_library_for_quizs(request):
                 "quiz_id":quiz.pk,
                 "title": quiz.title,
                 "event_id": quiz.event_id,
-                # "event_name":Event.objects.get(id=quiz.event_id),
+                "event_name": "Quiz not published" if quiz.event_id==0 else Event.objects.get(id=quiz.event_id).name,
                 "description": quiz.desc,
                 "banner_image": quiz.banner_image,
                 "last_modified": str(quiz.last_modified),
                 "total_questions": no_of_questions,
                 "total_time":total_time
             })
-
-        print(quizs_information)
-        return HttpResponse(json.dumps(quizs_information), content_type="application/json")
+        active = []
+        elapsed = []
+        for i, item in enumerate(quizs_information):
+            curr = datetime.date.today()
+            curt = datetime.datetime.now().time()
+            print(item)
+            if item['event_id'] !=0 :                    
+                event = Event.objects.get(name=item['event_name'])                
+                if event.end_date < curr:
+                    elapsed.append(quizs_information[i])
+                elif event.end_time < curt and event.end_date == curr:
+                    elapsed.append(quizs_information[i])
+                else:
+                    active.append(quizs_information[i])
+            else:
+                active.append(quizs_information[i])
+                
+        json_post = json.dumps(
+            {"active": active, "elapsed": elapsed})
+        # print(quizs_information)
+        return HttpResponse(json_post, content_type="application/json")
     except Exception as err:
         return HttpResponse(err, content_type="application/json")
 
@@ -2228,6 +2246,7 @@ def api_template_for_error_handling(request):
         return HttpResponse("ok", content_type="application/json")
     except Exception as err:
         return HttpResponse(err, content_type="application/json")
+    
 
 # extra api
 def get_all_quizs_information(request):
