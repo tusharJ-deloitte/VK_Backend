@@ -154,6 +154,7 @@ class Quiz(models.Model):
 
 class QuizQuestion(models.Model):
     quiz = models.ForeignKey(Quiz,on_delete=models.CASCADE)
+    question_number = models.IntegerField(null=True,blank=True)
     question_text = models.TextField(null=True, blank=True)
     image_clue = models.TextField(null=True, blank=True)
     note = models.TextField(null=True, blank=True)

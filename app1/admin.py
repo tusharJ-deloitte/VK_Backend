@@ -84,7 +84,7 @@ class QuizAdmin(admin.ModelAdmin):
 
 @admin.register(QuizQuestion)
 class QuizQuestionAdmin(admin.ModelAdmin):
-    list_display = ['id','quiz','question_text','image_clue','note','question_type','max_timer','points']
+    list_display = ['id','quiz','question_text','image_clue','note','question_type','max_timer','points','question_number']
 
 @admin.register(Option)
 class OptionAdmin(admin.ModelAdmin):

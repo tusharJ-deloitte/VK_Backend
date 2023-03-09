@@ -1911,7 +1911,8 @@ def create_quiz(request):
             result = schema.execute(
                 '''
                 mutation createQuiz($title:String!,$image:String!,$description:String!,$numberOfQuestions:Int!){
-                    createQuiz(title:$title,image:$image,description:$description,numberOfQuestions:$numberOfQuestions){
+                    createQ
+uiz(title:$title,image:$image,description:$description,numberOfQuestions:$numberOfQuestions){
                         quiz {
                             id
                             title
@@ -1951,11 +1952,13 @@ def get_library_for_quizs(request):
                 "quiz_id":quiz.pk,
                 "title": quiz.title,
                 "event_id": quiz.event_id,
+                "number_of_questions_left":quiz.number_of_questions - no_of_questions,
                 "event_name": "Quiz not published" if quiz.event_id==0 else Event.objects.get(id=quiz.event_id).name,
+                "event_date":"Quiz not published" if quiz.event_id==0 else Event.objects.get(id=quiz.event_id).start_date,
                 "description": quiz.desc,
                 "banner_image": quiz.banner_image,
                 "last_modified": str(quiz.last_modified),
-                "total_questions": no_of_questions,
+                "total_questions": quiz.number_of_questions,
                 "total_time":total_time
             })
         active = []
@@ -2013,6 +2016,7 @@ def get_quiz_information(request,quizId):
             questions.append({
                 "ques_id":question.pk,
                 "question_text": question.question_text,
+                "question_number":question.question_number,
                 "image_clue": question.image_clue,
                 "note": question.note,
                 "question_type": question.question_type,
@@ -2027,12 +2031,13 @@ def get_quiz_information(request,quizId):
             "quiz_id":quiz.pk,
             "title": quiz.title,
             "event_id": quiz.event_id,
+            "number_of_questions_left":quiz.number_of_questions - no_of_questions,
             # "event_name":Event.objects.get(id=quiz.event_id),
             "description": quiz.desc,
             "banner_image": quiz.banner_image,
             "last_modified": str(quiz.last_modified),
             "total_time": total_time,
-            "total_questions":no_of_questions,
+            "total_questions":quiz.number_of_questions,
             "questions": questions
         }
 
@@ -2173,14 +2178,14 @@ def create_quizquestion(request):
         print(python_data)
         result = schema.execute(
             '''
-            mutation createQuizQuestion($quiz:Int!,$questionText:String!, $imageClue:String!, $note:String!, $questionType: String!, $maxTimer:Int!, $points: Int!){
-                createQuizQuestion(quiz:$quiz, questionText:$questionText, imageClue:$imageClue, note:$note, questionType:$questionType, maxTimer:$maxTimer,  points:$points){
+            mutation createQuizQuestion($quiz:Int!,$questionText:String!, $imageClue:String!, $note:String!, $questionType: String!, $maxTimer:Int!, $points: Int!,$questionNumber:Int!){
+                createQuizQuestion(quiz:$quiz, questionText:$questionText, imageClue:$imageClue, note:$note, questionType:$questionType, maxTimer:$maxTimer,  points:$points,questionNumber:$questionNumber){
                 questionInstance{
                     id                
                 }
             }
             }
-            ''', variables={'quiz': python_data["quiz"], 'questionText': python_data["questionText"], 'imageClue': python_data["imageClue"], 'note': python_data["note"], 'questionType': python_data["questionType"], 'maxTimer': python_data["maxTimer"], 'points': python_data["points"]}
+            ''', variables={'quiz': python_data["quiz"], 'questionText': python_data["questionText"], 'imageClue': python_data["imageClue"], 'note': python_data["note"], 'questionType': python_data["questionType"], 'maxTimer': python_data["maxTimer"], 'points': python_data["points"],'questionNumber':python_data['question_number']}
         )
         print(result.data['createQuizQuestion']['questionInstance']['id'])
         options_list = python_data["options"]
@@ -2198,7 +2203,180 @@ def create_quizquestion(request):
     except Exception as err:
         print(err)
         return HttpResponse(err, content_type="application/json")
+    
+def edit_quiz(request):
+    try:
+        if request.method != "POST":
+            raise Exception(json.dumps({"message":"wrong request method","status":400}))
+        json_data = request.body
+        stream = io.BytesIO(json_data)
+        python_data = JSONParser().parse(stream)
+        print(python_data)
+        quiz = Quiz.objects.filter(id=python_data['quiz_id'])
+        if len(quiz) == 0:
+            raise Exception(json.dumps({"message": "quiz not found", "status": 400}))
+        quiz = quiz[0]
+        quiz.banner_image = python_data['banner_image']
+        quiz.desc = python_data['desc']
+        quiz.title = python_data['title']
+        quiz.save()
+        return HttpResponse("edited quiz details", content_type='application/json')
+    except Exception as err:
+        print(err)
+        return HttpResponse(err, content_type="application/json")
+    
+def delete_quiz(request,quiz_id):
+    try:
+        if request.method !="DELETE":
+            raise Exception(json.dumps({"message":"wrong request method","status":400}))
+        quiz = Quiz.objects.filter(id=quiz_id)
+        if len(quiz) == 0:
+            raise Exception(json.dumps({"message": "quiz not found", "status": 400}))
+        quiz = quiz[0]
+        quiz.delete()
+        return HttpResponse("deleted quiz ", content_type='application/json')
+    except Exception as err:
+        print(err)
+        return HttpResponse(err, content_type="application/json")
 
+def add_new_question(request):
+    try:
+        if request.method !='POST':
+            raise Exception(json.dumps({"message":"wrong request method","status":400}))
+        json_data = request.body
+        stream = io.BytesIO(json_data)
+        python_data = JSONParser().parse(stream)
+        print(python_data)
+        quiz = Quiz.objects.filter(id=python_data['quiz_id'])
+        if len(quiz) ==0:
+            raise Exception(json.dumps({"message": "quiz not found", "status": 400}))
+        quiz=quiz[0]
+        result = schema.execute(
+            '''
+            mutation createQuizQuestion($quiz:Int!,$questionText:String!, $imageClue:String!, $note:String!, $questionType: String!, $maxTimer:Int!, $points: Int!,$questionNumber:Int!){
+                createQuizQuestion(quiz:$quiz, questionText:$questionText, imageClue:$imageClue, note:$note, questionType:$questionType, maxTimer:$maxTimer,  points:$points,questionNumber:$questionNumber){
+                questionInstance{
+                    id                
+                }
+            }
+            }
+            ''', variables={'quiz': python_data["quiz_id"], 'questionText': python_data["questionText"], 'imageClue': python_data["imageClue"], 'note': python_data["note"], 'questionType': python_data["questionType"], 'maxTimer': python_data["maxTimer"], 'points': python_data["points"],'questionNumber':python_data['question_number']}
+        )
+        print(result.data['createQuizQuestion']['questionInstance']['id'])
+        options_list = python_data["options"]
+        for item in options_list:
+            option_instance = Option(
+                quiz = quiz,
+                question = QuizQuestion.objects.get(id=result.data['createQuizQuestion']['questionInstance']['id']),
+                option_text = item[0],
+                is_correct = item[1]
+            )
+            option_instance.save()
+        quiz.number_of_questions = quiz.number_of_questions + 1
+        quiz.save()
+        return HttpResponse("added new question", content_type='application/json')
+    except Exception as err:
+        print(err)
+        return HttpResponse(err, content_type="application/json")
+
+
+def delete_quiz_question(request,quiz_id,question_id):
+    try:
+        if request.method !='DELETE':
+            raise Exception(json.dumps({"message":"wrong request method","status":400}))
+        quiz = Quiz.objects.filter(id=quiz_id)
+        if len(quiz) ==0:
+            raise Exception(json.dumps({"message": "quiz not found", "status": 400}))
+        quiz=quiz[0]
+        quizQuestion = QuizQuestion.objects.filter(quiz=quiz,question_number=question_id)
+        if len(quizQuestion) ==0:
+            raise Exception(json.dumps({"message": "question number not found", "status": 400}))
+        question=quizQuestion[0]
+        question.delete()
+        return HttpResponse("deleted question", content_type='application/json')
+    except Exception as err:
+        print(err)
+        return HttpResponse(err, content_type="application/json")
+
+def edit_quiz_question(request):
+    try:
+        if request.method != 'POST':
+            raise Exception(json.dumps({"message": "wrong request method", "status": 400}))
+        json_data = request.body
+        stream = io.BytesIO(json_data)
+        python_data = JSONParser().parse(stream)
+        print(python_data)
+        quiz = Quiz.objects.filter(id=python_data['quiz_id'])
+        if len(quiz) ==0:
+            raise Exception(json.dumps({"message": "quiz not found", "status": 400}))
+        quiz=quiz[0]
+        quizQuestion = QuizQuestion.objects.filter(quiz=quiz,question_number=python_data['question_number'])
+        if len(quizQuestion) ==0:
+            raise Exception(json.dumps({"message": "question number not found", "status": 400}))
+        question=quizQuestion[0]
+        question.question_text = python_data['question_text']
+        question.image_clue = python_data['image_clue']
+        question.note = python_data['note']
+        question.question_type = python_data['question_type']
+        question.max_timer = python_data['max_timer']
+        question.points = python_data['points']
+        question.save()
+
+        options_list = python_data["options"]
+        options = Option.objects.filter(quiz=quiz,question=question)
+        for item in options:
+            item.delete()
+        for item in options_list:
+            option_instance = Option(
+                quiz = quiz,
+                question = question,
+                option_text = item[0],
+                is_correct = item[1]
+            )
+            option_instance.save()
+        
+        return HttpResponse("ok", content_type='application/json')
+    except Exception as err:
+        print(err)
+        return HttpResponse(err, content_type="application/json")
+
+def get_particular_question(request,quiz_id,question_number):
+    try:
+        if request.method!="POST":
+            raise Exception(json.dumps({"message": "wrong request method", "status": 400}))
+        quiz = Quiz.objects.filter(id=quiz_id)
+        if len(quiz) ==0:
+            raise Exception(json.dumps({"message": "quiz not found", "status": 400}))
+        quiz=quiz[0]
+        quizQuestion = QuizQuestion.objects.filter(quiz=quiz,question_number=question_number)
+        if len(quizQuestion) ==0:
+            raise Exception(json.dumps({"message": "question number not found", "status": 400}))
+        question=quizQuestion[0]
+        
+        all_options_for_question = Option.objects.filter(
+            quiz=Quiz.objects.get(id=quiz_id),
+            question=question)
+        options = []
+        for option in all_options_for_question:
+            options.append({
+                "option_text": option.option_text,
+                "is_correct": option.is_correct
+            })
+        questions=[]
+        questions.append({
+                "ques_id":question.pk,
+                "question_text": question.question_text,
+                "question_number":question.question_number,
+                "image_clue": question.image_clue,
+                "note": question.note,
+                "question_type": question.question_type,
+                "max_timer": question.max_timer,
+                "points": question.points,
+                "options": options
+            })
+        return HttpResponse(json.dumps(questions), content_type="application/json")
+    except Exception as err:
+        return HttpResponse(err, content_type="application/json")
 
 def publish_quiz_for_event(request):
     try:

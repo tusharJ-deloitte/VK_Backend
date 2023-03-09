@@ -571,6 +571,7 @@ class CreateQuiz(graphene.Mutation):
 class CreateQuizQuestion(graphene.Mutation):
     class Arguments:
         quiz = graphene.Int(required=True)
+        question_number = graphene.Int(required=True)
         question_text = graphene.String(required=True)
         image_clue = graphene.String()
         note = graphene.String()
@@ -579,7 +580,7 @@ class CreateQuizQuestion(graphene.Mutation):
         points = graphene.Int()
 
     question_instance = graphene.Field(QuizQuestionType)
-    def mutate(self, info, quiz, question_text, image_clue, note,  max_timer, points,question_type):
+    def mutate(self, info, quiz, question_text, image_clue, note,  max_timer, points,question_type,question_number):
         print("inside create quiz question mutation")
         try:
             print("finding the quiz with the quizId :: ", quiz)
@@ -593,6 +594,7 @@ class CreateQuizQuestion(graphene.Mutation):
             question_instance = QuizQuestion(
                 quiz=quiz_info,
                 question_text=question_text,
+                question_number=question_number,
                 image_clue=image_clue,
                 note=note,
                 question_type=question_type,

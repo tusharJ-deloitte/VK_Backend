@@ -97,7 +97,14 @@ urlpatterns = [
     path("quiz/add_user_answer",views.add_user_answer,name="add_user_answer"),
     path("quiz/score_summary",views.score_summary,name="score_summary"),
     path("quiz/create_quizquestion", views.create_quizquestion,name="create_quizquestion"),
-    path("quiz/publish", views.publish_quiz_for_event,
-         name="publish_quiz_for_event"),
+    path("quiz/publish", views.publish_quiz_for_event,name="publish_quiz_for_event"),
+    path("quiz/edit",views.edit_quiz,name="edit_quiz"),
+    path("quiz/delete/<int:quiz_id>",views.delete_quiz,name="delete_quiz"),
+    path("quiz/add_new_question",views.add_new_question,name="add_new_question"),
+    path("quiz/delete_quiz_question/<int:quiz_id>/<int:question_id>",views.delete_quiz_question,name="delete_quiz_question"),
+    path("quiz/edit_quiz_question",views.edit_quiz_question,name="edit_quiz_question"),
+    path("quiz/get_particular_question/<int:quiz_id>/<int:question_number>",views.get_particular_question,name="get_particular_question")
+
+
 
 ]
