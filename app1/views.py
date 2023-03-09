@@ -1911,8 +1911,7 @@ def create_quiz(request):
             result = schema.execute(
                 '''
                 mutation createQuiz($title:String!,$image:String!,$description:String!,$numberOfQuestions:Int!){
-                    createQ
-uiz(title:$title,image:$image,description:$description,numberOfQuestions:$numberOfQuestions){
+                    createQuiz(title:$title,image:$image,description:$description,numberOfQuestions:$numberOfQuestions){
                         quiz {
                             id
                             title
@@ -2185,7 +2184,7 @@ def create_quizquestion(request):
                 }
             }
             }
-            ''', variables={'quiz': python_data["quiz"], 'questionText': python_data["questionText"], 'imageClue': python_data["imageClue"], 'note': python_data["note"], 'questionType': python_data["questionType"], 'maxTimer': python_data["maxTimer"], 'points': python_data["points"],'questionNumber':python_data['question_number']}
+            ''', variables={'quiz': python_data["quiz"], 'questionText': python_data["questionText"], 'imageClue': python_data["imageClue"], 'note': python_data["note"], 'questionType': python_data["questionType"], 'maxTimer': python_data["maxTimer"], 'points': python_data["points"],'questionNumber':python_data['questionNumber']}
         )
         print(result.data['createQuizQuestion']['questionInstance']['id'])
         options_list = python_data["options"]
@@ -2247,7 +2246,7 @@ def add_new_question(request):
         stream = io.BytesIO(json_data)
         python_data = JSONParser().parse(stream)
         print(python_data)
-        quiz = Quiz.objects.filter(id=python_data['quiz_id'])
+        quiz = Quiz.objects.filter(id=python_data['quiz'])
         if len(quiz) ==0:
             raise Exception(json.dumps({"message": "quiz not found", "status": 400}))
         quiz=quiz[0]
@@ -2260,7 +2259,7 @@ def add_new_question(request):
                 }
             }
             }
-            ''', variables={'quiz': python_data["quiz_id"], 'questionText': python_data["questionText"], 'imageClue': python_data["imageClue"], 'note': python_data["note"], 'questionType': python_data["questionType"], 'maxTimer': python_data["maxTimer"], 'points': python_data["points"],'questionNumber':python_data['question_number']}
+            ''', variables={'quiz': python_data["quiz"], 'questionText': python_data["questionText"], 'imageClue': python_data["imageClue"], 'note': python_data["note"], 'questionType': python_data["questionType"], 'maxTimer': python_data["maxTimer"], 'points': python_data["points"],'questionNumber':python_data['questionNumber']}
         )
         print(result.data['createQuizQuestion']['questionInstance']['id'])
         options_list = python_data["options"]
@@ -2306,19 +2305,19 @@ def edit_quiz_question(request):
         stream = io.BytesIO(json_data)
         python_data = JSONParser().parse(stream)
         print(python_data)
-        quiz = Quiz.objects.filter(id=python_data['quiz_id'])
+        quiz = Quiz.objects.filter(id=python_data['quiz'])
         if len(quiz) ==0:
             raise Exception(json.dumps({"message": "quiz not found", "status": 400}))
         quiz=quiz[0]
-        quizQuestion = QuizQuestion.objects.filter(quiz=quiz,question_number=python_data['question_number'])
+        quizQuestion = QuizQuestion.objects.filter(quiz=quiz,question_number=python_data['questionNumber'])
         if len(quizQuestion) ==0:
             raise Exception(json.dumps({"message": "question number not found", "status": 400}))
         question=quizQuestion[0]
-        question.question_text = python_data['question_text']
-        question.image_clue = python_data['image_clue']
+        question.question_text = python_data['questionText']
+        question.image_clue = python_data['imageClue']
         question.note = python_data['note']
-        question.question_type = python_data['question_type']
-        question.max_timer = python_data['max_timer']
+        question.question_type = python_data['questionType']
+        question.max_timer = python_data['maxTimer']
         question.points = python_data['points']
         question.save()
 
@@ -2342,7 +2341,7 @@ def edit_quiz_question(request):
 
 def get_particular_question(request,quiz_id,question_number):
     try:
-        if request.method!="POST":
+        if request.method!="GET":
             raise Exception(json.dumps({"message": "wrong request method", "status": 400}))
         quiz = Quiz.objects.filter(id=quiz_id)
         if len(quiz) ==0:
