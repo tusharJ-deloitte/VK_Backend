@@ -2279,7 +2279,7 @@ def add_new_question(request):
         return HttpResponse(err, content_type="application/json")
 
 
-def delete_quiz_question(request,quiz_id,question_id):
+def delete_quiz_question(request,quiz_id,question_number):
     try:
         if request.method !='DELETE':
             raise Exception(json.dumps({"message":"wrong request method","status":400}))
@@ -2287,11 +2287,16 @@ def delete_quiz_question(request,quiz_id,question_id):
         if len(quiz) ==0:
             raise Exception(json.dumps({"message": "quiz not found", "status": 400}))
         quiz=quiz[0]
-        quizQuestion = QuizQuestion.objects.filter(quiz=quiz,question_number=question_id)
+        quizQuestion = QuizQuestion.objects.filter(quiz=quiz,question_number=question_number)
         if len(quizQuestion) ==0:
             raise Exception(json.dumps({"message": "question number not found", "status": 400}))
-        question=quizQuestion[0]
+        question=quizQuestion[0]        
         question.delete()
+        for item in quizQuestion:
+            if item.question_number > question_number:
+                item.question_number = item.question_number-1
+                item.save()
+
         return HttpResponse("deleted question", content_type='application/json')
     except Exception as err:
         print(err)

@@ -163,7 +163,7 @@ class QuizQuestion(models.Model):
     QUESTION_CHOICES = [
         # (ACTUAL VALUE , HUMAN READABLE FORMAT)
         (MCQ, "MCQ"),
-        (CHECKBOX, "checkbox")
+        (CHECKBOX, "Checkbox")
     ]
 
     question_type = models.CharField(
