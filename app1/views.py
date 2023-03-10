@@ -1953,7 +1953,7 @@ def get_library_for_quizs(request):
                 "event_id": quiz.event_id,
                 "number_of_questions_left":quiz.number_of_questions - no_of_questions,
                 "event_name": "Quiz not published" if quiz.event_id==0 else Event.objects.get(id=quiz.event_id).name,
-                "event_date":"Quiz not published" if quiz.event_id==0 else Event.objects.get(id=quiz.event_id).start_date,
+                "event_date":"Quiz not published" if quiz.event_id==0 else str(Event.objects.get(id=quiz.event_id).start_date),
                 "description": quiz.desc,
                 "banner_image": quiz.banner_image,
                 "last_modified": str(quiz.last_modified),
