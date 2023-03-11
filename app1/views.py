@@ -619,6 +619,7 @@ def create_event(request):
                 createEvent(name:$name,activityName:$activityName,activityMode:$activityMode,minMembers:$minMembers,maxMembers:$maxMembers,startTime:$startTime,endTime:$endTime,startDate:$startDate,endDate:$endDate,eventType:$eventType){
                     event{
                         name
+			id
                     }
                 }
             }
@@ -631,6 +632,7 @@ def create_event(request):
                createIndEvent(name:$name,activityName:$activityName,activityMode:$activityMode,startTime:$startTime,endTime:$endTime,startDate:$startDate,endDate:$endDate,eventType:$eventType){
                     event{
                         name
+			id
                     }
                 }
             }
