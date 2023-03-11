@@ -625,6 +625,7 @@ def create_event(request):
             }
             ''', variables={'name': python_data["name"], 'activityName': python_data["activityName"], 'activityMode': python_data['activityMode'], 'minMembers': python_data["minMembers"], 'maxMembers': python_data["maxMembers"], 'startDate': python_data['startDate'], 'endDate': python_data['endDate'], 'startTime': python_data['startTime'], 'endTime': python_data['endTime'], 'eventType': python_data["eventType"]}
             )
+	    result = result.data['createEvent']
         else:
             result = schema.execute(
                 '''
@@ -638,8 +639,9 @@ def create_event(request):
             }
             ''', variables={'name': python_data["name"], 'activityName': python_data["activityName"], 'activityMode': python_data['activityMode'], 'startDate': python_data['startDate'], 'endDate': python_data['endDate'], 'startTime': python_data['startTime'], 'endTime': python_data['endTime'], 'eventType': python_data["eventType"]}
             )
+	    result = result.data['createIndEvent']
 
-        json_post = json.dumps(result.data)
+        json_post = json.dumps(result)
         return HttpResponse(json_post, content_type='application/json')
     else:
         return HttpResponse("wrong request", content_type='application/json')
