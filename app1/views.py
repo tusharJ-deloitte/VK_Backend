@@ -750,11 +750,12 @@ def update_event(request, event_id):
 def delete_event(request, event_id):
     if request.method == 'DELETE':
         ev = Event.objects.get(id=event_id)
-        # print(ev)
+	if ev.task_id != 0 :
+		quiz = Quiz.objects.get(event_id=event_id)
+		quiz.event_id=0
+		quiz.save()		
         ev.delete()
-	quiz = Quiz.objects.get(event_id=event_id)
-	quiz.event_id=0
-	quiz.save()
+	
     return HttpResponse(200)
 
 
