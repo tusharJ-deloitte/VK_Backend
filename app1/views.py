@@ -752,6 +752,9 @@ def delete_event(request, event_id):
         ev = Event.objects.get(id=event_id)
         # print(ev)
         ev.delete()
+	quiz = Quiz.objects.get(event_id=event_id)
+	quiz.event_id=0
+	quiz.save()
     return HttpResponse(200)
 
 
