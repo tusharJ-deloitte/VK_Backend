@@ -2412,6 +2412,9 @@ def publish_quiz_for_event(request):
             raise Exception(json.dumps({"message": "quiz not exists", "status": 400}))
         quiz = quiz[0]
         print("quiz found :: ", quiz)
+	
+	if event.task_id != 0 :
+	    raise Exception(json.dumps({"message":"event already published","status":400}))
 
         event.task_id = quiz.pk
         event.save()
