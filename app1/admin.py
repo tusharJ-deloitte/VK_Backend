@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Category, Activity, Team, Player, Event, Registration, Detail, IndRegistration, Pod, Upload,Quiz,QuizQuestion,Option,UserAnswer
+from .models import Post, Category, Activity, Team, Player, Event, Registration, Detail, IndRegistration, Pod, Upload,Quiz,QuizQuestion,Option,UserAnswer,MysteryRoom,MysteryRoomOption,MysteryRoomQuestion,RoomDetail
 from django.contrib.auth.models import User
 from django.contrib.auth.admin import UserAdmin
 
@@ -93,3 +93,19 @@ class OptionAdmin(admin.ModelAdmin):
 @admin.register(UserAnswer)
 class UserAnswerAdmin(admin.ModelAdmin):
     list_display=['id','user','quiz','question','submitted_answer','is_correct_answer','time_taken','score']
+
+@admin.register(MysteryRoom)
+class MysteryRoomAdmin(admin.ModelAdmin):
+    list_display=['id','banner_image','event_id','title','number_of_team_members','last_modified','number_of_mystery_rooms']
+
+@admin.register(RoomDetail)
+class RoomDetailAdmin(admin.ModelAdmin):
+    list_display=['id','banner_image','title','mystery_room','difficulty_level','number_of_questions','theme','description']
+
+@admin.register(MysteryRoomQuestion)
+class MysteryRoomQuestionAdmin(admin.ModelAdmin):
+    list_display=['id','room','question_text','image_clue','note','question_type','question_number','hint']
+
+@admin.register(MysteryRoomOption)
+class MysteryRoomOptionAdmin(admin.ModelAdmin):
+    list_display=['id','room','question','option_text','is_correct']

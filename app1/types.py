@@ -1,6 +1,6 @@
 from graphene_django.types import DjangoObjectType
 from django.contrib.auth.models import User
-from .models import Detail, Category, Activity, Team, Player, Event, Registration, IndRegistration, Pod, Upload,Quiz,QuizQuestion,Option,UserAnswer
+from .models import Detail, Category, Activity, Team, Player, Event, Registration, IndRegistration, Pod, Upload,Quiz,QuizQuestion,Option,UserAnswer,MysteryRoom,MysteryRoomOption,MysteryRoomQuestion,RoomDetail
 
 
 class UserType(DjangoObjectType):
@@ -95,3 +95,22 @@ class UserAnswerType(DjangoObjectType):
         model = UserAnswer
         fields = ('id','user','quiz','question','submitted_answer','is_correct_answer','time_taken','score')
 
+class MysteryRoomType(DjangoObjectType):
+    class Meta:
+        model = MysteryRoom
+        fields = ('id','banner_image','event_id','title','number_of_team_members','last_modified','number_of_mystery_rooms')
+
+class RoomDetailType(DjangoObjectType):
+    class Meta:
+        model = RoomDetail
+        fields = ('id','banner_image','title','mystery_room','difficulty_level','number_of_questions','theme','description')
+
+class MysteryRoomQuestionType(DjangoObjectType):
+    class Meta:
+        model = MysteryRoomQuestion
+        fields=('id','room','question_text','image_clue','note','question_type','question_number','hint')
+
+class MysteryRoomOptionType(DjangoObjectType):
+    class Meta:
+        model = MysteryRoomOption
+        fields=('id','room','question','option_text','is_correct')
