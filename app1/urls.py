@@ -103,9 +103,9 @@ urlpatterns = [
     path("quiz/add_new_question",views.add_new_question,name="add_new_question"),
     path("quiz/delete_quiz_question/<int:quiz_id>/<int:question_number>",views.delete_quiz_question,name="delete_quiz_question"),
     path("quiz/edit_quiz_question",views.edit_quiz_question,name="edit_quiz_question"),
-    path("quiz/get_question/<int:quiz_id>/<int:question_number>",views.get_particular_question,name="get_particular_question")
+    path("quiz/get_question/<int:quiz_id>/<int:question_number>",views.get_particular_question,name="get_particular_question"),
 
 
-    path("notifications/<str:user_email>", views.get_notifications_of_user, name="get_notifications_of_user")
+    path("notifications/<str:user_email>", views.get_notifications_of_user, name="get_notifications_of_user"),
 
 ]
