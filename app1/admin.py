@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Category, Activity, Team, Player, Event, Registration, Detail, IndRegistration, Pod, Upload,Quiz,QuizQuestion,Option,UserAnswer
+from .models import Post, Category, Activity, Team, Player, Event, Registration, Detail, IndRegistration, Pod, Upload,Quiz,QuizQuestion,Option,UserAnswer,Notifications
 from django.contrib.auth.models import User
 from django.contrib.auth.admin import UserAdmin
 
@@ -47,23 +47,23 @@ class PlayerAdmin(admin.ModelAdmin):
 
 
 @admin.register(Registration)
-class PlayerAdmin(admin.ModelAdmin):
+class RegistrationAdmin(admin.ModelAdmin):
     list_display = ['id', 'event_id', 'team_id']
 
 
 @admin.register(IndRegistration)
-class PlayerAdmin(admin.ModelAdmin):
+class IndRegistrationAdmin(admin.ModelAdmin):
     list_display = ['id', 'event_id', 'player_id']
 
 
 @admin.register(Detail)
-class PlayerAdmin(admin.ModelAdmin):
+class DetailAdmin(admin.ModelAdmin):
     list_display = ['id', 'user_id', 'employee_id',
                     'designation', 'profile_pic', 'doj']
 
 
 @admin.register(Event)
-class PlayerAdmin(admin.ModelAdmin):
+class EventAdmin(admin.ModelAdmin):
     list_display = ['id', 'name', 'activity_id', 'created_on', 'event_type', 'activity_mode', 'start_date', 'end_date', 'start_time', 'end_time',
                     'min_members', 'max_members', 'cur_participation', 'status','task_id']
 
@@ -93,3 +93,7 @@ class OptionAdmin(admin.ModelAdmin):
 @admin.register(UserAnswer)
 class UserAnswerAdmin(admin.ModelAdmin):
     list_display=['id','user','quiz','question','submitted_answer','is_correct_answer','time_taken','score']
+
+@admin.register(Notifications)
+class NotificationsAdmin(admin.ModelAdmin):
+    list_display = ['id','message_type','message','sent','seen','createdOn','for_user']

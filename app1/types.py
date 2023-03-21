@@ -1,6 +1,6 @@
 from graphene_django.types import DjangoObjectType
 from django.contrib.auth.models import User
-from .models import Detail, Category, Activity, Team, Player, Event, Registration, IndRegistration, Pod, Upload,Quiz,QuizQuestion,Option,UserAnswer
+from .models import Detail, Category, Activity, Team, Player, Event, Registration, IndRegistration, Pod, Upload,Quiz,QuizQuestion,Option,UserAnswer,Notifications
 
 
 class UserType(DjangoObjectType):
@@ -95,3 +95,8 @@ class UserAnswerType(DjangoObjectType):
         model = UserAnswer
         fields = ('id','user','quiz','question','submitted_answer','is_correct_answer','time_taken','score')
 
+
+class NotificationsType(DjangoObjectType):
+    class Meta:
+        model = Notifications
+        fields = ('id', 'message', 'message_type', 'sent', 'seen', 'createdOn')

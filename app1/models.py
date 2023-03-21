@@ -199,3 +199,23 @@ class UserAnswer(models.Model):
         return self.user.email+" "+self.quiz.title+" "+self.question.question_text
     
    
+class Notifications(models.Model):
+    message_type = models.TextField()
+    message = models.TextField(null=True)
+    sent = models.BooleanField(default=False)
+    seen = models.BooleanField(default=False)
+    for_user = models.TextField(null=True)
+    createdOn = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-createdOn']
+
+    def __str__(self) -> str:
+        return self.message_type+" "+self.message
+
+
+# class Logo(models.Model):
+#     title = models.CharField(
+#         max_length=80, blank=False, null=False)
+#     #image_url = S3DirectField(dest='mediafiles/', blank=True)
+#     picture = models.FileField(upload_to='media/', blank=True, null=False)
