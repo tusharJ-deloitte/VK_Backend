@@ -1,6 +1,6 @@
 import re
 from django.shortcuts import render
-from .models import Detail, Activity, Player, Team, Category, Event, Registration, IndRegistration, Pod, Upload,UserAnswer,Quiz,QuizQuestion,Option
+from .models import Detail, Activity, Player, Team, Category, Event, Registration, IndRegistration, Pod, Upload, UserAnswer, Quiz, QuizQuestion, Option
 from .serializers import PostSerializer
 from rest_framework.renderers import JSONRenderer
 from django.http import HttpResponse, JsonResponse
@@ -31,14 +31,16 @@ from .messages import messages
 def home(request):
     return render(request, 'app1/home.html')
 
-#register user first time 
+# register user first time
+
+
 def registerUser(request):
     try:
         if request.method == 'POST':
             json_data = request.body
             stream = io.BytesIO(json_data)
             python_data = JSONParser().parse(stream)
-            
+
             if "email" in python_data and "name" in python_data:
                 username = python_data["email"].split("@")[0]
                 lastname = python_data["name"].split(",")[0]
@@ -46,15 +48,15 @@ def registerUser(request):
 
                 if User.objects.filter(email=python_data["email"]).exists():
                     return HttpResponse("logged in", content_type='application/json', status=200)
-            
+
                 user_instance = User(
-                    username = username,
+                    username=username,
                     email=python_data["email"],
                     last_name=lastname,
                     first_name=firstname
                 )
                 user_instance.save()
-                detail_instance=Detail(
+                detail_instance = Detail(
                     user=user_instance,
                     designation="SDE 1"
                 )
@@ -64,7 +66,7 @@ def registerUser(request):
                 raise Exception("data not found")
 
         else:
-            return HttpResponse("wrong request method", content_type='application/json',status=400)
+            return HttpResponse("wrong request method", content_type='application/json', status=400)
 
     except Exception as err:
         return HttpResponse(err, content_type='application/json')
@@ -614,32 +616,30 @@ def create_event(request):
 
         if "minMembers" in python_data:
             result = schema.execute(
-                '''
-            mutation createEvent($name : String!,$activityName: String!,$activityMode: String!,$minMembers:Int!,$maxMembers:Int!,$startDate:Date!,$endDate:Date!,$startTime:Time!,$endTime:Time!,$eventType: String!){
-                createEvent(name:$name,activityName:$activityName,activityMode:$activityMode,minMembers:$minMembers,maxMembers:$maxMembers,startTime:$startTime,endTime:$endTime,startDate:$startDate,endDate:$endDate,eventType:$eventType){
-                    event{
-                        name
-			id
+                '''mutation createEvent($name : String!,$activityName: String!,$activityMode: String!,$minMembers:Int!,$maxMembers:Int!,$startDate:Date!,$endDate:Date!,$startTime:Time!,$endTime:Time!,$eventType: String!){
+                    createEvent(name:$name,activityName:$activityName,activityMode:$activityMode,minMembers:$minMembers,maxMembers:$maxMembers,startTime:$startTime,endTime:$endTime,startDate:$startDate,endDate:$endDate,eventType:$eventType){
+                        event{
+                            name
+			                id
+                        }
                     }
                 }
-            }
             ''', variables={'name': python_data["name"], 'activityName': python_data["activityName"], 'activityMode': python_data['activityMode'], 'minMembers': python_data["minMembers"], 'maxMembers': python_data["maxMembers"], 'startDate': python_data['startDate'], 'endDate': python_data['endDate'], 'startTime': python_data['startTime'], 'endTime': python_data['endTime'], 'eventType': python_data["eventType"]}
             )
-	    result = result.data['createEvent']
+            result = result.data['createEvent']
         else:
             result = schema.execute(
-                '''
-            mutation createIndEvent($name : String!,$activityName: String!,$activityMode: String!,$startDate:Date!,$endDate:Date!,$startTime:Time!,$endTime:Time!,$eventType: String!){
-               createIndEvent(name:$name,activityName:$activityName,activityMode:$activityMode,startTime:$startTime,endTime:$endTime,startDate:$startDate,endDate:$endDate,eventType:$eventType){
-                    event{
-                        name
-			id
+                '''mutation createIndEvent($name : String!,$activityName: String!,$activityMode: String!,$startDate:Date!,$endDate:Date!,$startTime:Time!,$endTime:Time!,$eventType: String!){
+                    createIndEvent(name:$name,activityName:$activityName,activityMode:$activityMode,startTime:$startTime,endTime:$endTime,startDate:$startDate,endDate:$endDate,eventType:$eventType){
+                        event{
+                            name
+			                id
+                        }
                     }
                 }
-            }
             ''', variables={'name': python_data["name"], 'activityName': python_data["activityName"], 'activityMode': python_data['activityMode'], 'startDate': python_data['startDate'], 'endDate': python_data['endDate'], 'startTime': python_data['startTime'], 'endTime': python_data['endTime'], 'eventType': python_data["eventType"]}
             )
-	    result = result.data['createIndEvent']
+            result = result.data['createIndEvent']
 
         json_post = json.dumps(result)
         return HttpResponse(json_post, content_type='application/json')
@@ -750,12 +750,12 @@ def update_event(request, event_id):
 def delete_event(request, event_id):
     if request.method == 'DELETE':
         ev = Event.objects.get(id=event_id)
-	if ev.task_id != 0 :
-		quiz = Quiz.objects.get(event_id=event_id)
-		quiz.event_id=0
-		quiz.save()		
+        if ev.task_id != 0:
+            quiz = Quiz.objects.get(event_id=event_id)
+            quiz.event_id = 0
+            quiz.save()
         ev.delete()
-	
+
     return HttpResponse(200)
 
 
@@ -1438,19 +1438,20 @@ def cancel_registration(request, event_id, p_id):
         return HttpResponse("wrong request", content_type='application/json')
 
 
-def upload(request,user_email,event_name):
+def upload(request, user_email, event_name):
     if request.method == "POST":
         file = request.FILES.get('file')
         print(file)
-        current_datetime = datetime.datetime.now()  
+        current_datetime = datetime.datetime.now()
         print(current_datetime)
-        filename = str(current_datetime).split(' ')[0]+"___"+event_name+"___"+user_email+"___"+file.name
+        filename = str(current_datetime).split(
+            ' ')[0]+"___"+event_name+"___"+user_email+"___"+file.name
         print(filename)
         url = "https://zet2v4blgg.execute-api.us-east-1.amazonaws.com/prod/virtualkuna/relay-staging-client-s3/virtualkunakidza/"+filename
 
-        payload=file
+        payload = file
         headers = {
-        'Content-Type': 'video/mp4'
+            'Content-Type': 'video/mp4'
         }
 
         response = requests.request("PUT", url, headers=headers, data=payload)
@@ -1458,11 +1459,12 @@ def upload(request,user_email,event_name):
         print(response.text)
         return HttpResponse(200)
 
+
 def upload_aws(request):
     if request.method == 'POST':
         json_data = request.body
         stream = io.BytesIO(json_data)
-        python_data = JSONParser().parse(stream)   
+        python_data = JSONParser().parse(stream)
         print("inside")
         print(str(python_data['file_duration']))
         result = schema.execute(
@@ -1474,17 +1476,18 @@ def upload_aws(request):
                     }
                 }
             }
-            ''', variables={'userEmail': python_data["user_email"], 'eventName': python_data['event_name'], 'fileDuration': python_data['file_duration'],'fileSize':int(python_data['file_size'])})
+            ''', variables={'userEmail': python_data["user_email"], 'eventName': python_data['event_name'], 'fileDuration': python_data['file_duration'], 'fileSize': int(python_data['file_size'])})
         print(result)
         id = result.data['createUpload']['upload']['id']
         upload_instance = Upload.objects.get(id=id)
-        upload_instance.file_name = str(upload_instance.uploaded_on).split(' ')[0]+"___"+python_data['event_name']+"___"+python_data["user_email"]+"___"+python_data['file_name']
-        print("done---1")              
+        upload_instance.file_name = str(upload_instance.uploaded_on).split(' ')[
+            0]+"___"+python_data['event_name']+"___"+python_data["user_email"]+"___"+python_data['file_name']
+        print("done---1")
         upload_instance.score = 0
         upload_instance.is_uploaded = True
         upload_instance.save()
         print("done--2")
-        return HttpResponse(json.dumps({"data":id}),content_type='application/json')
+        return HttpResponse(json.dumps({"data": id}), content_type='application/json')
     else:
         return HttpResponse("wrong request", content_type='application/json')
 
@@ -1517,7 +1520,8 @@ def delete_file(request, upload_id):
         # key = date+"___"+upload_instance.event.name+"___"+upload_instance.user.email+"___"+upload_instance.file_name
         s3_client = boto3.client('s3')
         print("2")
-        response = s3_client.delete_object(Bucket=settings.AWS_STORAGE_BUCKET_NAME,Key=key)
+        response = s3_client.delete_object(
+            Bucket=settings.AWS_STORAGE_BUCKET_NAME, Key=key)
         print("3")
         print(response)
         upload_instance.delete()
@@ -1541,7 +1545,7 @@ def get_list_user_event(request, user_email, event_name):
             print(item)
             uploadedOn = Upload.objects.get(id=item).uploaded_on
             result.append({
-                "upload_id":item,
+                "upload_id": item,
                 "file": settings.CLOUDFRONT_DOMAIN+Upload.objects.get(id=item).file_name,
                 "file_name": Upload.objects.get(id=item).file_name.split('___')[-1],
                 "uploaded_on_date": str(uploadedOn).split(' ')[0],
@@ -1555,6 +1559,8 @@ def get_list_user_event(request, user_email, event_name):
         return HttpResponse(json.dumps({"error": "Wrong Request Method"}), content_type='application/json', status=400)
 
 # admin flow
+
+
 def get_uploads(request, event_name):
     if request.method == "GET":
         upload_id = [item.pk for item in Upload.objects.filter(
@@ -1563,9 +1569,10 @@ def get_uploads(request, event_name):
         result = []
         for item in upload_id:
             uploadedOn = Upload.objects.get(id=item).uploaded_on
-            print(settings.CLOUDFRONT_DOMAIN+Upload.objects.get(id=item).file_name)
+            print(settings.CLOUDFRONT_DOMAIN +
+                  Upload.objects.get(id=item).file_name)
             result.append({
-                "upload_id":item,
+                "upload_id": item,
                 "user": Upload.objects.get(id=item).user.first_name+" "+Upload.objects.get(id=item).user.last_name,
                 "user_email": Upload.objects.get(id=item).user.email,
                 "file": settings.CLOUDFRONT_DOMAIN+Upload.objects.get(id=item).file_name,
@@ -1581,6 +1588,8 @@ def get_uploads(request, event_name):
         return HttpResponse(json.dumps({"error": "Wrong Request Method"}), content_type='application/json', status=400)
 
 # admin flow
+
+
 def get_uploads_by_date(request, event_name, date):
     if request.method == "GET":
         upload_id = [item.pk for item in Upload.objects.filter(
@@ -1591,9 +1600,10 @@ def get_uploads_by_date(request, event_name, date):
             uploadedOn = Upload.objects.get(id=item).uploaded_on
             uploaded_on = str(uploadedOn).split(' ')[0]
             if uploaded_on == date:
-                print(settings.CLOUDFRONT_DOMAIN+Upload.objects.get(id=item).file_name)
+                print(settings.CLOUDFRONT_DOMAIN +
+                      Upload.objects.get(id=item).file_name)
                 result.append({
-                    "upload_id":item,
+                    "upload_id": item,
                     "user": Upload.objects.get(id=item).user.first_name+" "+Upload.objects.get(id=item).user.last_name,
                     "user_email": Upload.objects.get(id=item).user.email,
                     "file": settings.CLOUDFRONT_DOMAIN+Upload.objects.get(id=item).file_name,
@@ -1908,6 +1918,7 @@ def sns(receiver, subject, message):
         return True
         # return HttpResponse(json.dumps({'body': 'email sent'}), content_type="application/json")
 
+
 def create_quiz(request):
     try:
         if request.method == 'POST':
@@ -1928,45 +1939,48 @@ def create_quiz(request):
                         }
                     }
                 }
-                ''', variables={"title":python_data["title"],"image":python_data["image"],"description":python_data["description"],"numberOfQuestions":python_data['number_of_questions']}
+                ''', variables={"title": python_data["title"], "image": python_data["image"], "description": python_data["description"], "numberOfQuestions": python_data['number_of_questions']}
             )
 
             if result.errors:
                 raise Exception(result.errors[0].message)
-            
+
             quizData = result.data["createQuiz"]["quiz"]
 
-            return HttpResponse(json.dumps({"message": "quiz saved successfully", "status": 200,"data":quizData}), content_type="application/json")
+            return HttpResponse(json.dumps({"message": "quiz saved successfully", "status": 200, "data": quizData}), content_type="application/json")
         else:
-            raise Exception(json.dumps({"message": "wrong request method", "status": 400}))
+            raise Exception(json.dumps(
+                {"message": "wrong request method", "status": 400}))
     except Exception as err:
         return HttpResponse(err, content_type="application/json")
-        
+
+
 def get_library_for_quizs(request):
     try:
         if request.method != 'GET':
-            raise Exception(json.dumps({"message": "wrong request method", "status": 400}))
+            raise Exception(json.dumps(
+                {"message": "wrong request method", "status": 400}))
 
         all_quizs = Quiz.objects.all()
         quizs_information = []
         for quiz in all_quizs:
             all_questions = QuizQuestion.objects.filter(quiz=quiz)
             no_of_questions = len(all_questions)
-            total_time=0
+            total_time = 0
             for question in all_questions:
                 total_time = total_time + question.max_timer
             quizs_information.append({
-                "quiz_id":quiz.pk,
+                "quiz_id": quiz.pk,
                 "title": quiz.title,
                 "event_id": quiz.event_id,
-                "number_of_questions_left":quiz.number_of_questions - no_of_questions,
-                "event_name": "Quiz not published" if quiz.event_id==0 else Event.objects.get(id=quiz.event_id).name,
-                "event_date":"Quiz not published" if quiz.event_id==0 else str(Event.objects.get(id=quiz.event_id).start_date),
+                "number_of_questions_left": quiz.number_of_questions - no_of_questions,
+                "event_name": "Quiz not published" if quiz.event_id == 0 else Event.objects.get(id=quiz.event_id).name,
+                "event_date": "Quiz not published" if quiz.event_id == 0 else str(Event.objects.get(id=quiz.event_id).start_date),
                 "description": quiz.desc,
                 "banner_image": quiz.banner_image,
                 "last_modified": str(quiz.last_modified),
                 "total_questions": quiz.number_of_questions,
-                "total_time":total_time
+                "total_time": total_time
             })
         active = []
         elapsed = []
@@ -1974,8 +1988,8 @@ def get_library_for_quizs(request):
             curr = datetime.date.today()
             curt = datetime.datetime.now().time()
             print(item)
-            if item['event_id'] !=0 :                    
-                event = Event.objects.get(name=item['event_name'])                
+            if item['event_id'] != 0:
+                event = Event.objects.get(name=item['event_name'])
                 if event.end_date < curr:
                     elapsed.append(quizs_information[i])
                 elif event.end_time < curt and event.end_date == curr:
@@ -1984,7 +1998,7 @@ def get_library_for_quizs(request):
                     active.append(quizs_information[i])
             else:
                 active.append(quizs_information[i])
-                
+
         json_post = json.dumps(
             {"active": active, "elapsed": elapsed})
         # print(quizs_information)
@@ -1992,14 +2006,17 @@ def get_library_for_quizs(request):
     except Exception as err:
         return HttpResponse(err, content_type="application/json")
 
-def get_quiz_information(request,quizId):
+
+def get_quiz_information(request, quizId):
     try:
         if request.method != 'GET':
-            raise Exception(json.dumps({"message": "wrong request method", "status": 400}))
-        
-        quiz = Quiz.objects.filter(id = quizId)
+            raise Exception(json.dumps(
+                {"message": "wrong request method", "status": 400}))
+
+        quiz = Quiz.objects.filter(id=quizId)
         if len(quiz) == 0:
-            raise Exception(json.dumps({"message": "quiz not found", "status": 400}))
+            raise Exception(json.dumps(
+                {"message": "quiz not found", "status": 400}))
         quiz = quiz[0]
         print("quiz found")
 
@@ -2009,10 +2026,11 @@ def get_quiz_information(request,quizId):
 
         questions = []
         total_time = 0
-        
+
         for question in all_questions_for_quiz:
             print(question)
-            all_options_for_question = Option.objects.filter(quiz=quiz,question=question)
+            all_options_for_question = Option.objects.filter(
+                quiz=quiz, question=question)
             options = []
             for option in all_options_for_question:
                 options.append({
@@ -2021,9 +2039,9 @@ def get_quiz_information(request,quizId):
                 })
 
             questions.append({
-                "ques_id":question.pk,
+                "ques_id": question.pk,
                 "question_text": question.question_text,
-                "question_number":question.question_number,
+                "question_number": question.question_number,
                 "image_clue": question.image_clue,
                 "note": question.note,
                 "question_type": question.question_type,
@@ -2034,17 +2052,17 @@ def get_quiz_information(request,quizId):
 
             total_time = total_time + question.max_timer
 
-        quiz_information={
-            "quiz_id":quiz.pk,
+        quiz_information = {
+            "quiz_id": quiz.pk,
             "title": quiz.title,
             "event_id": quiz.event_id,
-            "number_of_questions_left":quiz.number_of_questions - no_of_questions,
+            "number_of_questions_left": quiz.number_of_questions - no_of_questions,
             # "event_name":Event.objects.get(id=quiz.event_id),
             "description": quiz.desc,
             "banner_image": quiz.banner_image,
             "last_modified": str(quiz.last_modified),
             "total_time": total_time,
-            "total_questions":quiz.number_of_questions,
+            "total_questions": quiz.number_of_questions,
             "questions": questions
         }
 
@@ -2057,28 +2075,35 @@ def get_quiz_information(request,quizId):
 def add_user_answer(request):
     try:
         if request.method != 'POST':
-            raise Exception(json.dumps({"message": "wrong request method", "status": 400}))
+            raise Exception(json.dumps(
+                {"message": "wrong request method", "status": 400}))
 
         body = request.body
         stream = io.BytesIO(body)
         python_data = JSONParser().parse(stream)
         print(python_data)
-        user=User.objects.filter(email=python_data['user_email'])
+        user = User.objects.filter(email=python_data['user_email'])
         if len(user) == 0:
-            raise Exception(json.dumps({"message": "user not found", "status": 400}))
-        user=user[0]
+            raise Exception(json.dumps(
+                {"message": "user not found", "status": 400}))
+        user = user[0]
         quiz = Quiz.objects.filter(id=python_data['quiz_id'])
-        if len(quiz) ==0:
-            raise Exception(json.dumps({"message": "quiz not found", "status": 400}))
-        quiz=quiz[0]
-        quizQuestion = QuizQuestion.objects.filter(id=python_data['question_id'])
-        if len(quizQuestion) ==0:
-            raise Exception(json.dumps({"message": "question not found", "status": 400}))
-        quizQuestion=quizQuestion[0]
-        ua = UserAnswer.objects.filter(user=user,quiz=quiz,question=quizQuestion)
-        if len(ua) != 0 :
-            raise Exception(json.dumps({"message": "user answer already added for a particular question ", "status": 400}))
-        
+        if len(quiz) == 0:
+            raise Exception(json.dumps(
+                {"message": "quiz not found", "status": 400}))
+        quiz = quiz[0]
+        quizQuestion = QuizQuestion.objects.filter(
+            id=python_data['question_id'])
+        if len(quizQuestion) == 0:
+            raise Exception(json.dumps(
+                {"message": "question not found", "status": 400}))
+        quizQuestion = quizQuestion[0]
+        ua = UserAnswer.objects.filter(
+            user=user, quiz=quiz, question=quizQuestion)
+        if len(ua) != 0:
+            raise Exception(json.dumps(
+                {"message": "user answer already added for a particular question ", "status": 400}))
+
         user_answer_instance = UserAnswer(
             user=user,
             quiz=quiz,
@@ -2094,7 +2119,7 @@ def add_user_answer(request):
                 if option.option_text == user_answer_instance.submitted_answer and option.is_correct == True:
                     user_answer_instance.is_correct_answer = True
                     user_answer_instance.score = user_answer_instance.question.points
-                    user_answer_instance.save()                    
+                    user_answer_instance.save()
                     return HttpResponse("user answer is correct", content_type="application/text")
             return HttpResponse("user answer added but incorrect", content_type="application/text")
         else:
@@ -2117,33 +2142,37 @@ def add_user_answer(request):
     except Exception as err:
         return HttpResponse(err, content_type="application/json")
 
+
 def score_summary(request):
     try:
         if request.method != 'POST':
-            raise Exception(json.dumps({"message": "wrong request method", "status": 400}))
-               
+            raise Exception(json.dumps(
+                {"message": "wrong request method", "status": 400}))
+
         body = request.body
         stream = io.BytesIO(body)
         python_data = JSONParser().parse(stream)
         print(python_data)
-        user=User.objects.filter(email=python_data['user_email'])
+        user = User.objects.filter(email=python_data['user_email'])
         if len(user) == 0:
-            raise Exception(json.dumps({"message": "user not found", "status": 400}))
-        user=user[0]
+            raise Exception(json.dumps(
+                {"message": "user not found", "status": 400}))
+        user = user[0]
         quiz = Quiz.objects.filter(id=python_data['quiz_id'])
-        if len(quiz) ==0:
-            raise Exception(json.dumps({"message": "quiz not found", "status": 400}))
-        quiz=quiz[0]
+        if len(quiz) == 0:
+            raise Exception(json.dumps(
+                {"message": "quiz not found", "status": 400}))
+        quiz = quiz[0]
         user_answer_instance = UserAnswer.objects.filter(
             user=user,
             quiz=quiz
         )
-        correct_answers, total_score,not_attempted, total_time,user_score,user_time= 0, 0, 0,0,0,0
+        correct_answers, total_score, not_attempted, total_time, user_score, user_time = 0, 0, 0, 0, 0, 0
         total_answers = len(user_answer_instance)
 
         for item in user_answer_instance:
             if item.submitted_answer == "":
-                not_attempted= not_attempted+1
+                not_attempted = not_attempted+1
             if item.is_correct_answer == True:
                 correct_answers = correct_answers+1
                 user_score = user_score+item.score
@@ -2178,7 +2207,8 @@ def score_summary(request):
 def create_quizquestion(request):
     try:
         if request.method != 'POST':
-            raise Exception(json.dumps({"message": "wrong request method", "status": 400}))
+            raise Exception(json.dumps(
+                {"message": "wrong request method", "status": 400}))
         json_data = request.body
         stream = io.BytesIO(json_data)
         python_data = JSONParser().parse(stream)
@@ -2192,16 +2222,17 @@ def create_quizquestion(request):
                 }
             }
             }
-            ''', variables={'quiz': python_data["quiz"], 'questionText': python_data["questionText"], 'imageClue': python_data["imageClue"], 'note': python_data["note"], 'questionType': python_data["questionType"], 'maxTimer': python_data["maxTimer"], 'points': python_data["points"],'questionNumber':python_data['questionNumber']}
+            ''', variables={'quiz': python_data["quiz"], 'questionText': python_data["questionText"], 'imageClue': python_data["imageClue"], 'note': python_data["note"], 'questionType': python_data["questionType"], 'maxTimer': python_data["maxTimer"], 'points': python_data["points"], 'questionNumber': python_data['questionNumber']}
         )
         print(result.data['createQuizQuestion']['questionInstance']['id'])
         options_list = python_data["options"]
         for item in options_list:
             option_instance = Option(
-                quiz = Quiz.objects.get(id=python_data['quiz']),
-                question = QuizQuestion.objects.get(id=result.data['createQuizQuestion']['questionInstance']['id']),
-                option_text = item[0],
-                is_correct = item[1]
+                quiz=Quiz.objects.get(id=python_data['quiz']),
+                question=QuizQuestion.objects.get(
+                    id=result.data['createQuizQuestion']['questionInstance']['id']),
+                option_text=item[0],
+                is_correct=item[1]
             )
             option_instance.save()
 
@@ -2210,18 +2241,21 @@ def create_quizquestion(request):
     except Exception as err:
         print(err)
         return HttpResponse(err, content_type="application/json")
-    
+
+
 def edit_quiz(request):
     try:
         if request.method != "POST":
-            raise Exception(json.dumps({"message":"wrong request method","status":400}))
+            raise Exception(json.dumps(
+                {"message": "wrong request method", "status": 400}))
         json_data = request.body
         stream = io.BytesIO(json_data)
         python_data = JSONParser().parse(stream)
         print(python_data)
         quiz = Quiz.objects.filter(id=python_data['quiz_id'])
         if len(quiz) == 0:
-            raise Exception(json.dumps({"message": "quiz not found", "status": 400}))
+            raise Exception(json.dumps(
+                {"message": "quiz not found", "status": 400}))
         quiz = quiz[0]
         quiz.banner_image = python_data['banner_image']
         quiz.desc = python_data['desc']
@@ -2231,14 +2265,17 @@ def edit_quiz(request):
     except Exception as err:
         print(err)
         return HttpResponse(err, content_type="application/json")
-    
-def delete_quiz(request,quiz_id):
+
+
+def delete_quiz(request, quiz_id):
     try:
-        if request.method !="DELETE":
-            raise Exception(json.dumps({"message":"wrong request method","status":400}))
+        if request.method != "DELETE":
+            raise Exception(json.dumps(
+                {"message": "wrong request method", "status": 400}))
         quiz = Quiz.objects.filter(id=quiz_id)
         if len(quiz) == 0:
-            raise Exception(json.dumps({"message": "quiz not found", "status": 400}))
+            raise Exception(json.dumps(
+                {"message": "quiz not found", "status": 400}))
         quiz = quiz[0]
         quiz.delete()
         return HttpResponse("deleted quiz ", content_type='application/json')
@@ -2246,18 +2283,21 @@ def delete_quiz(request,quiz_id):
         print(err)
         return HttpResponse(err, content_type="application/json")
 
+
 def add_new_question(request):
     try:
-        if request.method !='POST':
-            raise Exception(json.dumps({"message":"wrong request method","status":400}))
+        if request.method != 'POST':
+            raise Exception(json.dumps(
+                {"message": "wrong request method", "status": 400}))
         json_data = request.body
         stream = io.BytesIO(json_data)
         python_data = JSONParser().parse(stream)
         print(python_data)
         quiz = Quiz.objects.filter(id=python_data['quiz'])
-        if len(quiz) ==0:
-            raise Exception(json.dumps({"message": "quiz not found", "status": 400}))
-        quiz=quiz[0]
+        if len(quiz) == 0:
+            raise Exception(json.dumps(
+                {"message": "quiz not found", "status": 400}))
+        quiz = quiz[0]
         result = schema.execute(
             '''
             mutation createQuizQuestion($quiz:Int!,$questionText:String!, $imageClue:String!, $note:String!, $questionType: String!, $maxTimer:Int!, $points: Int!,$questionNumber:Int!){
@@ -2267,16 +2307,17 @@ def add_new_question(request):
                 }
             }
             }
-            ''', variables={'quiz': python_data["quiz"], 'questionText': python_data["questionText"], 'imageClue': python_data["imageClue"], 'note': python_data["note"], 'questionType': python_data["questionType"], 'maxTimer': python_data["maxTimer"], 'points': python_data["points"],'questionNumber':python_data['questionNumber']}
+            ''', variables={'quiz': python_data["quiz"], 'questionText': python_data["questionText"], 'imageClue': python_data["imageClue"], 'note': python_data["note"], 'questionType': python_data["questionType"], 'maxTimer': python_data["maxTimer"], 'points': python_data["points"], 'questionNumber': python_data['questionNumber']}
         )
         print(result.data['createQuizQuestion']['questionInstance']['id'])
         options_list = python_data["options"]
         for item in options_list:
             option_instance = Option(
-                quiz = quiz,
-                question = QuizQuestion.objects.get(id=result.data['createQuizQuestion']['questionInstance']['id']),
-                option_text = item[0],
-                is_correct = item[1]
+                quiz=quiz,
+                question=QuizQuestion.objects.get(
+                    id=result.data['createQuizQuestion']['questionInstance']['id']),
+                option_text=item[0],
+                is_correct=item[1]
             )
             option_instance.save()
         quiz.number_of_questions = quiz.number_of_questions + 1
@@ -2287,18 +2328,22 @@ def add_new_question(request):
         return HttpResponse(err, content_type="application/json")
 
 
-def delete_quiz_question(request,quiz_id,question_number):
+def delete_quiz_question(request, quiz_id, question_number):
     try:
         if request.method != 'DELETE':
-            raise Exception(json.dumps({"message": "wrong request method", "status": 400}))
+            raise Exception(json.dumps(
+                {"message": "wrong request method", "status": 400}))
         quiz = Quiz.objects.filter(id=quiz_id)
         if len(quiz) == 0:
-            raise Exception(json.dumps({"message": "quiz not found", "status": 400}))
+            raise Exception(json.dumps(
+                {"message": "quiz not found", "status": 400}))
         quiz = quiz[0]
-        quizQuestion = QuizQuestion.objects.filter(quiz=quiz, question_number=question_number)
+        quizQuestion = QuizQuestion.objects.filter(
+            quiz=quiz, question_number=question_number)
         print(quizQuestion)
         if len(quizQuestion) == 0:
-            raise Exception(json.dumps({"message": "question number not found", "status": 400}))
+            raise Exception(json.dumps(
+                {"message": "question number not found", "status": 400}))
         question = quizQuestion[0]
         question.delete()
         quizQuestion2 = QuizQuestion.objects.filter(quiz=quiz)
@@ -2306,28 +2351,33 @@ def delete_quiz_question(request,quiz_id,question_number):
             if item.question_number > question_number:
                 item.question_number = item.question_number-1
                 item.save()
- 
+
         return HttpResponse("deleted question", content_type='application/json')
     except Exception as err:
         print(err)
         return HttpResponse(err, content_type="application/json")
 
+
 def edit_quiz_question(request):
     try:
         if request.method != 'POST':
-            raise Exception(json.dumps({"message": "wrong request method", "status": 400}))
+            raise Exception(json.dumps(
+                {"message": "wrong request method", "status": 400}))
         json_data = request.body
         stream = io.BytesIO(json_data)
         python_data = JSONParser().parse(stream)
         print(python_data)
         quiz = Quiz.objects.filter(id=python_data['quiz'])
-        if len(quiz) ==0:
-            raise Exception(json.dumps({"message": "quiz not found", "status": 400}))
-        quiz=quiz[0]
-        quizQuestion = QuizQuestion.objects.filter(quiz=quiz,question_number=python_data['questionNumber'])
-        if len(quizQuestion) ==0:
-            raise Exception(json.dumps({"message": "question number not found", "status": 400}))
-        question=quizQuestion[0]
+        if len(quiz) == 0:
+            raise Exception(json.dumps(
+                {"message": "quiz not found", "status": 400}))
+        quiz = quiz[0]
+        quizQuestion = QuizQuestion.objects.filter(
+            quiz=quiz, question_number=python_data['questionNumber'])
+        if len(quizQuestion) == 0:
+            raise Exception(json.dumps(
+                {"message": "question number not found", "status": 400}))
+        question = quizQuestion[0]
         question.question_text = python_data['questionText']
         question.image_clue = python_data['imageClue']
         question.note = python_data['note']
@@ -2337,36 +2387,41 @@ def edit_quiz_question(request):
         question.save()
 
         options_list = python_data["options"]
-        options = Option.objects.filter(quiz=quiz,question=question)
+        options = Option.objects.filter(quiz=quiz, question=question)
         for item in options:
             item.delete()
         for item in options_list:
             option_instance = Option(
-                quiz = quiz,
-                question = question,
-                option_text = item[0],
-                is_correct = item[1]
+                quiz=quiz,
+                question=question,
+                option_text=item[0],
+                is_correct=item[1]
             )
             option_instance.save()
-        
+
         return HttpResponse("ok", content_type='application/json')
     except Exception as err:
         print(err)
         return HttpResponse(err, content_type="application/json")
 
-def get_particular_question(request,quiz_id,question_number):
+
+def get_particular_question(request, quiz_id, question_number):
     try:
-        if request.method!="GET":
-            raise Exception(json.dumps({"message": "wrong request method", "status": 400}))
+        if request.method != "GET":
+            raise Exception(json.dumps(
+                {"message": "wrong request method", "status": 400}))
         quiz = Quiz.objects.filter(id=quiz_id)
-        if len(quiz) ==0:
-            raise Exception(json.dumps({"message": "quiz not found", "status": 400}))
-        quiz=quiz[0]
-        quizQuestion = QuizQuestion.objects.filter(quiz=quiz,question_number=question_number)
-        if len(quizQuestion) ==0:
-            raise Exception(json.dumps({"message": "question number not found", "status": 400}))
-        question=quizQuestion[0]
-        
+        if len(quiz) == 0:
+            raise Exception(json.dumps(
+                {"message": "quiz not found", "status": 400}))
+        quiz = quiz[0]
+        quizQuestion = QuizQuestion.objects.filter(
+            quiz=quiz, question_number=question_number)
+        if len(quizQuestion) == 0:
+            raise Exception(json.dumps(
+                {"message": "question number not found", "status": 400}))
+        question = quizQuestion[0]
+
         all_options_for_question = Option.objects.filter(
             quiz=Quiz.objects.get(id=quiz_id),
             question=question)
@@ -2376,26 +2431,28 @@ def get_particular_question(request,quiz_id,question_number):
                 "option_text": option.option_text,
                 "is_correct": option.is_correct
             })
-        questions=[]
+        questions = []
         questions.append({
-                "ques_id":question.pk,
-                "question_text": question.question_text,
-                "question_number":question.question_number,
-                "image_clue": question.image_clue,
-                "note": question.note,
-                "question_type": question.question_type,
-                "max_timer": question.max_timer,
-                "points": question.points,
-                "options": options
-            })
+            "ques_id": question.pk,
+            "question_text": question.question_text,
+            "question_number": question.question_number,
+            "image_clue": question.image_clue,
+            "note": question.note,
+            "question_type": question.question_type,
+            "max_timer": question.max_timer,
+            "points": question.points,
+            "options": options
+        })
         return HttpResponse(json.dumps(questions), content_type="application/json")
     except Exception as err:
         return HttpResponse(err, content_type="application/json")
 
+
 def publish_quiz_for_event(request):
     try:
         if request.method != 'POST':
-            raise Exception(json.dumps({"message": "wrong request method", "status": 400}))
+            raise Exception(json.dumps(
+                {"message": "wrong request method", "status": 400}))
         json_data = request.body
         stream = io.BytesIO(json_data)
         python_data = JSONParser().parse(stream)
@@ -2403,18 +2460,21 @@ def publish_quiz_for_event(request):
 
         event = Event.objects.filter(id=python_data['event_id'])
         if len(event) == 0:
-            raise Exception(json.dumps({"message": "event not exists", "status": 400}))
+            raise Exception(json.dumps(
+                {"message": "event not exists", "status": 400}))
         event = event[0]
         print(event)
 
         quiz = Quiz.objects.filter(id=python_data['quiz_id'])
         if len(quiz) == 0:
-            raise Exception(json.dumps({"message": "quiz not exists", "status": 400}))
+            raise Exception(json.dumps(
+                {"message": "quiz not exists", "status": 400}))
         quiz = quiz[0]
         print("quiz found :: ", quiz)
-	
-	if event.task_id != 0 :
-	    raise Exception(json.dumps({"message":"event already published","status":400}))
+
+        if event.task_id != 0:
+            raise Exception(json.dumps(
+                {"message": "event already published", "status": 400}))
 
         event.task_id = quiz.pk
         event.save()
@@ -2427,7 +2487,6 @@ def publish_quiz_for_event(request):
         return HttpResponse(err, content_type="application/json")
 
 
-        
 def api_template_for_error_handling(request):
     try:
         if request.method != 'POST':
@@ -2441,7 +2500,7 @@ def api_template_for_error_handling(request):
         return HttpResponse("ok", content_type="application/json")
     except Exception as err:
         return HttpResponse(err, content_type="application/json")
-    
+
 
 # extra api
 def get_all_quizs_information(request):
@@ -2489,10 +2548,3 @@ def get_all_quizs_information(request):
         return HttpResponse(json.dumps(quizs_information), content_type="application/json")
     except Exception as err:
         return HttpResponse(err, content_type="application/json")
-
-
-
-
-
-
-        
