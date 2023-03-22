@@ -34,7 +34,8 @@ urlpatterns = [
     path('event/register', views.register, name='register'),
     path('event/get_all_registrations/<int:event_id>',views.get_all_registrations, name='get_all_registrations'),
     path('event/update_score', views.update_score, name="update_score"),
-    path('event/register/ind', views.register_individual, name='register'),
+    path('event/register/ind',
+         views.register_individual_user_in_event, name='register_individual_user_in_event'),
     path('event/register/cancel/<int:event_id>/<int:p_id>',
          views.cancel_registration, name="cancel_registration"),
 

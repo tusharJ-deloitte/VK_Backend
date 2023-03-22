@@ -37,7 +37,7 @@ class TeamType(DjangoObjectType):
 class PlayerType(DjangoObjectType):
     class Meta:
         model = Player
-        fields = ('id', 'score', 'team_id', 'activity_id', 'user_id')
+        fields = ('id', 'score', 'team_id', 'activity_id', 'user_id','event_id')
 
 
 class EventType(DjangoObjectType):

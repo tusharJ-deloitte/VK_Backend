@@ -242,16 +242,18 @@ class CreateIndPlayer(graphene.Mutation):
         user_email = graphene.String(required=True)
         score = graphene.Int()
         activity_id = graphene.Int()
+        event_id = graphene.Int()
 
     player = graphene.Field(PlayerType)
 
-    def mutate(self, info, user_email, score, activity_id):
+    def mutate(self, info, user_email, score, activity_id,event_id):
         print("inside")
         player_instance = Player(
 
             user=User.objects.get(email=user_email),
             score=score,
-            activity_id=activity_id
+            activity_id=activity_id,
+            event_id=event_id
         )
         player_instance.save()
 
