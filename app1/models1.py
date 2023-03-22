@@ -1,15 +1,17 @@
 from django.db import models
 from django.contrib.auth.models import User
 import datetime
-from django.utils import timezone
 
-class Detail(models.Model):    
-    user = models.OneToOneField(User,on_delete=models.CASCADE)
-    employee_id = models.IntegerField(null=True,blank=True)
-    designation = models.TextField(max_length=30,null=True,blank=True)
-    profile_pic = models.TextField(null=True,blank=True)
-    doj = models.DateField(null=True,blank=True)
-    
+# Create your models here.
+
+
+class Detail(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    employee_id = models.IntegerField(null=True, blank=True)
+    designation = models.TextField(max_length=30, null=True, blank=True)
+    profile_pic = models.TextField(null=True, blank=True)
+    doj = models.DateField(null=True, blank=True)
+
     def __str__(self) -> str:
         return self.user.username
 
@@ -33,7 +35,7 @@ class Category(models.Model):
 
 class Activity(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    name = models.TextField(max_length=20, null=True)
+    name = models.TextField(max_length=20)
     team_size = models.IntegerField(default=1)
     created_on = models.DateTimeField(auto_now_add=True)
     activity_logo = models.TextField(blank=True, null=True)
@@ -70,7 +72,6 @@ class Event(models.Model):
     cur_participation = models.IntegerField(default=0)
     task_id = models.IntegerField(default=0, null=True, blank=True)
 
-
     # setting up choices for status
     YET_TO_START = "Yet To Start"
     ACTIVE = "Active"
@@ -87,7 +88,6 @@ class Event(models.Model):
 
     def __str__(self) -> str:
         return self.name
-
 
 
 class Registration(models.Model):
@@ -115,44 +115,31 @@ class IndRegistration(models.Model):
     def __str__(self) -> str:
         return self.event.name
 
+
+class Upload(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default="1")
+    event = models.ForeignKey(Event, on_delete=models.CASCADE, default="1")
+    uploaded_on = models.DateTimeField(
+        auto_now_add=True, null=True, blank=True)
+    is_uploaded = models.BooleanField(default=False)
+    file_name = models.TextField(null=True, blank=True)
+    file_size = models.IntegerField(default=0, null=True, blank=True)
+    file_duration = models.TextField(null=True, blank=True)  # in seconds
+    score = models.IntegerField(default=0, null=True, blank=True)
+
+    def __str__(self) -> str:
+        return self.user.email
+
+
 class Pod(models.Model):
     pod_id = models.IntegerField(default=0)
-    pod_name = models.TextField(null=True,blank=True)
-    pod_size = models.IntegerField(default = 0)
+    pod_name = models.TextField(null=True, blank=True)
+    pod_size = models.IntegerField(default=0)
 
-    user = models.ForeignKey(User,on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.pod_name
-    
-
-class Upload(models.Model):
-    user = models.ForeignKey(User,on_delete=models.CASCADE,default="1")
-    event = models.ForeignKey(Event,on_delete=models.CASCADE,default="1")
-    uploaded_on = models.DateTimeField(auto_now_add=True,null=True,blank=True)
-    is_uploaded = models.BooleanField(default=False)
-    # uploaded_file = models.FileField(upload_to="virtualkunakidza/", null=True)
-    file_name = models.TextField(null=True, blank=True)
-    file_size = models.IntegerField(default=0,null=True,blank=True)
-    file_duration = models.TextField(null=True,blank=True)#in seconds
-    score = models.IntegerField(default=0,null=True,blank=True)
-    uploaded_time = models.TextField(null=True,blank=True)
-    def __str__(self)->str:
-        return self.user.email
-    
-class Notifications(models.Model):
-    message_type = models.TextField()
-    message = models.TextField(null=True)
-    sent = models.BooleanField(default=False)
-    seen = models.BooleanField(default=False)
-    for_user = models.TextField(null=True)
-    createdOn = models.DateTimeField(auto_now_add=True)
-
-    class Meta:
-        ordering = ['-createdOn']
-
-    def __str__(self) -> str:
-        return self.message_type+" "+self.message
 
 class Quiz(models.Model):
     event_id = models.IntegerField(default=0,null=True,blank=True)
@@ -212,3 +199,23 @@ class UserAnswer(models.Model):
         return self.user.email+" "+self.quiz.title+" "+self.question.question_text
     
    
+class Notifications(models.Model):
+    message_type = models.TextField()
+    message = models.TextField(null=True)
+    sent = models.BooleanField(default=False)
+    seen = models.BooleanField(default=False)
+    for_user = models.TextField(null=True)
+    createdOn = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-createdOn']
+
+    def __str__(self) -> str:
+        return self.message_type+" "+self.message
+
+
+# class Logo(models.Model):
+#     title = models.CharField(
+#         max_length=80, blank=False, null=False)
+#     #image_url = S3DirectField(dest='mediafiles/', blank=True)
+#     picture = models.FileField(upload_to='media/', blank=True, null=False)

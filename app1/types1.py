@@ -1,6 +1,6 @@
 from graphene_django.types import DjangoObjectType
 from django.contrib.auth.models import User
-from .models import Detail, Category, Activity, Team, Player, Event, Registration,Pod,IndRegistration,Upload,Notifications,Quiz,QuizQuestion,Option,UserAnswer
+from .models import Detail, Category, Activity, Team, Player, Event, Registration, IndRegistration, Pod, Upload,Quiz,QuizQuestion,Option,UserAnswer,Notifications
 
 
 class UserType(DjangoObjectType):
@@ -9,10 +9,13 @@ class UserType(DjangoObjectType):
         # fields = ('id','name')
     exclude = ('password')
 
+
 class DetailType(DjangoObjectType):
     class Meta:
         model = Detail
-        fields = ('id','user','employee_id','designation','profile_pic','doj')
+        fields = ('id', 'user', 'employee_id',
+                  'designation', 'profile_pic', 'doj')
+
 
 class CategoryType(DjangoObjectType):
     class Meta:
@@ -59,20 +62,17 @@ class IndRegistrationType(DjangoObjectType):
         fields = ('id', 'event', 'player')
 
 
-class PodType(DjangoObjectType):
-    class Meta:
-        model = Pod
-        fields =('pod_id','user','pod_name','pod_size')
-
 class UploadType(DjangoObjectType):
     class Meta:
         model = Upload
-        fields = ('id', 'user','event','is_uploaded','uploaded_on', 'file_name','file_size','file_duration','score','uploaded_time')
-        
-class NotificationsType(DjangoObjectType):
+        fields = ('id', 'user', 'event', 'is_uploaded', 'uploaded_on',
+                  'file_name', 'file_size', 'file_duration', 'score')
+
+
+class PodType(DjangoObjectType):
     class Meta:
-        model = Notifications
-        fields = ('id', 'message', 'message_type', 'sent', 'seen', 'createdOn')
+        model = Pod
+        fields = ('pod_id', 'user', 'pod_name', 'pod_size')
 
 class QuizType(DjangoObjectType):
     class Meta:
@@ -96,3 +96,7 @@ class UserAnswerType(DjangoObjectType):
         fields = ('id','user','quiz','question','submitted_answer','is_correct_answer','time_taken','score')
 
 
+class NotificationsType(DjangoObjectType):
+    class Meta:
+        model = Notifications
+        fields = ('id', 'message', 'message_type', 'sent', 'seen', 'createdOn')
