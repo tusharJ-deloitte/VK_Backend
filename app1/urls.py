@@ -117,7 +117,9 @@ urlpatterns = [
     path("quiz/get_question/<int:quiz_id>/<int:question_number>",
          views.get_particular_question, name="get_particular_question"),
     path("quiz/is_user_attempted/<int:quiz_id>/<str:user_email>",
-         views.is_user_attempted_quiz, name="is_user_attempted_quiz")
+         views.is_user_attempted_quiz, name="is_user_attempted_quiz"),
+    path("quiz/get_event_results/<int:event_id>",
+         views.get_quiz_event_results, name="get_quiz_event_results"),
 
 
 

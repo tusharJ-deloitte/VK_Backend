@@ -1061,7 +1061,7 @@ def delete_event(request, event_id):
                 quiz.save()
             event_id = ev.pk
             if ev.event_type == "Individual":
-                player = Player.objects.filter(event_id = event_id)
+                player = Player.objects.filter(event_id=event_id)
                 for p in player:
                     p.delete()
             else:
@@ -1179,7 +1179,7 @@ def register_individual_user_in_event(request):
         print(python_data)
         eventInstance = Event.objects.filter(id=python_data['event_id'])
         userInstance = User.objects.filter(email=python_data['user_email'])
-        print("instances",eventInstance, userInstance)
+        print("instances", eventInstance, userInstance)
         if len(eventInstance) == 0 or len(userInstance) == 0:
             raise Exception("Event or user does not exists.")
         eventInstance = eventInstance[0]
@@ -1409,17 +1409,17 @@ def get_overall_rank(request):
 
 def get_hottest_challenge(request):
     if request.method != 'GET':
-        return HttpResponse("wrong request method", content_type='application/json',status=400)
+        return HttpResponse("wrong request method", content_type='application/json', status=400)
     try:
         events = Event.objects.all().order_by("-cur_participation")
         if len(events) == 0:
-            raise Exception({"message":"no event found!"})
+            raise Exception({"message": "no event found!"})
 
         print(events[0])
-        event=events[0]
+        event = events[0]
         result = json.dumps({
-            "id":event.pk,
-            "event":event.name,
+            "id": event.pk,
+            "event": event.name,
         })
         return HttpResponse(result, content_type='application/json')
 
@@ -1633,7 +1633,8 @@ def get_events_participated(request, user_email):
                 flag = 0
                 print("all teams::", all_teams)
                 for team in all_teams:
-                    players = Player.team.through.objects.filter(team_id=team["id"])
+                    players = Player.team.through.objects.filter(
+                        team_id=team["id"])
                     print("players", players, not_participated)
                     for player in players:
                         plr = Player.objects.get(id=player.player_id)
@@ -1685,14 +1686,15 @@ def get_events_participated(request, user_email):
 
 def get_my_rank(request, user_email):
     if request.method != 'GET':
-        return HttpResponse("wrong request method", content_type='application/json',status=400)
+        return HttpResponse("wrong request method", content_type='application/json', status=400)
     try:
         user = User.objects.filter(email=user_email)
         if len(user) == 0:
             raise Exception("user not found!")
 
         user_id = user[0].pk
-        players = Player.objects.values("user_id").annotate(total_score=Sum('score')).order_by("-total_score")
+        players = Player.objects.values("user_id").annotate(
+            total_score=Sum('score')).order_by("-total_score")
         print(players)
         count = 0
         found = 0
@@ -1703,7 +1705,7 @@ def get_my_rank(request, user_email):
                 break
 
         if found == 0 or players[count-1]['total_score'] == 0:
-            result = {"myrank" : "-"}
+            result = {"myrank": "-"}
         elif count == 1:
             result = {"myrank": "1st"}
         elif count == 2:
@@ -1834,13 +1836,14 @@ def cancel_registration(request, event_id, user_email):
         return HttpResponse("wrong request method.", content_type="application/json", status=400)
     print("inside cancel registration")
     try:
-        print("param variables event_id :: ",event_id,", user_email :: ",user_email)
+        print("param variables event_id :: ",
+              event_id, ", user_email :: ", user_email)
         event = Event.objects.filter(id=event_id)
         user = User.objects.filter(email=user_email)
         if len(event) == 0 or len(user) == 0:
             raise Exception("user or event does not exists!")
-        event=event[0]
-        user=user[0]
+        event = event[0]
+        user = user[0]
 
         teamToBeDeleted = None
         if event.event_type == "Group":
@@ -1855,9 +1858,11 @@ def cancel_registration(request, event_id, user_email):
                 for player in team_players:
                     if player.user == user:
                         print("team found! deleting registration.")
-                        registeration = Registration.objects.get(id = team_register.pk)
+                        registeration = Registration.objects.get(
+                            id=team_register.pk)
                         registeration.delete()
-                        print("registeration deleted! updating current participation of event")
+                        print(
+                            "registeration deleted! updating current participation of event")
                         event.cur_participation -= team_register.team.current_size
                         event.save()
                         teamToBeDeleted = team_register.team
@@ -1875,7 +1880,7 @@ def cancel_registration(request, event_id, user_email):
                     print("registration found! deleting registration")
                     IndRegistration.objects.get(id=registration.pk).delete()
                     print("registration deleted! deleting the individual player")
-                    Player.objects.get(user=user,event_id=event.pk).delete()
+                    Player.objects.get(user=user, event_id=event.pk).delete()
                     print("player deleted! updating current participation of event")
                     event.cur_participation -= 1
                     event.save()
@@ -1885,7 +1890,7 @@ def cancel_registration(request, event_id, user_email):
             if not is_user_registration_found:
                 raise Exception("User is not registered for the event!")
 
-        #sending email to the user
+        # sending email to the user
         msg = f"Your registration for event {event.name} is cancelled by {user.first_name}."
         response = sns(user_email, "Cancelled registration", msg)
         if response:
@@ -1893,10 +1898,10 @@ def cancel_registration(request, event_id, user_email):
         else:
             print("not subscribed to email service")
 
-        #saving and sending notification
-        notificationToBeSent=[]
+        # saving and sending notification
+        notificationToBeSent = []
         if teamToBeDeleted is not None:
-            print("Registered Team :: ",teamToBeDeleted)
+            print("Registered Team :: ", teamToBeDeleted)
             players = Player.objects.filter(team=teamToBeDeleted)
             for player in players:
                 notificationToBeSent.append(player.user.email)
@@ -1912,17 +1917,17 @@ def cancel_registration(request, event_id, user_email):
             )
             cancelParticipationNotification.save()
 
-        #sending data over web-socket
+        # sending data over web-socket
         ws.send(json.dumps({"action": "sendToOne",
                             "msg": {
-            "message_type" : "CANCEL_PARTICIPATION",
-            "message":msg,
-            "user":notificationToBeSent
-        }}))
+                                "message_type": "CANCEL_PARTICIPATION",
+                                "message": msg,
+                                "user": notificationToBeSent
+                            }}))
         return HttpResponse(json.dumps({"message": "Registration cancelled of user for the given event."}), content_type="application/json")
     except Exception as err:
         print(err)
-        return HttpResponse(err, content_type="application/json",status=400)
+        return HttpResponse(err, content_type="application/json", status=400)
 
 
 def get_pods(request, user_email):
@@ -2262,20 +2267,16 @@ def get_plank_results_of_event(request, event_id):
             total_score=Sum('score')).order_by("-total_score")
         print(uploads)
         result = []
-        for upload in uploads:
-            print(upload)
-            user_id = upload['user']
-            user = User.objects.get(id=user_id)
+        for index,upload in enumerate(uploads):
+            user = User.objects.get(id=upload['user'])
             details = Detail.objects.get(user=user)
-            print(user, details)
             upload_time = Upload.objects.filter(event=event, user=user)
-            print(upload_time)
             total_time = 0
             for ut in upload_time:
                 t = ut.file_duration.split(".")[0]
                 total_time = total_time + int(t)
-            print("total_time", total_time)
             result.append({
+                "rank":index+1,
                 "name": user.first_name+" "+user.last_name,
                 "designation": details.designation,
                 "total_score": upload['total_score'],
@@ -2373,7 +2374,7 @@ def create_quiz(request):
                         }
                     }
                 }
-                ''', variables={"title": python_data["title"], "image": python_data["image"], "description": python_data["description"], "numberOfQuestions": python_data['number_of_questions'],"timeModified":python_data['time_modified']}
+                ''', variables={"title": python_data["title"], "image": python_data["image"], "description": python_data["description"], "numberOfQuestions": python_data['number_of_questions'], "timeModified": python_data['time_modified']}
             )
 
             if result.errors:
@@ -2408,7 +2409,6 @@ def get_library_for_quizs(request):
             # last_modified = last_modified.replace(tzinfo=None)
             # time_zone = pytz.timezone('Asia/Kolkata')
             # last_modified = time_zone.localize(last_modified)
-            
 
             quizs_information.append({
                 "quiz_id": quiz.pk,
@@ -2419,7 +2419,8 @@ def get_library_for_quizs(request):
                 "event_date": "Quiz not published" if quiz.event_id == 0 else str(Event.objects.get(id=quiz.event_id).start_date),
                 "description": quiz.desc,
                 "banner_image": quiz.banner_image,
-                "last_modified": quiz.time_modified,
+                "last_modified_date": quiz.time_modified.split("=")[0],
+                "last_modified_time": quiz.time_modified.split("=")[1],
                 "total_questions": quiz.number_of_questions,
                 "total_time": total_time
             })
@@ -2492,7 +2493,6 @@ def get_quiz_information(request, quizId):
             })
 
             total_time = total_time + question.max_timer
-        
 
         quiz_information = {
             "quiz_id": quiz.pk,
@@ -2633,13 +2633,14 @@ def score_summary(request):
         result['total_time'] = total_time
         print(result)
 
-        player = Player.objects.filter(event_id = quiz.event_id,user=user )
-        if len(player)==0:
-            raise Exception("player not registered")
-        player=player[0]
-        player.score = user_score
-        player.save()
-        
+        # add quiz score to the player
+        # player = Player.objects.filter(event_id = quiz.event_id,user=user )
+        # if len(player)==0:
+        #     raise Exception("player not registered")
+        # player=player[0]
+        # player.score = user_score
+        # player.save()
+
         return HttpResponse(json.dumps(result), content_type="application/json")
     except Exception as err:
         return HttpResponse(err, content_type="application/json")
@@ -2939,22 +2940,72 @@ def publish_quiz_for_event(request):
     except Exception as err:
         return HttpResponse(err, content_type="application/json")
 
-def is_user_attempted_quiz(request,quiz_id,user_email):
-    if request.method !="GET":
-        return HttpResponse("wrong request method",content_type="application/json",status = 400)
+
+def is_user_attempted_quiz(request, quiz_id, user_email):
+    if request.method != "GET":
+        return HttpResponse("wrong request method", content_type="application/json", status=400)
     try:
-        user = User.objects.filter(email = user_email)
-        if len(user)==0:
+        user = User.objects.filter(email=user_email)
+        if len(user) == 0:
             raise Exception("user does not exist")
         user = user[0]
         quiz = Quiz.objects.filter(id=quiz_id)
         if len(quiz) == 0:
-            raise Exception(json.dumps({"message": "quiz not exists", "status": 400}))
+            raise Exception(json.dumps(
+                {"message": "quiz not exists", "status": 400}))
         quiz = quiz[0]
-        
-        instance = UserAnswer.objects.filter(user=user,quiz=quiz)
-        if len(instance)==0:
-            return HttpResponse("user has not attempted the quiz",content_type="application/json")
-        return HttpResponse("user has already attempted the quiz",content_type="application/json")
+
+        instance = UserAnswer.objects.filter(user=user, quiz=quiz)
+        if len(instance) == 0:
+            return HttpResponse("user has not attempted the quiz", content_type="application/json")
+        return HttpResponse("user has already attempted the quiz", content_type="application/json")
     except Exception as err:
-        return HttpResponse(err, content_type="application/json",status = 400)
+        return HttpResponse(err, content_type="application/json", status=400)
+
+
+def get_quiz_event_results(request, event_id):
+    if request.method != 'GET':
+        return HttpResponse("Wrong request method", content_type="application/json", status=400)
+
+    try:
+        print("inside get quiz event result ")
+        eventInstance = Event.objects.filter(id=event_id)
+        if len(eventInstance) == 0:
+            raise Exception("Event not exists!")
+        event = eventInstance[0]
+
+        if event.activity.name != 'Quiz':
+            raise Exception("Event is not a quiz event!")
+
+        quiz_id = event.task_id
+        print("quiz id ::", quiz_id)
+        if quiz_id == 0:
+            raise Exception("Event not published!")
+
+        quiz = Quiz.objects.get(id=quiz_id)
+        userAnswers = UserAnswer.objects.filter(quiz=quiz).values('user').annotate(total_score=Sum('score'),total_time=Sum('time_taken')).order_by("-total_score","total_time")
+        print(userAnswers)
+
+        result=[]
+        previous_score,previous_time=0,0
+        rank=0
+        for index,userAnswer in enumerate(userAnswers):
+            user = User.objects.get(id=userAnswer['user'])
+            userDetail = Detail.objects.get(user=user)
+            if not(userAnswer['total_score'] == previous_score and userAnswer['total_time'] == previous_time):
+                rank += 1
+            result.append({
+                "rank":rank,
+                "name":user.first_name+" "+user.last_name,
+                "designation": userDetail.designation,
+                "total_score": userAnswer['total_score'],
+                "total_time": userAnswer['total_time']
+            })
+            previous_score=userAnswer['total_score']
+            previous_time = userAnswer['total_time']
+
+        print(result)
+        return HttpResponse(json.dumps(result), content_type="application/json")
+    except Exception as err:
+        print(err)
+        return HttpResponse(err, content_type="application/json")
