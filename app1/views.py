@@ -965,26 +965,31 @@ def get_all_events(request):
                 curr = datetime.date.today()
                 curt = datetime.datetime.now().time()
                 if event.end_date < curr:
-                    event.status = "elapsed"
+                    event.status = event.ELAPSED
+                    event.save()
                     result.data['allEvents'][i]['status'] = "elapsed"
                     elapsed.append(result.data['allEvents'][i])
                 elif event.start_date > curr:
-                    event.status = "yet to start"
+                    event.status = event.YET_TO_START
+                    event.save()
                     result.data['allEvents'][i]['status'] = "yet to start"
                     upcoming.append(result.data['allEvents'][i])
                 elif event.end_time < curt and event.end_date == curr:
-                    event.status = "elapsed"
+                    event.status = event.ELAPSED
+                    event.save()
                     result.data['allEvents'][i]['status'] = "elapsed"
                     elapsed.append(result.data['allEvents'][i])
                 elif event.start_time > curt and event.start_date == curr:
-                    event.status = "yet to start"
+                    event.status = event.YET_TO_START
+                    event.save()
                     result.data['allEvents'][i]['status'] = "yet to start"
                     upcoming.append(result.data['allEvents'][i])
                 else:
-                    event.status = "active"
+                    event.status = event.ACTIVE
+                    event.save()
                     result.data['allEvents'][i]['status'] = "active"
                     active.append(result.data['allEvents'][i])
-                event.save()
+
             print("outside loop")
 
             json_post = json.dumps(
@@ -1585,6 +1590,7 @@ def get_events_participated(request, user_email):
             '''query{
                     allEvents{
                         id,
+                        status,
                         createdOn,
                         name,
                         eventType,
@@ -2267,7 +2273,7 @@ def get_plank_results_of_event(request, event_id):
             total_score=Sum('score')).order_by("-total_score")
         print(uploads)
         result = []
-        for index,upload in enumerate(uploads):
+        for index, upload in enumerate(uploads):
             user = User.objects.get(id=upload['user'])
             details = Detail.objects.get(user=user)
             upload_time = Upload.objects.filter(event=event, user=user)
@@ -2276,7 +2282,7 @@ def get_plank_results_of_event(request, event_id):
                 t = ut.file_duration.split(".")[0]
                 total_time = total_time + int(t)
             result.append({
-                "rank":index+1,
+                "rank": index+1,
                 "name": user.first_name+" "+user.last_name,
                 "designation": details.designation,
                 "total_score": upload['total_score'],
@@ -2983,25 +2989,26 @@ def get_quiz_event_results(request, event_id):
             raise Exception("Event not published!")
 
         quiz = Quiz.objects.get(id=quiz_id)
-        userAnswers = UserAnswer.objects.filter(quiz=quiz).values('user').annotate(total_score=Sum('score'),total_time=Sum('time_taken')).order_by("-total_score","total_time")
+        userAnswers = UserAnswer.objects.filter(quiz=quiz).values('user').annotate(total_score=Sum(
+            'score'), total_time=Sum('time_taken')).order_by("-total_score", "total_time")
         print(userAnswers)
 
-        result=[]
-        previous_score,previous_time=0,0
-        rank=0
-        for index,userAnswer in enumerate(userAnswers):
+        result = []
+        previous_score, previous_time = 0, 0
+        rank = 0
+        for index, userAnswer in enumerate(userAnswers):
             user = User.objects.get(id=userAnswer['user'])
             userDetail = Detail.objects.get(user=user)
-            if not(userAnswer['total_score'] == previous_score and userAnswer['total_time'] == previous_time):
+            if not (userAnswer['total_score'] == previous_score and userAnswer['total_time'] == previous_time):
                 rank += 1
             result.append({
-                "rank":rank,
-                "name":user.first_name+" "+user.last_name,
+                "rank": rank,
+                "name": user.first_name+" "+user.last_name,
                 "designation": userDetail.designation,
                 "total_score": userAnswer['total_score'],
                 "total_time": userAnswer['total_time']
             })
-            previous_score=userAnswer['total_score']
+            previous_score = userAnswer['total_score']
             previous_time = userAnswer['total_time']
 
         print(result)
