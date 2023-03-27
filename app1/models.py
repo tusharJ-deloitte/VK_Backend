@@ -3,13 +3,14 @@ from django.contrib.auth.models import User
 import datetime
 from django.utils import timezone
 
-class Detail(models.Model):    
-    user = models.OneToOneField(User,on_delete=models.CASCADE)
-    employee_id = models.IntegerField(null=True,blank=True)
-    designation = models.TextField(max_length=30,null=True,blank=True)
-    profile_pic = models.TextField(null=True,blank=True)
-    doj = models.DateField(null=True,blank=True)
-    
+
+class Detail(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    employee_id = models.IntegerField(null=True, blank=True)
+    designation = models.TextField(max_length=30, null=True, blank=True)
+    profile_pic = models.TextField(null=True, blank=True)
+    doj = models.DateField(null=True, blank=True)
+
     def __str__(self) -> str:
         return self.user.username
 
@@ -70,7 +71,6 @@ class Event(models.Model):
     cur_participation = models.IntegerField(default=0)
     task_id = models.IntegerField(default=0, null=True, blank=True)
 
-
     # setting up choices for status
     YET_TO_START = "Yet To Start"
     ACTIVE = "Active"
@@ -87,7 +87,6 @@ class Event(models.Model):
 
     def __str__(self) -> str:
         return self.name
-
 
 
 class Registration(models.Model):
@@ -116,31 +115,35 @@ class IndRegistration(models.Model):
     def __str__(self) -> str:
         return self.event.name
 
+
 class Pod(models.Model):
     pod_id = models.IntegerField(default=0)
-    pod_name = models.TextField(null=True,blank=True)
-    pod_size = models.IntegerField(default = 0)
+    pod_name = models.TextField(null=True, blank=True)
+    pod_size = models.IntegerField(default=0)
 
-    user = models.ForeignKey(User,on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.pod_name
-    
+
 
 class Upload(models.Model):
-    user = models.ForeignKey(User,on_delete=models.CASCADE,default="1")
-    event = models.ForeignKey(Event,on_delete=models.CASCADE,default="1")
-    uploaded_on = models.DateTimeField(auto_now_add=True,null=True,blank=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default="1")
+    event = models.ForeignKey(Event, on_delete=models.CASCADE, default="1")
+    uploaded_on = models.DateTimeField(
+        auto_now_add=True, null=True, blank=True)
     is_uploaded = models.BooleanField(default=False)
     # uploaded_file = models.FileField(upload_to="virtualkunakidza/", null=True)
     file_name = models.TextField(null=True, blank=True)
-    file_size = models.IntegerField(default=0,null=True,blank=True)
-    file_duration = models.TextField(null=True,blank=True)#in seconds
-    score = models.IntegerField(default=0,null=True,blank=True)
-    uploaded_time = models.TextField(null=True,blank=True)
-    def __str__(self)->str:
+    file_size = models.IntegerField(default=0, null=True, blank=True)
+    file_duration = models.TextField(null=True, blank=True)  # in seconds
+    score = models.IntegerField(default=0, null=True, blank=True)
+    uploaded_time = models.TextField(null=True, blank=True)
+
+    def __str__(self) -> str:
         return self.user.email
-    
+
+
 class Notifications(models.Model):
     message_type = models.TextField()
     message = models.TextField(null=True)
@@ -155,20 +158,22 @@ class Notifications(models.Model):
     def __str__(self) -> str:
         return self.message_type+" "+self.message
 
+
 class Quiz(models.Model):
-    event_id = models.IntegerField(default=0,null=True,blank=True)
+    event_id = models.IntegerField(default=0, null=True, blank=True)
     banner_image = models.TextField(null=True, blank=True)
-    title = models.TextField(unique=True,null=True, blank=True)
+    title = models.TextField(unique=True, null=True, blank=True)
     desc = models.TextField(null=True, blank=True)
-    last_modified = models.DateTimeField(auto_now_add=True)
+    time_modified = models.TextField(null=True, blank=True)
     number_of_questions = models.IntegerField(default=0)
 
     def __str__(self):
         return self.title
 
+
 class QuizQuestion(models.Model):
-    quiz = models.ForeignKey(Quiz,on_delete=models.CASCADE)
-    question_number = models.IntegerField(null=True,blank=True)
+    quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
+    question_number = models.IntegerField(null=True, blank=True)
     question_text = models.TextField(null=True, blank=True)
     image_clue = models.TextField(null=True, blank=True)
     note = models.TextField(null=True, blank=True)
@@ -182,34 +187,33 @@ class QuizQuestion(models.Model):
 
     question_type = models.CharField(
         max_length=20, choices=QUESTION_CHOICES, default=MCQ)
-    
+
     max_timer = models.IntegerField(default=0)
     points = models.IntegerField(default=0)
 
     def __str__(self) -> str:
         return self.question_text
-    
+
 
 class Option(models.Model):
-    quiz = models.ForeignKey(Quiz,on_delete=models.CASCADE)
-    question = models.ForeignKey(QuizQuestion,on_delete=models.CASCADE)
+    quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
+    question = models.ForeignKey(QuizQuestion, on_delete=models.CASCADE)
     option_text = models.TextField()
     is_correct = models.BooleanField(default=False)
 
     def __str__(self) -> str:
         return self.option_text
-    
+
 
 class UserAnswer(models.Model):
-    user = models.ForeignKey(User,on_delete=models.CASCADE)
-    quiz = models.ForeignKey(Quiz,on_delete=models.CASCADE)
-    question = models.ForeignKey(QuizQuestion,on_delete=models.CASCADE)
-    submitted_answer = models.TextField(null=True,blank=True)
-    is_correct_answer = models.BooleanField(null=True,blank=True,default=False)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
+    question = models.ForeignKey(QuizQuestion, on_delete=models.CASCADE)
+    submitted_answer = models.TextField(null=True, blank=True)
+    is_correct_answer = models.BooleanField(
+        null=True, blank=True, default=False)
     time_taken = models.IntegerField(default=0)
     score = models.IntegerField(default=0)
 
     def __str__(self) -> str:
         return self.user.email+" "+self.quiz.title+" "+self.question.question_text
-    
-   

@@ -1,15 +1,16 @@
 import graphene
-from .models import Detail,Category, Activity, Team, Player, Event, Registration,Pod,IndRegistration,Upload,QuizQuestion,Quiz,Option,UserAnswer
-from app1.types import DetailType,UserType, CategoryType, ActivityType, TeamType, PlayerType, EventType, RegistrationType,PodType,IndRegistrationType,UploadType,QuizType,QuizQuestionType,UserAnswerType,OptionType
-from .mutations import CreateUser,CreateCategory, UpdateCategory, DeleteCategory, CreateActivity, UpdateActivity, DeleteActivity, CreateTeam, CreatePlayer, UpdatePlayer, DeletePlayer, CreateEvent, CreateRegistration, UpdateTeamScores,CreatePod,CreateIndEvent,CreateIndPlayer,CreateIndRegistration,CreateUpload,CreateQuiz,CreateQuizQuestion
+from .models import Detail, Category, Activity, Team, Player, Event, Registration, Pod, IndRegistration, Upload, QuizQuestion, Quiz, Option, UserAnswer
+from app1.types import DetailType, UserType, CategoryType, ActivityType, TeamType, PlayerType, EventType, RegistrationType, PodType, IndRegistrationType, UploadType, QuizType, QuizQuestionType, UserAnswerType, OptionType
+from .mutations import CreateUser, CreateCategory, UpdateCategory, DeleteCategory, CreateActivity, UpdateActivity, DeleteActivity, CreateTeam, CreatePlayer, UpdatePlayer, DeletePlayer, CreateEvent, CreateRegistration, UpdateTeamScores, CreatePod, CreateIndEvent, CreateIndPlayer, CreateIndRegistration, CreateUpload, CreateQuiz, CreateQuizQuestion
 from django.contrib.auth.models import User
 
+
 class Query(graphene.ObjectType):
-    detail = graphene.Field(DetailType,id=graphene.ID(required=True))
+    detail = graphene.Field(DetailType, id=graphene.ID(required=True))
     all_details = graphene.List(DetailType)
     user = graphene.Field(UserType, id=graphene.ID(required=True))
     all_users = graphene.List(UserType)
-    
+
     category = graphene.Field(CategoryType, id=graphene.ID(required=True))
     all_categories = graphene.List(CategoryType)
     activity = graphene.Field(ActivityType, id=graphene.ID(required=True))
@@ -31,32 +32,31 @@ class Query(graphene.ObjectType):
                                       id=graphene.ID(required=True))
     all_indregistrations = graphene.List(IndRegistrationType)
 
-    pod = graphene.Field(PodType,id=graphene.ID(required=True))
+    pod = graphene.Field(PodType, id=graphene.ID(required=True))
     all_pods = graphene.List(PodType)
     upload = graphene.Field(UploadType, id=graphene.ID(required=True))
     all_uploads = graphene.List(UploadType)
 
-    quiz = graphene.Field(QuizType,id=graphene.ID(required=True))
+    quiz = graphene.Field(QuizType, id=graphene.ID(required=True))
     all_quizs = graphene.List(QuizType)
 
-    quizquestion = graphene.Field(QuizQuestionType,id=graphene.ID(required=True))
-    all_quizquestions= graphene.List(QuizQuestionType)
+    quizquestion = graphene.Field(
+        QuizQuestionType, id=graphene.ID(required=True))
+    all_quizquestions = graphene.List(QuizQuestionType)
 
-    option = graphene.Field(OptionType,id=graphene.ID(required=True))
+    option = graphene.Field(OptionType, id=graphene.ID(required=True))
     all_options = graphene.List(OptionType)
 
-    useranswer = graphene.Field(UserAnswerType,id=graphene.ID(required=True))
+    useranswer = graphene.Field(UserAnswerType, id=graphene.ID(required=True))
     all_useranswers = graphene.List(UserAnswerType)
 
-
-
-    def resolve_all_details(self,info,**kwargs):
+    def resolve_all_details(self, info, **kwargs):
         return Detail.objects.all()
 
     def resolve_detail(self, info, id):
         return Detail.objects.get(id=id)
-    
-    def resolve_all_users(self,info,**kwargs):
+
+    def resolve_all_users(self, info, **kwargs):
         return User.objects.all()
 
     def resolve_user(self, info, id):
@@ -97,13 +97,12 @@ class Query(graphene.ObjectType):
 
     def resolve_all_registrations(self, info, **kwargs):
         return Registration.objects.all()
-    
+
     def resolve_indregistration(self, info, id):
         return IndRegistration.objects.get(id=id)
 
     def resolve_all_indregistrations(self, info, **kwargs):
         return IndRegistration.objects.all()
-
 
     def resolve_pod(self, info, id):
         return Pod.objects.get(id=id)
@@ -116,32 +115,30 @@ class Query(graphene.ObjectType):
 
     def resolve_all_uploads(self, info, **kwargs):
         return Upload.objects.all()
-    
+
     def resolve_quiz(self, info, id):
         return Quiz.objects.get(id=id)
 
     def resolve_all_quizs(self, info, **kwargs):
         return Quiz.objects.all()
-    
+
     def resolve_quizquestion(self, info, id):
         return QuizQuestion.objects.get(id=id)
 
     def resolve_all_quizquestions(self, info, **kwargs):
         return QuizQuestion.objects.all()
-    
+
     def resolve_option(self, info, id):
         return Option.objects.get(id=id)
 
     def resolve_all_options(self, info, **kwargs):
         return Option.objects.all()
-    
+
     def resolve_useranswer(self, info, id):
         return UserAnswer.objects.get(id=id)
 
     def resolve_all_useranswers(self, info, **kwargs):
         return UserAnswer.objects.all()
-
-
 
 
 class Mutation(graphene.ObjectType):
@@ -169,24 +166,21 @@ class Mutation(graphene.ObjectType):
     create_event = CreateEvent.Field()
     create_ind_event = CreateIndEvent.Field()
 
-
     # registrations mutations
     create_registration = CreateRegistration.Field()
     create_ind_registration = CreateIndRegistration.Field()
 
-
     # update team score
     update_team_scores = UpdateTeamScores().Field()
 
-    #create user mutation
+    # create user mutation
     create_user = CreateUser.Field()
 
-    #pod mutations
+    # pod mutations
     create_pod = CreatePod.Field()
 
-    #create upload(plank) mutations
+    # create upload(plank) mutations
     create_upload = CreateUpload.Field()
-
 
     # quiz mutations
     create_quiz = CreateQuiz.Field()

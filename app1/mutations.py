@@ -1,12 +1,12 @@
 import graphene
-from app1.types import UserType,CategoryType, ActivityType, TeamType, PlayerType, EventType, RegistrationType,PodType,IndRegistrationType,UploadType,QuizQuestionType,QuizType
-from .models import Detail,Category, Activity, Team, Player, Event, Registration,Pod,IndRegistration,Upload,QuizQuestion,Quiz
+from app1.types import UserType, CategoryType, ActivityType, TeamType, PlayerType, EventType, RegistrationType, PodType, IndRegistrationType, UploadType, QuizQuestionType, QuizType
+from .models import Detail, Category, Activity, Team, Player, Event, Registration, Pod, IndRegistration, Upload, QuizQuestion, Quiz
 import datetime
 from django.contrib.auth.models import User
 
 
 class CreateUser(graphene.Mutation):
-    class Arguments:   
+    class Arguments:
         employee_id = graphene.Int()
         name = graphene.String()
         email = graphene.String()
@@ -16,7 +16,7 @@ class CreateUser(graphene.Mutation):
 
     user = graphene.Field(UserType)
 
-    def mutate(self,info,name,email,designation,doj,employee_id,profile_pic):
+    def mutate(self, info, name, email, designation, doj, employee_id, profile_pic):
         print("inside createUser mutation")
         if " " in name:
             fname = name.split(' ', 1)[0]
@@ -25,24 +25,25 @@ class CreateUser(graphene.Mutation):
             fname = name
             lname = ""
         user_instance = User(
-            email = email,
-            username = email.split('@')[0],
-            first_name = fname,
+            email=email,
+            username=email.split('@')[0],
+            first_name=fname,
             last_name=lname
         )
         print(user_instance)
         user_instance.save()
         detail_instance = Detail(
-            user = user_instance,
-            employee_id = employee_id,
-            designation = designation,
-            doj = doj,
+            user=user_instance,
+            employee_id=employee_id,
+            designation=designation,
+            doj=doj,
             profile_pic=profile_pic
         )
         detail_instance.save()
         print("outside createUser mutation")
-        return CreateUser(user = user_instance)
-        
+        return CreateUser(user=user_instance)
+
+
 class CreateCategory(graphene.Mutation):
     class Arguments:
         name = graphene.String(required=True)
@@ -169,7 +170,7 @@ class CreateTeam(graphene.Mutation):
             team_logo=team_logo,
             # activity=Activity.objects.filter(name=activity)[0]
         )
-    
+
         # print("0")
         # id = graphene.ID(),
         # activity = Activity.objects.get(id=activity)[0]
@@ -246,7 +247,7 @@ class CreateIndPlayer(graphene.Mutation):
 
     player = graphene.Field(PlayerType)
 
-    def mutate(self, info, user_email, score, activity_id,event_id):
+    def mutate(self, info, user_email, score, activity_id, event_id):
         print("inside")
         player_instance = Player(
 
@@ -278,7 +279,7 @@ class CreateEvent(graphene.Mutation):
     def mutate(self, info, activity_name, name, activity_mode, min_members, max_members, start_date, end_date, start_time, end_time, event_type):
         print("inside")
         print(name)
-        print(datetime.datetime.now().date())   
+        print(datetime.datetime.now().date())
         event_instance = Event(
             activity=Activity.objects.get(name=activity_name),
             activity_mode=activity_mode,
@@ -450,6 +451,7 @@ class UpdateTeamScores(graphene.Mutation):
         print("done")
         return UpdateTeamScores(event=event_instance)
 
+
 class CreatePod(graphene.Mutation):
     class Arguments:
         pod_id = graphene.Int(required=True)
@@ -458,12 +460,13 @@ class CreatePod(graphene.Mutation):
         size = graphene.Int(required=True)
 
     pod = graphene.Field(PodType)
-    def mutate(self,info,pod_id,user_email,name,size):
+
+    def mutate(self, info, pod_id, user_email, name, size):
         pod_instance = Pod(
-            pod_id = pod_id,
-            user = User.objects.get(email = user_email),
-            pod_name = name,
-            pod_size = size
+            pod_id=pod_id,
+            user=User.objects.get(email=user_email),
+            pod_name=name,
+            pod_size=size
         )
         pod_instance.save()
         return CreatePod(pod_instance)
@@ -479,7 +482,7 @@ class CreateUpload(graphene.Mutation):
 
     upload = graphene.Field(UploadType)
 
-    def mutate(self, info, user_email, file_size,event_name,file_duration,uploaded_time):
+    def mutate(self, info, user_email, file_size, event_name, file_duration, uploaded_time):
         upload_instance = Upload(
             user=User.objects.get(email=user_email),
             event=Event.objects.get(name=event_name),
@@ -498,10 +501,11 @@ class CreateQuiz(graphene.Mutation):
         image = graphene.String(required=True)
         description = graphene.String(required=True)
         number_of_questions = graphene.Int(required=True)
+        time_modified = graphene.String(required=True)
 
     quiz = graphene.Field(QuizType)
 
-    def mutate(self,info,title,image,description,number_of_questions):
+    def mutate(self, info, title, image, description, number_of_questions, time_modified):
         print("inside create quiz mutation")
         try:
             # print("finding the event with the event name :: ",event_name)
@@ -516,8 +520,8 @@ class CreateQuiz(graphene.Mutation):
                 banner_image=image,
                 title=title,
                 desc=description,
-                last_modified=datetime.datetime.now(),
-                number_of_questions = number_of_questions
+                time_modified=time_modified,
+                number_of_questions=number_of_questions
 
             )
             quiz_instance.save()
@@ -539,7 +543,8 @@ class CreateQuizQuestion(graphene.Mutation):
         points = graphene.Int()
 
     question_instance = graphene.Field(QuizQuestionType)
-    def mutate(self, info, quiz, question_text, image_clue, note,  max_timer, points,question_type,question_number):
+
+    def mutate(self, info, quiz, question_text, image_clue, note,  max_timer, points, question_type, question_number):
         print("inside create quiz question mutation")
         try:
             print("finding the quiz with the quizId :: ", quiz)

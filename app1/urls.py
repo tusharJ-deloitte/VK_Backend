@@ -22,7 +22,8 @@ urlpatterns = [
     path('create_teams', views.create_teams, name="create_teams"),
     path('update_teams/<int:team_id>', views.update_teams, name="update_teams"),
     path('delete_teams/<int:team_id>', views.delete_teams, name="delete_teams"),
-    path('manage_teams/<str:user_email>', views.manage_teams, name='manage_teams'),
+    path('manage_teams/<str:user_email>',
+         views.manage_teams, name='manage_teams'),
 
     # Events
     path('create_event', views.create_event, name='create_event'),
@@ -32,11 +33,12 @@ urlpatterns = [
 
     # Event Registration
     path('event/register', views.register, name='register'),
-    path('event/get_all_registrations/<int:event_id>',views.get_all_registrations, name='get_all_registrations'),
+    path('event/get_all_registrations/<int:event_id>',
+         views.get_all_registrations, name='get_all_registrations'),
     path('event/update_score', views.update_score, name="update_score"),
     path('event/register/ind',
          views.register_individual_user_in_event, name='register_individual_user_in_event'),
-    path('event/register/cancel/<int:event_id>/<int:p_id>',
+    path('event/register/cancel/<int:event_id>/<str:user_email>',
          views.cancel_registration, name="cancel_registration"),
 
 
@@ -67,41 +69,55 @@ urlpatterns = [
          name='get_my_score'),
     path('get_top_events_activity/<str:user_email>/<int:activity_id>', views.get_top_events_by_activity,
          name='get_top_events_activity'),
-     
 
-     #integration PODS & DNA
-     path('get_pods/<str:user_email>',views.get_pods,name='get_pods'),
-     path("get_users_org", views.get_all_users_organisation,name='get_all_users_organisation'),
 
-     # plank
-     path('upload_aws', views.upload_aws, name="upload_aws"),
-     path('get_list_user_event/<str:user_email>/<str:event_name>',views.get_list_user_event,name="get_list_user_event"),
-     path('get_uploads/<str:event_name>',views.get_uploads,name="get_uploads"),
-     path('get_uploads_by_date/<str:event_name>/<str:date>',views.get_uploads_by_date,name="get_uploads_by_date"),
-     path('delete_file/<int:upload_id>',views.delete_file,name="delete_file"),
-     path('update_score',views.plank_update_score,name="plank_update_score"),
-     path('is_uploaded',views.is_uploaded,name="is_uploaded"),
-     path('plank/get_results/<int:event_id>',views.get_plank_results_of_event,name="get_plank_results_of_event"),
+    # integration PODS & DNA
+    path('get_pods/<str:user_email>', views.get_pods, name='get_pods'),
+    path("get_users_org", views.get_all_users_organisation,
+         name='get_all_users_organisation'),
 
-     #youtube embed key
-     path('embed_key',views.embed_key,name="embed_key"),
-    
-     path("notifications/<str:user_email>", views.get_notifications_of_user, name="get_notifications_of_user"),
+    # plank
+    path('upload_aws', views.upload_aws, name="upload_aws"),
+    path('get_list_user_event/<str:user_email>/<str:event_name>',
+         views.get_list_user_event, name="get_list_user_event"),
+    path('get_uploads/<str:event_name>', views.get_uploads, name="get_uploads"),
+    path('get_uploads_by_date/<str:event_name>/<str:date>',
+         views.get_uploads_by_date, name="get_uploads_by_date"),
+    path('delete_file/<int:upload_id>', views.delete_file, name="delete_file"),
+    path('update_score', views.plank_update_score, name="plank_update_score"),
+    path('is_uploaded', views.is_uploaded, name="is_uploaded"),
+    path('plank/get_results/<int:event_id>',
+         views.get_plank_results_of_event, name="get_plank_results_of_event"),
 
-    #tech quiz apis
-    path("quiz/create",views.create_quiz,name="create_quiz"), 
-    path("quiz/get_library", views.get_library_for_quizs,name="get_library_for_quizs"),
-    path("quiz/get_quiz_info/<int:quizId>",views.get_quiz_information, name="get_quiz_information"),
-    path("quiz/add_user_answer",views.add_user_answer,name="add_user_answer"),
-    path("quiz/score_summary",views.score_summary,name="score_summary"),
-    path("quiz/create_quizquestion", views.create_quizquestion,name="create_quizquestion"),
-    path("quiz/publish", views.publish_quiz_for_event,name="publish_quiz_for_event"),
-    path("quiz/edit",views.edit_quiz,name="edit_quiz"),
-    path("quiz/delete/<int:quiz_id>",views.delete_quiz,name="delete_quiz"),
-    path("quiz/add_new_question",views.add_new_question,name="add_new_question"),
-    path("quiz/delete_quiz_question/<int:quiz_id>/<int:question_number>",views.delete_quiz_question,name="delete_quiz_question"),
-    path("quiz/edit_quiz_question",views.edit_quiz_question,name="edit_quiz_question"),
-    path("quiz/get_question/<int:quiz_id>/<int:question_number>",views.get_particular_question,name="get_particular_question")
+    # youtube embed key
+    path('embed_key', views.embed_key, name="embed_key"),
+
+    path("notifications/<str:user_email>",
+         views.get_notifications_of_user, name="get_notifications_of_user"),
+
+    # tech quiz apis
+    path("quiz/create", views.create_quiz, name="create_quiz"),
+    path("quiz/get_library", views.get_library_for_quizs,
+         name="get_library_for_quizs"),
+    path("quiz/get_quiz_info/<int:quizId>",
+         views.get_quiz_information, name="get_quiz_information"),
+    path("quiz/add_user_answer", views.add_user_answer, name="add_user_answer"),
+    path("quiz/score_summary", views.score_summary, name="score_summary"),
+    path("quiz/create_quizquestion", views.create_quizquestion,
+         name="create_quizquestion"),
+    path("quiz/publish", views.publish_quiz_for_event,
+         name="publish_quiz_for_event"),
+    path("quiz/edit", views.edit_quiz, name="edit_quiz"),
+    path("quiz/delete/<int:quiz_id>", views.delete_quiz, name="delete_quiz"),
+    path("quiz/add_new_question", views.add_new_question, name="add_new_question"),
+    path("quiz/delete_quiz_question/<int:quiz_id>/<int:question_number>",
+         views.delete_quiz_question, name="delete_quiz_question"),
+    path("quiz/edit_quiz_question", views.edit_quiz_question,
+         name="edit_quiz_question"),
+    path("quiz/get_question/<int:quiz_id>/<int:question_number>",
+         views.get_particular_question, name="get_particular_question"),
+    path("quiz/is_user_attempted/<int:quiz_id>/<str:user_email>",
+         views.is_user_attempted_quiz, name="is_user_attempted_quiz")
 
 
 

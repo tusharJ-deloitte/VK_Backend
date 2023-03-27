@@ -1,6 +1,6 @@
 from graphene_django.types import DjangoObjectType
 from django.contrib.auth.models import User
-from .models import Detail, Category, Activity, Team, Player, Event, Registration,Pod,IndRegistration,Upload,Notifications,Quiz,QuizQuestion,Option,UserAnswer
+from .models import Detail, Category, Activity, Team, Player, Event, Registration, Pod, IndRegistration, Upload, Notifications, Quiz, QuizQuestion, Option, UserAnswer
 
 
 class UserType(DjangoObjectType):
@@ -9,10 +9,13 @@ class UserType(DjangoObjectType):
         # fields = ('id','name')
     exclude = ('password')
 
+
 class DetailType(DjangoObjectType):
     class Meta:
         model = Detail
-        fields = ('id','user','employee_id','designation','profile_pic','doj')
+        fields = ('id', 'user', 'employee_id',
+                  'designation', 'profile_pic', 'doj')
+
 
 class CategoryType(DjangoObjectType):
     class Meta:
@@ -37,14 +40,15 @@ class TeamType(DjangoObjectType):
 class PlayerType(DjangoObjectType):
     class Meta:
         model = Player
-        fields = ('id', 'score', 'team_id', 'activity_id', 'user_id','event_id')
+        fields = ('id', 'score', 'team_id',
+                  'activity_id', 'user_id', 'event_id')
 
 
 class EventType(DjangoObjectType):
     class Meta:
         model = Event
         fields = ('id', 'name', 'activity', 'created_on', 'event_type', 'activity_mode', 'start_date', 'end_date', 'start_time', 'end_time',
-                  'min_members', 'max_members', 'cur_participation', 'status','task_id')
+                  'min_members', 'max_members', 'cur_participation', 'status', 'task_id')
 
 
 class RegistrationType(DjangoObjectType):
@@ -62,37 +66,44 @@ class IndRegistrationType(DjangoObjectType):
 class PodType(DjangoObjectType):
     class Meta:
         model = Pod
-        fields =('pod_id','user','pod_name','pod_size')
+        fields = ('pod_id', 'user', 'pod_name', 'pod_size')
+
 
 class UploadType(DjangoObjectType):
     class Meta:
         model = Upload
-        fields = ('id', 'user','event','is_uploaded','uploaded_on', 'file_name','file_size','file_duration','score','uploaded_time')
-        
+        fields = ('id', 'user', 'event', 'is_uploaded', 'uploaded_on',
+                  'file_name', 'file_size', 'file_duration', 'score', 'uploaded_time')
+
+
 class NotificationsType(DjangoObjectType):
     class Meta:
         model = Notifications
         fields = ('id', 'message', 'message_type', 'sent', 'seen', 'createdOn')
 
+
 class QuizType(DjangoObjectType):
     class Meta:
         model = Quiz
-        fields=('id','event_id','banner_image','title','number_of_questions','desc','last_modified')
+        fields = ('id', 'event_id', 'banner_image', 'title',
+                  'number_of_questions', 'desc', 'time_modified')
+
 
 class QuizQuestionType(DjangoObjectType):
     class Meta:
         model = QuizQuestion
-        fields = ('id','quiz','question_text','image_clue','note','question_type','max_timer','points','question_number')
+        fields = ('id', 'quiz', 'question_text', 'image_clue', 'note',
+                  'question_type', 'max_timer', 'points', 'question_number')
+
 
 class OptionType(DjangoObjectType):
     class Meta:
         model = Option
-        fields = ('id','quiz','question','option_text','is_correct')
+        fields = ('id', 'quiz', 'question', 'option_text', 'is_correct')
 
 
 class UserAnswerType(DjangoObjectType):
     class Meta:
         model = UserAnswer
-        fields = ('id','user','quiz','question','submitted_answer','is_correct_answer','time_taken','score')
-
-
+        fields = ('id', 'user', 'quiz', 'question', 'submitted_answer',
+                  'is_correct_answer', 'time_taken', 'score')
