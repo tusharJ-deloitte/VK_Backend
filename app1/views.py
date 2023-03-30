@@ -769,21 +769,26 @@ def manage_teams(request, user_email):
         if request.method == 'GET':
             user_id = User.objects.get(email=user_email).pk
             players = Player.objects.filter(user_id=user_id)
+            print("inside--1")
 
             teams = []
 
             for player in players:
                 try:
+                    print("inside try")
                     teams.append(Player.team.through.objects.get(
                         player_id=player.id).team_id)
                 except:
+                    print("exception")
                     continue
 
             # print("teams : ", teams)
 
             response = []
-
+            print("teams", teams)
             for team in teams:
+
+                print("inside teams", team)
                 team_id = team
                 team_object = Team.objects.get(id=team_id)
                 team_name = team_object.name
@@ -799,6 +804,7 @@ def manage_teams(request, user_email):
                 # print("team_mem_ids", team_mem_ids)
                 team_mem = []
                 for id in team_mem_ids:
+                    print("inside id", id)
                     user_id = Player.objects.get(id=id.player_id).user_id
                     # print("inside for id : ", user_id)
                     user_object = User.objects.get(id=user_id)
@@ -944,9 +950,8 @@ def get_all_events(request):
                             endTime,
                             taskId,
                             activity{
-                                name,
+                                name                             
                                 activityLogo
-                            
                                 
 
                             }
@@ -1735,6 +1740,8 @@ def get_top_events_participated(request, user_email):
             players = Player.objects.filter(user_id=user_id).order_by("-score")
             result = []
             for player in players:
+                if player.score == 0:
+                    continue
                 team = Player.team.through.objects.filter(
                     player_id=player.pk)
                 if (team.__len__() != 0):
@@ -3003,6 +3010,7 @@ def get_quiz_event_results(request, event_id):
                 rank += 1
             result.append({
                 "rank": rank,
+                "userId": user.pk,
                 "name": user.first_name+" "+user.last_name,
                 "designation": userDetail.designation,
                 "total_score": userAnswer['total_score'],
@@ -3010,6 +3018,28 @@ def get_quiz_event_results(request, event_id):
             })
             previous_score = userAnswer['total_score']
             previous_time = userAnswer['total_time']
+
+        if event.status == event.ELAPSED:
+            print("elapsed event, updating player scores")
+            for userResult in result:
+                rank = userResult['rank']
+                if rank > 5:
+                    break
+                player = Player.objects.get(user=User.objects.get(
+                    id=userResult['userId']), event_id=event_id)
+                print("player :: ", player, ", rank :: ", rank)
+                if rank == 1:
+                    player.score = 50
+                elif rank == 2:
+                    player.score = 40
+                elif rank == 3:
+                    player.score = 30
+                elif rank == 4:
+                    player.score = 25
+                else:
+                    player.score = 20
+                player.save()
+            print("player scores updated!")
 
         print(result)
         return HttpResponse(json.dumps(result), content_type="application/json")

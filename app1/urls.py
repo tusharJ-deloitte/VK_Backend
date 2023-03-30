@@ -89,9 +89,10 @@ urlpatterns = [
     path('plank/get_results/<int:event_id>',
          views.get_plank_results_of_event, name="get_plank_results_of_event"),
 
-    # youtube embed key
+    # hbcl youtube embed key
     path('embed_key', views.embed_key, name="embed_key"),
 
+    # notification api
     path("notifications/<str:user_email>",
          views.get_notifications_of_user, name="get_notifications_of_user"),
 
@@ -120,7 +121,5 @@ urlpatterns = [
          views.is_user_attempted_quiz, name="is_user_attempted_quiz"),
     path("quiz/get_event_results/<int:event_id>",
          views.get_quiz_event_results, name="get_quiz_event_results"),
-
-
 
 ]
