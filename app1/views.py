@@ -1421,7 +1421,9 @@ def get_hottest_challenge(request):
     if request.method != 'GET':
         return HttpResponse("wrong request method", content_type='application/json', status=400)
     try:
-        events = Event.objects.all().order_by("-cur_participation")
+
+        events = Event.objects.all().exclude(
+            status=Event.ELAPSED).order_by("-cur_participation")
         if len(events) == 0:
             raise Exception({"message": "no event found!"})
 
@@ -1433,38 +1435,6 @@ def get_hottest_challenge(request):
         })
         return HttpResponse(result, content_type='application/json')
 
-        # registrations = Registration.objects.values("event_id").annotate(
-        #     no_of_teams=Count('team_id')).order_by("-no_of_teams")
-        # ind_registrations = IndRegistration.objects.values("event_id").annotate(
-        #     no_of_players=Count('player_id')).order_by("-no_of_players")
-        # # print(registrations)
-        # hot_challenge = ""
-        # count = ""
-        # for registration in registrations:
-        #     event_id = registration['event_id']
-        #     # print(event_id)
-        #     event = Event.objects.get(id=event_id)
-        #     # print(event.status)
-        #     if event.status == 'Active':
-        #         hot_challenge = event
-        #         count = registration['no_of_teams']
-        #         break
-        # for registration in ind_registrations:
-        #     event_id = registration['event_id']
-        #     # print(event_id)
-        #     event = Event.objects.get(id=event_id)
-        #     # print(event.status)
-        #     if event.status == 'Active':
-        #         if registration['no_of_players'] > count:
-        #             hot_challenge = event
-        #             count = registration['no_of_players']
-        #             break
-        # if hot_challenge != "":
-        #     hot_challenge = {'event': hot_challenge.name}
-        #     return HttpResponse(json.dumps(hot_challenge), content_type='application/json')
-        # else:
-        #     hot_challenge = {'event': ""}
-        # return HttpResponse("ok", content_type='application/json')
     except Exception as err:
         print(err)
         return HttpResponse(err, content_type="application/json")
@@ -3003,7 +2973,7 @@ def get_quiz_event_results(request, event_id):
         result = []
         previous_score, previous_time = 0, 0
         rank = 0
-        for index, userAnswer in enumerate(userAnswers):
+        for userAnswer in userAnswers:
             user = User.objects.get(id=userAnswer['user'])
             userDetail = Detail.objects.get(user=user)
             if not (userAnswer['total_score'] == previous_score and userAnswer['total_time'] == previous_time):
@@ -3011,6 +2981,7 @@ def get_quiz_event_results(request, event_id):
             result.append({
                 "rank": rank,
                 "userId": user.pk,
+                "email": user.email,
                 "name": user.first_name+" "+user.last_name,
                 "designation": userDetail.designation,
                 "total_score": userAnswer['total_score'],
@@ -3028,6 +2999,8 @@ def get_quiz_event_results(request, event_id):
                 player = Player.objects.get(user=User.objects.get(
                     id=userResult['userId']), event_id=event_id)
                 print("player :: ", player, ", rank :: ", rank)
+                if player.score != 0:
+                    break
                 if rank == 1:
                     player.score = 50
                 elif rank == 2:
