@@ -132,7 +132,7 @@ def get_all_collections(request):
                 "collection_id": collection.pk,
                 "event_id": collection.event_id,
                 "event_name": "Mystery Room Collection not published" if collection.event_id == 0 else Event.objects.get(id=collection.event_id).name,
-                "event_date": "Mystery Room Collection not published" if collection.event_id == 0 else Event.objects.get(id=collection.event_id).start_date,
+                "event_date": "Mystery Room Collection not published" if collection.event_id == 0 else str(Event.objects.get(id=collection.event_id).start_date),
                 "title": collection.title,
                 "banner_image": imgBaseUrl+"/"+collection.banner_image,
                 "number_of_team_members": collection.number_of_team_members,
@@ -286,9 +286,11 @@ def get_all_rooms(request, collection_id):
         collection = collection[0]
         rooms = MysteryRoom.objects.filter(mystery_room=collection)
         result = []
-        questions = MysteryRoomQuestion.objects.filter(
-            room=room, collection=collection)
+        print(rooms)
         for room in rooms:
+            questions = MysteryRoomQuestion.objects.filter(
+                room=room, mystery_room_collection=collection)
+            print(questions)
             result.append({
                 "room_id": room.pk,
                 "banner_image": imgBaseUrl+"/"+room.banner_image,
@@ -323,7 +325,7 @@ def get_room(request, collection_id, room_id):
         collection = collection[0]
         ques_info = []
         questions = MysteryRoomQuestion.objects.filter(
-            room=room, collection=collection)
+            room=room, mystery_room_collection=collection)
         for question in questions:
             all_options_for_question = MysteryRoomOption.objects.filter(
                 room=room, question=question)
@@ -538,7 +540,7 @@ def delete_question(request, collection_id, room_id, question_number):
                 {"message": "mystery room collection not found", "status": 400}))
         collection = collection[0]
         question = MysteryRoomQuestion.objects.filter(
-            room=room, collection=collection, question_number=question_number)
+            room=room, mystery_room_collection=collection, question_number=question_number)
         if len(question) == 0:
             raise Exception(json.dumps(
                 {"message": "question not found", "status": 400}))
@@ -547,7 +549,7 @@ def delete_question(request, collection_id, room_id, question_number):
         room.number_of_questions = room.number_of_questions - 1
         room.save()
         questions = MysteryRoomQuestion.objects.filter(
-            collection=collection, room=room)
+            mystery_room_collection=collection, room=room)
         for item in questions:
             if item.question_number > question_number:
                 item.question_number = item.question_number-1
@@ -573,7 +575,7 @@ def get_particular_question(request, collection_id, room_id, question_number):
                 {"message": "mystery room collection not found", "status": 400}))
         collection = collection[0]
         question = MysteryRoomQuestion.objects.filter(
-            room=room, collection=collection, question_number=question_number)
+            room=room, mystery_room_collection=collection, question_number=question_number)
         if len(question) == 0:
             raise Exception(json.dumps(
                 {"message": "question not found", "status": 400}))
