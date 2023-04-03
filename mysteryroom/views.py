@@ -14,7 +14,7 @@ def service_check(request):
 
 def create_collection(request):
     if request.method != "POST":
-        return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}),content_type="appication/json",status=400)
+        return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}), content_type="appication/json", status=400)
     try:
         json_data = request.body
         stream = io.BytesIO(json_data)
@@ -43,7 +43,7 @@ def create_collection(request):
 
 def edit_collection(request):
     if request.method != "PUT":
-        return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}),content_type="appication/json",status=400)
+        return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}), content_type="appication/json", status=400)
     try:
         json_data = request.body
         stream = io.BytesIO(json_data)
@@ -68,7 +68,7 @@ def edit_collection(request):
 
 def delete_collection(request, collection_id):
     if request.method != "DELETE":
-        return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}),content_type="appication/json",status=400)
+        return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}), content_type="appication/json", status=400)
     try:
         collection = MysteryRoomCollection.objects.filter(id=collection_id)
         if len(collection) == 0:
@@ -93,7 +93,7 @@ def delete_collection(request, collection_id):
 
 def get_collection(request, collection_id):
     if request.method != "GET":
-        return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}),content_type="appication/json",status=400)
+        return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}), content_type="appication/json", status=400)
     try:
         collection = MysteryRoomCollection.objects.filter(id=collection_id)
         if len(collection) == 0:
@@ -123,7 +123,7 @@ def get_collection(request, collection_id):
 
 def get_all_collections(request):
     if request.method != "GET":
-        return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}),content_type="appication/json",status=400)
+        return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}), content_type="appication/json", status=400)
     try:
         result = []
         collections = MysteryRoomCollection.objects.all()
@@ -167,7 +167,7 @@ def get_all_collections(request):
 
 def publish_collection(request):
     if request.method != 'POST':
-        return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}),content_type="appication/json",status=400)
+        return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}), content_type="appication/json", status=400)
 
     try:
         json_data = request.body
@@ -206,7 +206,7 @@ def publish_collection(request):
 
 def create_room(request):
     if request.method != "POST":
-        return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}),content_type="appication/json",status=400)
+        return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}), content_type="appication/json", status=400)
     try:
         json_data = request.body
         stream = io.BytesIO(json_data)
@@ -236,8 +236,8 @@ def create_room(request):
 
 
 def edit_room(request):
-    if request.method != "POST":
-        return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}),content_type="appication/json",status=400)
+    if request.method != "PUT":
+        return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}), content_type="appication/json", status=400)
     try:
         json_data = request.body
         stream = io.BytesIO(json_data)
@@ -263,7 +263,7 @@ def edit_room(request):
 
 def delete_room(request, room_id):
     if request.method != "DELETE":
-        return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}),content_type="appication/json",status=400)
+        return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}), content_type="appication/json", status=400)
     try:
         room = MysteryRoom.objects.filter(id=room_id)
         if len(room) == 0:
@@ -277,7 +277,7 @@ def delete_room(request, room_id):
 
 def get_all_rooms(request, collection_id):
     if request.method != "GET":
-        return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}),content_type="appication/json",status=400)
+        return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}), content_type="appication/json", status=400)
     try:
         collection = MysteryRoomCollection.objects.filter(id=collection_id)
         if len(collection) == 0:
@@ -309,7 +309,7 @@ def get_all_rooms(request, collection_id):
 
 def get_room(request, collection_id, room_id):
     if request.method != "GET":
-        return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}),content_type="appication/json",status=400)
+        return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}), content_type="appication/json", status=400)
     try:
         room = MysteryRoom.objects.filter(id=room_id)
         if len(room) == 0:
@@ -364,7 +364,7 @@ def get_room(request, collection_id, room_id):
 
 def add_question(request):
     if request.method != "POST":
-        return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}),content_type="appication/json",status=400)
+        return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}), content_type="appication/json", status=400)
     try:
         json_data = request.body
         stream = io.BytesIO(json_data)
@@ -417,7 +417,7 @@ def add_question(request):
 
 def add_new_question(request):
     if request.method != "POST":
-        return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}),content_type="appication/json",status=400)
+        return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}), content_type="appication/json", status=400)
     try:
         json_data = request.body
         stream = io.BytesIO(json_data)
@@ -470,8 +470,8 @@ def add_new_question(request):
 
 
 def edit_question(request):
-    if request.method != "POST":
-        return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}),content_type="appication/json",status=400)
+    if request.method != "PUT":
+        return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}), content_type="appication/json", status=400)
     try:
         json_data = request.body
         stream = io.BytesIO(json_data)
@@ -525,7 +525,7 @@ def edit_question(request):
 
 def delete_question(request, collection_id, room_id, question_number):
     if request.method != 'DELETE':
-        return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}),content_type="appication/json",status=400)
+        return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}), content_type="appication/json", status=400)
     try:
         room = MysteryRoom.objects.filter(id=room_id)
         if len(room) == 0:
@@ -559,7 +559,7 @@ def delete_question(request, collection_id, room_id, question_number):
 
 
 def get_particular_question(request, collection_id, room_id, question_number):
-    if request.method != 'DELETE':
+    if request.method != 'GET':
         return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}))
     try:
         room = MysteryRoom.objects.filter(id=room_id)
