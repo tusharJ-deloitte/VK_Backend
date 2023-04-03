@@ -5,6 +5,7 @@ from .models import MRUserAnswer, MysteryRoom, MysteryRoomCollection, MysteryRoo
 import json
 from app1.models import Event
 import datetime
+from GrapheneTest.settings import CLOUDFRONT_DOMAIN as imgBaseUrl
 
 
 def service_check(request):
@@ -13,8 +14,7 @@ def service_check(request):
 
 def create_collection(request):
     if request.method != "POST":
-        raise Exception(json.dumps(
-            {"message": "wrong request method", "status": 400}))
+        return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}),content_type="appication/json",status=400)
     try:
         json_data = request.body
         stream = io.BytesIO(json_data)
@@ -42,9 +42,8 @@ def create_collection(request):
 
 
 def edit_collection(request):
-    if request.method != "POST":
-        raise Exception(json.dumps(
-            {"message": "wrong request method", "status": 400}))
+    if request.method != "PUT":
+        return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}),content_type="appication/json",status=400)
     try:
         json_data = request.body
         stream = io.BytesIO(json_data)
@@ -69,8 +68,7 @@ def edit_collection(request):
 
 def delete_collection(request, collection_id):
     if request.method != "DELETE":
-        raise Exception(json.dumps(
-            {"message": "wrong request method", "status": 400}))
+        return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}),content_type="appication/json",status=400)
     try:
         collection = MysteryRoomCollection.objects.filter(id=collection_id)
         if len(collection) == 0:
@@ -94,9 +92,8 @@ def delete_collection(request, collection_id):
 
 
 def get_collection(request, collection_id):
-    if request.method != "DELETE":
-        raise Exception(json.dumps(
-            {"message": "wrong request method", "status": 400}))
+    if request.method != "GET":
+        return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}),content_type="appication/json",status=400)
     try:
         collection = MysteryRoomCollection.objects.filter(id=collection_id)
         if len(collection) == 0:
@@ -108,9 +105,9 @@ def get_collection(request, collection_id):
             "collection_id": collection.pk,
             "event_id": collection.event_id,
             "event_name": "Mystery Room Collection not published" if collection.event_id == 0 else Event.objects.get(id=collection.event_id).name,
-            "event_date": "Mystery Room Collection not published" if collection.event_id == 0 else Event.objects.get(id=collection.event_id).start_date,
+            "event_date": "Mystery Room Collection not published" if collection.event_id == 0 else str(Event.objects.get(id=collection.event_id).start_date),
             "title": collection.title,
-            "banner_image": collection.banner_image,
+            "banner_image": imgBaseUrl+"/"+collection.banner_image,
             "number_of_team_members": collection.number_of_team_members,
             "number_of_mystery_rooms": collection.number_of_mystery_rooms,
             "theme": collection.theme,
@@ -126,8 +123,7 @@ def get_collection(request, collection_id):
 
 def get_all_collections(request):
     if request.method != "GET":
-        raise Exception(json.dumps(
-            {"message": "wrong request method", "status": 400}))
+        return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}),content_type="appication/json",status=400)
     try:
         result = []
         collections = MysteryRoomCollection.objects.all()
@@ -138,7 +134,7 @@ def get_all_collections(request):
                 "event_name": "Mystery Room Collection not published" if collection.event_id == 0 else Event.objects.get(id=collection.event_id).name,
                 "event_date": "Mystery Room Collection not published" if collection.event_id == 0 else Event.objects.get(id=collection.event_id).start_date,
                 "title": collection.title,
-                "banner_image": collection.banner_image,
+                "banner_image": imgBaseUrl+"/"+collection.banner_image,
                 "number_of_team_members": collection.number_of_team_members,
                 "number_of_mystery_rooms": collection.number_of_mystery_rooms,
                 "theme": collection.theme,
@@ -171,8 +167,7 @@ def get_all_collections(request):
 
 def publish_collection(request):
     if request.method != 'POST':
-        raise Exception(json.dumps(
-            {"message": "wrong request method", "status": 400}))
+        return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}),content_type="appication/json",status=400)
 
     try:
         json_data = request.body
@@ -211,8 +206,7 @@ def publish_collection(request):
 
 def create_room(request):
     if request.method != "POST":
-        raise Exception(json.dumps(
-            {"message": "wrong request method", "status": 400}))
+        return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}),content_type="appication/json",status=400)
     try:
         json_data = request.body
         stream = io.BytesIO(json_data)
@@ -242,8 +236,7 @@ def create_room(request):
 
 def edit_room(request):
     if request.method != "POST":
-        raise Exception(json.dumps(
-            {"message": "wrong request method", "status": 400}))
+        return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}),content_type="appication/json",status=400)
     try:
         json_data = request.body
         stream = io.BytesIO(json_data)
@@ -268,8 +261,7 @@ def edit_room(request):
 
 def delete_room(request, room_id):
     if request.method != "DELETE":
-        raise Exception(json.dumps(
-            {"message": "wrong request method", "status": 400}))
+        return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}),content_type="appication/json",status=400)
     try:
         room = MysteryRoom.objects.filter(id=room_id)
         if len(room) == 0:
@@ -283,8 +275,7 @@ def delete_room(request, room_id):
 
 def get_all_rooms(request, collection_id):
     if request.method != "GET":
-        raise Exception(json.dumps(
-            {"message": "wrong request method", "status": 400}))
+        return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}),content_type="appication/json",status=400)
     try:
         collection = MysteryRoomCollection.objects.filter(id=collection_id)
         if len(collection) == 0:
@@ -296,7 +287,7 @@ def get_all_rooms(request, collection_id):
         for room in rooms:
             result.append({
                 "room_id": room.pk,
-                "banner_image": room.banner_image,
+                "banner_image": imgBaseUrl+"/"+room.banner_image,
                 "title": room.title,
                 "difficulty_level": room.difficulty_level,
                 "number_of_questions": room.number_of_questions,
@@ -312,8 +303,7 @@ def get_all_rooms(request, collection_id):
 
 def get_room(request, room_id):
     if request.method != "GET":
-        raise Exception(json.dumps(
-            {"message": "wrong request method", "status": 400}))
+        return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}),content_type="appication/json",status=400)
     try:
         room = MysteryRoom.objects.filter(id=room_id)
         if len(room) == 0:
@@ -322,7 +312,7 @@ def get_room(request, room_id):
         room = room[0]
         result = {
             "room_id": room.pk,
-            "banner_image": room.banner_image,
+            "banner_image": imgBaseUrl+"/"+room.banner_image,
             "title": room.title,
             "difficulty_level": room.difficulty_level,
             "number_of_questions": room.number_of_questions,
@@ -338,8 +328,7 @@ def get_room(request, room_id):
 
 def add_question(request):
     if request.method != "POST":
-        raise Exception(json.dumps(
-            {"message": "wrong request method", "status": 400}))
+        return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}),content_type="appication/json",status=400)
     try:
         json_data = request.body
         stream = io.BytesIO(json_data)
@@ -392,8 +381,7 @@ def add_question(request):
 
 def add_new_question(request):
     if request.method != "POST":
-        raise Exception(json.dumps(
-            {"message": "wrong request method", "status": 400}))
+        return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}),content_type="appication/json",status=400)
     try:
         json_data = request.body
         stream = io.BytesIO(json_data)
@@ -447,8 +435,7 @@ def add_new_question(request):
 
 def edit_question(request):
     if request.method != "POST":
-        raise Exception(json.dumps(
-            {"message": "wrong request method", "status": 400}))
+        return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}),content_type="appication/json",status=400)
     try:
         json_data = request.body
         stream = io.BytesIO(json_data)
@@ -502,8 +489,7 @@ def edit_question(request):
 
 def delete_question(request, collection_id, room_id, question_number):
     if request.method != 'DELETE':
-        raise Exception(json.dumps(
-            {"message": "wrong request method", "status": 400}))
+        return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}),content_type="appication/json",status=400)
     try:
         room = MysteryRoom.objects.filter(id=room_id)
         if len(room) == 0:

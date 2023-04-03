@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'graphene_django',
     'corsheaders',
+    'mysteryroom',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
