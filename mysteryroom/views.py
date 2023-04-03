@@ -334,3 +334,203 @@ def get_room(request, room_id):
         return HttpResponse(json_post, content_type="application/json")
     except Exception as err:
         return HttpResponse(err, content_type="application/json")
+
+
+def add_question(request):
+    if request.method != "POST":
+        raise Exception(json.dumps(
+            {"message": "wrong request method", "status": 400}))
+    try:
+        json_data = request.body
+        stream = io.BytesIO(json_data)
+        python_data = JSONParser().parse(stream)
+        print(python_data)
+        room = MysteryRoom.objects.filter(id=python_data['room_id'])
+        if len(room) == 0:
+            raise Exception(json.dumps(
+                {"message": "mystery room  not found", "status": 400}))
+        room = room[0]
+        collection = MysteryRoomCollection.objects.filter(
+            id=python_data['collection_id'])
+        if len(collection) == 0:
+            raise Exception(json.dumps(
+                {"message": "mystery room collection not found", "status": 400}))
+        collection = collection[0]
+        question = MysteryRoomQuestion.objects.filter(
+            room=room, mystery_room_collection=collection, question_number=python_data['question_number'])
+        if len(question) != 0:
+            raise Exception(json.dumps(
+                {"message": "question already exists", "status": 400}))
+        question = MysteryRoomQuestion(
+            room=room,
+            mystery_room_collection=collection,
+            question_number=python_data['question_number'],
+            question_text=python_data['question_text'],
+            question_image=collection.title+"___"+room.title +
+            "___question___"+str(python_data['question_number']),
+            note=python_data['note'],
+            hint_text=python_data['hint_text'],
+            hint_image=collection.title+"___"+room.title +
+            "___hint___"+str(python_data['question_number']),
+            question_type=python_data['question_type']
+        )
+        question.save()
+        options_list = python_data["options"]
+        for item in options_list:
+            option_instance = MysteryRoomOption(
+                room=room,
+                question=question,
+                option_text=item[0],
+                is_correct=item[1]
+            )
+            option_instance.save()
+
+        return HttpResponse("added question", content_type='application/json')
+    except Exception as err:
+        return HttpResponse(err, content_type="application/json")
+
+
+def add_new_question(request):
+    if request.method != "POST":
+        raise Exception(json.dumps(
+            {"message": "wrong request method", "status": 400}))
+    try:
+        json_data = request.body
+        stream = io.BytesIO(json_data)
+        python_data = JSONParser().parse(stream)
+        print(python_data)
+        room = MysteryRoom.objects.filter(id=python_data['room_id'])
+        if len(room) == 0:
+            raise Exception(json.dumps(
+                {"message": "mystery room  not found", "status": 400}))
+        room = room[0]
+        collection = MysteryRoomCollection.objects.filter(
+            id=python_data['collection_id'])
+        if len(collection) == 0:
+            raise Exception(json.dumps(
+                {"message": "mystery room collection not found", "status": 400}))
+        collection = collection[0]
+        question = MysteryRoomQuestion.objects.filter(
+            room=room, mystery_room_collection=collection, question_number=python_data['question_number'])
+        if len(question) != 0:
+            raise Exception(json.dumps(
+                {"message": "question already exists", "status": 400}))
+        question = MysteryRoomQuestion(
+            room=room,
+            mystery_room_collection=collection,
+            question_number=python_data['question_number'],
+            question_text=python_data['question_text'],
+            question_image=collection.title+"___"+room.title +
+            "___question___"+str(python_data['question_number']),
+            note=python_data['note'],
+            hint_text=python_data['hint_text'],
+            hint_image=collection.title+"___"+room.title +
+            "___hint___"+str(python_data['question_number']),
+            question_type=python_data['question_type']
+        )
+        question.save()
+        options_list = python_data["options"]
+        for item in options_list:
+            option_instance = MysteryRoomOption(
+                room=room,
+                question=question,
+                option_text=item[0],
+                is_correct=item[1]
+            )
+            option_instance.save()
+        room.number_of_questions += 1
+        room.save()
+        return HttpResponse("added question", content_type='application/json')
+    except Exception as err:
+        return HttpResponse(err, content_type="application/json")
+
+
+def edit_question(request):
+    if request.method != "POST":
+        raise Exception(json.dumps(
+            {"message": "wrong request method", "status": 400}))
+    try:
+        json_data = request.body
+        stream = io.BytesIO(json_data)
+        python_data = JSONParser().parse(stream)
+        print(python_data)
+        room = MysteryRoom.objects.filter(id=python_data['room_id'])
+        if len(room) == 0:
+            raise Exception(json.dumps(
+                {"message": "mystery room  not found", "status": 400}))
+        room = room[0]
+        collection = MysteryRoomCollection.objects.filter(
+            id=python_data['collection_id'])
+        if len(collection) == 0:
+            raise Exception(json.dumps(
+                {"message": "mystery room collection not found", "status": 400}))
+        collection = collection[0]
+        question = MysteryRoomQuestion.objects.filter(
+            room=room, mystery_room_collection=collection, question_number=python_data['question_number'])
+        if len(question) == 0:
+            raise Exception(json.dumps(
+                {"message": "question does not exist", "status": 400}))
+        question = question[0]
+        question.question_text = python_data['question_text']
+        question.question_image = collection.title+"___"+room.title + \
+            "___question___"+str(python_data['question_number'])
+        question.note = python_data['note']
+        question.hint_text = python_data['hint_text']
+        question.hint_image = collection.title+"___"+room.title + \
+            "___hint___"+str(python_data['question_number'])
+        question.question_type = python_data['question_type']
+        question.save()
+
+        options_list = python_data["options"]
+        options = MysteryRoomOption.objects.filter(
+            room=room, question=question)
+        for item in options:
+            item.delete()
+        for item in options_list:
+            option_instance = MysteryRoomOption(
+                room=room,
+                question=question,
+                option_text=item[0],
+                is_correct=item[1]
+            )
+            option_instance.save()
+
+        return HttpResponse("edited question", content_type='application/json')
+    except Exception as err:
+        return HttpResponse(err, content_type="application/json")
+
+
+def delete_question(request, collection_id, room_id, question_number):
+    if request.method != 'DELETE':
+        raise Exception(json.dumps(
+            {"message": "wrong request method", "status": 400}))
+    try:
+        room = MysteryRoom.objects.filter(id=room_id)
+        if len(room) == 0:
+            raise Exception(json.dumps(
+                {"message": "mystery room  not found", "status": 400}))
+        room = room[0]
+        collection = MysteryRoomCollection.objects.filter(id=collection_id)
+        if len(collection) == 0:
+            raise Exception(json.dumps(
+                {"message": "mystery room collection not found", "status": 400}))
+        collection = collection[0]
+        question = MysteryRoomQuestion.objects.filter(
+            room=room, collection=collection, question_number=question_number)
+        if len(question) == 0:
+            raise Exception(json.dumps(
+                {"message": "question not found", "status": 400}))
+        question = question[0]
+        question.delete()
+        room.number_of_questions = room.number_of_questions - 1
+        room.save()
+        questions = MysteryRoomQuestion.objects.filter(
+            collection=collection, room=room)
+        for item in questions:
+            if item.question_number > question_number:
+                item.question_number = item.question_number-1
+                item.save()
+        return HttpResponse("deleted question", content_type='application/json')
+    except Exception as err:
+        print(err)
+        return HttpResponse(err, content_type="application/json")

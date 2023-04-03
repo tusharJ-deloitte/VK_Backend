@@ -17,13 +17,13 @@ class MysteryRoomAdmin(admin.ModelAdmin):
 @admin.register(MysteryRoomQuestion)
 class MysteryRoomQuestionAdmin(admin.ModelAdmin):
     list_display = ['id', 'room', 'mystery_room_collection', 'question_number', 'question_text',
-                    'question_image', 'note', 'hint_text', 'hint_image', 'question_type', 'created_on', 'last_modified']
+                    'question_image', 'note', 'hint_text', 'hint_image', 'question_type']
 
 
 @admin.register(MysteryRoomOption)
 class MysteryRoomOptionAdmin(admin.ModelAdmin):
     list_display = ['id', 'room', 'question', 'option_text',
-                    'is_correct', 'created_on', 'last_modified']
+                    'is_correct']
 
 
 @admin.register(MRUserAnswer)
