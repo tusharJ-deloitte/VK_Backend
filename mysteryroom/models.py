@@ -31,6 +31,7 @@ class MysteryRoom(models.Model):
     description = models.TextField(null=True, blank=True)
     created_on = models.TextField(null=True, blank=True)
     last_modified = models.TextField(null=True, blank=True)
+    total_time = models.IntegerField(null=True, blank=True)
 
     def __str__(self):
         return self.title
