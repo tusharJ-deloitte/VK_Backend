@@ -231,7 +231,8 @@ def create_room(request):
             difficulty_level=python_data['difficulty_level'],
             number_of_questions=python_data['number_of_questions'],
             description=python_data['description'],
-            created_on=python_data['created_on']
+            created_on=python_data['created_on'],
+            total_time=python_data['total_time']
         )
         room.save()
         print("saving room")
@@ -259,6 +260,7 @@ def edit_room(request):
         room.difficulty_level = python_data['difficulty_level']
         room.description = python_data['description']
         room.last_modified = python_data['last_modified']
+        room.total_time = python_data['total_time']
         room.save()
         print("saving room")
         return HttpResponse("edited mystery room", content_type='application/json')
@@ -293,6 +295,8 @@ def get_all_rooms(request, collection_id):
         collection = collection[0]
         rooms = MysteryRoom.objects.filter(mystery_room=collection)
         result = []
+        questions = MysteryRoomQuestion.objects.filter(
+            room=room, collection=collection)
         for room in rooms:
             result.append({
                 "room_id": room.pk,
@@ -300,9 +304,11 @@ def get_all_rooms(request, collection_id):
                 "title": room.title,
                 "difficulty_level": room.difficulty_level,
                 "number_of_questions": room.number_of_questions,
+                "number_of_questions_left": room.number_of_questions-len(questions),
                 "description": room.description,
                 "created_on": room.created_on,
-                "last_modified": room.last_modified
+                "last_modified": room.last_modified,
+                "total_time": room.total_time
             })
         json_post = json.dumps(result)
         return HttpResponse(json_post, content_type="application/json")
@@ -310,7 +316,7 @@ def get_all_rooms(request, collection_id):
         return HttpResponse(err, content_type="application/json")
 
 
-def get_room(request, room_id):
+def get_room(request, collection_id, room_id):
     if request.method != "GET":
         raise Exception(json.dumps(
             {"message": "wrong request method", "status": 400}))
@@ -320,15 +326,45 @@ def get_room(request, room_id):
             raise Exception(json.dumps(
                 {"message": "mystery room  not found", "status": 400}))
         room = room[0]
+        collection = MysteryRoomCollection.objects.filter(id=collection_id)
+        if len(collection) == 0:
+            raise Exception(json.dumps(
+                {"message": "mystery room collection not found", "status": 400}))
+        collection = collection[0]
+        ques_info = []
+        questions = MysteryRoomQuestion.objects.filter(
+            room=room, collection=collection)
+        for question in questions:
+            all_options_for_question = MysteryRoomOption.objects.filter(
+                room=room, question=question)
+            options = []
+            for option in all_options_for_question:
+                options.append({
+                    "option_text": option.option_text,
+                    "is_correct": option.is_correct
+                })
+            ques_info.append({
+                "question_id": question.pk,
+                "question_text": question.question_text,
+                "question_image": question.question_image,
+                "note": question.note,
+                "hint_text": question.hint_text,
+                "hint_image": question.hint_image,
+                "question_type": question.question_type,
+                "options": options
+            })
         result = {
             "room_id": room.pk,
+            "questions": ques_info,
             "banner_image": room.banner_image,
             "title": room.title,
             "difficulty_level": room.difficulty_level,
             "number_of_questions": room.number_of_questions,
+            "number_of_questions_left": room.number_of_questions-len(ques_info),
             "description": room.description,
             "created_on": room.created_on,
-            "last_modified": room.last_modified
+            "last_modified": room.last_modified,
+            "total_time": room.total_time
         }
         json_post = json.dumps(result)
         return HttpResponse(json_post, content_type="application/json")
@@ -531,6 +567,50 @@ def delete_question(request, collection_id, room_id, question_number):
                 item.question_number = item.question_number-1
                 item.save()
         return HttpResponse("deleted question", content_type='application/json')
+    except Exception as err:
+        print(err)
+        return HttpResponse(err, content_type="application/json")
+
+
+def get_particular_question(request, collection_id, room_id, question_number):
+    if request.method != 'DELETE':
+        return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}))
+    try:
+        room = MysteryRoom.objects.filter(id=room_id)
+        if len(room) == 0:
+            raise Exception(json.dumps(
+                {"message": "mystery room  not found", "status": 400}))
+        room = room[0]
+        collection = MysteryRoomCollection.objects.filter(id=collection_id)
+        if len(collection) == 0:
+            raise Exception(json.dumps(
+                {"message": "mystery room collection not found", "status": 400}))
+        collection = collection[0]
+        question = MysteryRoomQuestion.objects.filter(
+            room=room, collection=collection, question_number=question_number)
+        if len(question) == 0:
+            raise Exception(json.dumps(
+                {"message": "question not found", "status": 400}))
+        question = question[0]
+        all_options_for_question = MysteryRoomOption.objects.filter(
+            room=room, question=question)
+        options = []
+        for option in all_options_for_question:
+            options.append({
+                "option_text": option.option_text,
+                "is_correct": option.is_correct
+            })
+        result = {
+            "question_id": question.pk,
+            "question_text": question.question_text,
+            "question_image": question.question_image,
+            "note": question.note,
+            "hint_text": question.hint_text,
+            "hint_image": question.hint_image,
+            "question_type": question.question_type,
+            "options": options
+        }
+        return HttpResponse(json.dumps(result), content_type='application/json')
     except Exception as err:
         print(err)
         return HttpResponse(err, content_type="application/json")

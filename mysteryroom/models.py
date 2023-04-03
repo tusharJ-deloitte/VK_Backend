@@ -31,6 +31,7 @@ class MysteryRoom(models.Model):
     description = models.TextField(null=True, blank=True)
     created_on = models.TextField(null=True, blank=True)
     last_modified = models.TextField(null=True, blank=True)
+    total_time = models.IntegerField(null=True, blank=True)
 
     def __str__(self):
         return self.title
@@ -63,7 +64,7 @@ class MysteryRoomQuestion(models.Model):
 
 
 class MysteryRoomOption(models.Model):
-    room = models.ForeignKey(MysteryRoom)
+    room = models.ForeignKey(MysteryRoom, on_delete=models.CASCADE)
     question = models.ForeignKey(MysteryRoomQuestion, on_delete=models.CASCADE)
     option_text = models.TextField()
     is_correct = models.BooleanField(default=False)
@@ -74,9 +75,11 @@ class MysteryRoomOption(models.Model):
 
 class MRUserAnswer(models.Model):
     team_id = models.IntegerField(default=0)
-    mr_collection = models.ForeignKey(MysteryRoomCollection)
-    mr_room = models.ForeignKey(MysteryRoom)
-    mr_question = models.ForeignKey(MysteryRoomQuestion)
+    mr_collection = models.ForeignKey(
+        MysteryRoomCollection, on_delete=models.CASCADE)
+    mr_room = models.ForeignKey(MysteryRoom, on_delete=models.CASCADE)
+    mr_question = models.ForeignKey(
+        MysteryRoomQuestion, on_delete=models.CASCADE)
     submitted_answer = models.TextField(null=True, blank=True)
     is_correct = models.BooleanField(default=False)
     time_taken = models.IntegerField(default=0)
