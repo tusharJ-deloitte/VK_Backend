@@ -87,4 +87,4 @@ class MRUserAnswer(models.Model):
     score = models.IntegerField(default=0)
 
     def __str__(self) -> str:
-        return self.mr_collection+self.mr_room+self.mr_question+self.submitted_answer+self.is_correct
+        return self.submitted_answer

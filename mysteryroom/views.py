@@ -3,7 +3,7 @@ import io
 from rest_framework.parsers import JSONParser
 from .models import MRUserAnswer, MysteryRoom, MysteryRoomCollection, MysteryRoomOption, MysteryRoomQuestion
 import json
-from app1.models import Event, Team, Player
+from app1.models import Event, Team, Player, Activity, Registration
 import datetime
 from GrapheneTest.settings import CLOUDFRONT_DOMAIN as imgBaseUrl
 from django.contrib.auth.models import User
@@ -344,7 +344,8 @@ def get_room(request, collection_id, room_id):
                 "hint_text": question.hint_text,
                 "hint_image": question.hint_image,
                 "question_type": question.question_type,
-                "options": options
+                "question_number": question.question_number,
+                "options": options,
             })
         result = {
             "room_id": room.pk,
@@ -606,62 +607,81 @@ def get_particular_question(request, collection_id, room_id, question_number):
 
 
 def add_user_answer(request):
-    if request.method != 'GET':
+    if request.method != 'POST':
         return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}))
     try:
         body = request.body
         stream = io.BytesIO(body)
         python_data = JSONParser().parse(stream)
         print(python_data)
+        #check user exists or not
         user = User.objects.filter(email=python_data['user_email'])
         if len(user) == 0:
             raise Exception(json.dumps(
                 {"message": "user not found", "status": 400}))
         user = user[0]
+        #check room exists or not
         room = MysteryRoom.objects.filter(id=python_data['room_id'])
         if len(room) == 0:
-            raise Exception(json.dumps(
-                {"message": "mystery room  not found", "status": 400}))
+            raise Exception(json.dumps({"message": "mystery room  not found", "status": 400}))
         room = room[0]
-        collection = MysteryRoomCollection.objects.filter(
-            id=python_data['collection_id'])
-        if len(collection) == 0:
-            raise Exception(json.dumps(
-                {"message": "mystery room collection not found", "status": 400}))
-        collection = collection[0]
-        question = MysteryRoomQuestion(
-            room=room, mystery_room_collection=collection, question_number=python_data['question_number'])
+        # check team exists or not
+        teams = Team.objects.filter(
+            team_lead=user.first_name, activity=Activity.objects.get(name="Mystery Room"))
+        if len(teams) == 0:
+            raise Exception(json.dumps({"message": "team not found or user is not a team lead", "status": 400}))
+        team=None
+        for t in teams:
+            reg = Registration.objects.filter(event=Event.objects.get(id=room.mystery_room.event_id),team=t)
+            if len(reg) != 0:
+                team=t
+                break
+        if team is None:
+            raise Exception(json.dumps({"message": "team not registered", "status": 400}))
+        
+        #check question exists or not
+        question = MysteryRoomQuestion.objects.filter(
+            room=room, mystery_room_collection=room.mystery_room, question_number=python_data['question_number'])
         if len(question) == 0:
-            raise Exception(json.dumps(
-                {"message": "question not found", "status": 400}))
+            raise Exception(json.dumps({"message": "question not found", "status": 400}))
         question = question[0]
-
+        #check user answer already added or not
         user_answer = MRUserAnswer.objects.filter(
-            mr_collection=collection, mr_room=room, mr_question=question, team_id=python_data['team_id'])
+            mr_collection=room.mystery_room, mr_room=room, mr_question=question, team_id=team.pk)
         if len(user_answer) != 0:
-            raise Exception(json.dumps(
-                {"message": "user answer already exists", "status": 400}))
+            raise Exception(json.dumps({"message": "user answer already exists", "status": 400}))
 
         user_answer = MRUserAnswer(
-            team_id=python_data['team_id'],
-            mr_collection=collection,
+            team_id=team.pk,
+            mr_collection=room.mystery_room,
             mr_room=room,
             mr_question=question,
             submitted_answer=python_data['answer']
         )
         user_answer.save()
-        if user_answer.mr_question.question_type == MysteryRoomQuestion.MCQ:
-            options = MysteryRoomOption.objects.filter(
-                question=question, room=room)
-            for option in options:
-                if option.option_text == user_answer.submitted_answer and option.is_correct == True:
-                    user_answer.is_correct = True
-                    user_answer.score = 10
-                    user_answer.save()
-                    return HttpResponse("user answer is correct", content_type="application/json")
-            return HttpResponse("user answer added but incorrect", content_type="application/json")
+        options = MysteryRoomOption.objects.filter(question=question, room=room, is_correct=True)
+        print("options for the question ::",options)
+        q_type = user_answer.mr_question.question_type
+        if q_type == MysteryRoomQuestion.MCQ or q_type == MysteryRoomQuestion.TEXTFIELD:
+            option=options[0]
+            if option.option_text != user_answer.submitted_answer:
+                return HttpResponse("user answer added but incorrect", content_type="application/json")           
+        else:
+            option_list = [item.option_text for item in options]
+            answer_list = user_answer.submitted_answer.split(',')
+            print(answer_list)
+            if len(option_list) != len(answer_list):
+                return HttpResponse("user answer added but incorrect", content_type="application/json")
+            for item in answer_list:
+                if item not in option_list:
+                    return HttpResponse("user answer added but incorrect", content_type="application/json")
 
-        return HttpResponse(json.dumps("ok"), content_type='application/json')
+        
+        user_answer.is_correct = True
+        user_answer.score = 10        
+        user_answer.save()
+
+        return HttpResponse(json.dumps("user answer added, and correct"), content_type='application/json')
     except Exception as err:
         print(err)
         return HttpResponse(err, content_type="application/json")
