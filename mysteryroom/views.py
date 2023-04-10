@@ -669,7 +669,7 @@ def add_user_answer(request):
         else:
             option_list = [item.option_text for item in options]
             answer_list = user_answer.submitted_answer.split(',')
-            print(answer_list)
+            print("user answer list :: ",answer_list)
             if len(option_list) != len(answer_list):
                 return HttpResponse("user answer added but incorrect", content_type="application/json")
             for item in answer_list:
