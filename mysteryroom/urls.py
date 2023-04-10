@@ -5,7 +5,8 @@ urlpatterns = [
     path('check/', service_check, name="Mystery Room Service Check"),
     path('collection/create', create_collection, name="create collection"),
     path('collection/edit', edit_collection, name="edit_collection"),
-    path('collection/delete/<int:collection_id>',delete_collection, name="delete_collection"),
+    path('collection/delete/<int:collection_id>',
+         delete_collection, name="delete_collection"),
     path('collection/get/<int:collection_id>',
          get_collection, name="get_collection"),
     path('collection/all', get_all_collections, name="get_all_collections"),
@@ -23,6 +24,8 @@ urlpatterns = [
     path('room/question/delete/<int:collection_id>/<int:room_id>/<int:question_number>',
          delete_question, name="delete_question"),
     path('room/question/<int:collection_id>/<int:room_id>/<int:question_number>',
-         get_particular_question, name="get_particular_question")
+         get_particular_question, name="get_particular_question"),
+
+    path('room/add_user_answer', add_user_answer, name="add_user_answer")
 
 ]

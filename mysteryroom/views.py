@@ -3,9 +3,10 @@ import io
 from rest_framework.parsers import JSONParser
 from .models import MRUserAnswer, MysteryRoom, MysteryRoomCollection, MysteryRoomOption, MysteryRoomQuestion
 import json
-from app1.models import Event
+from app1.models import Event, Team, Player
 import datetime
 from GrapheneTest.settings import CLOUDFRONT_DOMAIN as imgBaseUrl
+from django.contrib.auth.models import User
 
 
 def service_check(request):
@@ -599,6 +600,68 @@ def get_particular_question(request, collection_id, room_id, question_number):
             "options": options
         }
         return HttpResponse(json.dumps(result), content_type='application/json')
+    except Exception as err:
+        print(err)
+        return HttpResponse(err, content_type="application/json")
+
+
+def add_user_answer(request):
+    if request.method != 'GET':
+        return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}))
+    try:
+        body = request.body
+        stream = io.BytesIO(body)
+        python_data = JSONParser().parse(stream)
+        print(python_data)
+        user = User.objects.filter(email=python_data['user_email'])
+        if len(user) == 0:
+            raise Exception(json.dumps(
+                {"message": "user not found", "status": 400}))
+        user = user[0]
+        room = MysteryRoom.objects.filter(id=python_data['room_id'])
+        if len(room) == 0:
+            raise Exception(json.dumps(
+                {"message": "mystery room  not found", "status": 400}))
+        room = room[0]
+        collection = MysteryRoomCollection.objects.filter(
+            id=python_data['collection_id'])
+        if len(collection) == 0:
+            raise Exception(json.dumps(
+                {"message": "mystery room collection not found", "status": 400}))
+        collection = collection[0]
+        question = MysteryRoomQuestion(
+            room=room, mystery_room_collection=collection, question_number=python_data['question_number'])
+        if len(question) == 0:
+            raise Exception(json.dumps(
+                {"message": "question not found", "status": 400}))
+        question = question[0]
+
+        user_answer = MRUserAnswer.objects.filter(
+            mr_collection=collection, mr_room=room, mr_question=question, team_id=python_data['team_id'])
+        if len(user_answer) != 0:
+            raise Exception(json.dumps(
+                {"message": "user answer already exists", "status": 400}))
+
+        user_answer = MRUserAnswer(
+            team_id=python_data['team_id'],
+            mr_collection=collection,
+            mr_room=room,
+            mr_question=question,
+            submitted_answer=python_data['answer']
+        )
+        user_answer.save()
+        if user_answer.mr_question.question_type == MysteryRoomQuestion.MCQ:
+            options = MysteryRoomOption.objects.filter(
+                question=question, room=room)
+            for option in options:
+                if option.option_text == user_answer.submitted_answer and option.is_correct == True:
+                    user_answer.is_correct = True
+                    user_answer.score = 10
+                    user_answer.save()
+                    return HttpResponse("user answer is correct", content_type="application/json")
+            return HttpResponse("user answer added but incorrect", content_type="application/json")
+
+        return HttpResponse(json.dumps("ok"), content_type='application/json')
     except Exception as err:
         print(err)
         return HttpResponse(err, content_type="application/json")
