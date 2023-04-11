@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import MysteryRoomCollection, MysteryRoom, MysteryRoomOption, MysteryRoomQuestion, MRUserAnswer
+from .models import MysteryRoomCollection, MysteryRoom, MysteryRoomOption, MysteryRoomQuestion, MRUserAnswer, Timer
 
 
 @admin.register(MysteryRoomCollection)
@@ -30,3 +30,9 @@ class MysteryRoomOptionAdmin(admin.ModelAdmin):
 class MRUserAnswerAdmin(admin.ModelAdmin):
     list_display = ['id', 'team_id', 'mr_collection', 'mr_room',
                     'mr_question', 'submitted_answer', 'is_correct', 'time_taken', 'score']
+
+
+@admin.register(Timer)
+class TimerAdmin(admin.ModelAdmin):
+    list_display = ['id', 'team_id', 'room', 'start_time',
+                    'penalty', 'end_time', 'latest_question']

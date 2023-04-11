@@ -88,3 +88,12 @@ class MRUserAnswer(models.Model):
 
     def __str__(self) -> str:
         return self.submitted_answer
+
+
+class Timer(models.Model):
+    team_id = models.IntegerField(default=0)
+    room = models.ForeignKey(MysteryRoom, on_delete=models.CASCADE)
+    start_time = models.TextField(blank=True)
+    penalty = models.IntegerField(default=0)
+    end_time = models.TextField(blank=True)
+    latest_question = models.IntegerField(default=0)

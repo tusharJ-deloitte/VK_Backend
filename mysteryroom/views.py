@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 import io
 from rest_framework.parsers import JSONParser
-from .models import MRUserAnswer, MysteryRoom, MysteryRoomCollection, MysteryRoomOption, MysteryRoomQuestion
+from .models import MRUserAnswer, MysteryRoom, MysteryRoomCollection, MysteryRoomOption, MysteryRoomQuestion, Timer
 import json
 from app1.models import Event, Team, Player, Activity, Registration
 import datetime
@@ -614,42 +614,48 @@ def add_user_answer(request):
         stream = io.BytesIO(body)
         python_data = JSONParser().parse(stream)
         print(python_data)
-        #check user exists or not
+        # check user exists or not
         user = User.objects.filter(email=python_data['user_email'])
         if len(user) == 0:
             raise Exception(json.dumps(
                 {"message": "user not found", "status": 400}))
         user = user[0]
-        #check room exists or not
+        # check room exists or not
         room = MysteryRoom.objects.filter(id=python_data['room_id'])
         if len(room) == 0:
-            raise Exception(json.dumps({"message": "mystery room  not found", "status": 400}))
+            raise Exception(json.dumps(
+                {"message": "mystery room  not found", "status": 400}))
         room = room[0]
         # check team exists or not
         teams = Team.objects.filter(
             team_lead=user.first_name, activity=Activity.objects.get(name="Mystery Room"))
         if len(teams) == 0:
-            raise Exception(json.dumps({"message": "team not found or user is not a team lead", "status": 400}))
-        team=None
+            raise Exception(json.dumps(
+                {"message": "team not found or user is not a team lead", "status": 400}))
+        team = None
         for t in teams:
-            reg = Registration.objects.filter(event=Event.objects.get(id=room.mystery_room.event_id),team=t)
+            reg = Registration.objects.filter(
+                event=Event.objects.get(id=room.mystery_room.event_id), team=t)
             if len(reg) != 0:
-                team=t
+                team = t
                 break
         if team is None:
-            raise Exception(json.dumps({"message": "team not registered", "status": 400}))
-        
-        #check question exists or not
+            raise Exception(json.dumps(
+                {"message": "team not registered", "status": 400}))
+
+        # check question exists or not
         question = MysteryRoomQuestion.objects.filter(
             room=room, mystery_room_collection=room.mystery_room, question_number=python_data['question_number'])
         if len(question) == 0:
-            raise Exception(json.dumps({"message": "question not found", "status": 400}))
+            raise Exception(json.dumps(
+                {"message": "question not found", "status": 400}))
         question = question[0]
-        #check user answer already added or not
+        # check user answer already added or not
         user_answer = MRUserAnswer.objects.filter(
             mr_collection=room.mystery_room, mr_room=room, mr_question=question, team_id=team.pk)
         if len(user_answer) != 0:
-            raise Exception(json.dumps({"message": "user answer already exists", "status": 400}))
+            raise Exception(json.dumps(
+                {"message": "user answer already exists", "status": 400}))
 
         user_answer = MRUserAnswer(
             team_id=team.pk,
@@ -659,29 +665,68 @@ def add_user_answer(request):
             submitted_answer=python_data['answer']
         )
         user_answer.save()
-        options = MysteryRoomOption.objects.filter(question=question, room=room, is_correct=True)
-        print("options for the question ::",options)
+        options = MysteryRoomOption.objects.filter(
+            question=question, room=room, is_correct=True)
+        print("options for the question ::", options)
         q_type = user_answer.mr_question.question_type
         if q_type == MysteryRoomQuestion.MCQ or q_type == MysteryRoomQuestion.TEXTFIELD:
-            option=options[0]
+            option = options[0]
             if option.option_text != user_answer.submitted_answer:
-                return HttpResponse("user answer added but incorrect", content_type="application/json")           
+                return HttpResponse("user answer added but incorrect", content_type="application/json")
         else:
             option_list = [item.option_text for item in options]
             answer_list = user_answer.submitted_answer.split(',')
-            print("user answer list :: ",answer_list)
+            print("user answer list :: ", answer_list)
             if len(option_list) != len(answer_list):
                 return HttpResponse("user answer added but incorrect", content_type="application/json")
             for item in answer_list:
                 if item not in option_list:
                     return HttpResponse("user answer added but incorrect", content_type="application/json")
 
-        
         user_answer.is_correct = True
-        user_answer.score = 10        
+        user_answer.score = 10
         user_answer.save()
 
         return HttpResponse(json.dumps("user answer added, and correct"), content_type='application/json')
     except Exception as err:
         print(err)
         return HttpResponse(err, content_type="application/json")
+
+
+def start_room(request):
+    if request.method != 'POST':
+        return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}))
+    try:
+        body = request.body
+        stream = io.BytesIO(body)
+        python_data = JSONParser().parse(stream)
+        print(python_data)
+        user = User.objects.filter(email=python_data['user_email'])
+        if len(user) == 0:
+            raise Exception(json.dumps(
+                {"message": "user not found", "status": 400}))
+        user = user[0]
+        room = MysteryRoom.objects.filter(id=python_data['room_id'])
+        if len(room) == 0:
+            raise Exception(json.dumps(
+                {"message": "mystery room  not found", "status": 400}))
+        room = room[0]
+        teams = Team.objects.filter(
+            team_lead=user.first_name, activity=Activity.objects.get(name="Mystery Room"))
+        if len(teams) == 0:
+            raise Exception(json.dumps(
+                {"message": "team not found or user is not a team lead", "status": 400}))
+        team = None
+        for t in teams:
+            reg = Registration.objects.filter(
+                event=Event.objects.get(id=room.mystery_room.event_id), team=t)
+            if len(reg) != 0:
+                team = t
+                break
+        if team is None:
+            raise Exception(json.dumps(
+                {"message": "team not registered", "status": 400}))
+        timer = Timer.objects.filter(team_id=team.pk, room=room)
+        if len(timer) == 0:
+            timer = Timer(team_id=team.pk, room=room,
+                          start_time=python_data['start_time'])
