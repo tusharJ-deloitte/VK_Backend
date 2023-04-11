@@ -735,11 +735,16 @@ def check_user_participation(request, event_id, user_email):
         return HttpResponse(err, content_type="application/json", status=400)
 
 # get user result room wise
-
-
 def user_result(request, collection_id):
     if request.method != 'GET':
         return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}))
+
+    try:
+        pass        
+
+    except Exception as err:
+        print(err)
+        return HttpResponse(err, content_type="application/json", status=400)
 
 
 def start_room(request):
@@ -760,27 +765,42 @@ def start_room(request):
             raise Exception(json.dumps(
                 {"message": "mystery room  not found", "status": 400}))
         room = room[0]
-        teams = Team.objects.filter(
-            team_lead=user.first_name, activity=Activity.objects.get(name="Mystery Room"))
-        if len(teams) == 0:
-            raise Exception(json.dumps(
-                {"message": "team not found or user is not a team lead", "status": 400}))
-        team = None
-        for t in teams:
-            reg = Registration.objects.filter(
-                event=Event.objects.get(id=room.mystery_room.event_id), team=t)
-            if len(reg) != 0:
-                team = t
-                break
-        if team is None:
-            raise Exception(json.dumps(
-                {"message": "team not registered", "status": 400}))
-        timer = Timer.objects.filter(team_id=team.pk, room=room)
-        if len(timer) != 0:
-            return HttpResponse(f"room already started at {timer[0].start_time}", content_type="application/json")
+        if room.mystery_room.event_id == 0:
+            raise Exception(json.dumps({"message": "collection not published yet", "status": 400}))
 
-        timer = Timer(team_id=team.pk, room=room)
-        timer.save()
+        event = Event.objects.get(id=room.mystery_room.event_id)
+        if event.event_type == "Group":
+            teams = Team.objects.filter(
+                team_lead=user.first_name, activity=Activity.objects.get(name="Mystery Room"))
+            if len(teams) == 0:
+                raise Exception(json.dumps(
+                    {"message": "team not found or user is not a team lead", "status": 400}))
+            team = None
+            for t in teams:
+                reg = Registration.objects.filter(
+                    event=event, team=t)
+                if len(reg) != 0:
+                    team = t
+                    break
+            if team is None:
+                raise Exception(json.dumps(
+                    {"message": "team not registered", "status": 400}))
+            timer = Timer.objects.filter(team_id=team.pk, room=room)
+            if len(timer) != 0:
+                return HttpResponse(f"room already started at {timer[0].start_time} for team {team.name}", content_type="application/json")
+
+            timer = Timer(team_id=team.pk, room=room)
+            timer.save()
+        else:
+            ind_registration = Player.objects.filter(user=user,event_id=event.pk)
+            if len(ind_registration) == 0:
+                raise Exception(json.dumps({"message": "user not registered for the event", "status": 400}))
+            timer = Timer.objects.filter(team_id=team.pk, room=room)
+            if len(timer) != 0:
+                return HttpResponse(f"room already started at {timer[0].start_time} for user {user.email}", content_type="application/json")
+            
+            timer = Timer(user_email=user.email, room=room)
+            timer.save()
 
         return HttpResponse("start time details added", content_type="application/json")
     except Exception as err:
@@ -806,26 +826,37 @@ def is_penalty(request):
             raise Exception(json.dumps(
                 {"message": "mystery room  not found", "status": 400}))
         room = room[0]
-        teams = Team.objects.filter(
-            team_lead=user.first_name, activity=Activity.objects.get(name="Mystery Room"))
-        if len(teams) == 0:
-            raise Exception(json.dumps(
-                {"message": "team not found or user is not a team lead", "status": 400}))
-        team = None
-        for t in teams:
-            reg = Registration.objects.filter(
-                event=Event.objects.get(id=room.mystery_room.event_id), team=t)
-            if len(reg) != 0:
-                team = t
-                break
-        if team is None:
-            raise Exception(json.dumps(
-                {"message": "team not registered", "status": 400}))
-        timer = Timer.objects.filter(team_id=team.pk, room=room)
+
+        event = Event.objects.get(id=room.mystery_room.event_id)
+        timer=[]
+        if event.event_type == "Group":
+            #for group registration
+            teams = Team.objects.filter(
+                team_lead=user.first_name, activity=Activity.objects.get(name="Mystery Room"))
+            if len(teams) == 0:
+                raise Exception(json.dumps(
+                    {"message": "team not found or user is not a team lead", "status": 400}))
+            team = None
+            for t in teams:
+                reg = Registration.objects.filter(
+                    event=event, team=t)
+                if len(reg) != 0:
+                    team = t
+                    break
+            if team is None:
+                raise Exception(json.dumps(
+                    {"message": "team not registered", "status": 400}))
+
+            timer = Timer.objects.filter(team_id=team.pk, room=room)
+        else:
+            #for individual registration
+            ind_registration = Player.objects.filter(user=user, event_id=event.pk)
+            if len(ind_registration) == 0:
+                raise Exception(json.dumps({"message": "user not registered for the event", "status": 400}))
+            timer = Timer.objects.filter(user_email=user.email, room=room)
 
         if len(timer) == 0:
-            raise Exception(json.dumps(
-                {"message": "room not started yet", "status": 400}))
+            raise Exception(json.dumps({"message": "room not started yet", "status": 400}))
         timer = timer[0]
         if python_data['is_penalty']:
             timer.penalty += 1
@@ -841,14 +872,10 @@ def is_penalty(request):
         return HttpResponse(err, content_type="application/json", status=400)
 
 
-def refresh(request, user_email, room_id):
+def get_result(request, user_email, room_id):
     if request.method != 'GET':
         return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}))
     try:
-        body = request.body
-        stream = io.BytesIO(body)
-        python_data = JSONParser().parse(stream)
-        print(python_data)
         user = User.objects.filter(email=user_email)
         if len(user) == 0:
             raise Exception(json.dumps(
@@ -859,31 +886,49 @@ def refresh(request, user_email, room_id):
             raise Exception(json.dumps(
                 {"message": "mystery room  not found", "status": 400}))
         room = room[0]
-        teams = Team.objects.filter(
-            team_lead=user.first_name, activity=Activity.objects.get(name="Mystery Room"))
-        if len(teams) == 0:
-            raise Exception(json.dumps(
-                {"message": "team not found or user is not a team lead", "status": 400}))
-        team = None
-        for t in teams:
-            reg = Registration.objects.filter(
-                event=Event.objects.get(id=room.mystery_room.event_id), team=t)
-            if len(reg) != 0:
-                team = t
-                break
-        if team is None:
-            raise Exception(json.dumps(
-                {"message": "team not registered", "status": 400}))
-        timer = Timer.objects.filter(team_id=team.pk, room=room)
+        
+        event = Event.objects.get(id=room.mystery_room.event_id)
+        timer = []
+        if event.event_type == "Group":
+            # for group registration
+            teams = Team.objects.filter(
+                team_lead=user.first_name, activity=Activity.objects.get(name="Mystery Room"))
+            if len(teams) == 0:
+                raise Exception(json.dumps(
+                    {"message": "team not found or user is not a team lead", "status": 400}))
+            team = None
+            for t in teams:
+                reg = Registration.objects.filter(
+                    event=Event.objects.get(id=room.mystery_room.event_id), team=t)
+                if len(reg) != 0:
+                    team = t
+                    break
+            if team is None:
+                raise Exception(json.dumps(
+                    {"message": "team not registered", "status": 400}))
+            timer = Timer.objects.filter(team_id=team.pk, room=room)
+        else:
+            # for individual registration
+            ind_registration = Player.objects.filter(
+                user=user, event_id=event.pk)
+            if len(ind_registration) == 0:
+                raise Exception(json.dumps(
+                    {"message": "user not registered for the event", "status": 400}))
+            timer = Timer.objects.filter(user_email=user.email, room=room)
+
         if len(timer) == 0:
             raise Exception(json.dumps(
                 {"message": "room not started yet", "status": 400}))
         timer = timer[0]
-        current_time = datetime.datetime.now()
+        current_time=0
+        if timer.end_time:
+            current_time=timer.end_time
+        else:
+            current_time = datetime.datetime.now()
         time_diff = current_time - timer.start_time #returns timedelta object
         diff = time_diff.seconds
         result = {
-            "start_time": timer.start_time,
+            "start_time": str(timer.start_time),
             "timer": diff,
             "latest_question": timer.latest_question
         }

@@ -31,6 +31,6 @@ urlpatterns = [
          check_user_participation, name="check_user_participation"),
     path('room/start', start_room, name="start_room"),
     path('room/is_penalty', is_penalty, name="is_penalty"),
-    path('room/refresh/<str:user_email>/<int:room_id>', refresh, name="refresh")
+    path('room/get_result/<str:user_email>/<int:room_id>', get_result , name="get result")
 
 ]

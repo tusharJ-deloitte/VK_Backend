@@ -95,6 +95,7 @@ class MRUserAnswer(models.Model):
 
 class Timer(models.Model):
     team_id = models.IntegerField(default=0)
+    user_email = models.TextField(null=True,blank=True)
     room = models.ForeignKey(MysteryRoom, on_delete=models.CASCADE)
     start_time = models.DateTimeField(default=datetime.now())
     penalty = models.IntegerField(default=0)
@@ -102,4 +103,4 @@ class Timer(models.Model):
     latest_question = models.IntegerField(default=1)
 
     def __str__(self) -> str:
-        return self.team_id
+        return str(self.team_id)

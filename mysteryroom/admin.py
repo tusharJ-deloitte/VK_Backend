@@ -34,5 +34,5 @@ class MRUserAnswerAdmin(admin.ModelAdmin):
 
 @admin.register(Timer)
 class TimerAdmin(admin.ModelAdmin):
-    list_display = ['id', 'team_id', 'room', 'start_time',
+    list_display = ['id', 'team_id','user_email', 'room', 'start_time',
                     'penalty', 'end_time', 'latest_question']
