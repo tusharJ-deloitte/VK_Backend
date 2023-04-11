@@ -26,6 +26,7 @@ urlpatterns = [
     path('room/question/<int:collection_id>/<int:room_id>/<int:question_number>',
          get_particular_question, name="get_particular_question"),
 
-    path('room/add_user_answer', add_user_answer, name="add_user_answer")
+    path('room/add_user_answer', add_user_answer, name="add_user_answer"),
+    path('room/check_participation/<int:event_id>/<str:user_email>',check_user_participation, name="check_user_participation"),
 
 ]

@@ -685,3 +685,38 @@ def add_user_answer(request):
     except Exception as err:
         print(err)
         return HttpResponse(err, content_type="application/json")
+
+
+#check user can participate in event or not -> only registered team's team lead will participate
+def check_user_participation(request,event_id,user_email):
+    if request.method != 'GET':
+        return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}))
+
+    try:
+        #check user exists or not
+        user = User.objects.filter(email=user_email)
+        if len(user) == 0:
+            raise Exception(json.dumps({"message": "user not found", "status": 400}))
+        user = user[0]
+        # check team exists or not
+        teams = Team.objects.filter(team_lead=user.first_name, activity=Activity.objects.get(name="Mystery Room"))
+        if len(teams) == 0:
+            raise Exception(json.dumps({"message": "user is not a team lead", "status": 400}))
+        team = None
+        for t in teams:
+            reg = Registration.objects.filter(event=Event.objects.get(id=event_id), team=t)
+            if len(reg) != 0:
+                team = t
+                break
+        if team is None:
+            raise Exception(json.dumps({"message": "team not registered", "status": 400}))
+
+        return HttpResponse("user is a team lead and registered for the event", content_type="application/json")
+    except Exception as err:
+        print(err)
+        return HttpResponse(err, content_type="application/json",status=400)
+
+#get user result room wise
+def user_result(request,collection_id):
+    if request.method != 'GET':
+        return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}))
