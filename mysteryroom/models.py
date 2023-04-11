@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import datetime
 
 
 class MysteryRoomCollection(models.Model):
@@ -19,6 +20,8 @@ class MysteryRoomCollection(models.Model):
 class MysteryRoom(models.Model):
     mystery_room = models.ForeignKey(
         MysteryRoomCollection, on_delete=models.CASCADE)
+    room_number = models.IntegerField(default=0)
+    is_locked = models.BooleanField(default=True)
     banner_image = models.TextField(null=True, blank=True)
     title = models.TextField(unique=True, null=True, blank=True)
     EASY = "EASY"
@@ -93,7 +96,10 @@ class MRUserAnswer(models.Model):
 class Timer(models.Model):
     team_id = models.IntegerField(default=0)
     room = models.ForeignKey(MysteryRoom, on_delete=models.CASCADE)
-    start_time = models.TextField(blank=True)
+    start_time = models.DateTimeField(default=datetime.now())
     penalty = models.IntegerField(default=0)
-    end_time = models.TextField(blank=True)
-    latest_question = models.IntegerField(default=0)
+    end_time = models.DateTimeField(null=True)
+    latest_question = models.IntegerField(default=1)
+
+    def __str__(self) -> str:
+        return self.team_id

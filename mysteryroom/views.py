@@ -221,6 +221,7 @@ def create_room(request):
         room = MysteryRoom(
             mystery_room=MysteryRoomCollection.objects.get(
                 id=python_data['collection_id']),
+            room_number=python_data['room_number'],
             banner_image="room___"+python_data['title'],
             title=python_data['title'],
             difficulty_level=python_data['difficulty_level'],
@@ -229,6 +230,8 @@ def create_room(request):
             created_on=python_data['created_on'],
             total_time=python_data['total_time']
         )
+        if python_data['room_number'] == 1:
+            room.is_locked = False
         room.save()
         print("saving room")
         return HttpResponse("created mystery room", content_type='application/json')
@@ -249,6 +252,7 @@ def edit_room(request):
             raise Exception(json.dumps(
                 {"message": "mystery room with given name not found", "status": 400}))
         room = room[0]
+        room.room_number = python_data['room_number']
         room.banner_image = "room___"+python_data['title']
         room.title = python_data['title']
         room.difficulty_level = python_data['difficulty_level']
@@ -294,6 +298,8 @@ def get_all_rooms(request, collection_id):
             print(questions)
             result.append({
                 "room_id": room.pk,
+                "room_number": room.room_number,
+                "is_locked": room.is_locked,
                 "banner_image": imgBaseUrl+"/"+room.banner_image,
                 "title": room.title,
                 "difficulty_level": room.difficulty_level,
@@ -349,6 +355,8 @@ def get_room(request, collection_id, room_id):
             })
         result = {
             "room_id": room.pk,
+            "room_number": room.room_number,
+            "is_locked": room.is_locked,
             "banner_image": imgBaseUrl+"/"+room.banner_image,
             "questions": ques_info,
             "title": room.title,
@@ -543,19 +551,18 @@ def delete_question(request, collection_id, room_id, question_number):
         collection = collection[0]
         question = MysteryRoomQuestion.objects.filter(
             room=room, mystery_room_collection=collection, question_number=question_number)
-        if len(question) == 0:
-            raise Exception(json.dumps(
-                {"message": "question not found", "status": 400}))
-        question = question[0]
-        question.delete()
+        if len(question) != 0:
+            question = question[0]
+            question.delete()
+            questions = MysteryRoomQuestion.objects.filter(
+                mystery_room_collection=collection, room=room)
+            for item in questions:
+                if item.question_number > question_number:
+                    item.question_number = item.question_number-1
+                    item.save()
         room.number_of_questions = room.number_of_questions - 1
         room.save()
-        questions = MysteryRoomQuestion.objects.filter(
-            mystery_room_collection=collection, room=room)
-        for item in questions:
-            if item.question_number > question_number:
-                item.question_number = item.question_number-1
-                item.save()
+
         return HttpResponse("deleted question", content_type='application/json')
     except Exception as err:
         print(err)
@@ -693,6 +700,48 @@ def add_user_answer(request):
         return HttpResponse(err, content_type="application/json")
 
 
+# check user can participate in event or not -> only registered team's team lead will participate
+def check_user_participation(request, event_id, user_email):
+    if request.method != 'GET':
+        return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}))
+
+    try:
+        # check user exists or not
+        user = User.objects.filter(email=user_email)
+        if len(user) == 0:
+            raise Exception(json.dumps(
+                {"message": "user not found", "status": 400}))
+        user = user[0]
+        # check team exists or not
+        teams = Team.objects.filter(
+            team_lead=user.first_name, activity=Activity.objects.get(name="Mystery Room"))
+        if len(teams) == 0:
+            raise Exception(json.dumps(
+                {"message": "user is not a team lead", "status": 400}))
+        team = None
+        for t in teams:
+            reg = Registration.objects.filter(
+                event=Event.objects.get(id=event_id), team=t)
+            if len(reg) != 0:
+                team = t
+                break
+        if team is None:
+            raise Exception(json.dumps(
+                {"message": "team not registered", "status": 400}))
+
+        return HttpResponse("user is a team lead and registered for the event", content_type="application/json")
+    except Exception as err:
+        print(err)
+        return HttpResponse(err, content_type="application/json", status=400)
+
+# get user result room wise
+
+
+def user_result(request, collection_id):
+    if request.method != 'GET':
+        return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}))
+
+
 def start_room(request):
     if request.method != 'POST':
         return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}))
@@ -727,6 +776,117 @@ def start_room(request):
             raise Exception(json.dumps(
                 {"message": "team not registered", "status": 400}))
         timer = Timer.objects.filter(team_id=team.pk, room=room)
+        if len(timer) != 0:
+            return HttpResponse(f"room already started at {timer[0].start_time}", content_type="application/json")
+
+        timer = Timer(team_id=team.pk, room=room)
+        timer.save()
+
+        return HttpResponse("start time details added", content_type="application/json")
+    except Exception as err:
+        print(err)
+        return HttpResponse(err, content_type="application/json", status=400)
+
+
+def is_penalty(request):
+    if request.method != 'POST':
+        return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}))
+    try:
+        body = request.body
+        stream = io.BytesIO(body)
+        python_data = JSONParser().parse(stream)
+        print(python_data)
+        user = User.objects.filter(email=python_data['user_email'])
+        if len(user) == 0:
+            raise Exception(json.dumps(
+                {"message": "user not found", "status": 400}))
+        user = user[0]
+        room = MysteryRoom.objects.filter(id=python_data['room_id'])
+        if len(room) == 0:
+            raise Exception(json.dumps(
+                {"message": "mystery room  not found", "status": 400}))
+        room = room[0]
+        teams = Team.objects.filter(
+            team_lead=user.first_name, activity=Activity.objects.get(name="Mystery Room"))
+        if len(teams) == 0:
+            raise Exception(json.dumps(
+                {"message": "team not found or user is not a team lead", "status": 400}))
+        team = None
+        for t in teams:
+            reg = Registration.objects.filter(
+                event=Event.objects.get(id=room.mystery_room.event_id), team=t)
+            if len(reg) != 0:
+                team = t
+                break
+        if team is None:
+            raise Exception(json.dumps(
+                {"message": "team not registered", "status": 400}))
+        timer = Timer.objects.filter(team_id=team.pk, room=room)
+
         if len(timer) == 0:
-            timer = Timer(team_id=team.pk, room=room,
-                          start_time=python_data['start_time'])
+            raise Exception(json.dumps(
+                {"message": "room not started yet", "status": 400}))
+        timer = timer[0]
+        if python_data['is_penalty']:
+            timer.penalty += 1
+        elif python_data['is_last_question']:
+            timer.end_time = datetime.datetime.now()
+        else:
+            timer.latest_question += 1
+        timer.save()
+
+        return HttpResponse("timer updated", content_type="application/json")
+    except Exception as err:
+        print(err)
+        return HttpResponse(err, content_type="application/json", status=400)
+
+
+def refresh(request, user_email, room_id):
+    if request.method != 'GET':
+        return HttpResponse(json.dumps({"message": "wrong request method", "status": 400}))
+    try:
+        body = request.body
+        stream = io.BytesIO(body)
+        python_data = JSONParser().parse(stream)
+        print(python_data)
+        user = User.objects.filter(email=user_email)
+        if len(user) == 0:
+            raise Exception(json.dumps(
+                {"message": "user not found", "status": 400}))
+        user = user[0]
+        room = MysteryRoom.objects.filter(id=room_id)
+        if len(room) == 0:
+            raise Exception(json.dumps(
+                {"message": "mystery room  not found", "status": 400}))
+        room = room[0]
+        teams = Team.objects.filter(
+            team_lead=user.first_name, activity=Activity.objects.get(name="Mystery Room"))
+        if len(teams) == 0:
+            raise Exception(json.dumps(
+                {"message": "team not found or user is not a team lead", "status": 400}))
+        team = None
+        for t in teams:
+            reg = Registration.objects.filter(
+                event=Event.objects.get(id=room.mystery_room.event_id), team=t)
+            if len(reg) != 0:
+                team = t
+                break
+        if team is None:
+            raise Exception(json.dumps(
+                {"message": "team not registered", "status": 400}))
+        timer = Timer.objects.filter(team_id=team.pk, room=room)
+        if len(timer) == 0:
+            raise Exception(json.dumps(
+                {"message": "room not started yet", "status": 400}))
+        timer = timer[0]
+        current_time = datetime.datetime.now()
+        time_diff = current_time - timer.start_time
+        result = {
+            "start_time": timer.start_time,
+            "timer": time_diff,
+            "latest_question": timer.latest_question
+        }
+        return HttpResponse(json.dumps(result), content_type="application/json")
+    except Exception as err:
+        print(err)
+        return HttpResponse(err, content_type="application/json", status=400)

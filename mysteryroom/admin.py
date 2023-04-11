@@ -10,7 +10,7 @@ class MysteryRoomCollectionAdmin(admin.ModelAdmin):
 
 @admin.register(MysteryRoom)
 class MysteryRoomAdmin(admin.ModelAdmin):
-    list_display = ['id', 'mystery_room', 'banner_image', 'title', 'difficulty_level',
+    list_display = ['id', 'mystery_room', 'room_number', 'is_locked', 'banner_image', 'title', 'difficulty_level',
                     'number_of_questions', 'description', 'created_on', 'last_modified', 'total_time']
 
 
