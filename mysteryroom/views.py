@@ -880,10 +880,11 @@ def refresh(request, user_email, room_id):
                 {"message": "room not started yet", "status": 400}))
         timer = timer[0]
         current_time = datetime.datetime.now()
-        time_diff = current_time - timer.start_time
+        time_diff = current_time - timer.start_time #returns timedelta object
+        diff = time_diff.seconds
         result = {
             "start_time": timer.start_time,
-            "timer": time_diff,
+            "timer": diff,
             "latest_question": timer.latest_question
         }
         return HttpResponse(json.dumps(result), content_type="application/json")
