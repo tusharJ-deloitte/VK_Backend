@@ -1,13 +1,12 @@
 from django.db import models
 from datetime import datetime
+import pytz
 
 
 class MysteryRoomCollection(models.Model):
     event_id = models.IntegerField(default=0)
     banner_image = models.TextField(null=True, blank=True)
     title = models.TextField(unique=True, null=True, blank=True)
-    number_of_team_members = models.IntegerField(
-        default=0, null=True, blank=True)
     number_of_mystery_rooms = models.IntegerField(default=0)
     theme = models.TextField(null=True, blank=True)
     created_on = models.TextField(null=True, blank=True)
@@ -34,7 +33,6 @@ class MysteryRoom(models.Model):
     description = models.TextField(null=True, blank=True)
     created_on = models.TextField(null=True, blank=True)
     last_modified = models.TextField(null=True, blank=True)
-    total_time = models.IntegerField(null=True, blank=True)
 
     def __str__(self):
         return self.title
@@ -61,7 +59,6 @@ class MysteryRoomQuestion(models.Model):
     ]
     question_type = models.CharField(
         max_length=20, choices=QUESTION_CHOICES, default=MCQ)
-    total_time = models.IntegerField(null=True, blank=True)
 
     def __str__(self) -> str:
         return self.question_text
@@ -95,12 +92,14 @@ class MRUserAnswer(models.Model):
 
 class Timer(models.Model):
     team_id = models.IntegerField(default=0)
-    user_email = models.TextField(null=True,blank=True)
+    user_email = models.TextField(null=True, blank=True)
     room = models.ForeignKey(MysteryRoom, on_delete=models.CASCADE)
-    start_time = models.DateTimeField(default=datetime.now())
+    start_time = models.DateTimeField(null=True)
     penalty = models.IntegerField(default=0)
     end_time = models.DateTimeField(null=True)
     latest_question = models.IntegerField(default=1)
+    is_complete = models.BooleanField(default=False)
+    is_locked = models.BooleanField(default=True)
 
     def __str__(self) -> str:
         return str(self.team_id)
