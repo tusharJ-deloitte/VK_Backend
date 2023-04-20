@@ -121,5 +121,8 @@ urlpatterns = [
          views.is_user_attempted_quiz, name="is_user_attempted_quiz"),
     path("quiz/get_event_results/<int:event_id>",
          views.get_quiz_event_results, name="get_quiz_event_results"),
+    path("quiz/result/group/<int:event_id>",
+         views.get_quiz_group_results, name="get_quiz_group_results")
+
 
 ]

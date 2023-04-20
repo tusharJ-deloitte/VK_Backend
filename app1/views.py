@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 from .messages import messages
 from .models import Detail, Activity, Player, Team, Category, Event, Registration, Pod, IndRegistration, Upload, Notifications, Quiz, QuizQuestion, Option, UserAnswer
 from .serializers import PostSerializer
+from mysteryroom.models import MysteryRoom,MysteryRoomCollection,Timer
 from rest_framework.renderers import JSONRenderer
 from django.http import HttpResponse, JsonResponse
 import io
@@ -785,10 +786,10 @@ def manage_teams(request, user_email):
             # print("teams : ", teams)
 
             response = []
-            print("teams", teams)
+            print("teams",teams)
             for team in teams:
 
-                print("inside teams", team)
+                print("inside teams",team)
                 team_id = team
                 team_object = Team.objects.get(id=team_id)
                 team_name = team_object.name
@@ -804,7 +805,7 @@ def manage_teams(request, user_email):
                 # print("team_mem_ids", team_mem_ids)
                 team_mem = []
                 for id in team_mem_ids:
-                    print("inside id", id)
+                    print("inside id",id)
                     user_id = Player.objects.get(id=id.player_id).user_id
                     # print("inside for id : ", user_id)
                     user_object = User.objects.get(id=user_id)
@@ -903,24 +904,24 @@ def create_event(request):
             result = result.data['createIndEvent']['event']['id']
 
         # create new entry in notifications table for new event creation
-        print("creating new entry in notifications table")
-        msg = f"New Event {python_data['name']} created under {python_data['activityName']} activity. Go and register now!"
-        newEventNotification = Notifications(
-            message_type="EVENT_CREATED",
-            message=msg,
-            for_user="ALL"
-        )
-        newEventNotification.save()
-        # send data over the websocket
-        ws.send(json.dumps({
-            "action": "sendToAll",
-            "msg": {
-                "message_type": "EVENT_CREATED",
-                "message": msg,
-            }
-        }))
-        newEventNotification.save()
-        print("created new entry in notifications table")
+        # print("creating new entry in notifications table")
+        # msg = f"New Event {python_data['name']} created under {python_data['activityName']} activity. Go and register now!"
+        # newEventNotification = Notifications(
+        #     message_type="EVENT_CREATED",
+        #     message=msg,
+        #     for_user="ALL"
+        # )
+        # newEventNotification.save()
+        # # send data over the websocket
+        # ws.send(json.dumps({
+        #     "action": "sendToAll",
+        #     "msg": {
+        #         "message_type": "EVENT_CREATED",
+        #         "message": msg,
+        #     }
+        # }))
+        # newEventNotification.save()
+        # print("created new entry in notifications table")
 
         json_post = json.dumps(result)
         return HttpResponse(json_post, content_type='application/json')
@@ -950,10 +951,8 @@ def get_all_events(request):
                             endTime,
                             taskId,
                             activity{
-                                name                             
-                                activityLogo
-                                
-
+                                name,
+                                activityLogo 
                             }
                                 }
                     }
@@ -969,6 +968,7 @@ def get_all_events(request):
                 print(i)
                 curr = datetime.date.today()
                 curt = datetime.datetime.now().time()
+                print(event)
                 if event.end_date < curr:
                     event.status = event.ELAPSED
                     event.save()
@@ -994,9 +994,11 @@ def get_all_events(request):
                     event.save()
                     result.data['allEvents'][i]['status'] = "active"
                     active.append(result.data['allEvents'][i])
-
+                
             print("outside loop")
-
+            print("active --- ",active)
+            print("upcoming---",upcoming)
+            print("elapsed---",elapsed)
             json_post = json.dumps(
                 {"active": active, "upcoming": upcoming, "elapsed": elapsed})
 
@@ -1065,10 +1067,23 @@ def delete_event(request, event_id):
     try:
         if request.method == 'DELETE':
             ev = Event.objects.get(id=event_id)
-            if ev.task_id != 0:
+            if ev.task_id != 0 and ev.activity.name=="Quiz":
                 quiz = Quiz.objects.get(event_id=event_id)
-                quiz.event_id = 0
+                user_answers = UserAnswer.objects.filter(quiz=quiz)
+                for ua in user_answers:
+                    ua.delete()
+                quiz.event_id =0
                 quiz.save()
+            if ev.task_id!=0 and ev.activity.name=="Mystery Room":
+                collection = MysteryRoomCollection.objects.get(event_id=event_id)
+                rooms = MysteryRoom.objects.filter(mystery_room = collection)
+                for room in rooms:
+                    timer=Timer.objects.filter(room=room)
+                    for t in timer:
+                        t.delete()
+                collection.event_id=0
+                collection.save()
+                
             event_id = ev.pk
             if ev.event_type == "Individual":
                 player = Player.objects.filter(event_id=event_id)
@@ -1143,7 +1158,7 @@ def register(request):
                 # create new entry in notifications table for participation in the event
                 print(
                     "creating new entry in notifications table for participation in the event")
-                msg = f"Your team {teamInstance.name} has participated in the event {eventInstance.name}"
+                msg = f"Your team {teamInstance.name} has registered in the event {eventInstance.name}"
                 participateEventNotification = Notifications(
                     message_type="PARTICIPATE_EVENT",
                     message=msg,
@@ -1158,7 +1173,7 @@ def register(request):
                 }
                 print("created new entry in notifications table")
 
-                response = sns(user_email, "Participated in event", msg)
+                response = sns(user_email, "Registered in event", msg)
                 if response:
                     print("email sent")
                 else:
@@ -1236,7 +1251,7 @@ def register_individual_user_in_event(request):
         print("doneeeeeeeee")
         # create new entry in notifications table for participation in the event
         print("creating new entry in notifications table for participation in the event")
-        msg = f"You have participated in the event {eventInstance.name}"
+        msg = f"You have registered in the event {eventInstance.name}"
         participateEventNotification = Notifications(
             message_type="PARTICIPATE_EVENT",
             message=msg,
@@ -1421,9 +1436,8 @@ def get_hottest_challenge(request):
     if request.method != 'GET':
         return HttpResponse("wrong request method", content_type='application/json', status=400)
     try:
-
-        events = Event.objects.all().exclude(
-            status=Event.ELAPSED).order_by("-cur_participation")
+        
+        events = Event.objects.all().exclude(status=Event.ELAPSED).order_by("-cur_participation")
         if len(events) == 0:
             raise Exception({"message": "no event found!"})
 
@@ -1579,7 +1593,7 @@ def get_events_participated(request, user_email):
                         endTime,
                         activity{
                             name,
-                            activityLogo    
+                            activityLogo
                         }
                     }
                 }
@@ -1589,7 +1603,7 @@ def get_events_participated(request, user_email):
         count = 0
         for i, event in enumerate(events):
             if event.event_type == "Group":
-                print("finding group event registrations")
+                print("finding group event registrations",event.name)
                 result = schema.execute(
                     '''
                         query{
@@ -1624,9 +1638,10 @@ def get_events_participated(request, user_email):
                             count += 1
                             flag = 1
                 if flag == 0:
+                    print("not participated")
                     not_participated.append(results.data['allEvents'][i])
             else:
-                print("finding individual event registrations")
+                print("finding individual event registrations",event.name)
                 result = schema.execute(
                     '''
                         query{
@@ -1653,7 +1668,10 @@ def get_events_participated(request, user_email):
                             count += 1
                             flag = 1
                 if flag == 0:
+                    print("not participated")
                     not_participated.append(results.data['allEvents'][i])
+        print("count : ",count)
+        print("not_participated : ",not_participated)
         response = {"total_events": total,
                     "participated": count, "events": all_events, "not_participated": not_participated}
         json_response = json.dumps(response)
@@ -2250,7 +2268,7 @@ def get_plank_results_of_event(request, event_id):
             total_score=Sum('score')).order_by("-total_score")
         print(uploads)
         result = []
-        for index, upload in enumerate(uploads):
+        for index,upload in enumerate(uploads):
             user = User.objects.get(id=upload['user'])
             details = Detail.objects.get(user=user)
             upload_time = Upload.objects.filter(event=event, user=user)
@@ -2259,7 +2277,7 @@ def get_plank_results_of_event(request, event_id):
                 t = ut.file_duration.split(".")[0]
                 total_time = total_time + int(t)
             result.append({
-                "rank": index+1,
+                "rank":index+1,
                 "name": user.first_name+" "+user.last_name,
                 "designation": details.designation,
                 "total_score": upload['total_score'],
@@ -2385,7 +2403,9 @@ def get_library_for_quizs(request):
             all_questions = QuizQuestion.objects.filter(quiz=quiz)
             no_of_questions = len(all_questions)
             total_time = 0
+            ques_number=[]
             for question in all_questions:
+                ques_number.append(question.question_number)
                 total_time = total_time + question.max_timer
 
             # last_modified = quiz.last_modified
@@ -2405,7 +2425,8 @@ def get_library_for_quizs(request):
                 "last_modified_date": quiz.time_modified.split("=")[0],
                 "last_modified_time": quiz.time_modified.split("=")[1],
                 "total_questions": quiz.number_of_questions,
-                "total_time": total_time
+                "total_time": total_time,
+                "questions_completed":ques_number
             })
         active = []
         elapsed = []
@@ -2647,7 +2668,7 @@ def create_quizquestion(request):
                 }
             }
             }
-            ''', variables={'quiz': python_data["quiz"], 'questionText': python_data["questionText"], 'imageClue': python_data["imageClue"], 'note': python_data["note"], 'questionType': python_data["questionType"], 'maxTimer': python_data["maxTimer"], 'points': python_data["points"], 'questionNumber': python_data['questionNumber']}
+            ''', variables={'quiz': python_data["quiz"], 'questionText': python_data["questionText"], 'imageClue': python_data["imageClue"], 'note': python_data["note"], 'questionType': python_data["questionType"], 'maxTimer': int(python_data["maxTimer"]), 'points': int(python_data["points"]), 'questionNumber': python_data['questionNumber']}
         )
         print(result.data['createQuizQuestion']['questionInstance']['id'])
         options_list = python_data["options"]
@@ -2733,28 +2754,30 @@ def add_new_question(request):
             raise Exception(json.dumps(
                 {"message": "quiz not found", "status": 400}))
         quiz = quiz[0]
-        result = schema.execute(
-            '''
-            mutation createQuizQuestion($quiz:Int!,$questionText:String!, $imageClue:String!, $note:String!, $questionType: String!, $maxTimer:Int!, $points: Int!,$questionNumber:Int!){
-                createQuizQuestion(quiz:$quiz, questionText:$questionText, imageClue:$imageClue, note:$note, questionType:$questionType, maxTimer:$maxTimer,  points:$points,questionNumber:$questionNumber){
-                questionInstance{
-                    id                
+        if 'questionText' in python_data:         
+            result = schema.execute(
+                '''
+                mutation createQuizQuestion($quiz:Int!,$questionText:String!, $imageClue:String!, $note:String!, $questionType: String!, $maxTimer:Int!, $points: Int!,$questionNumber:Int!){
+                    createQuizQuestion(quiz:$quiz, questionText:$questionText, imageClue:$imageClue, note:$note, questionType:$questionType, maxTimer:$maxTimer,  points:$points,questionNumber:$questionNumber){
+                    questionInstance{
+                        id                
+                    }
                 }
-            }
-            }
-            ''', variables={'quiz': python_data["quiz"], 'questionText': python_data["questionText"], 'imageClue': python_data["imageClue"], 'note': python_data["note"], 'questionType': python_data["questionType"], 'maxTimer': python_data["maxTimer"], 'points': python_data["points"], 'questionNumber': python_data['questionNumber']}
-        )
-        print(result.data['createQuizQuestion']['questionInstance']['id'])
-        options_list = python_data["options"]
-        for item in options_list:
-            option_instance = Option(
-                quiz=quiz,
-                question=QuizQuestion.objects.get(
-                    id=result.data['createQuizQuestion']['questionInstance']['id']),
-                option_text=item[0],
-                is_correct=item[1]
+                }
+                ''', variables={'quiz': python_data["quiz"], 'questionText': python_data["questionText"], 'imageClue': python_data["imageClue"], 'note': python_data["note"], 'questionType': python_data["questionType"], 'maxTimer': python_data["maxTimer"], 'points': python_data["points"], 'questionNumber': python_data['questionNumber']}
             )
-            option_instance.save()
+            print(result.data['createQuizQuestion']['questionInstance']['id'])
+            options_list = python_data["options"]
+            for item in options_list:
+                option_instance = Option(
+                    quiz=quiz,
+                    question=QuizQuestion.objects.get(
+                    id=result.data['createQuizQuestion']['questionInstance']['id']),
+                    option_text=item[0],
+                    is_correct=item[1]
+                )
+                option_instance.save()
+
         quiz.number_of_questions = quiz.number_of_questions + 1
         quiz.save()
         return HttpResponse("added new question", content_type='application/json')
@@ -2776,18 +2799,19 @@ def delete_quiz_question(request, quiz_id, question_number):
         quizQuestion = QuizQuestion.objects.filter(
             quiz=quiz, question_number=question_number)
         print(quizQuestion)
-        if len(quizQuestion) == 0:
-            raise Exception(json.dumps(
-                {"message": "question number not found", "status": 400}))
-        question = quizQuestion[0]
-        question.delete()
+        if len(quizQuestion) != 0:
+            # raise Exception(json.dumps(
+            #     {"message": "question number not found", "status": 400}))
+            question = quizQuestion[0]
+            question.delete()
+            
+            quizQuestion2 = QuizQuestion.objects.filter(quiz=quiz)
+            for item in quizQuestion2:
+                if item.question_number > question_number:
+                    item.question_number = item.question_number-1
+                    item.save()
         quiz.number_of_questions = quiz.number_of_questions - 1
         quiz.save()
-        quizQuestion2 = QuizQuestion.objects.filter(quiz=quiz)
-        for item in quizQuestion2:
-            if item.question_number > question_number:
-                item.question_number = item.question_number-1
-                item.save()
 
         return HttpResponse("deleted question", content_type='application/json')
     except Exception as err:
@@ -2951,7 +2975,7 @@ def get_quiz_event_results(request, event_id):
         return HttpResponse("Wrong request method", content_type="application/json", status=400)
 
     try:
-        print("inside get quiz event result ")
+        print("inside get quiz event ")
         eventInstance = Event.objects.filter(id=event_id)
         if len(eventInstance) == 0:
             raise Exception("Event not exists!")
@@ -2966,29 +2990,29 @@ def get_quiz_event_results(request, event_id):
             raise Exception("Event not published!")
 
         quiz = Quiz.objects.get(id=quiz_id)
-        userAnswers = UserAnswer.objects.filter(quiz=quiz).values('user').annotate(total_score=Sum(
-            'score'), total_time=Sum('time_taken')).order_by("-total_score", "total_time")
+        userAnswers = UserAnswer.objects.filter(quiz=quiz).values('user').annotate(total_score=Sum('score'),total_time=Sum('time_taken')).order_by("-total_score","total_time")
         print(userAnswers)
 
-        result = []
-        previous_score, previous_time = 0, 0
-        rank = 0
+        result=[]
+        previous_score,previous_time=0,0
+        rank=0
         for userAnswer in userAnswers:
             user = User.objects.get(id=userAnswer['user'])
             userDetail = Detail.objects.get(user=user)
-            if not (userAnswer['total_score'] == previous_score and userAnswer['total_time'] == previous_time):
+            if not(userAnswer['total_score'] == previous_score and userAnswer['total_time'] == previous_time):
                 rank += 1
             result.append({
-                "rank": rank,
-                "userId": user.pk,
-                "email": user.email,
-                "name": user.first_name+" "+user.last_name,
+                "rank":rank,
+                "userId":user.pk,
+                "email":user.email,
+                "name":user.first_name+" "+user.last_name,
                 "designation": userDetail.designation,
                 "total_score": userAnswer['total_score'],
                 "total_time": userAnswer['total_time']
             })
-            previous_score = userAnswer['total_score']
+            previous_score=userAnswer['total_score']
             previous_time = userAnswer['total_time']
+
 
         if event.status == event.ELAPSED:
             print("elapsed event, updating player scores")
@@ -2996,9 +3020,11 @@ def get_quiz_event_results(request, event_id):
                 rank = userResult['rank']
                 if rank > 5:
                     break
-                player = Player.objects.get(user=User.objects.get(
-                    id=userResult['userId']), event_id=event_id)
-                print("player :: ", player, ", rank :: ", rank)
+                player = Player.objects.filter(user=User.objects.get(id=userResult['userId']),event_id=event_id)
+                if len(player) == 0:
+                    continue
+                player=player[0]
+                print("player :: ",player,", rank :: ",rank)
                 if player.score != 0:
                     break
                 if rank == 1:
@@ -3016,6 +3042,121 @@ def get_quiz_event_results(request, event_id):
 
         print(result)
         return HttpResponse(json.dumps(result), content_type="application/json")
+    except Exception as err:
+        print(err)
+        return HttpResponse(err, content_type="application/json")
+
+def get_quiz_group_results(request,event_id):
+    if request.method!="GET":
+        return HttpResponse("Wrong request method", content_type="application/json", status=400)
+    try:
+        print("inside get quiz event result ")
+        eventInstance = Event.objects.filter(id=event_id)
+        if len(eventInstance) == 0:
+            raise Exception("Event not exists!")
+        event = eventInstance[0]
+
+        if event.activity.name != 'Quiz':
+            raise Exception("Event is not a quiz event!")
+
+        quiz_id = event.task_id
+        print("quiz id ::", quiz_id)
+        if quiz_id == 0:
+            raise Exception("Event not published!")
+
+        quiz = Quiz.objects.get(id=quiz_id)
+        userAnswers = UserAnswer.objects.filter(quiz=quiz).values('user').annotate(total_score=Sum('score'),total_time=Sum('time_taken')).order_by("-total_score","total_time")
+        print(userAnswers)
+
+        '''result format
+        [
+            {
+                pod_name
+                pod_id
+                rank
+                avg_time
+                avg_score
+                pod_members[
+                    {
+                        userId
+                        email
+                        name
+                        designation
+                        total_score
+                        total_time
+                    }
+                ]
+            }
+        ]
+        '''
+
+        result=[]
+        for userAnswer in userAnswers:
+            user = User.objects.get(id=userAnswer['user'])
+            userDetail = Detail.objects.get(user=user)
+            found=False
+            pod = Pod.objects.filter(user=user)
+            if len(pod) == 0:
+                continue
+            pod=pod[0]
+            for res in result:
+                if res["pod_id"] == pod.pod_id:
+                    print("pod already exists in result")
+                    res["pod_members"].append({
+                        "userId":user.pk,
+                        "email":user.email,
+                        "name":user.first_name+" "+user.last_name,
+                        "designation": userDetail.designation,
+                        "total_score": userAnswer['total_score'],
+                        "total_time": userAnswer['total_time']
+                    })
+                    res["avg_score"] = (res["avg_score"]+userAnswer['total_score'])
+                    res["avg_time"] = (res["avg_time"]+userAnswer['total_time'])
+                    res["no_of_pod_members"] += 1
+                    found=True
+                    break
+
+            if not found:
+                print("first time entry in result")
+                result.append({
+                    "pod_name":pod.pod_name,
+                    "pod_id":pod.pod_id,
+                    "rank":0,
+                    "avg_time":userAnswer['total_time'],
+                    "avg_score":userAnswer['total_score'],
+                    "no_of_pod_members":1,
+                    "pod_members":[{
+                        "userId":user.pk,
+                        "email":user.email,
+                        "name":user.first_name+" "+user.last_name,
+                        "designation": userDetail.designation,
+                        "total_score": userAnswer['total_score'],
+                        "total_time": userAnswer['total_time']
+                        }
+                    ]
+                })
+
+        # calculating avg scores and time
+        for res in result:
+            res["avg_score"] //= res["no_of_pod_members"]
+            res["avg_time"] //= res["no_of_pod_members"]
+
+        print(result)
+
+        #sort the result array on basis of avg_score
+        sorted_result = sorted(result, key = lambda k : (-k['avg_score'],k['avg_time']))
+        # sorted_result = sorted(sorted_result, key = lambda k : k['avg_time'])
+
+        
+        print(sorted_result)
+
+        # calculating rank
+        for index,res in enumerate(sorted_result):
+            res["rank"] = index+1
+
+        print("result of quiz group event :: ",sorted_result)
+
+        return HttpResponse(json.dumps(sorted_result), content_type="application/json")
     except Exception as err:
         print(err)
         return HttpResponse(err, content_type="application/json")
